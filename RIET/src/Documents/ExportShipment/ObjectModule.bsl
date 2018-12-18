@@ -951,21 +951,21 @@
 					ЭтотОбъект, "ExportRequests[" + (СтрокаТЧ.НомерСтроки-1) + "].ExportRequest",, Отказ);
 				
 			КонецЕсли;
-			
-			Если Документы.ExportRequest.ПолучитьExportInternationalOBToTMS(СтрокаТаблицы.FromCountry, СтрокаТаблицы.ParentCompany, СтрокаТаблицы.Submitted, СтрокаТаблицы.InternationalMOT, 
-				СтрокаТаблицы.InternationalFreightProvider, СтрокаТаблицы.Incoterms, СтрокаТаблицы.BORG, СтрокаТаблицы.CreationDate)
-				И НЕ СтрокаТаблицы.InternationalOBSentToTMS Тогда
-				
-				СтрокаТЧ = ExportRequests.Найти(СтрокаТаблицы.ExportRequest, "ExportRequest");
-				ТекстОшибок = "International part of '" + СтрокаТаблицы.ExportRequest + "' is not sent to TMS!";
-				ПоместитьТекстОшибкиВДополнительныеСвойства(ТекстОшибок);
-				ПоместитьТекстОшибкиВДополнительныеСвойства(ТекстОшибок, Истина);
-				ОбщегоНазначенияКлиентСервер.СообщитьПользователю(
-					ТекстОшибок,
-					ЭтотОбъект, "ExportRequests[" + (СтрокаТЧ.НомерСтроки-1) + "].ExportRequest",, Отказ);
-				
-			КонецЕсли;
-			      			
+			//// { RGS ASeryakov, 18.12.2018  S-I-0006493 Отключено временно
+			//Если Документы.ExportRequest.ПолучитьExportInternationalOBToTMS(СтрокаТаблицы.FromCountry, СтрокаТаблицы.ParentCompany, СтрокаТаблицы.Submitted, СтрокаТаблицы.InternationalMOT, 
+			//	СтрокаТаблицы.InternationalFreightProvider, СтрокаТаблицы.Incoterms, СтрокаТаблицы.BORG, СтрокаТаблицы.CreationDate)
+			//	И НЕ СтрокаТаблицы.InternationalOBSentToTMS Тогда
+			//	
+			//	СтрокаТЧ = ExportRequests.Найти(СтрокаТаблицы.ExportRequest, "ExportRequest");
+			//	ТекстОшибок = "International part of '" + СтрокаТаблицы.ExportRequest + "' is not sent to TMS!";
+			//	ПоместитьТекстОшибкиВДополнительныеСвойства(ТекстОшибок);
+			//	ПоместитьТекстОшибкиВДополнительныеСвойства(ТекстОшибок, Истина);
+			//	ОбщегоНазначенияКлиентСервер.СообщитьПользователю(
+			//		ТекстОшибок,
+			//		ЭтотОбъект, "ExportRequests[" + (СтрокаТЧ.НомерСтроки-1) + "].ExportRequest",, Отказ);
+			//	
+			//КонецЕсли;
+			//// } RGS ASeryakov, 18.12.2018  S-I-0006493 Отключено временно
 		КонецЕсли;
 		
 	КонецЦикла;	
