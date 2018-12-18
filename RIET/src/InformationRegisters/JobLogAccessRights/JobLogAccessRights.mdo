@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e919bd2-faa2-489c-ad74-089b43dd343f">
+  <producedTypes>
+    <selectionType typeId="c96e1f41-6ec6-4c23-bc01-220d39d6f9cd" valueTypeId="f0e7abe5-eaf5-4867-87ea-6c6b26cc694b"/>
+    <listType typeId="adc334e0-5ddd-4b02-bbe5-ab4dab23cb09" valueTypeId="4e872a54-a47e-4cf7-917f-4446ef218075"/>
+    <managerType typeId="97b71481-8821-47f5-ad69-7f0a5ec5f75e" valueTypeId="50e7cce1-d1e0-4edc-a00d-f3e1483e2e47"/>
+    <recordSetType typeId="f828d591-0afa-4288-9f1a-f606461a7c9b" valueTypeId="78655829-045c-4748-a81b-6f5dfd271104"/>
+    <recordKeyType typeId="2b0d070c-fadb-40b8-8624-dce9969fd69e" valueTypeId="4018a914-9f84-4e15-9235-a87f0a350fed"/>
+    <recordType typeId="bd66e0ae-262c-475f-8cc8-2a9e0579dd96" valueTypeId="6ac01911-d298-40f5-927e-0f7cc5565034"/>
+    <recordManagerType typeId="02d97977-5041-4bff-bae1-5ffb0fe9c3e8" valueTypeId="ba2b6ced-fc53-4916-a604-4a49f835d9c7"/>
+  </producedTypes>
+  <name>JobLogAccessRights</name>
+  <synonym>
+    <key>ru</key>
+    <value>Job Log access rights</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Job Log access rights</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.JobLogAccessRights.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.JobLogAccessRights.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="55d6113f-9966-4264-b0c7-1c2dd243fa60">
+    <name>УДАЛИТЬSegment</name>
+    <synonym>
+      <key>ru</key>
+      <value>УДАЛИТЬSegment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>УДАЛИТЬSegment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.Родитель</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Catalog.Сегменты.EmptyRef</value>
+      </value>
+    </choiceParameters>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ccec9147-91e1-47ef-91d5-73d007afa46a">
+    <name>LocationName</name>
+    <synonym>
+      <key>ru</key>
+      <value>Location name</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Location name</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.GeoMarkets</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="7e72e55a-526b-4d5e-b775-9e04149527d7">
+    <name>User</name>
+    <synonym>
+      <key>ru</key>
+      <value>User</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0a02c8e6-453a-4f21-99de-1f84c957ca37">
+    <name>Segment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Segment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.Родитель</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Catalog.Сегменты.EmptyRef</value>
+      </value>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="7bd2fc5a-0a9d-45a0-bac4-6745a09ec037">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d6008f86-0651-4056-921c-e24f3ab472b0">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOC</dataPath>
+			<field>DOC</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InvoiceLine</dataPath>
+			<field>InvoiceLine</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Rule</dataPath>
+			<field>Rule</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Shipment</dataPath>
+			<field>Shipment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Invoice</dataPath>
+			<field>Invoice</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>POA</dataPath>
+			<field>POA</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ShipmentDOCs.Ссылка КАК Shipment,
+	ShipmentDOCs.УпаковочныйЛист КАК DOC,
+	ВЫБОР
+		КОГДА ShipmentDOCs.Ссылка.ActualPOA = ЗНАЧЕНИЕ(Справочник.SeaAndAirPorts.ПустаяСсылка)
+			ТОГДА ShipmentDOCs.УпаковочныйЛист.RequestedPOA
+		ИНАЧЕ ShipmentDOCs.Ссылка.ActualPOA
+	КОНЕЦ КАК POA
+ПОМЕСТИТЬ ShipmentDOCs
+ИЗ
+	Документ.Поставка.УпаковочныеЛисты КАК ShipmentDOCs
+ГДЕ
+	(НЕ ShipmentDOCs.Ссылка.Отменен)
+	И ShipmentDOCs.Ссылка.Cleared = ДАТАВРЕМЯ(1, 1, 1)
+
+ИНДЕКСИРОВАТЬ ПО
+	DOC,
+	POA
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ShipmentDOCs.Shipment КАК Shipment,
+	ShipmentDOCs.DOC КАК DOC,
+	DOCInvoices.Инвойс КАК Invoice,
+	InvoiceLines.Ссылка КАК InvoiceLine,
+	RulesOfCVCRisks.Ссылка КАК Rule,
+	ShipmentDOCs.POA КАК POA
+ИЗ
+	ShipmentDOCs КАК ShipmentDOCs
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Инвойсы КАК DOCInvoices
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.СтрокиИнвойса КАК InvoiceLines
+			ПО DOCInvoices.Инвойс = InvoiceLines.Инвойс
+				И ((НЕ InvoiceLines.ПометкаУдаления))
+		ПО ShipmentDOCs.DOC = DOCInvoices.Ссылка
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.RulesOfCVCRisks КАК RulesOfCVCRisks
+			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.RulesOfCVCRisks.POAs КАК RulesOfCVCRisksPOAs
+			ПО RulesOfCVCRisks.Ссылка = RulesOfCVCRisksPOAs.Ссылка
+		ПО (ВЫБОР
+				КОГДА RulesOfCVCRisksPOAs.POA ЕСТЬ NULL 
+					ТОГДА ИСТИНА
+				ИНАЧЕ ShipmentDOCs.POA = RulesOfCVCRisksPOAs.POA
+			КОНЕЦ)
+			И (ВЫБОР
+				КОГДА RulesOfCVCRisks.Field = ЗНАЧЕНИЕ(Перечисление.FieldsForRulesOfCVCRisks.PartNumber)
+					ТОГДА InvoiceLines.КодПоИнвойсу = RulesOfCVCRisks.Value
+				КОГДА RulesOfCVCRisks.Field = ЗНАЧЕНИЕ(Перечисление.FieldsForRulesOfCVCRisks.Description)
+					ТОГДА InvoiceLines.НаименованиеТовара ПОДОБНО "%" + RulesOfCVCRisks.Value + "%"
+				ИНАЧЕ ЛОЖЬ
+			КОНЕЦ)
+ГДЕ
+	(НЕ RulesOfCVCRisks.ПометкаУдаления)</query>
+	</dataSet>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>POA</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Shipment</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DOC</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Invoice</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceLine</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceLine.КодПоИнвойсу</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceLine.НаименованиеТовара</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Rule</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Rule.GoodsDescription</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Rule.CustomsDemand</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Rule.Currency</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Rule.TNVEDCode</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Rule.TNVEDCode.FullDescription</dcsset:field>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">POA</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.SeaAndAirPorts.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>5f5615a6-f0af-4b2d-bf26-9ef9f9090144</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:userSettingID>ee63445e-ff6c-46fc-8731-953c387e3ee2</dcsset:userSettingID>
+				<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+				</dcsset:userSettingPresentation>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="08c4a065-3bdc-4d8b-a067-7e547d7ec989">
+  <producedTypes>
+    <selectionType typeId="c7943cbe-24c4-42ea-b35f-17d190f147c3" valueTypeId="9f9a308c-dff2-4342-989f-96ad26663206"/>
+    <listType typeId="747d6618-125c-4301-a68d-d7bdc9a837b2" valueTypeId="c6a5cbcd-efe4-435f-be45-2d9308673e60"/>
+    <managerType typeId="8b5fcb42-3e1f-4ddb-9ffb-576d532c09d5" valueTypeId="b194416f-f8d2-4051-baab-71b078f9fe16"/>
+    <recordSetType typeId="cc72a5b6-e9df-4f0d-8e27-85efb7b8ab07" valueTypeId="1130faf4-ce6e-4b2d-a15e-595823b33e12"/>
+    <recordKeyType typeId="f958fe15-4262-419f-8e6a-b60381dc91f1" valueTypeId="fd8e4e09-4918-47ed-b376-6a6154171c18"/>
+    <recordType typeId="300ddd47-0446-4e8b-8be4-c38f6a4bee0c" valueTypeId="1183c708-0aa8-4402-ae8e-9c0eaf689b09"/>
+    <recordManagerType typeId="768910e2-ae01-4bf9-be46-229e41b07a73" valueTypeId="1a8de7f2-c787-4650-84e0-6524692e51c6"/>
+  </producedTypes>
+  <name>PlannersBillingSpecialistsMatching</name>
+  <synonym>
+    <key>ru</key>
+    <value>Planners\Billing specialists matching</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Planners\Billing specialists matching</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.PlannersBillingSpecialistsMatching.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.PlannersBillingSpecialistsMatching.Form.ФормаСписка</defaultListForm>
+  <auxiliaryListForm>InformationRegister.PlannersBillingSpecialistsMatching.Form.ФормаСписка</auxiliaryListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="8031fa6a-592e-4f5e-ae73-745491421229">
+    <name>BillingSpecialist</name>
+    <synonym>
+      <key>ru</key>
+      <value>Billing specialist</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Billing specialist</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="0d7884a5-d087-4aff-bcac-6d1b85bcc954">
+    <name>Comment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Comment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="f2ed7560-c491-4635-9f3b-ac3ab08885dc">
+    <name>Planner</name>
+    <synonym>
+      <key>ru</key>
+      <value>Planner</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Planner</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="d65895eb-cf50-40ac-9cde-f6f47b3d7e1a">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="ffeeac4f-bc7c-4ac5-b918-3a24680147f2">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

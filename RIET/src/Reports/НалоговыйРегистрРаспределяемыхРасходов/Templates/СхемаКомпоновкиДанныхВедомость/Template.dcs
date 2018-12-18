@@ -1,0 +1,807 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Activity</dataPath>
+			<field>Activity</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AU</dataPath>
+			<field>AU</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>WO</dataPath>
+			<field>WO</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВзносыФСС</dataPath>
+			<field>ВзносыФСС</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидНачисления</dataPath>
+			<field>ВидНачисления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидРасходов</dataPath>
+			<field>ВидРасходов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоговорКонтрагента</dataPath>
+			<field>ДоговорКонтрагента</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументРеализации</dataPath>
+			<field>ДокументРеализации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвойсинговыйЦентр</dataPath>
+			<field>ИнвойсинговыйЦентр</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеОрганизации</dataPath>
+			<field>ПодразделениеОрганизации</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПрочиеРасходы</dataPath>
+			<field>ПрочиеРасходы</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Расходы</dataPath>
+			<field>Расходы</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтавкаНДС</dataPath>
+			<field>СтавкаНДС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтраховыеВзносы</dataPath>
+			<field>СтраховыеВзносы</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Тип</dataPath>
+			<field>Тип</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AccountLawson</dataPath>
+			<field>AccountLawson</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ПродажиОбороты.ПодразделениеОрганизации,
+	ВЫБОР
+		КОГДА ПродажиОбороты.СуммаRURОборот - ПродажиОбороты.СуммаНДСRURОборот &lt;= 0
+			ТОГДА 0
+		ИНАЧЕ ПродажиОбороты.СуммаRURОборот - ПродажиОбороты.СуммаНДСRURОборот
+	КОНЕЦ КАК СуммаПродаж
+ПОМЕСТИТЬ Продажи
+ИЗ
+	РегистрНакопления.Продажи.Обороты(&amp;НачалоПериода, &amp;КонецПериода, , ) КАК ПродажиОбороты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Продажи.ПодразделениеОрганизации,
+	ВЫРАЗИТЬ(Продажи.СуммаПродаж / ВложенныйЗапрос.СуммаПродаж * 100 КАК ЧИСЛО(15, 2)) КАК Доля
+ПОМЕСТИТЬ ПродажиДоли
+ИЗ
+	Продажи КАК Продажи,
+	(ВЫБРАТЬ
+		СУММА(Продажи.СуммаПродаж) КАК СуммаПродаж
+	ИЗ
+		Продажи КАК Продажи) КАК ВложенныйЗапрос
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗагрузкаРасходовПоЗарплатеРаспределение.Способ
+ПОМЕСТИТЬ Способы
+ИЗ
+	Документ.ЗагрузкаРасходовПоЗарплате.Распределение КАК ЗагрузкаРасходовПоЗарплатеРаспределение
+ГДЕ
+	ЗагрузкаРасходовПоЗарплатеРаспределение.Ссылка.Проведен
+	И ЗагрузкаРасходовПоЗарплатеРаспределение.Ссылка.Дата МЕЖДУ &amp;НачалоПериодаКвартал И &amp;КонецПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.AU,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.Расходы,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.ПрочиеРасходы,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.СтраховыеВзносы,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.ВзносыФСС,
+	СпособыРаспределенияРасходовСписокAU.Ссылка,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.ФактическоеПодразделение,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.Activity КАК Activity,
+	ВЫРАЗИТЬ(ЗагрузкаРасходовПоЗарплатеЗагрузка.ВидНачисления КАК СТРОКА(200)) КАК ВидНачисления,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.AccountLawson
+ПОМЕСТИТЬ РасходыРаспределяемые
+ИЗ
+	Справочник.СпособыРаспределенияРасходов.СписокAU КАК СпособыРаспределенияРасходовСписокAU
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ЗагрузкаРасходовПоЗарплате.Загрузка КАК ЗагрузкаРасходовПоЗарплатеЗагрузка
+		ПО СпособыРаспределенияРасходовСписокAU.AU = ЗагрузкаРасходовПоЗарплатеЗагрузка.AU
+ГДЕ
+	СпособыРаспределенияРасходовСписокAU.Ссылка В
+			(ВЫБРАТЬ
+				способы.Способ
+			ИЗ
+				способы)
+	И ЗагрузкаРасходовПоЗарплатеЗагрузка.Ссылка.Проведен
+	И ЗагрузкаРасходовПоЗарплатеЗагрузка.Ссылка.Дата МЕЖДУ &amp;НачалоПериодаКвартал И &amp;КонецПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РасходыРаспределяемые.AU,
+	СУММА(РасходыРаспределяемые.Расходы) КАК Расходы,
+	СУММА(РасходыРаспределяемые.ПрочиеРасходы) КАК ПрочиеРасходы,
+	СУММА(РасходыРаспределяемые.СтраховыеВзносы) КАК СтраховыеВзносы,
+	СУММА(РасходыРаспределяемые.ВзносыФСС) КАК ВзносыФСС,
+	РасходыРаспределяемые.Ссылка,
+	РасходыРаспределяемые.Activity,
+	РасходыРаспределяемые.ВидНачисления,
+	РасходыРаспределяемые.AccountLawson
+ПОМЕСТИТЬ РасходыРаспределяемыеТолькоAU
+ИЗ
+	РасходыРаспределяемые КАК РасходыРаспределяемые
+
+СГРУППИРОВАТЬ ПО
+	РасходыРаспределяемые.AU,
+	РасходыРаспределяемые.Ссылка,
+	РасходыРаспределяемые.Activity,
+	РасходыРаспределяемые.ВидНачисления,
+	РасходыРаспределяемые.AccountLawson
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СпособыРаспределенияРасходовБазаРаспределения.НалоговаяРегистрация,
+	СпособыРаспределенияРасходовБазаРаспределения.Ссылка,
+	СпособыРаспределенияРасходовБазаРаспределения.Доля
+ПОМЕСТИТЬ БазаРаспределения
+ИЗ
+	Справочник.СпособыРаспределенияРасходов.БазаРаспределения КАК СпособыРаспределенияРасходовБазаРаспределения
+ГДЕ
+	СпособыРаспределенияРасходовБазаРаспределения.Ссылка В
+			(ВЫБРАТЬ
+				способы.Способ
+			ИЗ
+				способы)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	БазаРаспределения.НалоговаяРегистрация,
+	СУММА(РасходыРаспределяемыеТолькоAU.Расходы * БазаРаспределения.Доля) КАК Расходы,
+	СУММА(РасходыРаспределяемыеТолькоAU.ПрочиеРасходы * БазаРаспределения.Доля) КАК ПрочиеРасходы,
+	СУММА(РасходыРаспределяемыеТолькоAU.СтраховыеВзносы * БазаРаспределения.Доля) КАК СтраховыеВзносы,
+	СУММА(РасходыРаспределяемыеТолькоAU.ВзносыФСС * БазаРаспределения.Доля) КАК ВзносыФСС,
+	БазаРаспределения.Ссылка.Наименование КАК ВидРасходов,
+	РасходыРаспределяемыеТолькоAU.Activity,
+	РасходыРаспределяемыеТолькоAU.ВидНачисления,
+	РасходыРаспределяемыеТолькоAU.AU,
+	РасходыРаспределяемыеТолькоAU.AccountLawson
+ПОМЕСТИТЬ Distribution
+ИЗ
+	РасходыРаспределяемыеТолькоAU КАК РасходыРаспределяемыеТолькоAU
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ БазаРаспределения КАК БазаРаспределения
+		ПО РасходыРаспределяемыеТолькоAU.Ссылка = БазаРаспределения.Ссылка
+
+СГРУППИРОВАТЬ ПО
+	БазаРаспределения.НалоговаяРегистрация,
+	БазаРаспределения.Ссылка.Наименование,
+	РасходыРаспределяемыеТолькоAU.Activity,
+	РасходыРаспределяемыеТолькоAU.ВидНачисления,
+	РасходыРаспределяемыеТолькоAU.AU,
+	РасходыРаспределяемыеТолькоAU.AccountLawson
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.ФактическоеПодразделение,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.AU,
+	СУММА(ЗагрузкаРасходовПоЗарплатеЗагрузка.Расходы) КАК Расходы,
+	СУММА(ЗагрузкаРасходовПоЗарплатеЗагрузка.ПрочиеРасходы) КАК ПрочиеРасходы,
+	СУММА(ЗагрузкаРасходовПоЗарплатеЗагрузка.СтраховыеВзносы) КАК СтраховыеВзносы,
+	СУММА(ЗагрузкаРасходовПоЗарплатеЗагрузка.ВзносыФСС) КАК ВзносыФСС,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.Activity,
+	ВЫРАЗИТЬ(ЗагрузкаРасходовПоЗарплатеЗагрузка.ВидНачисления КАК СТРОКА(200)) КАК ВидНачисления,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.AccountLawson
+ПОМЕСТИТЬ ИсходныеДанные
+ИЗ
+	Документ.ЗагрузкаРасходовПоЗарплате.Загрузка КАК ЗагрузкаРасходовПоЗарплатеЗагрузка
+ГДЕ
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.Ссылка.Проведен
+	И ЗагрузкаРасходовПоЗарплатеЗагрузка.Ссылка.Дата МЕЖДУ &amp;НачалоПериодаКвартал И &amp;КонецПериода
+
+СГРУППИРОВАТЬ ПО
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.ФактическоеПодразделение,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.AU,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.Activity,
+	ЗагрузкаРасходовПоЗарплатеЗагрузка.AccountLawson,
+	ВЫРАЗИТЬ(ЗагрузкаРасходовПоЗарплатеЗагрузка.ВидНачисления КАК СТРОКА(200))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИсходныеДанные.ФактическоеПодразделение,
+	ИсходныеДанные.AU,
+	ИсходныеДанные.Расходы,
+	ИсходныеДанные.ПрочиеРасходы,
+	ИсходныеДанные.СтраховыеВзносы,
+	ИсходныеДанные.ВзносыФСС,
+	ИсходныеДанные.Activity,
+	ИсходныеДанные.ВидНачисления,
+	ИсходныеДанные.AccountLawson
+ПОМЕСТИТЬ Остаток
+ИЗ
+	ИсходныеДанные КАК ИсходныеДанные
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	Распределенное.ФактическоеПодразделение,
+	Распределенное.AU,
+	-Распределенное.Расходы,
+	-Распределенное.ПрочиеРасходы,
+	-Распределенное.СтраховыеВзносы,
+	-Распределенное.ВзносыФСС,
+	Распределенное.Activity,
+	Распределенное.ВидНачисления,
+	Распределенное.AccountLawson
+ИЗ
+	(ВЫБРАТЬ
+		РасходыРаспределяемые.AU КАК AU,
+		СУММА(РасходыРаспределяемые.Расходы) КАК Расходы,
+		СУММА(РасходыРаспределяемые.ПрочиеРасходы) КАК ПрочиеРасходы,
+		СУММА(РасходыРаспределяемые.СтраховыеВзносы) КАК СтраховыеВзносы,
+		СУММА(РасходыРаспределяемые.ВзносыФСС) КАК ВзносыФСС,
+		РасходыРаспределяемые.ФактическоеПодразделение КАК ФактическоеПодразделение,
+		РасходыРаспределяемые.Activity КАК Activity,
+		РасходыРаспределяемые.ВидНачисления КАК ВидНачисления,
+		РасходыРаспределяемые.AccountLawson КАК AccountLawson
+	ИЗ
+		РасходыРаспределяемые КАК РасходыРаспределяемые
+	
+	СГРУППИРОВАТЬ ПО
+		РасходыРаспределяемые.AU,
+		РасходыРаспределяемые.ФактическоеПодразделение,
+		РасходыРаспределяемые.Activity,
+		РасходыРаспределяемые.ВидНачисления,
+		РасходыРаспределяемые.AccountLawson) КАК Распределенное
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Остаток.Расходы,
+	Остаток.ПрочиеРасходы,
+	Остаток.СтраховыеВзносы,
+	Остаток.ВзносыФСС,
+	Остаток.AU.TaxRegistration КАК НалоговаяРегистрация,
+	ВЫБОР
+		КОГДА Остаток.AU.TaxRegistration = Остаток.ФактическоеПодразделение
+			ТОГДА "прямые расходы"
+		ИНАЧЕ "авизо " + Остаток.ФактическоеПодразделение.Наименование
+	КОНЕЦ КАК ВидРасходов,
+	Остаток.Activity,
+	Остаток.ВидНачисления,
+	Остаток.AccountLawson,
+	Остаток.AU
+ПОМЕСТИТЬ ОстатокРазнесенный
+ИЗ
+	Остаток КАК Остаток
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(ВложенныйЗапрос.Расходы) КАК Расходы,
+	СУММА(ВложенныйЗапрос.ПрочиеРасходы) КАК ПрочиеРасходы,
+	СУММА(ВложенныйЗапрос.СтраховыеВзносы) КАК СтраховыеВзносы,
+	СУММА(ВложенныйЗапрос.ВзносыФСС) КАК ВзносыФСС,
+	ВложенныйЗапрос.НалоговаяРегистрация КАК НалоговаяРегистрация,
+	ВложенныйЗапрос.ВидРасходов КАК ВидРасходов,
+	ВложенныйЗапрос.Activity,
+	ВложенныйЗапрос.ВидНачисления,
+	ВложенныйЗапрос.AccountLawson,
+	ВложенныйЗапрос.AU
+ПОМЕСТИТЬ Сводная
+ИЗ
+	(ВЫБРАТЬ
+		ОстатокРазнесенный.Расходы КАК Расходы,
+		ОстатокРазнесенный.ПрочиеРасходы КАК ПрочиеРасходы,
+		ОстатокРазнесенный.СтраховыеВзносы КАК СтраховыеВзносы,
+		ОстатокРазнесенный.ВзносыФСС КАК ВзносыФСС,
+		ОстатокРазнесенный.НалоговаяРегистрация КАК НалоговаяРегистрация,
+		ОстатокРазнесенный.ВидРасходов КАК ВидРасходов,
+		ОстатокРазнесенный.Activity КАК Activity,
+		ОстатокРазнесенный.ВидНачисления КАК ВидНачисления,
+		ОстатокРазнесенный.AccountLawson КАК AccountLawson,
+		ОстатокРазнесенный.AU КАК AU
+	ИЗ
+		ОстатокРазнесенный КАК ОстатокРазнесенный
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		Distribution.Расходы,
+		Distribution.ПрочиеРасходы,
+		Distribution.СтраховыеВзносы,
+		Distribution.ВзносыФСС,
+		Distribution.НалоговаяРегистрация,
+		Distribution.ВидРасходов,
+		Distribution.Activity,
+		Distribution.ВидНачисления,
+		Distribution.AccountLawson,
+		Distribution.AU
+	ИЗ
+		Distribution КАК Distribution) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.НалоговаяРегистрация,
+	ВложенныйЗапрос.ВидРасходов,
+	ВложенныйЗапрос.Activity,
+	ВложенныйЗапрос.ВидНачисления,
+	ВложенныйЗапрос.AccountLawson,
+	ВложенныйЗапрос.AU
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(Сводная.Расходы * ПродажиДоли.Доля / ВложенныйЗапрос.Доля) КАК Расходы,
+	СУММА(Сводная.ПрочиеРасходы * ПродажиДоли.Доля / ВложенныйЗапрос.Доля) КАК ПрочиеРасходы,
+	СУММА(Сводная.СтраховыеВзносы * ПродажиДоли.Доля / ВложенныйЗапрос.Доля) КАК СтраховыеВзносы,
+	СУММА(Сводная.ВзносыФСС * ПродажиДоли.Доля / ВложенныйЗапрос.Доля) КАК ВзносыФСС,
+	Сводная.Activity,
+	Сводная.ВидНачисления,
+	ПродажиДоли.ПодразделениеОрганизации,
+	ВЫРАЗИТЬ("Общехозяйственные" КАК СТРОКА(50)) КАК ВидРасходов,
+	Сводная.AccountLawson,
+	Сводная.AU
+ИЗ
+	ПродажиДоли КАК ПродажиДоли,
+	Сводная КАК Сводная,
+	(ВЫБРАТЬ
+		СУММА(ПродажиДоли.Доля) КАК Доля
+	ИЗ
+		ПродажиДоли КАК ПродажиДоли) КАК ВложенныйЗапрос
+ГДЕ
+	Сводная.НалоговаяРегистрация = &amp;Общехоз
+	И ПродажиДоли.ПодразделениеОрганизации = &amp;НалоговаяРегистрация
+	И Сводная.Расходы + Сводная.ПрочиеРасходы + Сводная.СтраховыеВзносы + Сводная.ВзносыФСС &gt; 0
+
+СГРУППИРОВАТЬ ПО
+	Сводная.Activity,
+	Сводная.ВидНачисления,
+	ПродажиДоли.ПодразделениеОрганизации,
+	Сводная.AccountLawson,
+	Сводная.AU
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	СУММА(Сводная.Расходы),
+	СУММА(Сводная.ПрочиеРасходы),
+	СУММА(Сводная.СтраховыеВзносы),
+	СУММА(Сводная.ВзносыФСС),
+	Сводная.Activity,
+	Сводная.ВидНачисления,
+	Сводная.НалоговаяРегистрация,
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА Сводная.ВидРасходов = "прямые расходы"
+				ТОГДА "Прямые"
+			ИНАЧЕ "Распределяемые"
+		КОНЕЦ КАК СТРОКА(50)),
+	Сводная.AccountLawson,
+	Сводная.AU
+ИЗ
+	Сводная КАК Сводная
+ГДЕ
+	Сводная.НалоговаяРегистрация = &amp;НалоговаяРегистрация
+
+СГРУППИРОВАТЬ ПО
+	Сводная.Activity,
+	Сводная.ВидНачисления,
+	Сводная.НалоговаяРегистрация,
+	Сводная.AccountLawson,
+	Сводная.AU,
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА Сводная.ВидРасходов = "прямые расходы"
+				ТОГДА "Прямые"
+			ИНАЧЕ "Распределяемые"
+		КОНЕЦ КАК СТРОКА(50))</query>
+	</dataSet>
+	<totalField>
+		<dataPath>ВзносыФСС</dataPath>
+		<expression>Сумма(ВзносыФСС)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПрочиеРасходы</dataPath>
+		<expression>Сумма(ПрочиеРасходы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Расходы</dataPath>
+		<expression>Сумма(Расходы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СтраховыеВзносы</dataPath>
+		<expression>Сумма(СтраховыеВзносы)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Общехоз</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Общехоз</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Общехоз</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачалоПериодаКвартал</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода квартал</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода квартал</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НалоговаяРегистрация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Налоговая регистрация</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Налоговая регистрация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ВидРасходов</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">Прямые</dcsset:right>
+						<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПодразделениеОрганизации</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AU</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AccountLawson</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Lawson account</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Lawson account</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Activity</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВидНачисления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Расходы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПрочиеРасходы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СтраховыеВзносы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВзносыФСС</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Together</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Прямые расходы</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Прямые расходы</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ВидРасходов</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">Распределяемые</dcsset:right>
+						<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПодразделениеОрганизации</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AU</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AccountLawson</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Lawson account</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Lawson account</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Activity</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВидНачисления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Расходы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПрочиеРасходы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СтраховыеВзносы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВзносыФСС</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Together</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Распределяемые расходы</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Распределяемые расходы</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ВидРасходов</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">Общехозяйственные</dcsset:right>
+						<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПодразделениеОрганизации</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AU</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AccountLawson</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Lawson account</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Lawson account</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Activity</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВидНачисления</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Расходы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПрочиеРасходы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СтраховыеВзносы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВзносыФСС</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Together</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Общехозяйственные</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Общехозяйственные</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

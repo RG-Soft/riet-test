@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b0711856-0f6a-4e5e-9d85-a7713b04822a">
+  <producedTypes>
+    <selectionType typeId="35a5098d-a19c-4737-b3b4-c8aeebe26f55" valueTypeId="0635a475-922f-4e6a-bf25-64f431e5d75e"/>
+    <listType typeId="e9b2c74c-ba08-4f2c-b0c2-e142479d6a40" valueTypeId="e7f10a65-19d6-47ca-acca-f0d020684e31"/>
+    <managerType typeId="d2091686-c470-4a41-a44c-f8597071caca" valueTypeId="f4c25bf2-10ca-47f1-b4e5-23186c3ef6b3"/>
+    <recordSetType typeId="2b8b5e7d-8770-4d3e-b8c5-416288481322" valueTypeId="d21c86a7-f326-4400-a849-8c333435e250"/>
+    <recordKeyType typeId="c92e6be2-b3ae-47b4-9faf-8e9da0815f3a" valueTypeId="1aae8532-6131-4c0d-8147-72a05b109bb4"/>
+    <recordType typeId="9451f590-6abc-488f-a766-2af5a4924379" valueTypeId="e1ff26b9-dd15-4d97-8f79-681f237ee1af"/>
+    <recordManagerType typeId="d55a37aa-d716-4f55-83bb-420440df0179" valueTypeId="e33a6153-3435-41ba-9a66-72f56063df60"/>
+  </producedTypes>
+  <name>ПересчетРазницПоДокументам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Пересчет разниц по документам</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Пересчет разниц по документам</value>
+  </synonym>
+  <comment></comment>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="35a21186-73c1-4fdc-bfcd-89dae9aa9b03">
+    <name>КоличествоПопыток</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество попыток</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Количество попыток</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3503921d-a1d7-4f1e-9fcc-cf258a21e455">
+    <name>ТекстОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст ошибки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Текст ошибки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="1999db2a-8120-4bac-a162-9ef67597d178">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПередачаОС</types>
+      <types>DocumentRef.ПринятиеКУчетуОС</types>
+      <types>DocumentRef.InventoryСписание</types>
+      <types>DocumentRef.InventoryПоступление</types>
+      <types>DocumentRef.СчетКнигиПокупок</types>
+      <types>DocumentRef.InventoryКорректировка</types>
+      <types>DocumentRef.InventoryПеремещение</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.НачислениеАмортизации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="81a3fa77-8546-4022-bcd9-22e69d28ffae">
+    <name>НаличиеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наличие ошибки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Наличие ошибки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

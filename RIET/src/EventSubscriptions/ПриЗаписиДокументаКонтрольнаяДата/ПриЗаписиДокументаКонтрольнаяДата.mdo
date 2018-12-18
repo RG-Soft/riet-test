@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7e62f17c-9b33-4a83-88d3-619b64dd62f1">
+  <name>ПриЗаписиДокументаКонтрольнаяДата</name>
+  <synonym>
+    <key>ru</key>
+    <value>При записи документа контрольная дата</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>При записи документа контрольная дата</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ОтражениеНачисленияНДС</types>
+    <types>DocumentObject.ОтчетАгентаПоРасходам</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+    <types>DocumentObject.ПередачаОС</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.ПодпискиНаСобытия.ПриЗаписиДокументаКонтрольнаяДатаПриЗаписи</handler>
+</mdclass:EventSubscription>

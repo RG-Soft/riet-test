@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16618"></meta></head><body>
+<h1>Документ "Batches of customs files"</h1>
+<p>Документ "Batches of customs files" входит в <a href="Subsystem.CustomsAccounting.Subsystem.BatchesOfCustomsFiles/Help">одноименную</a> подсистему.<br>Предназначен для объединения и выгрузки в Lawson документов <a href="Document.ГТД/Help">Customs files</a> и <a href="Document.CustomsFilesLight/Help">Customs files light</a> (с типом транзакции Customs receipt order (ТПО), Customs bond (расписка) или Customs bond closing (закрытие расписки)).</p>
+<p>Документ заполняется автоматически при нажатии на кнопку "Fill".<br>При этом система подбирает все документы Customs files и Customs files light, которые были закрыты до даты документа, но еще не выгружены другим документом Batch.</p>
+<p>После проведения документ может быть распечатан для выгрузки в Lawson с помощью кнопки "Unload".</p>
+<p>Кроме того, прямо из документа могут быть распечатаны отчеты "<a href="Report.BatchesOfCustomsFilesSummary/Help">Batches of customs files (summary)</a>", "<a href="Report.BatchesOfCustomsFilesDetails/Help">Batches of customs files (details)</a>" и "<a href="Report.ПокупнаяСтоимостьТаможенныхТоваров/Help">Покупная стоимость таможенных товаров</a>".</p>
+<h2>Шапка документа</h2>
+<ul><li>
+<div><strong>No.</strong> (строка) - автоматически присваиваемый номер документа.</div>
+</li><li>
+<div><strong>Date </strong>(дата)<br>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>For deletion</strong> (булево) - признак того, что данный документ помечен на удаление.</div>
+</li><li>
+<div><strong>Sold-to</strong> (справочник Sold-to)<br>Обязательный для заполнения реквизит.<br>Sold-to не должен быть помечен на удаление.</div>
+</li><li>
+<div><strong>Country<br></strong>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>Process level<br></strong>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>Comment</strong> (строка)</div>
+</li><li>
+<div><strong>Created by</strong> (справочник Users) - заполняется автоматически пользователем, который первый создал документ.</div></li></ul><ul><li>
+<div><strong>Creation date</strong> (дата и время) - заполняется автоматически датой создания документа.</div></li></ul><ul><li>
+<div><strong>Modified by</strong> (справочник Users) - заполняется автоматически пользователем, внесшим последние имзенения в документ.</div>
+</li><li>
+<div><strong>Modification date</strong> (дата и время) - заполняется автоматически датой последнего интерактивного изменения документа.</div></li></ul><h2>Табличная часть "Customs files"</h2>
+<p>В табличной части перечисляются документы Customs files of Import/Export shipments, включенные в текущий батч.</p>
+<h2>Табличная часть "Customs files of temp. imp. / exp."</h2>
+<p>В табличной части перечисляются документы Customs files, у которых в качестве shipment указан документ <a href="Document.TemporaryImpExpTransactions/Help">Temp. imp. / exp. transation</a> на перевод товаров в постоянный режим, включенные в текущий батч.</p>
+<h2>Табличная часть "Customs receipt orders (ТПО)"</h2>
+<p>В табличной части перечисляются документы Customs files light с типом транзакции Customs receipt orders (ТПО), включенные в текущий батч.</p>
+<h2>Табличная часть "Customs bonds (таможенные расписки)"</h2>
+<p>В табличной части перечисляются документы Customs files light с типом транзакции Customs bond, включенные в текущий батч.</p>
+<h2>Табличная часть "Customs bond closings (закрытие таможенных расписок)"</h2>
+<p>В табличной части перечисляются документы Customs files light с типом транзакции Customs bond closing, включенные в текущий батч.</p>
+<p>Для всех документов табличных частей проверяются следующие условия: </p>
+<ul><li>Система автоматически удаляет пустые строки. 
+</li><li>Система автоматически удаляет повторяющиеся строки. 
+</li><li>Документ не должен быть указан в другом батче. 
+</li><li>Sold-to в документе должен соответствовать Sold-to в шапке батча. 
+</li><li>Дата документа Invoice lines matching для указанной декларации должна быть раньше или равна дате батча. 
+</li><li>Документ должен быть проведен. 
+</li><li>Invoice lines matching должен быть проведен. 
+</li><li>Для соответствующей таможни должен быть прописан Vendor ID.</li></ul><p> </p></body></html>

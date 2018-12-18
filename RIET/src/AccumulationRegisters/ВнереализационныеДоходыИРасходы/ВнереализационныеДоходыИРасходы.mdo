@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6c9a1b16-83df-44d4-9121-5561dcf07aff">
+  <producedTypes>
+    <selectionType typeId="9687e512-cf3a-402f-9a34-0d2754eb8566" valueTypeId="975d21f0-d412-4dec-98d3-de4b74f22b98"/>
+    <listType typeId="ea45a6a9-c9b3-4498-982c-47b10c8de555" valueTypeId="502e2c99-7a28-4bd6-854d-5ceafbde7bf5"/>
+    <managerType typeId="d8589aae-8f71-4367-93a7-6d973b559e02" valueTypeId="c1f7159c-6f40-49b7-a471-d34ce68cf576"/>
+    <recordSetType typeId="6942804a-1526-4641-97a0-a9f88cb04a07" valueTypeId="82d9cc9c-2f28-4996-a60f-19f902cfa35f"/>
+    <recordKeyType typeId="82587296-dc52-48e6-8d41-0e6f1c807824" valueTypeId="2fd9c83f-68ba-44f6-8e52-15271994541b"/>
+    <recordType typeId="dead8c2e-a534-450c-89bd-a29a24bb45d2" valueTypeId="1a5e7e1e-3592-4855-8258-1a48805d4b9e"/>
+  </producedTypes>
+  <name>ВнереализационныеДоходыИРасходы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Внереализационные доходы и расходы</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Внереализационные доходы и расходы</value>
+  </synonym>
+  <comment></comment>
+  <resources uuid="a0ba8586-2e16-4f25-9629-f53aa78b7ab9">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="72bdb266-7d97-41d0-81bc-95b921e35227">
+    <name>СуммаUSD</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма USD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма USD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="81e6d803-e81b-4fd8-9773-160fe2d5e7bd">
+    <name>Курс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Курс</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Курс</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>4</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="62b77402-1e23-4004-bf7b-3304ad448b2d">
+    <name>НалоговыйПериод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговый период</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Налоговый период</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="21d15042-8c78-4755-916a-b19209436db6">
+    <name>ПодразделениеОрганизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение организации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Подразделение организации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a4d8af34-82b1-4550-afbb-9a5de1fa63ca">
+    <name>AU</name>
+    <synonym>
+      <key>ru</key>
+      <value>Accounting unit</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accounting unit</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b046fb54-9e83-4bc6-b647-c7a3f2883a75">
+    <name>СтатьяДоходовРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья доходов расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Статья доходов расходов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтатьиДоходовИРасходов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0f8fe792-d914-4330-8a90-17df23bf9503">
+  <name>ОтменитьПроведениеПоРегистрамОС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отменить проведение по регистрам ОС</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Отменить проведение по регистрам ОС</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ПередачаОС</types>
+    <types>DocumentObject.РазукрупнениеОС</types>
+    <types>DocumentObject.ПринятиеКУчетуОС</types>
+    <types>DocumentObject.ПеремещениеОС</types>
+    <types>DocumentObject.ВводНачальныхОстатковОС</types>
+    <types>DocumentObject.СписаниеОС</types>
+    <types>DocumentObject.МодернизацияОС</types>
+    <types>DocumentObject.ПодготовкаКПередачеОС</types>
+    <types>DocumentObject.ИзменениеПараметровНачисленияАмортизацииОС</types>
+  </source>
+  <event>UndoPosting</event>
+  <handler>CommonModule.УправлениеВнеоборотнымиАктивами.ОтменитьПроведениеПоРегистрамОСОбработкаУдаленияПроведения</handler>
+</mdclass:EventSubscription>

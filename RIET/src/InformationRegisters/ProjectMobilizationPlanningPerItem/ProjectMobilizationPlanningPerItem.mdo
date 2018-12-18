@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a240b1ca-c104-4a74-ba25-d597b1df9c89">
+  <producedTypes>
+    <selectionType typeId="b77cbcb8-711a-4b23-8b28-2866a661b756" valueTypeId="3fa0b5ac-87fd-40cd-94a5-689d16cff164"/>
+    <listType typeId="c31fdbaf-2ef0-4b73-a04e-5a8693386d8b" valueTypeId="8830676d-81af-4a17-9333-76b2ac385993"/>
+    <managerType typeId="de3d702f-dab3-457e-9494-8dda2b3cb1a1" valueTypeId="0fe36ec7-0d2e-4af3-966b-8758317c3b91"/>
+    <recordSetType typeId="ad369045-de65-4a79-8787-4250fc7f82d2" valueTypeId="dddf75e5-f9b2-453d-add9-bb28a94ecff6"/>
+    <recordKeyType typeId="5002ed58-8ffb-4f1f-a092-8ef9f4af7ced" valueTypeId="24437218-8d56-4db1-ae20-3087a83d54f1"/>
+    <recordType typeId="a6a6419a-d800-48b8-a7aa-37a6322839ba" valueTypeId="0690a8d1-9812-474a-ab2d-ae710b33d756"/>
+    <recordManagerType typeId="6f5f02b7-84a6-47c7-a560-54e9eab93c0b" valueTypeId="4c269cce-cb63-4758-8314-7e9f789cffe0"/>
+  </producedTypes>
+  <name>ProjectMobilizationPlanningPerItem</name>
+  <synonym>
+    <key>ru</key>
+    <value>Planning international</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Planning international</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>BothWays</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Planning per item</value>
+  </recordPresentation>
+  <recordPresentation>
+    <key>en</key>
+    <value>Planning per item</value>
+  </recordPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Planning per item</value>
+  </listPresentation>
+  <listPresentation>
+    <key>en</key>
+    <value>Planning per item</value>
+  </listPresentation>
+  <resources uuid="6c08a1d3-5674-437d-bb52-5a091a7daedf">
+    <name>Qty</name>
+    <synonym>
+      <key>ru</key>
+      <value>Qty</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Qty</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="14979746-1fe9-43b9-ae8b-727b7bd7acaf">
+    <name>HazardClass</name>
+    <synonym>
+      <key>ru</key>
+      <value>Hazard class</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Hazard class</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.HazardClasses</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c3c9ee0d-c45a-47d3-a9ae-a849fb90c2d7">
+    <name>ItemValue</name>
+    <synonym>
+      <key>ru</key>
+      <value>Value, USD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Value, USD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e658f8a4-0d64-4c1b-ad4e-2b1015af41e7">
+    <name>TotalItemValue</name>
+    <synonym>
+      <key>ru</key>
+      <value>Total value, USD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Total value, USD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="4638681c-78bd-4218-abfc-24a07f2431a2">
+    <name>GrossWeightKG</name>
+    <synonym>
+      <key>ru</key>
+      <value>Gross, kg</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Gross, kg</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>4</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e4590b4f-35f6-4215-971f-4610f03b88bd">
+    <name>TotalGrossWeightKG</name>
+    <synonym>
+      <key>ru</key>
+      <value>Total weight, kg.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Total weight, kg.</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>4</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="da985c33-2da8-45eb-9f99-6fd1500f0b0c">
+    <name>FreightCostPerKG</name>
+    <synonym>
+      <key>ru</key>
+      <value>Freight cost per kg, USD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Freight cost per kg, USD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>4</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="cde0b4ca-1c22-4bb8-b144-52fb7f939038">
+    <name>TotalFreightCost</name>
+    <synonym>
+      <key>ru</key>
+      <value>Total freight cost, USD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Total freight cost, USD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="60a2a184-770f-4fd5-aaba-27eef0795d6a">
+    <name>RDD</name>
+    <synonym>
+      <key>ru</key>
+      <value>RDD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>RDD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="fc69cfa6-147c-4200-a986-2c5bca90182b">
+    <name>POD</name>
+    <synonym>
+      <key>ru</key>
+      <value>POD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>POD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.CountriesHUBs</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f6a097c1-aa99-4113-bcc0-da3980a53fe2">
+    <name>MOT</name>
+    <synonym>
+      <key>ru</key>
+      <value>MOT</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>MOT</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.MOTs</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Mode of transportation</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Mode of transportation</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0d72df40-f9a8-45f9-8f6a-29f818c8d941">
+    <name>POA</name>
+    <synonym>
+      <key>ru</key>
+      <value>POA</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>POA</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.SeaAndAirPorts</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b9ddfca3-3fd3-4f7d-841d-837a1fba399d">
+    <name>Leg1Days</name>
+    <synonym>
+      <key>ru</key>
+      <value>L1: PO readiness, days</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>L1: PO readiness, days</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="094a9e42-8f16-4724-b86a-3ac643141d87">
+    <name>Leg2Days</name>
+    <synonym>
+      <key>ru</key>
+      <value>L2: Transportation from supplier to HUB, days</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>L2: Transportation from supplier to HUB, days</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>L2: Transportation from supplier to HUB, days</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>L2: Transportation from supplier to HUB, days</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e1ecdbd4-6b7d-4ed1-8baf-38954a56aa7c">
+    <name>Leg3Days</name>
+    <synonym>
+      <key>ru</key>
+      <value>L3: GOLD consolidation, days</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>L3: GOLD consolidation, days</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>L3: GOLD consolidation, days</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>L3: GOLD consolidation, days</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="912617de-1cff-46c9-a8b3-9fef97901309">
+    <name>Leg4Days</name>
+    <synonym>
+      <key>ru</key>
+      <value>L4: Green light, days</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>L4: Green light, days</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e2f7706b-76c1-4da7-a19f-cd1924a89c81">
+    <name>Leg5Days</name>
+    <synonym>
+      <key>ru</key>
+      <value>L5: Consolidation and in transit, days</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>L5: Consolidation and in transit, days</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b8f2d49d-c3f2-41d8-b5a0-f2ba1b8d72e2">
+    <name>Leg6Days</name>
+    <synonym>
+      <key>ru</key>
+      <value>L6: Customs clearance, days</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>L6: Customs clearance, days</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>L6: Customs clearance, days</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>L6: Customs clearance, days</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f2924edd-6981-4545-9367-bf853f3876a7">
+    <name>TotalLegsDays</name>
+    <synonym>
+      <key>ru</key>
+      <value>Total L1-L6, days</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Total L1-L6, days</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="06bbcf6e-00fb-4eae-94c3-dece99d0143d">
+    <name>Comments</name>
+    <synonym>
+      <key>ru</key>
+      <value>Comments</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comments</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="ddd8b7a2-d513-452a-b3f0-593335166628">
+    <name>ProjectMobilization</name>
+    <synonym>
+      <key>ru</key>
+      <value>Project</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Project</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ProjectMobilization</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="cbc0d778-eeb6-48c8-b5dd-5af2b9cf84bf">
+    <name>Item</name>
+    <synonym>
+      <key>ru</key>
+      <value>Item</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ProjectMobilizationManualItems</types>
+      <types>CatalogRef.СтрокиЗаявкиНаЗакупку</types>
+      <types>CatalogRef.СтрокиИнвойса</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d8095c41-f2a8-44c7-a783-02512f361d48">
+    <name>User</name>
+    <synonym>
+      <key>ru</key>
+      <value>User</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="eb2f3a32-7703-4413-a0c1-04b018a8a89f">
+    <name>Variant</name>
+    <synonym>
+      <key>ru</key>
+      <value>Variant</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Variant</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

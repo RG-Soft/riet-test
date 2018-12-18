@@ -1,0 +1,1851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e472462e-9e8b-460b-9cea-b80237767845">
+  <producedTypes>
+    <objectType typeId="24f36141-1042-4a07-bd09-420c731d5027" valueTypeId="b232ed8d-f116-44b8-9dc5-aace97ffc7e9"/>
+    <managerType typeId="febb1717-95a0-489c-9bb4-a9aeb2a9a211" valueTypeId="cd7d1559-b037-4057-bd34-f5c795c94c30"/>
+  </producedTypes>
+  <name>rgsМониторСопровождения_old</name>
+  <synonym>
+    <key>ru</key>
+    <value>Монитор сопровождения</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Монитор сопровождения</value>
+  </synonym>
+  <comment>Обработка подключения к Монитору сопровождения, версия 2.0.1.1 (8.2)</comment>
+  <defaultForm>DataProcessor.rgsМониторСопровождения_old.Form.Форма</defaultForm>
+  <auxiliaryForm>DataProcessor.rgsМониторСопровождения_old.Form.ФормаОбычная</auxiliaryForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="86a77cb8-f80a-4471-bb06-a2dd4d45445e">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Пользователь</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Логин пользователя для подключения к монитору сопровождения</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Логин пользователя для подключения к монитору сопровождения</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b7b1409c-41fc-4407-9782-2e620a0606c1">
+    <name>Пароль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пароль</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Пароль</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пароль пользователя для подключения к монитору сопровождения</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Пароль пользователя для подключения к монитору сопровождения</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8ec8f126-31b1-4669-9a53-7fd817c50cfe">
+    <name>АдресБазы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес базы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Адрес базы</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Web адрес информационной базы монитора сопровождения</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Web адрес информационной базы монитора сопровождения</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="470f5384-4201-408c-a271-a87e5e167e31">
+    <name>ЗагружатьЗакрытыеОтмененныеВопросы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загружать закрытые отмененные вопросы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Загружать закрытые отмененные вопросы</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак загрузки закрытых (отмененных) вопросов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Признак загрузки закрытых (отмененных) вопросов</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7920ad27-76f8-43b5-b9cb-dd126a81f60f">
+    <name>ВремяОбновления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время обновления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Время обновления</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Время для автоматического обновления в секундах</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Время для автоматического обновления в секундах</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="27b92d99-c590-4776-ba37-b4afa1beb38b">
+    <name>ОбновлятьАвтоматически</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обновлять автоматически</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Обновлять автоматически</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак автоматического обновления</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Признак автоматического обновления</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0f497124-39d3-4ed2-bb84-4ccf965ada56">
+    <name>Проект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Проект</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9e8e3ad5-fb20-411a-8393-d0d95635fb62">
+    <name>ГУИДТекПользователя</name>
+    <synonym>
+      <key>ru</key>
+      <value>ГУИДТек пользователя</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>ГУИДТек пользователя</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>40</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8785dfe2-18d8-4be5-9a2a-8e9baacfce49">
+    <name>ИмяТекПользователя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя тек пользователя</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Имя тек пользователя</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="65c8b945-3f60-45c4-ae74-41f9944ca738">
+    <name>ОтображатьТекстВопросаСЗадержкой</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отображать текст вопроса с задержкой</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Отображать текст вопроса с задержкой</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак обновления текста вопроса моментально, либо с задержкой (при низкой скорости доступа в интернет установка данного флажка делает работу со списком вопросов более удобной)</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Признак обновления текста вопроса моментально, либо с задержкой (при низкой скорости доступа в интернет установка данного флажка делает работу со списком вопросов более удобной)</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6547fe8e-54ce-4d0a-9695-c5fab3bc35a5">
+    <name>ВремяОбновленияТекстаВопроса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время обновления текста вопроса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Время обновления текста вопроса</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>1</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Задержка перед отображением текста вопроса в секундах</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Задержка перед отображением текста вопроса в секундах</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="29007f35-91b2-4f54-ac07-dc1c072aca7e">
+    <name>ТолькоМои</name>
+    <synonym>
+      <key>ru</key>
+      <value>Только мои</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Только мои</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3be56458-d8b0-498c-b49a-02a9c7641aa0">
+    <name>ПоказатьПолностью</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показать полностью</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Показать полностью</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="46e658d1-967d-4dcc-b33b-88a4a0d52350">
+    <name>ОтображатьКонтакты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отображать контакты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Отображать контакты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="54c6e6f7-1a4e-44a0-a1ce-c8e21817840b">
+    <name>ИспользоватьПомощник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать помощник</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Использовать помощник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="abd94eec-d780-4086-855a-69f08e75d358">
+    <name>НомерВерсии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер версии</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Номер версии</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="25835b11-0023-4f42-98b1-3fd1b68425a8">
+    <producedTypes>
+      <objectType typeId="0aea06a9-9d68-47ab-a966-532a36145ea5" valueTypeId="32068430-9416-45a1-ad46-1f5b32da3960"/>
+      <rowType typeId="a1bef045-3394-43ae-a8f4-859a2b842a31" valueTypeId="13c53c97-ff31-401d-8283-b62e0a98f927"/>
+    </producedTypes>
+    <name>СписокПроектовИПользователей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список проектов и пользователей</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Список проектов и пользователей</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a3e3a6c3-42fb-447b-89d5-a6cd96ec6e86">
+      <name>НаименованиеПроекта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование проекта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Наименование проекта</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="e6ab448e-afe3-499c-801c-211e32f01b5b">
+      <name>ГУИДПроекта</name>
+      <synonym>
+        <key>ru</key>
+        <value>ГУИДПроекта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ГУИДПроекта</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="80fa69ba-53db-4033-92e3-10174682fa0e">
+      <name>Описание</name>
+      <synonym>
+        <key>ru</key>
+        <value>Описание</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Описание</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>300</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="86086d2a-01da-4ab7-a850-934647e7045f">
+      <name>ГУИДПользователя</name>
+      <synonym>
+        <key>ru</key>
+        <value>ГУИДПользователя</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ГУИДПользователя</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="2456bb8d-697a-4310-9411-6c46eb20504e">
+      <name>ИмяПользователя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя пользователя</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Имя пользователя</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="3d1ce1a7-a472-4cc1-a17b-0ab6d4f4bc98">
+      <name>СторонаПользователя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сторона пользователя</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сторона пользователя</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="7ed1f29f-e0c5-4dd1-b32b-0ede5be1bf3e">
+      <name>ЯвляетсяСотрудникомПоддержки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Является сотрудником поддержки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Является сотрудником поддержки</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fdae961a-6d69-4e15-a478-b55e31e86454">
+      <name>ДобавлятьПоУмолчанию</name>
+      <synonym>
+        <key>ru</key>
+        <value>Добавлять по умолчанию</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Добавлять по умолчанию</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="26394697-262e-451b-a68e-de77f3b0fab6">
+      <name>СрокОтвета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Срок ответа</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Срок ответа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="e5a206d6-7f31-4307-a73e-848ee2f3fdb6">
+    <producedTypes>
+      <objectType typeId="40e80c2f-bd77-41e4-a1f7-a095925e1c28" valueTypeId="73b8e4fb-1c00-4aaf-9555-4af8825d60eb"/>
+      <rowType typeId="130de459-dc85-4d85-ad18-1147b9c8bd69" valueTypeId="164c94a8-0c82-4519-bdbb-ea3bb7b92247"/>
+    </producedTypes>
+    <name>РасшифровкаЗадач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка задач</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Расшифровка задач</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="e57acf70-75e5-4e04-8026-05e493accbb5">
+      <name>ГУИДЗадачи</name>
+      <synonym>
+        <key>ru</key>
+        <value>ГУИДЗадачи</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ГУИДЗадачи</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="7c9b5556-e1fc-4f5e-af34-e7fafdbc45eb">
+      <name>ВидЗадачи</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид задачи</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Вид задачи</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="bca093da-5c41-4a9b-b827-2620414af8da">
+      <name>ГУИДВидаЗадачи</name>
+      <synonym>
+        <key>ru</key>
+        <value>ГУИДВида задачи</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ГУИДВида задачи</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="9a158978-1c25-4d58-8206-13d0c3794cd2">
+      <name>ДопРеквизит1</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит1</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит1</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="ede74f87-ee9e-4c34-a01a-94a6f0146797">
+      <name>ДопРеквизит1ГУИД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит1 ГУИД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит1 ГУИД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="f6217bb4-f136-4b70-a683-f9a53e975255">
+      <name>ДопРеквизит2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит2</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит2</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="d8541ec7-00da-46ff-b171-e1161da3a03f">
+      <name>ДопРеквизит2ГУИД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит2 ГУИД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит2 ГУИД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="f6d82813-e476-468a-9920-606e6a4e12c9">
+      <name>ДопРеквизит3</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит3</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит3</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="1cbf0b4f-2ce3-480a-8b08-429344564822">
+      <name>ДопРеквизит3ГУИД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит3 ГУИД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит3 ГУИД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="422f02c0-2b35-47bf-be62-b92348959016">
+      <name>ДопРеквизит4</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит4</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит4</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="d7b1d56e-ba33-45ac-8c62-6d91b9ef1e19">
+      <name>ДопРеквизит4ГУИД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит4 ГУИД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит4 ГУИД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="c7c140f9-068f-4beb-b2a3-da53190932a8">
+      <name>ДопРеквизит5</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит5</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит5</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="6796a18b-6d2d-41c0-9c2f-418f155b29b5">
+      <name>ДопРеквизит5ГУИД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит5 ГУИД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит5 ГУИД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="9272e6c3-494c-4359-97c8-f4d150e33372">
+      <name>ДопРеквизит6</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит6</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит6</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="9f078a30-cddc-4b37-b872-0b1c9521cb0a">
+      <name>ДопРеквизит6ГУИД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит6 ГУИД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит6 ГУИД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="b7d70d07-71b3-4410-b17f-38c2939b53ba">
+      <name>ДопРеквизит7</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит7</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит7</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="b59863fd-9c6b-4234-84de-cb25f5f4db1c">
+      <name>ДопРеквизит7ГУИД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит7 ГУИД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит7 ГУИД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="64c5459a-bb07-4539-9b21-b17aed3d20a9">
+      <name>ДопРеквизит8</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит8</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит8</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="d4240776-d28d-486f-b49e-cf600f16bd9f">
+      <name>ДопРеквизит8ГУИД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит8 ГУИД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит8 ГУИД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="43e42150-3dc6-48bb-8286-5aa838ced511">
+      <name>ДопРеквизит9</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит9</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит9</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="be53e5e6-5157-4a7f-8aeb-107996769c9b">
+      <name>ДопРеквизит9ГУИД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит9 ГУИД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит9 ГУИД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="3c29e10b-52bd-4f58-a9da-a5c2315dd506">
+      <name>ДопРеквизит10</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит10</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит10</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="d369734d-3198-44ce-9416-69eff97b3d6f">
+      <name>ДопРеквизит10ГУИД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доп реквизит10 ГУИД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Доп реквизит10 ГУИД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <forms uuid="27a0d238-fbe3-4e79-a092-a7fd86940761">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="bcc5b218-cd60-4547-b772-6a2cfe22e38a">
+    <name>ФормаОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма Обычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма Обычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b734ebee-5df3-4884-83d3-70dbae185924">
+    <name>ФормаНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма настройки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма настройки</value>
+    </synonym>
+    <comment></comment>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3d476577-7e77-4728-9ee7-9836969d56bf">
+    <name>ФормаНастройкиОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма настройки обычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма настройки обычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="84b8e24a-2514-49be-93de-6fab1fab1c61">
+    <name>ФормаНовогоВопроса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма нового вопроса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма нового вопроса</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c5bf5082-98ca-4b4d-a1fd-d0cf857543a7">
+    <name>ФормаНовогоВопросаОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма нового вопроса обычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма нового вопроса обычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3dc4daac-f584-4185-a2f7-59a9909c07ea">
+    <name>ФормаОбсуждающие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма обсуждающие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма обсуждающие</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b1261bea-f305-4b75-8806-aa85eda1e63b">
+    <name>ФормаОбсуждающиеОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма обсуждающие обычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма обсуждающие обычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="70509ee3-0a8d-4ad3-9d3e-e27ad1cceca5">
+    <name>ФормаОбсуждающиеИзменение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма обсуждающие изменение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма обсуждающие изменение</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="77304db0-2495-4224-a951-20ce2da0f992">
+    <name>ФормаОбсуждающиеИзменениеОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма обсуждающие изменение обычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма обсуждающие изменение обычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="de80cfbd-d64f-4009-aa9d-661d2a78ff0d">
+    <name>ФормаКИ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма КИ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма КИ</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="919dcaca-9246-4825-88ac-d37d69c4c558">
+    <name>ФормаКИОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма КИОбычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма КИОбычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8683f075-f0e1-4a78-976e-164e3c08a6bf">
+    <name>ФормаПрисоединенныхФайлов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма присоединенных файлов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма присоединенных файлов</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a427e791-e7f8-4b09-afae-07e99eb1a07e">
+    <name>ФормаПрисоединенныхФайловОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма присоединенных файлов обычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма присоединенных файлов обычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="66fd3044-e9ae-4b5e-9e50-c596aad92a84">
+    <name>ФормаДобавленияСообщения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма добавления сообщения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма добавления сообщения</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="98dcc343-2532-469b-aeea-86962b69979d">
+    <name>ФормаДобавленияСообщенияОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма добавления сообщения обычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма добавления сообщения обычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="ac03e304-75b4-49ef-9363-dedff6e10786">
+    <name>ФормаПроверкиОрфографии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма проверки орфографии</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма проверки орфографии</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b717b4d0-213d-4ca9-be35-32a5046da0f5">
+    <name>ФормаПроверкиОрфографииОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма проверки орфографии обычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма проверки орфографии обычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="bbdb07b5-f3fb-43b2-abd2-562ee39e7ce5">
+    <name>ФормаПрикрепленныхФайлов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма прикрепленных файлов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма прикрепленных файлов</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="5fe0ae8f-3ff1-4c0b-8c5a-4344a6058308">
+    <name>ФормаПрикрепленныхФайловОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма прикрепленных файлов обычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма прикрепленных файлов обычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d56a2db3-1418-49c2-9da4-d03aca642405">
+    <name>ФормаПомощникаВводаВопроса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма помощника ввода вопроса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма помощника ввода вопроса</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a48a775f-796a-4c13-be7f-5fad8789f8b5">
+    <name>ФормаПомощникаВводаВопросаОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма помощника ввода вопроса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма помощника ввода вопроса</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="06663fa1-8350-413a-8b35-57b24c5278f7">
+    <name>ФормаКонтроляВерсий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма контроля версий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма контроля версий</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="20b66d46-e43f-451b-8965-1cead2abf26b">
+    <name>ФормаКонтроляВерсийОбычная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма контроля версий обычная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма контроля версий обычная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="424ab6d9-7828-4b80-94e0-3c4dba2ea2b7">
+    <name>ФормаПредупреждения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма предупреждения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма предупреждения</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d21d9fcb-716b-4b86-8eea-cea7a7db084b">
+    <name>ФормаВопроса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма вопроса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма вопроса</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="89e1bcf5-037b-4d38-bfc1-caa570b0a46e">
+    <name>КартинкаПрелоадера1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Картинка прелоадера1</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Картинка прелоадера1</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="41b9c68b-b47a-4f55-b310-7fc29b41f621">
+    <name>КартинкаПрелоадера2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Картинка прелоадера2</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Картинка прелоадера2</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="cc431568-3980-4fd1-abba-2e90087d7fb4">
+    <name>AMMYY</name>
+    <synonym>
+      <key>ru</key>
+      <value>AMMYY</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AMMYY</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="1a91d1be-4bde-4d5a-a677-b91c0c3e2a83">
+    <name>TinyMCE_zip</name>
+    <synonym>
+      <key>ru</key>
+      <value>TinyMCE (zip)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>TinyMCE (zip)</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="c82bcef6-30de-4af9-9b74-833db19a0680">
+    <name>TinyMCE_txt</name>
+    <synonym>
+      <key>ru</key>
+      <value>TinyMCE (txt)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>TinyMCE (txt)</value>
+    </synonym>
+    <comment></comment>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="ec786565-01d8-4d25-b7ad-eee88ae71778">
+    <name>КартинкаВыполнитьЗадачу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Картинка выполнить задачу</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Картинка выполнить задачу</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="f32e2220-bb4c-4633-8ef4-6d8a836e2162">
+    <name>КартинкаВыполнитьЧастично</name>
+    <synonym>
+      <key>ru</key>
+      <value>Картинка выполнить частично</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Картинка выполнить частично</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="c21f41f4-569d-4188-b410-8c34c4f060bd">
+    <name>Иконка_Кнопки_Галочка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Иконка кнопки галочка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Иконка кнопки галочка</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="001281aa-9cb3-48ac-b591-2c9c9d7c505a">
+    <name>Иконка_Кнопки_Домик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Иконка кнопки домик</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Иконка кнопки домик</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="7ac0d9b9-b91b-4304-aaab-d37f5c679ec6">
+    <name>Иконка_Кнопки_Крестик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Иконка кнопки крестик</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Иконка кнопки крестик</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="2c7415ba-a390-44d1-adf7-e07981665739">
+    <name>Иконка_Кнопки_Крестик_Щит</name>
+    <synonym>
+      <key>ru</key>
+      <value>Иконка кнопки крестик щит</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Иконка кнопки крестик щит</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="3a7c2ef1-f8e4-4849-931d-d6a684df39eb">
+    <name>Иконка_Кнопки_Смайлик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Иконка кнопки смайлик</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Иконка кнопки смайлик</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="88db00c6-056a-4905-bc45-c99a420c1bc5">
+    <name>Иконка_Кнопки_Стрелочка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Иконка кнопки стрелочка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Иконка кнопки стрелочка</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+</mdclass:DataProcessor>

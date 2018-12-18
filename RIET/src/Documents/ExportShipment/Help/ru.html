@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16540"></meta></head><body>
+<h1>Документ "Export shipment"</h1>
+<p>Документ входит в подсистемы <a href="Subsystem.ImportExport.Subsystem.Export/Help">"Export"</a>, <a href="Subsystem.CustomsAccounting.Subsystem.CustomsDocuments/Help">"Customs documents"</a>, <a href="Subsystem.CustomsAccounting.Subsystem.ShipmentClosing/Help">"Shipment closing"</a> и <a href="Subsystem.Services/Help">"Services"</a>.</p>
+<p>Документ предназначен для отражения консолидированной поставки заявок на экспорт.<br>Консолидация заявок на экспорт позволяет оформлять одну декларацию на товары на несколько заявок на экспорт, а также осуществлять перевозку грузов по этим заявкам в одном контейнере.</p>
+<p>Документ можно ввести на основании заявки на экспорт, при этом эта заявка добавится в таблицу "Export requests".</p>
+<h2>Реквизиты шапки</h2>
+<ul><li>
+<div><strong>No.</strong> (строка) - автоматически присваеваемый уникальный номер документа.</div>
+</li><li>
+<div><strong>Consignee</strong> (справочник Shippers) - автоматически заполняемый из заявок на экспорт получатель грузов.</div>
+</li><li>
+<div><strong>CCA</strong> (справочник Agents) - автоматически заполняемый из заявок на экспорт получатель грузов.</div>
+</li><li>
+<div><strong>Int. freight agent</strong> (справочник Freight forwarders) - автоматически заполняемый из заявок на экспорт получатель грузов.</div>
+</li><li>
+<div><strong>POD</strong> (справочник Sea and AirPorts) - автоматически заполняемый из заявок на экспорт получатель грузов.</div>
+</li><li>
+<div><strong>International MOT</strong> (справочник MOTs) - автоматически заполняемый из заявок на экспорт способ международной транспортировки.</div>
+</li><li>
+<div><strong>POA</strong> (справочник HUBs / Countries) - автоматически заполняемый из заявок на экспорт страна назначения грузов.</div>
+</li><li>
+<div><strong>Shipping invoice ready</strong> (дата)</div>
+</li><li>
+<div><strong>Consignee GL requested</strong> (дата)</div>
+</li><li>
+<div><strong>Consignee GL received</strong> (дата)</div>
+</li><li>
+<div><strong>Submitted to customs</strong> (дата)</div>
+</li><li>
+<div><strong>Released from customs</strong> (дата)</div>
+</li><li>
+<div><strong>International ETD</strong> (дата)</div>
+</li><li>
+<div><strong>International ATD</strong> (дата)</div>
+</li><li>
+<div><strong>Pre alert sent</strong> (дата)</div>
+</li><li>
+<div><strong>International ETA</strong> (дата)</div>
+</li><li>
+<div><strong>International ATA</strong> (дата)</div>
+</li><li>
+<div><strong>International WB1-4</strong> (строка)</div>
+</li><li>
+<div><strong>Export requests no.</strong> (строка) - список, в котором система автоматически перечисляет номера заявок на экспорт.<br>Это удобно для поиска нужного документа в списке.</div>
+</li><li>
+<div><strong>Created by</strong> (справочник Users) - пользователь, который создал документ.</div>
+</li><li>
+<div><strong>Date</strong> (дата и время) - дата создания документа.</div>
+</li><li>
+<div><strong>Modified by</strong> (справочник Users) - пользователь, который внес последние интерактивные изменения.</div>
+</li><li>
+<div><strong>Modification date</strong> (дата и время) - дата последнего интерактивного изменения документа.</div></li></ul><h2>Таблица "Export requests"</h2>
+<p>В таблице перечисляются заявки на экспорт, которые входят в текущую экспортную поставку.</p>
+<ul><li>
+<div><strong>Export request</strong> (документ Export request)<br>Система автоматически удаляет пустые и дублирующиеся строки.<br>Export request не может быть отмененным.<br>В Export request должно быть заполнено поле Accepted.<br>Следующие реквизиты заявок должны совпадать с одноименными реквизитами шапки: Consignee, CCA, International freight agent, POD, Int. MOT и POA.<br>Export request не может входить в другую экспортную поставку.<br>Система позволяет добавить в таблицу сразу несколько заявок на экспорт, при этом она накладывает фильтры, описанные выше.</div></li></ul><h3>
+<h3 align="justify">Проведение (для разработчиков)</h3></h3>
+<p align="justify">При наступлении события Submitted to customs для каждого товара добавляется приход по <a href="AccumulationRegister.ExportItemsWithoutCustomsFiles/Help">регистру накопления Export items without customs files</a>. Приход означает, что товар нужно привязать к декларации.<br></p></body></html>

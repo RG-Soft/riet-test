@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ba5d9393-6a49-49ab-b438-0b1158f2eee0">
+  <producedTypes>
+    <objectType typeId="b1377163-6ddc-4141-a5ab-7da3e1b2268f" valueTypeId="b903ade1-845f-4670-b07a-57a9ac1c6e19"/>
+    <managerType typeId="cf2a3a3d-6a64-4773-b9ef-7c7ffa302619" valueTypeId="bcd64ac6-117f-4d72-aacb-e17977fda230"/>
+  </producedTypes>
+  <name>ОбменЭлектроннымиДокументамиСБанком</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обмен электронными документами с банком</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Обмен электронными документами с банком</value>
+  </synonym>
+  <comment>Обмен электронными документами с банком</comment>
+  <defaultForm>DataProcessor.ОбменЭлектроннымиДокументамиСБанком.Form.ФормаОбработки</defaultForm>
+  <attributes uuid="7dbf4762-7634-449d-ab28-782d7a68e186">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Организация</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1216713f-edad-4a5e-8187-f6a25568f418">
+    <name>Банк</name>
+    <synonym>
+      <key>ru</key>
+      <value>Банк</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Банк</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Банк</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Банк</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c89985da-ee7a-4198-a4a5-84177f232697">
+    <name>НастройкаЭДО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка ЭДО</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Настройка ЭДО</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СоглашенияОбИспользованииЭД</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Соглашение об обмене с банком</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Соглашение об обмене с банком</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3b35c1b3-372e-4bac-91c5-9c6fa7b6efcc">
+    <name>БанковскийСчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Банковский счет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Банковский счет</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Банковский счет</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Банковский счет</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="2ab70093-a24c-48fb-a7d5-9f88980d623b">
+    <producedTypes>
+      <objectType typeId="bfa48076-49f2-4155-8f7f-16fc7389f7f2" valueTypeId="b7e7762a-1293-48fb-9c84-be69a047cada"/>
+      <rowType typeId="aa9ff431-9211-4ff0-8875-67bac405434b" valueTypeId="f36e199d-a5b0-4c35-8bcf-bf83f7fcfa7a"/>
+    </producedTypes>
+    <name>Выписки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выписки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Выписки</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="d29f30c5-784d-4676-a860-d8589841de0d">
+      <name>СчетОрганизации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет организации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Счет организации</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Счет организации</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Счет организации</value>
+      </toolTip>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="392bb18c-7fa4-43bf-b8a6-c0577b2bf605">
+      <name>ДатаОтправки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата отправки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Дата отправки</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Дата отправки запроса выписки</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Дата отправки запроса выписки</value>
+      </toolTip>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3ae59979-382b-4194-a1cf-958c9784f7c0">
+      <name>ВыпискаБанка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Выписка банка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Выписка банка</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ЭДПрисоединенныеФайлы</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Электронный документ выписки банка</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Электронный документ выписки банка</value>
+      </toolTip>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="a4619243-cb84-4f5d-b664-9dea860c3bbf">
+    <name>ВыборСертификата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор сертификата</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Выбор сертификата</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f0008b24-71d3-49ae-9aec-61a5debba3e5">
+    <name>ВыборХранилища</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор хранилища</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Выбор хранилища</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="05fc7bb9-63f4-4014-92fe-8b77e9d561c4">
+    <name>ЗапросPINКода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запрос PIN кода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Запрос PIN кода</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="38c2f3e5-e7a0-4b54-bc0a-bc7faad779f2">
+    <name>ЗапросВБанк</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запрос в банк</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Запрос в банк</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a87b558f-c319-45bc-805a-75f7da3c0975">
+    <name>ЗапросДанныхАутентификацииСбербанк</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запрос данных аутентификации Сбербанк</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Запрос данных аутентификации Сбербанк</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a0b061a9-06a7-4536-8667-046781b69564">
+    <name>ЗапросПароляКСертификату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Введите пароль закрытого ключа сертификата</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Введите пароль закрытого ключа сертификата</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e787530a-785b-41ec-ade3-4c720d6078b6">
+    <name>ПодтверждениеПлатежныхПорученийПоSMS</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подтверждение платежных поручений по SMS</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Подтверждение платежных поручений по SMS</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a41f7f19-4ee5-496e-b2ea-e1188712305e">
+    <name>ПолучениеНастроекИзБанка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аутентификация на сервере банка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Аутентификация на сервере банка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="20f4370e-63fb-4586-a75f-8e73e06682ac">
+    <name>ПолучениеСертификата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получение доступа к сертификату ключа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Получение доступа к сертификату ключа</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="64cfe4cf-988a-4e35-bb10-fb78f9b21a1d">
+    <name>РасширеннаяАутентификацияПоSMS</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расширенная аутентификация по SMS</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Расширенная аутентификация по SMS</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0ac90324-ad49-4572-9732-dae256df3a2a">
+    <name>ФормаОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма обработки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма обработки</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="3160f4c0-0b25-43a0-8cdc-0c5f65a504b4">
+    <name>iBank2Library</name>
+    <synonym>
+      <key>ru</key>
+      <value>iBank2 Library</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>iBank2 Library</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="d14d0730-3e87-448d-b2d8-9ddd5e2721c1">
+    <name>infocrypt_sbrf_native</name>
+    <synonym>
+      <key>ru</key>
+      <value>Infocrypt sbrf native</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Infocrypt sbrf native</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="cd83a8e9-3687-4f44-968a-c1d61d8891e2">
+    <name>SBRFServiceProxy</name>
+    <synonym>
+      <key>ru</key>
+      <value>SBRFServiceProxy</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>SBRFServiceProxy</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <commands uuid="641fa999-26c6-4de2-be34-01b36a648eaf">
+    <name>АктуальныйЭД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Актуальный электронный документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Актуальный электронный документ</value>
+    </synonym>
+    <comment></comment>
+    <group>FormNavigationPanelImportant</group>
+    <commandParameterType/>
+    <representation>PictureAndText</representation>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="2e361dd5-a018-4fd5-8350-4a43c076c054">
+    <name>ОбменЭлектроннымиДокументамиСБанком</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обмен электронными документами с банком</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Обмен электронными документами с банком</value>
+    </synonym>
+    <comment></comment>
+    <group>ActionsPanelTools</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="11e7bd97-978e-40f7-9902-12eb384e4ce8">
+    <name>ОткрытьАктуальныйЭД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Просмотреть электронный документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Просмотреть электронный документ</value>
+    </synonym>
+    <comment></comment>
+    <group>CommandGroup.ЭД</group>
+    <commandParameterType/>
+    <representation>PictureAndText</representation>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.ОткрытьВыбранныйФайл</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="ca680c44-0ae2-4819-9569-5cd113713a45">
+    <name>Разобрать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разобрать</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Разобрать</value>
+    </synonym>
+    <comment></comment>
+    <group>FormNavigationPanelImportant</group>
+    <commandParameterType/>
+    <representation>PictureAndText</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Разобрать выписку</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Разобрать выписку</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.ReadChanges</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="352a4e40-4be1-497a-a870-dc34eb78bbd5">
+    <name>СписокЭД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Открыть электронные документы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Открыть электронные документы</value>
+    </synonym>
+    <comment></comment>
+    <group>CommandGroup.ЭД</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Список электронных документов по документу ИБ</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Список электронных документов по документу ИБ</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.Подсистема</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="319cad94-c2a0-42ca-808e-da0b21c33fd3">
+    <name>СформироватьПодписатьОтправитьЭД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сформировать, подписать и отправить</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сформировать, подписать и отправить</value>
+    </synonym>
+    <comment></comment>
+    <group>CommandGroup.ЭД</group>
+    <commandParameterType/>
+    <parameterUseMode>Multiple</parameterUseMode>
+    <representation>PictureAndText</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Сформировать, подписать и отправить электронный документ контрагенту</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Сформировать, подписать и отправить электронный документ контрагенту</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.ЭлектронноеПисьмоИсходящее</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="faade4f3-6f31-4769-aaad-09b429289d93">
+    <name>СформироватьЭД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать электронный документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Создать электронный документ</value>
+    </synonym>
+    <comment></comment>
+    <group>CommandGroup.ЭД</group>
+    <commandParameterType/>
+    <parameterUseMode>Multiple</parameterUseMode>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Сформировать новый электронный документ по документу ИБ</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Сформировать новый электронный документ по документу ИБ</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.CreateListItem</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="fdd59918-2a5a-4d92-bdf3-602a819eebea">
+    <name>ВыполнитьОбменСБанком</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выполнить обмен с банком</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Выполнить обмен с банком</value>
+    </synonym>
+    <comment></comment>
+    <group>ActionsPanelTools</group>
+    <commandParameterType/>
+    <representation>PictureAndText</representation>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.СинхронизацияДанных</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:DataProcessor>

@@ -1,0 +1,228 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.slb.com/RIET/Leg7">
+	<valueType name="ItemNo" base="xs:string" minLength="1" maxLength="30"/>
+	<valueType name="ParcelNo" base="xs:string" minLength="1" maxLength="30"/>
+	<valueType name="TripNo" base="xs:string" minLength="9" maxLength="9"/>
+	<valueType name="ServiceNo" base="xs:string" minLength="1" maxLength="12"/>
+	<valueType name="LegalEntityDesc" base="xs:string" minLength="1" maxLength="100"/>
+	<valueType name="GUID" base="xs:string" maxLength="36"/>
+	<valueType name="WarehouseNo" base="xs:string" minLength="1" maxLength="50"/>
+	<valueType name="ServiceProviderNo" base="xs:string" minLength="1" maxLength="50"/>
+	<valueType name="ServiceProviderDesc" base="xs:string" minLength="1" maxLength="50"/>
+	<valueType name="EquipmentNo" base="xs:string" minLength="1" maxLength="50"/>
+	<valueType name="WarehouseDesc" base="xs:string" minLength="1" maxLength="100"/>
+	<valueType name="AUDesc" base="xs:string" minLength="1" maxLength="50"/>
+	<valueType name="AUNo" base="xs:string" minLength="1" maxLength="7"/>
+	<valueType name="BorgDesc" base="xs:string" minLength="1" maxLength="50"/>
+	<valueType name="BorgNo" base="xs:string" minLength="1" maxLength="4"/>
+	<valueType name="ParentCompanyNo" base="xs:string" minLength="1" maxLength="50"/>
+	<valueType name="ParentCompanyDesc" base="xs:string" minLength="1" maxLength="100"/>
+	<valueType name="ParentCompanyNameRus" base="xs:string" maxLength="100"/>
+	<valueType name="LegalEntityNameRus" base="xs:string" maxLength="150"/>
+	<objectType name="Leg7Reports">
+		<property name="ReportsDate" type="xs:dateTime"/>
+		<property name="MessageNoRIET" type="xs:int"/>
+		<property name="MessageNoSP" type="xs:int"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="InternationalInboundReport" type="d3p1:InternationalInboundReport" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="WarehouseInboundReport" type="d3p1:WarehouseInboundReport" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="DraftTripsReport" type="d3p1:DraftTripsReport" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="FinalTripsReport" type="d3p1:FinalTripsReport" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="ChangesReport" type="d3p1:ChangesReport" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="ServiceReport" type="d3p1:ServiceReport" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="AdditionalInfo" type="d3p1:AdditionalInfo" lowerBound="0"/>
+	</objectType>
+	<objectType name="InternationalInboundReport">
+		<property name="Warehouse" type="xs:string"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Parcel" type="d3p1:Parcel" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="WarehouseInboundReport">
+		<property name="Warehouse" type="xs:string"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="DeliveredParcel" type="d3p1:DeliveredParcel" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="DraftTripsReport">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="DraftTrips" type="d3p1:DraftTrip" upperBound="-1"/>
+	</objectType>
+	<objectType name="FinalTripsReport">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="FinalTrips" type="d3p1:FinalTrip" upperBound="-1"/>
+	</objectType>
+	<objectType name="DraftTrip">
+		<property name="Draft" type="xs:date"/>
+		<property name="ETD" type="xs:date"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="DestinationETA" type="d3p1:DestinationETA" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Trip" type="d3p1:BaseTrip"/>
+	</objectType>
+	<objectType name="FinalTrip">
+		<property name="Final" type="xs:date"/>
+		<property name="ATD" type="xs:date"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="DestinationETA" type="d3p1:DestinationETA" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Trip" type="d3p1:BaseTrip"/>
+		<property name="EquipmentNo" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="BaseTrip">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="No" type="d3p1:TripNo"/>
+		<property name="WarehouseFrom" type="xs:string"/>
+		<property name="ServiceProvider" type="xs:string"/>
+		<property name="Equipment" type="xs:string"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Parcel" type="d3p1:Parcel" upperBound="-1"/>
+		<property name="Comment" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="DeliveredParcel">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Parcel" type="d3p1:Parcel"/>
+		<property name="DeliveryDate" type="xs:date"/>
+	</objectType>
+	<objectType name="Parcel">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="GUIDRIET" type="d3p1:GUID"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="GUIDSP" type="d3p1:GUID"/>
+		<property name="Canceled" type="xs:boolean" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="No" type="d3p1:ParcelNo" nillable="false"/>
+		<property name="ShipmentATA" type="xs:date" lowerBound="0"/>
+		<property name="DOCNo" type="xs:string" lowerBound="0"/>
+		<property name="MOT" type="xs:string" lowerBound="0"/>
+		<property name="ImportHouseWB" type="xs:string" lowerBound="0"/>
+		<property name="ImportWB2" type="xs:string" lowerBound="0"/>
+		<property name="ImportWB3" type="xs:string" lowerBound="0"/>
+		<property name="ImportWB4" type="xs:string" lowerBound="0"/>
+		<property name="WarehouseTo" type="xs:string"/>
+		<property name="NumOfParcels" type="xs:int"/>
+		<property name="SerialNo" type="xs:string" lowerBound="0"/>
+		<property name="PackingType" type="xs:string"/>
+		<property name="Length" type="xs:decimal"/>
+		<property name="LengthCorrected" type="xs:decimal"/>
+		<property name="Width" type="xs:decimal"/>
+		<property name="WidthCorrected" type="xs:decimal"/>
+		<property name="Height" type="xs:decimal"/>
+		<property name="HeightCorrected" type="xs:decimal"/>
+		<property name="DIMsUOM" type="xs:string"/>
+		<property name="CubicMeters" type="xs:decimal" lowerBound="0"/>
+		<property name="GrossWeight" type="xs:decimal"/>
+		<property name="GrossWeightCorrected" type="xs:decimal"/>
+		<property name="GrossWeightUOM" type="xs:string"/>
+		<property name="HazardClass" type="xs:string"/>
+		<property name="Repacked" type="xs:boolean"/>
+		<property name="Comment" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Item" type="d3p1:Item" upperBound="-1"/>
+	</objectType>
+	<objectType name="Item">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="GUIDRIET" type="d3p1:GUID"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="GUIDSP" type="d3p1:GUID"/>
+		<property name="ImportLocal" type="xs:string"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="No" type="d3p1:ItemNo"/>
+		<property name="ParentCompany" type="xs:string"/>
+		<property name="LegalEntity" type="xs:string" lowerBound="0"/>
+		<property name="PONo" type="xs:string" lowerBound="0"/>
+		<property name="PartNo" type="xs:string"/>
+		<property name="SerialNo" type="xs:string" lowerBound="0"/>
+		<property name="Description" type="xs:string"/>
+		<property name="Qty" type="xs:decimal"/>
+		<property name="QtyUOM" type="xs:string"/>
+		<property name="NetWeight" type="xs:decimal" lowerBound="0"/>
+		<property name="NetWeightUOM" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="DestinationETA">
+		<property name="WarehouseTo" type="xs:string"/>
+		<property name="LegalEntity" type="xs:string" lowerBound="0"/>
+		<property name="SoldTo" type="xs:string" lowerBound="0"/>
+		<property name="BORG" type="xs:string" lowerBound="0"/>
+		<property name="CREW" type="xs:string" lowerBound="0"/>
+		<property name="Waybill" type="xs:string" lowerBound="0"/>
+		<property name="ETA" type="xs:date" lowerBound="0"/>
+		<property name="ATA" type="xs:date" lowerBound="0"/>
+	</objectType>
+	<objectType name="ChangesReport">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="ChangedParcel" type="d3p1:ChangedParcel" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="ChangedFinalTrip" type="d3p1:FinalTrip" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ChangedParcel">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Parcel" type="d3p1:Parcel"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Warehouse" type="d3p1:WarehouseNo"/>
+	</objectType>
+	<objectType name="ServiceCatalog">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="No" type="d3p1:ServiceNo"/>
+	</objectType>
+	<objectType name="Service">
+		<property name="Date" type="xs:date"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="ServiceCatalog" type="d3p1:ServiceCatalog"/>
+		<property name="Base" type="xs:decimal"/>
+		<property name="Percent" type="xs:decimal" nillable="true"/>
+		<property name="Price" type="xs:decimal"/>
+		<property name="Qty" type="xs:int" nillable="true"/>
+		<property name="Discount" type="xs:decimal" nillable="true"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Trip" type="d3p1:TripNo" nillable="true"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Parcel" type="d3p1:ParcelNo" nillable="true"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="LegalEntity" type="d3p1:LegalEntityDesc" nillable="true"/>
+		<property name="FinalDestination" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="ServiceReport">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Services" type="d3p1:Service" upperBound="-1"/>
+	</objectType>
+	<objectType name="AdditionalInfo">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="BORGs" type="d3p1:BORG" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="ParentCompanies" type="d3p1:ParentCompany" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="AUs" type="d3p1:AU" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Warehouses" type="d3p1:Warehouse" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="LegalEntities" type="d3p1:LegalEntity" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Equipments" type="d3p1:Equipment" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="ServiceProviders" type="d3p1:ServiceProvider" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Users" type="d3p1:User" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="BORG">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="No" type="d3p1:BorgNo"/>
+		<property name="Canceled" type="xs:boolean" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Description" type="d3p1:BorgDesc"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="AUGUID" type="d3p1:GUID"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="WarehouseGUID" type="d3p1:GUID"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="LegalEntityGUID" type="d3p1:GUID"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="ParentCompanyGUID" type="d3p1:GUID"/>
+	</objectType>
+	<objectType name="AU">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="GUIDRIET" type="d3p1:GUID"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="No" type="d3p1:AUNo"/>
+		<property name="Canceled" type="xs:boolean" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Description" type="d3p1:AUDesc"/>
+	</objectType>
+	<objectType name="Warehouse">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="GUIDRIET" type="d3p1:GUID"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="No" type="d3p1:WarehouseNo"/>
+		<property name="Canceled" type="xs:boolean"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Description" type="d3p1:WarehouseDesc"/>
+		<property name="City" type="xs:string"/>
+		<property name="Address1" type="xs:string"/>
+		<property name="Address2" type="xs:string"/>
+		<property name="Address3" type="xs:string"/>
+		<property name="AddressRus" type="xs:string"/>
+		<property name="ContactName" type="xs:string"/>
+		<property name="ContactPhone" type="xs:string"/>
+		<property name="ContactEMail" type="xs:string"/>
+	</objectType>
+	<objectType name="LegalEntity">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="GUIDRIET" type="d3p1:GUID"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Description" type="d3p1:LegalEntityDesc"/>
+		<property name="Canceled" type="xs:boolean" lowerBound="0"/>
+		<property name="SoldToAddress" type="xs:string"/>
+		<property name="SoldToAddressRus" type="xs:string"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="NameRus" type="d3p1:LegalEntityNameRus"/>
+	</objectType>
+	<objectType name="Equipment">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="No" type="d3p1:EquipmentNo"/>
+		<property name="Canceled" type="xs:boolean" lowerBound="0"/>
+		<property name="EffectiveWeight" type="xs:double"/>
+		<property name="MOTList" type="xs:string"/>
+	</objectType>
+	<objectType name="ServiceProvider">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="No" type="d3p1:ServiceProviderNo"/>
+		<property name="Canceled" type="xs:boolean" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Description" type="d3p1:ServiceProviderDesc"/>
+	</objectType>
+	<objectType name="User">
+		<property name="Alias" type="xs:string"/>
+		<property name="Canceled" type="xs:boolean" lowerBound="0"/>
+		<property name="FullName" type="xs:string"/>
+		<property name="EMail" type="xs:string"/>
+	</objectType>
+	<objectType name="ParentCompany">
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="GUIDRIET" type="d3p1:GUID"/>
+		<property name="Canceled" type="xs:boolean" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="No" type="d3p1:ParentCompanyNo"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="Description" type="d3p1:ParentCompanyDesc"/>
+		<property xmlns:d3p1="http://www.slb.com/RIET/Leg7" name="NameRus" type="d3p1:ParentCompanyNameRus"/>
+	</objectType>
+</package>

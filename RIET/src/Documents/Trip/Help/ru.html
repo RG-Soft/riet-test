@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16441"></meta></head><body>
+<h1>Документ "Trip"</h1>
+<p>Документ "Trip" входит в <a href="Subsystem.LocalDistribution/Help">подсистему "Local distribution"</a>.<br>Предназначен для отражения локальной транспортировки <a href="Catalog.Parcels/Help">грузовых мест</a>.</p>
+<p>Консолидация <a href="Catalog.Parcels/Help">грузовых мест</a> для локальной траспортировки происходит в <a href="CommonForm.OLDLocalDistributionDesktop/Help">специальной форме "Local distribution desktop"</a>.</p>
+<p>В новом документе указывается способ перевозки, планируемая и фактическая дата отправления, список <a href="Catalog.Parcels/Help">грузовых мест</a>, а также планируемые даты прибытия в конечные точки маршрута.</p>
+<p>Далее информация по грузовым местам отправляется на склад.</p>
+<p>После подтверждения склада документ проводится и данные выгружаются в систему "Move it". Нельзя выгрузить помеченный на удаление Trip.</p>
+<h2>Реквизиты шапки</h2>
+<ul><li><strong>No</strong> (строка) - номер документа, присваивается системой автоматически. 
+</li><li><strong>For deletion</strong> (булево) - признак того, что документ помечен на удаление. 
+</li><li><strong>Warehouse from </strong>(справочник Destination points)<br>Обязательный для заполнения реквизит. <br>Warehouse from не должен быть помечен на удаление. 
+</li><li><strong>Sub MOT</strong> (справочник Sub MOTs) - mode of transportation. <br>Обязательный для заполнения реквизит.<br>Sub MOT не должен быть помечен на удаление. 
+</li><li><strong>ETD</strong> (дата) - estimated time of departure.<br>Обязательный для заполнения реквизит. 
+</li><li><strong>ATD</strong> (дата) - actual time of departure.<br>Обязательный для заполнения реквизит.<br>Не может быть позже текущей даты.<br>Не может быть позже "Sent to Move it". 
+</li><li><strong>Waybill</strong> (строка)<br>Обязательный для заполнения реквизит. 
+</li><li><strong>Sent to warehouse</strong> (дата) - дата отправки на склад информации для отгрузки.<br>Реквизит не редактирвется, а заполняется автоматически при нажатии на кнопку "Sent to warehouse".<br>Не может быть позже "Sent to Move-it". 
+</li><li><strong>Sent to move it</strong> (дата) - дата отправки данных в систему "Move it".<br>Реквизит не редактируется, а заполняется автоматически при нажатии на кнопку "Sent to move it". 
+</li><li>
+<div><strong>Gross weight, kg.</strong> (число) - общий вес всех парселей, заполняется системой автоматически.</div>
+</li><li>
+<div><strong>Сubic meters</strong> (число) - общий объем всех парселей, заполняется системой автоматически.</div>
+</li><li>
+<div><strong>Created by</strong> (справочник Users) - пользователь, создавший документ, заполняется системой автоматически.</div>
+</li><li>
+<div><strong>Creation date</strong> (дата и время) - время создания документа, заполняется системой автоматически.</div>
+</li><li>
+<div><strong>Modified by</strong> (справочник Users) - пользователь, внесший последние изменения в документ, заполняется системой автоматически.</div>
+</li><li>
+<div><strong>Modification date</strong> (дата и время) - время последнего изменения документа, заполняется системой автоматически.</div></li></ul><h3>Таблица "Parcels"</h3>
+<p>В таблице "Parcels" перечисляются грузовые места, которые относятся к текущему документу. </p>
+<ul><li><strong>Parcel</strong> (справочник Parcels)<br>Обязательный для заполнения реквизит (система автоматически удаляет пустые строки).<br>Грузовые места не должны повторяться (система автоматически удаляет дубли).<br>Грузовые места не должны быть указаны в других Trips.<br>В грузовых местах не должно быть признака Repacked, должна стоять галочка Final.<br>Warehouse from в грузовых местах должен соответствовать одноименному реквизиту шапки.<br>При ручном выборе система автоматически накладывает необходимые фильтры. 
+</li><li>Справочно отображаются следующие реквизиты: length, cm., width, cm., height, cm., gross weight, kg., cubic meters, warehouse to, PO list, hazard class, description.<br>Кроме того в итогах таблицы показывается общий вес и объем.</li></ul><p>При добавлении строки в таблицу открывается список грузовых мест, которые еще не вошли ни в один документ "Trip", но которые уже проверены и включены в Shipment на этап "Delivered to warehouse". <br>Двойное клик по грузовому месту открывает форму этого грузового места.<br>Кнопки изменения грузового места нет: для изменения необходимо удалить старое грузовое место и добавить новое.<br><br>Если заполнены Sent to warehouse и Sent to move it, список Parcels не должен быть пустым. Импортные parcels должны быть collected from port.</p>
+<h3>Таблица "Final destinations"</h3>
+<p>В таблице "Final destinations" отображается список всех конечных точек маршрута, а также указываются планируемые даты прибытия.</p>
+<p>Пользователь не может добавить или удалить строку из этой таблицы, так как система автоматически определяет список конечных точек маршрута при изменении состава грузовых мест.</p>
+<ul><li>
+<div><strong>Warehouse to</strong> (справочник Destination points)<br>Реквизит не редактируется, а определяется автоматически из грузовых мест.<br>Значение Warehouse to не должно совпадать со значением Warehouse from.</div>
+</li><li>
+<div><strong>ETA</strong> (дата) - estimated time of arrival<br>Обязательный для заполнения реквизит.<br>Не может быть раньше ATD.</div></li></ul></body></html>

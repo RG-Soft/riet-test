@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ea761c7d-cf99-4265-88e9-43f4a3bfa321">
+  <producedTypes>
+    <objectType typeId="3ee03ad2-c707-49f3-b784-b395cecb463d" valueTypeId="4a6b8cc0-312c-4204-8c22-c075fa7fc1a1"/>
+    <managerType typeId="ee3bb323-3958-4d70-8712-27c7c5678717" valueTypeId="fa97ad1d-c173-4912-9b36-108a0e04d49d"/>
+  </producedTypes>
+  <name>УстановкаНомеровГТДВСКП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установка номеров ГТД в счетах книги покупок </value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Установка номеров ГТД в счетах книги покупок </value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.УстановкаНомеровГТДВСКП.Form.Форма</defaultForm>
+  <attributes uuid="fa2edaff-ac65-4ab3-9a7f-394cbddfce04">
+    <name>ПериодС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата СКП с</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Дата СКП с</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="49181d6b-8faa-4ad8-860a-de810a3febb8">
+    <name>ПериодПо</name>
+    <synonym>
+      <key>ru</key>
+      <value>по</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>по</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="4df00137-1bba-4cb4-818c-60251865e688">
+    <producedTypes>
+      <objectType typeId="7dfb8da3-7e27-4db2-b80e-701136e3593e" valueTypeId="c460db0f-8048-4e0f-a1c7-5d14e2fe59d2"/>
+      <rowType typeId="d31ba655-f4c5-4766-872b-cdb29ba20065" valueTypeId="63abf528-8627-478e-a749-0825f65c02ba"/>
+    </producedTypes>
+    <name>ТаблицаСоответствий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица соответствий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Таблица соответствий</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="0547385b-2eb9-4d03-b99c-164770d98bad">
+      <name>Выбор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Выбор</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Выбор</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a2f8e3f1-46f0-435c-88ed-f440adc661db">
+      <name>СчетКнигиПокупок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет книги покупок</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Счет книги покупок</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.СчетКнигиПокупок</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="763629b3-e00a-406e-be03-564bce15a96b">
+      <name>ГТД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs file / Customs File (light)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs file / Customs File (light)</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.CustomsFilesLight</types>
+        <types>DocumentRef.ГТД</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c4abae2d-80df-4464-810c-400aae7ed069">
+      <name>ИмяДокумента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя документа</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Имя документа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>20</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="86b71418-d7a9-488c-a4e3-cb67344050dc">
+      <name>КоличествоСоответствий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество соответствий</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Количество соответствий</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="58294755-becb-410b-b9ac-a0de34045251">
+    <producedTypes>
+      <objectType typeId="688a735b-3a26-4101-b600-463269594705" valueTypeId="43800aba-87b9-47da-873a-4914a564b617"/>
+      <rowType typeId="0cb457d3-1dd6-4a96-bf22-12e301e39b27" valueTypeId="e1327e76-3daf-4e8c-9843-3dcd3a863c07"/>
+    </producedTypes>
+    <name>ТаблицаКорректных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица корректных</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Таблица корректных</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="80cf4df0-bb42-45d8-91e7-7b9a97c4b05d">
+      <name>СчетКнигиПокупок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет книги покупок</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Счет книги покупок</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.СчетКнигиПокупок</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="34d3165b-8ac1-4e4a-8334-04a2dc12447c">
+      <name>ГТД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs file / Customs File (light)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs file / Customs File (light)</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.CustomsFilesLight</types>
+        <types>DocumentRef.ГТД</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="7f396f43-fa99-4a4e-8222-40345f313143">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

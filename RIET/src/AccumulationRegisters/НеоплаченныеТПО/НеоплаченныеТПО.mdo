@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6352bd40-9858-46f0-bb5d-85dfd445fc90">
+  <producedTypes>
+    <selectionType typeId="41f02e73-c42c-428c-aa9d-a9ec527d3824" valueTypeId="baf95e4b-e3a4-435c-bcfc-b13d0c1637e5"/>
+    <listType typeId="25a25ab4-92c3-4b75-aabf-8681d04e9ce1" valueTypeId="89c7e561-e10c-4031-bd7d-e380d1886f1f"/>
+    <managerType typeId="123529f0-7820-4f8e-af9f-e73fef8070ac" valueTypeId="cab2376b-1d01-40f0-89e3-cb80c12e3635"/>
+    <recordSetType typeId="89deb701-53f4-49a6-bbcd-8c70e9bfcd25" valueTypeId="2563a4e8-649f-4e54-928d-7b818977f91b"/>
+    <recordKeyType typeId="8d51d819-7142-4f2d-a112-77e6cdb54329" valueTypeId="5f0bd882-1410-41e2-a33a-4060af2fab4a"/>
+    <recordType typeId="fa9f4db4-081f-4234-af97-e072bce740ea" valueTypeId="580630e2-7c06-4455-ac3a-391a6ec08db5"/>
+  </producedTypes>
+  <name>НеоплаченныеТПО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Неоплаченные ТПО</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Неоплаченные ТПО</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="0e5e5ade-9ded-4ead-99e4-b40edf83aba9">
+    <name>Sum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sum</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <markNegatives>true</markNegatives>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="f88b72ba-9590-44bc-a0bd-b4065c775dd2">
+    <name>ТПО</name>
+    <synonym>
+      <key>ru</key>
+      <value>ТПО</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>ТПО</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.CustomsFilesLight</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="05836cfd-b809-4e25-9569-e2bb387c5aed">
+    <name>PaymentKind</name>
+    <synonym>
+      <key>ru</key>
+      <value>Payment kind</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment kind</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>4</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

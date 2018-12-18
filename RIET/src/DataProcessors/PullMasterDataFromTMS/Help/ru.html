@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 8.00.7601.18094"></meta></head><body>
+<h1>Обработка Pull master data from TMS</h1>
+<p>Обработка предназначена для получения данных из TMS:</p>
+<ul><li>
+<div>контактные данные</div>
+</li><li>
+<div>данные локаций</div>
+</li><li>
+<div>данные номенклатуры</div>
+</li><li>
+<div>Order release by Order base</div></li></ul><p>Обработка входит в <a href="Subsystem.ImportExport.Subsystem.TMS/Help">подсистему TMS</a>.</p>
+<p>ВНИМАНИЕ!</p>
+<p>WSDL файл с описанием веб-сервиса TMS был вручную исправлен и положен на наш веб-сервер сюда C:\inetpub\wwwroot<br>Дело в том, что TMS может присылать невалидные ответы, при этом 1ска падает.<br>Чтобы 1ска не падала мы вручную исправили WSDL файл, так как команда TMS исправить эту ошибку не смогла.<br>Список исправлений:</p>
+<ul><li>закомментирована строчка<br>&lt;xsd:element name="PERSPECTIVE" type="xsd:string"/&gt;<br>так как элемент Perspective уже определен выше, просто имеет строчные буквы, а 1с не различает этого. 
+</li><li>закомментирована строчка<br>&lt;xsd:element name="DESCRIPTION" type="xsd:string"/&gt;<br>по той же причине</li></ul></body></html>

@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>GoodCatalogDescriptionRus</dataPath>
+			<field>GoodCatalogDescriptionRus</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>GoodКод</dataPath>
+			<field>GoodКод</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>GoodНаименование</dataPath>
+			<field>GoodНаименование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>GoodStandardUOM</dataPath>
+			<field>GoodStandardUOM</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ед.изм.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Ед.изм.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номер</dataPath>
+			<field>Номер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГТДДата</dataPath>
+			<field>ГТДДата</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата ГТД</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Дата ГТД</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Инвойс</dataPath>
+			<field>Инвойс</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвойс</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Инвойс</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период списания</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Период списания</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=MM/yy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПиО</dataPath>
+			<field>ПиО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ на покупку (PO # )</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Заказ на покупку (PO # )</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цена</dataPath>
+			<field>Цена</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Quantity</dataPath>
+			<field>Quantity</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Кол-во</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Sum</dataPath>
+			<field>Sum</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарии</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Комментарии</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата сч.фактуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Дата сч.фактуры</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПроведения</dataPath>
+			<field>ДатаПроведения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата проведения реализации</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Дата проведения реализации</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Реализация</dataPath>
+			<field>Реализация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата проведения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Дата проведения</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ДатаПроведения</presentationExpression>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетФактура</dataPath>
+			<field>СчетФактура</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер сч.фактуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Номер сч.фактуры</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>Номер</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Good</dataPath>
+			<field>Good</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование (Русс.)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Наименование (Русс.)</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<presentationExpression>GoodCatalogDescriptionRus</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Good1</dataPath>
+			<field>Good1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование (Англ.)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Наименование (Англ.)</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<presentationExpression>GoodНаименование</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Good2</dataPath>
+			<field>Good2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инв. Номер(PN)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Инв. Номер(PN)</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<presentationExpression>GoodКод</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументСписания</dataPath>
+			<field>ДокументСписания</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РеализацияТоваровУслуг.Ссылка КАК Ссылка,
+	РеализацияТоваровУслуг.Ссылка.Дата,
+	НАЧАЛОПЕРИОДА(РеализацияТоваровУслуг.Ссылка.ДатаПроведения, ДЕНЬ) КАК ДатаПроведения
+ПОМЕСТИТЬ Реализации
+ИЗ
+	Документ.РеализацияТоваровУслуг КАК РеализацияТоваровУслуг
+ГДЕ
+	РеализацияТоваровУслуг.Ссылка.ДатаПроведения МЕЖДУ &amp;НачалоПериода И КОНЕЦПЕРИОДА(&amp;КонецПериода, ДЕНЬ)
+	И РеализацияТоваровУслуг.Ссылка.Проведен = ИСТИНА
+	И РеализацияТоваровУслуг.Ссылка.СуммаДокумента &gt; 0
+	И РеализацияТоваровУслуг.ПодразделениеОрганизации = &amp;НалоговаяРегистрация
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	InventoryПоступлениеGoods.Ссылка,
+	InventoryПоступлениеGoods.Good,
+	ВЫБОР
+		КОГДА НЕ ПОДСТРОКА(InventoryПоступлениеGoods.PONumber, 1, 1) = " "
+			ТОГДА InventoryПоступлениеGoods.PONumber
+		ИНАЧЕ InventoryПоступлениеGoods.Ссылка.PONumber
+	КОНЕЦ КАК PONumber
+ПОМЕСТИТЬ НомераПиО
+ИЗ
+	Документ.InventoryПоступление.Goods КАК InventoryПоступлениеGoods
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	InventoryКорректировкаGoods.Ссылка,
+	InventoryКорректировкаGoods.Good,
+	ВЫБОР
+		КОГДА НЕ ПОДСТРОКА(InventoryКорректировкаGoods.PoNumber, 1, 1) = " "
+			ТОГДА InventoryКорректировкаGoods.PoNumber
+		ИНАЧЕ InventoryКорректировкаGoods.Ссылка.PoNumber
+	КОНЕЦ
+ИЗ
+	Документ.InventoryКорректировка.Goods КАК InventoryКорректировкаGoods
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Sum
+			ИНАЧЕ -InventoryBatches.Sum
+		КОНЕЦ) КАК Sum,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryКорректировка
+				И InventoryBatches.Регистратор.InventoryСписание &lt;&gt; ЗНАЧЕНИЕ(Документ.InventoryСписание.ПустаяСсылка)
+			ТОГДА InventoryBatches.Регистратор.InventoryСписание
+		ИНАЧЕ InventoryBatches.Регистратор
+	КОНЕЦ КАК ДокументСписания,
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Quantity
+			ИНАЧЕ -InventoryBatches.Quantity
+		КОНЕЦ) КАК Quantity,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToRepairClientOwned)
+				ИЛИ InventoryBatches.Регистратор.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToRepairSLBOwned)
+				ИЛИ InventoryBatches.Регистратор.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToService)
+				ИЛИ InventoryBatches.Регистратор.InventoryСписание.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToRepairClientOwned)
+				ИЛИ InventoryBatches.Регистратор.InventoryСписание.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToRepairSLBOwned)
+				ИЛИ InventoryBatches.Регистратор.InventoryСписание.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToService)
+			ТОГДА " Ремонт с использованием запчастей"
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryКорректировка
+				И InventoryBatches.Регистратор.InventoryСписание = ЗНАЧЕНИЕ(Документ.InventoryСписание.ПустаяСсылка)
+			ТОГДА " Списание материалов"
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryКорректировка
+				И InventoryBatches.Регистратор.InventoryСписание &lt;&gt; ЗНАЧЕНИЕ(Документ.InventoryСписание.ПустаяСсылка)
+			ТОГДА InventoryBatches.Регистратор.InventoryСписание
+		ИНАЧЕ InventoryBatches.Регистратор
+	КОНЕЦ КАК Операция,
+	InventoryBatches.Good,
+	НомераПиО.PONumber КАК ПиО
+ПОМЕСТИТЬ СписанияИзРегистра
+ИЗ
+	РегистрНакопления.InventoryBatches КАК InventoryBatches
+		ЛЕВОЕ СОЕДИНЕНИЕ НомераПиО КАК НомераПиО
+		ПО InventoryBatches.Batch = НомераПиО.Ссылка
+			И InventoryBatches.Good = НомераПиО.Good
+ГДЕ
+	InventoryBatches.AU.Сегмент.Родитель.Родитель = &amp;ALS
+	И InventoryBatches.Fiscal
+	И InventoryBatches.FiscalPeriod МЕЖДУ &amp;НачалоПериода И КОНЕЦПЕРИОДА(&amp;КонецПериода, ДЕНЬ)
+	И InventoryBatches.TaxRegistration = &amp;НалоговаяРегистрация
+	И ВЫБОР
+			КОГДА НЕ &amp;ПоказатьСОтменой
+				ТОГДА ВЫБОР
+						КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryКорректировка
+								И InventoryBatches.Регистратор.InventoryСписание &lt;&gt; ЗНАЧЕНИЕ(Документ.InventoryСписание.ПустаяСсылка)
+							ТОГДА ЛОЖЬ
+						ИНАЧЕ ИСТИНА
+					КОНЕЦ
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ
+
+СГРУППИРОВАТЬ ПО
+	InventoryBatches.Good,
+	НомераПиО.PONumber,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryКорректировка
+				И InventoryBatches.Регистратор.InventoryСписание &lt;&gt; ЗНАЧЕНИЕ(Документ.InventoryСписание.ПустаяСсылка)
+			ТОГДА InventoryBatches.Регистратор.InventoryСписание
+		ИНАЧЕ InventoryBatches.Регистратор
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToRepairClientOwned)
+				ИЛИ InventoryBatches.Регистратор.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToRepairSLBOwned)
+				ИЛИ InventoryBatches.Регистратор.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToService)
+				ИЛИ InventoryBatches.Регистратор.InventoryСписание.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToRepairClientOwned)
+				ИЛИ InventoryBatches.Регистратор.InventoryСписание.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToRepairSLBOwned)
+				ИЛИ InventoryBatches.Регистратор.InventoryСписание.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToService)
+			ТОГДА " Ремонт с использованием запчастей"
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryКорректировка
+				И InventoryBatches.Регистратор.InventoryСписание = ЗНАЧЕНИЕ(Документ.InventoryСписание.ПустаяСсылка)
+			ТОГДА " Списание материалов"
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryКорректировка
+				И InventoryBatches.Регистратор.InventoryСписание &lt;&gt; ЗНАЧЕНИЕ(Документ.InventoryСписание.ПустаяСсылка)
+			ТОГДА InventoryBatches.Регистратор.InventoryСписание
+		ИНАЧЕ InventoryBatches.Регистратор
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(СписанияИзРегистра.Sum) КАК Sum,
+	СписанияИзРегистра.ДокументСписания,
+	СписанияИзРегистра.Операция,
+	СписанияИзРегистра.Good,
+	СУММА(СписанияИзРегистра.Quantity) КАК Quantity,
+	СписанияИзРегистра.ПиО
+ПОМЕСТИТЬ СписанияИзРегистраСвернутаяПоНоменклатуре
+ИЗ
+	СписанияИзРегистра КАК СписанияИзРегистра
+
+СГРУППИРОВАТЬ ПО
+	СписанияИзРегистра.ДокументСписания,
+	СписанияИзРегистра.Операция,
+	СписанияИзРегистра.Good,
+	СписанияИзРегистра.ПиО
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	InventoryСписаниеGoods.Ссылка,
+	СУММА(InventoryСписаниеGoods.Quantity) КАК Quantity,
+	InventoryСписаниеGoods.Реализация,
+	InventoryСписаниеGoods.Good
+ПОМЕСТИТЬ СтрокиСписанияСРеализациями
+ИЗ
+	Документ.InventoryСписание.Goods КАК InventoryСписаниеGoods
+ГДЕ
+	InventoryСписаниеGoods.Ссылка.Проведен = ИСТИНА
+	И НЕ InventoryСписаниеGoods.Реализация = ЗНАЧЕНИЕ(Документ.РеализацияТоваровУслуг.ПустаяСсылка)
+	И InventoryСписаниеGoods.Ссылка.НалоговыйПериод МЕЖДУ &amp;НачалоПериода И КОНЕЦПЕРИОДА(&amp;КонецПериода, ДЕНЬ)
+	И InventoryСписаниеGoods.Ссылка.TaxRegistration = &amp;НалоговаяРегистрация
+	И InventoryСписаниеGoods.AU.Сегмент.Родитель.Родитель = &amp;ALS
+
+СГРУППИРОВАТЬ ПО
+	InventoryСписаниеGoods.Реализация,
+	InventoryСписаниеGoods.Ссылка,
+	InventoryСписаниеGoods.Good
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СтрокиСписанияСРеализациями.Ссылка,
+	СУММА(СтрокиСписанияСРеализациями.Quantity) КАК Quantity,
+	СтрокиСписанияСРеализациями.Good
+ПОМЕСТИТЬ СтрокиСписанияСРеализациямиСвернутые
+ИЗ
+	СтрокиСписанияСРеализациями КАК СтрокиСписанияСРеализациями
+
+СГРУППИРОВАТЬ ПО
+	СтрокиСписанияСРеализациями.Ссылка,
+	СтрокиСписанияСРеализациями.Good
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СписанияИзРегистраСвернутаяПоНоменклатуре.Good,
+	СтрокиСписанияСРеализациями.Реализация,
+	СписанияИзРегистраСвернутаяПоНоменклатуре.ДокументСписания,
+	СписанияИзРегистраСвернутаяПоНоменклатуре.Операция,
+	СписанияИзРегистраСвернутаяПоНоменклатуре.ПиО,
+	СУММА(ВЫБОР
+			КОГДА СтрокиСписанияСРеализациямиСвернутые.Quantity ЕСТЬ NULL 
+					ИЛИ СтрокиСписанияСРеализациямиСвернутые.Quantity = 0
+				ТОГДА СписанияИзРегистраСвернутаяПоНоменклатуре.Sum
+			ИНАЧЕ СписанияИзРегистраСвернутаяПоНоменклатуре.Sum * СтрокиСписанияСРеализациями.Quantity / СтрокиСписанияСРеализациямиСвернутые.Quantity
+		КОНЕЦ) КАК Sum,
+	СУММА(ВЫБОР
+			КОГДА СтрокиСписанияСРеализациямиСвернутые.Quantity ЕСТЬ NULL 
+					ИЛИ СтрокиСписанияСРеализациямиСвернутые.Quantity = 0
+				ТОГДА СписанияИзРегистраСвернутаяПоНоменклатуре.Quantity
+			ИНАЧЕ СписанияИзРегистраСвернутаяПоНоменклатуре.Quantity * СтрокиСписанияСРеализациями.Quantity / СтрокиСписанияСРеализациямиСвернутые.Quantity
+		КОНЕЦ) КАК Quantity
+ПОМЕСТИТЬ СписанияИзРегистраСРеализациями
+ИЗ
+	СписанияИзРегистраСвернутаяПоНоменклатуре КАК СписанияИзРегистраСвернутаяПоНоменклатуре
+		ЛЕВОЕ СОЕДИНЕНИЕ СтрокиСписанияСРеализациями КАК СтрокиСписанияСРеализациями
+			ЛЕВОЕ СОЕДИНЕНИЕ СтрокиСписанияСРеализациямиСвернутые КАК СтрокиСписанияСРеализациямиСвернутые
+			ПО СтрокиСписанияСРеализациями.Good = СтрокиСписанияСРеализациямиСвернутые.Good
+				И СтрокиСписанияСРеализациями.Ссылка = СтрокиСписанияСРеализациямиСвернутые.Ссылка
+		ПО СписанияИзРегистраСвернутаяПоНоменклатуре.Good = СтрокиСписанияСРеализациями.Good
+			И СписанияИзРегистраСвернутаяПоНоменклатуре.ДокументСписания = СтрокиСписанияСРеализациями.Ссылка
+
+СГРУППИРОВАТЬ ПО
+	СтрокиСписанияСРеализациями.Реализация,
+	СписанияИзРегистраСвернутаяПоНоменклатуре.ДокументСписания,
+	СписанияИзРегистраСвернутаяПоНоменклатуре.Операция,
+	СписанияИзРегистраСвернутаяПоНоменклатуре.Good,
+	СписанияИзРегистраСвернутаяПоНоменклатуре.ПиО
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЕСТЬNULL(СписанияИзРегистраСРеализациями.Реализация, Реализации.Ссылка) КАК Реализация,
+	СписанияИзРегистраСРеализациями.ДокументСписания,
+	СписанияИзРегистраСРеализациями.Операция,
+	СписанияИзРегистраСРеализациями.Sum,
+	СписанияИзРегистраСРеализациями.Good,
+	СписанияИзРегистраСРеализациями.Quantity,
+	СписанияИзРегистраСРеализациями.ПиО
+ПОМЕСТИТЬ СписанияИзРегистраСРеализациямиБезНулевыхСтрок
+ИЗ
+	СписанияИзРегистраСРеализациями КАК СписанияИзРегистраСРеализациями
+		ПОЛНОЕ СОЕДИНЕНИЕ Реализации КАК Реализации
+		ПО СписанияИзРегистраСРеализациями.Реализация = Реализации.Ссылка
+ГДЕ
+	ВЫБОР
+			КОГДА СписанияИзРегистраСРеализациями.Реализация ЕСТЬ NULL 
+				ТОГДА СписанияИзРегистраСРеализациями.Sum &lt;&gt; 0
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СписанияИзРегистраСРеализациямиБезНулевыхСтрок.ДокументСписания,
+	СписанияИзРегистраСРеализациямиБезНулевыхСтрок.Операция,
+	СписанияИзРегистраСРеализациямиБезНулевыхСтрок.Sum,
+	СписанияИзРегистраСРеализациямиБезНулевыхСтрок.Good,
+	СчетФактураВыданный.Номер,
+	СчетФактураВыданный.Дата,
+	СчетФактураВыданный.Ссылка,
+	СписанияИзРегистраСРеализациямиБезНулевыхСтрок.Quantity,
+	СписанияИзРегистраСРеализациямиБезНулевыхСтрок.ПиО,
+	СписанияИзРегистраСРеализациямиБезНулевыхСтрок.Реализация,
+	СписанияИзРегистраСРеализациямиБезНулевыхСтрок.Реализация.ДатаПроведения КАК ДатаПроведения
+ПОМЕСТИТЬ ТаблицаИтоговаяСоСчетомФактурой
+ИЗ
+	СписанияИзРегистраСРеализациямиБезНулевыхСтрок КАК СписанияИзРегистраСРеализациямиБезНулевыхСтрок
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.СчетФактураВыданный КАК СчетФактураВыданный
+		ПО СписанияИзРегистраСРеализациямиБезНулевыхСтрок.Реализация = СчетФактураВыданный.ДокументОснование
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(ЗакрытиеПоставкиСопоставление.ТоварСтрокиГТД.Владелец.ГТД.Дата) КАК ГТДДата,
+	МАКСИМУМ(ЗакрытиеПоставкиСопоставление.СтрокаИнвойса.Инвойс.Номер) КАК Инвойс,
+	ЗакрытиеПоставкиСопоставление.СтрокаИнвойса.СтрокаЗаявкиНаЗакупку.Владелец КАК ПиО
+ПОМЕСТИТЬ PO
+ИЗ
+	Документ.ЗакрытиеПоставки.Сопоставление КАК ЗакрытиеПоставкиСопоставление
+ГДЕ
+	ЗакрытиеПоставкиСопоставление.СтрокаИнвойса.СтрокаЗаявкиНаЗакупку.Владелец В
+			(ВЫБРАТЬ
+				ТаблицаИтоговаяСоСчетомФактурой.ПиО
+			ИЗ
+				ТаблицаИтоговаяСоСчетомФактурой КАК ТаблицаИтоговаяСоСчетомФактурой)
+
+СГРУППИРОВАТЬ ПО
+	ЗакрытиеПоставкиСопоставление.СтрокаИнвойса.СтрокаЗаявкиНаЗакупку.Владелец
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	PO.Инвойс,
+	PO.ГТДДата,
+	ТаблицаИтоговаяСоСчетомФактурой.Good.Наименование,
+	ТаблицаИтоговаяСоСчетомФактурой.Good.DescriptionRus КАК GoodCatalogDescriptionRus,
+	ТаблицаИтоговаяСоСчетомФактурой.Good.Код,
+	ТаблицаИтоговаяСоСчетомФактурой.Good.StandardUOM,
+	ТаблицаИтоговаяСоСчетомФактурой.Quantity,
+	ТаблицаИтоговаяСоСчетомФактурой.Sum,
+	ТаблицаИтоговаяСоСчетомФактурой.Номер,
+	ТаблицаИтоговаяСоСчетомФактурой.Дата КАК Дата,
+	ВЫБОР
+		КОГДА ТаблицаИтоговаяСоСчетомФактурой.ДокументСписания ССЫЛКА Документ.InventoryСписание
+			ТОГДА НАЧАЛОПЕРИОДА(ТаблицаИтоговаяСоСчетомФактурой.ДокументСписания.НалоговыйПериод, КВАРТАЛ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(ТаблицаИтоговаяСоСчетомФактурой.ДокументСписания.Дата, КВАРТАЛ)
+	КОНЕЦ КАК Период,
+	ВЫБОР
+		КОГДА ТаблицаИтоговаяСоСчетомФактурой.Quantity = 0
+			ТОГДА ТаблицаИтоговаяСоСчетомФактурой.Sum
+		ИНАЧЕ ТаблицаИтоговаяСоСчетомФактурой.Sum / ТаблицаИтоговаяСоСчетомФактурой.Quantity
+	КОНЕЦ КАК Цена,
+	ТаблицаИтоговаяСоСчетомФактурой.ПиО,
+	ТаблицаИтоговаяСоСчетомФактурой.Операция КАК Комментарий,
+	ТаблицаИтоговаяСоСчетомФактурой.Реализация,
+	ТаблицаИтоговаяСоСчетомФактурой.ДатаПроведения,
+	ТаблицаИтоговаяСоСчетомФактурой.Ссылка КАК СчетФактура,
+	ТаблицаИтоговаяСоСчетомФактурой.Good,
+	ТаблицаИтоговаяСоСчетомФактурой.Good КАК Good1,
+	ТаблицаИтоговаяСоСчетомФактурой.Good КАК Good2,
+	ТаблицаИтоговаяСоСчетомФактурой.ДокументСписания
+ИЗ
+	ТаблицаИтоговаяСоСчетомФактурой КАК ТаблицаИтоговаяСоСчетомФактурой
+		ЛЕВОЕ СОЕДИНЕНИЕ PO КАК PO
+		ПО ТаблицаИтоговаяСоСчетомФактурой.ПиО = PO.ПиО
+
+УПОРЯДОЧИТЬ ПО
+	Комментарий,
+	Период,
+	Дата</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ВидПродаж</dataPath>
+		<expression>ВЫБОР КОГДА Комментарий = " Ремонт с использованием запчастей" ТОГДА "2. Ремонт с использованием запчастей" КОГДА Комментарий = " Списание материалов" ТОГДА "3. Списание материалов"  ИНАЧЕ "1. Продажи" КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид продаж</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Вид продаж</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>Sum</dataPath>
+		<expression>Сумма(Sum)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Quantity</dataPath>
+		<expression>Сумма(Quantity)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ALS</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ALS</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>ALS</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Сегменты</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.Сегменты.ПустаяСсылка</value>
+		<useRestriction>true</useRestriction>
+		<expression>Справочники.Сегменты.НайтиПоКоду("ALS")</expression>
+	</parameter>
+	<parameter>
+		<name>НалоговаяРегистрация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Налоговая регистрация</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Налоговая регистрация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ПодразделенияОрганизаций.ПустаяСсылка</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПоказатьСОтменой</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Показать с отменой</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Показать с отменой</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Комментарий</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Период</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДокументСписания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СчетФактура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Дата</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Реализация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ГТДДата</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Инвойс</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПиО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Good1</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Good</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Good2</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>GoodStandardUOM</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Цена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Quantity</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Sum</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>568f0ea4-97d4-4518-a2ea-5e5c49c01e53</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>b8014dfc-7ab9-41fe-9196-d17747e3dedb</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НалоговаяРегистрация</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.ПодразделенияОрганизаций.ПустаяСсылка</dcscor:value>
+					<dcsset:userSettingID>2cc600e4-b5e9-4204-8452-6caebbfabd4c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПоказатьСОтменой</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>24efb07e-276c-4b7b-97d9-a97cd2ac0df5</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Комментарий</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">32</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ВидПродаж</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

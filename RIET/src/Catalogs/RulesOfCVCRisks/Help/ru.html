@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16443"></meta></head><body>
+<h1>Справочник "Rules of CVC risks"</h1>
+<p>Справочник "Rules of CVC risks" входит в подсистему <a href="Subsystem.ImportExport.Subsystem.Import.Subsystem.CVCRisks/Help">"CVC risks"</a>.<br>Предназначен для описания правил поиска товаров с высокими рисками корректировки таможенной стоимости.</p>
+<p>Существуют 2 типа правил:</p>
+<ol><li>Part number = some part number, то есть поиск товаров по точному совпадению парт номера. 
+</li><li>Description = *some part of description*, то есть поиск таких товаров, у которых в описании содержится указанная последовательность символов.</li></ol><p>Для каждого правила описываются детали (каков предполагаемый размер корректировки, какой код ТН ВЭД и др.).</p>
+<p>Для удобства правила могут быть объединены в группы.</p>
+<h2>Реквизиты шапки</h2>
+<ul><li><strong>Code</strong> (строка) - автоматически формируемый код правила. 
+</li><li><strong>For deletion</strong> (булево) - признак того, что это правило будет удалено. 
+</li><li><strong>Field</strong> (перечисление Fields for rules of CVC risks) - поле, по которому будет происходить поиск (Part number или Description). Обязательное для заполнения поле, если правило не помечено на удаление. 
+</li><li><strong>Value</strong> (строка) - искомая последовательность символов.<br>Обязательное для заполнения поле, если правило не помечено на удаление. 
+</li><li><strong>Customs demand</strong> (число) - предполагаемый размер корректировки.<br>Обязательное для заполнения поле, если правило не помечено на удаление. 
+</li><li><strong>Currency</strong> (справочник Currencies)<br>Обязательное для заполнения поле, если правило не помечено на удаление. 
+</li><li><strong>Goods description </strong>(строка)<br>Обязательное для заполнения поле, если правило не помечено на удаление. 
+</li><li><strong>Created by</strong> (справочник Users) - пользователь, создавший правило.<br>Заполняется автоматически. 
+</li><li><strong>Creation date</strong> (дата) - дата создания правила.<br>Заполняется автоматически. 
+</li><li><strong>Modified by</strong> (справочник Users) - пользователь, выполнивший последние интерактивные изменения в правиле.<br>Заполняется автоматически. 
+</li><li><strong>Modification date</strong> (дата) - дата последнего интерактивного изменения правила.<br>Заполняется автоматически. </li></ul><h2>Таблица "POAs"</h2>
+<p>В таблице перечисляются порты, на которые распространяется это правило.<br>Если не указан ни один порт - правило распространяется на все порты.</p>
+<ul><li><strong>POA</strong> (справочник Sea and air ports) - point of arrival<br>Система автоматически удаляет пустые и повторяющиеся строки. </li></ul></body></html>

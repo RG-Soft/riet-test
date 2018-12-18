@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="adb3fec9-af35-40ea-9694-fdf3cf045f28">
+  <producedTypes>
+    <objectType typeId="79c1329e-a417-4483-8722-a79009d58774" valueTypeId="095d40f8-35c9-4c83-984f-e1571cecef3c"/>
+    <refType typeId="3440ab8e-ec10-46c4-af09-7339e6403b8f" valueTypeId="c2b11753-87f5-4801-81e3-c1e0532ac71a"/>
+    <selectionType typeId="33646f51-687d-4180-bd2b-32dc1e2c9912" valueTypeId="6b827986-b03f-4833-86c1-1feabb4a30bd"/>
+    <listType typeId="7db5b63d-ef21-4385-b8f4-1efb1161c422" valueTypeId="a0a87a40-b13a-45f2-9d15-6fa63168fcf7"/>
+    <managerType typeId="f6edb14f-2ff9-4319-ae8b-a6b64c22e6c0" valueTypeId="1bf41c04-1464-4b4e-9887-8dac3c5688bb"/>
+  </producedTypes>
+  <name>УтверждениеКН</name>
+  <synonym>
+    <key>ru</key>
+    <value>Утверждение КН</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Утверждение КН</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Task.УтверждениеКН.StandardAttribute.Description</inputByString>
+  <inputByString>Task.УтверждениеКН.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <numberLength>5</numberLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <taskNumberAutoPrefix>DontUse</taskNumberAutoPrefix>
+  <descriptionLength>50</descriptionLength>
+  <addressing>InformationRegister.АдресацияУведомлений</addressing>
+  <mainAddressingAttribute>Task.УтверждениеКН.AddressingAttribute.Исполнитель</mainAddressingAttribute>
+  <currentPerformer>SessionParameter.ТекущийПользователь</currentPerformer>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <defaultObjectForm>Task.УтверждениеКН.Form.ФормаЗадачи</defaultObjectForm>
+  <defaultListForm>Task.УтверждениеКН.Form.ФормаСписка</defaultListForm>
+  <auxiliaryObjectForm>Task.УтверждениеКН.Form.ФормаЗадачиУправляемая</auxiliaryObjectForm>
+  <attributes uuid="8f28163a-ee84-44e1-9fad-3369a7bc7852">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Статус</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.СтатусыУтвержденияЗадач</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3362ef37-528a-4eda-ac54-016c9053a0fc">
+    <name>Описание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Описание</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="620580da-60d0-4452-b1d3-abe07dab9678">
+    <name>КредитНота</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кредит нота</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Кредит нота</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ac75a05c-0ff3-4875-9a3d-c7c00eb00bb0">
+    <name>Утверждать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Утверждать</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Утверждать</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3f3e4845-5c18-4281-a65c-0f62b35e28d9">
+    <name>ДатаПроведения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата проведения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Дата проведения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="268b00c0-0ae7-4445-a270-ad699647a876">
+    <name>ПровестиНаДатуКредитНоты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Провести кредит-ноту на дату</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Провести кредит-ноту на дату</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="1aa55634-111b-4a13-8825-742dd9192fbc">
+    <name>ФормаЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма задачи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма задачи</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0034b7e8-c4b3-4635-816a-eb7f9e043b3d">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c5554a15-4a97-424c-8b71-3e2bc281a167">
+    <name>ФормаЗадачиУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма задачи управляемая</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма задачи управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <addressingAttributes uuid="57fd1f6e-fd29-4ccc-92b0-7e53ed8afb54">
+    <name>ИнвойсинговыйЦентр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инвойсинговый центр</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Инвойсинговый центр</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ИнвойсинговыеЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <addressingDimension>InformationRegister.АдресацияУведомлений.Dimension.АналитикаАдресации</addressingDimension>
+    <fullTextSearch>Use</fullTextSearch>
+  </addressingAttributes>
+  <addressingAttributes uuid="8f44fa37-d8db-49a6-bb75-8663cbd54b51">
+    <name>Исполнитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исполнитель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Исполнитель</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <addressingDimension>InformationRegister.АдресацияУведомлений.Dimension.Исполнитель</addressingDimension>
+    <fullTextSearch>Use</fullTextSearch>
+  </addressingAttributes>
+  <addressingAttributes uuid="f2247b0f-5355-462e-8b9c-945bf7e8f949">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <addressingDimension>InformationRegister.АдресацияУведомлений.Dimension.ОтветственноеЛицо</addressingDimension>
+    <fullTextSearch>Use</fullTextSearch>
+  </addressingAttributes>
+</mdclass:Task>

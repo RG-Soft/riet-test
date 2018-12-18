@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cb6f08d2-a5aa-4247-91e7-5c7ef4ae82af">
+  <producedTypes>
+    <objectType typeId="db0555fb-69d3-416b-9ae0-20868287c2a3" valueTypeId="6c1a334e-0047-4ffc-bbb6-3dd2ada0a4cf"/>
+    <refType typeId="6b30760d-8c3f-4284-a2ab-0923b04813d9" valueTypeId="832db1a0-2326-4b57-951f-1b5d491c3d9f"/>
+    <selectionType typeId="0bfbb9f3-1e27-4f92-93d6-3af6d9311f24" valueTypeId="9e7d4b8c-c3e0-459f-9490-c2720cabf60f"/>
+    <listType typeId="53212eb8-a560-445c-9177-f635c155dad8" valueTypeId="975e9c76-c486-48b5-b06c-8f7c9a21ee93"/>
+    <managerType typeId="c975d2d3-120c-4515-9407-8a96da7676f5" valueTypeId="8244e608-cb49-4b33-b727-db2d644c9688"/>
+  </producedTypes>
+  <name>TR_Adjustment</name>
+  <synonym>
+    <key>ru</key>
+    <value>Корректировка заявки</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>TR adjustment</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.TR_Adjustment.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <basedOn>Document.TransportRequest</basedOn>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.TR_Adjustment.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.TR_Adjustment.Form.ФормаСписка</defaultListForm>
+  <registerRecords>AccumulationRegister.ParcelsOfTransportRequestsWithoutShipment</registerRecords>
+  <attributes uuid="c6b3e007-5a93-445e-9704-4d72c0f1641f">
+    <name>TR</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка на доставку</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transport request</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.TransportRequest</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="294e1a49-dac5-4cb5-a5cf-e5adc90efa71">
+    <name>Comments</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comments</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3de22360-e866-403f-892f-207c56a94c09">
+    <name>CreatedBy</name>
+    <synonym>
+      <key>ru</key>
+      <value>Created by</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Created by</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3aa5be1a-aa29-40e2-96d2-4c0a58a7a250">
+    <name>CreationDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Creation date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Creation date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2364713a-3c79-4b66-a2bf-028d1fee879f">
+    <name>ModifiedBy</name>
+    <synonym>
+      <key>ru</key>
+      <value>Modified by</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Modified by</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ca2b9f4c-394c-4fcb-95e0-7040e53bdaf3">
+    <name>ModificationDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Modification date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Modification date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="bd78d4ce-3060-444f-8a27-24ae6ed9565f">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1d2cf0cb-f2c7-4b53-b574-80ebd4a2c1f8">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="34b8bf5d-e9b3-42fc-a7a7-0f955e8ceb34">
+    <producedTypes>
+      <objectType typeId="900fd3ef-8427-4140-8a50-7d0bc1b91cec" valueTypeId="a30962b7-c0ee-4a9c-a3aa-4b03a5ce25ec"/>
+      <rowType typeId="50a39739-11b3-4f17-847c-89826f7393b6" valueTypeId="7c7e9b09-8eed-451f-9302-8f683a501f87"/>
+    </producedTypes>
+    <name>Parcels</name>
+    <synonym>
+      <key>ru</key>
+      <value>Parcels</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Parcels</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="ecadde4a-423a-40f5-81d7-b06ff4c2fada">
+      <name>Parcel</name>
+      <synonym>
+        <key>ru</key>
+        <value>Parcel</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Parcels</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e02f9ec6-8e9b-409f-a22c-ee055482d2fd">
+      <name>NumOfParcels</name>
+      <synonym>
+        <key>ru</key>
+        <value>Num of parcels</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Num of parcels</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>4</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 8.00.7600.16722"></meta></head><body>
+<h1>Документ "Inventory перемещение"</h1>
+<p>Документ "Inventory перемещение" предназначен для отражения факта перемещения inventory-товаров между inventory-локациями.</p>
+<h2>Реквизиты документа</h2>
+<p>Документ имеет реквизиты шапки и табличную часть "Goods".</p>
+<h3>Реквизиты шапки документа</h3>
+<ul><li><strong>Inventory location out</strong> (справочник Inventory locations) - локация-отправитель 
+<ul><li>Реквизит должен быть заполнен</li></ul></li><li><strong>Inventory location in</strong> (справочник Inventory locations) - локация-получатель 
+<ul><li>Реквизит должен быть заполнен</li></ul></li><li><strong>Segment </strong>(справочник Segments) - реквизит, определяемый автоматически из проводок DSS 
+</li><li><strong>Ict doc type</strong> (строка) - вид операции - справочный реквизит, подгружаемый из lawson 
+</li><li><strong>Has finished goods</strong> (булево) - автоматически устанавливаемый признак того, что в документе содержатся Finished goods 
+</li><li>
+<div><strong>Creation date</strong> (дата и время) - автоматически заполняемая дата создания документа</div>
+</li><li>
+<div><strong>Last modified</strong> (дата и время) - автоматически заполнеяемая дата последнего изменения документа из формы</div>
+</li><li>
+<div><strong>Responsible</strong> (справочник Users) - пользователь, внесший последние изменения в документ</div>
+</li><li>
+<div><strong>Comment</strong> (строка) - любой произвольный комментарий</div></li></ul><h3>Табличная часть "Goods"</h3>
+<p>В табличной части "Goods" перечисляются все перемещаемые товары, их количество и сумма.</p>
+<ul><li><strong>Good</strong> (справочник Inventory goods) - товар 
+<ul><li>Реквизит должен быть заполнен 
+</li><li>Good не может быть помечен на удаление 
+</li><li>У Good должен быть заполнен реквизит Standard UOM</li></ul></li><li><strong>UOM</strong> (справочник UOMs) - единица измерения 
+<ul><li>Реквизит должен быть заполнен 
+</li><li>UOM не может быть помечен на удаление 
+</li><li>UOM standard UOM должен соответствовать Good standard UOM</li></ul></li><li><strong>Qty out</strong> (число) - количество, которое ушло с локации-отправителя 
+<ul><li>Реквизит должен быть заполнен</li></ul></li><li><strong>Qty in</strong> (число) - количество, которое пришло на локацию-получателя 
+<ul><li>Реквизит должен быть заполнен</li></ul></li><li><strong>Finished good</strong> (булево) - признак того, что для данного товара устанавливается ручной порядок списания 
+</li><li><strong>Finished good PO num.</strong> (строка) - номер PO, по которой должно происходить списание 
+<ul><li>Реквизит должен быть заполнен в том случае, если установлен признак Finished good</li></ul></li><li><strong>Management price out</strong> (число) - управленческая цена, по которой ушел товар с локации-отправителя - указывается справочно 
+</li><li><strong>Management price in</strong> (число) - управленческая цена, по которой пришел товар на локацию-получателя - указывается справочно 
+</li><li><strong>Management sum out</strong> (число) - управленческая сумма, по которой ушел товар с локации-отправителя - указывается справочно 
+</li><li><strong>Management sum in</strong> (число) - управленческая сумма, по которой пришл товар на локацию-получателя - указывается справочно</li></ul><h2>Проведение документа</h2>
+<p>При проведении документ перемещает партии товаров в регистре накопления "Inventory партии":</p>
+<ul><li><strong>Inventory location</strong> - списывается с Inventory location out и приходуется на Inventory location in 
+</li><li><strong>Good </strong>- из строки документа 
+</li><li><strong>PO number</strong> - из строки документа  
+</li><li><strong>Batch </strong>- подбирается автоматически по методу FIFO; при нехватке партии выдается ошибка 
+</li><li><strong>Quantity </strong>- списывается Qty out и приходуется Qty in; если Qty out превышает Qty in, то создается новая партия; 
+</li><li><strong>Sum </strong>- определяется из подобранной партии</li></ul></body></html>

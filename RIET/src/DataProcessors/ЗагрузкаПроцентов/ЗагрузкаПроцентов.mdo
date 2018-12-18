@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="63a23dfe-58a9-4f72-84ac-1dc12e6aa844">
+  <producedTypes>
+    <objectType typeId="b8b0c283-8f02-43d0-9347-4e67d0c65465" valueTypeId="66f87e65-fcbd-4b67-975f-9eb4b14faab0"/>
+    <managerType typeId="ed9db989-ff97-48c3-a3e2-6918d306141a" valueTypeId="22eb7a17-b69e-4786-b977-94166101e82e"/>
+  </producedTypes>
+  <name>ЗагрузкаПроцентов</name>
+  <synonym>
+    <key>ru</key>
+    <value>T&amp;M percentage loading</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>T&amp;M percentage loading</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ЗагрузкаПроцентов.Form.Форма</defaultForm>
+  <attributes uuid="e289fc43-8479-4bb3-addb-f3e028abf7e3">
+    <name>ИмяФайла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя файла</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Имя файла</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="2afa5bb8-3f2e-4cbd-83ce-b38ff0a80cfd">
+    <producedTypes>
+      <objectType typeId="37f980c1-fe25-4ce8-99cd-ffd90d7b2262" valueTypeId="7aaf9c93-deae-438f-bcf6-e2046f77b649"/>
+      <rowType typeId="5b8d6079-2256-4b5e-b6bc-75bd351b65f9" valueTypeId="c9bf2edb-83da-41d5-b00e-24098f75df35"/>
+    </producedTypes>
+    <name>Revenue</name>
+    <synonym>
+      <key>ru</key>
+      <value>Revenue</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Revenue</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="1b752405-2aa9-4015-801f-4f0b63bf9d0e">
+      <name>Geomarket</name>
+      <synonym>
+        <key>ru</key>
+        <value>Geomarket</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Geomarket</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="52dcf3fa-a1df-47ac-803f-f857129db0e8">
+      <name>Percent</name>
+      <synonym>
+        <key>ru</key>
+        <value>Percent</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Percent</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="459e98a4-ef37-4166-ae17-936d41cbebec">
+    <producedTypes>
+      <objectType typeId="c6137db0-c0fd-4499-9b34-7a6a2c6ceba0" valueTypeId="6666f23a-301c-4e11-9fc7-79bbf88f71e1"/>
+      <rowType typeId="c4c4b6a7-6e92-43ae-bba8-ed2a7dd108b7" valueTypeId="17be16d7-87ca-45ba-84c5-0a386fa8a109"/>
+    </producedTypes>
+    <name>Geomarket_Segment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Geomarket segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Geomarket segment</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="8c2d3c80-f917-4efb-a974-399d4fa162f1">
+      <name>Geomarket</name>
+      <synonym>
+        <key>ru</key>
+        <value>Geomarket</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Geomarket</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="3f27e102-a51f-48c6-8ebf-419ca343a73e">
+      <name>Segment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Segment</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Segment</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="415097ac-115e-49a0-af9c-e2e11a1b4de9">
+      <name>Percent</name>
+      <synonym>
+        <key>ru</key>
+        <value>Percent</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Percent</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="af7abc0d-1a1e-444b-9dcb-237da85881c6">
+    <producedTypes>
+      <objectType typeId="2d51e7ce-5d56-49a2-9709-13f70ea58140" valueTypeId="ad1d080d-0e0a-4ca5-8cab-91a66218b652"/>
+      <rowType typeId="412bff23-3970-451a-b0cb-981d8be1274a" valueTypeId="24df6265-27e0-49d3-b3f4-c6905579c3f0"/>
+    </producedTypes>
+    <name>Int_Dom</name>
+    <synonym>
+      <key>ru</key>
+      <value>Int dom</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Int dom</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="892f6acb-0cd5-4634-81a0-c18dfed8c93e">
+      <name>Geomarket</name>
+      <synonym>
+        <key>ru</key>
+        <value>Geomarket</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Geomarket</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="e0365a58-4cab-4fb3-83ef-11957fbcde26">
+      <name>Int_Dom</name>
+      <synonym>
+        <key>ru</key>
+        <value>Int dom</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Int dom</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="31475005-d097-477f-ba7d-f3a214facf4b">
+      <name>Percent</name>
+      <synonym>
+        <key>ru</key>
+        <value>Percent</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Percent</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="4cf375c6-8099-420b-8dec-6dbc4c3dd52d">
+    <producedTypes>
+      <objectType typeId="3bb46e1f-5fe0-4a7a-89f1-0fb5bc273cae" valueTypeId="75abc86d-4fbd-457d-8487-e87856932bc1"/>
+      <rowType typeId="cab1bcdf-afe8-4bd9-8550-d2f9bf0f4931" valueTypeId="9f54af89-ac90-43fe-8740-00bc608adf70"/>
+    </producedTypes>
+    <name>SubGeomarket</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sub geomarket</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub geomarket</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="4d6ed707-6c5e-4b13-b2f3-ce635673c9ac">
+      <name>Geomarket</name>
+      <synonym>
+        <key>ru</key>
+        <value>Geomarket</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Geomarket</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="fd0a670d-483f-40c8-9e48-00b814fa1fdd">
+      <name>SubGeomarket</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sub geomarket</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Sub geomarket</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="0aec3f18-dfd0-4616-b110-602552558982">
+      <name>Percent</name>
+      <synonym>
+        <key>ru</key>
+        <value>Percent</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Percent</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="463b48d6-c493-4f84-b69b-2e1531021932">
+    <producedTypes>
+      <objectType typeId="bc0735a4-d2aa-4a00-8b8f-0657e620350b" valueTypeId="e6771880-a0ad-4842-9999-5822d33298b9"/>
+      <rowType typeId="de5d45d4-93da-43e3-988e-bfd83e6a947c" valueTypeId="62debc14-c8f5-44b2-b9d7-a01f067ede3b"/>
+    </producedTypes>
+    <name>SubGeomarket_Segment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sub geomarket segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub geomarket segment</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="de946d40-b05b-45d4-af0d-48832d69be5b">
+      <name>SubGeomarket</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sub geomarket</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Sub geomarket</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="a535d71b-5112-48ee-b5af-5d2a6179e3da">
+      <name>Segment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Segment</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Segment</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="1863a6e3-a57d-434e-a6b2-606de017beda">
+      <name>Percent</name>
+      <synonym>
+        <key>ru</key>
+        <value>Percent</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Percent</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d1e8ae6e-6478-4746-839b-16065f50ba20">
+    <producedTypes>
+      <objectType typeId="464fed3d-7508-4581-b100-7ff0568febd2" valueTypeId="78da3066-9e60-460c-b0f5-079d95c9d574"/>
+      <rowType typeId="2d35f59b-ce94-40c9-b96f-5467238c0870" valueTypeId="1edad6b2-66c0-4bf7-a35c-0960d123a4eb"/>
+    </producedTypes>
+    <name>SubSegment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sub segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub segment</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="2d50ca81-2151-423e-91cc-4266f40c8190">
+      <name>SubGeomarket</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sub geomarket</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Sub geomarket</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="7c554913-f4fb-4b61-a194-eed6eb334516">
+      <name>Segment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Segment</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Segment</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="1a285a5b-82bd-4b3a-9151-09d43107d155">
+      <name>SubSegment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sub segment</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Sub segment</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="ad77effe-b941-45b9-9b1b-f726872a564c">
+      <name>Percent</name>
+      <synonym>
+        <key>ru</key>
+        <value>Percent</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Percent</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <forms uuid="20f28148-d119-43f6-a9ea-9ba864b98218">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

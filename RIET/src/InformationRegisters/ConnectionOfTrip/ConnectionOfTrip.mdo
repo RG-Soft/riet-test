@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="94914471-b3c0-4ac3-b12c-01fb1e88d1c1">
+  <producedTypes>
+    <selectionType typeId="7863ddc0-3157-4acd-b1cb-d71751dff29a" valueTypeId="69e62bea-bbbb-4a25-b1e8-d213d84e8b69"/>
+    <listType typeId="96139426-849f-4844-b02f-90e1c6b6f2c7" valueTypeId="2a5d5e98-b035-440a-95a4-1035f8ab2cd6"/>
+    <managerType typeId="5839ca53-680a-4fa4-9af6-23f8a90ca076" valueTypeId="fb1eea65-5df4-4e64-8bff-777c091756b5"/>
+    <recordSetType typeId="8a01d49e-5376-4226-891b-1eca4a356472" valueTypeId="25ad4ea2-0f81-47b2-901e-7e1bb4f9902b"/>
+    <recordKeyType typeId="8a0d6d14-dae2-428e-aff1-c90460ffcba2" valueTypeId="862d76eb-5754-4cae-b83d-98eed630b2c3"/>
+    <recordType typeId="90e3d635-5ff8-4f6a-b559-e8db5e229ae5" valueTypeId="dfb83985-35d4-4fb6-b220-7572a720d439"/>
+    <recordManagerType typeId="0242281d-ebe2-4819-b3b3-70d7a8bbb24b" valueTypeId="337a82aa-a4b8-4294-91e9-7bb4877ad77f"/>
+  </producedTypes>
+  <name>ConnectionOfTrip</name>
+  <synonym>
+    <key>ru</key>
+    <value>Привязки поставок</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Connection of trip</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ConnectionOfTrip.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ConnectionOfTrip.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="f2ffb206-14d8-4d2d-b995-f38282908950">
+    <name>Activity</name>
+    <synonym>
+      <key>ru</key>
+      <value>Активная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Activity</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="38342951-a531-40f7-8e46-7d8e99eb8561">
+    <name>Trip</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trip</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.TripNonLawsonCompanies</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5f01a4bb-7e11-4c22-bcd9-b9c15ec4a4d7">
+    <name>MobileDevice</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мобильное устройство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Mobile device</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.MobileDevices</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="2c4d55ba-7d2a-4a15-8d3f-94529a79976b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="40373c9b-f37e-4f8c-8299-6b56b6345360">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

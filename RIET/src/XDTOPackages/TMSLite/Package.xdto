@@ -1,0 +1,35 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://xmlns.oracle.com/apps/otm">
+	<property xmlns:d2p1="http://xmlns.oracle.com/apps/otm" name="EchoedTransmissionHeader" type="d2p1:EchoedTransmissionHeader"/>
+	<property xmlns:d2p1="http://xmlns.oracle.com/apps/otm" name="GLogXMLElement" type="d2p1:GLogXMLElement"/>
+	<property xmlns:d2p1="http://xmlns.oracle.com/apps/otm" name="PlannedShipment" type="d2p1:PlannedShipment"/>
+	<property name="Shipment"/>
+	<property name="TransOrder"/>
+	<property name="TransactionHeader"/>
+	<property name="TransmissionAckReason" type="xs:string"/>
+	<property name="TransmissionAckStatus" type="xs:string"/>
+	<property xmlns:d2p1="http://xmlns.oracle.com/apps/otm" name="TransmissionBody" type="d2p1:TransmissionBody"/>
+	<property name="TransmissionHeader"/>
+	<objectType name="EchoedTransmissionHeader">
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:TransmissionHeader"/>
+	</objectType>
+	<objectType name="GLogXMLElement" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:TransactionHeader" lowerBound="0"/>
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:PlannedShipment" lowerBound="0"/>
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:TransOrder" lowerBound="0"/>
+	</objectType>
+	<objectType name="PlannedShipment">
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:Shipment"/>
+	</objectType>
+	<objectType name="Transmission">
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:TransmissionHeader"/>
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:TransmissionBody"/>
+	</objectType>
+	<objectType name="TransmissionAck">
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:EchoedTransmissionHeader"/>
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:TransmissionAckStatus" lowerBound="0"/>
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:TransmissionAckReason" lowerBound="0"/>
+	</objectType>
+	<objectType name="TransmissionBody">
+		<property xmlns:d3p1="http://xmlns.oracle.com/apps/otm" ref="d3p1:GLogXMLElement"/>
+	</objectType>
+</package>

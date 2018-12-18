@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="80b288b8-1dcd-41ae-b774-2797cafb7983">
+  <producedTypes>
+    <objectType typeId="e0aaf472-9c1c-4062-886b-a1cc8578f378" valueTypeId="a4894e93-5511-4413-bcdd-77df5b47cb72"/>
+    <managerType typeId="ac684344-ca06-4772-81c5-b9df3e5c2117" valueTypeId="9a6bb61b-dfa7-4060-a09f-53fd0f64f09f"/>
+  </producedTypes>
+  <name>ЗагрузкаBatch</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка Batch для платежных поручений</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Загрузка Batch для платежных поручений</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.ЗагрузкаBatch.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="d0606878-f49c-428e-8419-54e50ec598b1">
+    <name>Прогрессор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прогрессор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Прогрессор</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="fe93bff6-d586-4472-9e2a-082ae2abe002">
+    <producedTypes>
+      <objectType typeId="7cdf77c0-2fea-4ec7-bcef-0073ebbb7463" valueTypeId="3f2782c2-b907-4cf6-a903-e7f10308252b"/>
+      <rowType typeId="a5162504-ad28-44f7-8a9e-37feef7bc845" valueTypeId="4df05581-d515-4bb7-9316-16fc5e65fc7b"/>
+    </producedTypes>
+    <name>Соответствия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Соответствия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Соответствия</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="db1f9f7a-6b33-4a01-9f32-7d03e73ba2e8">
+      <name>ДатаОплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата оплаты</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Дата оплаты</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fa493fc2-0d09-4913-8342-75ae5c2a8087">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сумма</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3d87dfcd-a04c-4118-8688-52afab6ce2de">
+      <name>ПлатежноеПоручение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Платежное поручение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Платежное поручение</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ПлатежноеПоручениеВходящее</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a0555575-5225-4c3a-8d79-737664c01f07">
+      <name>Batch</name>
+      <synonym>
+        <key>ru</key>
+        <value>Batch</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Batch</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="660f2bb1-c9d9-4e21-a1f3-c11fb0da8963">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="af8c80cf-b4e3-4994-886a-afa3c381c14d">
+    <name>ФормаПрогрессора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма прогрессора</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма прогрессора</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

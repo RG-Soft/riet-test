@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16576"></meta></head><body>
+<h1>Обработка 'Customs payments loading'</h1>
+<p>Обработка входит в <a href="Subsystem.CustomsAccounting.Subsystem.Payments/Help">подсистему "Payments"</a>.</p>
+<p>Обработка предназначена для загрузки <a href="Document.CustomsPayment/Help">документов "Customs payment"</a> из текстового файла, сформированного клиентом City банка.</p>
+<p>Для загрузки необходимо выбрать текстовый файл и нажать на кнопку Load.</p>
+<p>Система игнорирует проводки типа Internal transfer.</p>
+<p>Каждая проводка обрабатывается следующим образом:</p>
+<ul><li>
+<div>Система пытается найти документ "Customs payment" по номеру.<br>Если такой документ находится - система пропускает его.<br>Таким образом, загружаются только новые документы, старые не обновляются.</div>
+</li><li>
+<div>Проверяется валюта проводки.<br>Если валюта не "RUR" - выводится сообщение об ошибке, и загрузка прерывается.</div>
+</li><li>
+<div>Создается новый документ, в котором заполняются:</div>
+<ul><li>
+<div>No.</div>
+</li><li>
+<div>Date</div>
+<ul><li>
+<div>Если системе не удается определить дату - загрузка прерывается</div></li></ul></li><li>
+<div>Type of payment = Bank account.Type of payment</div>
+</li><li>
+<div>Description</div>
+</li><li>
+<div>Customs</div>
+<ul><li>
+<div>Определяется из поля с описанием платежа<br>Если таможня с таким кодом не найдена - загрузка прерывается</div></li></ul></li><li>
+<div>Bank account</div>
+<ul><li>
+<div>Если банковский счет с таким кодом не найден - загрузка прерывается</div></li></ul></li><li>
+<div>Сумма</div>
+<ul><li>
+<div>Если сумму не удается преобразовать в число - загрузка прерывается</div></li></ul></li></ul></li></ul></body></html>

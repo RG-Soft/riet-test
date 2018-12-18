@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9c5c8ab9-4bb0-4478-81ab-5e41d6c48aed">
+  <producedTypes>
+    <selectionType typeId="a40dec96-9162-4a4e-879a-1dad9a2ebd22" valueTypeId="82353fdb-0f6e-474a-8c7a-3548e159a4b2"/>
+    <listType typeId="1a09494a-004f-42ec-bb1b-b45c8addf8e8" valueTypeId="a82353e9-005f-4c1d-be62-0eae2878624e"/>
+    <managerType typeId="06b5e415-8323-4586-8e5d-fc078b2f1718" valueTypeId="7fabb593-a545-4343-b6f6-99a8f5b6ab53"/>
+    <recordSetType typeId="5335bf83-ebf8-421b-979f-f7326aeb3ff2" valueTypeId="2683c7d5-5ad9-43ed-837e-4340f6e9a442"/>
+    <recordKeyType typeId="b88335b8-8fad-4dc6-a8d8-9c962d89f978" valueTypeId="0057008d-1617-4929-84c8-1e89d20628fe"/>
+    <recordType typeId="acc5066e-5b62-4b35-b6b7-069d86fc1e82" valueTypeId="46bc970a-494a-4c05-b781-b281b9baecd7"/>
+    <recordManagerType typeId="65247d7c-5e33-49db-8de8-d443e5bfc0fd" valueTypeId="26faa963-bd0e-41bd-9751-cf6f456cc997"/>
+  </producedTypes>
+  <name>ServiceProvidersCosts</name>
+  <synonym>
+    <key>ru</key>
+    <value>Service providers costs</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Service providers costs</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ServiceProvidersCosts.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ServiceProvidersCosts.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="877dd5f6-3c3a-4baf-b6f1-0ca2a490fffc">
+    <name>BaseCostsSum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Base costs sum / Сумма основных затрат</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Base costs sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c0ca3326-1248-44a8-9765-3047383980b7">
+    <name>Currency</name>
+    <synonym>
+      <key>ru</key>
+      <value>Currency / Валюта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Currency</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="5f96c7ff-0d97-4f87-a9ed-d61684565392">
+    <name>SourceLocation</name>
+    <synonym>
+      <key>ru</key>
+      <value>Source location / Место отправления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Source location</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Warehouses</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.RCACountry</name>
+      <field>0:60884f8c-3350-4169-90aa-f2260e60ead6</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ee2e9640-3212-4e55-b2f6-731bcb2c6eb0">
+    <name>DestinationLocation</name>
+    <synonym>
+      <key>ru</key>
+      <value>Место доставки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Destination location</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Warehouses</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.RCACountry</name>
+      <field>0:60884f8c-3350-4169-90aa-f2260e60ead6</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fe168083-dba7-4a19-a744-56aa7c891878">
+    <name>Equipment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Equipment / Тип транспортного средства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Equipment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Equipments</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c09894de-c05a-4265-b5e4-9bfa60d4ac2c">
+    <name>ServiceProvider</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставщик услуг (грузоперевозчик)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Service provider</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ServiceProviders</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="85124a5d-453a-4d34-84e7-d80229e74126">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="63b90e0b-62a7-4dc7-abfc-6fdf89575865">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16576"></meta></head><body>
+<h1>Документ "Customs payment allocation"</h1>
+<p>Документ "Customs payment allocation" входит в <a href="Subsystem.CustomsAccounting.Subsystem.Payments/Help">подсистему "Payments"</a>.<br>Документ предназначен для аллокации суммы <a href="Document.CustomsPayment/Help">платежа</a> с одной стороны и <a href="Document.ГТД/Help">Customs file</a> или <a href="Document.CustomsFilesLight/Help">Customs file (light)</a> - с другой.</p>
+<p>Документ может быть создан как из <a href="Document.CustomsPayment/Help">документа "Customs payment"</a>, так и из Customs file, причем в последнем случае возможен автоматический подбор <a href="Document.CustomsPayment/Help">платежей</a>.</p>
+<p>При проведении документа происходит списание несаллокированной суммы <a href="Document.CustomsPayment/Help">платежа</a> и неоплаченный суммы Customs file по данному коду платежа.</p>
+<h3>Реквизиты шапки</h3>
+<ul><li><strong>No.</strong> (строка) - автоматически присваеваемый номер документа. 
+</li><li><strong>Date</strong> (дата)<strong><br></strong>Обязательный для заполнения реквизит. 
+</li><li><strong>For deletion </strong>(булево) - признак того, что документ помечен на удаление. 
+</li><li><strong>Posted </strong>(булево) - признак того, что документ проведен. 
+</li><li><strong>Customs Payment</strong> (документ Customs payment) <br>Реквизит должен быть заполнен <br>Платеж должен иметь несаллокированный остаток <br>Справочно отображается текущая несаллокированная сумма платежа с учетом добавленных в документ ГТД 
+</li><li><strong>Payment kind</strong> (строка)<br>Обязательный для заполнения реквизит.  
+</li><li><strong>Customs document </strong>(документ CCD или ТПО) <br>Реквизит должен быть заполнен.<br>Customs, Sold-to и Payment kind должни совпадать с одноименными реквизитами в платеже. <br>По документу должен быть неоплаченный остаток.<br>При выборе документа в форме подбора справочно отображаются текущие неоплаченные остатки по документам. 
+</li><li><strong>Sum</strong> (число)<br>Обязательный для заполнения реквизит.<br>Сумма не должна превышать неоплаченный остаток по декларации.<br>При выборе customs document сумма заполняется автоматически по следующему алгоритму: 
+<ul><li>если несаллокированная сумма больше суммы ГТД - подставляется вся сумма ГТД 
+</li><li>если несалокированная сумма меньше суммы ГТД - подставляется несаллокированная сумма</li></ul></li><li><strong>Comment</strong> (строка) 
+</li><li><strong>Creation Date</strong> (дата)<strong> -</strong> автоматически заполняемая дата создания документа. 
+</li><li><strong>Last modified</strong> (дата и время) - заполняется автоматически датой последнего интерактивного изменения документа. 
+</li><li><strong>Responsible</strong> (справочник Users) - заполняется автоматически пользователем, который внес последние изменения в документ.</li></ul></body></html>

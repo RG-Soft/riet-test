@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e0f4696a-832f-441f-a90a-f088388569f1">
+  <producedTypes>
+    <selectionType typeId="51ec43ca-ebb6-431a-8a09-be3c1d59cf4a" valueTypeId="51d2ccac-a8b7-4b13-b579-a5a71643e274"/>
+    <listType typeId="b03e7114-4c29-45bb-bbab-37a76aae4214" valueTypeId="66bef732-f1de-4a2c-9c92-796aaed15bdb"/>
+    <managerType typeId="30ec7e7b-20e2-4b26-acfa-f2d2d5d96e50" valueTypeId="abde20a0-30d4-4aff-b9ea-507da0650e38"/>
+    <recordSetType typeId="23217ea8-bed7-44eb-84b3-ff93242fc356" valueTypeId="8b32432d-e812-4619-bb11-a7e761e29b22"/>
+    <recordKeyType typeId="165c5d05-8093-4acc-be0f-0cd8b5114c07" valueTypeId="90bf4d12-f7c7-44c4-b6b4-1a3b7c06b104"/>
+    <recordType typeId="b97f9beb-62a2-47e4-9c42-da4c375be76d" valueTypeId="de49cfe0-58d0-44fc-b2ac-68fe2a4bfab9"/>
+    <recordManagerType typeId="2a4d9ad5-8502-43e6-831b-1f5285323517" valueTypeId="c00ae730-4413-40da-9ad4-12a6c45ca218"/>
+  </producedTypes>
+  <name>MOT_Trip_Notification</name>
+  <synonym>
+    <key>ru</key>
+    <value>Notifications depending on the Trip MOTs</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Notifications depending on the Trip MOTs</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.MOT_Trip_Notification.Form.ФормаЗаписи</defaultRecordForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="ba6b40df-59b2-4d24-b6bb-c4b0d737a4d4">
+    <name>HoursAfter_ATD</name>
+    <synonym>
+      <key>ru</key>
+      <value>Hours after ATD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Hours after ATD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="fd952004-a1fc-4590-bfdd-8a0e0a642408">
+    <name>MOT</name>
+    <synonym>
+      <key>ru</key>
+      <value>MOT</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.MOTs</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="aefb639c-f629-4566-b67e-ed72df03d1f3">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

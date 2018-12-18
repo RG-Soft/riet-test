@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AccountDescENGL</dataPath>
+			<field>AccountDescENGL</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AccountGAAP</dataPath>
+			<field>AccountGAAP</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AccountingPeriod</dataPath>
+			<field>AccountingPeriod</field>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=M</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AccountUnit</dataPath>
+			<field>AccountUnit</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Date</dataPath>
+			<field>Date</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Reference</dataPath>
+			<field>Reference</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументПоступления</dataPath>
+			<field>ДокументПоступления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроводкаДеталейСКП</dataPath>
+			<field>ПроводкаДеталейСКП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проводка DSS</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Проводка DSS</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ApInvoiceNumber</dataPath>
+			<field>ApInvoiceNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>BaseAmount</dataPath>
+			<field>BaseAmount</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CostDescriptionRUS</dataPath>
+			<field>CostDescriptionRUS</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CurrencyCode</dataPath>
+			<field>CurrencyCode</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>INN</dataPath>
+			<field>INN</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Invoice</dataPath>
+			<field>Invoice</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PaymentDate</dataPath>
+			<field>PaymentDate</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PoNumber</dataPath>
+			<field>PoNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Rate</dataPath>
+			<field>Rate</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TranAmount</dataPath>
+			<field>TranAmount</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TransNbr</dataPath>
+			<field>TransNbr</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VendorVnameRUS</dataPath>
+			<field>VendorVnameRUS</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Vendor</dataPath>
+			<field>Vendor</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VendorName</dataPath>
+			<field>VendorName</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроводкаDSS</dataPath>
+			<field>ПроводкаDSS</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетКнигиПокупок</dataPath>
+			<field>СчетКнигиПокупок</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	MaterialsAndSuppliesОбороты.ДокументПоступления.AUПроводки КАК AccountUnit,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.AccountLawsonПроводки КАК AccountGAAP,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.AccountLawsonПроводки.Наименование КАК AccountDescENGL,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.ДатаВходящегоДокумента КАК Date,
+	MaterialsAndSuppliesОбороты.Период КАК AccountingPeriod,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.ReferenceПроводки КАК Reference,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.ApInvoiceПроводки КАК ApInvoiceNumber,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.ОписаниеЗатрат КАК CostDescriptionRUS,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.CurrencyПроводки КАК CurrencyCode,
+	MaterialsAndSuppliesОбороты.FiscalSumРасход КАК TranAmount,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.КурсДокумента КАК Rate,
+	MaterialsAndSuppliesОбороты.ManagementSumРасход КАК BaseAmount,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.VendorПроводки КАК Vendor,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.VendorNameПроводки КАК VendorName,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.Контрагент.Наименование КАК VendorVnameRUS,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.Контрагент.ИНН КАК INN,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.НомерВходящегоДокумента КАК Invoice,
+	MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП.TransNbr КАК TransNbr,
+	MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП.PoNumber КАК PoNumber,
+	MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП КАК ПроводкаDSS,
+	MaterialsAndSuppliesОбороты.ДокументПоступления КАК СчетКнигиПокупок,
+	МАКСИМУМ(ОплатаКнигиПокупокСуммы.Ссылка.ДатаПроведения) КАК PaymentDate
+ИЗ
+	РегистрНакопления.MaterialsAndSupplies.Обороты(
+			,
+			,
+			Запись,
+			ДокументПоступления ССЫЛКА Документ.СчетКнигиПокупок
+				И ПроводкаДеталейСКП ССЫЛКА Документ.ПроводкаDSS) КАК MaterialsAndSuppliesОбороты
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ОплатаКнигиПокупок.Суммы КАК ОплатаКнигиПокупокСуммы
+		ПО MaterialsAndSuppliesОбороты.ДокументПоступления.Ваучер = ОплатаКнигиПокупокСуммы.Ваучер
+
+СГРУППИРОВАТЬ ПО
+	MaterialsAndSuppliesОбороты.ДокументПоступления.AUПроводки,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.AccountLawsonПроводки,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.AccountLawsonПроводки.Наименование,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.ДатаВходящегоДокумента,
+	MaterialsAndSuppliesОбороты.Период,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.ReferenceПроводки,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.ApInvoiceПроводки,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.ОписаниеЗатрат,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.CurrencyПроводки,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.КурсДокумента,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.VendorПроводки,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.VendorNameПроводки,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.Контрагент.Наименование,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.Контрагент.ИНН,
+	MaterialsAndSuppliesОбороты.ДокументПоступления.НомерВходящегоДокумента,
+	MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП.TransNbr,
+	MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП.PoNumber,
+	MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП,
+	MaterialsAndSuppliesОбороты.ДокументПоступления,
+	MaterialsAndSuppliesОбороты.FiscalSumРасход,
+	MaterialsAndSuppliesОбороты.ManagementSumРасход</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Local</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Local</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Local</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AccountUnit</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AccountGAAP</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AccountDescENGL</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Date</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AccountingPeriod</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Reference</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ApInvoiceNumber</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CostDescriptionRUS</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CurrencyCode</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TranAmount</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Rate</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>BaseAmount</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Vendor</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>VendorName</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>VendorVnameRUS</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>INN</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Invoice</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TransNbr</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PoNumber</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PaymentDate</dcsset:field>
+				</dcsset:item>
+				<dcsset:userSettingID>165a7709-5809-42a6-b6e1-94ed3434dbd0</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:userSettingID>685e43a4-3e98-4998-9752-04d9f914db7a</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>fade5a17-91a3-47d7-938c-5d1f4a8a7f2d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>8de169e9-0517-4296-bdb2-9dfa55294e8b</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>84dd305b-7fbc-4837-a886-ae1b203fa564</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>1f067e2c-b7e1-48a9-bc63-b744409502c0</dcsset:userSettingID>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

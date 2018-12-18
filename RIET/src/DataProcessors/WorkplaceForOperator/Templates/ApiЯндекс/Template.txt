@@ -1,0 +1,167 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+    
+    <script src="https://api-maps.yandex.ru/2.1.34/?lang=ru-RU" type="text/javascript"></script>
+	<script src="https://yandex.st/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #map {
+            height: 100%;
+        }
+    </style>
+
+	<script type="text/javascript">
+	
+	var myMap,
+		objectManager,
+		TekX = 76.092967,
+		TekY = 61.021748,
+		myGeocoder,
+		myGeoObjects,
+		TekZoom = 10; 	
+	ymaps.ready(init);
+
+	function init () {
+		myMap = new ymaps.Map('map', {
+				center: [TekY, TekX],
+				zoom: TekZoom,
+				controls: ['rulerControl', 'trafficControl', 'typeSelector', 'zoomControl']
+	
+			}, {
+				searchControlProvider: 'yandex#search'
+			}),
+			objectManager = new ymaps.ObjectManager({
+				// Чтобы метки начали кластеризоваться, выставляем опцию.
+				clusterize: true,
+				// ObjectManager принимает те же опции, что и кластеризатор.
+				gridSize: 32,
+				clusterBalloonContentLayout: "cluster#balloonCarousel"
+			});
+
+		myMap.behaviors.disable("dblClickZoom");
+		myMap.geoObjects.add(objectManager);
+	
+		myGeoObjects = new ymaps.GeoObjectCollection({}, {
+        });
+      myMap.geoObjects.add(myGeoObjects);
+		
+		myMap.events.add('dblclick', function (e) { 
+          DeleteAllMarkers();
+          coords = e.get('coords');
+          TekX = coords[1];
+		  TekY = coords[0];
+		  document.getElementById("TekXText").value = TekX;
+		  document.getElementById("TekYText").value = TekY;
+          //PostMarker(true, coords, '#ff0000', true)
+          myMap.setCenter([TekY, TekX]);
+              myGeoObjects.add(new ymaps.Placemark([TekY, TekX], {
+            balloonContent: coords
+        }, {
+            preset: 'islands#icon',
+            iconColor: '#990000'
+        }))
+          });			
+	}
+	
+	function add(data, DelMarker){
+		if (DelMarker) {DeleteAllMarkers();}
+		objectManager.add(data);
+	}
+	
+	function DeleteAllMarkers(){
+		myGeoObjects.removeAll();
+		objectManager.removeAll();
+	}
+	
+	function ShowAddress(DelMarker, address) {
+			myGeoObjects.removeAll();
+			myGeocoder = ymaps.geocode(address);
+			myGeocoder.then(
+				function (res) {
+					if (res.geoObjects.getLength() != 0){
+					if (DelMarker) {DeleteAllMarkers();}
+					myMap.setCenter(res.geoObjects.get(0).geometry.getCoordinates(), TekZoom);
+					Coord = res.geoObjects.get(0).geometry.getCoordinates();
+					
+					currentId = objectManager.objects.getLength();
+					while(objectManager.objects.getById(currentId) != null){currentId++};
+					add({
+						type: 'Feature',
+						id: currentId,
+						geometry: {
+							type: 'Point',
+							coordinates: [Coord[0], Coord[1]]
+						},
+						properties: {
+							balloonContent: address,
+							clusterCaption: "Описание площадки"
+						}
+						}, false);
+					
+					// сохранение координат
+					TekY = Coord[0];
+					TekX = Coord[1];
+					
+					document.getElementById("TekXText").value = TekX;
+					document.getElementById("TekYText").value = TekY;
+					}
+					else{alert(address + " not found");}
+				},
+				function (err) {
+					alert(address + " not found");
+				}
+			);
+			
+		}
+	
+		function PostMarker(DelMarker, address, color) {
+			  myGeoObjects.removeAll();
+			  if (DelMarker) {DeleteAllMarkers();}
+				currentId = objectManager.objects.getLength();
+				while(objectManager.objects.getById(currentId) != null){currentId++};
+				add({
+						type: 'Feature',
+						id: currentId,
+						geometry: {
+							type: 'Point',
+							coordinates: [TekY, TekX]
+						},
+						properties: {
+							balloonContent: address,
+							clusterCaption: "Описание площадки"
+						},
+						options:{preset: color}
+						}, false);
+				  
+				  
+				  document.getElementById("TekXText").value = TekX;
+				  document.getElementById("TekYText").value = TekY;				
+			}
+			 
+		function DeleteMarker(delX, delY, opisanie){
+			 myGeoObjects.removeAll();
+			 objectManager.objects.each(function(pm){ 
+				if(pm.geometry.coordinates[0] == delY && pm.geometry.coordinates[1] == delX && pm.properties.balloonContent == opisanie){objectManager.objects.remove(pm)}});
+		}
+
+		function SetCenter(Latitude, Longitude){
+	        myMap.setCenter([Longitude, Latitude]);
+		}
+	</script>
+	
+</head>
+<body>
+<div id="map" style="width:100%; height:100%"></div>
+<input id="TekXText" type="text" style="visibility: hidden; display: none" />
+<input id="TekYText" type="text" style="visibility: hidden; display: none" />
+</body>
+</html>

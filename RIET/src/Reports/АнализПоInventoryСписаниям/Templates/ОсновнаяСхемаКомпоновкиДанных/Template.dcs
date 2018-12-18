@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Sum</dataPath>
+			<field>Sum</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Management sum (руб.)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Management sum (руб.)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ManagementSum</dataPath>
+			<field>ManagementSum</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Management sum</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Management sum</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SiebelOrder</dataPath>
+			<field>SiebelOrder</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TaxPeriod</dataPath>
+			<field>TaxPeriod</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TaxRegistrationСписания</dataPath>
+			<field>TaxRegistrationСписания</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументРеализации</dataPath>
+			<field>ДокументРеализации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументСписания</dataPath>
+			<field>ДокументСписания</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НалоговаяРегистрацияРеализации</dataPath>
+			<field>НалоговаяРегистрацияРеализации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номер</dataPath>
+			<field>Номер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеализацияНалоговыйПериод</dataPath>
+			<field>РеализацияНалоговыйПериод</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеализацияСуммаДокумента</dataPath>
+			<field>РеализацияСуммаДокумента</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сегмент</dataPath>
+			<field>Сегмент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерСчетФактуры</dataPath>
+			<field>НомерСчетФактуры</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	InventoryСписаниеGoods.Ссылка КАК ДокументСписания,
+	InventoryСписаниеGoods.Ссылка.TaxRegistration КАК TaxRegistrationСписания,
+	InventoryСписаниеGoods.Реализация КАК ДокументРеализации,
+	InventoryСписаниеGoods.Реализация.ПодразделениеОрганизации КАК НалоговаяРегистрацияРеализации,
+	InventoryСписаниеGoods.TicketId КАК SiebelOrder,
+	InventoryСписаниеGoods.Ссылка.Номер КАК Номер,
+	InventoryСписаниеGoods.Ссылка.Дата КАК Дата,
+	InventoryСписаниеGoods.Ссылка.Segment КАК Сегмент,
+	InventoryСписаниеGoods.Ссылка.НалоговыйПериод КАК TaxPeriod,
+	InventoryСписаниеGoods.ManagementSum КАК ManagementSum,
+	InventoryСписаниеGoods.Реализация.СуммаДокумента КАК РеализацияСуммаДокумента,
+	InventoryСписаниеGoods.Реализация.НалоговыйПериод КАК РеализацияНалоговыйПериод,
+	InventoryСписаниеGoods.Good
+ПОМЕСТИТЬ Inventory
+ИЗ
+	Документ.InventoryСписание.Goods КАК InventoryСписаниеGoods
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(InventoryBatches.Sum) КАК Sum,
+	InventoryBatches.Регистратор,
+	InventoryBatches.Good
+ПОМЕСТИТЬ InvBatches
+ИЗ
+	РегистрНакопления.InventoryBatches КАК InventoryBatches
+
+СГРУППИРОВАТЬ ПО
+	InventoryBatches.Регистратор,
+	InventoryBatches.Good
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	InventoryСписаниеGoods.Ссылка КАК ДокументСписания,
+	СУММА(InventoryСписаниеGoods.ManagementSum) КАК ManagementSum,
+	InventoryСписаниеGoods.Good,
+	СУММА(1) КАК ОбщееКоличество
+ПОМЕСТИТЬ InventoryСвернутое
+ИЗ
+	Документ.InventoryСписание.Goods КАК InventoryСписаниеGoods
+
+СГРУППИРОВАТЬ ПО
+	InventoryСписаниеGoods.Ссылка,
+	InventoryСписаниеGoods.Good
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	InventoryСписаниеGoods.Ссылка КАК ДокументСписания,
+	СУММА(InventoryСписаниеGoods.ManagementSum) КАК ManagementSum,
+	InventoryСписаниеGoods.Good,
+	InventoryСписаниеGoods.TicketId,
+	СУММА(1) КАК КоличествоПоОрдерам
+ПОМЕСТИТЬ InventoryСвернутоеПоОрдерам
+ИЗ
+	Документ.InventoryСписание.Goods КАК InventoryСписаниеGoods
+
+СГРУППИРОВАТЬ ПО
+	InventoryСписаниеGoods.Ссылка,
+	InventoryСписаниеGoods.Good,
+	InventoryСписаниеGoods.TicketId
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	InventoryСвернутоеПоОрдерам.ДокументСписания,
+	InventoryСвернутоеПоОрдерам.ManagementSum,
+	InventoryСвернутоеПоОрдерам.Good,
+	InventoryСвернутоеПоОрдерам.TicketId,
+	InventoryСвернутоеПоОрдерам.КоличествоПоОрдерам / InventoryСвернутое.ОбщееКоличество КАК Коэффициент
+ПОМЕСТИТЬ Суммы
+ИЗ
+	InventoryСвернутое КАК InventoryСвернутое
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ InventoryСвернутоеПоОрдерам КАК InventoryСвернутоеПоОрдерам
+		ПО InventoryСвернутое.ДокументСписания = InventoryСвернутоеПоОрдерам.ДокументСписания
+			И InventoryСвернутое.Good = InventoryСвернутоеПоОрдерам.Good
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Inventory.ДокументСписания,
+	МИНИМУМ(Inventory.TaxRegistrationСписания) КАК TaxRegistrationСписания,
+	Inventory.ДокументРеализации,
+	МИНИМУМ(Inventory.НалоговаяРегистрацияРеализации) КАК НалоговаяРегистрацияРеализации,
+	Inventory.SiebelOrder,
+	МИНИМУМ(Inventory.Номер) КАК Номер,
+	МИНИМУМ(Inventory.Дата) КАК Дата,
+	МИНИМУМ(Inventory.Сегмент) КАК Сегмент,
+	МИНИМУМ(Inventory.TaxPeriod) КАК TaxPeriod,
+	СУММА(Inventory.ManagementSum) КАК ManagementSum,
+	МИНИМУМ(Inventory.РеализацияСуммаДокумента) КАК РеализацияСуммаДокумента,
+	МИНИМУМ(Inventory.РеализацияНалоговыйПериод) КАК РеализацияНалоговыйПериод,
+	Inventory.Good,
+	МАКСИМУМ(Суммы.Коэффициент) КАК Коэффициент
+ПОМЕСТИТЬ СвернутоеInventoryСКоэффицинтомПоTicket
+ИЗ
+	Inventory КАК Inventory
+		ЛЕВОЕ СОЕДИНЕНИЕ Суммы КАК Суммы
+		ПО Inventory.ДокументСписания = Суммы.ДокументСписания
+			И Inventory.Good = Суммы.Good
+			И Inventory.SiebelOrder = Суммы.TicketId
+
+СГРУППИРОВАТЬ ПО
+	Inventory.ДокументСписания,
+	Inventory.SiebelOrder,
+	Inventory.Good,
+	Inventory.ДокументРеализации
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СвернутоеInventoryСКоэффицинтомПоTicket.ДокументСписания,
+	МАКСИМУМ(СвернутоеInventoryСКоэффицинтомПоTicket.TaxRegistrationСписания) КАК TaxRegistrationСписания,
+	СвернутоеInventoryСКоэффицинтомПоTicket.ДокументРеализации,
+	МАКСИМУМ(СвернутоеInventoryСКоэффицинтомПоTicket.НалоговаяРегистрацияРеализации) КАК НалоговаяРегистрацияРеализации,
+	СвернутоеInventoryСКоэффицинтомПоTicket.SiebelOrder,
+	МАКСИМУМ(СвернутоеInventoryСКоэффицинтомПоTicket.Номер) КАК Номер,
+	МАКСИМУМ(СвернутоеInventoryСКоэффицинтомПоTicket.Дата) КАК Дата,
+	МАКСИМУМ(СвернутоеInventoryСКоэффицинтомПоTicket.Сегмент) КАК Сегмент,
+	МАКСИМУМ(СвернутоеInventoryСКоэффицинтомПоTicket.TaxPeriod) КАК TaxPeriod,
+	МАКСИМУМ(СвернутоеInventoryСКоэффицинтомПоTicket.РеализацияСуммаДокумента) КАК РеализацияСуммаДокумента,
+	МАКСИМУМ(СвернутоеInventoryСКоэффицинтомПоTicket.РеализацияНалоговыйПериод) КАК РеализацияНалоговыйПериод,
+	СУММА(СвернутоеInventoryСКоэффицинтомПоTicket.ManagementSum) КАК ManagementSum,
+	СУММА(InvBatches.Sum * СвернутоеInventoryСКоэффицинтомПоTicket.Коэффициент) КАК Sum,
+	МАКСИМУМ(СчетФактураВыданный.Номер) КАК НомерСчетФактуры
+ИЗ
+	СвернутоеInventoryСКоэффицинтомПоTicket КАК СвернутоеInventoryСКоэффицинтомПоTicket
+		ЛЕВОЕ СОЕДИНЕНИЕ InvBatches КАК InvBatches
+		ПО СвернутоеInventoryСКоэффицинтомПоTicket.ДокументСписания = InvBatches.Регистратор
+			И СвернутоеInventoryСКоэффицинтомПоTicket.Good = InvBatches.Good
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.СчетФактураВыданный КАК СчетФактураВыданный
+		ПО СвернутоеInventoryСКоэффицинтомПоTicket.ДокументРеализации = СчетФактураВыданный.ДокументОснование
+
+СГРУППИРОВАТЬ ПО
+	СвернутоеInventoryСКоэффицинтомПоTicket.ДокументСписания,
+	СвернутоеInventoryСКоэффицинтомПоTicket.ДокументРеализации,
+	СвернутоеInventoryСКоэффицинтомПоTicket.SiebelOrder</query>
+	</dataSet>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Default</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДокументСписания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сегмент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TaxPeriod</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TaxRegistrationСписания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ManagementSum</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Sum</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>SiebelOrder</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДокументРеализации</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НомерСчетФактуры</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Horizontally</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РеализацияНалоговыйПериод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НалоговаяРегистрацияРеализации</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РеализацияСуммаДокумента</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Дата</dcsset:left>
+					<dcsset:comparisonType>Greater</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisMonth</v8:variant>
+					</dcsset:right>
+					<dcsset:userSettingID>e4c64681-7887-4d14-980f-85edc8a00b9d</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Дата</dcsset:left>
+					<dcsset:comparisonType>Less</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextMonth</v8:variant>
+					</dcsset:right>
+					<dcsset:userSettingID>550ae7a8-cf63-41fd-8bcc-ae743fd2b78e</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Номер</dcsset:left>
+					<dcsset:comparisonType>Contains</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">T</dcsset:right>
+					<dcsset:userSettingID>b6756018-0fa9-4c10-8a2e-77d98f4f6eb8</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://www.riet.org"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://www.riet.org"
+		name="rgsRIETDownload"
+		targetNamespace="http://www.riet.org">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://www.riet.org"
+				targetNamespace="http://www.riet.org"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="Data">
+				<xs:sequence>
+					<xs:element name="rows"
+							type="xsd1:row"
+							maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="row">
+				<xs:sequence>
+					<xs:element name="Date"
+							type="xs:dateTime"/>
+					<xs:element name="CustomsPost"
+							type="xs:string"/>
+					<xs:element name="CCD"
+							type="xs:string"/>
+					<xs:element name="Borg"
+							type="xs:string"/>
+					<xs:element name="PO"
+							type="xs:string"/>
+					<xs:element name="Invoice"
+							type="xs:string"/>
+					<xs:element name="InvoiceCurrency"
+							type="xs:string"
+							nillable="true"/>
+					<xs:element name="InvoiceSeller"
+							type="xs:string"
+							nillable="true"/>
+					<xs:element name="Part"
+							type="xs:string"/>
+					<xs:element name="Translation"
+							type="xs:string"
+							nillable="true"/>
+					<xs:element name="Qty"
+							type="xs:double"
+							nillable="true"/>
+					<xs:element name="TotalPrice"
+							type="xs:double"
+							nillable="true"/>
+					<xs:element name="Freight"
+							type="xs:double"
+							nillable="true"/>
+					<xs:element name="Handling"
+							type="xs:double"
+							nillable="true"/>
+					<xs:element name="Insurance"
+							type="xs:double"
+							nillable="true"/>
+					<xs:element name="CCDfees"
+							type="xs:double"
+							nillable="true"/>
+					<xs:element name="CCDduties"
+							type="xs:double"
+							nillable="true"/>
+					<xs:element name="CCDVAT"
+							type="xs:double"
+							nillable="true"/>
+					<xs:element name="UOM"
+							type="xs:string"
+							nillable="true"/>
+					<xs:element name="Type"
+							type="xs:string"
+							nillable="true"/>
+					<xs:element name="CustomsPostName"
+							type="xs:string"
+							nillable="true"/>
+					<xs:element name="CustomsName"
+							type="xs:string"
+							nillable="true"/>
+					<xs:element name="CustomsLawsonCode"
+							type="xs:string"
+							nillable="true"/>
+					<xs:element name="BasicUomName"
+							type="xs:string"
+							nillable="true"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="Download">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Data"
+								type="xsd1:Data"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DownloadResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:boolean"
+								nillable="true"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="DownloadRequestMessage">
+		<part name="parameters"
+				element="tns:Download"/>
+	</message>
+	<message name="DownloadResponseMessage">
+		<part name="parameters"
+				element="tns:DownloadResponse"/>
+	</message>
+	<portType name="rgsRIETDownloadPortType">
+		<operation name="Download">
+			<input name="DownloadRequest"
+					message="tns:DownloadRequestMessage"/>
+			<output name="DownloadResponse"
+					message="tns:DownloadResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="rgsRIETDownloadSoapBinding"
+			type="tns:rgsRIETDownloadPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="Download">
+			<soapbind:operation style="document"
+					soapAction="http://www.riet.org#rgsRIETDownload:Download"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="rgsRIETDownloadSoap12Binding"
+			type="tns:rgsRIETDownloadPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="Download">
+			<soap12bind:operation style="document"
+					soapAction="http://www.riet.org#rgsRIETDownload:Download"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="rgsRIETDownload">
+		<port name="rgsRIETDownloadSoap"
+				binding="tns:rgsRIETDownloadSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="http://ru0021app04.dir.slb.com/ws_svs_riet_test/ws/wsRIETDownload.1cws"/>
+		</port>
+		<port name="rgsRIETDownloadSoap12"
+				binding="tns:rgsRIETDownloadSoap12Binding">
+			<soap12bind:address location="http://ru0021app04.dir.slb.com/ws_svs_riet_test/ws/wsRIETDownload.1cws"/>
+		</port>
+	</service>
+</definitions>

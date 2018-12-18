@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ec62b6e9-b4e5-4727-b573-b9b205d37dba">
+  <producedTypes>
+    <selectionType typeId="8a67094d-3e41-488d-ae36-b3fd5c65f26e" valueTypeId="943a10ad-969f-471f-a073-a08273b408a4"/>
+    <listType typeId="a8520dfa-6da8-44a1-9a38-d11c64b7c4c6" valueTypeId="3fae415e-2ee6-44f8-8a94-9e611797f9a8"/>
+    <managerType typeId="444f9dfa-5e0e-4a20-9374-aefe629f7973" valueTypeId="0a50501b-3177-4baa-a7c2-612156e43c89"/>
+    <recordSetType typeId="75771610-c47c-401a-b437-510dfaeee5d6" valueTypeId="7c6a51ec-e4b8-41a5-8b95-03452abca6a0"/>
+    <recordKeyType typeId="851ab084-ebc9-4650-8531-e10e842ed1af" valueTypeId="e5fc37d9-d95b-4b3b-b823-4936c7beff20"/>
+    <recordType typeId="a989c580-78e2-4b1f-ae8c-57c20e420ab1" valueTypeId="b654a252-5c37-48de-98dc-313f251e62c6"/>
+  </producedTypes>
+  <name>ДанныеКнигиПокупок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Данные книги покупок для Inventory</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Данные книги покупок для Inventory</value>
+  </synonym>
+  <comment></comment>
+  <resources uuid="a6c417a1-c816-4c4c-a665-8c8fdea9bf89">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="cb56b289-376c-4748-9c82-9b02edfef08a">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.РегистрацияПП</types>
+      <types>DocumentRef.ЗакрытиеПредоплаты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="64429f7b-c4c4-4cf4-baa0-4fedc7bb52ae">
+    <name>ОписаниеЗатрат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание затрат</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Описание затрат</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОписаниеЗатрат</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="7a54d3b5-685d-4eca-80ba-ab5d83a9ba5d">
+    <name>Поставщик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставщик</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Поставщик</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f7e12ceb-0842-4adb-b2e1-09f7b7004725">
+    <name>НомерПрихода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер прихода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Номер прихода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="588b51f7-069c-48e4-9add-b9114dc98558">
+    <name>ДатаПрихода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата прихода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Дата прихода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="294fe042-084b-4102-8cf4-8356f4fcecfe">
+    <name>ПлатежныйЦентр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платежный центр</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Платежный центр</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.PayableCentres</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a0a69a00-cae2-4627-a176-0e44b6a9b24a">
+    <name>ПО</name>
+    <synonym>
+      <key>ru</key>
+      <value>PO</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>PO</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="cad9fb78-4e1c-4f44-b8ed-944b0842024e">
+    <name>НомерСчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер счета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Номер счета</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8752ecb9-35d7-415a-bbd0-f472cb656e5d">
+    <name>НомерВаучера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер ваучера</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Номер ваучера</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a0f0a828-7633-410f-a995-dc3d4cb1d5ae">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="ab7853b6-169b-4fa5-b83a-68577ebf80fb">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Валюта</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

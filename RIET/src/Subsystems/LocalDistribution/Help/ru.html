@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16440"></meta></head><body>
+<h1>Подсистема "Local distribution"</h1>
+<h2>Назначение</h2>
+<p>Подсистема Local distribution решает задачи консолидации импортных и локальных <a href="Catalog.Parcels/Help">грузовых мест</a> для перевозки по территории России.</p>
+<h2>Структура подсистемы</h2>
+<p>Локальные <a href="Catalog.Parcels/Help">грузовые места</a> загружаются с помощью <a href="DataProcessor.LocalParcelsLoading/Help">обработки Local parcels loading</a>.<br>А исходные данные по импортным <a href="Catalog.Parcels/Help">грузовым местам</a> предоставляются <a href="Subsystem.ImportExport/Help">подсистемой Shipment</a>.<br>В <a href="Subsystem.ImportExport/Help">подсистеме Shipment</a> автоматически определяется некоторые реквизиты грузовых мест, необходимых для локальной транспортировки:</p>
+<ul><li>Warehouse from - место отправления груза локальной транспортировки определяется из реквизита Actual POA <a href="Document.Поставка/Help">документа Shipment</a> 
+</li><li>Warehouse to - место назначения локальной транспортировки определяется из реквизита Operating location <a href="Document.Инвойс/Help">документа Invoice</a> 
+</li><li>Urgency - срочность определяется из одноименного реквизита <a href="Document.КонсолидированныйПакетЗаявокНаПеревозку/Help">документа DOC</a></li></ul><p>Локальные и импортные <a href="Catalog.Parcels/Help">грузовые места</a> консолидируются в <a href="Document.Trip/Help">документы Trips</a> с помощью рабочего стола <a href="CommonForm.OLDLocalDistributionDesktop/Help">Local distribution desktop</a>.</p>
+<p>После заполнения всех необходимых данных в <a href="Document.Trip/Help">документе Trip</a> данные выгружаются на склад, а потом в систему Move it.</p>
+<h2>Связь с другими подсистемами</h2>
+<p>Исходные данные для подсистемы берутся из нескольких источников:</p>
+<ol><li>
+<div>Данные о импортных грузовых местах берутся из <a href="Subsystem.ImportExport/Help">подсистемы Shipment</a></div>
+</li><li>
+<div>Данные о локальных грузовых местах, по которым есть <a href="Catalog.ЗаявкиНаЗакупку/Help">PO</a>, берутся из Excel-файлов, предоставляемых сладами, и собственно из <a href="Catalog.ЗаявкиНаЗакупку/Help">PO</a>.</div>
+</li><li>
+<div>Остальные локальные non-PO грузовые места вводятся вручную.</div></li></ol></body></html>

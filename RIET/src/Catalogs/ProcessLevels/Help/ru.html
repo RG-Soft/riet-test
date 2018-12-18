@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16540"></meta></head><body>
+<h1>Справочник Process levels</h1>
+<p>Process level - обособленная группа специалистов со своими уникальными бизнес-процессами.<br>Process level похож на RLC или Corporation в TMS, однако, например, Казахстан и Узбекистан - это один RLC (и один Corporation), а в RIET - это разные Process levels.</p>
+<p>Этот справочник используется во всех подсистемах.</p>
+<p>Добавлять элементы в справочник могут только разработчики.</p>
+<h2>Реквизиты</h2>
+<ul><li>
+<div><strong>Code</strong> (текст)<br>Обязательный для заполнения реквизит.<br>Контролируется уникальность.</div>
+</li><li>
+<div><strong>Name</strong> (текст) <br>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>Country</strong> (справочник Countries)<br>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>Corporation</strong> (справочник Corporations) - именно Corporation, а не Process level используется в отчетах.<br>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>Leave documents in desktop until all items are in customs files </strong>(булево) - признак того, что импортные поставки и экспортные реквесты нужно оставлять в рабочем столе до тех пор, пока все товары не войдут в декларации.</div>
+</li><li>
+<div><strong>E-mails for temporary items notifications</strong> (текст) - адреса, на которые будут приходить уведомления об истечении срока временного импорта или экспорта.<br>Можно перечислить несколько через запятую.</div>
+</li><li>
+<div><strong>From TMS IDs list</strong> (текст) - поле, в котором автоматически перечисляются все TMS ID, которые соответсвуют данному Process level. Это нужно для удобства отображения TMS ID в списке Process levels.</div></li></ul><h2>Таблица From TMS IDs</h2>
+<p>В этой таблице указываются TMS ID, по которым система будет определять Process level.<br>Таблица нужна потому, что для одному Process level может соответствовать несколько TMS Corporations. Например Corporations RU West и RU Central соответствуют одному Process level RUWE.</p>
+<ul><li>
+<div><strong>From TMS ID</strong> (текст)<br>Контролируется, что указанный TMS ID не встречается в других Process levels.<br>Система автоматически удаляет пустые строки и дубли.<br></div></li></ul></body></html>

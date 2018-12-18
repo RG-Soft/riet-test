@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>StageGroupName</dataPath>
+			<field>StageGroupName</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Stage group name</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Stage group name</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентPO</dataPath>
+			<field>ПроцентPO</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>% of Total</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>% of Total</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PO</dataPath>
+			<field>PO</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Number of orders</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Number of orders</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>StageGroupNameOrder</dataPath>
+			<field>StageGroupNameOrder</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Stage group name order</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Stage group name order</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>OnTimeDelivery</dataPath>
+			<field>OnTimeDelivery</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>On time delivery</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>On time delivery</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CompletionРrogress</dataPath>
+			<field>CompletionРrogress</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Completion рrogress</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Completion рrogress</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	Предтеча.PO КАК PO,
+	Предтеча.StageGroupName КАК StageGroupName,
+	Предтеча.StageGroupNameOrder КАК StageGroupNameOrder,
+	СУММА(Предтеча.OnTimeDelivery) КАК OnTimeDelivery
+ПОМЕСТИТЬ Предтеча
+ИЗ
+	(ВЫБРАТЬ РАЗЛИЧНЫЕ
+		Items.Ссылка КАК PO,
+		ВЫБОР
+			КОГДА НЕ TripFinalDestinations.ATA ЕСТЬ NULL 
+					И НЕ TripFinalDestinations.ATA = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Delivered to final destination"
+			КОГДА НЕ TripFinalDestinations.ATA ЕСТЬ NULL 
+					И TripFinalDestinations.ATA = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Local delivery"
+			КОГДА НЕ ShipmentsDOCs.Ссылка ЕСТЬ NULL 
+					И НЕ ShipmentsDOCs.Ссылка.CollectedFromPort = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Collected for local delivery"
+			КОГДА НЕ DOCsInvoices.Ссылка ЕСТЬ NULL 
+				ТОГДА "Logistics/import processing"
+			КОГДА НЕ ShipmentsDOCs.Ссылка ЕСТЬ NULL 
+					И (ShipmentsDOCs.Ссылка.CurrentDocumentStage = ЗНАЧЕНИЕ(Перечисление.ShipmentDocumentStages.InCustoms)
+						ИЛИ ShipmentsDOCs.Ссылка.CurrentDocumentStage = ЗНАЧЕНИЕ(Перечисление.ShipmentDocumentStages.Cleared))
+				ТОГДА "Customs processing"
+			КОГДА НЕ ShipmentsDOCs.Ссылка ЕСТЬ NULL 
+				ТОГДА "Logistics/international transit"
+			КОГДА НЕ Items.СтрокаЗаявкиНаЗакупку.SupplierPromisedDate = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Order at Supplier"
+			КОГДА Items.СтрокаЗаявкиНаЗакупку.SupplierPromisedDate = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Order at Supplier"
+		КОНЕЦ КАК StageGroupName,
+		ВЫБОР
+			КОГДА НЕ TripFinalDestinations.ATA ЕСТЬ NULL 
+					И НЕ TripFinalDestinations.ATA = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 7
+			КОГДА НЕ TripFinalDestinations.ATA ЕСТЬ NULL 
+					И TripFinalDestinations.ATA = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 6
+			КОГДА НЕ ShipmentsDOCs.Ссылка ЕСТЬ NULL 
+					И НЕ ShipmentsDOCs.Ссылка.CollectedFromPort = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 5
+			КОГДА НЕ DOCsInvoices.Ссылка ЕСТЬ NULL 
+				ТОГДА 4
+			КОГДА НЕ ShipmentsDOCs.Ссылка ЕСТЬ NULL 
+					И (ShipmentsDOCs.Ссылка.CurrentDocumentStage = ЗНАЧЕНИЕ(Перечисление.ShipmentDocumentStages.InCustoms)
+						ИЛИ ShipmentsDOCs.Ссылка.CurrentDocumentStage = ЗНАЧЕНИЕ(Перечисление.ShipmentDocumentStages.Cleared))
+				ТОГДА 3
+			КОГДА НЕ ShipmentsDOCs.Ссылка ЕСТЬ NULL 
+				ТОГДА 2
+			КОГДА НЕ Items.СтрокаЗаявкиНаЗакупку.SupplierPromisedDate = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 1
+			КОГДА Items.СтрокаЗаявкиНаЗакупку.SupplierPromisedDate = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 0
+		КОНЕЦ КАК StageGroupNameOrder,
+		ВЫБОР
+			КОГДА DOCsParcels.Parcel ЕСТЬ NULL 
+					ИЛИ DOCsParcels.Parcel.RDD = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА Items.СтрокаЗаявкиНаЗакупку.CurrentRDD
+			ИНАЧЕ DOCsParcels.Parcel.RDD
+		КОНЕЦ КАК RDD,
+		Items.СтрокаЗаявкиНаЗакупку.GoodsReceiptDate КАК GoodsReceiptDate,
+		ShipmentsDOCs.Ссылка.ATA КАК ATA,
+		ВЫБОР
+			КОГДА НЕ ShipmentsDOCs.Ссылка.ATA ЕСТЬ NULL 
+					И НЕ ShipmentsDOCs.Ссылка.ATA = ДАТАВРЕМЯ(1, 1, 1)
+					И НЕ ВЫБОР
+							КОГДА DOCsParcels.Parcel ЕСТЬ NULL 
+									ИЛИ DOCsParcels.Parcel.RDD = ДАТАВРЕМЯ(1, 1, 1)
+								ТОГДА Items.СтрокаЗаявкиНаЗакупку.CurrentRDD
+							ИНАЧЕ DOCsParcels.Parcel.RDD
+						КОНЕЦ ЕСТЬ NULL 
+					И НЕ ВЫБОР
+							КОГДА DOCsParcels.Parcel ЕСТЬ NULL 
+									ИЛИ DOCsParcels.Parcel.RDD = ДАТАВРЕМЯ(1, 1, 1)
+								ТОГДА Items.СтрокаЗаявкиНаЗакупку.CurrentRDD
+							ИНАЧЕ DOCsParcels.Parcel.RDD
+						КОНЕЦ = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ВЫБОР
+						КОГДА ВЫБОР
+								КОГДА DOCsParcels.Parcel ЕСТЬ NULL 
+										ИЛИ DOCsParcels.Parcel.RDD = ДАТАВРЕМЯ(1, 1, 1)
+									ТОГДА Items.СтрокаЗаявкиНаЗакупку.CurrentRDD
+								ИНАЧЕ DOCsParcels.Parcel.RDD
+							КОНЕЦ &gt; ShipmentsDOCs.Ссылка.ATA
+							ТОГДА 1
+						ИНАЧЕ 0
+					КОНЕЦ
+			ИНАЧЕ 0
+		КОНЕЦ КАК OnTimeDelivery
+	ИЗ
+		Справочник.СтрокиИнвойса КАК Items
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Инвойсы КАК DOCsInvoices
+				ЛЕВОЕ СОЕДИНЕНИЕ Документ.Поставка.УпаковочныеЛисты КАК ShipmentsDOCs
+				ПО DOCsInvoices.Ссылка = ShipmentsDOCs.УпаковочныйЛист
+					И (НЕ ShipmentsDOCs.Ссылка.Отменен)
+				ЛЕВОЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Parcels КАК DOCsParcels
+					ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Parcels.Детали КАК ParcelsДетали
+					ПО DOCsParcels.Parcel = ParcelsДетали.Ссылка
+					ЛЕВОЕ СОЕДИНЕНИЕ Документ.Trip.Parcels КАК TripParcels
+						ЛЕВОЕ СОЕДИНЕНИЕ Документ.Trip.FinalDestinations КАК TripFinalDestinations
+						ПО TripParcels.Ссылка = TripFinalDestinations.Ссылка
+							И TripParcels.Parcel.WarehouseTo = TripFinalDestinations.WarehouseTo
+					ПО DOCsParcels.Parcel = TripParcels.Parcel
+				ПО DOCsInvoices.Ссылка = DOCsParcels.Ссылка
+			ПО Items.Инвойс = DOCsInvoices.Инвойс
+				И (НЕ DOCsInvoices.Ссылка.Отменен)
+	ГДЕ
+		НЕ Items.ПометкаУдаления
+		И Items.Ссылка = ЕСТЬNULL(ParcelsДетали.СтрокаИнвойса, Items.Ссылка)
+		И Items.ProjectMobilization = &amp;ProjectMobilization
+		И НЕ Items.СтрокаЗаявкиНаЗакупку ЕСТЬ NULL 
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		Items.Ссылка,
+		ВЫБОР
+			КОГДА НЕ Items.SupplierPromisedDate = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Order at Supplier"
+			КОГДА Items.SupplierPromisedDate = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Order at Supplier"
+		КОНЕЦ,
+		NULL,
+		NULL,
+		Items.GoodsReceiptDate,
+		NULL,
+		NULL
+	ИЗ
+		Справочник.СтрокиЗаявкиНаЗакупку КАК Items
+			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.СтрокиИнвойса КАК СтрокиИнвойса
+			ПО Items.Ссылка = СтрокиИнвойса.СтрокаЗаявкиНаЗакупку
+	ГДЕ
+		НЕ Items.ПометкаУдаления
+		И СтрокиИнвойса.Ссылка ЕСТЬ NULL 
+		И Items.ProjectMobilization = &amp;ProjectMobilization
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ManualItems.Ссылка,
+		ВЫБОР
+			КОГДА НЕ ManualItems.SupplierAvailability = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Order at Supplier"
+			КОГДА ManualItems.SupplierAvailability = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Order at Supplier"
+		КОНЕЦ,
+		ВЫБОР
+			КОГДА НЕ ManualItems.SupplierAvailability = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Availability date confirmed by supplier"
+			КОГДА ManualItems.SupplierAvailability = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА "Pending supplier confirmation"
+		КОНЕЦ,
+		ManualItems.RDD,
+		NULL,
+		NULL,
+		0
+	ИЗ
+		Справочник.ProjectMobilizationManualItems КАК ManualItems
+	ГДЕ
+		НЕ ManualItems.ПометкаУдаления
+		И ManualItems.DomesticInternational = ЗНАЧЕНИЕ(Перечисление.DomesticInternational.International)
+		И ManualItems.Владелец = &amp;ProjectMobilization
+		И ManualItems.Item = ЗНАЧЕНИЕ(Справочник.СтрокиИнвойса.ПустаяСсылка)
+		И ManualItems.POLine = ЗНАЧЕНИЕ(Справочник.СтрокиЗаявкиНаЗакупку.ПустаяСсылка)) КАК Предтеча
+
+СГРУППИРОВАТЬ ПО
+	Предтеча.StageGroupName,
+	Предтеча.StageGroupNameOrder,
+	Предтеча.RDD,
+	Предтеча.ATA,
+	Предтеча.GoodsReceiptDate,
+	Предтеча.PO
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ИсходнаяВыборка.PO) КАК PO
+ПОМЕСТИТЬ Всего
+ИЗ
+	Предтеча КАК ИсходнаяВыборка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВыборкаИсходная.PO) КАК PO,
+	ВыборкаИсходная.StageGroupName КАК StageGroupName,
+	ВыборкаИсходная.StageGroupNameOrder КАК StageGroupNameOrder,
+	СУММА(ВыборкаИсходная.OnTimeDelivery) КАК OnTimeDelivery
+ПОМЕСТИТЬ ИсходнаяВыборка
+ИЗ
+	Предтеча КАК ВыборкаИсходная
+
+СГРУППИРОВАТЬ ПО
+	ВыборкаИсходная.StageGroupName,
+	ВыборкаИсходная.StageGroupNameOrder
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	"Order at Supplier" КАК StageGroupName,
+	1 КАК StageGroupNameOrder
+ПОМЕСТИТЬ Этапы
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Logistics/international transit",
+	2
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Customs processing",
+	3
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Logistics/import processing",
+	4
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Collected for local delivery",
+	5
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Local delivery",
+	6
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Delivered to final destination",
+	7
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИсходнаяВыборка.PO КАК PO,
+	ВЫБОР
+		КОГДА Всего.PO = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(ИсходнаяВыборка.PO / Всего.PO * 100 КАК ЧИСЛО(15, 0))
+	КОНЕЦ КАК ПроцентPO,
+	Этапы.StageGroupName КАК StageGroupName,
+	Этапы.StageGroupNameOrder КАК StageGroupNameOrder,
+	ВЫБОР
+		КОГДА Всего.PO = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(ИсходнаяВыборка.OnTimeDelivery / Всего.PO * 100 КАК ЧИСЛО(15, 0))
+	КОНЕЦ КАК OnTimeDelivery,
+	ВЫБОР
+		КОГДА Всего.PO = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(ИсходнаяВыборка.PO / Всего.PO * 100 КАК ЧИСЛО(15, 0))
+	КОНЕЦ КАК CompletionРrogress
+ИЗ
+	Этапы КАК Этапы
+		ЛЕВОЕ СОЕДИНЕНИЕ ИсходнаяВыборка КАК ИсходнаяВыборка
+			ПОЛНОЕ СОЕДИНЕНИЕ Всего КАК Всего
+			ПО (ИСТИНА)
+		ПО Этапы.StageGroupName = ИсходнаяВыборка.StageGroupName
+
+УПОРЯДОЧИТЬ ПО
+	Этапы.StageGroupNameOrder</query>
+	</dataSet>
+	<totalField>
+		<dataPath>PO</dataPath>
+		<expression>Максимум(PO)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентPO</dataPath>
+		<expression>Максимум(ПроцентPO)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>OnTimeDelivery</dataPath>
+		<expression>Сумма(OnTimeDelivery)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>CompletionРrogress</dataPath>
+		<expression>Сумма(CompletionРrogress)</expression>
+	</totalField>
+	<parameter>
+		<name>ProjectMobilization</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Project mobilization</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Project mobilization</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ProjectMobilization</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ВыборГруппИЭлементов</dcscor:parameter>
+				<dcscor:value xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d5p1:FoldersAndItemsUse">Items</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>On time delivery: </v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>On time delivery: </v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">OnTimeDelivery</dcsat:value>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="10" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>OnTimeDelivery</dcsat:name>
+			<dcsat:expression>OnTimeDelivery</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет2</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Completion progress: </v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Completion progress: </v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">CompletionProgress</dcsat:value>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="10" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>CompletionProgress</dcsat:name>
+			<dcsat:expression>CompletionРrogress</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет3</name>
+		<template xsi:nil="true"/>
+	</template>
+	<fieldTemplate>
+		<field>OnTimeDelivery</field>
+		<template>Макет1</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>CompletionРrogress</field>
+		<template>Макет2</template>
+	</fieldTemplate>
+	<groupTemplate>
+		<groupName>Невидимка</groupName>
+		<templateType>Header</templateType>
+		<template>Макет3</template>
+	</groupTemplate>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PO</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроцентPO</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ProjectMobilization</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>c64bc08d-55eb-4148-ac9f-a729a4babe8f</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>StageGroupNameOrder</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>Невидимка</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>OnTimeDelivery</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>Невидимка</dcsset:name>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">StageGroupName</dcsset:left>
+						<dcsset:comparisonType>Contains</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">Delivered to final destination</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CompletionРrogress</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemChart">
+				<dcsset:point>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>StageGroupName</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:point>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>PO</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветВДиаграмме</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">#0000FF</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>ПроцентPO</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветВДиаграмме</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">#339966</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:ChartType">Column3D</dcscor:value>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ТипДиаграммы.ОтображатьТаблицуДанных</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ТипДиаграммы.РасположениеЛегенды</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionChartLegendPlacement">None</dcscor:value>
+						</dcscor:item>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,855 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AU</dataPath>
+			<field>AU</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Batch</dataPath>
+			<field>Batch</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Document</dataPath>
+			<field>Document</field>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>FinishedGood</dataPath>
+			<field>FinishedGood</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Good</dataPath>
+			<field>Good</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>IctDocType</dataPath>
+			<field>IctDocType</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ItemCode</dataPath>
+			<field>ItemCode</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Location</dataPath>
+			<field>Location</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Period</dataPath>
+			<field>Period</field>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>QuantityРасход</dataPath>
+			<field>QuantityРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Qty</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Qty</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Segment</dataPath>
+			<field>Segment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SumРасход</dataPath>
+			<field>SumРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Sum</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sum</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TaxPeriod</dataPath>
+			<field>TaxPeriod</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ='MMMM yyyy "г."'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TaxRegistration</dataPath>
+			<field>TaxRegistration</field>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ВыборГруппИЭлементов</dcscor:parameter>
+					<dcscor:value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d6p1:FoldersAndItemsUse">Folders</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>QuantityОтмена</dataPath>
+			<field>QuantityОтмена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>QuantityСписание</dataPath>
+			<field>QuantityСписание</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SumОтмена</dataPath>
+			<field>SumОтмена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SumСписание</dataPath>
+			<field>SumСписание</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AJ_IS</dataPath>
+			<field>AJ_IS</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>AJ, IS</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>AJ, IS</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AUКод</dataPath>
+			<field>AUКод</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Reference</dataPath>
+			<field>Reference</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СсылкаReference</dataPath>
+			<field>СсылкаReference</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>GoodDescriptionRus</dataPath>
+			<field>GoodDescriptionRus</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Description (rus)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Description (rus)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TransactionType</dataPath>
+			<field>TransactionType</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	InventoryСписание.Ссылка
+ПОМЕСТИТЬ СписокСписаний
+ИЗ
+	Документ.InventoryСписание КАК InventoryСписание
+ГДЕ
+	InventoryСписание.Проведен
+	И InventoryСписание.НалоговыйПериод МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	InventoryКорректировка.Ссылка
+ИЗ
+	Документ.InventoryКорректировка КАК InventoryКорректировка
+ГДЕ
+	InventoryКорректировка.Проведен
+	И InventoryКорректировка.InventoryСписание.НалоговыйПериод МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И InventoryКорректировка.InventoryСписание &lt;&gt; ЗНАЧЕНИЕ(Документ.InventoryСписание.ПустаяСсылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	InventoryКорректировкаGoods.Ссылка КАК Ссылка,
+	InventoryКорректировкаGoods.Good,
+	InventoryКорректировкаGoods.AU,
+	InventoryКорректировкаGoods.Reference,
+	ВЫРАЗИТЬ(InventoryКорректировкаGoods.Ссылка.Reference КАК СТРОКА(10)) КАК СсылкаReference
+ПОМЕСТИТЬ СписокСтрокСписаний
+ИЗ
+	Документ.InventoryКорректировка.Goods КАК InventoryКорректировкаGoods
+ГДЕ
+	InventoryКорректировкаGoods.Ссылка.Проведен
+	И InventoryКорректировкаGoods.Ссылка.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	InventoryBatches.AU.Segment КАК Segment,
+	InventoryBatches.TaxRegistration КАК TaxRegistration,
+	InventoryBatches.InventoryLocation КАК Location,
+	МАКСИМУМ(InventoryBatches.Batch) КАК Batch,
+	InventoryBatches.Good.Код КАК ItemCode,
+	InventoryBatches.Good,
+	InventoryBatches.FinishedGood КАК FinishedGood,
+	InventoryBatches.AU,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+			ТОГДА InventoryBatches.Регистратор
+		ИНАЧЕ InventoryBatches.Регистратор.InventoryСписание
+	КОНЕЦ КАК Document,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+			ТОГДА InventoryBatches.Регистратор.IctDocType
+		ИНАЧЕ InventoryBatches.Регистратор.InventoryСписание.IctDocType
+	КОНЕЦ КАК IctDocType,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+			ТОГДА НАЧАЛОПЕРИОДА(InventoryBatches.Регистратор.НалоговыйПериод, МЕСЯЦ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(InventoryBatches.Регистратор.InventoryСписание.НалоговыйПериод, МЕСЯЦ)
+	КОНЕЦ КАК TaxPeriod,
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Quantity
+			ИНАЧЕ -InventoryBatches.Quantity
+		КОНЕЦ) КАК QuantityРасход,
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Sum
+			ИНАЧЕ -InventoryBatches.Sum
+		КОНЕЦ) КАК SumРасход,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+			ТОГДА InventoryBatches.Период
+		ИНАЧЕ InventoryBatches.Регистратор.InventoryСписание.Дата
+	КОНЕЦ КАК Period,
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+				ТОГДА InventoryBatches.Quantity
+			ИНАЧЕ 0
+		КОНЕЦ) КАК QuantityСписание,
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+				ТОГДА 0
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Quantity
+			ИНАЧЕ -InventoryBatches.Quantity
+		КОНЕЦ) КАК QuantityОтмена,
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+				ТОГДА InventoryBatches.Sum
+			ИНАЧЕ 0
+		КОНЕЦ) КАК SumСписание,
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+				ТОГДА 0
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Sum
+			ИНАЧЕ InventoryBatches.Sum
+		КОНЕЦ) КАК SumОтмена,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЛОЖЬ) КАК AJ_IS,
+	InventoryBatches.AU.Код,
+	NULL КАК Reference,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+			ТОГДА ВЫРАЗИТЬ(InventoryBatches.Регистратор.Reference КАК СТРОКА(10))
+		ИНАЧЕ ВЫРАЗИТЬ(InventoryBatches.Регистратор.InventoryСписание.Reference КАК СТРОКА(10))
+	КОНЕЦ КАК СсылкаReference
+ПОМЕСТИТЬ ИтоговаяТаблица
+ИЗ
+	РегистрНакопления.InventoryBatches КАК InventoryBatches
+ГДЕ
+	InventoryBatches.Регистратор В
+			(ВЫБРАТЬ
+				СписокСписаний.Ссылка КАК Ссылка
+			ИЗ
+				СписокСписаний КАК СписокСписаний)
+	И (InventoryBatches.Fiscal
+			ИЛИ InventoryBatches.Регистратор.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToExport)
+			ИЛИ InventoryBatches.Регистратор.TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueConvertToAsset))
+
+СГРУППИРОВАТЬ ПО
+	InventoryBatches.TaxRegistration,
+	InventoryBatches.InventoryLocation,
+	InventoryBatches.Good.Код,
+	InventoryBatches.Good,
+	InventoryBatches.FinishedGood,
+	InventoryBatches.AU,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+			ТОГДА InventoryBatches.Период
+		ИНАЧЕ InventoryBatches.Регистратор.InventoryСписание.Дата
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+			ТОГДА InventoryBatches.Регистратор
+		ИНАЧЕ InventoryBatches.Регистратор.InventoryСписание
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+			ТОГДА InventoryBatches.Регистратор.IctDocType
+		ИНАЧЕ InventoryBatches.Регистратор.InventoryСписание.IctDocType
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+			ТОГДА НАЧАЛОПЕРИОДА(InventoryBatches.Регистратор.НалоговыйПериод, МЕСЯЦ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(InventoryBatches.Регистратор.InventoryСписание.НалоговыйПериод, МЕСЯЦ)
+	КОНЕЦ,
+	InventoryBatches.AU.Код,
+	ВЫБОР
+		КОГДА InventoryBatches.Регистратор ССЫЛКА Документ.InventoryСписание
+			ТОГДА ВЫРАЗИТЬ(InventoryBatches.Регистратор.Reference КАК СТРОКА(10))
+		ИНАЧЕ ВЫРАЗИТЬ(InventoryBatches.Регистратор.InventoryСписание.Reference КАК СТРОКА(10))
+	КОНЕЦ,
+	InventoryBatches.AU.Segment
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	InventoryBatches.AU.Segment,
+	InventoryBatches.TaxRegistration,
+	InventoryBatches.InventoryLocation,
+	InventoryBatches.Batch,
+	InventoryBatches.Good.Код,
+	InventoryBatches.Good,
+	InventoryBatches.FinishedGood,
+	InventoryBatches.AU,
+	InventoryBatches.Регистратор,
+	InventoryBatches.Регистратор.IctDocType,
+	НАЧАЛОПЕРИОДА(InventoryBatches.Регистратор.Дата, МЕСЯЦ),
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Quantity
+			ИНАЧЕ -InventoryBatches.Quantity
+		КОНЕЦ),
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Sum
+			ИНАЧЕ -InventoryBatches.Sum
+		КОНЕЦ),
+	InventoryBatches.Период,
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Quantity
+			ИНАЧЕ -InventoryBatches.Quantity
+		КОНЕЦ),
+	СУММА(0),
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Sum
+			ИНАЧЕ -InventoryBatches.Sum
+		КОНЕЦ),
+	СУММА(0),
+	МАКСИМУМ(ИСТИНА),
+	InventoryBatches.AU.Код,
+	СписокСтрокСписаний.Reference,
+	NULL
+ИЗ
+	РегистрНакопления.InventoryBatches КАК InventoryBatches
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ СписокСтрокСписаний КАК СписокСтрокСписаний
+		ПО InventoryBatches.Регистратор = СписокСтрокСписаний.Ссылка
+			И InventoryBatches.Good = СписокСтрокСписаний.Good
+			И InventoryBatches.AU = СписокСтрокСписаний.AU
+ГДЕ
+	InventoryBatches.Регистратор.InventoryСписание = ЗНАЧЕНИЕ(Документ.InventoryСписание.ПустаяСсылка)
+	И InventoryBatches.Fiscal
+
+СГРУППИРОВАТЬ ПО
+	InventoryBatches.TaxRegistration,
+	InventoryBatches.InventoryLocation,
+	InventoryBatches.Batch,
+	InventoryBatches.Good.Код,
+	InventoryBatches.Good,
+	InventoryBatches.FinishedGood,
+	InventoryBatches.AU,
+	InventoryBatches.Регистратор,
+	InventoryBatches.Регистратор.IctDocType,
+	НАЧАЛОПЕРИОДА(InventoryBatches.Регистратор.Дата, МЕСЯЦ),
+	InventoryBatches.Период,
+	InventoryBatches.AU.Код,
+	СписокСтрокСписаний.Reference,
+	InventoryBatches.AU.Segment
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	InventoryBatches.AU.Segment,
+	InventoryBatches.TaxRegistration,
+	InventoryBatches.InventoryLocation,
+	МАКСИМУМ(InventoryBatches.Batch),
+	InventoryBatches.Good.Код,
+	InventoryBatches.Good,
+	InventoryBatches.FinishedGood,
+	InventoryBatches.AU,
+	InventoryBatches.Регистратор,
+	МАКСИМУМ("Manual"),
+	InventoryBatches.FiscalPeriod,
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Quantity
+			ИНАЧЕ -InventoryBatches.Quantity
+		КОНЕЦ),
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Sum
+			ИНАЧЕ -InventoryBatches.Sum
+		КОНЕЦ),
+	InventoryBatches.Период,
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Quantity
+			ИНАЧЕ -InventoryBatches.Quantity
+		КОНЕЦ),
+	СУММА(0),
+	СУММА(ВЫБОР
+			КОГДА InventoryBatches.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА InventoryBatches.Sum
+			ИНАЧЕ -InventoryBatches.Sum
+		КОНЕЦ),
+	СУММА(0),
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЛОЖЬ),
+	InventoryBatches.AU.Код,
+	NULL,
+	МАКСИМУМ("")
+ИЗ
+	РегистрНакопления.InventoryBatches КАК InventoryBatches
+ГДЕ
+	InventoryBatches.Регистратор ССЫЛКА Документ.КорректировкаЗаписейРегистров
+	И InventoryBatches.Fiscal
+	И InventoryBatches.FiscalPeriod МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+СГРУППИРОВАТЬ ПО
+	InventoryBatches.TaxRegistration,
+	InventoryBatches.InventoryLocation,
+	InventoryBatches.Good.Код,
+	InventoryBatches.Good,
+	InventoryBatches.FinishedGood,
+	InventoryBatches.AU,
+	InventoryBatches.AU.Код,
+	InventoryBatches.Регистратор,
+	InventoryBatches.FiscalPeriod,
+	InventoryBatches.Период,
+	InventoryBatches.AU.Segment
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИтоговаяТаблица.Segment,
+	ИтоговаяТаблица.TaxRegistration КАК TaxRegistration,
+	ИтоговаяТаблица.Location,
+	ИтоговаяТаблица.Batch,
+	ИтоговаяТаблица.ItemCode,
+	ИтоговаяТаблица.Good,
+	ИтоговаяТаблица.FinishedGood,
+	ИтоговаяТаблица.AU,
+	ИтоговаяТаблица.Document КАК Document,
+	ИтоговаяТаблица.IctDocType,
+	ИтоговаяТаблица.TaxPeriod,
+	ИтоговаяТаблица.QuantityРасход КАК QuantityРасход,
+	ИтоговаяТаблица.SumРасход КАК SumРасход,
+	ИтоговаяТаблица.Period,
+	ИтоговаяТаблица.QuantityСписание КАК QuantityСписание,
+	ИтоговаяТаблица.QuantityОтмена КАК QuantityОтмена,
+	ИтоговаяТаблица.SumСписание КАК SumСписание,
+	ИтоговаяТаблица.SumОтмена КАК SumОтмена,
+	ИтоговаяТаблица.AJ_IS,
+	ИтоговаяТаблица.AUКод,
+	ИтоговаяТаблица.Reference,
+	ИтоговаяТаблица.СсылкаReference,
+	ИтоговаяТаблица.Good.DescriptionRus,
+	ИтоговаяТаблица.Document.TransactionType КАК TransactionType
+ИЗ
+	ИтоговаяТаблица КАК ИтоговаяТаблица
+ГДЕ
+	ИтоговаяТаблица.TaxPeriod МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+УПОРЯДОЧИТЬ ПО
+	TaxRegistration,
+	Document</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ВидПродаж</dataPath>
+		<expression>ВЫБОР когда IctDocType = "Manual" тогда "Manual" 
+Когда TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToSales) Тогда "1. Продажи" Когда
+ TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToService)
+ИЛИ TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToRepairClientOwned)
+ИЛИ TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToRepairSLBOwned) Тогда "2. Ремонт с использованием запчастей" 
+КОГДА TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueToExport) Тогда "5. Экспорт"  
+КОГДА AJ_IS Тогда "3. AJ, IS"   
+КОГДА TransactionType = ЗНАЧЕНИЕ(Перечисление.InventoryTransactionsTypes.IssueConvertToAsset) Тогда "4. Лизинг" 
+Иначе "6. Обычные" Конец </expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид продаж</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Вид продаж</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>QuantityРасход</dataPath>
+		<expression>Сумма(QuantityРасход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>SumРасход</dataPath>
+		<expression>Сумма(SumРасход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>SumОтмена</dataPath>
+		<expression>Сумма(SumОтмена)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>SumСписание</dataPath>
+		<expression>Сумма(SumСписание)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>QuantityОтмена</dataPath>
+		<expression>Сумма(QuantityОтмена)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>QuantityСписание</dataPath>
+		<expression>Сумма(QuantityСписание)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TaxRegistration</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Segment</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Location</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AU</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Good</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>GoodDescriptionRus</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ItemCode</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ItemCode</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>SpecialColumn</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>QuantityСписание</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>SumСписание</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>QuantityОтмена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>SumОтмена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>QuantityРасход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>SumРасход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TaxPeriod</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидПродаж</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Document</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Batch.PONumber</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Reference</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">IctDocType</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">IS</dcsset:right>
+					<dcsset:right xsi:type="xs:string">AJ</dcsset:right>
+					<dcsset:right xsi:type="xs:string">AJ, IS</dcsset:right>
+					<dcsset:right xsi:type="xs:string">Manual</dcsset:right>
+					<dcsset:userSettingID>6d8120cc-3f19-4441-82a3-44cc4d26b2f0</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Segment</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">e1f043c3-7873-11da-9eb6-001279d40e65</dcsset:right>
+					<dcsset:userSettingID>e98a2e8f-392c-470a-8f5c-ca93ed83158a</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">TaxRegistration</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.ПодразделенияОрганизаций.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>be4659b4-2bed-4ee3-a610-7e65d8af53be</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>7c23b956-c5bf-487b-ae1e-d2e83640a5c7</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>0001-01-01T00:00:00</v8:date>
+					</dcscor:value>
+					<dcsset:userSettingID>e4ac648c-12fc-43ca-95eb-940fe0e49981</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:use>false</dcsset:use>
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>TaxPeriod</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ВидПродаж</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>TaxRegistration</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Segment</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Location</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>AU</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ItemCode</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Good</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Document</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>Batch.PONumber</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="baf61898-4205-4fb5-90d6-ce17f1c0d227">
+  <producedTypes>
+    <selectionType typeId="958af9b6-ee9a-425b-b2c3-b95a367953b2" valueTypeId="34d4ad73-c7c2-412f-9f12-cb2299a646a6"/>
+    <listType typeId="f983a16c-9cd1-4b0d-bd40-a8660f7ef1a5" valueTypeId="8a6b7f0a-0514-42f0-8cd6-5753008748db"/>
+    <managerType typeId="2274f6dc-abfb-470e-8108-86a96e953b7b" valueTypeId="146945fb-115c-4772-b86e-f8ed7d51a186"/>
+    <recordSetType typeId="5feae7c1-76b0-493f-9330-25c7438cd6d0" valueTypeId="707683f2-056c-4029-84a0-5dce2242788f"/>
+    <recordKeyType typeId="d4cb00ff-e599-4448-b91b-32423c43ec82" valueTypeId="68dd1077-7922-49a6-b62a-8825097713f2"/>
+    <recordType typeId="dc3038a7-7fd3-4b85-b7fc-ea41031a5f0c" valueTypeId="4ed24ad9-118e-41b4-a9cd-21167f16e0a2"/>
+    <recordManagerType typeId="2b6eabc5-01b6-4bde-bdd5-d16e14d1318d" valueTypeId="a4cfa415-92da-43fd-9104-b7c3bb179a11"/>
+  </producedTypes>
+  <name>TransportMonthlyRate</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ставки транспортных средств</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Transport monthly rate</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.TransportMonthlyRate.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.TransportMonthlyRate.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="35d404d4-1e33-4556-bf2d-9ae425a60322">
+    <name>MonthlyRate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месячная ставка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Monthly rate</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="036e6200-4460-4a7a-9bcf-440fac597511">
+    <name>Currency</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Currency</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="46921735-271c-438b-8696-850130bab068">
+    <name>Transport</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспортное средство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transport</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Transport</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Equipment</name>
+      <field>0:d2061586-7b21-4e17-85c0-c6ebf45445f0</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Отбор.TypeOfTransport</name>
+      <field>0:46e3bdeb-5779-48fb-a768-d0a4b9d0f01f</field>
+    </choiceParameterLinks>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="083b0baf-668d-4fc7-bac4-5f105e10a2e0">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="57dc69fc-28d7-4f23-a999-4c21ff4dab57">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

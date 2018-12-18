@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AU</dataPath>
+			<field>AU</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Batch</dataPath>
+			<field>Batch</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Company</dataPath>
+			<field>Company</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>FinishedGood</dataPath>
+			<field>FinishedGood</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Good</dataPath>
+			<field>Good</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InventoryLocation</dataPath>
+			<field>InventoryLocation</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TaxRegistration</dataPath>
+			<field>TaxRegistration</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ВыборГруппИЭлементов</dcscor:parameter>
+					<dcscor:value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d6p1:FoldersAndItemsUse">Folders</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвенториКонечныйОстаток</dataPath>
+			<field>ИнвенториКонечныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток материалов на начало следующего отчетного периода, руб.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Остаток материалов на начало следующего отчетного периода, руб.</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>Инвентори</dcscom:balanceGroupName>
+				<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвенториНачальныйОстаток</dataPath>
+			<field>ИнвенториНачальныйОстаток</field>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>Инвентори</dcscom:balanceGroupName>
+				<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвенториПриход</dataPath>
+			<field>ИнвенториПриход</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвенториРасход</dataPath>
+			<field>ИнвенториРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расход материалов за отчетный период, руб.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Расход материалов за отчетный период, руб.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сегмент</dataPath>
+			<field>Сегмент</field>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ВыборГруппИЭлементов</dcscor:parameter>
+					<dcscor:value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d6p1:FoldersAndItemsUse">Folders</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТранспортКонечныйОстаток</dataPath>
+			<field>ТранспортКонечныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток транспортных расходов на начало следующего отчетного периода, руб.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Остаток транспортных расходов на начало следующего отчетного периода, руб.</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>Транспорт</dcscom:balanceGroupName>
+				<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТранспортНачальныйОстаток</dataPath>
+			<field>ТранспортНачальныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток транспортных расходов на начало отчетного периода, руб.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Остаток транспортных расходов на начало отчетного периода, руб.</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>Транспорт</dcscom:balanceGroupName>
+				<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТранспортПриход</dataPath>
+			<field>ТранспортПриход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Транспортые расходы за отчетный период, руб.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Транспортые расходы за отчетный период, руб.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчетный период</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Отчетный период</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ='к "квартал" гг'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТранспортВсего</dataPath>
+			<field>ТранспортВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма транспортных расходов за квартал с учетом остатка на начало периода, руб.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сумма транспортных расходов за квартал с учетом остатка на начало периода, руб.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасходВсего</dataPath>
+			<field>РасходВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего расходов за отчетный период, руб.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Всего расходов за отчетный период, руб.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТранспортРасход</dataPath>
+			<field>ТранспортРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма списанных транспортных расходов за отчетный период, руб.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сумма списанных транспортных расходов за отчетный период, руб.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Процент</dataPath>
+			<field>Процент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Процент списания к остатку на конец периода, %</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Процент списания к остатку на конец периода, %</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	InventoryTransportationОстаткиИОбороты.TaxRegistration,
+	СУММА(InventoryTransportationОстаткиИОбороты.СуммаРубНачальныйОстаток) КАК ТранспортНачальныйОстаток,
+	СУММА(InventoryTransportationОстаткиИОбороты.СуммаРубПриход) КАК ТранспортПриход,
+	СУММА(InventoryTransportationОстаткиИОбороты.СуммаРубРасход) КАК ТранспортРасход,
+	СУММА(InventoryTransportationОстаткиИОбороты.СуммаРубКонечныйОстаток) КАК ТранспортКонечныйОстаток,
+	InventoryTransportationОстаткиИОбороты.Период
+ПОМЕСТИТЬ Траспорт
+ИЗ
+	РегистрНакопления.InventoryTransportation.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, Квартал, ДвиженияИГраницыПериода, Сегмент В (&amp;Сегменты)) КАК InventoryTransportationОстаткиИОбороты
+
+СГРУППИРОВАТЬ ПО
+	InventoryTransportationОстаткиИОбороты.TaxRegistration,
+	InventoryTransportationОстаткиИОбороты.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(ВложенныйЗапрос.ИнвенториНачальныйОстаток) КАК ИнвенториНачальныйОстаток,
+	СУММА(ВложенныйЗапрос.ИнвенториПриход) КАК ИнвенториПриход,
+	СУММА(ВложенныйЗапрос.ИнвенториКонечныйОстаток) КАК ИнвенториКонечныйОстаток,
+	ВложенныйЗапрос.TaxRegistration КАК TaxRegistration,
+	ВложенныйЗапрос.Период
+ПОМЕСТИТЬ Инвентори
+ИЗ
+	(ВЫБРАТЬ
+		InventoryBatchesОстаткиИОбороты.SumНачальныйОстаток КАК ИнвенториНачальныйОстаток,
+		InventoryBatchesОстаткиИОбороты.SumПриход КАК ИнвенториПриход,
+		InventoryBatchesОстаткиИОбороты.SumКонечныйОстаток КАК ИнвенториКонечныйОстаток,
+		InventoryBatchesОстаткиИОбороты.TaxRegistration КАК TaxRegistration,
+		InventoryBatchesОстаткиИОбороты.Период КАК Период,
+		InventoryBatchesОстаткиИОбороты.AU КАК AU
+	ИЗ
+		РегистрНакопления.InventoryBatches.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, Квартал, ДвиженияИГраницыПериода, AU.Сегмент.Родитель.Родитель В (&amp;Сегменты)) КАК InventoryBatchesОстаткиИОбороты) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.TaxRegistration,
+	ВложенныйЗапрос.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(InventoryBatchesОбороты.SumРасход) КАК ИнвРасход,
+	InventoryBatchesОбороты.TaxRegistration КАК TaxRegistration,
+	ВЫБОР
+		КОГДА InventoryBatchesОбороты.Регистратор.IctDocType = "IS"
+			ТОГДА НАЧАЛОПЕРИОДА(InventoryBatchesОбороты.Регистратор.НалоговыйПериод, КВАРТАЛ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(InventoryBatchesОбороты.Период, КВАРТАЛ)
+	КОНЕЦ КАК Период
+ПОМЕСТИТЬ ИнвенториРасход
+ИЗ
+	РегистрНакопления.InventoryBatches.Обороты(, , Регистратор, AU.Сегмент.Родитель.Родитель В (&amp;Сегменты)) КАК InventoryBatchesОбороты
+ГДЕ
+	(InventoryBatchesОбороты.Регистратор.IctDocType = "IS"
+				И (InventoryBatchesОбороты.Регистратор.НалоговыйПериод МЕЖДУ &amp;НачалоПериода И &amp;конецПериода)
+			ИЛИ InventoryBatchesОбороты.Регистратор.IctDocType = "AJ, IS"
+				И (InventoryBatchesОбороты.Регистратор.Дата МЕЖДУ &amp;НачалоПериода И &amp;конецПериода))
+
+СГРУППИРОВАТЬ ПО
+	InventoryBatchesОбороты.TaxRegistration,
+	ВЫБОР
+		КОГДА InventoryBatchesОбороты.Регистратор.IctDocType = "IS"
+			ТОГДА НАЧАЛОПЕРИОДА(InventoryBatchesОбороты.Регистратор.НалоговыйПериод, КВАРТАЛ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(InventoryBatchesОбороты.Период, КВАРТАЛ)
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Инвентори.Период,
+	Инвентори.TaxRegistration,
+	Инвентори.ИнвенториНачальныйОстаток,
+	Инвентори.ИнвенториПриход,
+	Инвентори.ИнвенториКонечныйОстаток,
+	Траспорт.ТранспортНачальныйОстаток,
+	Траспорт.ТранспортПриход,
+	ЕСТЬNULL(Траспорт.ТранспортРасход, 0) КАК ТранспортРасход,
+	Траспорт.ТранспортКонечныйОстаток,
+	Траспорт.ТранспортНачальныйОстаток + Траспорт.ТранспортПриход КАК ТранспортВсего,
+	ЕСТЬNULL(ИнвенториРасход.ИнвРасход, 0) КАК ИнвенториРасход,
+	ЕСТЬNULL(ИнвенториРасход.ИнвРасход, 0) + ЕСТЬNULL(Траспорт.ТранспортРасход, 0) КАК РасходВсего,
+	ВЫБОР
+		КОГДА Инвентори.ИнвенториКонечныйОстаток = 0
+			ТОГДА 1
+		ИНАЧЕ ИнвенториРасход.ИнвРасход / Инвентори.ИнвенториКонечныйОстаток
+	КОНЕЦ * 100 КАК Процент
+ПОМЕСТИТЬ ТаблицаБезОкругленияПроцента
+ИЗ
+	Инвентори КАК Инвентори
+		ЛЕВОЕ СОЕДИНЕНИЕ Траспорт КАК Траспорт
+		ПО Инвентори.TaxRegistration = Траспорт.TaxRegistration
+			И Инвентори.Период = Траспорт.Период
+		ЛЕВОЕ СОЕДИНЕНИЕ ИнвенториРасход КАК ИнвенториРасход
+		ПО Инвентори.TaxRegistration = ИнвенториРасход.TaxRegistration
+			И Инвентори.Период = ИнвенториРасход.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаБезОкругленияПроцента.Период,
+	ТаблицаБезОкругленияПроцента.TaxRegistration,
+	ТаблицаБезОкругленияПроцента.ИнвенториНачальныйОстаток,
+	ТаблицаБезОкругленияПроцента.ИнвенториПриход,
+	ТаблицаБезОкругленияПроцента.ИнвенториКонечныйОстаток,
+	ТаблицаБезОкругленияПроцента.ТранспортНачальныйОстаток,
+	ТаблицаБезОкругленияПроцента.ТранспортПриход,
+	ТаблицаБезОкругленияПроцента.ТранспортРасход,
+	ТаблицаБезОкругленияПроцента.ТранспортКонечныйОстаток,
+	ТаблицаБезОкругленияПроцента.ТранспортВсего,
+	ТаблицаБезОкругленияПроцента.ИнвенториРасход,
+	ТаблицаБезОкругленияПроцента.РасходВсего,
+	(ВЫРАЗИТЬ(ТаблицаБезОкругленияПроцента.Процент КАК ЧИСЛО(15, 4))) + ВЫБОР
+		КОГДА ТаблицаБезОкругленияПроцента.Процент - (ВЫРАЗИТЬ(ТаблицаБезОкругленияПроцента.Процент КАК ЧИСЛО(15, 4))) &gt; 0.0005
+			ТОГДА 0.0001
+		ИНАЧЕ 0
+	КОНЕЦ КАК Процент
+ИЗ
+	ТаблицаБезОкругленияПроцента КАК ТаблицаБезОкругленияПроцента</query>
+	</dataSet>
+	<totalField>
+		<dataPath>ИнвенториРасход</dataPath>
+		<expression>Сумма(ИнвенториРасход)</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>РасходВсего</dataPath>
+		<expression>Сумма(РасходВсего)</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ТранспортРасход</dataPath>
+		<expression>Сумма(ТранспортРасход)</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Сегменты</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сегменты</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Сегменты</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Сегменты</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Период</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТранспортНачальныйОстаток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТранспортПриход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТранспортВсего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИнвенториРасход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИнвенториКонечныйОстаток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Процент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТранспортРасход</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТранспортКонечныйОстаток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РасходВсего</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">TaxRegistration</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.ПодразделенияОрганизаций.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>67138753-29b2-42a0-9549-a9659f0eb0ab</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>5688e716-d166-442d-847f-6cfa529e8cdd</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>96a0d104-4e9f-4aaa-b2b2-8e0a1a7f6bee</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Сегменты</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>ad53c969-a5ed-4db7-89dd-4868f5476a8e</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ИнвенториКонечныйОстаток</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Процент</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ТранспортВсего</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ТранспортПриход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>РасходВсего</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ИнвенториРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ТранспортРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ИнвенториПриход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ИнвенториНачальныйОстаток</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Период</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>Quarter</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="dcscor:Field">ПараметрыДанных.НачалоПериода</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="dcscor:Field">ПараметрыДанных.КонецПериода</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

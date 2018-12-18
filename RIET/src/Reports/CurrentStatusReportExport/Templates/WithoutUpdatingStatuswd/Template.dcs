@@ -1,0 +1,812 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>DOCs</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ExportRequest</dataPath>
+			<field>ExportRequest</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ILS</dataPath>
+			<field>ILS</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Specialist (SLS RCA)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Specialist (SLS RCA)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CreationDate</dataPath>
+			<field>CreationDate</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Creation date</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Creation date</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CurrentStage</dataPath>
+			<field>CurrentStage</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Current stage</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ExportRequestNumber</dataPath>
+			<field>ExportRequestNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InternationalATA</dataPath>
+			<field>InternationalATA</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AcceptedBySpecialist</dataPath>
+			<field>AcceptedBySpecialist</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Accepted by specialist</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>LocalATA</dataPath>
+			<field>LocalATA</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Local ATA</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ReleasedFromCustoms</dataPath>
+			<field>ReleasedFromCustoms</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PermitsRequested</dataPath>
+			<field>PermitsRequested</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Permits requested</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CCAGLReceived</dataPath>
+			<field>CCAGLReceived</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CCAGLReceived</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PermitsObtained</dataPath>
+			<field>PermitsObtained</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Permits obtained</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ConsigneeGLReceived</dataPath>
+			<field>ConsigneeGLReceived</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Consignee GLReceived</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CCAGLRequested</dataPath>
+			<field>CCAGLRequested</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CCAGLRequested</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ConsigneeGLRequested</dataPath>
+			<field>ConsigneeGLRequested</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Consignee GLRequested</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InternationalETD</dataPath>
+			<field>InternationalETD</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SubmittedToCustoms</dataPath>
+			<field>SubmittedToCustoms</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SubmittedDate</dataPath>
+			<field>SubmittedDate</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Submitted date</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	StagesOfExportRequests.ExportRequest,
+	StagesOfExportRequests.ExportRequest.ShipperContact КАК ILS,
+	StagesOfExportRequests.ExportRequest.CreationDate КАК CreationDate,
+	StagesOfExportRequests.ExportRequest.Submitted КАК SubmittedDate,
+	СУММА(СтрокиИнвойса.Количество) КАК Количество,
+	StagesOfExportRequests.Stage КАК CurrentStage,
+	StagesOfExportRequests.ExportRequest.Номер КАК ExportRequestNumber,
+	ExportShipmentExportRequests.Ссылка.InternationalATA,
+	StagesOfExportRequests.ExportRequest.AcceptedBySpecialist КАК AcceptedBySpecialist,
+	StagesOfExportRequests.ExportRequest.CCAGLRequested КАК CCAGLRequested,
+	StagesOfExportRequests.ExportRequest.CCAGLReceived КАК CCAGLReceived,
+	StagesOfExportRequests.ExportRequest.ConsigneeGLRequested КАК ConsigneeGLRequested,
+	StagesOfExportRequests.ExportRequest.ConsigneeGLReceived КАК ConsigneeGLReceived,
+	StagesOfExportRequests.ExportRequest.LocalATA КАК LocalATA,
+	StagesOfExportRequests.ExportRequest.PermitsRequested КАК PermitsRequested,
+	StagesOfExportRequests.ExportRequest.PermitsObtained КАК PermitsObtained,
+	ExportShipmentExportRequests.Ссылка.SubmittedToCustoms,
+	ExportShipmentExportRequests.Ссылка.ReleasedFromCustoms,
+	ExportShipmentExportRequests.Ссылка.InternationalETD
+ИЗ
+	РегистрСведений.StagesOfExportRequests КАК StagesOfExportRequests
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.СтрокиИнвойса КАК СтрокиИнвойса
+		ПО StagesOfExportRequests.ExportRequest = СтрокиИнвойса.ExportRequest
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ExportShipment.ExportRequests КАК ExportShipmentExportRequests
+		ПО StagesOfExportRequests.ExportRequest = ExportShipmentExportRequests.ExportRequest
+ГДЕ
+	НЕ StagesOfExportRequests.ExportRequest.Canceled
+
+СГРУППИРОВАТЬ ПО
+	StagesOfExportRequests.ExportRequest,
+	StagesOfExportRequests.Stage,
+	StagesOfExportRequests.ExportRequest.CreationDate,
+	StagesOfExportRequests.ExportRequest.Номер,
+	ExportShipmentExportRequests.Ссылка.InternationalATA,
+	StagesOfExportRequests.ExportRequest.ShipperContact,
+	StagesOfExportRequests.ExportRequest.Submitted,
+	StagesOfExportRequests.ExportRequest.AcceptedBySpecialist,
+	ExportShipmentExportRequests.Ссылка.SubmittedToCustoms,
+	ExportShipmentExportRequests.Ссылка.ReleasedFromCustoms,
+	ExportShipmentExportRequests.Ссылка.InternationalETD,
+	StagesOfExportRequests.ExportRequest.CCAGLRequested,
+	StagesOfExportRequests.ExportRequest.CCAGLReceived,
+	StagesOfExportRequests.ExportRequest.ConsigneeGLRequested,
+	StagesOfExportRequests.ExportRequest.ConsigneeGLReceived,
+	StagesOfExportRequests.ExportRequest.LocalATA,
+	StagesOfExportRequests.ExportRequest.PermitsRequested,
+	StagesOfExportRequests.ExportRequest.PermitsObtained
+
+УПОРЯДОЧИТЬ ПО
+	StagesOfExportRequests.ExportRequest.Дата УБЫВ</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>TotalWD</dataPath>
+		<expression>ВЫБОР
+            КОГДА естьNULL(InternationalATA, ДатаВремя(1,1,1)) = ДатаВремя(1,1,1) или 
+  CreationDate= ДатаВремя(1,1,1)              ТОГДА РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НачалоПериода(CreationDate, "День"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+            ИНАЧЕ РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(InternationalATA, "ДЕНЬ"), КОНЕЦПЕРИОДА(CreationDate, "ДЕНЬ")) конец</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Total WD</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Total WD</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Draft</dataPath>
+		<expression>ВЫБОР
+			КОГДА CurrentStage = ПредопределенноеЗначение("Перечисление.ExportStages.Draft")
+				ТОГДА 
+	 			РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(CreationDate, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+			ИНАЧЕ ВЫБОР
+					КОГДА SubmittedDate = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА 0
+					ИНАЧЕ 
+					РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(SubmittedDate, "ДЕНЬ"), КОНЕЦПЕРИОДА(CreationDate, "ДЕНЬ"))				
+				КОНЕЦ
+		КОНЕЦ * ВЫБОР
+			КОГДА &amp;ЧасыДни = "Hours"
+				ТОГДА 8
+			ИНАЧЕ 1
+		КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Draft</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Draft</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Submitted</dataPath>
+		<expression>ВЫБОР
+			КОГДА CurrentStage = ПредопределенноеЗначение("Перечисление.ExportStages.Submitted")
+					И НЕ  SubmittedDate = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 
+				РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(SubmittedDate, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+				
+			ИНАЧЕ ВЫБОР
+					КОГДА SubmittedDate = ДАТАВРЕМЯ(1, 1, 1)
+							ИЛИ AcceptedBySpecialist = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА 0
+					ИНАЧЕ 
+						РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(SubmittedDate, "ДЕНЬ"), КОНЕЦПЕРИОДА(AcceptedBySpecialist, "ДЕНЬ"))
+				 
+				КОНЕЦ
+		КОНЕЦ * ВЫБОР
+			КОГДА &amp;ЧасыДни = "Hours"
+				ТОГДА 8
+			ИНАЧЕ 1
+		КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Submitted</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Submitted</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>AcceptedBySpecialist</dataPath>
+		<expression>ВЫБОР
+			КОГДА CurrentStage = ПредопределенноеЗначение("Перечисление.ExportStages.AcceptedBySpecialist")
+					И НЕ AcceptedBySpecialist = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 
+				РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(AcceptedBySpecialist, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+				
+			ИНАЧЕ ВЫБОР
+					КОГДА AcceptedBySpecialist = ДАТАВРЕМЯ(1, 1, 1)
+							ИЛИ CCAGLRequested = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА 0
+					ИНАЧЕ 
+					РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(AcceptedBySpecialist, "ДЕНЬ"), КОНЕЦПЕРИОДА(CCAGLRequested, "ДЕНЬ"))
+				
+				КОНЕЦ
+		КОНЕЦ * ВЫБОР
+			КОГДА &amp;ЧасыДни = "Hours"
+				ТОГДА 8
+			ИНАЧЕ 1
+		КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Accepted by specialist</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Accepted by specialist</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>GLAndQuotes</dataPath>
+		<expression>ВЫБОР
+			КОГДА CurrentStage = ПредопределенноеЗначение("Перечисление.ExportStages.GLAndQuotes")
+					И НЕ CCAGLRequested = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 
+				РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(CCAGLRequested, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))		
+			ИНАЧЕ ВЫБОР
+					КОГДА (CCAGLReceived = ДАТАВРЕМЯ(1, 1, 1)
+							ИЛИ CCAGLRequested = ДАТАВРЕМЯ(1, 1, 1))
+							И (ConsigneeGLRequested = ДАТАВРЕМЯ(1, 1, 1)
+								ИЛИ ConsigneeGLReceived = ДАТАВРЕМЯ(1, 1, 1))
+						ТОГДА 0
+					ИНАЧЕ ВЫБОР
+							КОГДА ConsigneeGLReceived &gt; CCAGLReceived
+								ТОГДА 
+								РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(ConsigneeGLRequested, "ДЕНЬ"), КОНЕЦПЕРИОДА(ConsigneeGLReceived, "ДЕНЬ"))								
+							ИНАЧЕ 
+							РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(CCAGLRequested, "ДЕНЬ"), КОНЕЦПЕРИОДА(CCAGLReceived, "ДЕНЬ"))
+						КОНЕЦ
+				КОНЕЦ
+		КОНЕЦ * ВЫБОР
+			КОГДА &amp;ЧасыДни = "Hours"
+				ТОГДА 8
+			ИНАЧЕ 1
+		КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>GL and quotes</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>GL and quotes</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>InTransitWarehouse</dataPath>
+		<expression>ВЫБОР
+			КОГДА CurrentStage = ПредопределенноеЗначение("Перечисление.ExportStages.InTransitWarehouse")
+					И НЕ LocalATA = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 
+				РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(LocalATA, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+			ИНАЧЕ ВЫБОР
+					КОГДА LocalATA = ДАТАВРЕМЯ(1, 1, 1)
+							ИЛИ PermitsRequested = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА 0
+					ИНАЧЕ 
+					РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(LocalATA, "ДЕНЬ"), КОНЕЦПЕРИОДА(PermitsRequested, "ДЕНЬ"))
+				КОНЕЦ
+		КОНЕЦ * ВЫБОР
+			КОГДА &amp;ЧасыДни = "Hours"
+				ТОГДА 8
+			ИНАЧЕ 1
+		КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>In transit warehouse</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>In transit warehouse</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>AwaitingPermits</dataPath>
+		<expression>ВЫБОР
+			КОГДА CurrentStage = ПредопределенноеЗначение("Перечисление.ExportStages.AwaitingPermits")
+					И НЕ PermitsRequested = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 
+				РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(PermitsRequested, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+			ИНАЧЕ ВЫБОР
+					КОГДА PermitsRequested = ДАТАВРЕМЯ(1, 1, 1)
+							ИЛИ PermitsObtained = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА 0
+					ИНАЧЕ 
+					РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(PermitsRequested, "ДЕНЬ"), КОНЕЦПЕРИОДА(PermitsObtained, "ДЕНЬ"))
+				КОНЕЦ
+		КОНЕЦ * ВЫБОР
+			КОГДА &amp;ЧасыДни = "Hours"
+				ТОГДА 8
+			ИНАЧЕ 1
+		КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Awaiting permits</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Awaiting permits</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ReadyForCustomsClearance</dataPath>
+		<expression>ВЫБОР
+			КОГДА CurrentStage = ПредопределенноеЗначение("Перечисление.ExportStages.ReadyForCustomsClearance")
+					И НЕ ConsigneeGLReceived = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 
+				РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(ConsigneeGLReceived, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+			ИНАЧЕ ВЫБОР
+					КОГДА ConsigneeGLRequested = ДАТАВРЕМЯ(1, 1, 1)
+							ИЛИ ConsigneeGLReceived = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА 0
+					ИНАЧЕ 
+					РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(ConsigneeGLRequested, "ДЕНЬ"), КОНЕЦПЕРИОДА(ConsigneeGLReceived, "ДЕНЬ"))
+				КОНЕЦ
+		КОНЕЦ * ВЫБОР
+			КОГДА &amp;ЧасыДни = "Hours"
+				ТОГДА 8
+			ИНАЧЕ 1
+		КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ready for customs clearance</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Ready for customs clearance</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>InCustoms</dataPath>
+		<expression>ВЫБОР
+			КОГДА CurrentStage = ПредопределенноеЗначение("Перечисление.ExportStages.InCustoms")
+					И НЕ ЕСТЬNULL(ReleasedFromCustoms, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 
+				РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(SubmittedToCustoms, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+			ИНАЧЕ ВЫБОР
+					КОГДА ЕСТЬNULL(SubmittedToCustoms, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+							ИЛИ ЕСТЬNULL(ReleasedFromCustoms, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА 0
+					ИНАЧЕ 
+					РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(SubmittedToCustoms, "ДЕНЬ"), КОНЕЦПЕРИОДА(ReleasedFromCustoms, "ДЕНЬ"))
+				КОНЕЦ
+		КОНЕЦ * ВЫБОР
+			КОГДА &amp;ЧасыДни = "Hours"
+				ТОГДА 8
+			ИНАЧЕ 1
+		КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>In customs</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>In customs</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ReadyInternationalDelivery</dataPath>
+		<expression>ВЫБОР
+			КОГДА CurrentStage = ПредопределенноеЗначение("Перечисление.ExportStages.ReadyInternationalDelivery")
+					И НЕ ЕСТЬNULL(ReleasedFromCustoms, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 
+				РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(ReleasedFromCustoms, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+			ИНАЧЕ ВЫБОР
+					КОГДА ЕСТЬNULL(InternationalETD, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+							ИЛИ ЕСТЬNULL(ReleasedFromCustoms, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА 0
+					ИНАЧЕ 
+					РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(ReleasedFromCustoms, "ДЕНЬ"), КОНЕЦПЕРИОДА(InternationalETD, "ДЕНЬ"))
+				КОНЕЦ
+		КОНЕЦ * ВЫБОР
+			КОГДА &amp;ЧасыДни = "Hours"
+				ТОГДА 8
+			ИНАЧЕ 1
+		КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ready international delivery</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Ready international delivery</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>InternationalDelivery</dataPath>
+		<expression>ВЫБОР
+			КОГДА CurrentStage = ПредопределенноеЗначение("Перечисление.ExportStages.InternationalDelivery")
+					И НЕ ЕСТЬNULL(InternationalETD, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 
+				РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(InternationalETD, "ДЕНЬ"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+			ИНАЧЕ ВЫБОР
+					КОГДА ЕСТЬNULL(InternationalETD, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+							ИЛИ ЕСТЬNULL(InternationalETD, ДАТАВРЕМЯ(1, 1, 1)) = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА 0
+					ИНАЧЕ 
+					РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(InternationalETD, "ДЕНЬ"), КОНЕЦПЕРИОДА(InternationalATA, "ДЕНЬ"))
+				КОНЕЦ
+		КОНЕЦ * ВЫБОР
+			КОГДА &amp;ЧасыДни = "Hours"
+				ТОГДА 8
+			ИНАЧЕ 1
+		КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>International delivery</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>International delivery</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>НачалоПериода(ТекущаяДата(), "День")</expression>
+	</parameter>
+	<parameter>
+		<name>ЧасыДни</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Часы\Дни</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Hours\Days</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string">Days</value>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="xs:string">Hours</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Hours</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hours</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:string">Days</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Days</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Days</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>БыстрыйВыбор</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+		<use>Always</use>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ExportRequestNumber</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="12" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">18.875</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">18.875</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ExportRequest</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ExportRequestNumber</dcsat:name>
+			<dcsat:expression>ExportRequestNumber</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ExportRequest</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ExportRequest</dcsat:field>
+				<dcsat:expression>ExportRequest</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:mainAction>OpenValue</dcsat:mainAction>
+		</parameter>
+	</template>
+	<fieldTemplate>
+		<field>ExportRequestNumber</field>
+		<template>Макет1</template>
+	</fieldTemplate>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ExportRequestNumber</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CreationDate</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ILS</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CurrentStage</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Items Q-ty</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Items Q-ty</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Draft</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Submitted</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AcceptedBySpecialist</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>GLAndQuotes</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AwaitingQuoteApproval</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AwaitingPickUpAtOrigin</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>LocalDelivery</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InTransitWarehouse</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AwaitingPermits</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ReadyForCustomsClearance</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InCustoms</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ReadyInternationalDelivery</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InternationalDelivery</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TotalWD</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">CurrentStage</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ExportStages.Delivered</dcsset:right>
+					<dcsset:userSettingID>b6f513a6-5743-46e4-acc6-f74817b7ad5c</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ExportRequest</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>a969c0ed-397f-4493-9006-3627710c6055</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТекущаяДата</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЧасыДни</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Days</dcscor:value>
+					<dcsset:userSettingID>9dbc3de1-22ad-4ab1-ac9a-5cc99b9043f8</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" kind="WindowsFont"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

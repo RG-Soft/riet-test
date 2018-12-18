@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Account</dataPath>
+			<field>Account</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Activity</dataPath>
+			<field>Activity</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументОснование</dataPath>
+			<field>ДокументОснование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтрокаИнвойса</dataPath>
+			<field>СтрокаИнвойса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭлементФормированияСтоимости</dataPath>
+			<field>ЭлементФормированияСтоимости</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Description</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Description</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Description</dataPath>
+			<field>Description</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Sum</dataPath>
+			<field>Sum</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Sum </v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sum </v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Type</dataPath>
+			<field>Type</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DSSNumber</dataPath>
+			<field>DSSNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РИЗП</dataPath>
+			<field>РИЗП</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Invoice</dataPath>
+			<field>Invoice</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РаспределениеИмпортаПоЗакрытиюПоставкиDSS.ПроводкаDSSСКП,
+	РаспределениеИмпортаПоЗакрытиюПоставкиDSS.Ссылка КАК РИЗП,
+	РаспределениеИмпортаПоЗакрытиюПоставкиDSS.Ссылка.ShipmentСlosing КАК InvoiceLinesMatching
+ПОМЕСТИТЬ ВТРИЗП
+ИЗ
+	Документ.РаспределениеИмпортаПоЗакрытиюПоставки.DSS КАК РаспределениеИмпортаПоЗакрытиюПоставкиDSS
+ГДЕ
+	(НЕ РаспределениеИмпортаПоЗакрытиюПоставкиDSS.Ссылка.ПометкаУдаления)
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.ПроводкаDSSСКП,
+	РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.Ссылка,
+	РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.Ссылка.ShipmentСlosing
+ИЗ
+	Документ.РаспределениеИмпортаПоЗакрытиюПоставки.СопоставлениеInvoiceLinesИDSS КАК РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS
+ГДЕ
+	(НЕ РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.ПроводкаDSSСКП ЕСТЬ NULL )
+	И (НЕ РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.Ссылка.ПометкаУдаления)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	InvoiceLinesClassificationClassification.InvoiceLine,
+	InvoiceLinesClassificationClassification.Type
+ПОМЕСТИТЬ ВТТипы
+ИЗ
+	Документ.InvoiceLinesClassification.Classification КАК InvoiceLinesClassificationClassification
+ГДЕ
+	InvoiceLinesClassificationClassification.Ссылка.InvoiceLinesMatching В
+			(ВЫБРАТЬ
+				ВТРИЗП.InvoiceLinesMatching
+			ИЗ
+				ВТРИЗП)
+	И InvoiceLinesClassificationClassification.InvoiceLine.Инвойс.Покупатель.Код = "SLI"
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(ВложенныйЗапрос.TranAmount) КАК Sum,
+	ВложенныйЗапрос.ApInvoice КАК DSSInvoiceNo,
+	ВложенныйЗапрос.Описание КАК Description,
+	ВложенныйЗапрос.РИЗП
+ПОМЕСТИТЬ ВТПроводки
+ИЗ
+	(ВЫБРАТЬ
+		-ВТРИЗП.ПроводкаDSSСКП.TranAmount КАК TranAmount,
+		ВТРИЗП.ПроводкаDSSСКП.ApInvoice КАК ApInvoice,
+		ВЫБОР
+			КОГДА ВТРИЗП.ПроводкаDSSСКП.Описание = "FREIGHT"
+				ТОГДА ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсПеревозка)
+			ИНАЧЕ ВЫБОР
+					КОГДА ВТРИЗП.ПроводкаDSSСКП.Описание = "HANDLING"
+						ТОГДА ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсХранение)
+					ИНАЧЕ ВЫБОР
+							КОГДА ВТРИЗП.ПроводкаDSSСКП.Описание = "INSURANCE"
+								ТОГДА ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсСтраховка)
+							ИНАЧЕ ВТРИЗП.ПроводкаDSSСКП.Описание
+						КОНЕЦ
+				КОНЕЦ
+		КОНЕЦ КАК Описание,
+		ВТРИЗП.РИЗП КАК РИЗП
+	ИЗ
+		ВТРИЗП КАК ВТРИЗП) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.ApInvoice,
+	ВложенныйЗапрос.Описание,
+	ВложенныйЗапрос.РИЗП
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТПроводки.DSSInvoiceNo КАК DSSNumber,
+	ВТПроводки.Description КАК Description,
+	ВТПроводки.Sum КАК Sum,
+	NULL КАК Type,
+	ВТПроводки.РИЗП,
+	NULL КАК Invoice
+ИЗ
+	ВТПроводки КАК ВТПроводки
+ГДЕ
+	(НЕ ВТПроводки.DSSInvoiceNo ЕСТЬ NULL )
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняПошлины)
+				ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняСборы)
+			ТОГДА InvoiceLinesCostsОбороты.ДокументОснование.Номер
+		ИНАЧЕ InvoiceLinesCostsОбороты.СтрокаИнвойса.Инвойс.DSSNumber
+	КОНЕЦ,
+	InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости,
+	СУММА(InvoiceLinesCostsОбороты.СуммаОборот),
+	МАКСИМУМ(ВТТипы.Type),
+	NULL,
+	InvoiceLinesCostsОбороты.СтрокаИнвойса.Инвойс
+ИЗ
+	РегистрНакопления.InvoiceLinesCosts.Обороты(
+			,
+			,
+			Регистратор,
+			СтрокаИнвойса.Инвойс.Покупатель.Код = "SLI"
+				И (ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняПошлины)
+					ИЛИ ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняСборы)
+					ИЛИ ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсПеревозка)
+					ИЛИ ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсХранение)
+					ИЛИ ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсСтраховка)
+					ИЛИ ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсСуммаСтрокиИнвойса))) КАК InvoiceLinesCostsОбороты
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТТипы КАК ВТТипы
+		ПО InvoiceLinesCostsОбороты.СтрокаИнвойса = ВТТипы.InvoiceLine
+ГДЕ
+	ВЫБОР
+			КОГДА ВТТипы.Type.Наименование = "Rent/Loan"
+					ИЛИ ВТТипы.Type.Наименование = "RAN"
+					ИЛИ ВТТипы.Type.Наименование = "Replace"
+				ТОГДА InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняПошлины)
+						ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняСборы)
+						ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсПеревозка)
+						ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсХранение)
+						ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсСтраховка)
+			ИНАЧЕ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняПошлины)
+					ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняСборы)
+					ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсПеревозка)
+					ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсХранение)
+					ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсСтраховка)
+					ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсСуммаСтрокиИнвойса)
+		КОНЕЦ
+	И InvoiceLinesCostsОбороты.Регистратор В
+			(ВЫБРАТЬ
+				ВТРИЗП.InvoiceLinesMatching
+			ИЗ
+				ВТРИЗП)
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняПошлины)
+				ИЛИ InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняСборы)
+			ТОГДА InvoiceLinesCostsОбороты.ДокументОснование.Номер
+		ИНАЧЕ InvoiceLinesCostsОбороты.СтрокаИнвойса.Инвойс.DSSNumber
+	КОНЕЦ,
+	InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости,
+	InvoiceLinesCostsОбороты.СтрокаИнвойса.Инвойс
+
+УПОРЯДОЧИТЬ ПО
+	DSSNumber</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Sum</dataPath>
+		<expression>Сумма(Sum)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Type</dataPath>
+		<expression>Максимум(Type)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DSSNumber</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Type</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Description</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Sum</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Invoice</dcsset:field>
+				</dcsset:item>
+				<dcsset:userSettingID>89ffff57-dd30-4c76-a021-cae0522a3ad5</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Invoice</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Документ.Инвойс.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>2738c9da-ccde-4d90-b4b1-3f873982823b</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РИЗП</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Документ.РаспределениеИмпортаПоЗакрытиюПоставки.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>75c1e88b-c756-455f-a41c-c068de622848</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:userSettingID>4b065fb3-2829-45e1-80bc-a575ab8aafdf</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Invoice</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>DSSNumber</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Invoice</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>DSSNumber</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>DSSNumber</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Type</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Sum</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Description</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Description</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Type</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Sum</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

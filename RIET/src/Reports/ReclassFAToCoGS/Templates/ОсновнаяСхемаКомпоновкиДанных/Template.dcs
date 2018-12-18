@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AccountLawson</dataPath>
+			<field>AccountLawson</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AktOfAcceptance</dataPath>
+			<field>AktOfAcceptance</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ApInvoice</dataPath>
+			<field>ApInvoice</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AssetLawson</dataPath>
+			<field>AssetLawson</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AU</dataPath>
+			<field>AU</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ContractNumber</dataPath>
+			<field>ContractNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Currency</dataPath>
+			<field>Currency</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Description</dataPath>
+			<field>Description</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DocumentNbr</dataPath>
+			<field>DocumentNbr</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>FiscalSum</dataPath>
+			<field>FiscalSum</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ItemDescription</dataPath>
+			<field>ItemDescription</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>LegalEntity</dataPath>
+			<field>LegalEntity</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ManagementSum</dataPath>
+			<field>ManagementSum</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>POLine</dataPath>
+			<field>POLine</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PoNumber</dataPath>
+			<field>PoNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Reference</dataPath>
+			<field>Reference</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TaxCode</dataPath>
+			<field>TaxCode</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TaxRegistration</dataPath>
+			<field>TaxRegistration</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TransNbr</dataPath>
+			<field>TransNbr</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Vendor</dataPath>
+			<field>Vendor</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VendorVname</dataPath>
+			<field>VendorVname</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроводкаДеталейСКП</dataPath>
+			<field>ПроводкаДеталейСКП</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СписаниеОборудования</dataPath>
+			<field>СписаниеОборудования</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроводкаDSS</dataPath>
+			<field>ПроводкаDSS</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	CoGSОбороты.ПроводкаДеталейСКП КАК ПроводкаDSS,
+	CoGSОбороты.ПроводкаДеталейСКП.Документ КАК Документ,
+	CoGSОбороты.ПроводкаДеталейСКП.VendorVname КАК VendorVname,
+	CoGSОбороты.ПроводкаДеталейСКП.Vendor КАК Vendor,
+	CoGSОбороты.ПроводкаДеталейСКП.TransNbr КАК TransNbr,
+	CoGSОбороты.ПроводкаДеталейСКП.TaxCode КАК TaxCode,
+	CoGSОбороты.ПроводкаДеталейСКП.Reference КАК Reference,
+	CoGSОбороты.ПроводкаДеталейСКП.POLine КАК POLine,
+	CoGSОбороты.ПроводкаДеталейСКП.PoNumber КАК PoNumber,
+	CoGSОбороты.ПроводкаДеталейСКП.LegalEntity КАК LegalEntity,
+	CoGSОбороты.ПроводкаДеталейСКП.ItemDescription КАК ItemDescription,
+	CoGSОбороты.ПроводкаДеталейСКП.DocumentNbr КАК DocumentNbr,
+	CoGSОбороты.ПроводкаДеталейСКП.Description КАК Description,
+	CoGSОбороты.ПроводкаДеталейСКП.Currency КАК Currency,
+	CoGSОбороты.ПроводкаДеталейСКП.ContractNumber КАК ContractNumber,
+	CoGSОбороты.ПроводкаДеталейСКП.AU КАК AU,
+	CoGSОбороты.ПроводкаДеталейСКП.AU.TaxRegistration КАК TaxRegistration,
+	CoGSОбороты.ПроводкаДеталейСКП.AssetLawson КАК AssetLawson,
+	CoGSОбороты.ПроводкаДеталейСКП.ApInvoice КАК ApInvoice,
+	CoGSОбороты.ПроводкаДеталейСКП.AktOfAcceptance КАК AktOfAcceptance,
+	CoGSОбороты.ПроводкаДеталейСКП.AccountLawson КАК AccountLawson,
+	CoGSОбороты.ManagementSumПриход КАК ManagementSum,
+	CoGSОбороты.FiscalSumПриход КАК FiscalSum
+ИЗ
+	РегистрНакопления.CoGS.Обороты КАК CoGSОбороты</query>
+	</dataSet>
+	<totalField>
+		<dataPath>ManagementSum</dataPath>
+		<expression>Сумма(ManagementSum)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>FiscalSum</dataPath>
+		<expression>Сумма(FiscalSum)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроводкаDSS</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Документ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>VendorVname</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Vendor</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TransNbr</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TaxCode</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Reference</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>POLine</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PoNumber</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>LegalEntity</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ItemDescription</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DocumentNbr</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Description</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Currency</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ContractNumber</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AU</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TaxRegistration</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AssetLawson</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ApInvoice</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AktOfAcceptance</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AccountLawson</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ManagementSum</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>FiscalSum</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>a070d032-c3af-4b46-abc6-2882da16ab09</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>17c86b12-ff4a-4e7c-9e25-7dacc4b309e3</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

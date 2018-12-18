@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c554f068-cf67-47e5-ad6d-adb67008c9d2">
+  <name>ПриПроведенииДокументаСрокДоговора</name>
+  <synonym>
+    <key>ru</key>
+    <value>При проведении документа срок договора</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>При проведении документа срок договора</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.СчетНаОплатуПокупателю</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+    <types>DocumentObject.ПередачаОС</types>
+    <types>DocumentObject.Tickets</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.ПодпискиНаСобытия.ПриПроведенииДокументаСрокДоговораОбработкаПроведения</handler>
+</mdclass:EventSubscription>

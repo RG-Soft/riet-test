@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16578"></meta></head><body>
+<h1>Документ "Customs file"</h1>
+<p>Документ входит в <a href="Subsystem.CustomsAccounting.Subsystem.CustomsDocuments/Help">подсистему "Customs documents".</a><br>Документ предназначен для отражения в системе грузовых таможенных деклараций.</p>
+<p>В самом документе хранятся лишь общие сведения и итоговые суммы платежей и сборов, а детальная информация хранится в справочниках <a href="Catalog.СтрокиГТД/Help">"CCD lines"</a> и <a href="Catalog.ТоварыСтрокГТД/Help">"CCD lines goods"</a>, информация из которых отображается на форме документа.</p>
+<p>Вся ГТД, включая справочники <a href="Catalog.СтрокиГТД/Help">"CCD lines"</a> и <a href="Catalog.ТоварыСтрокГТД/Help">"CCD lines goods"</a>, может быть автоматически загружена из xml-файла с помощью <a href="DataProcessor.CustomsFileLoading/Help">обработки "CCD loading"</a>.</p>
+<p>При проведении документа отражается необходимость оплаты таможенных пошлин и сборов, которая осуществляется в <a href="Subsystem.CustomsAccounting.Subsystem.Payments/Help">подсистеме "Payments"</a>.</p>
+<p>Кроме того, информация из ГТД нужна для определения фискальной стоимости товаров.<br>Фискальная стоимость определяется в <a href="Document.ЗакрытиеПоставки/Help">документе "Invoice lines matching"</a>, поэтому после проведения этого документа ГТД уже нельзя изменять.</p>
+<h2>Структура документа</h2>
+<h3>Основные реквизиты</h3>
+<ul><li><strong>No.</strong> (строка) - автоматически формируемый номер документа по правилу [customs]-[date]-[seq no.]<br>Контролируется уникальность. 
+</li><li><strong>Date</strong> (дата)<br>Обязательное для заполнения поле. 
+</li><li><strong>For deletion</strong> (булево) - признак того, что этот документ помечен на удаление 
+</li><li><strong>Posted</strong> (булево) - признак того, что этот документ проведен.<br>Нельзя проводить помеченный на удаление документ. 
+</li><li><strong>Customs post</strong> (справочник Customs posts)<br>Обязательное для заполнения поле.<br>Customs post не может быть помечен на удаление.<br>В Customs post должен быть заполнен рекизит Customs. 
+</li><li><strong>Seq. no. </strong>(строка)<br>Обязательное для заполнения поле. 
+</li><li><strong>Shipment</strong> (документ Shipment) - поставка, к которой относится ГТД или документ Temporary imp. / exp. transaction.<br>Обязательное для заполнения поле.<br>Поставка должна быть проведена.<br>В поставке должны быть товары, которые относятся к Parent company, указанной в Customs file.<br>CCA поставки должен совпадать с CCA Customs file.<br>Imp. / exp. поставки должен совпадать с imp. / exp. режима Customs file.<br>Дата In customs поставки не должна быть позже даты Customs file.<br>Дата Cleared поставки не должна быть раньше даты выпуска Customs file.<br>Temporary imp. / exp. transaction можно использовать только для постоянных режимов.<br>Тип Temporary imp. / exp. transaction может быть только перевод в постоянный режим.<br>На один Temporary imp. /exp. transaction может быть только одна декларация.  
+</li><li><strong>Regime</strong> (справочник Regimes) - таможенная процедура и режим.<br>Обязательное для заполнения поле. 
+</li><li><strong>Parent company </strong>(справочник Parent companies)<br>Обязательное для заполнения поле. 
+</li><li><strong>ССA </strong>(справочник Agents) - таможенный брокер, осуществляющий оформление товаров.<br>Обязательное для заполнения поле. 
+</li><li><strong>Release date</strong> (дата)<br>Обязательное для заполнения поле.<br>Дата выпуска не должна быть раньше даты ГТД. 
+</li><li><strong>Num. of pages</strong> (число) <br>Обязательное для заполнения поле.<br>Количество страниц должно коррелировать с количеством товаров. 
+</li><li><strong>Num. of goods</strong> (число)<br>Обязательное для заполнения поле.<br>Количество товаров должно равняться количеству не помеченных на удаление строк ГТД. 
+</li><li><strong>Customs total value</strong> (число)<br>Обязательное для заполнения поле.<br>Customs total value должна совпадать с суммой по строкам ГТД. 
+</li><li><strong>Курс валюты контракта</strong> (число)<br>Обязательное для заполнения поле. 
+</li><li><strong>Paid by CCA</strong> (булево) - признак того, что таможенные пошлины и сборы оплачены брокером</li></ul><p>Документ имеет множество других текстовых реквизитов, в которых хранится общая информация: сведения о брокере, отправителе, получателе и т. д.</p>
+<h3>Табличная часть "Payments"</h3>
+<p>Эта табличная часть - аналог графы B (Подробности подсчета) ГТД.</p>
+<ul><li><strong>Payment mode code</strong> (строка)<br>Обязательное для заполнения поле. 
+</li><li><strong>CVC</strong> (булево) - признак того, что в этой строке содержится сумма корректировки таможенной стоимости 
+</li><li><strong>Payment amount</strong> (число)<br>Обязательное для заполнения поле.<br>Сумма платежей в разрезе кодов и CVC должна сходиться с табличной частью "Исчисление платежей" строк ГТД. 
+</li><li><strong>Payment currency code</strong> (число) 
+</li><li><strong>Return sign</strong> (число) - курс валюты платежа</li></ul><h3>Табличная часть "Орган отправления"</h3>
+<p>Эта табличная часть - аналог графы С (Орган отправления) ГТД.<br>Чаще всего сюда пишут номер платежного поручения или номера платежных поручений, иногда и другую инфомрацию.</p>
+<ul><li><strong>Text</strong> (строка)<br></li></ul></body></html>

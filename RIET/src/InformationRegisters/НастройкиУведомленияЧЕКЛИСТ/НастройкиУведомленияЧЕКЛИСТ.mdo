@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fb9c098c-f339-4722-9c53-ade47a6acbb5">
+  <producedTypes>
+    <selectionType typeId="eea66054-7881-4c18-8fd3-d1b173de7a45" valueTypeId="117e2705-c7e7-4cf5-b32c-08a4d6b9131c"/>
+    <listType typeId="02972bdd-d9b4-4605-9181-eb66ed644a39" valueTypeId="252df320-5056-45a7-8300-e64f85ea01b1"/>
+    <managerType typeId="2dfac5de-079b-46f0-8aa5-e1ca80ba0cf4" valueTypeId="557af864-ee7a-4bed-90cd-7a735cf80cb3"/>
+    <recordSetType typeId="ae65f3e1-876d-4f77-bbc7-49c02e0fa040" valueTypeId="d8ea877e-efaa-409d-b814-190ccb4ca25a"/>
+    <recordKeyType typeId="37595b5e-72db-4cd9-96f7-3e5d8ab0aa58" valueTypeId="e0abc4ce-fc67-4e24-aa2e-0f992e3cd7ca"/>
+    <recordType typeId="d15279a3-79b7-41d1-a5b9-b239274b8dfb" valueTypeId="b10c70f6-2946-44fa-9e3e-bd390134f0e9"/>
+    <recordManagerType typeId="3eb1833b-3893-4d1e-b55e-2b01f9b125fa" valueTypeId="b6231e01-a2fb-4332-a5b3-61a985b0b974"/>
+  </producedTypes>
+  <name>НастройкиУведомленияЧЕКЛИСТ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройки уведомления ЧЕКЛИСТ</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Настройки уведомления ЧЕКЛИСТ</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultRecordForm>InformationRegister.НастройкиУведомленияЧЕКЛИСТ.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.НастройкиУведомленияЧЕКЛИСТ.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="b97b7be0-ca66-4ef9-b83a-9dffe2c1054e">
+    <name>ДоговорКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0e0e2de7-33b0-4017-a90c-bb2498f3fb1a">
+    <name>AUCode</name>
+    <synonym>
+      <key>ru</key>
+      <value>AU code</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AUCode</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>7</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0cc4b8c4-6362-48e2-9fe0-7e2a12ab9767">
+    <name>Segment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Segment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.Родитель</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Catalog.Сегменты.EmptyRef</value>
+      </value>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="a75846ec-4fb9-4471-9c02-4bfcc96eebc6">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7880abd9-407b-456a-8cdd-456958867b29">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

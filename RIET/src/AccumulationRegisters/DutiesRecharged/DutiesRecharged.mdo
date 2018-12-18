@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aggregates="http://g5.1c.ru/v8/dt/aggregates" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="75a76820-f7dc-42dc-8e14-9808babedd6e">
+  <producedTypes>
+    <selectionType typeId="3c574916-0c5d-419b-ab3a-cb1b1e8a64e0" valueTypeId="56ea6733-4dd5-4d25-99b5-2cb7dd6cd6a2"/>
+    <listType typeId="efc58938-e3b1-49ad-bc58-a2c0eab176fb" valueTypeId="678a5baa-fc96-4f1b-87cf-48dbed3e7e3a"/>
+    <managerType typeId="fa3559ce-ff48-41a7-9e8e-b8be50a9a152" valueTypeId="85507637-3d3c-40bd-8f86-a77e7f90ceed"/>
+    <recordSetType typeId="4371db39-5827-4b60-9c2b-6fbb6c333325" valueTypeId="fc307a9d-3dc3-4fa9-b98a-280004f22914"/>
+    <recordKeyType typeId="005d43a6-2465-42fb-907b-a91765ca95cc" valueTypeId="b91d1147-fc62-42f5-8150-9db58ce1fbe7"/>
+    <recordType typeId="c3f86ff7-f339-4106-8bf7-568f001622db" valueTypeId="b401fdfa-10f2-449f-b6d9-d1e1416a16ed"/>
+  </producedTypes>
+  <name>DutiesRecharged</name>
+  <synonym>
+    <key>ru</key>
+    <value>Duties recharged</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Duties recharged</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <aggregates xsi:type="aggregates:AccumulationRegisterAggregates">
+    <aggregates id="d2692c2a-cfb0-46a1-854f-d98b22a0eda3">
+      <periodicity>Year</periodicity>
+      <dimensions>AccumulationRegister.DutiesRecharged.Dimension.СтрокаИнвойса</dimensions>
+      <dimensions>AccumulationRegister.DutiesRecharged.Dimension.ДокументОснование</dimensions>
+    </aggregates>
+  </aggregates>
+  <resources uuid="d6c552ad-7d6e-4ebc-b3d9-6893df5668a4">
+    <name>СуммаФискальная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal sum</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <markNegatives>true</markNegatives>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="7a7fa8d4-ed23-4ecc-962e-e73eaca7cf82">
+    <name>SoldTo</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sold to</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sold to</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.SoldTo</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="34c15de7-5786-4508-b841-6334966e7852">
+    <name>Segment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Segment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3e1c54cb-c620-4b0f-a459-041b763953cf">
+    <name>СтрокаИнвойса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Invoice line</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Invoice line</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтрокиИнвойса</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0ac3010a-274c-43c2-9c57-3a4ff5441519">
+    <name>ДокументОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Document-base</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Document-base</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.Service</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="ee2ce3ac-6f30-4fbe-a4ef-6b44a06c2242">
+    <name>Activity</name>
+    <synonym>
+      <key>ru</key>
+      <value>Activity</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Activity</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

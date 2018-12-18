@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="291ce41b-04c6-46d3-a829-da03253a9bb4">
+  <producedTypes>
+    <objectType typeId="b39c0543-5a87-4b47-b2de-1c79f95885b1" valueTypeId="6a4a937e-0646-41c3-8c5a-0abb2a44301c"/>
+    <refType typeId="df6854d4-a5b5-4cf3-b174-281a1556d950" valueTypeId="febf506e-5c94-44df-9dc5-40e6d172545c"/>
+    <selectionType typeId="926ebbff-1b08-4379-992a-4bf24cfb5c3d" valueTypeId="993dd4f0-d657-49e7-9506-d229badb7f77"/>
+    <listType typeId="b1e3e7fd-c84b-4365-9640-81de332d1a9d" valueTypeId="2f30ff02-d28e-405d-9155-0a1df24011f6"/>
+    <managerType typeId="c03c1996-137e-4670-b619-5991e774a6f3" valueTypeId="310bbdd2-4d77-486b-b6d8-789f672226e3"/>
+  </producedTypes>
+  <name>КорректировкаОС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Корректировка ОС</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Корректировка ОС</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.КорректировкаОС.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.КорректировкаОС.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <sequenceFilling>AutoFillOff</sequenceFilling>
+  <registerRecords>AccumulationRegister.СтоимостьАмортизацияОС</registerRecords>
+  <attributes uuid="8e30e641-1ed8-40fb-95ff-b38a1f8d7d2f">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4ca3dd33-caac-42b0-8621-561bd8069d3d">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2e8aaf5e-5bed-40bb-9a56-bf31cbebf049">
+    <name>ДатаПроведения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата проведения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Дата проведения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>IndexWithAdditionalOrder</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d4b5d58e-6b3f-4b2f-ad4e-0a10ded7af49">
+    <name>НалоговыйПериод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговый период</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Налоговый период</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0d80d2f1-6032-4658-932e-ff26174397b0">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4ab1804f-8dc3-4b77-8a04-07a626112a76">
+    <name>ВидДвижения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид движения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Вид движения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="eda31a88-3528-40b6-ab30-23bb2d721c00">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c185333f-9d92-40ce-b51f-fa89dbb1ea6a">
+    <name>ПереносДатыПринятияКУчету</name>
+    <synonym>
+      <key>ru</key>
+      <value>Перенос даты принятия к учету</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Перенос даты принятия к учету</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="cefda730-4bb2-4d0a-874d-50ee4988302b">
+    <name>ИзменениеПодразделения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменение подразделения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Изменение подразделения</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7a5b5e79-1060-4b51-b071-be0c60d89ad9">
+    <name>ИзменениеСтоимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменение стоимости</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Изменение стоимости</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="5f537e4a-afdf-4413-a1bd-3187ba5ca48f">
+    <producedTypes>
+      <objectType typeId="45954848-416f-45d8-94c2-143c870a15cf" valueTypeId="97e254f9-f256-4584-a5d8-722b89be9e27"/>
+      <rowType typeId="824f3abd-744f-4a89-8b2c-c0376f2d35ad" valueTypeId="cacd6074-df38-4b53-8cc4-501a425a0788"/>
+    </producedTypes>
+    <name>ОС</name>
+    <synonym>
+      <key>ru</key>
+      <value>ОС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>ОС</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="e18720bc-e21f-46ce-91d1-7b8e12fe9952">
+      <name>ОсновноеСредство</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основное средство</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Основное средство</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ОсновныеСредства</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4819be8c-c433-429f-afcc-57f667cb3cec">
+      <name>КодОС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код ОС</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Код ОС</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>8</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a185a3d7-63dc-48e3-a1cc-1fb35bd26ce1">
+      <name>СтоимостьБУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость БУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Стоимость БУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="de300a76-023a-42c1-a287-13612ada0bb0">
+      <name>СуммаКВ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма КВ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сумма КВ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0e6f78df-c9bb-4e24-9f3c-dda538a413e2">
+      <name>СтоимостьНУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость НУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Стоимость НУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="8a77f84c-d74d-44ce-877e-a6a632b0622a">
+      <name>АмортизацияБУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Амортизация БУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Амортизация БУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2c58c066-fc48-45c3-8b12-0b4e878bb551">
+      <name>АмортизацияНУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Амортизация НУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Амортизация НУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d5c206a1-d324-4736-938c-c02806a9f1dd">
+      <name>ВидДвижения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид движения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Вид движения</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.ВидДвижения</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="9f752d75-ce5a-44d2-b4c6-bda78a0d573f">
+    <producedTypes>
+      <objectType typeId="943dc780-67cb-46bb-976b-9ad37a3f1439" valueTypeId="c365b2ea-02f0-489f-953f-c89150980312"/>
+      <rowType typeId="97749772-e709-48b6-b6ad-a7b1413ba15c" valueTypeId="b5cdfa33-9afc-4673-bea6-64c757cd09c5"/>
+    </producedTypes>
+    <name>СтоимостьБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость БУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Стоимость БУ</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="76818661-b9cf-48da-9e07-94ee11a0b566">
+      <name>ОсновноеСредство</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основное средство</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Основное средство</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ОсновныеСредства</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="759c180f-4353-4eb9-9e9f-9b16a45a370f">
+      <name>НалоговыйПериод</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налоговый период</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Налоговый период</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="01024b67-acef-4f1e-9035-73f7ea1e1a80">
+      <name>ПодразделениеОрганизации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение организации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Подразделение организации</value>
+      </synonym>
+      <comment>(Регл)</comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="6337d772-3ab6-4099-b2e3-99b6eacded24">
+      <name>СтоимостьБУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость БУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Стоимость БУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="55390a07-ae4e-497f-a540-e88c2449e35e">
+    <producedTypes>
+      <objectType typeId="9a9406c8-00be-49fe-89f5-3d67602eef84" valueTypeId="32bfbb31-5e94-41c6-a169-09092ebcd734"/>
+      <rowType typeId="7d1c0c10-9b05-4c9c-9cb3-8b20d2fcbbda" valueTypeId="d6015ea6-19c8-4804-9702-5bac9be8b4ae"/>
+    </producedTypes>
+    <name>АмортизацияНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Амортизация НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Амортизация НУ</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="5b8203ca-64a4-4bb5-a1fd-187b320f3f40">
+      <name>ОсновноеСредство</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основное средство</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Основное средство</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ОсновныеСредства</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="7a59936b-7986-422f-8325-00235d62f0cc">
+      <name>НалоговыйПериод</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налоговый период</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Налоговый период</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4fec54af-356f-4f79-a327-208a0ffb1fca">
+      <name>ПодразделениеОрганизации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение организации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Подразделение организации</value>
+      </synonym>
+      <comment>(Регл)</comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="f6d90a65-91b0-4954-9241-bdddaf88b92d">
+      <name>АмортизацияНУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Амортизация НУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Амортизация НУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="8480697a-fea7-4ec5-9f1e-441bacabe6f9">
+    <producedTypes>
+      <objectType typeId="0af8ff4c-ff06-479c-bec7-936563d88670" valueTypeId="dd10dc8a-a4c7-4281-918b-7c925d522ef6"/>
+      <rowType typeId="1028a912-f149-478c-97b3-3bd146334605" valueTypeId="b82b7ed9-68d7-4b14-aae2-c1c313e1bbf3"/>
+    </producedTypes>
+    <name>КапитальныеВложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Капитальные вложения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Капитальные вложения</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="ae2a32fb-4904-4453-9638-b6c12303d73f">
+      <name>ОсновноеСредство</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основное средство</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Основное средство</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ОсновныеСредства</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="dc2ce65c-af05-4c4e-959a-afadeedcc27d">
+      <name>НалоговыйПериод</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налоговый период</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Налоговый период</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c2e71a35-fb2b-4789-9396-7b9d8f5a9922">
+      <name>ПодразделениеОрганизации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение организации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Подразделение организации</value>
+      </synonym>
+      <comment>(Регл)</comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="52d300b7-80b0-498d-a81a-d1c043018867">
+      <name>СуммаКВ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма КВ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сумма КВ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="9d9e3db3-019a-4cc3-989f-3aefda52a2a9">
+    <producedTypes>
+      <objectType typeId="4fc0c14c-0513-4ac7-914b-fce8bd498177" valueTypeId="1c27bcbb-07e8-4430-9a47-3a8fad0bfb66"/>
+      <rowType typeId="6cb39271-b3e7-492a-9973-e60d138551e6" valueTypeId="f31a7d30-ca30-4317-a614-62c9ffde688f"/>
+    </producedTypes>
+    <name>Налоги</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоги</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Налоги</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="ff3cecf8-804f-4ee1-8f21-53e533751928">
+      <name>Налог</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налог</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Налог</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.ВидыНалоговыхНачислений</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="83b90b10-cd6e-436e-8f21-86ec5f0b2ec6">
+      <name>ОсновноеСредство</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основное средство</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Основное средство</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ОсновныеСредства</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="fbfac18a-8894-4809-b669-a2ae8a712195">
+      <name>НалоговыйПериод</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налоговый период</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Налоговый период</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c1cdb7c9-a049-4f19-bfdf-9e5896ad70b7">
+      <name>ПодразделениеОрганизации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение организации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Подразделение организации</value>
+      </synonym>
+      <comment>(Регл)</comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a4b79b0d-5585-4d9a-9954-bfa587c95cc4">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сумма</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

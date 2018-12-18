@@ -1,0 +1,898 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>DOCs</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOC</dataPath>
+			<field>DOC</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CCA</dataPath>
+			<field>CCA</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CCA</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>CCA</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>CCA.Наименование</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CurrentStage</dataPath>
+			<field>CurrentStage</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Current stage</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Current stage</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CurrentStatus</dataPath>
+			<field>CurrentStatus</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Current status</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Current status</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>MOT</dataPath>
+			<field>MOT</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>MOT</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>MOT</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Urgency</dataPath>
+			<field>Urgency</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Urgency</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Urgency</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ImportSpecialist</dataPath>
+			<field>ImportSpecialist</field>
+			<presentationExpression>ImportSpecialist.Наименование</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOCsLess2</dataPath>
+			<field>DOCsLess2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt; 2 days</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>&lt; 2 days</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOCsTotal</dataPath>
+			<field>DOCsTotal</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Total</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOCs15_30</dataPath>
+			<field>DOCs15_30</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>15 - 30 days</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>15 - 30 days</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOCs2_7</dataPath>
+			<field>DOCs2_7</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>2 - 7 days</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>2 - 7 days</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOCs8_14</dataPath>
+			<field>DOCs8_14</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>8 - 14 days</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>8 - 14 days</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOCs31_60</dataPath>
+			<field>DOCs31_60</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>31 - 60 days</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>31 - 60 days</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Segment</dataPath>
+			<field>Segment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Corporation</dataPath>
+			<field>Corporation</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOCs61_90</dataPath>
+			<field>DOCs61_90</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>61 - 90 days</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>61 - 90 days</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOCsMore90</dataPath>
+			<field>DOCsMore90</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&gt; 90 days</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>&gt; 90 days</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	DOCs.Ссылка КАК DOC,
+	DOCs.CCA,
+	DOCs.MOT,
+	DOCs.Urgency,
+	DOCs.Coordinator КАК ImportSpecialist,
+	DOCs.ProcessLevel.Corporation КАК Corporation,
+	DOCs.CurrentStage,
+	DOCs.CurrentStatus,
+	РАЗНОСТЬДАТ(НАЧАЛОПЕРИОДА(DOCs.Granted, ДЕНЬ), &amp;ТекущаяДата, ДЕНЬ) КАК PendingDays
+ПОМЕСТИТЬ PendingDOCs
+ИЗ
+	Документ.КонсолидированныйПакетЗаявокНаПеревозку КАК DOCs
+ГДЕ
+	НЕ DOCs.Отменен
+	И НЕ DOCs.HouseKeeping
+	И DOCs.Booked = ДАТАВРЕМЯ(1, 1, 1)
+	И (DOCs.Granted &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+			ИЛИ DOCs.CurrentStatus = ЗНАЧЕНИЕ(Перечисление.DocStatuses.PendingShipment)
+				И &amp;ВыводитьPendingShipment)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	PendingDOCs.DOC,
+	PendingDOCs.CCA,
+	PendingDOCs.MOT,
+	PendingDOCs.Urgency,
+	PendingDOCs.ImportSpecialist,
+	PendingDOCs.Corporation,
+	PendingDOCs.CurrentStage,
+	PendingDOCs.CurrentStatus,
+	PendingDOCs.DOC КАК DOCsTotal,
+	ВЫБОР
+		КОГДА PendingDOCs.PendingDays &lt; 2
+			ТОГДА PendingDOCs.DOC
+		ИНАЧЕ NULL
+	КОНЕЦ КАК DOCsLess2,
+	ВЫБОР
+		КОГДА PendingDOCs.PendingDays &gt;= 2
+				И PendingDOCs.PendingDays &lt;= 7
+			ТОГДА PendingDOCs.DOC
+		ИНАЧЕ NULL
+	КОНЕЦ КАК DOCs2_7,
+	ВЫБОР
+		КОГДА PendingDOCs.PendingDays &gt;= 8
+				И PendingDOCs.PendingDays &lt;= 14
+			ТОГДА PendingDOCs.DOC
+		ИНАЧЕ NULL
+	КОНЕЦ КАК DOCs8_14,
+	ВЫБОР
+		КОГДА PendingDOCs.PendingDays &gt;= 15
+				И PendingDOCs.PendingDays &lt;= 30
+			ТОГДА PendingDOCs.DOC
+		ИНАЧЕ NULL
+	КОНЕЦ КАК DOCs15_30,
+	ВЫБОР
+		КОГДА PendingDOCs.PendingDays &gt;= 31
+				И PendingDOCs.PendingDays &lt;= 60
+			ТОГДА PendingDOCs.DOC
+		ИНАЧЕ NULL
+	КОНЕЦ КАК DOCs31_60,
+	ВЫБОР
+		КОГДА PendingDOCs.PendingDays &gt;= 61
+				И PendingDOCs.PendingDays &lt;= 90
+			ТОГДА PendingDOCs.DOC
+		ИНАЧЕ NULL
+	КОНЕЦ КАК DOCs61_90,
+	ВЫБОР
+		КОГДА PendingDOCs.PendingDays &gt; 90
+			ТОГДА PendingDOCs.DOC
+		ИНАЧЕ NULL
+	КОНЕЦ КАК DOCsMore90
+ПОМЕСТИТЬ PendingDOCsWithPeriods
+ИЗ
+	PendingDOCs КАК PendingDOCs
+
+ИНДЕКСИРОВАТЬ ПО
+	PendingDOCs.DOC
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	PendingDOCsWithPeriods.DOC,
+	PendingDOCsWithPeriods.CCA,
+	PendingDOCsWithPeriods.MOT,
+	PendingDOCsWithPeriods.Urgency,
+	PendingDOCsWithPeriods.ImportSpecialist,
+	PendingDOCsWithPeriods.Corporation,
+	PendingDOCsWithPeriods.CurrentStage,
+	PendingDOCsWithPeriods.CurrentStatus,
+	PendingDOCsWithPeriods.DOCsTotal,
+	PendingDOCsWithPeriods.DOCsLess2,
+	PendingDOCsWithPeriods.DOCs2_7,
+	PendingDOCsWithPeriods.DOCs8_14,
+	PendingDOCsWithPeriods.DOCs15_30,
+	PendingDOCsWithPeriods.DOCs31_60,
+	PendingDOCsWithPeriods.DOCs61_90,
+	PendingDOCsWithPeriods.DOCsMore90,
+	Items.КостЦентр.Сегмент КАК Segment
+ИЗ
+	PendingDOCsWithPeriods КАК PendingDOCsWithPeriods
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Инвойсы КАК DOCsInvoices
+			{ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.СтрокиИнвойса КАК Items
+			ПО DOCsInvoices.Инвойс = Items.Инвойс
+				И (НЕ Items.ПометкаУдаления)}
+		ПО PendingDOCsWithPeriods.DOC = DOCsInvoices.Ссылка</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>DOCsTotalValue</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOC</dataPath>
+			<field>DOC</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TotalValue</dataPath>
+			<field>TotalValue</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Total value, USD</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total value, USD</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	DOCsInvoices.Ссылка КАК DOC,
+	СУММА(DOCsInvoices.Инвойс.ОбщаяСумма) КАК TotalValue
+ИЗ
+	Документ.КонсолидированныйПакетЗаявокНаПеревозку КАК DOCs
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Инвойсы КАК DOCsInvoices
+		ПО DOCs.Ссылка = DOCsInvoices.Ссылка
+ГДЕ
+	(НЕ DOCs.Отменен)
+	И (НЕ DOCs.HouseKeeping)
+	И (DOCs.Granted &lt;&gt; ДАТАВРЕМЯ(1, 1, 1) ИЛИ DOCs.CurrentStatus = ЗНАЧЕНИЕ(Перечисление.DocStatuses.PendingShipment))
+	И DOCs.Booked = ДАТАВРЕМЯ(1, 1, 1)
+
+СГРУППИРОВАТЬ ПО
+	DOCsInvoices.Ссылка</query>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>DOCs</sourceDataSet>
+		<destinationDataSet>DOCsTotalValue</destinationDataSet>
+		<sourceExpression>DOC</sourceExpression>
+		<destinationExpression>DOC</destinationExpression>
+	</dataSetLink>
+	<totalField>
+		<dataPath>DOCsTotal</dataPath>
+		<expression>Количество(РАЗЛИЧНЫЕ DOCsTotal)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DOCsLess2</dataPath>
+		<expression>Количество(РАЗЛИЧНЫЕ DOCsLess2)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DOCs2_7</dataPath>
+		<expression>Количество(РАЗЛИЧНЫЕ DOCs2_7)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DOCs8_14</dataPath>
+		<expression>Количество(РАЗЛИЧНЫЕ DOCs8_14)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DOCs15_30</dataPath>
+		<expression>Количество(РАЗЛИЧНЫЕ DOCs15_30)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DOCs31_60</dataPath>
+		<expression>Количество(РАЗЛИЧНЫЕ DOCs31_60)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>TotalValue</dataPath>
+		<expression>Сумма(TotalValue)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Segment</dataPath>
+		<expression>Массив(Segment)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DOCs61_90</dataPath>
+		<expression>Количество(Различные DOCs61_90)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DOCsMore90</dataPath>
+		<expression>Количество(Различные DOCsMore90)</expression>
+	</totalField>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВыводитьPendingShipment</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить pending shipment</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Выводить pending shipment</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TotalValue</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Count of DOCs Granted, not Shipped</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Count of DOCs Granted, not Shipped</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>DOCsTotal</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>DOCsLess2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>DOCs2_7</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>DOCs8_14</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>DOCs15_30</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>DOCs31_60</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>DOCs61_90</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>DOCsMore90</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Corporation</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Corporations.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>bab9bb9d-2179-45d6-80d8-836052ad7dff</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">CurrentStatus</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.DOCStatuses.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>fef00bba-942f-4e70-a738-5efe41e15b20</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">CurrentStage</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.DOCStages.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>10b9872f-7dbd-4448-9f14-e0b9d779d2a1</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">CCA</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Agents.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>e079806d-4626-4a77-a2a4-dc96b7cb39cb</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">MOT</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.MOTs.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>f7c4977c-5907-4882-8e26-21a61ca5fdc3</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Urgency</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.Urgencies.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>1bfe80fb-b1b9-47fe-b63d-c017dfb9a8da</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ImportSpecialist</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Пользователи.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>b54d2bbc-5c55-4e18-93bc-502e6ff817bb</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Segment</dcsset:left>
+					<dcsset:comparisonType>InHierarchy</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Сегменты.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>b8d0e44f-e2e4-40fd-82d4-bcae28231905</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТекущаяДата</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" kind="WindowsFont"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>DOCsTotal</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>DOCsLess2</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>DOCs2_7</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>DOCs8_14</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>DOCs15_30</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>DOCs31_60</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>DOCs61_90</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>DOCsMore90</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">9</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>DOC.POD</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCsLess2</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>DOCs2_7</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:LightGreen</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCs8_14</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">DOCs8_14</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:LightGreen</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCs8_14</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">DOCs8_14</dcsset:left>
+								<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:PaleGoldenrod</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCs15_30</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">DOCs15_30</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:LightGreen</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCs15_30</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">DOCs15_30</dcsset:left>
+								<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:PaleGoldenrod</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCs31_60</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">DOCs31_60</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:LightGreen</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCs31_60</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">DOCs31_60</dcsset:left>
+								<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:LightCoral</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCs61_90</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">DOCs61_90</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:LightGreen</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCs61_90</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">DOCs61_90</dcsset:left>
+								<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:LightCoral</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCsMore90</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">DOCsMore90</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:LightGreen</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCsMore90</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">DOCsMore90</dcsset:left>
+								<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:IndianRed</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>DOCsLess2</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>DOCs2_7</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>DOCs31_60</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>DOCs61_90</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>DOCsMore90</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>DOCs8_14</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>DOCs15_30</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:use>false</dcscor:use>
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:LightGreen</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветТекста</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">#003366</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

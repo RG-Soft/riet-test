@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16540"></meta></head><body>
+<h1>Документ "Export request"</h1>
+<p>Документ "Export request" входит в <a href="Subsystem.ImportExport.Subsystem.Export/Help">подсистему "Export"</a>.</p>
+<p>Документ предназначен для отражения заявок на экспорт.<br>В нем также отражаются все этапы экспорта товаров.</p>
+<p>Документ может быть создан внешним пользователем или специалистом по экспорту.<br>При этом внешний пользователь может посмотреть информацию только по своим заявкам на экспорт.<br>Проверка полей, которые необходимо заполнить внешнему пользователю, происходит в момент заполнения даты Request date.<br>При этом внешний пользователь видит только те поля, которые ему необходимо заполнить до заполнения Requeste date (и те, которые явно указаны в детальном описании полей ниже).</p>
+<p>После того как специалист по экспорту принимает заявку в работу (заполняется Accept date) - она закрывается для редактирования для внешних пользователей.<br>Одновременно происходит проверка заполнения некоторых оставшихся полей.</p>
+<p>К документу можно прикреплять произвольные файлы.</p>
+<p>Ведется история изменений реквизитов документа (логи).</p>
+<h2>Защита от изменения</h2>
+<p>ОПИСАТЬ</p>
+<h2>Реквизиты шапки</h2>
+<ul><li><strong>No.</strong> (строка) - номер заявки на экспорт.<br>Недоступен для редактирования, но виден внешнему пользователю.<br>Заполняется автоматически. Например, E12-0201. Здесь 12 - последние 2 цифры текущего года, 02 - номер месяца, 01 - порядковый номер в текущем месяце. 
+</li><li><strong>Export purpose</strong> (справочник Export purposes) - цель экспорта.<br>Обязательный для заполнения, если заполнена дата Submitted.<br>Не может быть помечен на удаление.<br>При интерактивном выборе система скрывает неподходящие значения. 
+</li><li><strong>Export purpose description</strong> (строка) - описание цели экспорта.<br>Отображается и проверяется на заполнение только тогда, когда в поле Export purpose указано значение Other. 
+</li><li><strong>Export mode</strong> (перечисление Export modes) - temporary или permanent.<br>Обязательный для заполнения специалистом по экспорту, если заполнена Accepted by export specialist. 
+</li><li><strong>RAN number</strong> (строка) - Repair authentication number.<br>Может быть заполнен внешним пользователем. 
+</li><li><strong>Urgency</strong> (перечисление Urgencies) - важность: Standard, Urgent, Emergency.<br>Обязательный для заполнения, если заполнена дата Submitted. 
+</li><li><strong>Urgency comment</strong> (строка) - комментарий по срочности.<br>Обязательный для заполнения и виден только для Urgent и Emergency. 
+</li><li><strong>Required delivery date</strong> (дата) - требуемая дата доставки груза.<br>Обязательный для заполнения и виден только для Emergency.<br>Не может быть раньше даты Submitted + 3 дня.<br>Не может быть раньше Ready to ship + 1 день. 
+</li><li><strong>Emergency approved by</strong> (строка) - alias сотрудника, который подтвердил, что груз действительно имеет приоритет срока над стоимостью.<br>Обязательный для заполнения и виден только для Emergency.<br>Должен быть не короче 3х символов. 
+</li><li><strong>Ready to ship date</strong> (дата) - дата, к которой груз будет готов к вывозу со склада отправления.<br>Обязательный для заполнения, если заполнена дата Submitted.<br>Не может быть раньше даты создания. 
+</li><li><strong>Pick up from </strong>(строка) - место отправления товара.<br>Обязательный для заполнения, если заполнена дата Submitted. 
+</li><li><strong>Pick up from address, contact, phone, e-mail </strong>(строковые реквизиты)<br>Обязательны для заполнения, если заполнена дата Submitted. 
+</li><li><strong>Company </strong>(справочник Sold-to) - компания-продавец товара.<br>Обязательный для заполнения, если заполнена дата Submitted.<br>Не может быть помечен на удаление.<br>При интерактивном выборе система скрывает неподходящие значения. 
+</li><li><strong>Shipper</strong> (справочник Consign-to)<br>Обязательный для заполнения, если заполнена дата Submitted.<br>Shipper company должна соответствовать продавцу товара.<br>Не может быть помечен на удаление.<br>При интерактивном выборе система скрывает неподходящие значения. 
+</li><li><strong>Shipper address, contact, phone, e-mail </strong>(строковые реквизиты)<br>Обязательны для заполнения, если заполнена дата Submitted. 
+</li><li><strong>Deliver-to company, address, contact, phone, e-mail </strong>(строковые реквизиты)<br>Обязательны для заполнения, если заполнена дата Submitted. 
+</li><li><strong>Consignee </strong>(cправочник Shippers)<br>Обязательный для заполнения, если заполнена дата Accepted by specialist.<br>Не может быть помечен на удаление.<br>При интерактивном выборе система скрывает неподходящие значения. 
+</li><li><strong>Consignee company, address, contact, phone, e-mail </strong>(строковые реквизиты)<br>Обязательны для заполнения, если заполнена дата Submitted. 
+</li><li>
+<div><strong>Segment</strong> (справочник Segments) <br>Обязательный для заполнения, если заполнена дата Submitted.<br>Segment AU и БОРГа (если заполнен) должен совпадать с Segment. </div>
+</li><li><strong>BORG</strong> (справочник BORGs)<br>Обязательный для заполнения, если заполнена дата Submitted.<br>Не может быть помечен на удаление.<br>Компания БОРГа должна совпадать с Company.<br>При интерактивном выборе система скрывает неподходящие значения. 
+</li><li><strong>AU</strong> (справочник AUs) - accounting unit - кост-центр<br>Обязательный для заполнения, если заполнена дата Submitted.<br>Не может быть помечен на удаление.<br>При интерактивном выборе система скрывает неподоходящие значения. 
+</li><li><strong>Activity</strong> (строка)<br>Обязательный для заполнения, если заполнена дата Submitted. 
+</li><li><strong>Submitted </strong>(дата документа) - дата заявки на экспорт.<br>Внешний пользователь не может изменить эту дату вручную, а только нажать на кнопку Sent to export specialist, которая заполняет эту дату и записывает заявку на экспорт.<br>Не может быть раньше даты создания заявки.<br>Не может быть позже текущей даты. 
+</li><li><strong>Submitter </strong>(справочник Users) - составитель заявки на экспорт.<br>Заполняется автоматически текущим пользователем.<br>Не может быть изменен внешним пользователем, но отображается на форме.<br>Обязательный для заполнения, если заполнена дата Submitted. 
+</li><li><strong>Export specialist</strong> (справочник Users) - специалист по экспорту, который занимается экспортом данной заявки.<br>Заполняется автоматически при первом заполнении даты Accepted by specialist, но может быть в дальнейшем изменено вручную. 
+</li><li><strong>Accepted by specialist</strong> (дата) - дата принятия заявки в работу специалистом по экспорту.<br>Не может быть раньше даты создания заявки.<br>Не может быть раньше даты Sent to export specialist, если она заполнена.<br>Не может быть позже текущей даты. 
+</li><li><strong>Pending, days</strong> (число) - число дней, прошедшее с даты Accepted by specialist.<br>Обновляется автоматически до тех пор, пока не будет заполнена дата ATD. 
+</li><li><strong>Current comments</strong> (строка) - актуальные комментарии. 
+</li><li><strong>Gross weight, kg.</strong> (число) - вес брутто всех грузовых мест.<br>Рассчитывается автоматически. 
+</li><li><strong>Pieces qty</strong> (число) - количество грузовых мест.<br>Рассчитывается автоматически. 
+</li><li><strong>Cubic meters</strong> (число) - объем всех грузовых мест.<br>Рассчитывается автоматически.</li></ul><h2>Таблица "Items"</h2>
+<p>В таблице "Items" перечисляются все товары, которые должны быть экспортированы.</p>
+<p>Технически - это не таблица, а специальный <a href="Catalog.СтрокиИнвойса/Help">справочник Goods</a>.<br>Реквизиты этого справочника описаны в <a href="Catalog.СтрокиИнвойса/Help">соответствующем разделе справки</a>.</p>
+<p>Если заполнена Submitted date - то в таблице должен быть указан хотя бы один товар.</p>
+<h2>Таблица "Parcels"</h2>
+<p>В таблице "Parcels" перечисляются все <a href="Catalog.Parcels/Help">грузовые места (Parcels)</a>, которые относятся к этой заявке на экспорт.</p>
+<p>Технически - это не таблица, а специальный <a href="Catalog.Parcels/Help">справочник "Parcels"</a>.<br>Реквизиты этого справочника описаны в <a href="Catalog.Parcels/Help">соответствующем разделе справки</a>.</p>
+<p>Если заполнена Submitted - то в таблице должено быть указано хотя бы одно грузовое место.</p>
+<h2>Local delivery</h2>
+<ul><li><strong>Local freight requested</strong> (дата) - дата запроса цены у агента.<br>Обязательный для заполнения, если заполнена дата Local freight received.<br>Не может быть раньше даты Submitted.<br>Не может быть позже текущей даты. 
+</li><li><strong>Local freight received</strong> (дата) - дата получения Green light от брокер.<br>Обязательный для заполнения, если заполнена дата Local freight approved.<br>Не может быть раньше даты Local delivery requested.<br>Не может быть позже текущей даты. 
+</li><li><strong>Local freight approved</strong> (дата) - дата подтверждения стоимости локальной транспортировки со стороны компании Шлюмберже.<br>Не может быть раньше даты Local delivery received.<br>Не может быть позже текущей даты. 
+</li><li><strong>Local freight agent</strong> (справочник Agents) - агент, который будет проводить локальную транспортировку товара.<br>Обязательный для заполнения, если заполнена дата Local freight approved.<br>Не может быть помечен на удаление. 
+</li><li><strong>Pick up warehouse</strong> (справочник Warehouses) - склад отправления груза.<br>Не может быть изменен внешним пользователем, поэтому заполняется специалистом по экспорту перед принятием заявки в работу.<br>Обязательный для заполнения и не может быть помечен на удаление, если заполнена дата Accepted by export specialist. 
+</li><li><strong>Local MOT</strong> (справочник MOTs) - способ локальной транспортировки.<br>Обязательный для заполнения, если заполнена дата Local freight approved.<br>Не может быть помечен на удаление. 
+</li><li><strong>Local WB</strong> (строка) - накладная на локальную транспортировку.<br>Обязательный для заполнения, если заполнена Pick-up date. 
+</li><li><strong>Local ETD</strong> (дата) - планируемая дата отправки с локального склада-отправителя.<br>Не может быть раньше даты Local freight received. 
+</li><li><strong>Local ATD</strong> (дата) - фактическая дата отправки с локального склада-отправителя.<br>Обязательный для заполнения, если заполнена дата Local ATA.<br>Не может быть раньше даты Local freight received.<br>Не может быть позже текущей даты. 
+</li><li><strong>Local ETA</strong> (дата) - планируемая дата прибытия на промежуточный склад.<br>Не может быть раньше Local freight received, Local ETD или Local ATD. 
+</li><li><strong>Local ATA</strong> (дата) - фактическая дата прибытия на промежуточный склад.<br>Не может быть раньше Local ATD.<br>Не может быть позже текущей даты.</li></ul><h2>Customs</h2>
+<ul><li><strong>CCA GL requested</strong> (дата) - дата запроса Green light у брокера.<br>Обязательный для заполнения, если заполнена дата CCA received.<br>Не может быть раньше даты Submitted.<br>Не может быть позже текущей даты. 
+</li><li><strong>CCA GL received</strong> (дата) - дата получения Green light от брокер.<br>Обязательный для заполнения, если заполнена дата CCA approved.<br>Не может быть раньше даты Submitted.<br>Не может быть позже текущей даты. 
+</li><li><strong>Source docs available</strong> (перечисление Yes / no) - наличие или отсутствие импортных документов.<br>Должен быть заполнен, если заполнена дата CCA received. 
+</li><li><strong>CCA</strong> (справочник Agents) - брокер, который будет проводить таможенное оформление товара.<br>Обязательный для заполнения, если заполнена дата CCA received.<br>Не может быть помечен на удаление. 
+</li><li><strong>Permits required</strong> (перечисление Yes / no) - требуется разрешающие документы.<br>Обязательный для заполнения, если заполнены даты Permits requested, Permits obtainted или Submitted to customs. 
+</li><li><strong>Permits requested</strong> (дата) - разрешающие документы запрошены.<br>Обязательный для заполнения, если заполнена дата Submitted to customs и Permits required.<br>Не может быть раньше даты Submitted.<br>Не может быть позже текущей даты. 
+</li><li><strong>Permits obtained</strong> (дата) - разрешающие документы получены.<br>Обязательный для заполнения, если заполнена дата Submitted to customs и Permits required.<br>Не может быть раньше даты Permits requested.<br>Не может быть позже текущей даты. 
+</li><li><strong>Shipping invoice ready</strong> (дата) - дата получения shipping invoice. <br>Не может быть раньше даты CCA received. 
+</li><li><strong>Consignee GL requested</strong> (дата) - дата запроса Green light у получателя товара<br>Обязательный для заполнения, если заполнена дата Consignee GL received.<br>Не может быть раньше даты Submitted.<br>Не может быть позже даты Consignee GL received.  
+</li><li><strong>Consignee GL received</strong> (дата) - дата получения Green light получателем товара<br>Не может быть раньше даты GL requested from Consignee. 
+</li><li><strong>Fumigation required</strong> (перечисление Yes / no) - требуется фумигация.<br>Обязательный для заполнения, если заполнена дата Fumigation done или Submitted to customs. 
+</li><li><strong>Fumigation certificate required</strong> (перечисление Yes / no) - требуется сертификат о фумигации.<br>Обязательный для заполнения, если заполнена дата Fumigation done или Submitted to customs. 
+</li><li><strong>Fumigation done</strong> (дата) - фумигация выполнена.<br>Обязательный для заполнения, если заполнена дата Submitted to customs и Fumigation required или Fumigation certificate required. 
+</li><li><strong>Submitted to customs</strong> (дата) - дата подачи документов для таможенного оформления.<br>Обязательный для заполнения, если заполнена дата Released.<br>Не может быть раньше даты Consignee GL received.<br>Не может быть позже текущей даты. 
+</li><li><strong>Released from customs</strong> (дата) - дата выпуска таможенной декларации.<br>Не может быть раньше даты submitted to customs.<br>Не может быть позже текущей даты. 
+</li><li><strong>CCD number</strong> (строка) - номер ГТД.<br>Обязательный для заполнения, если заполнена дата Released from customs.</li></ul><h2>International delivery</h2>
+<ul><li><strong>International freight requested</strong> (дата) - дата запроса цены у агента.<br>При добавлении новой строки подставляется автоматически текущая дата, но может быть изменена.<br>Обязательный для заполнения, если заполнена дата International freight received.<br>Не может быть раньше даты Submitted.<br>Не может быть позже текущей даты. 
+</li><li><strong>International freight received</strong> (дата) - дата получения цены от агента.<br>Обязательный для заполнения, если заполнена дата International freight approved.<br>Не может быть раньше даты International freight requested.<br>Не может быть позже текущей даты. 
+</li><li><strong>International freight approved</strong> (булево) - дата подтверждения стоимости международной транспортировки компанией Шлюмберже.<br>Не может быть раньше даты International freight received.<br>Не может быть позже текущей даты. 
+</li><li><strong>International freight agent</strong> (справочник Agents) - агент, который будет проводить международную транспортировку товара.<br>Обязательный для заполнения, если заполнена дата International freight requested.<br>Не может быть помечен на удаление. 
+</li><li><strong>POD</strong> (справочник Sea and air ports) - point of departure.<br>Обязательный для заполнения, если заполнена дата International freight approved.<br>Не может быть помечен на удаление. 
+</li><li><strong>Transitional country</strong> (справочник HUBs Countries) - промежуточная страна доставки груза.<br>Не может быть помечен на удаление. 
+</li><li><strong>POA</strong> (справочник HUBs Countries) - point of arrival.<br>Обязательный для заполнения, если заполнена дата Accepted by specialist.<br>Не может быть помечен на удаление.<br>При интерактивном выборе система скрывает неподходящие значения. 
+</li><li><strong>International MOT</strong> (справочник MOTs) - способ международной транспортировки.<br>Обязательный для заполнения, если заполнена дата International freight approved.<br>Не может быть помечен на удаление. 
+</li><li><strong>International WB</strong> (строка) - номер международной накладной.<br>Обязательный для заполнения, если заполнена дата ATD. 
+</li><li><strong>International ETD</strong> (дата) - планируемая дата отправки в международную транспортировку.<br>Не может быть раньше даты International freight received. 
+</li><li><strong>International ATD</strong> (дата) - фактическая дата отправления груза в международную транспортировку.<br>Обязательнй для заполнения, если заполнена дата International ATA.<br>Не может быть раньше даты Released from Customs.<br>Не может быть позже текущей даты. 
+</li><li><strong>Pre alert sent</strong> (дата) - дата отправки пре-алерта в страну назначения<br>Обязательный для заполнения, если заполнены даты International ETA или International ATA.<br>Не может быть раньше Released from customs.<br>Не может быть позже текущей даты. 
+</li><li><strong>International ETA</strong> (дата) - планируемая дата в страну назначения.<br>Не может быть раньше International freight received, International ETD или International ATD. 
+</li><li><strong>International ATA</strong> (дата) - фактическая дата прибытия груза в страну назначения.<br>Не может быть раньше International ATD.<br>Не может быть позже текущей даты.</li></ul><h2>Дополнительные реквизиты шапки</h2>
+<ul><li><strong>Created by</strong> (справочник Users) - пользователь, создавший заявку на экспорт.<br>Заполняется автоматически при первом сохранении заявки на экспорт в базе данных. 
+</li><li><strong>Creation date</strong> (дата) - дата создания заявки на экспорт.<br>Заполняется автоматически при первом сохранении заявки на экспорт в базе данных. 
+</li><li><strong>Modified by</strong> (справочник Users) - пользователь, который внес последние изменения в заявку из формы документа. Заполняется автоматически. 
+</li><li><strong>Modification date</strong> (дата) - дата последнего изменения заявки на экспорт из формы документа. Заполняется автоматически.</li></ul><h2>Таблица 'Other involved locations'</h2>
+<p>В таблице отражаются TMS involved party locations, которые не указаны ни в одном из предыдущих полей. </p>
+<ul><li><strong>Location qualifier</strong> (справочник Location qualifiers)<br>Обязательный для заполнения реквизит. 
+</li><li><strong>Location id</strong> (текст) - TMS идентификатор локации.<br>Система автоматически удаляет строки с пустым Location id.</li></ul><h2>Таблица 'Other involved contacts'</h2>
+<p>В таблице отражаются TMS involved party contacts, которые не указаны ни в одном из предыдущих полей.</p>
+<ul><li><strong>Contact qualifier</strong> (справочник Contact qualifiers)<br>Обязательный для заполнения реквизит. 
+</li><li><strong>Contact id</strong> (текст) - TMS идентификатор контакта.<br>Система автоматически удаляет строки с пустым Contact id.</li></ul></body></html>

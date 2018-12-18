@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="02e3c4bc-dc2e-400c-ad56-1fc9bf745278">
+  <name>ПередЗаписьюСправочникаОбменLeg7</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перед записью справочника обмен leg7</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Перед записью справочника обмен leg7</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.Parcels</types>
+    <types>CatalogObject.СтрокиИнвойса</types>
+    <types>CatalogObject.Пользователи</types>
+    <types>CatalogObject.ЗаявкиНаЗакупку</types>
+    <types>CatalogObject.КостЦентры</types>
+    <types>CatalogObject.LegalEntities</types>
+    <types>CatalogObject.SoldTo</types>
+    <types>CatalogObject.ServiceProviders</types>
+    <types>CatalogObject.Warehouses</types>
+    <types>CatalogObject.Equipments</types>
+    <types>CatalogObject.СтрокиЗаявкиНаЗакупку</types>
+    <types>CatalogObject.BORGs</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.LocalDistributionОбменДаннымиСервер.ЗарегистрироватьОбъектыДляОбменаLeg7</handler>
+</mdclass:EventSubscription>

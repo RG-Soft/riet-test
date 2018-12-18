@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b9f14fde-0c24-4828-b30f-32f2328b3ae6">
+  <name>ПроверитьДатуПроведенияДокументаПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить дату проведения документа перед записью</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Проверить дату проведения документа перед записью</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ОтражениеНачисленияНДС</types>
+    <types>DocumentObject.ОтчетАгентаПоРасходам</types>
+    <types>DocumentObject.ПринятиеКУчетуОС</types>
+    <types>DocumentObject.ПеремещениеОС</types>
+    <types>DocumentObject.ВводНачальныхОстатковОС</types>
+    <types>DocumentObject.СписаниеОС</types>
+    <types>DocumentObject.МодернизацияОС</types>
+    <types>DocumentObject.ПодготовкаКПередачеОС</types>
+    <types>DocumentObject.ПлатежноеПоручениеВходящее</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ПодпискиНаСобытия.ПроверитьДатуПроведенияДокументаПередЗаписью</handler>
+</mdclass:EventSubscription>

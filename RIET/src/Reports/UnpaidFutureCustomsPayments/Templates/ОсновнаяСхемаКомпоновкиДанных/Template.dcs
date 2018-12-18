@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DT</dataPath>
+			<field>DT</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DTNo</dataPath>
+			<field>DTNo</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>DT no.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>DT no.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DueDate</dataPath>
+			<field>DueDate</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>FutureCustomsPayment</dataPath>
+			<field>FutureCustomsPayment</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProcessLevel</dataPath>
+			<field>ProcessLevel</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>UnpaidAmount</dataPath>
+			<field>UnpaidAmount</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	UnpaidFutureCustomsPaymentsОстатки.FutureCustomsPayment,
+	UnpaidFutureCustomsPaymentsОстатки.FutureCustomsPayment.DTNo КАК DTNo,
+	UnpaidFutureCustomsPaymentsОстатки.FutureCustomsPayment.DT КАК DT,
+	UnpaidFutureCustomsPaymentsОстатки.FutureCustomsPayment.Дата КАК DueDate,
+	UnpaidFutureCustomsPaymentsОстатки.FutureCustomsPayment.ProcessLevel.Corporation КАК Corporation,
+	UnpaidFutureCustomsPaymentsОстатки.AmountОстаток КАК UnpaidAmount
+ИЗ
+	РегистрНакопления.UnpaidFutureCustomsPayments.Остатки КАК UnpaidFutureCustomsPaymentsОстатки
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	NULL,
+	CustomsFilesOfGoods.DTNo,
+	CustomsFilesOfGoods.CustomsFile,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	РегистрСведений.HistoryOfTemporaryImportExport.СрезПоследних(, InTemporaryImport) КАК ItemsInTemporaryImport
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.CustomsFilesOfGoods КАК CustomsFilesOfGoods
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.UnpaidFutureCustomsPayments.Остатки КАК UnpaidFutureCustomsPaymentsОстатки
+			ПО CustomsFilesOfGoods.DTNo = UnpaidFutureCustomsPaymentsОстатки.FutureCustomsPayment.DTNo
+		ПО ItemsInTemporaryImport.Item = CustomsFilesOfGoods.Item
+ГДЕ
+	UnpaidFutureCustomsPaymentsОстатки.FutureCustomsPayment ЕСТЬ NULL </query>
+	</dataSet>
+	<totalField>
+		<dataPath>UnpaidAmount</dataPath>
+		<expression>Сумма(UnpaidAmount)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ProcessLevel</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DTNo</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DT</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>FutureCustomsPayment</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DueDate</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>UnpaidAmount</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ProcessLevel</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.ProcessLevelsOfImportExport.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>d7a84e8e-7c11-4fdf-ac45-a28637deece0</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:userSettingID>f6c099c9-a066-460d-9867-f12aa7081c3c</dcsset:userSettingID>
+				<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+				</dcsset:userSettingPresentation>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>DueDate</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

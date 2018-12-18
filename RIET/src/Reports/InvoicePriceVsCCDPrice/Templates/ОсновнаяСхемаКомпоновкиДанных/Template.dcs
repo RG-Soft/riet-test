@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Activity</dataPath>
+			<field>Activity</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументОснование</dataPath>
+			<field>ДокументОснование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтрокаИнвойса</dataPath>
+			<field>СтрокаИнвойса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭлементФормированияСтоимости</dataPath>
+			<field>ЭлементФормированияСтоимости</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГТД</dataPath>
+			<field>ГТД</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГТДОбщаяТаможеннаяСтоимость</dataPath>
+			<field>ГТДОбщаяТаможеннаяСтоимость</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ГТД общая таможенная стоимость</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ГТД общая таможенная стоимость</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InvoiceFiscalSumWithExtraCharges</dataPath>
+			<field>InvoiceFiscalSumWithExtraCharges</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InvoiceSumWithExtraCharges</dataPath>
+			<field>InvoiceSumWithExtraCharges</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AU</dataPath>
+			<field>AU</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ERPTreatment</dataPath>
+			<field>ERPTreatment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Segment</dataPath>
+			<field>Segment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SoldTo</dataPath>
+			<field>SoldTo</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГТДTotalInvoiceAmount</dataPath>
+			<field>ГТДTotalInvoiceAmount</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ГТД total invoice amount</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ГТД total invoice amount</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УДАЛИТЬAccount</dataPath>
+			<field>УДАЛИТЬAccount</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	InvoiceLinesCostsОбороты.СтрокаИнвойса КАК InvoiceLine,
+	InvoiceLinesCostsОбороты.СуммаОборот КАК InvoiceLinesSumWithExtraCharges,
+	InvoiceLinesCostsОбороты.СуммаФискальнаяОборот КАК InvoiceLineFiscalSumWithExtraCharges
+ПОМЕСТИТЬ InvoiceLinesSums
+ИЗ
+	РегистрНакопления.InvoiceLinesCosts.Обороты(, , , ЭлементФормированияСтоимости В ИЕРАРХИИ (ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.Инвойс))) КАК InvoiceLinesCostsОбороты
+
+ИНДЕКСИРОВАТЬ ПО
+	InvoiceLine
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	InvoiceLinesSums.InvoiceLine КАК InvoiceLine,
+	ЗакрытиеПоставкиСопоставление.ТоварСтрокиГТД.Владелец.ГТД КАК ГТД
+ПОМЕСТИТЬ InvoiceLinesAndCCDs
+ИЗ
+	InvoiceLinesSums КАК InvoiceLinesSums
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ЗакрытиеПоставки.Сопоставление КАК ЗакрытиеПоставкиСопоставление
+		ПО InvoiceLinesSums.InvoiceLine = ЗакрытиеПоставкиСопоставление.СтрокаИнвойса
+ГДЕ
+	ЗакрытиеПоставкиСопоставление.Ссылка.Проведен
+
+ИНДЕКСИРОВАТЬ ПО
+	InvoiceLine
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	InvoiceLinesAndCCDs.ГТД,
+	InvoiceLinesAndCCDs.ГТД.TotalInvoiceAmount,
+	InvoiceLinesAndCCDs.ГТД.ОбщаяТамСтоимость КАК ГТДОбщаяТаможеннаяСтоимость,
+	СУММА(InvoiceLinesSums.InvoiceLinesSumWithExtraCharges) КАК InvoiceSumWithExtraCharges,
+	СУММА(InvoiceLinesSums.InvoiceLineFiscalSumWithExtraCharges) КАК InvoiceFiscalSumWithExtraCharges
+ИЗ
+	InvoiceLinesAndCCDs КАК InvoiceLinesAndCCDs
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ InvoiceLinesSums КАК InvoiceLinesSums
+		ПО InvoiceLinesAndCCDs.InvoiceLine = InvoiceLinesSums.InvoiceLine
+
+СГРУППИРОВАТЬ ПО
+	InvoiceLinesAndCCDs.ГТД,
+	InvoiceLinesAndCCDs.ГТД.TotalInvoiceAmount,
+	InvoiceLinesAndCCDs.ГТД.ОбщаяТамСтоимость</query>
+	</dataSet>
+	<totalField>
+		<dataPath>ГТДОбщаяТаможеннаяСтоимость</dataPath>
+		<expression>Сумма(ГТДОбщаяТаможеннаяСтоимость)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>InvoiceFiscalSumWithExtraCharges</dataPath>
+		<expression>Сумма(InvoiceFiscalSumWithExtraCharges)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>InvoiceSumWithExtraCharges</dataPath>
+		<expression>Сумма(InvoiceSumWithExtraCharges)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГТДTotalInvoiceAmount</dataPath>
+		<expression>Сумма(ГТДTotalInvoiceAmount)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;InvoiceLinesMatchingDate.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;InvoiceLinesMatchingDate.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>InvoiceLinesMatchingDate</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Invoice lines matching date</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Invoice lines matching date</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГТД.SoldTo</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГТД.CCA</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГТД</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГТДTotalInvoiceAmount</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceSumWithExtraCharges</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГТДОбщаяТаможеннаяСтоимость</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceFiscalSumWithExtraCharges</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ГТДTotalInvoiceAmount</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:Field">InvoiceSumWithExtraCharges</dcsset:right>
+					<dcsset:userSettingID>f07b42e1-8fc0-40f2-b56f-7119be6e7c46</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ГТДОбщаяТаможеннаяСтоимость</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:Field">InvoiceFiscalSumWithExtraCharges</dcsset:right>
+					<dcsset:userSettingID>808d057a-5fe6-43df-9e7b-9650802f4f3c</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:userSettingID>cfc35eb7-a949-45d1-b7f1-d3cf99dce07f</dcsset:userSettingID>
+				<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+				</dcsset:userSettingPresentation>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>InvoiceLinesMatchingDate</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>89e60e97-cd8c-45aa-abeb-2808274ec040</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">BeginAndEnd</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

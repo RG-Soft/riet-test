@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="09511a73-9eda-4fcc-837b-cf3a95ea7776">
+  <producedTypes>
+    <selectionType typeId="cff9be6c-2b93-49e0-9696-4cd3bc2cd97e" valueTypeId="ffd27f7b-bbc0-4b5f-b2dd-61d3b3b12af8"/>
+    <listType typeId="255fa65a-8a9f-4a49-9806-bec79feca4d1" valueTypeId="15d055a0-c314-4615-a6f4-28e696798834"/>
+    <managerType typeId="272f173b-a297-4117-a950-0d120eae4781" valueTypeId="47b528a0-69b2-4faf-a97e-f9a9409f0766"/>
+    <recordSetType typeId="56aa37a6-7abb-4876-bea4-74fcf2a0d9f3" valueTypeId="6d5ff41d-5c52-48fc-8534-b90a9e42c6c8"/>
+    <recordKeyType typeId="960c4415-0e74-48f4-a1e4-8b7cf0109f72" valueTypeId="d2cf08d7-9af7-4de9-9251-a3734f9bed42"/>
+    <recordType typeId="b8dea4ad-e932-4ec8-9cb0-7c94e1611664" valueTypeId="4af705a0-d985-4492-a9d8-10de5761af13"/>
+  </producedTypes>
+  <name>FAtoMandS</name>
+  <synonym>
+    <key>ru</key>
+    <value>FA to M&amp;S</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>FA to M&amp;S</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="946985fd-f89c-449a-80af-a06cf292db51">
+    <name>FiscalSum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal sum</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="ac00f9cc-fc3f-4e22-9d82-b8cc2316d020">
+    <name>ОсновноеСредство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное средство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Основное средство</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредства</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="38540451-7d8c-4f23-adc3-90646d1d25ec">
+    <name>ПроводкаДеталейСКП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проводка DSS/Invoice line</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Проводка DSS/Invoice line</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПроводкаDSS</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="83831861-5e5d-4b27-adae-5106233f4ebd">
+    <name>РО</name>
+    <synonym>
+      <key>ru</key>
+      <value>РО</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>РО</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

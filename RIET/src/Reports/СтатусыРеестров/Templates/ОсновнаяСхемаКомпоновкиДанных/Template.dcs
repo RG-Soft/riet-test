@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Реестр</dataPath>
+			<field>Реестр</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регион</dataPath>
+			<field>Регион</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регион</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТекущийСтатус</dataPath>
+			<field>ТекущийСтатус</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий статус</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СпециалистБиллинга</dataPath>
+			<field>СпециалистБиллинга</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Специалист биллинга</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>RegisteredDate</dataPath>
+			<field>RegisteredDate</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Registered date</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Плательщик</dataPath>
+			<field>Плательщик</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плательщик</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подрядчик</dataPath>
+			<field>Подрядчик</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подрядчик</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AcceptedDate</dataPath>
+			<field>AcceptedDate</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Accepted date</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРегистрации</dataPath>
+			<field>ДатаРегистрации</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата регистрации</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Координатор</dataPath>
+			<field>Координатор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Координатор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SubmittedCoordinatorDate</dataPath>
+			<field>SubmittedCoordinatorDate</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Submitted coordinator date</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Finished</dataPath>
+			<field>Finished</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Finished</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	СтатусыРеестров.Реестр,
+	МИНИМУМ(ВЫБОР
+			КОГДА СтатусыРеестров.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыРеестров.Registered)
+				ТОГДА СтатусыРеестров.Период
+		КОНЕЦ) КАК RegisteredDate,
+	МИНИМУМ(ВЫБОР
+			КОГДА СтатусыРеестров.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыРеестров.SubmittedCoordinator)
+				ТОГДА СтатусыРеестров.Период
+		КОНЕЦ) КАК SubmittedCoordinatorDate,
+	МИНИМУМ(ВЫБОР
+			КОГДА СтатусыРеестров.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыРеестров.Accepted)
+				ТОГДА СтатусыРеестров.Период
+		КОНЕЦ) КАК AcceptedDate,
+	МИНИМУМ(ВЫБОР
+			КОГДА СтатусыРеестров.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыРеестров.Finished)
+				ТОГДА СтатусыРеестров.Период
+		КОНЕЦ) КАК Finished,
+	СтатусыРеестров.Реестр.ДатаРегистрации КАК ДатаРегистрации,
+	СтатусыРеестров.Реестр.Координатор КАК Координатор,
+	СтатусыРеестров.Реестр.СпециалистБиллинга КАК СпециалистБиллинга,
+	СтатусыРеестров.Реестр.Подрядчик КАК Подрядчик,
+	СтатусыРеестров.Реестр.Плательщик КАК Плательщик,
+	СтатусыРеестров.Реестр.Регион КАК Регион,
+	СтатусыРеестровСрезПоследних.Статус КАК ТекущийСтатус
+ИЗ
+	РегистрСведений.СтатусыРеестров КАК СтатусыРеестров
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СтатусыРеестров.СрезПоследних КАК СтатусыРеестровСрезПоследних
+		ПО СтатусыРеестров.Реестр = СтатусыРеестровСрезПоследних.Реестр
+
+СГРУППИРОВАТЬ ПО
+	СтатусыРеестров.Реестр,
+	СтатусыРеестровСрезПоследних.Статус</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>TotalWD</dataPath>
+		<expression>ВЫБОР КОГДА естьNULL(RegisteredDate, ДатаВремя(1,1,1)) = ДатаВремя(1,1,1)              ТОГДА 0
+            КОГДА естьNULL(Finished, ДатаВремя(1,1,1)) = ДатаВремя(1,1,1)              ТОГДА  РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НачалоПериода(RegisteredDate, "День"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+            ИНАЧЕ РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(RegisteredDate, "ДЕНЬ"), КОНЕЦПЕРИОДА(Finished, "ДЕНЬ")) конец</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Total WD</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Total WD</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Registered</dataPath>
+		<expression>ВЫБОР КОГДА естьNULL(RegisteredDate, ДатаВремя(1,1,1)) = ДатаВремя(1,1,1)              ТОГДА 0
+            КОГДА естьNULL(SubmittedCoordinatorDate, ДатаВремя(1,1,1)) = ДатаВремя(1,1,1)              ТОГДА  РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НачалоПериода(RegisteredDate, "День"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+            ИНАЧЕ РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(RegisteredDate, "ДЕНЬ"), КОНЕЦПЕРИОДА(SubmittedCoordinatorDate, "ДЕНЬ")) конец</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Registered</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Registered</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Accepted</dataPath>
+		<expression>ВЫБОР КОГДА естьNULL(AcceptedDate, ДатаВремя(1,1,1)) = ДатаВремя(1,1,1)              ТОГДА 0
+            КОГДА естьNULL(Finished, ДатаВремя(1,1,1)) = ДатаВремя(1,1,1)              ТОГДА  РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НачалоПериода(AcceptedDate, "День"), КОНЕЦПЕРИОДА(&amp;ТекущаяДата, "ДЕНЬ"))
+            ИНАЧЕ РГСофт.РасчитатьКоличествоРабочихДнейПериодаПоКалендарю(Истина,НАЧАЛОПЕРИОДА(AcceptedDate, "ДЕНЬ"), КОНЕЦПЕРИОДА(Finished, "ДЕНЬ")) конец</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Accepted</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Accepted</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>НачалоПериода(ТекущаяДата(), "День")</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Реестр</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТекущийСтатус</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подрядчик</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Плательщик</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Регион</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Координатор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаРегистрации</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СпециалистБиллинга</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Registered</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Accepted</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TotalWD</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" kind="WindowsFont"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

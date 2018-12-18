@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9821bfac-f571-4f4b-b102-04b5475246d2">
+  <producedTypes>
+    <selectionType typeId="6ed4e3df-2a49-4d64-97b5-72fb6502f521" valueTypeId="02625f8c-03d6-41cd-a2bc-93cd9a1d2a78"/>
+    <listType typeId="ffb249f9-f9ea-4eb8-9daf-267f38dab63c" valueTypeId="4a6d0b21-84e4-4f90-a124-4a96571baa24"/>
+    <managerType typeId="1da467fc-062f-44a6-8604-902ae2e0baf4" valueTypeId="2c88982d-4d6c-4fb5-a4c4-fd658cfdcebb"/>
+    <recordSetType typeId="24a8feb2-00a3-427b-b059-a73590e3110d" valueTypeId="bf50d33e-ce75-47dd-b23b-40d63c4b9616"/>
+    <recordKeyType typeId="053c7f2c-1616-406a-9556-41a34eec2d3f" valueTypeId="2a339dfd-82dc-4ba5-b7d2-b31d2c4f0b66"/>
+    <recordType typeId="3da77e49-2bfb-4f0f-b57a-137e926e03cd" valueTypeId="96ded868-68ee-432f-9081-f53306c4f25a"/>
+  </producedTypes>
+  <name>КурсовыеРазницыAPAR</name>
+  <synonym>
+    <key>ru</key>
+    <value>Курсовые разницы </value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Курсовые разницы </value>
+  </synonym>
+  <comment></comment>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="ac766d02-5cf9-45a5-b52e-48b7dfe45179">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="fec37857-b3af-42f2-a338-b708e914290c">
+    <name>ДокументРасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ расчетов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Документ расчетов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПередачаОС</types>
+      <types>DocumentRef.ПлатежноеПоручениеИсходящее</types>
+      <types>DocumentRef.ОтчетАгентаПоРасходам</types>
+      <types>DocumentRef.КорректировкаДолга</types>
+      <types>DocumentRef.СчетКнигиПокупок</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.ОтчетПринципалуОПродажах</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="65f77893-b00a-4242-bf73-bb0f108df1be">
+    <name>AU</name>
+    <synonym>
+      <key>ru</key>
+      <value>AU</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AU</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="c431c542-9654-4a04-b7c7-aa2adf89cc5b">
+    <name>Модуль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Модуль</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Модуль</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.МодулиРазработки</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="ec235a4b-4b70-4060-ac2b-5a220753d029">
+    <name>ПлатежныйДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платежный документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Платежный документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПлатежноеПоручениеИсходящее</types>
+      <types>DocumentRef.КорректировкаДолга</types>
+      <types>DocumentRef.ПлатежноеПоручениеВходящее</types>
+      <types>DocumentRef.ОплатаКнигиПокупок</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

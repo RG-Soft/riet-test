@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bc5333ec-1914-4548-a031-563c655ae85f">
+  <producedTypes>
+    <objectType typeId="7703ba93-1f27-4a2c-bbd4-020be647db6c" valueTypeId="643e4762-401c-46fb-94f8-5a8721a079a1"/>
+    <refType typeId="3f41c146-10d3-49c2-9f22-abb59f2812bf" valueTypeId="d50e5de3-98c0-4a11-922a-655c82470711"/>
+    <selectionType typeId="5d2f1e9d-a66e-470e-8ff6-f550639e8f76" valueTypeId="29d54eda-f9f9-4b3a-bcbf-14b757d45c38"/>
+    <listType typeId="3b06dea3-37cd-4f27-9dc2-e014c0b347c1" valueTypeId="f7df0b53-da08-41d8-a54b-c4c4dd6615b6"/>
+    <managerType typeId="c49fdcec-a31c-4c1e-9679-18b790263922" valueTypeId="ac515b73-f49b-469c-a16c-5cee4842209a"/>
+  </producedTypes>
+  <name>РаспределениеИмпортаПоЗакрытиюПоставки</name>
+  <synonym>
+    <key>ru</key>
+    <value>РИЗП</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>РИЗП</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.РаспределениеИмпортаПоЗакрытиюПоставки.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <basedOn>Document.ЗакрытиеПоставки</basedOn>
+  <createOnInput>Use</createOnInput>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <listPresentation>
+    <key>ru</key>
+    <value>Распределение импорта по закрытию поставки</value>
+  </listPresentation>
+  <listPresentation>
+    <key>en</key>
+    <value>Распределение импорта по закрытию поставки</value>
+  </listPresentation>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.РаспределениеИмпортаПоЗакрытиюПоставки.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.РаспределениеИмпортаПоЗакрытиюПоставки.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.РаспределениеИмпортаПоЗакрытиюПоставки.Form.ФормаВыбора</defaultChoiceForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDelete</registerRecordsDeletion>
+  <registerRecords>AccumulationRegister.ОборудованиеDSS</registerRecords>
+  <registerRecords>AccumulationRegister.ПроводкиDSSОбщие</registerRecords>
+  <registerRecords>AccumulationRegister.MaterialsAndSupplies</registerRecords>
+  <registerRecords>AccumulationRegister.InventoryTangibleAssetsCosts</registerRecords>
+  <registerRecords>AccumulationRegister.МатериальныеАктивы</registerRecords>
+  <attributes uuid="281c2c7b-4d7e-4c00-ade5-d5901ce2c63c">
+    <name>ShipmentСlosing</name>
+    <synonym>
+      <key>ru</key>
+      <value>Invoice lines matching</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Invoice lines matching</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ЗакрытиеПоставки</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7f026255-0648-413c-b829-46c4c6566373">
+    <name>Creator</name>
+    <synonym>
+      <key>ru</key>
+      <value>Creator</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Creator</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d71734bf-0c2e-4497-a86f-d6902b1d979c">
+    <name>Delta</name>
+    <synonym>
+      <key>ru</key>
+      <value>Delta</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Delta</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5dbd25ba-328c-4726-8c2a-92f73570b379">
+    <name>CreationDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Creation date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Creation date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0cff59f2-b47d-45d6-854d-b96e10642478">
+    <name>Comment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Comment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8033e958-eda8-45d9-9e4a-9f3d7270fe5d">
+    <name>УдалитьRentLoan</name>
+    <synonym>
+      <key>ru</key>
+      <value>Rent/Loan</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rent/Loan</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f53cedb1-0437-4657-bc68-ca9e16663bb1">
+    <name>Deferred</name>
+    <synonym>
+      <key>ru</key>
+      <value>Deferred</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Deferred</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="e0103b8e-119a-47bb-b56e-6b20933a904f">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0f400491-4f6b-40b0-b85c-2610cafa4f2e">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="009d2ff7-6f48-468c-b315-4759b4f80a84">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="fe791368-f0c0-4127-bb99-dedff3fd31a4">
+    <producedTypes>
+      <objectType typeId="c97efc2e-7c50-4b02-80e7-7f480d267912" valueTypeId="0da8888d-cf78-4b0e-bab6-c416992e9ca0"/>
+      <rowType typeId="2f6ecf6d-abe0-432a-b2b8-4cc8c6634ace" valueTypeId="c71e513b-a1f8-4cfa-ac14-b1beecf426b1"/>
+    </producedTypes>
+    <name>DSS</name>
+    <synonym>
+      <key>ru</key>
+      <value>DSS</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>DSS</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="72a137ad-7fab-41c2-af22-8eb85b6a9348">
+      <name>ПроводкаDSSСКП</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проводка DSS СКП</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Проводка DSS СКП</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ПроводкаDSS</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="1570401f-3951-45dc-a7ca-dfe482032ad5">
+    <producedTypes>
+      <objectType typeId="1cc118e8-9bb9-482c-95c6-a00490efb547" valueTypeId="7385d286-a0c0-46d6-917e-f2249b19c6cf"/>
+      <rowType typeId="8e0ddb0e-4213-4cd9-9096-10e7dccf66f4" valueTypeId="10e000fa-f985-49b9-814f-3046f68ea7ed"/>
+    </producedTypes>
+    <name>СопоставлениеInvoiceLinesИDSS</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сопоставление invoice lines ИDSS</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сопоставление invoice lines ИDSS</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="8b58a946-98c9-4b0b-b58c-5fe849ebc46a">
+      <name>ПроводкаDSSСКП</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проводка DSS СКП</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Проводка DSS СКП</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ПроводкаDSS</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+    <attributes uuid="60d9c88f-2ef0-44e7-8a29-35bbef591f85">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+    </attributes>
+    <attributes uuid="be1a8e62-7825-4b7f-93d2-86825dcdb114">
+      <name>InvoiceLine</name>
+      <synonym>
+        <key>ru</key>
+        <value>Invoice line</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Invoice line</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.СтрокиИнвойса</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+    <attributes uuid="1ecdf586-0b2d-44d7-951a-63fcf97d4d8f">
+      <name>TotalPrice</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total price</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total price</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

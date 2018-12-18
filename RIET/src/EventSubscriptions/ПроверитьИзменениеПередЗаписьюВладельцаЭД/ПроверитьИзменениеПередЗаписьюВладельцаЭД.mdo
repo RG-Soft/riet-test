@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4c4e70ca-1331-4957-8363-a3c2afc9eaad">
+  <name>ПроверитьИзменениеПередЗаписьюВладельцаЭД</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить изменение перед записью владельца электронного документа</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Проверить изменение перед записью владельца электронного документа</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ПроизвольныйЭД</types>
+    <types>DocumentObject.ПакетЭД</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ЭлектронныеДокументыСлужебный.ЭлектронныеДокументыВладелецПередЗаписью</handler>
+</mdclass:EventSubscription>

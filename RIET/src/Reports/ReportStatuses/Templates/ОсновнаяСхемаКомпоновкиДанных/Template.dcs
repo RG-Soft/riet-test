@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOC</dataPath>
+			<field>DOC</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>DOC</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CurrentStatus</dataPath>
+			<field>CurrentStatus</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Current status</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>TotalPendingGL</dataPath>
+			<field>TotalPendingGL</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Total pending GL</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ОКР(TotalPendingGL,0)</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>StartDate</dataPath>
+			<field>StartDate</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Start date</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AndDate</dataPath>
+			<field>AndDate</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>And date</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Ссылка КАК Ссылка,
+	КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.НомерСтроки КАК НомерСтроки,
+	КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Date КАК Date,
+	КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Status КАК Status
+ПОМЕСТИТЬ DOCManualStatuses
+ИЗ
+	Документ.КонсолидированныйПакетЗаявокНаПеревозку.ManualStatuses КАК КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses1
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.ManualStatuses КАК КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses
+		ПО КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses1.Ссылка = КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Ссылка
+ГДЕ
+	КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+			И КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses1.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	DOCManualStatuses.Ссылка КАК Ссылка,
+	МАКСИМУМ(DOCManualStatuses.Date) КАК Date,
+	МАКСИМУМ(DOCManualStatuses.НомерСтроки) КАК НомерСтроки,
+	МАКСИМУМ(DOCManualStatuses.Status) КАК Status
+ПОМЕСТИТЬ MaxDatePandingCCA
+ИЗ
+	DOCManualStatuses КАК DOCManualStatuses
+ГДЕ
+	DOCManualStatuses.Status = ЗНАЧЕНИЕ(Перечисление.DOCStatuses.PendingCCA)
+
+СГРУППИРОВАТЬ ПО
+	DOCManualStatuses.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА MaxDatePandingCCA.Ссылка ЕСТЬ NULL
+				И НЕ КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Status = ЗНАЧЕНИЕ(Перечисление.DOCStatuses.PendingCCA)
+			ТОГДА КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Ссылка
+		ИНАЧЕ MaxDatePandingCCA.Ссылка
+	КОНЕЦ КАК Ссылка,
+	ВЫБОР
+		КОГДА MaxDatePandingCCA.Ссылка ЕСТЬ NULL
+				И НЕ КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Status = ЗНАЧЕНИЕ(Перечисление.DOCStatuses.PendingCCA)
+			ТОГДА КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Date
+		ИНАЧЕ MaxDatePandingCCA.Date
+	КОНЕЦ КАК Date,
+	ВЫБОР
+		КОГДА MaxDatePandingCCA.Ссылка ЕСТЬ NULL
+				И НЕ КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Status = ЗНАЧЕНИЕ(Перечисление.DOCStatuses.PendingCCA)
+			ТОГДА КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Status
+		ИНАЧЕ ЗНАЧЕНИЕ(Перечисление.DOCStatuses.PendingCCA)
+	КОНЕЦ КАК Status
+ПОМЕСТИТЬ MaxDatePandingCCANoDuble
+ИЗ
+	Документ.КонсолидированныйПакетЗаявокНаПеревозку.ManualStatuses КАК КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses
+		ЛЕВОЕ СОЕДИНЕНИЕ MaxDatePandingCCA КАК MaxDatePandingCCA
+		ПО КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Ссылка = MaxDatePandingCCA.Ссылка
+			И КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Status = MaxDatePandingCCA.Status
+			И КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Date = MaxDatePandingCCA.Date
+ГДЕ
+	КонсолидированныйПакетЗаявокНаПеревозкуManualStatuses.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	MaxDatePandingCCANoDuble.Ссылка КАК Ссылка,
+	MaxDatePandingCCANoDuble.Date КАК Date,
+	MaxDatePandingCCANoDuble.Status КАК Status,
+	ВЫБОР
+		КОГДА НЕ MaxDatePandingCCANoDuble.Ссылка.Received = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА MaxDatePandingCCANoDuble.Ссылка.Received
+		КОГДА MaxDatePandingCCANoDuble.Ссылка.Received = ДАТАВРЕМЯ(1, 1, 1)
+				И MaxDatePandingCCANoDuble.Ссылка.WithoutGreenLight
+			ТОГДА MaxDatePandingCCANoDuble.Ссылка.Booked
+		ИНАЧЕ ДАТАВРЕМЯ(1, 1, 1)
+	КОНЕЦ КАК Received
+ПОМЕСТИТЬ TablePeriodsStatuses
+ИЗ
+	MaxDatePandingCCANoDuble КАК MaxDatePandingCCANoDuble
+ГДЕ
+	НЕ MaxDatePandingCCANoDuble.Ссылка ЕСТЬ NULL
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(TablePeriodsStatuses.Ссылка) КАК Ссылка,
+	МАКСИМУМ(TablePeriodsStatuses.Status) КАК Status,
+	TablePeriodsStatuses.Date КАК НачалоПериода,
+	МИНИМУМ(TablePeriodsStatuses1.Date) КАК КонецПериода,
+	МАКСИМУМ(ВЫБОР
+			КОГДА TablePeriodsStatuses.Received = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА 0
+			ИНАЧЕ РАЗНОСТЬДАТ(TablePeriodsStatuses.Ссылка.CreationDate, TablePeriodsStatuses.Received, СЕКУНДА)/86400
+		КОНЕЦ) КАК TotalPendingGL
+ПОМЕСТИТЬ TablePeriodsStatusesDelta
+ИЗ
+	TablePeriodsStatuses КАК TablePeriodsStatuses
+		ЛЕВОЕ СОЕДИНЕНИЕ TablePeriodsStatuses КАК TablePeriodsStatuses1
+		ПО TablePeriodsStatuses.Ссылка = TablePeriodsStatuses1.Ссылка
+			И TablePeriodsStatuses.Date &lt; TablePeriodsStatuses1.Date
+ГДЕ
+	НЕ TablePeriodsStatuses1.Ссылка ЕСТЬ NULL
+
+СГРУППИРОВАТЬ ПО
+	TablePeriodsStatuses.Date
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	TablePeriodsStatusesDelta.Ссылка КАК DOC,
+	TablePeriodsStatusesDelta.Status КАК CurrentStatus,
+	TablePeriodsStatusesDelta.НачалоПериода КАК StartDate,
+	TablePeriodsStatusesDelta.КонецПериода КАК AndDate,
+	TablePeriodsStatusesDelta.TotalPendingGL
+ИЗ
+	TablePeriodsStatusesDelta КАК TablePeriodsStatusesDelta
+
+УПОРЯДОЧИТЬ ПО
+	НачалоПериода,
+	КонецПериода</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>CurrentStatusPendingDays</dataPath>
+		<expression>ОКР(РАЗНОСТЬДАТ(StartDate, AndDate, "СЕКУНДА")/86400,0)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Current status pending days</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Current status pending days</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отчета</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DOC.Номер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CurrentStatus</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CurrentStatusPendingDays</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TotalPendingGL</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>cf886a53-fcfb-43ba-9152-6e3d1b4793e2</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>DOC.Дата</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>Детальный</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Детальный</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Detailed</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DOC.Номер</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DOC No</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DOC No</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DOC</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CurrentStatus</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>StartDate</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AndDate</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CurrentStatusPendingDays</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DOC.CreationDate</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Creation date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Creation date</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DOC.Received</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Received</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Received</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DOC.Booked</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Booked</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Booked</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DOC.WithoutGreenLight</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Without green light</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Without green light</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>TotalPendingGL</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>02da4c32-79d9-4a49-bfad-825a08e146a3</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>DOC.Дата</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

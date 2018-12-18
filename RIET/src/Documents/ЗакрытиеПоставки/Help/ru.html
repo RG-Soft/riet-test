@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16578"></meta></head><body>
+<h1>Документ "Invoice lines matching"</h1>
+<p>Документ входит в подсистему <a href="Subsystem.CustomsAccounting.Subsystem.ShipmentClosing/Help">"Shipment closing"</a>.<br>Предназначен для определения фискальной стоимости <a href="Catalog.СтрокиИнвойса/Help">товаров</a> с учетом таможенных пошлин и сборов.</p>
+<p>Для распределения таможенных пошлин и сборов необходимо привязать Invoice goods к CCD line goods.</p>
+<p>При создании нового документа на основании Shipment система пытается выполнить это сопоставление автоматически.<br>Для этого используется информация о парт-номерах.</p>
+<p>Автоматическое заполнение не может обеспечить 100% сопоставление, поэтому оставшиеся товары необходимо сопоставить вручную.</p>
+<p>Сопоставление производится путем выделения строк в списке Invoice goods и CCD lines goods и нажатия на кнопку "Match".<br>При этом несколько строк можно выделить только в одном из табличных полей: либо левом, либо правом.</p>
+<p>Отмена связи производится путем удаления строк из нижней таблицы.</p>
+<p>При активизации Invoice good или CCD line good система может с помощью выделения шрифтом подсказать, какие товры могут быть связаны.<br>В настоящий момент подходящие строки ищутся по совпадению парт-номера.</p>
+<p>Для проверки корректности сопоставления система выводит количество из Invoice goods и количество из CCD lines goods.<br>Если оно не совпадает соответствующее поле подсвечивается красным.</p>
+<p>Нельзя изменить документ "Invoice lines matching", если он используется в проведенных документах <a href="Document.InvoiceLinesClassification/Help">"Invoice lines classification"</a>, "РИЗП" или <a href="Document.BatchesOfCustomsFiles/Help">"Customs documents batch"</a>.</p>
+<h2>Реквизиты шапки</h2>
+<ul><li><strong>No.</strong> (строка)<strong> - </strong>автоматически присваиваемый номер документа.  
+</li><li><strong>Date</strong> (дата) 
+</li><li><strong>For deletion </strong>(булево) - признак того, что документ помечен на удаление. 
+</li><li><strong>Posted </strong>(булево) - признак того, что документ проведен. 
+</li><li><strong>Shipment</strong> (<a href="Document.Поставка/Help">документ "Shipment"</a>) - закрываемая поставка.<br>Не должно существовать другого закрытия поставки по выбранной поставке.<br>Поставка должна быть проведена (если она не проведена - система пытается провести ее).<br>В поставке должна быть заполнена дата Cleared. 
+</li><li><strong>Comment</strong> (строка) 
+</li><li><strong>Creation date</strong> (дата)<strong> -</strong> автоматически определяемая дата создания документа. 
+</li><li><strong>Last modified</strong> (дата и время) - заполняется автоматически датой последнего интерактивного изменения документа. 
+</li><li><strong>Responsible</strong> (справочник Users) - заполняется автоматически пользователем, который внес последние изменения в документ.</li></ul><h2>Таблица "Invoice lines"</h2>
+<p>Эта таблица выводит список несопоставленных Invoice goods.<br>Есть возможность включить вывод всех Invoice goods (в т. ч. сопоставленных) для того, чтобы сопоставить Invoice good с несколькими CCD lines goods.<br>Не хранится в документе, а формируется при открытии формы.<br>Справочно выводятся реквизиты: Part number, Description, Country of origin, Qty, UOM, Sum, Sold-To.</p>
+<h2>Таблица "CCD lines goods"</h2>
+<p>Эта таблица выводит список несопоставленных CCD lines goods.<br>Есть возможность включить вывод всех CCD lines goods (в т. ч. сопоставленных) для того, чтобы сопоставить CCD line good с несколькими Invoice goods.<br>Не хранится в документе, а формируется при открытии формы.<br>Справочно выводятся реквизиты: Line description, Good no., Part number, Good description, Country of origin, Qty, UOM, Statistical cost, Sold-To.</p>
+<h2>Таблица "Matched"</h2>
+<p>В этой таблице хранится сопоставление Items и Items of customs files lines.</p>
+<ul><li><strong>Item of customs file line</strong> (справочник "Items of customs files lines")<br>Обязательное для заполнения поле.<br>Должны быть указаны все строки из Customs files, которые привязаны к выбранной поставке.<br>Не должно быть товаров из других Customs files.<br>Customs file должен быть проведен. <br>Справочно выводятся реквизиты: Description, Goodsmarking, Parent company. 
+</li><li><strong>Item </strong>(справочник "Items")<br>Обязательное для заполнения поле.<br>Должны быть указаны все Items из выбранной поставки. <br>Не должно быть Items из других поставок.<br>В товаре должны быть заполнены AU и ERP treatment.<br>Если товар импортный - соответствующий инвойс должен быть помечен как Final.<br>Справочно выводятся реквизиты: Description, Part number, Sold-To.</li></ul><p>Дополнительно проверяется, что значение Parent company в Item и Item of customs file line совпадает.<br>Выводится информация об отличии фактурной стоимости в ГТД и стоимости инвойсов.</p>
+<h2>Проведение (для разработчиков)</h2>
+<p>При проведении документа происходит распределение таможенных пошлин и сборов по товарам.<br>Эти данные записываются в <a href="AccumulationRegister.InvoiceLinesCosts/Help">регистр накопления Costs of goods</a>.</p>
+<p>Для каждого товара запоминается Декларация на товары, в которую он входит.<br>Эти данные записываются в <a href="InformationRegister.CustomsFilesOfGoods/Help">регистр сведений Customs files of goods</a>.</p>
+<p>Для каждого товара добавляется расход по <a href="AccumulationRegister.ImportItemsWithoutCustomsFiles/Help">регистру накопления Import items without customs files</a>, если это импортная поставка,<br>или по <a href="AccumulationRegister.ExportItemsWithoutCustomsFiles/Help">регистру накопления Export items without customs files</a>, если это экспортная поставка. <br>Расход по данным регистрам позволяет отследить, что товар привязан к декларации.</p></body></html>

@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="55117f8d-73cc-495a-a379-708d7dd0e9f8">
+  <producedTypes>
+    <objectType typeId="f52b4a17-4c2c-4547-8da8-970103e10427" valueTypeId="0477eb80-7a04-4b76-8639-1c6de88b1393"/>
+    <refType typeId="d43291c8-70ac-402e-bc83-b66a20475c3f" valueTypeId="54ddeada-f289-4899-aa19-7876f67f1bdc"/>
+    <selectionType typeId="b31330b9-0490-429f-a3de-3635270a2a31" valueTypeId="422ccd46-6af6-4bd5-95cf-5f2a37bed5d8"/>
+    <listType typeId="dac2a654-ebca-4274-9ed7-92e3b2cc68e5" valueTypeId="a4bbd28d-e526-4de5-9e63-98b351f5e13f"/>
+    <managerType typeId="e0cb3ba0-8638-4fa0-bb04-99359d74222a" valueTypeId="ed6a7d7a-da84-461f-89e1-0b41af590ca4"/>
+  </producedTypes>
+  <name>APInvoice</name>
+  <synonym>
+    <key>ru</key>
+    <value>Transp. register/AP invoice</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Transp. register/AP invoice</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.APInvoice.StandardAttribute.Number</inputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <listPresentation>
+    <key>ru</key>
+    <value>Transp. register/AP invoice</value>
+  </listPresentation>
+  <listPresentation>
+    <key>en</key>
+    <value>Transp. register/AP invoice</value>
+  </listPresentation>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.APInvoice.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.APInvoice.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.APInvoice.Form.ФормаВыбора</defaultChoiceForm>
+  <realTimePosting>Deny</realTimePosting>
+  <attributes uuid="69f79f25-9ef7-4d60-82c5-25c62adb9070">
+    <name>ServiceProvider</name>
+    <synonym>
+      <key>ru</key>
+      <value>Service provider</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Service provider</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ServiceProviders</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9e64e643-e2ba-4c18-a802-cf73e88b45cf">
+    <name>Company</name>
+    <synonym>
+      <key>ru</key>
+      <value>Company</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.SoldTo</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <quickChoice>DontUse</quickChoice>
+    <createOnInput>Use</createOnInput>
+    <choiceForm>Catalog.SoldTo.Form.ФормаВыбораДляTransportRequest</choiceForm>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0f9aad27-7199-4a49-9c6e-9fc741a925f3">
+    <name>LegalEntity</name>
+    <synonym>
+      <key>ru</key>
+      <value>Legal entity</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Legal entity</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.LegalEntities</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.ParentCompany</name>
+      <field>Document.APInvoice.Attribute.Company</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b38a8a75-4bbd-4f38-a825-8b1cbadb7a2c">
+    <name>InvoiceNumber</name>
+    <synonym>
+      <key>ru</key>
+      <value>Invoice number</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Invoice number</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0ba83ebf-a062-45e1-b113-036fb2d7dea9">
+    <name>FiscalInvoiceNo</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal no.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal no.</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ef36aac3-4ae3-4e23-ad2a-c567acf044bc">
+    <name>FiscalInvoiceDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5dfc3896-4626-42e7-b946-93af427f6195">
+    <name>Received</name>
+    <synonym>
+      <key>ru</key>
+      <value>Received</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Received</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b2ae91b1-3328-43ca-87dc-b06ff4083d48">
+    <name>SumVAT</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sum w/o VAT</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sum w/o VAT</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f0c25b4b-7741-4fc0-b729-f0bde4f4df77">
+    <name>VAT</name>
+    <synonym>
+      <key>ru</key>
+      <value>VAT</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>VAT</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1b19e755-659a-4a50-bab3-fda767ec8967">
+    <name>SumWithVAT</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sum with VAT</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sum with VAT</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="72b4c360-de4c-49ce-a0e9-198ea33e84d0">
+    <name>BookedToERP_date</name>
+    <synonym>
+      <key>ru</key>
+      <value>Booked to ERP date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Booked to ERP date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="84a6edb8-1db7-445a-9f39-4be51fb907da">
+    <name>Comments</name>
+    <synonym>
+      <key>ru</key>
+      <value>Comments</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comments</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d9875858-4b94-4f29-a900-43d59d33cfb4">
+    <name>ModifiedBy</name>
+    <synonym>
+      <key>ru</key>
+      <value>Modified by</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Modified by</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8256d20d-4026-434b-817e-82db98a3f212">
+    <name>ModificationDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Modification date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Modification date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3652556d-0216-4d2a-a5c8-115a2848103c">
+    <name>OneClickRequestPONo</name>
+    <synonym>
+      <key>ru</key>
+      <value>1-Click / PO No.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>1-Click / PO No.</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="49a4a313-f066-4ba4-a28f-8606f9821f6e">
+    <name>TransportationRegisterType</name>
+    <synonym>
+      <key>ru</key>
+      <value>Type</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Type</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.TransportationRegisterType</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.TransportationRegisterType.EnumValue.SWPS_PO</value>
+    </fillValue>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7863db8c-5a7c-43ed-9c81-fe76d4859744">
+    <name>UploadDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>SWPS/Oracle Upload</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>SWPS/Oracle Upload</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3f0360ce-4beb-4141-8ee9-f1d7aca1dd58">
+    <name>BORG</name>
+    <synonym>
+      <key>ru</key>
+      <value>BORG</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>BORG</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.BORGs</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ad8373a6-cdae-4bec-9b2a-abdc56af273e">
+    <name>FiscalInvoiceNoNeeded</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal no. required</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal no. required</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.YesNo</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.YesNo.EnumValue.No</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="f17fe7a3-196f-4142-a0fb-b88cadd793b5">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="22e0c541-aaf2-4a45-8302-eb425e594fa4">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="304fb076-50f3-4f61-aa16-0b493c44ce5a">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="35a149e7-b9ee-453a-a60c-1417b87e73cc">
+    <producedTypes>
+      <objectType typeId="7bcd908d-05e4-4738-8d0e-2497beb473b0" valueTypeId="259c6507-9bd8-4c02-987c-020c9c3366aa"/>
+      <rowType typeId="087b2d6c-eff8-4251-95e6-19a68e6f67b8" valueTypeId="b2a81177-f4c3-451a-95f5-8bbe1ca0bdc3"/>
+    </producedTypes>
+    <name>Trips</name>
+    <synonym>
+      <key>ru</key>
+      <value>Trips</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trips</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="3d8cfc67-b1f7-4b92-8069-bc1391866202">
+      <name>Trip</name>
+      <synonym>
+        <key>ru</key>
+        <value>Trip</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Trip</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.TripNonLawsonCompanies</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+    <attributes uuid="f83b523f-8ffb-45d0-8b98-0c8743fc2b28">
+      <name>Sum</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sum</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Sum</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d454e318-177c-447e-b7b7-1c62bc10e48d">
+    <producedTypes>
+      <objectType typeId="d4eb9dd4-40f1-4aba-b35a-7ac0acc29a9b" valueTypeId="a954aa96-d9d4-4407-bf95-b93765aade99"/>
+      <rowType typeId="b221b89a-dcd9-4ac2-9e94-dac5534ff678" valueTypeId="88f249d0-0d2c-47ed-8b45-1fa9a8724b85"/>
+    </producedTypes>
+    <name>POs</name>
+    <synonym>
+      <key>ru</key>
+      <value>POs</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>POs</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="7d2bb320-df1e-4e1c-b85a-bbcb0e84a1b5">
+      <name>PO</name>
+      <synonym>
+        <key>ru</key>
+        <value>PO</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="88d729d8-3b92-403f-88c6-2f51ea8a2c3f">
+      <name>PONo</name>
+      <synonym>
+        <key>ru</key>
+        <value>PO No.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4d0f9017-c019-4267-bd8e-334e76cd38e3">
+      <name>GR</name>
+      <synonym>
+        <key>ru</key>
+        <value>GR</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <templates uuid="4b4e7bfd-ef41-4764-b956-52f8b3cc25cd">
+    <name>SWPS_Oracle_Unload</name>
+    <synonym>
+      <key>ru</key>
+      <value>SWPS oracle unload</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>SWPS oracle unload</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="fb161a9a-f4cd-48e6-ba16-ef6a4c232109">
+    <name>SWPS_Lawson_Unload</name>
+    <synonym>
+      <key>ru</key>
+      <value>SWPS Lawson unload</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>SWPS Lawson unload</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="d6c5b848-de22-4153-be5f-12764920ff99">
+    <name>SWPS_Oracle_Unload_ДляРоссии</name>
+    <synonym>
+      <key>ru</key>
+      <value>SWPS oracle unload для россии</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>SWPS oracle unload для россии</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="ead2aa7b-20ad-495a-b198-a26a97280cf2">
+    <name>SWPS_Lawson_Unload_ДляРоссии</name>
+    <synonym>
+      <key>ru</key>
+      <value>SWPS Lawson unload</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>SWPS Lawson unload</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+</mdclass:Document>

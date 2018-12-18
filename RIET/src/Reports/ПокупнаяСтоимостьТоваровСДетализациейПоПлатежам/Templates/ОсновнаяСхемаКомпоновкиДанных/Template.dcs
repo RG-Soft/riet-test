@@ -1,0 +1,1589 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Запрос</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументОснование</dataPath>
+			<field>ДокументОснование</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтрокаИнвойса</dataPath>
+			<field>СтрокаИнвойса</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭлементФормированияСтоимости</dataPath>
+			<field>ЭлементФормированияСтоимости</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НДСФискальный</dataPath>
+			<field>НДСФискальный</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CCD VAT, rub.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>CCD VAT, rub.</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПошлиныФискальные</dataPath>
+			<field>ПошлиныФискальные</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CCD duties, rub.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>CCD duties, rub.</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СборыФискальные</dataPath>
+			<field>СборыФискальные</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CCD fees, rub.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>CCD fees, rub.</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвойсПеревозка</dataPath>
+			<field>ИнвойсПеревозка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Freight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Freight</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвойсПеревозкаФискальная</dataPath>
+			<field>ИнвойсПеревозкаФискальная</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Freight, rub.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Freight, rub.</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвойсСтраховка</dataPath>
+			<field>ИнвойсСтраховка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Insurance</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Insurance</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвойсСтраховкаФискальная</dataPath>
+			<field>ИнвойсСтраховкаФискальная</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Insurance, rub.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Insurance, rub.</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвойсСуммаСтрокиИнвойса</dataPath>
+			<field>ИнвойсСуммаСтрокиИнвойса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Total price</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total price</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвойсСуммаСтрокиИнвойсаФискальная</dataPath>
+			<field>ИнвойсСуммаСтрокиИнвойсаФискальная</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Total price, rub.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total price, rub.</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвойсХранение</dataPath>
+			<field>ИнвойсХранение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Handling</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Handling</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвойсХранениеФискальное</dataPath>
+			<field>ИнвойсХранениеФискальное</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Handling, rub.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Handling, rub.</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Activity</dataPath>
+			<field>Activity</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Invoice</dataPath>
+			<field>Invoice</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ServicesCostsRub</dataPath>
+			<field>ServicesCostsRub</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Services costs, rub.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Services costs, rub.</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PO</dataPath>
+			<field>PO</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Segment</dataPath>
+			<field>Segment</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InvoiceLine</dataPath>
+			<field>InvoiceLine</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CCD</dataPath>
+			<field>CCD</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Translation</dataPath>
+			<field>Translation</field>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Type</dataPath>
+			<field>Type</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроводкаDSSСКП</dataPath>
+			<field>ПроводкаDSSСКП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проводка DSS</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Проводка DSS</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РИЗП</dataPath>
+			<field>РИЗП</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>POLine</dataPath>
+			<field>POLine</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AU</dataPath>
+			<field>AU</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ERPTreatment</dataPath>
+			<field>ERPTreatment</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SoldTo</dataPath>
+			<field>SoldTo</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УДАЛИТЬAccount</dataPath>
+			<field>УДАЛИТЬAccount</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CostsAllocationDate</dataPath>
+			<field>CostsAllocationDate</field>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ParentCompany</dataPath>
+			<field>ParentCompany</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PONo</dataPath>
+			<field>PONo</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>PONo</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>PONo</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CCDLine</dataPath>
+			<field>CCDLine</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CCDLine</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>CCDLine</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CCDLineGoods</dataPath>
+			<field>CCDLineGoods</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CCDLine goods</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>CCDLine goods</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DescriptionEng</dataPath>
+			<field>DescriptionEng</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Description eng</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Description eng</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsPaymentAllocation</dataPath>
+			<field>CustomsPaymentAllocation</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Customs payment allocation</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Comment</dataPath>
+			<field>Comment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsDocument</dataPath>
+			<field>CustomsDocument</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsPayment</dataPath>
+			<field>CustomsPayment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PaymentSum</dataPath>
+			<field>PaymentSum</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Payment sum</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ВложенныйЗапрос.ParentCompany,
+	ВложенныйЗапрос.Segment,
+	ВложенныйЗапрос.AU,
+	ВложенныйЗапрос.ERPTreatment,
+	ВложенныйЗапрос.InvoiceLine КАК InvoiceLine,
+	СУММА(ВложенныйЗапрос.ИнвойсПеревозка) КАК ИнвойсПеревозка,
+	СУММА(ВложенныйЗапрос.ИнвойсПеревозкаФискальная) КАК ИнвойсПеревозкаФискальная,
+	СУММА(ВложенныйЗапрос.ИнвойсХранение) КАК ИнвойсХранение,
+	СУММА(ВложенныйЗапрос.ИнвойсХранениеФискальное) КАК ИнвойсХранениеФискальное,
+	СУММА(ВложенныйЗапрос.ИнвойсСтраховка) КАК ИнвойсСтраховка,
+	СУММА(ВложенныйЗапрос.ИнвойсСтраховкаФискальная) КАК ИнвойсСтраховкаФискальная,
+	СУММА(ВложенныйЗапрос.ИнвойсСуммаСтрокиИнвойса) КАК ИнвойсСуммаСтрокиИнвойса,
+	СУММА(ВложенныйЗапрос.ИнвойсСуммаСтрокиИнвойсаФискальная) КАК ИнвойсСуммаСтрокиИнвойсаФискальная,
+	СУММА(ВложенныйЗапрос.ПошлиныФискальные) КАК ПошлиныФискальные,
+	СУММА(ВложенныйЗапрос.СборыФискальные) КАК СборыФискальные,
+	СУММА(ВложенныйЗапрос.НДСФискальный) КАК НДСФискальный,
+	СУММА(ВложенныйЗапрос.ServicesCostsRub) КАК ServicesCostsRub,
+	ВложенныйЗапрос.CostsAllocationDate
+ПОМЕСТИТЬ InvoiceLinesCostsОбороты
+ИЗ
+	(ВЫБРАТЬ
+		InvoiceLinesCostsОбороты.SoldTo КАК ParentCompany,
+		InvoiceLinesCostsОбороты.Segment КАК Segment,
+		InvoiceLinesCostsОбороты.AU КАК AU,
+		InvoiceLinesCostsОбороты.ERPTreatment КАК ERPTreatment,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса КАК InvoiceLine,
+		InvoiceLinesCostsОбороты.СуммаОборот КАК ИнвойсПеревозка,
+		InvoiceLinesCostsОбороты.СуммаФискальнаяОборот КАК ИнвойсПеревозкаФискальная,
+		0 КАК ИнвойсХранение,
+		0 КАК ИнвойсХранениеФискальное,
+		0 КАК ИнвойсСтраховка,
+		0 КАК ИнвойсСтраховкаФискальная,
+		0 КАК ИнвойсСуммаСтрокиИнвойса,
+		0 КАК ИнвойсСуммаСтрокиИнвойсаФискальная,
+		0 КАК ПошлиныФискальные,
+		0 КАК СборыФискальные,
+		0 КАК НДСФискальный,
+		0 КАК ServicesCostsRub,
+		InvoiceLinesCostsОбороты.Период КАК CostsAllocationDate
+	ИЗ
+		РегистрНакопления.InvoiceLinesCosts.Обороты(
+				{(&amp;НачалоПериода)},
+				{(&amp;КонецПериода)},
+				Регистратор,
+				ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсПеревозка)
+					И СтрокаИнвойса.Инвойс &lt;&gt; ЗНАЧЕНИЕ(Документ.Инвойс.ПустаяСсылка)
+					И SoldTo В (&amp;ParentCompany)) КАК InvoiceLinesCostsОбороты
+	{ГДЕ
+		InvoiceLinesCostsОбороты.SoldTo.* КАК ParentCompany,
+		InvoiceLinesCostsОбороты.Segment.*,
+		InvoiceLinesCostsОбороты.AU.*,
+		InvoiceLinesCostsОбороты.ERPTreatment.*,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса.* КАК InvoiceLine}
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		InvoiceLinesCostsОбороты.SoldTo,
+		InvoiceLinesCostsОбороты.Segment,
+		InvoiceLinesCostsОбороты.AU,
+		InvoiceLinesCostsОбороты.ERPTreatment,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.СуммаОборот,
+		InvoiceLinesCostsОбороты.СуммаФискальнаяОборот,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.Период
+	ИЗ
+		РегистрНакопления.InvoiceLinesCosts.Обороты(
+				,
+				,
+				Регистратор,
+				ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсХранение)
+					И СтрокаИнвойса.Инвойс &lt;&gt; ЗНАЧЕНИЕ(Документ.Инвойс.ПустаяСсылка)
+					И SoldTo В (&amp;ParentCompany)) КАК InvoiceLinesCostsОбороты
+	{ГДЕ
+		InvoiceLinesCostsОбороты.SoldTo.* КАК ParentCompany,
+		InvoiceLinesCostsОбороты.Segment.*,
+		InvoiceLinesCostsОбороты.AU.*,
+		InvoiceLinesCostsОбороты.ERPTreatment.*,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса.* КАК InvoiceLine}
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		InvoiceLinesCostsОбороты.SoldTo,
+		InvoiceLinesCostsОбороты.Segment,
+		InvoiceLinesCostsОбороты.AU,
+		InvoiceLinesCostsОбороты.ERPTreatment,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса,
+		0,
+		0,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.СуммаОборот,
+		InvoiceLinesCostsОбороты.СуммаФискальнаяОборот,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.Период
+	ИЗ
+		РегистрНакопления.InvoiceLinesCosts.Обороты(
+				,
+				,
+				Регистратор,
+				ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсСтраховка)
+					И СтрокаИнвойса.Инвойс &lt;&gt; ЗНАЧЕНИЕ(Документ.Инвойс.ПустаяСсылка)
+					И SoldTo В (&amp;ParentCompany)) КАК InvoiceLinesCostsОбороты
+	{ГДЕ
+		InvoiceLinesCostsОбороты.SoldTo.* КАК ParentCompany,
+		InvoiceLinesCostsОбороты.Segment.*,
+		InvoiceLinesCostsОбороты.AU.*,
+		InvoiceLinesCostsОбороты.ERPTreatment.*,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса.* КАК InvoiceLine}
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		InvoiceLinesCostsОбороты.SoldTo,
+		InvoiceLinesCostsОбороты.Segment,
+		InvoiceLinesCostsОбороты.AU,
+		InvoiceLinesCostsОбороты.ERPTreatment,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.СуммаОборот,
+		InvoiceLinesCostsОбороты.СуммаФискальнаяОборот,
+		0,
+		0,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.Период
+	ИЗ
+		РегистрНакопления.InvoiceLinesCosts.Обороты(
+				,
+				,
+				Регистратор,
+				ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ИнвойсСуммаСтрокиИнвойса)
+					И СтрокаИнвойса.Инвойс &lt;&gt; ЗНАЧЕНИЕ(Документ.Инвойс.ПустаяСсылка)
+					И SoldTo В (&amp;ParentCompany)) КАК InvoiceLinesCostsОбороты
+	{ГДЕ
+		InvoiceLinesCostsОбороты.SoldTo.* КАК ParentCompany,
+		InvoiceLinesCostsОбороты.Segment.*,
+		InvoiceLinesCostsОбороты.AU.*,
+		InvoiceLinesCostsОбороты.ERPTreatment.*,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса.* КАК InvoiceLine}
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		InvoiceLinesCostsОбороты.SoldTo,
+		InvoiceLinesCostsОбороты.Segment,
+		InvoiceLinesCostsОбороты.AU,
+		InvoiceLinesCostsОбороты.ERPTreatment,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.СуммаФискальнаяОборот,
+		0,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.Период
+	ИЗ
+		РегистрНакопления.InvoiceLinesCosts.Обороты(
+				,
+				,
+				Регистратор,
+				ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняПошлины)
+					И СтрокаИнвойса.Инвойс &lt;&gt; ЗНАЧЕНИЕ(Документ.Инвойс.ПустаяСсылка)
+					И SoldTo В (&amp;ParentCompany)) КАК InvoiceLinesCostsОбороты
+	{ГДЕ
+		InvoiceLinesCostsОбороты.SoldTo.* КАК ParentCompany,
+		InvoiceLinesCostsОбороты.Segment.*,
+		InvoiceLinesCostsОбороты.AU.*,
+		InvoiceLinesCostsОбороты.ERPTreatment.*,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса.* КАК InvoiceLine}
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		InvoiceLinesCostsОбороты.SoldTo,
+		InvoiceLinesCostsОбороты.Segment,
+		InvoiceLinesCostsОбороты.AU,
+		InvoiceLinesCostsОбороты.ERPTreatment,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.СуммаФискальнаяОборот,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.Период
+	ИЗ
+		РегистрНакопления.InvoiceLinesCosts.Обороты(
+				,
+				,
+				Регистратор,
+				ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняСборы)
+					И СтрокаИнвойса.Инвойс &lt;&gt; ЗНАЧЕНИЕ(Документ.Инвойс.ПустаяСсылка)
+					И SoldTo В (&amp;ParentCompany)) КАК InvoiceLinesCostsОбороты
+	{ГДЕ
+		InvoiceLinesCostsОбороты.SoldTo.* КАК ParentCompany,
+		InvoiceLinesCostsОбороты.Segment.*,
+		InvoiceLinesCostsОбороты.AU.*,
+		InvoiceLinesCostsОбороты.ERPTreatment.*,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса.* КАК InvoiceLine}
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		InvoiceLinesCostsОбороты.SoldTo,
+		InvoiceLinesCostsОбороты.Segment,
+		InvoiceLinesCostsОбороты.AU,
+		InvoiceLinesCostsОбороты.ERPTreatment,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.СуммаФискальнаяОборот,
+		0,
+		InvoiceLinesCostsОбороты.Период
+	ИЗ
+		РегистрНакопления.InvoiceLinesCosts.Обороты(
+				,
+				,
+				Регистратор,
+				ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняНДС)
+					И СтрокаИнвойса.Инвойс &lt;&gt; ЗНАЧЕНИЕ(Документ.Инвойс.ПустаяСсылка)
+					И SoldTo В (&amp;ParentCompany)) КАК InvoiceLinesCostsОбороты
+	{ГДЕ
+		InvoiceLinesCostsОбороты.SoldTo.* КАК ParentCompany,
+		InvoiceLinesCostsОбороты.Segment.*,
+		InvoiceLinesCostsОбороты.AU.*,
+		InvoiceLinesCostsОбороты.ERPTreatment.*,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса.* КАК InvoiceLine}
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		InvoiceLinesCostsОбороты.SoldTo,
+		InvoiceLinesCostsОбороты.Segment,
+		InvoiceLinesCostsОбороты.AU,
+		InvoiceLinesCostsОбороты.ERPTreatment,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		InvoiceLinesCostsОбороты.СуммаФискальнаяОборот,
+		InvoiceLinesCostsОбороты.Период
+	ИЗ
+		РегистрНакопления.InvoiceLinesCosts.Обороты(
+				,
+				,
+				Регистратор,
+				ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ПрочиеУслуги)
+					И СтрокаИнвойса.Инвойс &lt;&gt; ЗНАЧЕНИЕ(Документ.Инвойс.ПустаяСсылка)
+					И SoldTo В (&amp;ParentCompany)) КАК InvoiceLinesCostsОбороты
+	{ГДЕ
+		InvoiceLinesCostsОбороты.SoldTo.* КАК ParentCompany,
+		InvoiceLinesCostsОбороты.Segment.*,
+		InvoiceLinesCostsОбороты.AU.*,
+		InvoiceLinesCostsОбороты.ERPTreatment.*,
+		InvoiceLinesCostsОбороты.СтрокаИнвойса.* КАК InvoiceLine}) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.InvoiceLine,
+	ВложенныйЗапрос.Segment,
+	ВложенныйЗапрос.AU,
+	ВложенныйЗапрос.ERPTreatment,
+	ВложенныйЗапрос.CostsAllocationDate,
+	ВложенныйЗапрос.ParentCompany
+
+ИНДЕКСИРОВАТЬ ПО
+	InvoiceLine
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	InvoiceLinesCostsОбороты.ParentCompany,
+	InvoiceLinesCostsОбороты.Segment,
+	InvoiceLinesCostsОбороты.AU,
+	InvoiceLinesCostsОбороты.ERPTreatment,
+	InvoiceLinesCostsОбороты.InvoiceLine КАК InvoiceLine,
+	InvoiceLinesCostsОбороты.InvoiceLine.СтрокаЗаявкиНаЗакупку КАК POLine,
+	InvoiceLinesCostsОбороты.InvoiceLine.СтрокаЗаявкиНаЗакупку.Владелец КАК PO,
+	InvoiceLinesCostsОбороты.InvoiceLine.Инвойс КАК Invoice,
+	InvoiceLinesCostsОбороты.ИнвойсПеревозка,
+	InvoiceLinesCostsОбороты.ИнвойсПеревозкаФискальная,
+	InvoiceLinesCostsОбороты.ИнвойсХранение,
+	InvoiceLinesCostsОбороты.ИнвойсХранениеФискальное,
+	InvoiceLinesCostsОбороты.ИнвойсСтраховка,
+	InvoiceLinesCostsОбороты.ИнвойсСтраховкаФискальная,
+	InvoiceLinesCostsОбороты.ИнвойсСуммаСтрокиИнвойса,
+	InvoiceLinesCostsОбороты.ИнвойсСуммаСтрокиИнвойсаФискальная,
+	InvoiceLinesCostsОбороты.СборыФискальные,
+	InvoiceLinesCostsОбороты.ПошлиныФискальные,
+	InvoiceLinesCostsОбороты.НДСФискальный,
+	InvoiceLinesCostsОбороты.ServicesCostsRub,
+	CustomsFilesOfGoods.CustomsFile КАК CCD,
+	InvoiceLinesClassificationClassification.Type,
+	InvoiceLinesClassificationClassification.Translation,
+	РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.ПроводкаDSSСКП,
+	РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.Ссылка КАК РИЗП,
+	InvoiceLinesCostsОбороты.CostsAllocationDate,
+	InvoiceLinesCostsОбороты.InvoiceLine.НомерЗаявкиНаЗакупку КАК PONo,
+	МАКСИМУМ(ЗакрытиеПоставкиСопоставление.ТоварСтрокиГТД) КАК CCDLineGoods,
+	МАКСИМУМ(ЗакрытиеПоставкиСопоставление.ТоварСтрокиГТД.Владелец) КАК CCDLine,
+	ВЫРАЗИТЬ(InvoiceLinesCostsОбороты.InvoiceLine.НаименованиеТовара КАК СТРОКА(300)) КАК DescriptionEng
+ПОМЕСТИТЬ ВТ
+ИЗ
+	InvoiceLinesCostsОбороты КАК InvoiceLinesCostsОбороты
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CustomsFilesOfGoods КАК CustomsFilesOfGoods
+		ПО InvoiceLinesCostsОбороты.InvoiceLine = CustomsFilesOfGoods.Item}
+		{ЛЕВОЕ СОЕДИНЕНИЕ Документ.InvoiceLinesClassification.Classification КАК InvoiceLinesClassificationClassification
+		ПО InvoiceLinesCostsОбороты.InvoiceLine = InvoiceLinesClassificationClassification.InvoiceLine
+			И (НЕ InvoiceLinesClassificationClassification.Ссылка.ПометкаУдаления)}
+		{ЛЕВОЕ СОЕДИНЕНИЕ Документ.РаспределениеИмпортаПоЗакрытиюПоставки.СопоставлениеInvoiceLinesИDSS КАК РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS
+		ПО InvoiceLinesCostsОбороты.InvoiceLine = РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.InvoiceLine
+			И (НЕ РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.Ссылка.ПометкаУдаления)}
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗакрытиеПоставки.Сопоставление КАК ЗакрытиеПоставкиСопоставление
+		ПО InvoiceLinesCostsОбороты.InvoiceLine = ЗакрытиеПоставкиСопоставление.СтрокаИнвойса
+			И (НЕ ЗакрытиеПоставкиСопоставление.Ссылка.ПометкаУдаления)
+
+СГРУППИРОВАТЬ ПО
+	InvoiceLinesCostsОбороты.ParentCompany,
+	InvoiceLinesCostsОбороты.Segment,
+	InvoiceLinesCostsОбороты.AU,
+	InvoiceLinesCostsОбороты.ERPTreatment,
+	InvoiceLinesCostsОбороты.InvoiceLine,
+	InvoiceLinesCostsОбороты.InvoiceLine.СтрокаЗаявкиНаЗакупку,
+	InvoiceLinesCostsОбороты.InvoiceLine.СтрокаЗаявкиНаЗакупку.Владелец,
+	InvoiceLinesCostsОбороты.InvoiceLine.Инвойс,
+	InvoiceLinesCostsОбороты.ИнвойсПеревозка,
+	InvoiceLinesCostsОбороты.ИнвойсПеревозкаФискальная,
+	InvoiceLinesCostsОбороты.ИнвойсХранение,
+	InvoiceLinesCostsОбороты.ИнвойсХранениеФискальное,
+	InvoiceLinesCostsОбороты.ИнвойсСтраховка,
+	InvoiceLinesCostsОбороты.ИнвойсСтраховкаФискальная,
+	InvoiceLinesCostsОбороты.ИнвойсСуммаСтрокиИнвойса,
+	InvoiceLinesCostsОбороты.ИнвойсСуммаСтрокиИнвойсаФискальная,
+	InvoiceLinesCostsОбороты.СборыФискальные,
+	InvoiceLinesCostsОбороты.ПошлиныФискальные,
+	InvoiceLinesCostsОбороты.НДСФискальный,
+	InvoiceLinesCostsОбороты.ServicesCostsRub,
+	CustomsFilesOfGoods.CustomsFile,
+	InvoiceLinesClassificationClassification.Type,
+	InvoiceLinesClassificationClassification.Translation,
+	РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.ПроводкаDSSСКП,
+	РаспределениеИмпортаПоЗакрытиюПоставкиСопоставлениеInvoiceLinesИDSS.Ссылка,
+	InvoiceLinesCostsОбороты.CostsAllocationDate,
+	InvoiceLinesCostsОбороты.InvoiceLine.НомерЗаявкиНаЗакупку,
+	ВЫРАЗИТЬ(InvoiceLinesCostsОбороты.InvoiceLine.НаименованиеТовара КАК СТРОКА(300))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ.ParentCompany,
+	ВТ.Segment,
+	ВТ.AU,
+	ВТ.ERPTreatment,
+	ВТ.InvoiceLine,
+	ВТ.POLine,
+	ВТ.PO,
+	ВТ.Invoice,
+	ВТ.ИнвойсПеревозка,
+	ВТ.ИнвойсПеревозкаФискальная,
+	ВТ.ИнвойсХранение,
+	ВТ.ИнвойсХранениеФискальное,
+	ВТ.ИнвойсСтраховка,
+	ВТ.ИнвойсСтраховкаФискальная,
+	ВТ.ИнвойсСуммаСтрокиИнвойса,
+	ВТ.ИнвойсСуммаСтрокиИнвойсаФискальная,
+	ВТ.СборыФискальные,
+	ВТ.ПошлиныФискальные,
+	ВТ.НДСФискальный,
+	ВТ.ServicesCostsRub,
+	ВТ.CCD,
+	ВТ.Type,
+	ВТ.Translation,
+	ВТ.ПроводкаDSSСКП,
+	ВТ.РИЗП,
+	ВТ.CostsAllocationDate,
+	ВТ.PONo,
+	ВТ.CCDLineGoods,
+	ВТ.CCDLine,
+	ВТ.DescriptionEng,
+	CustomsPaymentAllocation.CustomsPayment,
+	CustomsPaymentAllocation.CustomsDocument,
+	CustomsPaymentAllocation.Sum КАК PaymentSum,
+	CustomsPaymentAllocation.Comment,
+	CustomsPaymentAllocation.Ссылка КАК CustomsPaymentAllocation
+ИЗ
+	ВТ КАК ВТ
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.CustomsPaymentAllocation КАК CustomsPaymentAllocation
+		ПО ВТ.CCD = CustomsPaymentAllocation.CustomsDocument</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>СтоимостьПоИнвойсуФискальная</dataPath>
+		<expression>ИнвойсСуммаСтрокиИнвойсаФискальная + ИнвойсПеревозкаФискальная + ИнвойсХранениеФискальное + ИнвойсСтраховкаФискальная</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Invoice costs, rub.</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Invoice costs, rub.</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СтоимостьПоГТДБезНДСФискальная</dataPath>
+		<expression>СборыФискальные + ПошлиныФискальные</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>CCD costs w/o VAT, rub.</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>CCD costs w/o VAT, rub.</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СтоимостьПоГТДСНДСФискальная</dataPath>
+		<expression>СборыФискальные + ПошлиныФискальные + НДСФискальный</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>CCD costs with VAT, rub.</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>CCD costs with VAT, rub.</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ОбщаяСтоимостьБезНДС</dataPath>
+		<expression>ИнвойсСуммаСтрокиИнвойсаФискальная + ИнвойсПеревозкаФискальная + ИнвойсХранениеФискальное + ИнвойсСтраховкаФискальная + СборыФискальные + ПошлиныФискальные</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Total costs w/o VAT, rub.</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Total costs w/o VAT, rub.</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ОбщаяСтоимостьСНДС</dataPath>
+		<expression>ИнвойсСуммаСтрокиИнвойсаФискальная + ИнвойсПеревозкаФискальная + ИнвойсХранениеФискальное + ИнвойсСтраховкаФискальная + СборыФискальные + ПошлиныФискальные + НДСФискальный</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Total costs with VAT, rub.</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Total costs with VAT, rub.</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>ИнвойсПеревозкаФискальная</dataPath>
+		<expression>Сумма(ИнвойсПеревозкаФискальная)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИнвойсСтраховкаФискальная</dataPath>
+		<expression>Сумма(ИнвойсСтраховкаФискальная)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИнвойсСуммаСтрокиИнвойсаФискальная</dataPath>
+		<expression>Сумма(ИнвойсСуммаСтрокиИнвойсаФискальная)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИнвойсХранениеФискальное</dataPath>
+		<expression>Сумма(ИнвойсХранениеФискальное)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НДСФискальный</dataPath>
+		<expression>Сумма(НДСФискальный)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПошлиныФискальные</dataPath>
+		<expression>Сумма(ПошлиныФискальные)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СборыФискальные</dataPath>
+		<expression>Сумма(СборыФискальные)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИнвойсПеревозка</dataPath>
+		<expression>Сумма(ИнвойсПеревозка)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИнвойсСтраховка</dataPath>
+		<expression>Сумма(ИнвойсСтраховка)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИнвойсСуммаСтрокиИнвойса</dataPath>
+		<expression>Сумма(ИнвойсСуммаСтрокиИнвойса)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИнвойсХранение</dataPath>
+		<expression>Сумма(ИнвойсХранение)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьПоИнвойсуФискальная</dataPath>
+		<expression>Сумма(СтоимостьПоИнвойсуФискальная)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьПоГТДБезНДСФискальная</dataPath>
+		<expression>Сумма(СтоимостьПоГТДБезНДСФискальная)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьПоГТДСНДСФискальная</dataPath>
+		<expression>Сумма(СтоимостьПоГТДСНДСФискальная)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСтоимостьБезНДС</dataPath>
+		<expression>Сумма(ОбщаяСтоимостьБезНДС)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСтоимостьСНДС</dataPath>
+		<expression>Сумма(ОбщаяСтоимостьСНДС)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ServicesCostsRub</dataPath>
+		<expression>Сумма(ServicesCostsRub)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;CostsAllocationDate.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;CostsAllocationDate.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>CostsAllocationDate</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Costs allocation date</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Costs allocation date</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>ParentCompany</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Parent company</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Parent company</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.SoldTo</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>БыстрыйВыбор</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CCD</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CCD.Regime</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CCD.CustomsPost.Customs</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CCD.СтранаОтправленияКод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceLine</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Invoice.Номер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Invoice.Продавец</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ParentCompany</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AU.TaxRegistration.Код</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PO</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PONo</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceLine.КодПоИнвойсу</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceLine.СтранаПроисхождения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AU</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Segment</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ERPTreatment</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Type</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DescriptionEng</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Translation</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceLine.Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceLine.ЕдиницаИзмерения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Invoice.Валюта</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CCDLine.ТНВЭД</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CCDLine.ТНВЭД.Rate</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроводкаDSSСКП</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Invoice costs</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Invoice costs</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнвойсСуммаСтрокиИнвойса</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнвойсСуммаСтрокиИнвойсаФискальная</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнвойсПеревозка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнвойсПеревозкаФискальная</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнвойсХранение</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнвойсХранениеФискальное</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнвойсСтраховка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнвойсСтраховкаФискальная</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СтоимостьПоИнвойсуФискальная</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>CCD costs</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>CCD costs</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СборыФискальные</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПошлиныФискальные</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СтоимостьПоГТДБезНДСФискальная</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НДСФискальный</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СтоимостьПоГТДСНДСФискальная</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Total costs</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Total costs</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОбщаяСтоимостьБезНДС</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОбщаяСтоимостьСНДС</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ServicesCostsRub</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Customs payment</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsPayment.Дата</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsPayment.Номер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsPayment.Description</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Allocation document</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsPaymentAllocation.Дата</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsPaymentAllocation.Номер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsPaymentAllocation.PaymentKind</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>PaymentSum</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Customs document (DT, ТПО etc.)</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CCD.Дата</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CCD.Номер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CCD.CustomsPost</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Segment</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Сегменты.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>37fa22db-fd4b-42a4-8c05-aa8e6948fc6b</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">AU</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.КостЦентры.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>8b98b8d8-baaa-4eab-9af5-50a20fa6064e</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ERPTreatment</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>acc2d502-6772-4b76-8050-ecf0d2650028</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">PONo</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>5e53b6ec-54de-41ef-9015-6ce99ae28ca5</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">CCD</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>26a743d6-2c72-4447-b450-3a482139cc9a</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Type</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.ТипыНоменклатуры.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>c1aaf71a-2918-4f6b-8aca-df4c04385dba</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РИЗП.Дата</dcsset:left>
+					<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>0001-01-01T00:00:00</v8:date>
+					</dcsset:right>
+					<dcsset:userSettingID>300bb8ba-89bc-4b0d-afb1-6298c6a369f0</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:userSettingID>a094868f-f830-466a-9ebc-6c573405607f</dcsset:userSettingID>
+				<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+				</dcsset:userSettingPresentation>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>CostsAllocationDate</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>ab775a71-dd16-4cbb-80bf-728d29a88ed9</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ParentCompany</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>82a93946-07d8-4abc-8d48-b80e9c633479</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">BeginAndEnd</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

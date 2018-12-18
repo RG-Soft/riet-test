@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОСлоусон</dataPath>
+			<field>ОСлоусон</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОС Lawson</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ОС Lawson</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОСфискалКод</dataPath>
+			<field>ОСфискалКод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОС 1С</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ОС 1С</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Группа</dataPath>
+			<field>Группа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипСверки</dataPath>
+			<field>ТипСверки</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>         ВЫБРАТЬ
+	ОсновныеСредстваLawsonОСФискал.Ссылка КАК ОСлоусон,
+	ОсновныеСредстваLawsonОСФискал.ОсновноеСредство КАК ОСфискал,
+	ОсновныеСредстваLawsonОСФискал.ОсновноеСредство.ТипДляСверки КАК Тип
+ПОМЕСТИТЬ Связанные
+ИЗ
+	Справочник.ОсновныеСредстваLawson.ОСФискал КАК ОсновныеСредстваLawsonОСФискал
+ГДЕ
+	ОсновныеСредстваLawsonОСФискал.ОсновноеСредство &lt;&gt; &amp;ОсновноеСредство
+	И ОсновныеСредстваLawsonОСФискал.Ссылка.Deferred = ЛОЖЬ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ОсновныеСредстваLawson.Ссылка КАК ОС
+ПОМЕСТИТЬ СписанныеНеСвязанные
+ИЗ
+	Справочник.ОсновныеСредстваLawson КАК ОсновныеСредстваLawson
+ГДЕ
+	(НЕ ОсновныеСредстваLawson.Ссылка В
+				(ВЫБРАТЬ
+					связанные.ОСлоусон
+				ИЗ
+					связанные))
+	И (НЕ ОсновныеСредстваLawson.Ссылка В
+				(ВЫБРАТЬ
+					СостоянияОСLawsonСрезПоследних.ОСLawson КАК ОСLawson
+				ИЗ
+					РегистрСведений.СостоянияОСLawson.СрезПоследних КАК СостоянияОСLawsonСрезПоследних
+				ГДЕ
+					СостоянияОСLawsonСрезПоследних.Состояние = ЗНАЧЕНИЕ(перечисление.состояниеосlawson.active)))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ОсновныеСредстваLawson.Ссылка КАК ОС
+ПОМЕСТИТЬ InTransit
+ИЗ
+	Справочник.ОсновныеСредстваLawson КАК ОсновныеСредстваLawson
+ГДЕ
+	ОсновныеСредстваLawson.Deferred
+	И (НЕ ОсновныеСредстваLawson.Ссылка В
+				(ВЫБРАТЬ
+					связанные.ОСлоусон
+				ИЗ
+					связанные))
+	И (НЕ ОсновныеСредстваLawson.Ссылка В
+				(ВЫБРАТЬ
+					СписанныеНеСвязанные.ОС
+				ИЗ
+					СписанныеНеСвязанные))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ОперацияОСLawsonОС.Asset КАК ОС
+ПОМЕСТИТЬ МОнли
+ИЗ
+	Документ.ОперацияОСLawson.ОС КАК ОперацияОСLawsonОС
+ГДЕ
+	ОперацияОСLawsonОС.MngmOnly
+	И (ОперацияОСLawsonОС.Ссылка.MovementType = "ADDITION"
+			ИЛИ ОперацияОСLawsonОС.Ссылка.MovementType = "transfer oss")
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ОсновныеСредстваLawson.Ссылка КАК ОС
+ПОМЕСТИТЬ АктивныеНеСвязанные
+ИЗ
+	Справочник.ОсновныеСредстваLawson КАК ОсновныеСредстваLawson
+ГДЕ
+	(НЕ ОсновныеСредстваLawson.Ссылка В
+				(ВЫБРАТЬ
+					связанные.ОСлоусон
+				ИЗ
+					связанные))
+	И ОсновныеСредстваLawson.Ссылка В
+			(ВЫБРАТЬ
+				СостоянияОСLawsonСрезПоследних.ОСLawson КАК ОСLawson
+			ИЗ
+				РегистрСведений.СостоянияОСLawson.СрезПоследних КАК СостоянияОСLawsonСрезПоследних
+			ГДЕ
+				СостоянияОСLawsonСрезПоследних.Состояние = ЗНАЧЕНИЕ(перечисление.состояниеосlawson.active))
+	И (НЕ ОсновныеСредстваLawson.Ссылка В
+				(ВЫБРАТЬ
+					intransit.ОС
+				ИЗ
+					intransit))
+	И (НЕ ОсновныеСредстваLawson.Ссылка В
+				(ВЫБРАТЬ
+					МОНЛИ.ОС
+				ИЗ
+					МОНЛИ))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВложенныйЗапрос.ОсновноеСредство КАК ОСфискал
+ПОМЕСТИТЬ OnlyFiscal
+ИЗ
+	(ВЫБРАТЬ
+		СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство
+	ИЗ
+		РегистрСведений.СостоянияОСОрганизаций КАК СостоянияОСОрганизаций
+	ГДЕ
+		СостоянияОСОрганизаций.Состояние = &amp;Принято
+		И (НЕ СостоянияОСОрганизаций.ОсновноеСредство В
+					(ВЫБРАТЬ
+						СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство
+					ИЗ
+						РегистрСведений.СостоянияОСОрганизаций КАК СостоянияОСОрганизаций
+					ГДЕ
+						СостоянияОСОрганизаций.Состояние = &amp;Снято))) КАК ВложенныйЗапрос
+ГДЕ
+	(НЕ ВложенныйЗапрос.ОсновноеСредство В
+				(ВЫБРАТЬ
+					связанные.ОСфискал
+				ИЗ
+					связанные))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВложенныйЗапрос.ОсновноеСредство
+ПОМЕСТИТЬ Снято
+ИЗ
+	(ВЫБРАТЬ
+		СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство
+	ИЗ
+		РегистрСведений.СостоянияОСОрганизаций КАК СостоянияОСОрганизаций
+	ГДЕ
+		СостоянияОСОрганизаций.Состояние = &amp;Снято) КАК ВложенныйЗапрос
+ГДЕ
+	(НЕ ВложенныйЗапрос.ОсновноеСредство В
+				(ВЫБРАТЬ
+					связанные.ОСфискал
+				ИЗ
+					связанные))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВложенныйЗапрос.Ссылка
+ПОМЕСТИТЬ Лишние
+ИЗ
+	(ВЫБРАТЬ
+		ОсновныеСредства.Ссылка КАК Ссылка
+	ИЗ
+		Справочник.ОсновныеСредства КАК ОсновныеСредства
+	ГДЕ
+		(НЕ ОсновныеСредства.Ссылка В
+					(ВЫБРАТЬ
+						СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство
+					ИЗ
+						РегистрСведений.СостоянияОСОрганизаций КАК СостоянияОСОрганизаций
+					ГДЕ
+						СостоянияОСОрганизаций.Состояние = &amp;Принято))) КАК ВложенныйЗапрос
+ГДЕ
+	(НЕ ВложенныйЗапрос.Ссылка В
+				(ВЫБРАТЬ
+					связанные.ОСфискал
+				ИЗ
+					связанные))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Связанные.ОСфискал,
+	Связанные.ОСлоусон,
+	Связанные.Тип КАК Group1,
+	"Связанные" КАК Type
+ПОМЕСТИТЬ Общая
+ИЗ
+	Связанные КАК Связанные
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	NULL,
+	InTransit.ОС,
+	NULL,
+	"Deferred/In transit"
+ИЗ
+	InTransit КАК InTransit
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	NULL,
+	СписанныеНеСвязанные.ОС,
+	NULL,
+	"Not active"
+ИЗ
+	СписанныеНеСвязанные КАК СписанныеНеСвязанные
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	OnlyFiscal.ОСфискал,
+	NULL,
+	NULL,
+	"Only fiscal"
+ИЗ
+	OnlyFiscal КАК OnlyFiscal
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	Снято.ОсновноеСредство,
+	NULL,
+	NULL,
+	"Снято"
+ИЗ
+	Снято КАК Снято
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	Лишние.Ссылка,
+	NULL,
+	NULL,
+	"Лишние"
+ИЗ
+	Лишние КАК Лишние
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	NULL,
+	АктивныеНеСвязанные.ОС,
+	NULL,
+	"Active"
+ИЗ
+	АктивныеНеСвязанные КАК АктивныеНеСвязанные
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	NULL,
+	МОнли.ОС,
+	NULL,
+	"Mgmt_Only"
+ИЗ
+	МОнли КАК МОнли
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Общая.Type КАК ТипСверки,
+	Общая.ОСфискал.ТипДляСверки КАК Группа,
+	Общая.ОСлоусон КАК ОСлоусон,
+	Общая.ОСфискал.Код КАК ОСфискалКод
+ИЗ
+	Общая КАК Общая
+</query>
+	</dataSet>
+	<totalField>
+		<dataPath>ОСлоусон</dataPath>
+		<expression>Количество(Различные ОСлоусон)</expression>
+		<group>Группа</group>
+		<group>ТипСверки</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОСфискалКод</dataPath>
+		<expression>Количество(Различные ОСфискалКод)</expression>
+		<group>Группа</group>
+		<group>ТипСверки</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<parameter>
+		<name>ОсновноеСредство</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основное средство</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Основное средство</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ОсновныеСредства</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ОсновныеСредства.ПустаяСсылка</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Принято</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Принято</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Принято</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.СостоянияОС</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияОС.ПринятоКУчету</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Снято</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Снято</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Снято</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.СостоянияОС</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияОС.СнятоСУчета</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Группа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТипСверки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОСфискалКод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОСлоусон</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ТипСверки</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Группа</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТипСверки</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">Active</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Группа</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ТипСверки</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОСфискалКод</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОСлоусон</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

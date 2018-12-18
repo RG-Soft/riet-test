@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html xmlns:o="urn:schemas-microsoft-com:office:office"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16635"></meta></head><body>
+<h1>Документ "Customs files (light)"</h1>
+<p>Документ "Customs files (light)" входит в <a href="Subsystem.CustomsAccounting.Subsystem.CustomsDocuments/Help">подсистему "Customs documents".</a><br>Предназначен для ручного отражения таможенных документов. Для каждого вида документа создан отдельный тип транзакции:</p>
+<ul><li>Customs file (декларация) - таможенная декларация. 
+</li><li>Customs receipt order (ТПО) - таможенный приходный ордер. 
+</li><li>Customs bond (расписка) - таможенная расписка за депозит.  
+</li><li>Customs bond closing (решение по расписке) - решение по таможенной расписке.<br></li></ul><p>Отражение Customs files (light) позволяет в дальнейшем осуществить:</p>
+<ul><li>аллокацию таможенных платежей (в <a href="Subsystem.CustomsAccounting.Subsystem.Payments/Help">подсистеме "Payments"</a>) 
+</li><li>учесть пошлины, сборы и НДС для выгрузки в Lawson (в <a href="Subsystem.CustomsAccounting.Subsystem.BatchesOfCustomsFiles/Help">подсистеме "Batches of customs files"</a>) 
+</li><li>отразить стоимость услуг брокера для выгрузки в Lawson (в <a href="Subsystem.Services/Help">подсистеме "Services"</a>) 
+</li><li>отразить КТС для выгрузки в Lawson 
+</li><li>отслеживать решение по ТР, получение суммы к возврату по депозиту (если решение принято в пользу компании) 
+</li><li>отразить пени по решению таможенной расписки (тип транзакции - ТПО) 
+</li><li>отразить заявление на возврат денег на банковский счет с платежки (тип транзакции - ТПО)</li></ul><p>Кроме того, документ позволяет выполнить закрытие поставки для ТПО и декларации.</p>
+<h2>Отражение Customs bonds <span style="FONT-SIZE: 12pt; FONT-FAMILY: 'Times New Roman','serif'; mso-ansi-language: RU; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: RU; mso-bidi-language: AR-SA">(таможенных расписок)</span></h2>
+<ol><li>
+<div class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font size="2" face="Times New Roman"><span lang="EN-US" style="mso-ansi-language: EN-US"><strong>Отражение декларации<br></strong><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1" face="Verdana">После загрузки документа </font><a href="Document.ГТД/Help"><font size="1" face="Verdana">Customs file</font></a><font size="1" face="Verdana"> необходимо проверить, что суммы указаны без корректировок.<br>Перед занесением в систему Customs bond, нужно проверить, что заведен документ </font><a href="Document.ЗакрытиеПоставки/Help"><font size="1" face="Verdana">Invoice lines matching</font></a><font size="1" face="Verdana">.</font></span></span></span></font></div>
+</li><li>
+<div class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><strong>Отражение Customs bond<br></strong>Создаем Customs file light с типом транзакции Customs bond на основании загруженной Customs file или из списка документов Customs files (light).<br><p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1">В таблице Items указываем товары, по которым есть корректировка.<br><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1">В таблице Payments указываем общую сумму увеличения платежей одной строкой на тип платежа 9090.<br>На вкладке Customs payments allocations создаем <a href="Document.CustomsPaymentAllocation/Help">аллокацию</a> с <a href="Document.CustomsPayment/Help">Customs payment</a>.<br>При формировании <a href="Document.BatchesOfCustomsFiles/Help">Batches of customs files</a> Customs bond попадает на вкладку Customs bonds и выгружается в Lawson:<br>Account for Deposit "141102";<br>Sub Account for Deposit "141102-1";<br>AU for Deposit "2812019", Activity пустой.</font></span></font></span></p></span></span></font><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"></span></span></font></div>
+</li><li>
+<div class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US">
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1"><o:p></o:p></font></span><o:p><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><strong>Отражение решения таможни - Customs bond closing<br></strong>Создаем Customs file light с типом транзакции Customs bond closing (на вкладке Customs bond closing в форме Customs bond или из списка документов Customs files (light)).<br><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1">В таблице Items указываем товары, по которым принято решение (система дает выбрать только те товары, по которым еще нет решения).<br></font></span></span></span></o:p></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1">Заполнение сумм платежей зависит от принятого решения:<br></font></span></p></span></span></font><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1"><o:p><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1">- если таможня решила, что корректировка будет в полном объеме, необходимо заполнить таблицу Payments на суммы корректировок с разбивкой по типам платежей.  <br>- если таможня решила, что корректировки не будет, необходимо заполнить поле amount to refund и выбрать способ Refund to.<br>- если таможня решила, что корректировка будет, но в меньшем объеме, необходимо заполнить таблицу Payments на суммы корректировок, заполнить частичную сумму к возврату в поле amount to refund и выбрать способ Refund to. <br><br></font></span></font></span></span></span></o:p></font></span></span></span></font><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1"><o:p><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1">При проведении документа система автоматически распределит окончательные платежи на выбранные товары (если решени принято полностью или частично в пользу таможни).<br>При формировании <a href="Document.BatchesOfCustomsFiles/Help">Batches of customs files</a> Customs bond closing попадает на вкладку Customs bonds closing и выгружается в Lawson. <br>Для товаров выгрузка в батч аналогична выгрузке затрат на товары по декларациям, для Amount to refund сумма будет с минусом на те же счета и косты, как для депозита.</font></span></span></span></o:p></font></span></span></span></font></div>
+</li><li>
+<div class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1"><o:p><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"></span></span></span></o:p></font></span></span></span></font><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1"><o:p><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><strong>Отражение возврата денег от таможни<br></strong></span></span></font></span></span></span></o:p></font></span></span></span></font><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1"><o:p><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US"><font size="1"><span lang="EN-US" style="mso-ansi-language: EN-US"><span lang="EN-US" style="mso-ansi-language: EN-US">Создаем <a href="Document.CustomsDepositRefundToBankAccount/Help">Customs deposit refund to bank account</a> на вкладке Deposit refund to bank account в форме Customs bond closing или из списка документов Customs deposit refund to bank account.<br>Указываем Customs bond и сумму, которую вернула таможня.<br>Проведение документа оповещает систему о факте возврата суммы депозита таможней на банковский счет.</span></span></font></span></span></span></o:p></font></span></span></span></font></div></li></ol><h2>Структура документа</h2>
+<h3>Реквизиты шапки документа</h3>
+<ul><li>
+<div><strong>No.</strong> (строка)<br>Заполняется автоматически при записи документа как [номер таможенного поста]-[дата документа в формате ЧЧММГГ]-[seq no.]<br>Контролируется уникальность.</div>
+</li><li>
+<div><strong>Type of transaction</strong> (перечисление Types of Customs file (light) transaction)<br>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>Customs post</strong> (справочник Customs posts)<br>Обязательный для заполнения реквизит.<br>Таможенный пост не может быть помечен на удаление.</div>
+</li><li>
+<div><strong>Date</strong> (дата)<br>Обязательный для заполнения реквизит.<br>Дата не может быть меньше 01.01.2011 или больше текущей даты.</div>
+</li><li>
+<div><strong>For deletion</strong> (булево) - признак того, что данный документ помечен на удаление.</div>
+</li><li>
+<div><strong>Posted</strong> (булево) - признак того, что данный документ проведен.</div>
+</li><li>
+<div><strong>Seq. no.</strong> (строка)<br>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>I / E</strong> (перечисление Import / Export)<br>Обязательный для заполнения реквизит.<br>Если заполнен Shipment, то I / E должен соответствовать одноименному реквизиту в Shipment.</div>
+</li><li>
+<div><strong>CCA</strong> (справочник Agents) - customs clearance agent.<br>Обязательный для заполнения реквизит.<br>Таможенный брокер не может быть помечен на удаление.<br>Если заполнен Shipment, то I / E должен соответствовать одноименному реквизиту в Shipment.</div>
+</li><li>
+<div><strong>Legal entity</strong> (справочник Parent company) - юр. лицо - покупатель товаров.<br>Обязательный для заполнения реквизит.<br>Покупатель не может быть помечен на удаление.<br>Если заполнен Shipment, то покупатель должен входить в список покупателей, входящих в Shipment.</div></li></ul><ul><li>
+<div><strong>Invoice currency</strong> (справочник Валюты) - валюта инвойса, в соответствии с которым оформляются товары.<br>Обязательный для заполнения реквизит.<br>Валюта не может быть помечена на удаление.<br>Если заполнен Shipment, то валюта должна входить в список валют инвойсов, входящих в Shipment.</div>
+</li><li>
+<div><strong>Invoice currency rate</strong> (число)<br>Обязательный для заполнения реквизит.<br>Курс не может быть отрицательным.</div>
+</li><li>
+<div><strong>Customs value</strong> (число) - таможенная стоимость товаров.<br>Обязательный для заполнения реквизит.<br>Валютная стоимость товаров * курс не может быть больше таможенной стоимости.</div>
+</li><li>
+<div><strong>Release date</strong> (дата)<br>Обязательный для заполнения реквизит.<br>Дата выпуска должна быть больше или равна дате документа, но не больше текущей даты.<br>Если заполнен Shipment, а в нем заполнен реквизит Cleared, то дата выпуска не может быть больше даты Cleared.</div>
+</li><li>
+<div><strong>Regime </strong>(справочник Customs regimes) </div>
+</li><li>
+<div><strong>Permanent/Temporary </strong>-определяет относится декларация к временному ввозу или нет.</div>
+</li><li>
+<div><strong>Expiry date</strong> (дата) - дата истечения срока временного импорта / экспорта.</div>
+</li><li>
+<div><strong>Shipment</strong> (документ Shipment) - поставка, обязательна для заполнения для всех типов транзакций, кроме ТПО, <br>для ТПО заполяется, когда поставка закрывается документом ТПО, а не документами <a href="Document.ГТД/Help">"Customs file"</a> и <a href="Document.ЗакрытиеПоставки/Help">"Invoice lines matching"</a><br>Поставка должна быть проведена, если она не проведена - система пытается автоматически провести ее.</div>
+</li><li>
+<div><strong>Customs file</strong> (документы Customs file, Customs files (light)) <br>Обязательный для заполнения реквизит для Customs bond и Customs bond closing.<br>Для Customs bond происходит отбор <a href="Document.ГТД/Help">"Customs file"</a> с фильтром по поставке. <br>Для Customs bond closing происходит отбор Customs files (light), по которым еще не было принято решение.</div>
+</li><li>
+<div><strong>amount to refund </strong>- (число) - сумма, которую обязана вернуть таможня после принятия решения по ТР, <br>сумма не может быть больше суммы депозита.</div>
+</li><li>
+<div><font size="1"><strong>refund to</strong> - способ возврата депозита по таможанной расписке.</font></div>
+</li><li>
+<div><strong>Paid by CCA</strong> (булево) - признак того, что пошлины и сборы оплачиваются непосредственно таможенным брокером, а потом перевыставляются компании Шлюмберже</div>
+</li><li>
+<div><strong>Creation date</strong> (дата и время) - дата создания документа, заполняется автоматически при первой записи документа в базу</div>
+</li><li>
+<div><strong>Last modified</strong> (дата и время) - дата последнего интерактивного изменения документа, заполняется автоматически при записи документа из формы</div>
+</li><li>
+<div><strong>Responsible</strong> (справочник Users) - пользователь, который последним внес изменения в документ, заполняется автоматически при записи документа из формы</div></li></ul><h3>Табличная часть "Items"</h3>
+<p>В табличной части перечисляются товары, которые относятся к данной декларации.</p>
+<ul><li><strong>Item </strong>(справочник Items)<br>Если товар импортный, то соответсвующий инвойс должен быть отмечен как Final. 
+</li><li><strong>Customs file HTC </strong>(строка) - обязателен для Customs file light. 
+</li><li><strong>Customs file net weight </strong>(число) - обязателен для Customs file light.</li></ul><h3>Табличная часть "AUs"</h3>
+<p>В табличной части перечисляются AU, на которые относится стоимость товаров, оформленных по ТПО.</p>
+<ul><li>
+<div><strong>AU</strong> (справочник AUs)<br>Обязательный для заполнения реквизит.<br>Кост-центр не может быть помечен на удаление.<br>Если заполнен реквизит PO line, то AU в PO line должен соответствовать AU в строке табличной части.</div>
+</li><li>
+<div><strong>Description</strong> (строка)<br>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>Invoice total value</strong> (число) - стоимость товаров по инвойсу.<br>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>PO line</strong> (справочник PO lines)<br>PO line не может быть помечена на удаление.<br>При изменении PO line происходит заполнение AU и Description.</div></li></ul><h3>Табличная часть "Payments"</h3>
+<p>Обязательна для заполнения для Customs bond, Customs file light (кроме случаев, когда в PSA указан признак Zero customs charges)</p>
+<ul><li>
+<div><strong>Payment kind</strong> (строка из 2х символов)<br>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>Sum</strong> (число)<br>Обязательный для заполнения реквизит.</div>
+</li><li>
+<div><strong>Paid by CCA</strong></div></li></ul><h3>Вкладка "Customs payments allocations"</h3>
+<p>На вкладке "Customs payments allocations" отображается список всех аллокаций таможенных платежей, привязанных к данному Customs file light.<br>Состав колонок и поведение вкладки аналогично одноименной вкладке в документе Customs file.</p>
+<h3>Вкладка "Services"</h3>
+<p>На вкладке "Services" отображается список всех сервисов, привязанных к данному ТПО.<br>Состав колонок и поведение вкладки аналогично одноименной вкладке в документе Shipment.</p>
+<h2>Проведение</h2>
+<p>При проведении происходит проверка заполнения реквизитов, а также выполняются следующие операции:</p>
+<h3>Отражение неоплаченных ТПО</h3>
+<p>Для каждой строки из табличной части "Payments" происходит добавление записи в регистр "Неоплаченные ТПО":</p>
+<ul><li>
+<div><strong>ТПО</strong> - ссылка на текущий документ</div>
+</li><li>
+<div><strong>Payment kind</strong> - одноименный реквизит из строки табличной части</div>
+</li><li>
+<div><strong>Sum</strong> - одноименный реквизит из строки табличной части</div></li></ul><h3>Разнесение платежей по кост-центрам для дальнейшей выгрузки в Lawson</h3>
+<p>Для ТПО суммы из табличной части "Payments" разносятся на строки табличной части "Goods" пропорционально стоимости товаров по инвойсу.<br>Далее эти суммы отражаются в регистре "Стоимость товаров по ТПО".<br>Для ТР суммы из табличной части "Payments" разносятся на строки табличной части "Items" пропорционально стоимости товаров по инвойсу.<br>Далее эти суммы отражаются в регистре "Invoice lines costs".</p>
+<ul><li>
+<div><strong>Document-base </strong>- ссылка на текущий документ</div>
+</li><li>
+<div><strong>AU </strong>- одноименный реквизит из строки табличной части "Goods"</div>
+</li><li>
+<div><strong>Account</strong> - ???</div>
+</li><li>
+<div><strong>Activity</strong> - Default activity из AU</div>
+</li><li>
+<div><strong>Duty</strong> - расчитанная сумма сбора</div>
+</li><li>
+<div><strong>Fee</strong> - расчитанная сумма пошлины</div>
+</li><li>
+<div><strong>VAT </strong>- расчитанная сумма НДС</div></li></ul><h3>Проведение (для разработчиков)</h3>
+<p>Для каждого товара добавляется расход по <a href="AccumulationRegister.ImportItemsWithoutCustomsFiles/Help">регистру накопления Import items without customs files</a>, если это импортная поставка,<br>или по <a href="AccumulationRegister.ExportItemsWithoutCustomsFiles/Help">регистру накопления Export items without customs files</a>, если это экспортная поставка. <br>Расход по данным регистрам позволяет отследить, что товар привязан к декларации.</p></body></html>

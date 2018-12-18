@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://xmlns.oracle.com/apps/otm/IntXmlService"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="0"
+		xmlns:xsd2="http://xmlns.oracle.com/apps/otm"
+		targetNamespace="http://xmlns.oracle.com/apps/otm/IntXmlService">
+	<documentation> </documentation>
+	<types>
+		<s:schema xmlns:otm="http://xmlns.oracle.com/apps/otm"
+				xmlns:s="http://www.w3.org/2001/XMLSchema"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:tns="0"
+				xmlns:wssutil="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+				xmlns:xsd1="http://xmlns.oracle.com/apps/otm"
+				xmlns:xsd2="0"
+				targetNamespace="0">
+			<s:import namespace="http://xmlns.oracle.com/apps/otm"
+					schemaLocation="file://1.xsd"/>
+		</s:schema>
+	</types>
+	<message name="process">
+		<part name="payload"
+				element="xsd2:Transmission"/>
+	</message>
+	<message name="processResponse">
+		<part name="result"
+				element="xsd2:TransmissionAck"/>
+	</message>
+	<portType name="IntXml">
+		<operation name="process">
+			<input name="processRequest"
+					message="tns:process"/>
+			<output name="processResponse"
+					message="tns:processResponse"/>
+		</operation>
+	</portType>
+	<binding name="IntXml"
+			type="tns:IntXml">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="process">
+			<soapbind:operation style="document"
+					soapAction="process"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Update_TMS_ShipmentStatus_For_RIET">
+		<port name="Update_TMS_ShipmentStatus_For_RIETsoaphttp"
+				binding="tns:IntXml">
+			<soapbind:address location="http://uddi2.sims.slb.com:8888/ws/Update_TMS_ShipmentStatus_For_RIET/3.0.00"/>
+		</port>
+	</service>
+</definitions>

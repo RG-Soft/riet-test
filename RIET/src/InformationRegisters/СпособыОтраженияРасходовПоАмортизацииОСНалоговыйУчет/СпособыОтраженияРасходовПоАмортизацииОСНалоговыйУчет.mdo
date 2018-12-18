@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1e1d6d50-6dee-41c9-ac59-bf5cc7872960">
+  <producedTypes>
+    <selectionType typeId="c6b53389-a8d1-4c4a-aa37-a4d8b1b11954" valueTypeId="778df43b-0024-46f2-8ae8-fe9c8edeb628"/>
+    <listType typeId="2aa825f6-22a1-401d-9b55-6befde6e0ff3" valueTypeId="28ef7102-4c91-4680-a265-fd31c6368e9f"/>
+    <managerType typeId="48c7e1cc-e2fe-41f7-bcbe-0c1576c66c72" valueTypeId="a6fd1d83-c82b-473d-8af0-be3f65cff28e"/>
+    <recordSetType typeId="c89a2995-377d-403e-a9c7-67bb67cc29b8" valueTypeId="d3539e08-7f10-42d0-b701-34fac0001b55"/>
+    <recordKeyType typeId="adb63378-aef5-4aa3-affc-6da71df3f071" valueTypeId="86dd67cc-18e0-4d1e-ae02-cf5e77cbcff9"/>
+    <recordType typeId="e19bcf82-5e10-4bdc-8ed2-78626aa848b0" valueTypeId="4eef6346-72cd-45ff-a7a6-4ffcb1246c69"/>
+    <recordManagerType typeId="08f12b61-b734-407e-b3f3-630b5f68d3e5" valueTypeId="c0708eb6-6cb2-4f8c-858f-488cd8dff33a"/>
+  </producedTypes>
+  <name>СпособыОтраженияРасходовПоАмортизацииОСНалоговыйУчет</name>
+  <synonym>
+    <key>ru</key>
+    <value>Способы отражения расходов по амортизации ОС (налоговый учет)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Способы отражения расходов по амортизации ОС (налоговый учет)</value>
+  </synonym>
+  <comment>(Регл) Регистр, который показывает изменение направлений амортизации по налоговому учету</comment>
+  <defaultListForm>InformationRegister.СпособыОтраженияРасходовПоАмортизацииОСНалоговыйУчет.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <resources uuid="931ea45f-e89d-4ae8-b21c-d41d1e5b2109">
+    <name>СпособыОтраженияРасходовПоАмортизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способы отражения расходов по амортизации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Способы отражения расходов по амортизации</value>
+    </synonym>
+    <comment>Направление начисления, для определения счета отнесения амортизации</comment>
+    <type>
+      <types>CatalogRef.СпособыОтраженияРасходовПоАмортизации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="459d290e-c616-40dc-9ffc-a69908f8ab7b">
+    <name>ОсновноеСредство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное средство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Основное средство</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредства</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5ef9ea74-254a-475f-be82-fcffd3217336">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="d30d3363-a0ff-4e68-9784-52896a459754">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

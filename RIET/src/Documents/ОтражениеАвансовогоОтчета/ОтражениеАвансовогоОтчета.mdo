@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="be6d67d3-0321-4168-8b57-c08a872d9cba">
+  <producedTypes>
+    <objectType typeId="d76a668b-f165-49cf-b806-ef75a91ae0b8" valueTypeId="9a09e81f-5eb3-4ca1-ac0d-39911cb0c679"/>
+    <refType typeId="bf25b483-46c4-45e0-883e-f77095859011" valueTypeId="f0a0917b-f9c8-42df-9fa9-0a2f95a4dda8"/>
+    <selectionType typeId="2ed9e87e-10a9-4c57-b73b-332c8d774026" valueTypeId="28d41865-cac9-41f2-b148-cff36ae6ceb5"/>
+    <listType typeId="eb32ff58-1b50-4630-9086-5ad7e0e52fe1" valueTypeId="b89f367f-66ad-4b21-a4af-263745f84511"/>
+    <managerType typeId="277db536-fc4c-47e3-9b6a-ba9a2d82869b" valueTypeId="d76e3996-44e4-4ac8-8820-f053f5676a07"/>
+  </producedTypes>
+  <name>ОтражениеАвансовогоОтчета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отражение авансового отчета</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Отражение авансового отчета</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.ОтражениеАвансовогоОтчета.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <numberLength>5</numberLength>
+  <numberPeriodicity>Year</numberPeriodicity>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ОтражениеАвансовогоОтчета.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ОтражениеАвансовогоОтчета.Form.ФормаСписка</defaultListForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDelete</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>AccountingRegister.Хозрасчетный</registerRecords>
+  <forms uuid="a8f6fcb1-d228-479f-90ab-79c828d6f1a9">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7d07b7d4-fa7b-48b1-a1ed-c8d2bb568d3c">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="47bcc9e7-d098-4f8e-96ad-427991cc81c4">
+    <producedTypes>
+      <objectType typeId="0495d64e-cdb6-4db4-9480-ffbb7a491405" valueTypeId="4e2a2afc-915a-434b-b441-b2c2214b0d0c"/>
+      <rowType typeId="d7d93405-1090-4aa3-9f26-c70ae2dbd0ef" valueTypeId="f46c139b-02b2-4f60-ab97-b488c1504fd8"/>
+    </producedTypes>
+    <name>Проводки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проводки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Проводки</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="9c658775-212a-4563-ad9a-c217240d0e4b">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0bed31d6-0522-4b50-a084-f9d85750fb22">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Подразделение</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="93a83054-7464-453e-ba79-88cf3784b149">
+      <name>СтатьяЗатрат</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья затрат</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Статья затрат</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.СтатьиЗатрат</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="6ac43b2e-7279-450a-a6bc-bfcdc35d5df7">
+      <name>СчетУчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет учета</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Счет учета</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>ChartOfAccountsRef.Хозрасчетный</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="f2f59f5d-1e59-4931-a482-70c00bd32b77">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сумма</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

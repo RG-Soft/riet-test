@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="60c935bc-c0c3-40d5-b5c3-786e68ed3f37">
+  <producedTypes>
+    <objectType typeId="4dc082f0-32a4-4fec-b2e9-4e8409cf932f" valueTypeId="e3844eda-0223-4f70-b63c-33226da2eb0d"/>
+    <managerType typeId="b1ec8ac5-8835-4fa3-8b2b-c82f4f2e67fb" valueTypeId="308f69ca-bf24-4424-850f-e073326521b9"/>
+  </producedTypes>
+  <name>ПредставлениеКонтактнойИнформации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Представление контактной информации</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Представление контактной информации</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.ПредставлениеКонтактнойИнформации.Form.Форма</defaultForm>
+  <attributes uuid="4f887ac6-3418-403a-9606-6aacb7bfbcb6">
+    <name>ВидОбъектаКонтактнойИнформации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид объекта контактной информации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Вид объекта контактной информации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыОбъектовКонтактнойИнформации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0b2ab594-fb8a-4276-813a-9e1bf3707190">
+    <name>ОбъектКонтактнойИнформации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект контактной информации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Объект контактной информации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КонтактныеЛица</types>
+      <types>CatalogRef.Контрагенты</types>
+      <types>CatalogRef.Пользователи</types>
+      <types>CatalogRef.Организации</types>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="276f64d9-6459-4a28-a5c9-ac2cf4bee9a3">
+    <producedTypes>
+      <objectType typeId="a45fd148-1d71-44de-bf3b-74dd68d359e7" valueTypeId="4ff37f24-12ef-4530-a572-61d0943fa556"/>
+      <rowType typeId="f8863c66-310c-4a1a-9978-bf88470e7839" valueTypeId="3df18d42-6450-4e5f-968a-9f52b9795d42"/>
+    </producedTypes>
+    <name>КонтактнаяИнформация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контактная информация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Контактная информация</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="9b2cbc28-564c-4bbf-9652-4944e86963e9">
+      <name>Объект</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Объект</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.КонтактныеЛица</types>
+        <types>CatalogRef.Контрагенты</types>
+        <types>CatalogRef.Пользователи</types>
+        <types>CatalogRef.Организации</types>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ba9adbf8-383f-4a24-8608-550acf5d3d06">
+      <name>Тип</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Тип</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.ТипыКонтактнойИнформации</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f19e961c-b087-4cc5-a561-80dec2aa35c1">
+      <name>Вид</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Вид</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <types>CatalogRef.ВидыКонтактнойИнформации</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="26a7ac63-2736-4e90-82de-220942942e61">
+      <name>Представление</name>
+      <synonym>
+        <key>ru</key>
+        <value>Представление</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Представление</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="cea91c1b-d1a6-485c-8e88-6ae0fe998cbe">
+      <name>Комментарий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комментарий</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Комментарий</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="ae350f64-9b7e-4d92-956a-5d63bbc7e2d7">
+      <name>ЗначениеПоУмолчанию</name>
+      <synonym>
+        <key>ru</key>
+        <value>Значение по умолчанию</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Значение по умолчанию</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="8db104e2-fab5-4378-b3c4-8119a98f3fbd">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

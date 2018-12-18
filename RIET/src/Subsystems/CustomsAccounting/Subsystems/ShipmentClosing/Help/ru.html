@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16446"></meta></head><body>
+<h1>Подсистема "Shipment closing"</h1>
+<h2>Назначение</h2>
+<p>Подсистема "Shipment closing" входит в <a href="Subsystem.CustomsAccounting/Help">подсистему "Customs"</a> и предназначена для фискальной классификации и определения фискальной стоимости товаров.</p>
+<h2>Структура подсистемы</h2>
+<p>Центральными документами подсистемы является <a href="Document.ЗакрытиеПоставки/Help">документы "Invoice lines matching"</a> и <a href="Document.InvoiceLinesClassification/Help">"Invoice lines classification".</a><br>В документе "Invoice lines matching" производится сопоставление <a href="Catalog.СтрокиИнвойса/Help">Invoice goods</a> и <a href="Catalog.ТоварыСтрокГТД/Help">CCD lines goods</a> для распределения таможенных сборов и пошлин на товары.<br>В документе "Invoice lines classification" производится фискальная классификация товаров.</p>
+<p><a href="Document.Поставка/Help">Документы "Shipment"</a>, которые уже отмечены как Cleared, но по которым еще не введены <a href="Document.ЗакрытиеПоставки/Help">документы "Invoice lines matching"</a> или "Invoice lines classification" отображаются в отчете <a href="Report.NonClosedShipments/Help">"Non closed shipments"</a>.</p>
+<p>Полученная фискальная стоимость отображается в отчете <a href="Report.ПокупнаяСтоимостьТаможенныхТоваров/Help">"Покупная стоимость таможенных товаров"</a>.</p>
+<p>Анализ применяемых кодов ТН ВЭД и ставок пошлин производится с помощью <a href="Report.HTCAnalysis/Help">отчета "HTC analysis"</a>.</p>
+<p>Наконец, стоимость товаров по инвойсам можно сравнить со стоимостью товаров по ГТД в отчете "Invoice price vs. CCD price".</p>
+<h2>Связи с другими подсистемами</h2>
+<p>Исходые данные для подсистемы "Shipment closing" о перечне, стоимости товаров и стоимости дополнительных расходов предоставляются <a href="Subsystem.ImportExport/Help">подсистемой "Shipment"</a> и <a href="Subsystem.CustomsAccounting.Subsystem.CustomsDocuments/Help">подсистемой "CCD"</a>.</p>
+<p>Далее фискальная стоимость товаров может увеличиваться в <a href="Subsystem.Services/Help">подсистеме "Services"</a>.</p>
+<p>Финальная фискальная стоимость используется подсистемами фискального учета, такими как: Fixed assets, Inventory и др.</p></body></html>

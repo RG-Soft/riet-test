@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a5602c6b-0b4f-4892-bed6-88b7619ed798">
+  <producedTypes>
+    <selectionType typeId="77dbb422-4144-4aa9-a4ab-c0af9001316d" valueTypeId="521dd2f5-14fe-492d-805c-db010d40b25f"/>
+    <listType typeId="b241e509-210e-4871-bb82-e587c9979b1b" valueTypeId="a0f0fa4a-9dec-42db-9786-a2f9236713c0"/>
+    <managerType typeId="f98fa036-42cf-413f-b1d4-09f08a7b803a" valueTypeId="6ee75145-7765-4cdc-8659-5f04812a3e49"/>
+    <recordSetType typeId="7d2f8f69-920d-4c03-ac94-29b657b14df3" valueTypeId="f581985e-9ada-4037-9cab-1b5624c129bf"/>
+    <recordKeyType typeId="3ebd6143-dd4c-4536-9df0-c999e1a38bbf" valueTypeId="91b1b637-7bce-429e-a773-a2ed4c160263"/>
+    <recordType typeId="afbe8b61-6f35-4ec3-967a-6608cc079426" valueTypeId="7844a626-07bd-49fe-8b70-8051cd151f82"/>
+  </producedTypes>
+  <name>ОстаткиВзаиморасчетовПоИнвойсам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Остатки взаиморасчетов по инвойсам</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Остатки взаиморасчетов по инвойсам</value>
+  </synonym>
+  <comment></comment>
+  <resources uuid="c8296adf-44d0-412e-b74c-b7a6840c5f16">
+    <name>СуммаИнвойса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма инвойса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма инвойса</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="fc21546c-fac1-4349-8adc-1e2987e27a6d">
+    <name>Реализация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Реализация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Реализация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПередачаОС</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d11a21f5-4775-46a8-827b-a2e7e85857b4">
+    <name>Инвойс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инвойс</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Инвойс</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.LawsonInvoice</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

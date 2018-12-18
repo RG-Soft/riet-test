@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4d3f7950-d247-4720-a9fc-80bd2e5293de">
+  <producedTypes>
+    <selectionType typeId="ae4f5e98-3b2a-4194-85e7-5df269720309" valueTypeId="a57c035e-3227-4363-b0d3-27baa7776750"/>
+    <listType typeId="f05ca238-2692-461f-bcab-8b7c9cdf8d87" valueTypeId="015e4dd3-122b-4d39-86c3-7225949cd767"/>
+    <managerType typeId="b8e15ce7-b937-4a74-a838-63414eceab68" valueTypeId="26160663-1ecf-4715-bbc9-32a71866d066"/>
+    <recordSetType typeId="6001010c-6bc6-4ab3-8469-ffeada2270ef" valueTypeId="4dbf0321-16af-42a4-bf6f-e112c1e22880"/>
+    <recordKeyType typeId="4d162247-04ae-4680-956d-3e1339bb2417" valueTypeId="30665cdf-18ab-4de7-a69e-b49780311b2f"/>
+    <recordType typeId="198dec72-4646-4a4c-a21b-14f80553b511" valueTypeId="f65dbd92-a74a-4668-8f61-c7ce81ee676b"/>
+    <recordManagerType typeId="379d7083-8c63-4082-addc-ef99c81190aa" valueTypeId="0743b3af-4376-4679-842e-4d7174b1310b"/>
+  </producedTypes>
+  <name>PendingEUCNotifications</name>
+  <synonym>
+    <key>ru</key>
+    <value>Pending EUC notifications</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Pending EUC notifications</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.PendingEUCNotifications.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.PendingEUCNotifications.Form.ФормаСписка</defaultListForm>
+  <resources uuid="fbc325fe-997b-4adf-8a62-528f18456cba">
+    <name>EmailsList</name>
+    <synonym>
+      <key>ru</key>
+      <value>E-mails list</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>E-mails list</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="dbd16e97-48c3-48a6-a00d-09170a219aeb">
+    <name>ProcessLevel</name>
+    <synonym>
+      <key>ru</key>
+      <value>Process level</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Process level</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ProcessLevels</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f01d0959-416a-4a6a-80f9-626fc61cc133">
+    <name>Segment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Segment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="17f6f755-453c-4f48-8264-8044923c03e9">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="92bc6383-8a21-4c49-ba75-878bfbe1bfc6">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

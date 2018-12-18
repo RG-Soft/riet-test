@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Shipment</dataPath>
+			<field>Shipment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ClosingDocument</dataPath>
+			<field>ClosingDocument</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InvoiceLinesClassification</dataPath>
+			<field>InvoiceLinesClassification</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsDocument</dataPath>
+			<field>CustomsDocument</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Company</dataPath>
+			<field>Company</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Cleared</dataPath>
+			<field>Cleared</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Cleared</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cleared</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CCA</dataPath>
+			<field>CCA</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CCA</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>CCA</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InvoiceList</dataPath>
+			<field>InvoiceList</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>POList</dataPath>
+			<field>POList</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Corporation</dataPath>
+			<field>Corporation</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ImportShipmentDOCs.Ссылка КАК Shipment,
+	ImportShipmentDOCs.УпаковочныйЛист.ConsignTo.Владелец КАК Company,
+	ImportShipmentDOCs.Ссылка.CCA КАК CCA,
+	ImportShipmentDOCs.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	ImportShipmentDOCs.Ссылка.Cleared КАК Cleared
+ПОМЕСТИТЬ ShipmentsWithCompanies
+ИЗ
+	Документ.Поставка.УпаковочныеЛисты КАК ImportShipmentDOCs
+ГДЕ
+	НЕ ImportShipmentDOCs.Ссылка.Отменен
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ExportShipmentsExportRequests.Ссылка,
+	ExportShipmentsExportRequests.ExportRequest.Company,
+	ExportShipmentsExportRequests.Ссылка.CCA,
+	ExportShipmentsExportRequests.Ссылка.ProcessLevel.Corporation,
+	ExportShipmentsExportRequests.Ссылка.ReleasedFromCustoms
+ИЗ
+	Документ.ExportShipment.ExportRequests КАК ExportShipmentsExportRequests
+ГДЕ
+	НЕ ExportShipmentsExportRequests.Ссылка.ПометкаУдаления
+
+ИНДЕКСИРОВАТЬ ПО
+	Shipment,
+	Company
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ShipmentsWithCompanies.Shipment,
+	ShipmentsWithCompanies.Company,
+	ShipmentsWithCompanies.Corporation,
+	ShipmentsWithCompanies.CCA,
+	ShipmentsWithCompanies.Cleared,
+	ВЫРАЗИТЬ(ShipmentsWithCompanies.Shipment КАК Документ.Поставка).InvoiceList КАК InvoiceList,
+	ВЫРАЗИТЬ(ShipmentsWithCompanies.Shipment КАК Документ.Поставка).POList КАК POList,
+	ЕСТЬNULL(CCDs.Ссылка, CustomsFilesLight.Ссылка) КАК CustomsDocument,
+	ЕСТЬNULL(ДокументInvoiceLinesMatching.Ссылка, CustomsFilesLight.Ссылка) КАК ClosingDocument,
+	ДокументInvoiceLinesClassification.Ссылка КАК InvoiceLinesClassification
+ИЗ
+	ShipmentsWithCompanies КАК ShipmentsWithCompanies
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.CustomsFilesLight КАК CustomsFilesLight
+		ПО ShipmentsWithCompanies.Shipment = CustomsFilesLight.Shipment
+			И ShipmentsWithCompanies.Company = CustomsFilesLight.SoldTo
+			И (НЕ CustomsFilesLight.ПометкаУдаления)
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ГТД КАК CCDs
+		ПО ShipmentsWithCompanies.Shipment = CCDs.Shipment
+			И ShipmentsWithCompanies.Company = CCDs.SoldTo
+			И (НЕ CCDs.ПометкаУдаления)
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗакрытиеПоставки КАК ДокументInvoiceLinesMatching
+			ЛЕВОЕ СОЕДИНЕНИЕ Документ.InvoiceLinesClassification КАК ДокументInvoiceLinesClassification
+			ПО ДокументInvoiceLinesMatching.Ссылка = ДокументInvoiceLinesClassification.InvoiceLinesMatching
+		ПО ShipmentsWithCompanies.Shipment = ДокументInvoiceLinesMatching.Поставка
+			И (НЕ ДокументInvoiceLinesMatching.ПометкаУдаления)
+ГДЕ
+	(CCDs.Ссылка ЕСТЬ NULL 
+				И CustomsFilesLight.Ссылка ЕСТЬ NULL 
+			ИЛИ НЕ CCDs.Проведен
+			ИЛИ НЕ CustomsFilesLight.Проведен
+			ИЛИ ДокументInvoiceLinesMatching.Ссылка ЕСТЬ NULL 
+				И CustomsFilesLight.Ссылка ЕСТЬ NULL 
+			ИЛИ НЕ ДокументInvoiceLinesMatching.Проведен
+			ИЛИ ДокументInvoiceLinesClassification.Ссылка ЕСТЬ NULL 
+				И CustomsFilesLight.Ссылка ЕСТЬ NULL 
+				И ShipmentsWithCompanies.Company.UseFiscalClassificationOfItems
+			ИЛИ НЕ ДокументInvoiceLinesClassification.Проведен)</query>
+	</dataSet>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Corporation</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Shipment</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Cleared</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Company</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CCA</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceList</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>POList</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Shipment.CurrentComment</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CustomsDocument</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CustomsDocument.Проведен</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ClosingDocument</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ClosingDocument.Проведен</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceLinesClassification</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>InvoiceLinesClassification.Проведен</dcsset:field>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Cleared</dcsset:left>
+					<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>2011-01-01T00:00:00</v8:date>
+					</dcsset:right>
+					<dcsset:userSettingID>6550c6d5-6b29-483b-b6c5-c7c672cea863</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Corporation</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Corporations.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>cd4593ee-95a2-4963-94a8-ddb0baa0ad28</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Company</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.SoldTo.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>65d81e72-411c-42a7-a827-d714360627fc</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">CCA</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Agents.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>d26e1dec-5989-48cf-b0d0-ca2426fe1fb8</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:userSettingID>96e69a5d-5dc4-4aa4-b6a8-75aa8bce89d2</dcsset:userSettingID>
+				<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+				</dcsset:userSettingPresentation>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Cleared</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Non closed shipments</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Non closed shipments</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

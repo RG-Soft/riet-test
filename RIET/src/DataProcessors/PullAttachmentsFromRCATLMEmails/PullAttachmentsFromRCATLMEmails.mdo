@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="28fcbe94-325e-40b4-9051-7923fcf98875">
+  <producedTypes>
+    <objectType typeId="0785bb88-fc11-41f7-8388-9b7e37b3c950" valueTypeId="4663d813-63fa-4f1f-9569-0caaaa538c3c"/>
+    <managerType typeId="c8e3876f-0820-4d78-b60a-f67461c91a9d" valueTypeId="ff0c0c1f-cbfe-4779-a827-5e0b83513414"/>
+  </producedTypes>
+  <name>PullAttachmentsFromRCATLMEmails</name>
+  <synonym>
+    <key>ru</key>
+    <value>Pull attachments from RCA-TLM e-mails</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Pull attachments from RCA-TLM e-mails</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.PullAttachmentsFromRCATLMEmails.Form.Форма</defaultForm>
+  <tabularSections uuid="0d950d11-a6ce-4b2a-8c7c-a936f3dfdb53">
+    <producedTypes>
+      <objectType typeId="d3fa199a-23ca-46de-ab93-818263a401f6" valueTypeId="c0c3e8c5-e17c-449e-9644-b965a3cee90f"/>
+      <rowType typeId="88c975e3-5f00-41fc-8e3a-5fef986c00fd" valueTypeId="6f37dccc-f142-4b12-a4aa-4231d7e6d917"/>
+    </producedTypes>
+    <name>Unprocessed</name>
+    <synonym>
+      <key>ru</key>
+      <value>Unprocessed</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Unprocessed</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="c27cd508-5667-49b7-ac85-ad0c4403225c">
+      <name>UID</name>
+      <synonym>
+        <key>ru</key>
+        <value>UID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>UID</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>36</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="568a7f46-13fa-4df0-a8a9-86c486da2409">
+      <name>SentDate</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sent date</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Sent date</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2cf99a4b-c10c-49ec-b182-12f0cd0ae32e">
+      <name>From</name>
+      <synonym>
+        <key>ru</key>
+        <value>From</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>From</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="6569bcfa-13c9-4e5c-a00b-485bf725b03f">
+      <name>Subject</name>
+      <synonym>
+        <key>ru</key>
+        <value>Subject</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Subject</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="c247b9e8-dcc7-4538-9363-ba74ee694ecf">
+      <name>Body</name>
+      <synonym>
+        <key>ru</key>
+        <value>Body</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Body</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="a0b30078-925d-48a5-aab8-2e131f54f470">
+      <name>Attachment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Attachment</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Attachment</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="ca7faecf-ad6c-47cf-a581-d7ddb9ea2fd9">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

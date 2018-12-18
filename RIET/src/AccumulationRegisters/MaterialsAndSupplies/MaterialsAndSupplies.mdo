@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5e1f90a1-a9a0-44ae-b063-45ca9ae0e75b">
+  <producedTypes>
+    <selectionType typeId="b6c49694-f6f2-4192-93a3-ee3ced406a45" valueTypeId="de47f023-78ed-43d0-80d6-214537e54a09"/>
+    <listType typeId="4bbd014c-d12e-491e-af09-bbbbf70f4f95" valueTypeId="56a0ece7-45e0-4f95-8875-d1f7e7d6e772"/>
+    <managerType typeId="5efe8830-b123-47b7-a173-6d379a48af5a" valueTypeId="95b88a41-2b51-4a12-ac2b-104e4b34349a"/>
+    <recordSetType typeId="9b3120a8-dd39-4653-8696-42558ef6fe7c" valueTypeId="f0eb5b5a-c131-4e72-b890-c2edfb876264"/>
+    <recordKeyType typeId="25f42073-c8d7-42b7-864c-af75264b6d86" valueTypeId="f2448140-c495-4062-8a12-bafc26b76fad"/>
+    <recordType typeId="7e899812-8a62-4d19-b491-3185f1298462" valueTypeId="40a3109e-d40f-49ee-9bd3-cf84ea45cd34"/>
+  </producedTypes>
+  <name>MaterialsAndSupplies</name>
+  <synonym>
+    <key>ru</key>
+    <value>M&amp;&amp;S</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>M&amp;&amp;S</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="09c57976-cf3f-4998-a2af-0de7d4d062a6">
+    <name>FiscalSum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal sum</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="8a84d7ee-9773-49dd-8c36-0caf4fc3ef9b">
+    <name>ManagementSum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Management sum</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Management sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="ca0e0a5f-1590-47ba-ae41-e6dae560ce4d">
+    <name>ПроводкаДеталейСКП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проводка DSS/Invoice line</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Проводка DSS/Invoice line</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПроводкаDSS</types>
+      <types>CatalogRef.СтрокиИнвойса</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e4ece6ef-3275-40d9-8b51-66141bac63db">
+    <name>ДокументПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ поступления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Документ поступления</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.РаспределениеИмпортаПоЗакрытиюПоставки</types>
+      <types>DocumentRef.СчетКнигиПокупок</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

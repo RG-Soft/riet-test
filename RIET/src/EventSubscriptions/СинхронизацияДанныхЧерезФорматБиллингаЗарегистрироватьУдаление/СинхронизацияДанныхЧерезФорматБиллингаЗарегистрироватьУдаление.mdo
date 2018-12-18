@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ee94d0fd-e8e9-4ae6-9722-5dcf31bc43ae">
+  <name>СинхронизацияДанныхЧерезФорматБиллингаЗарегистрироватьУдаление</name>
+  <synonym>
+    <key>ru</key>
+    <value>Синхронизация данных через формат биллинга зарегистрировать удаление</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Синхронизация данных через формат биллинга зарегистрировать удаление</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ПлатежноеПоручениеИсходящее</types>
+    <types>DocumentObject.СчетНаОплатуПокупателю</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+    <types>DocumentObject.КорректировкаДолга</types>
+    <types>DocumentObject.SiebelOrders</types>
+    <types>DocumentObject.Tickets</types>
+    <types>DocumentObject.СчетФактураВыданный</types>
+    <types>DocumentObject.ПлатежноеПоручениеВходящее</types>
+    <types>DocumentObject.ЗакрытиеСчетовНаПредоплату</types>
+  </source>
+  <event>BeforeDelete</event>
+  <handler>CommonModule.ргМодульОбменаДанными.СинхронизацияДанныхЧерезФорматБиллингаЗарегистрироватьУдалениеПередУдалением</handler>
+</mdclass:EventSubscription>

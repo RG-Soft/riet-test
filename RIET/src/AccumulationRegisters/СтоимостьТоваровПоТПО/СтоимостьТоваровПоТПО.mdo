@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f857dad1-32dc-4b46-b5fa-3d468a817aeb">
+  <producedTypes>
+    <selectionType typeId="cacf891a-8a97-481e-8d43-b1e4883d6863" valueTypeId="9e9ceb1f-85c9-41a9-84a2-21363a24065a"/>
+    <listType typeId="9423f471-0e0e-4e48-adde-e2aa22a2a536" valueTypeId="9fdc3bca-47e9-4a4b-bb19-5e5272d979b5"/>
+    <managerType typeId="bc3799bc-9b98-44d6-891f-0f6704abef7b" valueTypeId="dd774ddf-580f-451e-ba99-8e7fcd6007d2"/>
+    <recordSetType typeId="ebd3dcde-7136-48af-a8f5-8962a1bbe9cb" valueTypeId="45634e4b-5c93-477d-9256-84192d05cf6b"/>
+    <recordKeyType typeId="ff67fb0c-0424-4ed0-8729-742c2b25bf23" valueTypeId="bbc9bd03-3e19-4f62-8935-6c67f3dccc41"/>
+    <recordType typeId="c407cd9d-3fb4-4dc5-bdab-180b321b9650" valueTypeId="db45acda-5391-43e6-8b93-553c80659575"/>
+  </producedTypes>
+  <name>СтоимостьТоваровПоТПО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Стоимость товаров по ТПО</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Стоимость товаров по ТПО</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="d511612a-dc4b-4792-9e62-7a55f8e652a3">
+    <name>FiscalSum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal sum</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <markNegatives>true</markNegatives>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="a37b6cac-4686-4991-b5f5-ec3c6b6f9f47">
+    <name>DocumentBase</name>
+    <synonym>
+      <key>ru</key>
+      <value>Document-base</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Document-base</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.CustomsFilesLight</types>
+      <types>DocumentRef.Service</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="5e53dff8-10b3-4427-b200-5b66936372ff">
+    <name>ЭлементФормированияСтоимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Элемент формирования стоимости</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Элемент формирования стоимости</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ЭлементыФормированияСтоимости</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3685c8f6-2f6b-4f53-8512-6246a6d185b3">
+    <name>AU</name>
+    <synonym>
+      <key>ru</key>
+      <value>AU</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AU</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="427bf9bb-4453-4ba8-a7d7-536e4ccab22d">
+    <name>УДАЛИТЬAccount</name>
+    <synonym>
+      <key>ru</key>
+      <value>УДАЛИТЬAccount</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>УДАЛИТЬAccount</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>6</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="7cd92bfe-c73b-4910-a0ff-0af793bd206b">
+    <name>Activity</name>
+    <synonym>
+      <key>ru</key>
+      <value>Activity</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Activity</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,4477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b1735384-d967-44ea-b79f-8a27397c67d1">
+  <producedTypes>
+    <objectType typeId="f4b9a1c8-1fea-4b9d-bb6b-1fe484427514" valueTypeId="e1799c36-b0a3-4a65-be26-c95104419b97"/>
+    <managerType typeId="4bc94f43-21e0-45e9-af90-ccfc0162fefa" valueTypeId="cfd43160-2dd8-42b6-80e8-e5eec9a3327d"/>
+  </producedTypes>
+  <name>ImportExportTracking</name>
+  <synonym>
+    <key>ru</key>
+    <value>RCA transportation tracking</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>RCA transportation tracking</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ImportExportTracking.Form.ImportExportTracking</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="fe997480-dfdb-4f69-8bc9-351444e64b52">
+    <name>ImportTrackingMainFilter</name>
+    <synonym>
+      <key>ru</key>
+      <value>Import tracking main filter</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Import tracking main filter</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ImportTrackingMainFilters</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="acc1b6b2-927b-4a53-ac00-d42a2e5bee18">
+    <name>ImportTrackingMainFilterValue</name>
+    <synonym>
+      <key>ru</key>
+      <value>Import tracking main filter value</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Import tracking main filter value</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ProjectMobilization</types>
+      <types>String</types>
+      <types>CatalogRef.BORGs</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c3a15ceb-7d05-48f3-b7ec-c971e75d9d78">
+    <name>ImportTrackingDateFilter</name>
+    <synonym>
+      <key>ru</key>
+      <value>Import tracking date filter</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Import tracking date filter</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ImportTrackingDateFilters</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a8738241-0ea4-4cab-8f63-8b81340bdfb3">
+    <name>ImportTrackingDateFrom</name>
+    <synonym>
+      <key>ru</key>
+      <value>Import tracking date from</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Import tracking date from</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b23818b0-6053-49ff-a915-d13a77a18665">
+    <name>ImportTrackingDateTo</name>
+    <synonym>
+      <key>ru</key>
+      <value>Import tracking date to</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Import tracking date to</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="afbdb2fb-9649-4cb6-885f-f5bcb0c3bb22">
+    <name>ExportTrackingMainFilter</name>
+    <synonym>
+      <key>ru</key>
+      <value>Export tracking main filter</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Export tracking main filter</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ExportTrackingMainFilters</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6afac879-e1f1-46cc-bc88-f572b4c12cbb">
+    <name>ExportTrackingMainFilterValue</name>
+    <synonym>
+      <key>ru</key>
+      <value>Export tracking main filter value</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Export tracking main filter value</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ProjectMobilization</types>
+      <types>String</types>
+      <types>CatalogRef.BORGs</types>
+      <types>CatalogRef.CountriesHUBs</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7329d24f-3372-43ea-88ee-582810df10da">
+    <name>ExportTrackingDateFilter</name>
+    <synonym>
+      <key>ru</key>
+      <value>Export tracking date filter</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Export tracking date filter</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ExportTrackingDateFilters</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bb8ea9c8-5aa7-4652-a5a5-1e5f4a5242e0">
+    <name>ExportTrackingDateFrom</name>
+    <synonym>
+      <key>ru</key>
+      <value>Export tracking date from</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Export tracking date from</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="dbe09dc9-0451-4050-b59c-29fea1ef9461">
+    <name>ExportTrackingDateTo</name>
+    <synonym>
+      <key>ru</key>
+      <value>Export tracking date to</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Export tracking date to</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4cfba0bb-27d5-4a9e-bf80-0d26903c0909">
+    <name>Country</name>
+    <synonym>
+      <key>ru</key>
+      <value>Country</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Country</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.CountriesOfProcessLevels</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="356355db-f4d4-4550-ac36-e53a48b80344">
+    <name>DomesticTrackingMainFilter</name>
+    <synonym>
+      <key>ru</key>
+      <value>Domestic tracking main filter</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Domestic tracking main filter</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.DomesticPlanningMainFilters</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="af4ec055-3ffe-43a0-a4b8-f1365e1bd681">
+    <name>DomesticTrackingMainFilterValue</name>
+    <synonym>
+      <key>ru</key>
+      <value>Domestic tracking main filter value</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Domestic tracking main filter value</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ProjectMobilization</types>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="50092f39-fd91-4cf2-a44d-8a53c13c7fa5">
+    <name>DomesticTrackingDateFilter</name>
+    <synonym>
+      <key>ru</key>
+      <value>Domestic tracking date filter</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Domestic tracking date filter</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.DomesticTrackingDateFilters</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bd8e3ebd-5950-4562-a1d6-5f51957a91a4">
+    <name>DomesticTrackingDateFrom</name>
+    <synonym>
+      <key>ru</key>
+      <value>Domestic tracking date from</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Domestic tracking date from</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="716517a5-18ab-4a2a-a4d1-147239a109f8">
+    <name>DomesticTrackingDateTo</name>
+    <synonym>
+      <key>ru</key>
+      <value>Domestic tracking date to</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Domestic tracking date to</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="18405655-c12b-4c12-b894-d5a9cba4f428">
+    <name>DomesticPlanningVariant</name>
+    <synonym>
+      <key>ru</key>
+      <value>Domestic planning variant</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Domestic planning variant</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="750e170f-126d-4626-a1b0-6da1a6983163">
+    <name>DomesticPlanningVariantOwner</name>
+    <synonym>
+      <key>ru</key>
+      <value>Владелец</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Owner</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="6388b6fc-b3ec-43c2-816c-bd19f4608a27">
+    <producedTypes>
+      <objectType typeId="93f244a0-cfa4-40db-b667-6ac877d8e95b" valueTypeId="7e264078-5762-4d63-8137-8ebb19b35629"/>
+      <rowType typeId="3a4e577d-78a0-4ff5-8f75-cdb4058703cf" valueTypeId="43af1414-189f-457e-8645-247dfa3190a3"/>
+    </producedTypes>
+    <name>ImportTracking</name>
+    <synonym>
+      <key>ru</key>
+      <value>Import tracking</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Import tracking</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="8757a5be-b63b-4f10-a236-efa25c7783cc">
+      <name>PONo</name>
+      <synonym>
+        <key>ru</key>
+        <value>PONo</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>PONo</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0c2625ca-3cbb-4eef-99af-4aeb55296184">
+      <name>PODate</name>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e4ff2a1e-8c7f-4050-bd65-ce502a4c020a">
+      <name>POLineNo</name>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>3</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="72163499-afc9-424a-90ec-cc4afa046107">
+      <name>POLineQty</name>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6046a802-8a05-4a0f-b5b8-2e1980409d78">
+      <name>Invoice</name>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.Инвойс</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="007857f9-cd13-4d69-8559-1d5e2bb16491">
+      <name>InvoiceNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Invoice no.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Invoice no.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="0dcf999d-7db8-4753-9834-b234c670f414">
+      <name>InvoiceLineValue</name>
+      <synonym>
+        <key>ru</key>
+        <value>Invoice line value</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Invoice line value</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0fdfcafd-89fb-43fa-b35d-e8cecf255ee2">
+      <name>InvoiceLineQty</name>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5887c07a-7caa-42a1-a91b-acc0bd7d962b">
+      <name>PartNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Part no.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Part no.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="593c226a-30bb-4732-857f-f85f98f909d5">
+      <name>PartDescription</name>
+      <synonym>
+        <key>ru</key>
+        <value>Part description</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Part description</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>255</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="b2163a59-39f3-4ba7-b795-cff737a75069">
+      <name>SerialNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Serial no.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Serial no.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="75ab62a2-e707-488d-9b2a-550cb5cf9f06">
+      <name>SegmentCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Segment code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Segment code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>5</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="506f9a0f-962a-4de5-9e82-59609aeb1941">
+      <name>AU</name>
+      <synonym>
+        <key>ru</key>
+        <value>AU</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AU</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>7</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8d0f095a-e046-4369-89f6-9713a0172371">
+      <name>AC</name>
+      <synonym>
+        <key>ru</key>
+        <value>AC</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AC</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e5610fad-fb37-4f9d-b4e8-ad0d871baa45">
+      <name>DOC</name>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.КонсолидированныйПакетЗаявокНаПеревозку</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="63a928e2-126f-4a47-ba8a-d6317d3643a9">
+      <name>DOCNo</name>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="a4efe188-af19-4d7c-a00f-356e27284de9">
+      <name>PODCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>POD code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POD code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>3</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="1be23555-6f5d-40e5-b805-1e743277b1b5">
+      <name>RequestedPOACode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Requested POA code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Requested POA code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>3</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="631af77c-b23c-4ba7-b2be-632a18ea1cc1">
+      <name>MOTCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>MOT code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>MOT code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>7</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="1019a908-3736-4254-84ac-d375fe79031f">
+      <name>DOCCurrentComment</name>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="b3cf122d-e172-4f12-ac14-4ca8983c23a0">
+      <name>DOCDate</name>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d152ee68-e1e2-4243-9ebb-2ccdddf72aaa">
+      <name>GLRequested</name>
+      <synonym>
+        <key>ru</key>
+        <value>GL requested</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GL requested</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3c671b09-d10a-4ffd-b590-511b2ff5affb">
+      <name>GLReceived</name>
+      <synonym>
+        <key>ru</key>
+        <value>GL received</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GL received</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e51fd4a9-9090-4dd7-9de5-5e5f2bed8798">
+      <name>GLGranted</name>
+      <synonym>
+        <key>ru</key>
+        <value>GL granted</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GL granted</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="74af7c5f-8605-4de3-afc3-3fed071d1cce">
+      <name>Shipment</name>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.Поставка</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="617dc84e-8a3c-468b-b466-08efa979d4e0">
+      <name>ActualPOACode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Actual POA code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Actual POA code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>3</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="5a65bf3c-1045-47b5-b33d-66c3bf8b86d3">
+      <name>ShipmentWaybills</name>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>160</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="a3b17b69-f426-4479-bf42-05de3e21fff0">
+      <name>ShipmentCurrentComment</name>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="9bedc43a-40ff-4659-9ef9-21e1f7ee2259">
+      <name>PreAlert</name>
+      <synonym>
+        <key>ru</key>
+        <value>Pre alert</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Pre alert</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="28e1c032-5f12-4999-b443-f3ad3f85bdd2">
+      <name>ETD</name>
+      <synonym>
+        <key>ru</key>
+        <value>ETD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ETD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="69b94fe1-aee1-42ac-8a4f-1c965a803a96">
+      <name>ATD</name>
+      <synonym>
+        <key>ru</key>
+        <value>ATD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ATD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="28183e64-3394-4bdf-b330-b07acff712c5">
+      <name>ETA</name>
+      <synonym>
+        <key>ru</key>
+        <value>ETA</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ETA</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="735f71ef-28d9-484c-b207-17117da6350c">
+      <name>ATA</name>
+      <synonym>
+        <key>ru</key>
+        <value>ATA</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ATA</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fb8655b7-59b7-4e05-8af6-fd31def2e1c7">
+      <name>DoxRcvd</name>
+      <synonym>
+        <key>ru</key>
+        <value>Dox rcvd</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Dox rcvd</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c7481f08-4307-4e0d-a7bb-05b329e8cad7">
+      <name>InCustoms</name>
+      <synonym>
+        <key>ru</key>
+        <value>In customs</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>In customs</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="12a0eadc-3ed3-4375-aa79-a4fed14ed4ea">
+      <name>Cleared</name>
+      <synonym>
+        <key>ru</key>
+        <value>Cleared</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Cleared</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0de2b84e-bfe3-4afa-b7ae-c15cf84c1ecb">
+      <name>CollectedFromPort</name>
+      <synonym>
+        <key>ru</key>
+        <value>Collected from port</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Collected from port</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0bbcaea7-8aa1-4506-854b-b85079d4a491">
+      <name>CustomsFile</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs file</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs file</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ГТД</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="48bdc654-284b-4eec-b28e-56e7e6f6530d">
+      <name>CustomsFileNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs file no.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs file no.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="70749626-f4aa-4618-a7ff-05e06460d892">
+      <name>CustomsRegimeCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs regime code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs regime code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>5</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="217cd13e-8c6b-4092-a370-433764de49a9">
+      <name>DeliveredToWH</name>
+      <synonym>
+        <key>ru</key>
+        <value>Delivered to WH</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Delivered to WH</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="822d1882-d44b-435f-bd1c-c746f8d009a5">
+      <name>LocalDistributionETD</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local distribution ETD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local distribution ETD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1e9a9e58-30ff-4f60-b1b0-92654284de02">
+      <name>LocalDistributionATD</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local distribution ATD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local distribution ATD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d1b58633-f964-4ed9-8ec7-9f12ab1115b3">
+      <name>LocalDistributionETA</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local distribution ETA</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local distribution ETA</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ff92888e-6ec7-41ec-91a5-1b6d1fb44db2">
+      <name>LocalDistributionATA</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local distribution ATA</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local distribution ATA</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2e2c0d68-2c4d-4861-87b0-c8ec6a4a87a2">
+      <name>ProjectMobilization</name>
+      <synonym>
+        <key>ru</key>
+        <value>Project</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Project</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ProjectMobilization</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="78f59d49-e722-457a-8085-e788391fa3d7">
+      <name>Item</name>
+      <synonym>
+        <key>ru</key>
+        <value>Item</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Item</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ProjectMobilizationManualItems</types>
+        <types>CatalogRef.СтрокиЗаявкиНаЗакупку</types>
+        <types>CatalogRef.СтрокиИнвойса</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a4881e70-9dca-4acb-a21e-78f4162f9fe9">
+      <name>StageGroupName</name>
+      <synonym>
+        <key>ru</key>
+        <value>Stage group name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Stage group name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="527c531f-b47b-435c-8607-f94111d72441">
+      <name>StatusName</name>
+      <synonym>
+        <key>ru</key>
+        <value>Status name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Status name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="2b320dba-fc91-46f4-9ec3-230fc930138a">
+      <name>OrderCreated</name>
+      <synonym>
+        <key>ru</key>
+        <value>Order created</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Order created</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <types>Date</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="1d8a40f6-73a7-42d2-aa3b-99b7d407bee4">
+      <name>SupplierAvailability</name>
+      <synonym>
+        <key>ru</key>
+        <value>Supplier availability</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Supplier availability</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d6495830-3cb3-4344-9ea8-772af7d709d3">
+      <name>ReceivedByHub</name>
+      <synonym>
+        <key>ru</key>
+        <value>Received by Hub</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Received by Hub</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="91c6c15b-5997-4da6-8b07-9d9d76e8f2c0">
+      <name>ShipmentPreparedByHub</name>
+      <synonym>
+        <key>ru</key>
+        <value>Shipment prepared by Hub</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Shipment prepared by Hub</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fca77d0c-fc2f-4200-80a2-477cfe550d3b">
+      <name>DestinationGreenLightRelease</name>
+      <synonym>
+        <key>ru</key>
+        <value>Destination green light release</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Destination green light release</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3b01cafc-879a-412b-aa9f-c21d4dfcb8e7">
+      <name>ShippedByHub</name>
+      <synonym>
+        <key>ru</key>
+        <value>Shipped by Hub</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Shipped by Hub</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="86fb3d55-f07f-4926-bf2f-f3ed9873be72">
+      <name>ArrivedAtPortOfEntry</name>
+      <synonym>
+        <key>ru</key>
+        <value>Arrived at port of entry</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Arrived at port of entry</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f4a32507-844d-402d-9fc6-d35935b738a5">
+      <name>CustomsClearance</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs clearance</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs clearance</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fa8f104b-00f3-4d6b-a7f3-344ef06cd6b0">
+      <name>DeliveryToLocation</name>
+      <synonym>
+        <key>ru</key>
+        <value>Delivery to location</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Delivery to location</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="159a0442-5aec-41d2-80e0-deac5f7b522a">
+      <name>ReceiptConfirmedByLocation</name>
+      <synonym>
+        <key>ru</key>
+        <value>Receipt confirmed by location</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Receipt confirmed by location</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9b685746-0ebe-4bb5-a081-9961f787cd30">
+      <name>RequiredDeliveryDate</name>
+      <synonym>
+        <key>ru</key>
+        <value>Required delivery date</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Required delivery date</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <types>Date</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a7423980-c8cd-47ed-bfd4-9c3df9de520d">
+      <name>HazardClass</name>
+      <synonym>
+        <key>ru</key>
+        <value>Hazard class</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Hazard class</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.HazardClasses</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6dd086fb-6b85-4b66-89e6-d18ea6db0b9a">
+      <name>Qty</name>
+      <synonym>
+        <key>ru</key>
+        <value>Qty</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Qty</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c8f4be7a-813b-4bc3-9e3a-5afc08df21e4">
+      <name>ItemValue</name>
+      <synonym>
+        <key>ru</key>
+        <value>Value, USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Value, USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d006287c-3417-4ca0-9f94-1bed4483887c">
+      <name>TotalItemValue</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total value, USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total value, USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7903dc3a-6434-46a6-9c80-20082efd7305">
+      <name>GrossWeightKG</name>
+      <synonym>
+        <key>ru</key>
+        <value>Gross, kg.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Gross, kg.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>4</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e5e6f94b-ac90-4012-8520-b658df09bd1d">
+      <name>TotalGrossWeightKG</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total weight, kg.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total weight, kg.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>4</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="245a7aec-0de2-4be3-a9eb-a3349de881f1">
+      <name>FreightCostPerKG</name>
+      <synonym>
+        <key>ru</key>
+        <value>Freight cost per kg, USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Freight cost per kg, USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9d948e03-6785-43dd-aa39-a4c473507f9c">
+      <name>TotalFreightCost</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total freight cost, USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total freight cost, USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="03d6117b-427e-4771-84ba-4706ee5d2e0c">
+      <name>Comments</name>
+      <synonym>
+        <key>ru</key>
+        <value>Comments</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Comments</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>1024</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="77153086-9298-42c3-a03c-9c0a9e81608e">
+      <name>FreightCosts</name>
+      <synonym>
+        <key>ru</key>
+        <value>Freight costs</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Freight costs</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>12</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="32543750-26a3-4ac4-9e33-eb65cb688b7b">
+      <name>CustomsClearanceCost</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs clearance cost</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs clearance cost</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>12</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0b2a6c80-dd80-4051-8064-cbb4ed58f879">
+      <name>FreightCostsUSD</name>
+      <synonym>
+        <key>ru</key>
+        <value>Freight costs USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Freight costs USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>12</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="db3ed2f3-324a-4891-adc1-383530c80601">
+      <name>CustomsClearanceCostUSD</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs clearance cost USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs clearance cost USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>12</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="77be85f1-c6f4-4d92-b318-e47c60482d58">
+      <name>CurrentStatusPendingDays</name>
+      <synonym>
+        <key>ru</key>
+        <value>Current status pending days</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Current status pending days</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>4</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5f5b534a-7a88-4c77-b439-1a89aedfe4f6">
+      <name>СтранаПроисхождения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Country of origin</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Country of origin</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <types>CatalogRef.CountriesHUBs</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="ca033726-8e47-4c38-a57c-c60661cf8542">
+    <producedTypes>
+      <objectType typeId="edea9408-8825-489b-ab87-89372e412cf6" valueTypeId="009e334c-f11e-4cc9-af79-d23265174efe"/>
+      <rowType typeId="dd8f7c0d-3707-49e3-b59c-33c41c1e88c3" valueTypeId="779d3406-5c12-4e53-b013-016583af23d0"/>
+    </producedTypes>
+    <name>ExportTracking</name>
+    <synonym>
+      <key>ru</key>
+      <value>Export tracking</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Export tracking</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="0e6b2d21-e6b9-4e2d-92e0-2d49689f9bb1">
+      <name>ExportRequest</name>
+      <synonym>
+        <key>ru</key>
+        <value>Export request</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Export request</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ExportRequest</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f10a06a2-8df1-4dc3-b575-fc72c797bc69">
+      <name>ExportRequestNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Export request no.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Export request no.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="d2ca7201-83d3-46e9-813c-7c84a81a08e8">
+      <name>ExportRequestDate</name>
+      <synonym>
+        <key>ru</key>
+        <value>Export request date</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Export request date</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d62f76c6-e8dd-434a-aefa-f1a35de2fd32">
+      <name>Stage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Stage</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Stage</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.ExportStages</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f6e3c983-c1f9-41d0-9ae9-6ca25266740b">
+      <name>PartNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Part no.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Part no.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="f84159b0-04d4-4b4b-9705-0e8582eba25c">
+      <name>SerialNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Serial no.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Serial no.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="36a6fe54-1a8e-4f17-9b4b-85d40470d47b">
+      <name>RAN</name>
+      <synonym>
+        <key>ru</key>
+        <value>RAN</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>RAN</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="c55da314-2b73-4d03-b951-17c9a1be02b8">
+      <name>PartDescription</name>
+      <synonym>
+        <key>ru</key>
+        <value>Part description</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Part description</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>255</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="c9cdd04e-2738-4cf3-a5d8-14dbfb38e44f">
+      <name>SegmentCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Segment code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Segment code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>5</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="144deda8-06ef-4271-8195-320ff6369a9a">
+      <name>FinalDestinationName</name>
+      <synonym>
+        <key>ru</key>
+        <value>Final destination name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Final destination name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="84b39bbc-bb28-4c76-9dfd-5f8ae2adac60">
+      <name>RequiredDeliveryDate</name>
+      <synonym>
+        <key>ru</key>
+        <value>Required delivery date</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Required delivery date</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="54360c81-6cdd-47f2-9608-a9527a8bbeb6">
+      <name>ExportRequestSubmitted</name>
+      <synonym>
+        <key>ru</key>
+        <value>Export request submitted</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Export request submitted</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5c03b8e2-1323-4601-b357-dc08908b2d2c">
+      <name>ExportRequestSubmitterAlias</name>
+      <synonym>
+        <key>ru</key>
+        <value>Export request submitter alias</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Export request submitter alias</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="6edf2585-41c0-48e5-8a59-c3e41f2fb225">
+      <name>ExportRequestAcceptedBySpecialist</name>
+      <synonym>
+        <key>ru</key>
+        <value>Export request accepted by specialist</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Export request accepted by specialist</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bb7bfd18-1150-41f3-a445-457da7078a8a">
+      <name>ExportSpecialistAlias</name>
+      <synonym>
+        <key>ru</key>
+        <value>Export specialist alias</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Export specialist alias</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="024beae5-7883-4865-9a93-9e595f8f8beb">
+      <name>ExportRequestComments</name>
+      <synonym>
+        <key>ru</key>
+        <value>Export request comments</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Export request comments</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="e9ad6cf6-c803-4287-aa74-58a963d046a1">
+      <name>Urgency</name>
+      <synonym>
+        <key>ru</key>
+        <value>Urgency</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Urgency</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.Urgencies</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6e54b1cf-2ea7-480b-9455-ec167943b60c">
+      <name>CompanyCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Company code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Company code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="554ef391-f087-44e0-aacc-5876cd2295b0">
+      <name>ShipperCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Shipper code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Shipper code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>4</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="87a59d6a-df02-45d5-8039-2b9db06b62d8">
+      <name>BORGCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>BORG code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>BORG code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>4</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="b80ab16a-eb99-4087-bb0c-d523a851162f">
+      <name>AUCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>AU code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AU code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="92bddc62-053a-4824-afbb-195f9e662bfe">
+      <name>LocalFreightProviderCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local freight provider code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local freight provider code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="bbc280b9-02d1-4788-a052-e13ccf5840ea">
+      <name>LocalFreightSubmittedForApproval</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local freight submitted for approval</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local freight submitted for approval</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cfc9c5cc-bf28-47c3-8f7d-f2c682816c04">
+      <name>LocalFreightApproved</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local freight approved</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local freight approved</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2df32d2b-18d0-45a6-8b00-998374b1c880">
+      <name>LocalMOTCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local MOT code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local MOT code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>7</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="d9d2992a-dbb4-4e42-b51c-645f84a4ae3e">
+      <name>ReadyToShipDate</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ready to ship date</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Ready to ship date</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e21125f0-e754-440b-9287-d3fe97ab2a3e">
+      <name>ActualAvailabilityDate</name>
+      <synonym>
+        <key>ru</key>
+        <value>Actual availability date</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Actual availability date</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c3c47c06-809a-48cc-be1d-08fd83c2741b">
+      <name>LocalETD</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local ETD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local ETD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fa0e9a72-2d92-443b-ac78-8fbd3e7294cd">
+      <name>LocalATD</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local ATD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local ATD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="68b76940-eb8d-4c72-b57b-a38d960c350d">
+      <name>LocalWB</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local WB</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local WB</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>1024</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="838e9650-9733-4eaf-a922-24d7e5069164">
+      <name>LocalETA</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local ETA</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local ETA</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c0905b07-7ac4-4140-b9bb-84eff76c1172">
+      <name>LocalATA</name>
+      <synonym>
+        <key>ru</key>
+        <value>Local ATA</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Local ATA</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0307fd2d-94b7-4ff1-b18b-52ec4a135fff">
+      <name>CCACode</name>
+      <synonym>
+        <key>ru</key>
+        <value>CCA code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>CCA code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>4</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="ea2a7d53-bc84-42ad-80f1-5ae681f38db3">
+      <name>CCAGLReceived</name>
+      <synonym>
+        <key>ru</key>
+        <value>CCA GL received</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>CCA GL received</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="85c41b74-217d-4844-a5b3-cb95103ab8cc">
+      <name>ConsigneeGLReceived</name>
+      <synonym>
+        <key>ru</key>
+        <value>Consignee GL received</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Consignee GL received</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="59b010f8-8dc6-4d73-8407-3d6ec4d7bc74">
+      <name>PermitsRequired</name>
+      <synonym>
+        <key>ru</key>
+        <value>Permits required</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Permits required</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.YesNo</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2b73f7c4-9068-43b8-a1d4-0318f80b38e3">
+      <name>PermitsObtained</name>
+      <synonym>
+        <key>ru</key>
+        <value>Permits obtained</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Permits obtained</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b29d69f8-9eb0-4d5a-bd70-5caedaf08ea5">
+      <name>FumigationRequired</name>
+      <synonym>
+        <key>ru</key>
+        <value>Fumigation required</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Fumigation required</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.YesNo</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1a9e0cc0-b9b8-4216-b2cb-229e0f6ac978">
+      <name>FumigationCertificateRequired</name>
+      <synonym>
+        <key>ru</key>
+        <value>Fumigation certificate required</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Fumigation certificate required</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.YesNo</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9ee2cf64-19ec-48e5-9375-56c7c83aea3b">
+      <name>FumigationDone</name>
+      <synonym>
+        <key>ru</key>
+        <value>Fumigation done</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Fumigation done</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4b47f0d7-4241-4e01-831f-7856ee7ec24a">
+      <name>SubmittedToCustoms</name>
+      <synonym>
+        <key>ru</key>
+        <value>Submitted to customs</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Submitted to customs</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5ba31632-9d28-4b8e-90d0-82720bb80fa5">
+      <name>ReleasedFromCustoms</name>
+      <synonym>
+        <key>ru</key>
+        <value>Released from customs</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Released from customs</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7e95f627-6bcf-4ec9-ada4-b04abf644cd7">
+      <name>CustomsFile</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs file</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs file</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ГТД</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="45aeda28-5f7d-4954-ab5c-8db65b7ed5b0">
+      <name>CustomsFileNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs file no.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs file no.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="af1f71de-6b43-423d-8802-b4452f0431e6">
+      <name>InternationalFreightProviderCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>International freight provider code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>International freight provider code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="851835ed-f9e0-40ae-8b94-483103a34789">
+      <name>InternationalFreightSubmittedForApproval</name>
+      <synonym>
+        <key>ru</key>
+        <value>International freight submitted for approval</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>International freight submitted for approval</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="512834ef-4fbf-49d8-8098-619a57d88de6">
+      <name>InternationalFreightApproved</name>
+      <synonym>
+        <key>ru</key>
+        <value>International freight approved</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>International freight approved</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5d0d2274-0616-4b1b-b153-570352a89bca">
+      <name>InternationalMOTCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>International MOT code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>International MOT code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>7</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="87f37b79-2d05-4534-bbae-86aff4316ae1">
+      <name>PODCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>POD code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POD code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>3</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="96ff1658-9803-48f8-8dc8-77f84a1bdcfa">
+      <name>TransitionalCountryCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Transitional country code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Transitional country code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>3</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="71534577-b99b-432c-ad2c-2b9e057b7c6c">
+      <name>ExportShipment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Export shipment</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Export shipment</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ExportShipment</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b0295ce9-90dd-4d84-9d75-ab93f7c2d48c">
+      <name>InternationalWB</name>
+      <synonym>
+        <key>ru</key>
+        <value>International WB</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>International WB</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>1024</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="326485b1-4e33-4290-ad38-e34ed4e6ece0">
+      <name>InternationalETD</name>
+      <synonym>
+        <key>ru</key>
+        <value>International ETD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>International ETD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b6820758-c5d1-43f0-b868-497fb7113041">
+      <name>InternationalATD</name>
+      <synonym>
+        <key>ru</key>
+        <value>International ATD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>International ATD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="12f726c8-43be-4cd5-9415-6fee1405d675">
+      <name>InternationalETA</name>
+      <synonym>
+        <key>ru</key>
+        <value>International ETA</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>International ETA</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="07ae56b2-7931-4442-97b5-76cb17b0e3eb">
+      <name>InternationalATA</name>
+      <synonym>
+        <key>ru</key>
+        <value>International ATA</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>International ATA</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="48ef23ef-a1cc-4528-a5a2-209f087acb03">
+      <name>CustomsRegimeCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs regime code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs regime code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>5</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="75d79b35-993e-4279-9067-6eba6bf8dd43">
+      <name>Item</name>
+      <synonym>
+        <key>ru</key>
+        <value>Item</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Item</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.СтрокиИнвойса</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1f1995ca-3a37-4a83-9a13-8f3f9cf955f4">
+      <name>FreightCosts</name>
+      <synonym>
+        <key>ru</key>
+        <value>Freight costs</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Freight costs</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>12</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4044c8c6-7158-42fe-8182-8da8097e70b8">
+      <name>CustomsClearanceCost</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customs clearance cost</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customs clearance cost</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>12</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="12464ff4-5adc-4412-9864-6f975e6b53d6">
+    <producedTypes>
+      <objectType typeId="8d8d6e83-1b89-4932-8893-8a5a1bd41062" valueTypeId="0c493791-6ad2-47e1-9bb0-bba066b6ede1"/>
+      <rowType typeId="c5513c4a-dbed-4889-ae31-bb56d4568aa5" valueTypeId="0b0d3682-95fe-46cf-9498-24b15c1f314f"/>
+    </producedTypes>
+    <name>DomesticTracking</name>
+    <synonym>
+      <key>ru</key>
+      <value>Domestic tracking</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Domestic tracking</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="6df1645a-31cb-43b4-940c-f8b7aa876179">
+      <name>PartNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Part no.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Part no.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="ebecc8df-9e6d-4ef2-a9f3-9133e008c7a0">
+      <name>PartDescription</name>
+      <synonym>
+        <key>ru</key>
+        <value>Part description</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Part description</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>255</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="99d3bbee-3af0-4d36-8450-4c566020f1b9">
+      <name>ProjectMobilization</name>
+      <synonym>
+        <key>ru</key>
+        <value>Project</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Project</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ProjectMobilization</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f63fdc88-c262-4c9d-935b-00cceefef758">
+      <name>TransportRequest</name>
+      <synonym>
+        <key>ru</key>
+        <value>Transport request</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Transport request</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.TransportRequest</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a6d0686b-ed71-427a-b6b7-2fe768420055">
+      <name>LineNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Line no.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Line no.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>3</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="718ce663-83e1-4d88-96f9-49e3d731c224">
+      <name>Item</name>
+      <synonym>
+        <key>ru</key>
+        <value>Item</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Item</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ProjectMobilizationManualItems</types>
+        <types>CatalogRef.СтрокиИнвойса</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bdb1c77b-2563-453c-b0d5-e71eb9afd841">
+      <name>Qty</name>
+      <synonym>
+        <key>ru</key>
+        <value>Qty</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Qty</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ae15021a-bff6-47c0-821f-021cfb963e27">
+      <name>RDD</name>
+      <synonym>
+        <key>ru</key>
+        <value>RDD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>RDD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <format>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <format>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <editFormat>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <editFormat>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="41375801-de74-40eb-bae8-c2e6a0a3d070">
+      <name>HazardClass</name>
+      <synonym>
+        <key>ru</key>
+        <value>Hazard class</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Hazard class</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.HazardClasses</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d1b99d1a-765e-4f4e-8f96-b44b641662d1">
+      <name>Company</name>
+      <synonym>
+        <key>ru</key>
+        <value>Company</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Company</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.SoldTo</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <quickChoice>DontUse</quickChoice>
+      <createOnInput>Use</createOnInput>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0fef4a60-6a2f-4dd7-9379-0aa6bb9255b1">
+      <name>MOT</name>
+      <synonym>
+        <key>ru</key>
+        <value>MOT</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>MOT</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.MOTs</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fb0d9e61-305c-4803-b350-0ec62e5e06bf">
+      <name>Equipment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Equipment</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Equipment</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Equipments</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9caa99f2-0042-415b-a75e-2adfee7c325d">
+      <name>LocationFrom</name>
+      <synonym>
+        <key>ru</key>
+        <value>Location From</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Location From</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Warehouses</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fe59b44c-e92f-4ca2-901a-802c1b6dc26e">
+      <name>LocationTo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Location To</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Location To</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Warehouses</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0ea6cd0b-0862-438a-b107-8b097caeb349">
+      <name>Milage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Milage, km</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Milage, km</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="546b4bd6-ae85-454b-84e3-05808f3ca57d">
+      <name>FreightCostPerKM</name>
+      <synonym>
+        <key>ru</key>
+        <value>Freight cost per km, USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Freight cost per km, USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="37521a89-bee9-411d-9cc0-469e85d32a3c">
+      <name>TotalFreightCostKM</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total freight cost km, USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total freight cost km, USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="28235d31-df2c-4700-ade2-9d0b144d402a">
+      <name>GrossWeightKG</name>
+      <synonym>
+        <key>ru</key>
+        <value>Gross, kg.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Gross, kg.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>4</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="46c3021d-f5da-4519-a03c-67397c593b92">
+      <name>TotalGrossWeightKG</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total weight, kg.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total weight, kg.</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>4</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="907f15d2-6ec9-41e6-91a7-7d4e94a1a176">
+      <name>FreightCostPerKG</name>
+      <synonym>
+        <key>ru</key>
+        <value>Freight cost per kg, USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Freight cost per kg, USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a8f1999f-799a-4b53-9f98-d0d29d5b6c3d">
+      <name>TotalFreightCostKG</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total freight cost kg, USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total freight cost kg, USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b8bd043b-840f-4d2f-9b70-f5c8bce656cc">
+      <name>TonneKilometers</name>
+      <synonym>
+        <key>ru</key>
+        <value>Tonne kilometers</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Tonne kilometers</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0478e4fb-1090-4297-a78b-28c507849f74">
+      <name>FreightCostPerTKM</name>
+      <synonym>
+        <key>ru</key>
+        <value>Freight cost per T*km, USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Freight cost per T*km, USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="de5c85aa-918c-4435-833f-3d4db2f35e9a">
+      <name>TotalFreightCostTKM</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total freight cost T*km, USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total freight cost T*km, USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5a143b2b-84bf-456a-9641-6e4470a18c49">
+      <name>TotalActualDuration</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total actual duration</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total actual duration</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3b6a9b8a-f58d-44c2-8e88-bbf2accdca3d">
+      <name>ПредставлениеDuration</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total duration, days</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total duration, days</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="9b0722b7-9e30-431e-96e1-6b77547e2eda">
+      <name>NumOfTransport</name>
+      <synonym>
+        <key>ru</key>
+        <value>Num of transport</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Num of transport</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e4cc80b6-1865-4c04-921b-1ed7a2a46fb7">
+      <name>Comments</name>
+      <synonym>
+        <key>ru</key>
+        <value>Comments</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Comments</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>1024</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="4a5481e4-0e29-43e4-bdad-1c61e69714f9">
+      <name>ReadyToShip</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ready to ship</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Ready to ship</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <format>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <format>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <editFormat>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <editFormat>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1059ae21-e001-4c0f-b2d2-8ebb64d41a63">
+      <name>DeliveryToLocation</name>
+      <synonym>
+        <key>ru</key>
+        <value>Delivery to location</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Delivery to location</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <format>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <format>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <editFormat>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <editFormat>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0d432c06-963a-4355-b046-66638ad20748">
+      <name>StageGroupName</name>
+      <synonym>
+        <key>ru</key>
+        <value>Stage group name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Stage group name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ea8b5a7e-c26f-4186-89fc-f78a7b040f67">
+      <name>Trip</name>
+      <synonym>
+        <key>ru</key>
+        <value>Trip</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Trip</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.TripNonLawsonCompanies</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="82584784-3cff-48c7-8947-a0f342c49db6">
+      <name>PlannedDeliveryToLocation</name>
+      <synonym>
+        <key>ru</key>
+        <value>Planned delivery to location</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Planned delivery to location</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <format>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <format>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <editFormat>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <editFormat>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0078c7e9-01f6-429a-9667-613b6868811f">
+      <name>SegmentCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Segment code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Segment code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>5</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5e5c2374-6baa-400a-8ac2-b42131508891">
+      <name>DepartureFromSource</name>
+      <synonym>
+        <key>ru</key>
+        <value>Departure from source</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Departure from source</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <format>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <format>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <editFormat>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <editFormat>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9cc33344-920a-44d6-a38f-cad94ffa7020">
+      <name>PlannedDepartureLocalTime</name>
+      <synonym>
+        <key>ru</key>
+        <value>Planned departure local time</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Planned departure local time</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <format>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <format>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </format>
+      <editFormat>
+        <key>ru</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <editFormat>
+        <key>en</key>
+        <value>ДФ='dd.MM.yyyy HH:mm'</value>
+      </editFormat>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ad9c0bb9-9792-45f9-a5a9-6a19e3434391">
+      <name>Parcel</name>
+      <synonym>
+        <key>ru</key>
+        <value>Parcel</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Parcels</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="94387ac4-4696-45c1-b5cc-5a9f82d9c11c">
+      <name>CubicMeters</name>
+      <synonym>
+        <key>ru</key>
+        <value>Cubic meters</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>12</precision>
+          <scale>4</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d8a23614-f1e6-4b63-aea6-1efa2cd3636d">
+      <name>TotalCostsSumUSD</name>
+      <synonym>
+        <key>ru</key>
+        <value>Total trip costs sum USD</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Total trip costs sum USD</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>12</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="8ba8de7b-8ce8-4da0-adbc-6879a95b610f">
+    <name>ImportExportTracking</name>
+    <synonym>
+      <key>ru</key>
+      <value>Import / export tracking</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Import / export tracking</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="dd112836-097e-4d26-8d7e-6c30e2fcc902">
+    <name>DocumentsAndAttachments</name>
+    <synonym>
+      <key>ru</key>
+      <value>Documents and attachments</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Documents and attachments</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6bc6d0a1-29c5-4301-838b-02a11a74a4df">
+    <name>ModifyPlanningData</name>
+    <synonym>
+      <key>ru</key>
+      <value>Modify planning data</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Modify planning data</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6a808344-e09c-4cbd-bc06-99c7f1b57b06">
+    <name>ФормаВыбораVariant</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора variant</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма выбора variant</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a4af910b-bc2f-44c5-9d64-85805221bdad">
+    <name>ModifyPlanningDataDomestic</name>
+    <synonym>
+      <key>ru</key>
+      <value>Modify planning data domestic</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Modify planning data domestic</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="e0049602-cf35-47de-8a24-e0d4eb86751b">
+    <name>Макет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Макет</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="02935686-5361-452a-acf0-417634c7a49c">
+    <name>МакетDomestic</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет domestic</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Макет domestic</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="738af4b1-f037-4a2a-abf8-9d81d616ae06">
+    <name>МакетApproval</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет approval</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="348705a5-1290-4c1c-86cf-e22516ac2bae">
+    <name>ШаблонЗагрузкиPOLines</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон загрузки POLines</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Шаблон загрузки POLines</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <commands uuid="096f34c5-5fc6-43b9-b4aa-2182dd5f5998">
+    <name>SwitchToImportExportTracking</name>
+    <synonym>
+      <key>ru</key>
+      <value>Switch to RCA transportation tracking</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Switch to RCA transportation tracking</value>
+    </synonym>
+    <comment></comment>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType/>
+    <representation>PictureAndText</representation>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.Shipment</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:DataProcessor>

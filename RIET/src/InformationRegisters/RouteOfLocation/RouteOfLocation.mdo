@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ea0d713f-52e5-4c13-84e8-8cd30c134565">
+  <producedTypes>
+    <selectionType typeId="5cd347fb-6b31-417b-9201-62fb562044d1" valueTypeId="653388b2-b9d8-4de8-aa4c-6832de24ecba"/>
+    <listType typeId="78839fe7-9648-4cea-941d-db53894353ab" valueTypeId="73a3b317-6586-47a3-8735-b19ab94a4ac1"/>
+    <managerType typeId="c79f4ff8-df1e-4cf2-84a5-726f7c7a8f39" valueTypeId="4811f328-106b-4396-bc61-1bd83dd88ac7"/>
+    <recordSetType typeId="a4e899e3-c08b-400d-98ad-dbf369fc5222" valueTypeId="b121e683-3860-4905-ac23-25d68a5937ea"/>
+    <recordKeyType typeId="ced72726-e629-4d0e-b043-bdfc9b60cbdc" valueTypeId="87863a8a-61a0-46d3-8af7-710ae892d068"/>
+    <recordType typeId="8c851152-a7da-4dcf-acf5-7206b02591ea" valueTypeId="384bccb7-0fc2-43a8-85fa-8f690ab1bee4"/>
+    <recordManagerType typeId="5a5c79c5-1409-41df-a830-58dd8662b870" valueTypeId="fb166ea9-a5d7-4247-acee-358342d2763f"/>
+  </producedTypes>
+  <name>RouteOfLocation</name>
+  <synonym>
+    <key>ru</key>
+    <value>Маршруты складов</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Route of location</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="c64c049b-f62c-455f-8e3c-fbffc6f12230">
+    <name>Mileage</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пробег</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Mileage</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="2a7d3242-414a-4365-8032-5a3260606b30">
+    <name>LocationStart</name>
+    <synonym>
+      <key>ru</key>
+      <value>Локация (склад)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Location start</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Warehouses</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a65ecc88-c06e-4bc1-8776-38244941ead8">
+    <name>LocationEnd</name>
+    <synonym>
+      <key>ru</key>
+      <value>Локация (склад)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Location end</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Warehouses</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16576"></meta></head><body>
+<h1>Документ "Customs payment"</h1>
+<p class="Usual">Документ "Customs payment" входит в <a href="Subsystem.CustomsAccounting.Subsystem.Payments/Help">подсистему "Payments"</a>.<br>Предназначен для отражения платежей, перечисляемых таможне для оплаты пошлин и сборов.</p>
+<p class="Usual">Документы могут быть автоматически загружены из текстового файла, который формируется клиентом City банка, с помощью <a href="DataProcessor.CustomsPaymentsLoading/Help">обработки "Customs payments loading"</a>.</p>
+<p class="Usual">При проведении документа происходит отражение несаллокированной с <a href="Document.ГТД/Help">CCD</a> или <a href="Document.CustomsFilesLight/Help">Customs files (light)</a> суммы.</p>
+<p class="Usual">В форме списка документов красным цветом отображаются несаллокированные платежи, а зеленым - саллокированные.</p>
+<p class="Usual">Для аллокации платежа необходимо создать из текущего документа <a href="Document.CustomsPaymentAllocation/Help">документ "Customs payment allocation"</a>. После создания "Customs payment allocation" реквизиты текущего документа нельзя изменять.</p>
+<h2>Структура документа</h2>
+<ul><li><strong>No.</strong> (строка)<br>Обязательный для заполнения реквизит<br>Не должно быть другого документа Customs payment с таким же номером. 
+</li><li><strong>Date</strong> (дата)<br>Обязательный для заполнения реквизит. 
+</li><li><strong>For deletion </strong>(булево) - признак того, что документ помечен на удаление. 
+</li><li><strong>Posted </strong>(булево) - признак того, что документ проведен. 
+</li><li><strong>Type of payment</strong> (перечисление Types of customs payments) <br>Обязательный для заполнения реквизит. 
+</li><li><strong>Customs</strong> (справочник Customs) <br>Обязательный для заполнения реквизит.<br>Выбранный элемент не может быть помечен на удаление.  
+</li><li><strong>Bank account</strong> (справочник Bank accounts for customs payments) <br>Обязательный для заполнения реквизит.<br>Выбранный элемент не может быть помечен на удаление.<br>Вид платежей банковского счета должен совпадать с видом платежа, указанном в шапке документа. 
+</li><li><strong>CCD ref.</strong> (строка) - часть номера ГТД.<br>Может быть автоматически определен из описания платежа. 
+</li><li><strong>Customs card</strong> (справочник <a href="Catalog.CustomsCards/Help">Customs cards</a>). 
+</li><li><strong>Check no. </strong>(строка) - номер чека<br>Может быть автоматически определен из описания платежа. 
+</li><li><strong>Payment kind </strong>(строка)<br>Может быть автоматически определен из описания платежа. 
+</li><li><strong>Sum</strong> (число) <br>Обязательный для заполнения реквизит. <br>В форме документа справочно отображается текущий несаллокированный остаток. 
+</li><li><strong>Description</strong> (строка) - описание платежа. 
+</li><li><strong>Creation Date</strong> (дата)<strong> -</strong> дата создания документа 
+</li><li><strong>Last modified</strong> (дата и время) - заполняется автоматически датой последнего интерактивного изменения документа. 
+</li><li><strong>Responsible</strong> (справочник Users) - заполняется автоматически пользователем, который внес последние изменения в документ.</li></ul></body></html>

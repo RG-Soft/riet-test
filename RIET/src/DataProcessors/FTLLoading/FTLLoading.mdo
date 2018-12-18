@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6caec4f6-4826-41af-918e-e7e30e3a4f76">
+  <producedTypes>
+    <objectType typeId="3eec4311-8f3c-4621-a058-e7728120bb9f" valueTypeId="f7fe5a00-b639-43fe-bb6b-986e5aec9ea2"/>
+    <managerType typeId="31113c98-2abc-4988-a50d-ff9bc572aa84" valueTypeId="e16023b8-1ba1-4c7f-9468-810f5aa480d7"/>
+  </producedTypes>
+  <name>FTLLoading</name>
+  <synonym>
+    <key>ru</key>
+    <value>FTL loading</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>FTL loading</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.FTLLoading.Form.Форма</defaultForm>
+  <attributes uuid="a3584ecb-c454-492e-97fd-f1cb1652d6bd">
+    <name>SegmentSubSegment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Loading Segment/SubSegment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Loading Segment/SubSegment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+  </attributes>
+  <tabularSections uuid="6d99475e-64db-4417-bfec-7756744fae23">
+    <producedTypes>
+      <objectType typeId="680dedca-9e09-475c-94ac-2ce2bfe89977" valueTypeId="66168c5b-e52e-49a3-a342-14de9dd59125"/>
+      <rowType typeId="469b50aa-b8ef-4e5d-864b-0f9fdd28ceb9" valueTypeId="eef7b760-9dfd-45ec-892e-d0a135a4187b"/>
+    </producedTypes>
+    <name>JobsDetailes</name>
+    <synonym>
+      <key>ru</key>
+      <value>Jobs detailes</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Jobs detailes</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="cd81c783-a807-40f6-8a24-8f021e70ee1e">
+      <name>Job</name>
+      <synonym>
+        <key>ru</key>
+        <value>Job</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Job</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.Job</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fa3a45d5-45e8-4fd6-8b11-319486dd3d8a">
+      <name>FTLNumber</name>
+      <synonym>
+        <key>ru</key>
+        <value>FTL number</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>FTL number</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>20</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="63b44865-411d-43e7-a873-a48ed29e4d96">
+      <name>JobEndDate</name>
+      <synonym>
+        <key>ru</key>
+        <value>Job end date</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Job end date</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="df10c246-65bb-4f3a-8ab8-212764d721e7">
+      <name>Segment</name>
+      <synonym>
+        <key>ru</key>
+        <value>FTL Segment</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>FTL Segment</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Сегменты</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="68210486-553a-4c30-8499-fb9621f1d1bc">
+      <name>LocationName</name>
+      <synonym>
+        <key>ru</key>
+        <value>Location name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Location name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.GeoMarkets</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9e99e87e-f700-4f95-981b-a5bb84dc7b7b">
+      <name>Location</name>
+      <synonym>
+        <key>ru</key>
+        <value>Location code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Location code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c03606b4-8e24-40b5-aa61-96cd762ba089">
+      <name>CANumber</name>
+      <synonym>
+        <key>ru</key>
+        <value>CA number</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>CA number</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="51698fae-e20a-47f1-8581-d3ec693dd3b2">
+      <name>ContractName</name>
+      <synonym>
+        <key>ru</key>
+        <value>Contract name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Contract name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="7e40768f-f518-4944-90b3-b373fb29ec9a">
+      <name>Client</name>
+      <synonym>
+        <key>ru</key>
+        <value>Client</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Client</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="e0dc3bbd-5ea6-4b77-a6d8-8196df52e707">
+      <name>Well</name>
+      <synonym>
+        <key>ru</key>
+        <value>Well</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Well</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="69dd75ac-599e-4abd-8ecf-c8b31decff58">
+      <name>AmountInContractCurrency</name>
+      <synonym>
+        <key>ru</key>
+        <value>Amount in contract currency</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Amount in contract currency</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1adcdb86-b29c-4202-9c2e-256e417254c5">
+      <name>CurrencyOfContract</name>
+      <synonym>
+        <key>ru</key>
+        <value>Currency of contract</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Currency of contract</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Валюты</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="23d17eb4-17ee-44d7-8088-f7490a55059d">
+      <name>Period</name>
+      <synonym>
+        <key>ru</key>
+        <value>Period</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Period</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <format>
+        <key>ru</key>
+        <value>ДФ=MM.yyyy</value>
+      </format>
+      <format>
+        <key>en</key>
+        <value>ДФ=MM.yyyy</value>
+      </format>
+      <editFormat>
+        <key>ru</key>
+        <value>ДФ=MM.yyyy</value>
+      </editFormat>
+      <editFormat>
+        <key>en</key>
+        <value>ДФ=MM.yyyy</value>
+      </editFormat>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c8b1cb8d-9790-46de-a1ae-72dcaf71a640">
+      <name>Type</name>
+      <synonym>
+        <key>ru</key>
+        <value>Job Type</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Job Type</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <forms uuid="d5a7e60b-941b-4dfb-b02b-40289eae5b97">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

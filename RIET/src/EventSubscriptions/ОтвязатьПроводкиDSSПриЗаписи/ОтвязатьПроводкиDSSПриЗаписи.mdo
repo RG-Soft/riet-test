@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f6d955f1-6e92-4919-83d2-362193d75c10">
+  <name>ОтвязатьПроводкиDSSПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отвязать проводки DSS при записи</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Отвязать проводки DSS при записи</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.СчетКнигиПокупок</types>
+    <types>DocumentObject.InventoryКорректировка</types>
+    <types>DocumentObject.InventoryПеремещение</types>
+    <types>DocumentObject.InventoryСписание</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+    <types>DocumentObject.ПередачаОС</types>
+    <types>DocumentObject.InventoryПоступление</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.ПодпискиНаСобытия.ОтвязатьПроводкиDSSПриЗаписи</handler>
+</mdclass:EventSubscription>

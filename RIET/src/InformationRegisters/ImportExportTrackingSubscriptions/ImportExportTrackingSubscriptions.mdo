@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="500642f0-19f2-4d8a-86fe-d53a74d08684">
+  <producedTypes>
+    <selectionType typeId="ea3b4593-1b65-4c49-a609-f0409f7094c7" valueTypeId="1689cb3d-f989-49ba-bde1-250a4e8dd224"/>
+    <listType typeId="137ec0b2-ea52-4b1f-8d00-c10356b1517e" valueTypeId="60659b20-e0b4-43d3-b8b9-160c3059f297"/>
+    <managerType typeId="1b6ce65a-9555-45f8-894f-a631a5826e48" valueTypeId="aae5f61f-5a27-4a55-8c10-3be1affce1d1"/>
+    <recordSetType typeId="ca6c638b-4d39-46e7-b8cc-fa534bdffd40" valueTypeId="c8eb2049-8d0f-4891-a41f-7055fd795708"/>
+    <recordKeyType typeId="a93363ae-b19e-4126-b18e-b7a1a2f6cbcf" valueTypeId="a39407ec-8209-4e71-8a4f-1f9b02b34e6d"/>
+    <recordType typeId="8900fed8-42fd-4063-ab13-4f63e6a46e8b" valueTypeId="98963a90-4e80-4734-ae04-e198d9ee082b"/>
+    <recordManagerType typeId="0648dd39-8679-42ee-ad97-c2884d7976b7" valueTypeId="7a39029a-9a93-4f7b-8d4a-50740cc3f851"/>
+  </producedTypes>
+  <name>ImportExportTrackingSubscriptions</name>
+  <synonym>
+    <key>ru</key>
+    <value>Import / export tracking subscriptions</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Import / export tracking subscriptions</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ImportExportTrackingSubscriptions.Form.ФормаЗаписи</defaultRecordForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>PO tracking subscription</value>
+  </recordPresentation>
+  <recordPresentation>
+    <key>en</key>
+    <value>PO tracking subscription</value>
+  </recordPresentation>
+  <attributes uuid="322b1eb2-5750-4d96-b408-a1c8dce98772">
+    <name>ДатаПоследнегоОповещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата последнего оповещения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Дата последнего оповещения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="dad08124-b041-4523-b267-f5cd822a4d69">
+    <name>User</name>
+    <synonym>
+      <key>ru</key>
+      <value>User</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9a1ab72b-e07a-4764-a1c8-dda0fb2a2553">
+    <name>PONoExportRequestNo</name>
+    <synonym>
+      <key>ru</key>
+      <value>PO no. / Export request no.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>PO no. / Export request no.</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d05405b3-e7a6-4225-8a66-de8dc3345040">
+    <name>POLineNo</name>
+    <synonym>
+      <key>ru</key>
+      <value>PO line no.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>PO line no.</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ЧН=' '</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>ЧН=' '</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ЧН=' '</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>ЧН=' '</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f29a246a-67de-4fde-bcd3-8c2f3167d2e6">
+    <name>ProjectMobilization</name>
+    <synonym>
+      <key>ru</key>
+      <value>Project mobilization</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Project mobilization</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ProjectMobilization</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a5a3a72c-acfa-4b62-8e5f-ee0f0bcd9b38">
+    <name>ProjectMobilizationSubscribe</name>
+    <synonym>
+      <key>ru</key>
+      <value>Project mobilization subscribe</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Project mobilization subscribe</value>
+    </synonym>
+    <comment>Признак, к чему относится запись</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4f66716e-6fd2-4226-a730-5d147e540dc9">
+    <name>Frequency</name>
+    <synonym>
+      <key>ru</key>
+      <value>Frequency</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Frequency</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="d63aab11-8cab-4d16-b196-6ae46ee7ab65">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="21ec3391-f08f-4f25-8f9e-33e886877b33">
+    <name>ФормаЗаписиDPM</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи DPM</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи DPM</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,13 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16441"></meta></head><body>
+<h1>Подсистема "Customs documents"</h1>
+<h2>Назначение</h2>
+<p>Подсистема входит в <a href="Subsystem.CustomsAccounting/Help">подсистему "Customs"</a> и предназначена для отражения в системе документов ГТД и ТПО, а также для учета коробок, в которых хранятся оригиналы документов.</p>
+<h2>Структура подсистемы</h2>
+<p>Центральными документами системы является <a href="Document.ГТД/Help">документ "CCD"</a> и <a href="Document.CustomsFilesLight/Help">документ "ТПО"</a>.<br>Кроме общей информации в документе "CCD" выводится информация по строкам ГТД, которая хранится <a href="Catalog.СтрокиГТД/Help">справочнике "CCD lines"</a>.<br>Строки ГТД в свою очередь разбиваются на товары, хранящиеся в подчиненном <a href="Catalog.ТоварыСтрокГТД/Help">справочнике "CCD lines goods"</a>.<br>Таким образом, вся информация о ГТД хранится в <a href="Document.ГТД/Help">документе "CCD"</a>, <a href="Catalog.СтрокиГТД/Help">справочнике "CCD lines"</a> и <a href="Catalog.ТоварыСтрокГТД/Help">справочнике "CCD lines goods"</a>.</p>
+<p>Все данные ГТД могут быть загружены из xml-файла с помощью <a href="DataProcessor.CustomsFileLoading/Help">обработки "CCD loading"</a>.</p>
+<p>Система позволяет учитывать коробки, в которых хранятся оригиналы документов, с помощью <a href="Document.BoxesOfCustomsFiles/Help">документа "CCD box"</a>.</p>
+<p>Информация по таможенным пошлинам отображается в <a href="Report.CustomsDuties/Help">отчете "Customs duties"</a>.</p>
+<p>Информация по беспошлинным товарам отображается в <a href="Report.ZeroCustomsDuties/Help">отчете "Zero customs duties"</a>.</p>
+<h2>Связь с другими подсистемами</h2>
+<p>Данные подсистемы "CCD" используется в <a href="Subsystem.CustomsAccounting.Subsystem.ShipmentClosing/Help">подсистеме "Shipment closing"</a> для распределения таможенных пошлин и сборов на товары.</p>
+<p>Кроме того, в <a href="Subsystem.CustomsAccounting.Subsystem.Payments/Help">подсистеме "Payments"</a> учитывается оплата пошлин и сборов каждой ГТД. </p></body></html>

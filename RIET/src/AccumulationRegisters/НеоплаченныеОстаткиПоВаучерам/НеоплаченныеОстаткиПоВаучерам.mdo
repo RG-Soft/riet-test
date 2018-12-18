@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0879e684-5608-4cde-9786-4e2dc33f8e14">
+  <producedTypes>
+    <selectionType typeId="2c52b59f-bf8c-4378-8650-7b4d4eee1043" valueTypeId="26295a6f-ec1f-4892-8118-15cc18a07447"/>
+    <listType typeId="b59b96ef-c206-4b86-af41-68e5744ab211" valueTypeId="f051ef1e-6fac-4fea-8f83-9ef74298bed7"/>
+    <managerType typeId="5884d88e-98e0-46f5-92ca-79e84ac95022" valueTypeId="f7cb30eb-1012-4591-bea3-02247bfb4218"/>
+    <recordSetType typeId="815cb3a2-2eb1-4d2a-9d87-665acf0dfedf" valueTypeId="d1d7a6ed-0f4f-4877-b34b-97fb62a5a653"/>
+    <recordKeyType typeId="8a993268-d61c-4005-adeb-ef9706a7befc" valueTypeId="3efeb8e8-73e7-4b56-be79-7c8c44108bec"/>
+    <recordType typeId="b26121b5-0831-412b-b3ab-be6ff4c32b0f" valueTypeId="baedbc9f-cc3e-4484-83d4-bfd7ec99337c"/>
+  </producedTypes>
+  <name>НеоплаченныеОстаткиПоВаучерам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Неоплаченные остатки по ваучерам</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Неоплаченные остатки по ваучерам</value>
+  </synonym>
+  <comment></comment>
+  <resources uuid="0bd4b14e-a1fc-4115-b6a7-165444103c4e">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="bd2fe580-7333-4b8b-a200-3e7eab8221f8">
+    <name>СуммаРуб</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма, руб.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма, руб.</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="bc418ceb-ef33-4be3-8238-4a5083510b4a">
+    <name>Ваучер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ваучер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ваучер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="6dfd0822-f744-47f0-81d8-d60204239993">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Валюта</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cbc85a21-e656-417e-b3af-8cf9e4cbbfa8">
+  <producedTypes>
+    <selectionType typeId="1c0c7114-0ca6-4c8d-887c-bff93e6f60af" valueTypeId="1f12daa0-eb44-4450-b005-8cd75dcae7b1"/>
+    <listType typeId="504c6023-af28-4bdd-ba95-77dbf409902f" valueTypeId="051dc881-4002-4301-9065-df1ba8a4717f"/>
+    <managerType typeId="ea2bbbfc-1895-4df4-a9fd-8dfac27f2ebf" valueTypeId="5b393c6c-6e4b-4ea8-8cc9-16b002f2daa0"/>
+    <recordSetType typeId="3a5e930e-f716-47ee-8a71-3f7fd7905e5b" valueTypeId="5847ed43-5750-416f-90c3-005d3453f592"/>
+    <recordKeyType typeId="4c5ed345-89dd-4dde-aa99-60d3947a08ea" valueTypeId="37061f73-3852-4c46-bf7c-086f413b67cf"/>
+    <recordType typeId="238f8cf2-5ec6-4493-af05-5a82eeecd9a5" valueTypeId="2f92e937-3763-4d12-94c3-13953a9590b2"/>
+  </producedTypes>
+  <name>ПроводкиDSS_FA</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проводки DSS FA</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Проводки DSS FA</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6a992fe9-b123-430d-99dc-1144ebab8061">
+    <name>BaseAmount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Base amount</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Base amount</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="48b580ed-d271-4afc-87e8-ffe35f4bed6f">
+    <name>GltObjID</name>
+    <synonym>
+      <key>ru</key>
+      <value>Glt obj ID</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Glt obj ID</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="93753daa-eb68-47a3-9cf5-434c974d7542">
+    <name>Description</name>
+    <synonym>
+      <key>ru</key>
+      <value>Description</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Description</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="2d47b896-1f48-434f-a71a-1f3206d132a1">
+    <name>Type</name>
+    <synonym>
+      <key>ru</key>
+      <value>Type</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Type</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтатьиДоходовИРасходов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="79d2bf25-8010-429b-8880-c9d4a16665a5">
+    <name>Asset</name>
+    <synonym>
+      <key>ru</key>
+      <value>Asset</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредстваLawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="856f5363-eb1c-42d8-8f5a-a4f23f28250f">
+    <name>AU</name>
+    <synonym>
+      <key>ru</key>
+      <value>AU</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AU</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0e496b85-f564-430c-b96d-699723aa7e74">
+    <name>Account</name>
+    <synonym>
+      <key>ru</key>
+      <value>Account</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Account</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfAccountsRef.Lawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="48fa3078-8434-4861-af0e-497716ec67a0">
+  <producedTypes>
+    <selectionType typeId="89b4ee11-5c92-4926-8d94-9f7316e802f2" valueTypeId="08450d87-c0ce-4484-a98a-8722efb81890"/>
+    <listType typeId="f55f3e40-0551-47b1-b4e9-903ddfc16576" valueTypeId="a9d4cbd3-9578-4139-8be2-fa5e5466b40b"/>
+    <managerType typeId="fec1419e-c3a5-4f43-8747-3d80b5e0f87f" valueTypeId="c9bce28b-3307-4e8d-86ba-b2c07c87b5bc"/>
+    <recordSetType typeId="ccba4995-eaed-4144-acac-90e64e88f60f" valueTypeId="866ecd5c-3890-40fc-b08c-b5c0f4b5eac1"/>
+    <recordKeyType typeId="2b7687ee-c67e-4e14-9b7e-ce4ee1211652" valueTypeId="6ae8c979-f8a0-4cc2-a3bd-b03bd89e15c0"/>
+    <recordType typeId="da184161-c2e7-47c9-92bd-a596796c7e36" valueTypeId="3f71210d-edfd-4840-8d38-4ba5b36b1fa9"/>
+  </producedTypes>
+  <name>ФормированиеТранспортногоНалога</name>
+  <synonym>
+    <key>ru</key>
+    <value>Формирование транспортного налога</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Формирование транспортного налога</value>
+  </synonym>
+  <comment></comment>
+  <registerType>Turnovers</registerType>
+  <resources uuid="d32a054e-8ee0-4f6c-8011-21e74a85ebbc">
+    <name>Налог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налог</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Налог</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="1113048d-075d-411a-9208-198bdc93898e">
+    <name>Льгота</name>
+    <synonym>
+      <key>ru</key>
+      <value>Льгота</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Льгота</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="bf8e3d33-9279-4696-9b04-1b4e36b4f845">
+    <name>НалогВБюджет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налог в бюджет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Налог в бюджет</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="4e5e9874-2610-4286-821d-0eb40ba3ad72">
+    <name>Код</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код вида транспортного средства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Код вида транспортного средства</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>5</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="b38c9324-875f-4fcb-9f5e-822a401095e6">
+    <name>НомерПаспорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер паспорта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Номер паспорта</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d7ebe4c7-7db3-4f24-b603-78da153d936c">
+    <name>РегистрационныйЗнак</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистрационный знак</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Регистрационный знак</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="ca431d05-bcb7-4a98-9503-25a71787b826">
+    <name>Марка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Марка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Марка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.МаркиТранспортныхСредств</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="dcd63aa1-87b2-482c-b302-4e03ae0eb089">
+    <name>Мощность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мощность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Мощность</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="4e1e1ab1-c2a5-47d6-a898-24de2d5d3456">
+    <name>Коэффициент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Коэффициент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Коэффициент</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="242d777a-7cf8-4a07-b307-347cb4e264f7">
+    <name>СрокПолезногоИспользования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок полезного использования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Срок полезного использования</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="486fffb1-03b5-4438-828b-a97b4aadbe17">
+    <name>СтавкаНалога</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка налога</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ставка налога</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>1</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="38a41a45-6a21-4c84-b58e-bc309f3b2916">
+    <name>ПодразделениеОрганизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение организации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Подразделение организации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="89f6bae9-d0ae-4810-8a2c-40c559c29369">
+    <name>НалоговыйПериод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговый период</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Налоговый период</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="188df571-bd61-4c20-b430-87cdea45f119">
+    <name>ОС</name>
+    <synonym>
+      <key>ru</key>
+      <value>ОС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>ОС</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредства</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a499db9a-e2d6-4334-81c2-9c2f37cb9b34">
+    <name>НомерКорректировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер корректировки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Номер корректировки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Specialist</dataPath>
+			<field>Specialist</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Specialist</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Specialist</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Title</dataPath>
+			<field>Title</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Title</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Title</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>trip</dataPath>
+			<field>trip</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Trip</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Month</dataPath>
+			<field>Month</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Month</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Month</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>sortIndex</dataPath>
+			<field>sortIndex</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Sort index</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Trip_pending</dataPath>
+			<field>Trip_pending</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Trip pending</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Trip_closed</dataPath>
+			<field>Trip_closed</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Trip closed</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Specialist_Amount</dataPath>
+			<field>Specialist_Amount</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Specialist amount</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	МАКСИМУМ(TripNonLawsonCompaniesStops.ActualArrivalLocalTime) КАК ATA,
+	МАКСИМУМ(TripNonLawsonCompaniesStops.PlannedDepartureLocalTime) КАК PDA,
+	TripNonLawsonCompaniesStops.Ссылка КАК Trip,
+	StagesOfTripsNonLawsonCompanies.Stage,
+	МАКСИМУМ(TripNonLawsonCompaniesStops.Ссылка.Closed) как Closed,
+	ВЫБОР
+		КОГДА TripNonLawsonCompaniesStops.Ссылка.Operator = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА TripNonLawsonCompaniesStops.Ссылка.Specialist
+		ИНАЧЕ TripNonLawsonCompaniesStops.Ссылка.Operator
+	КОНЕЦ КАК Specialist,
+	МИНИМУМ(StagesOfTripsNonLawsonCompanies_Saved.Период) КАК TripDate
+ПОМЕСТИТЬ ИсходныеДанные_1
+ИЗ
+	Документ.TripNonLawsonCompanies.Stops КАК TripNonLawsonCompaniesStops
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.StagesOfTripsNonLawsonCompanies КАК StagesOfTripsNonLawsonCompanies
+		ПО TripNonLawsonCompaniesStops.Ссылка = StagesOfTripsNonLawsonCompanies.Trip
+			И (НЕ StagesOfTripsNonLawsonCompanies.Stage = ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Draft))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.StagesOfTripsNonLawsonCompaniesPeriodic КАК StagesOfTripsNonLawsonCompanies_Saved
+		ПО TripNonLawsonCompaniesStops.Ссылка = StagesOfTripsNonLawsonCompanies_Saved.Trip
+			И (StagesOfTripsNonLawsonCompanies_Saved.Stage В (ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Saved_AwaitingServiceProvidersCosts), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Saved_ApprovalIsNotRequired), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Saved_ApprovalIsRequired)))
+ГДЕ
+	(TripNonLawsonCompaniesStops.ActualArrivalLocalTime МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ТекущаяДата, ГОД) И КОНЕЦПЕРИОДА(&amp;ТекущаяДата, ГОД)
+			ИЛИ TripNonLawsonCompaniesStops.Ссылка.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ТекущаяДата, ГОД) И КОНЕЦПЕРИОДА(&amp;ТекущаяДата, ГОД))
+	И НЕ TripNonLawsonCompaniesStops.Ссылка.ПометкаУдаления
+
+СГРУППИРОВАТЬ ПО
+	StagesOfTripsNonLawsonCompanies.Stage,
+	TripNonLawsonCompaniesStops.Ссылка,
+	ВЫБОР
+		КОГДА TripNonLawsonCompaniesStops.Ссылка.Operator = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА TripNonLawsonCompaniesStops.Ссылка.Specialist
+		ИНАЧЕ TripNonLawsonCompaniesStops.Ссылка.Operator
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИсходныеДанные_1.ATA,
+	ИсходныеДанные_1.PDA,
+	ИсходныеДанные_1.Trip,
+	ИсходныеДанные_1.Stage,
+	ИсходныеДанные_1.Closed,
+	ИсходныеДанные_1.Specialist,
+	ЕСТЬNULL(ИсходныеДанные_1.TripDate, ИсходныеДанные_1.Trip.Дата) КАК TripDate
+ПОМЕСТИТЬ ИсходныеДанные
+ИЗ
+	ИсходныеДанные_1 КАК ИсходныеДанные_1
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Финальная.Month,
+	Финальная.Trip,
+	Финальная.Title,
+	Финальная.Specialist,
+	Финальная.sortIndex
+ПОМЕСТИТЬ ФинальныеДанные
+ИЗ
+	(ВЫБРАТЬ
+		НАЧАЛОПЕРИОДА(ИсходныеДанные.TripDate, МЕСЯЦ) КАК Month,
+		ИсходныеДанные.Trip КАК Trip,
+		"Total TRIP current month" КАК Title,
+		ИсходныеДанные.Specialist КАК Specialist,
+		0 КАК sortIndex
+	ИЗ
+		ИсходныеДанные КАК ИсходныеДанные
+	ГДЕ
+		ИсходныеДанные.TripDate МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ТекущаяДата, ГОД) И КОНЕЦПЕРИОДА(&amp;ТекущаяДата, ГОД)
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		НАЧАЛОПЕРИОДА(ИсходныеДанные.Closed, МЕСЯЦ),
+		ИсходныеДанные.Trip,
+		"TRIP closed (current)",
+		ИсходныеДанные.Specialist,
+		1
+	ИЗ
+		ИсходныеДанные КАК ИсходныеДанные
+	ГДЕ
+		НАЧАЛОПЕРИОДА(ИсходныеДанные.Closed, МЕСЯЦ) = НАЧАЛОПЕРИОДА(ИсходныеДанные.ATA, МЕСЯЦ)
+		И ИсходныеДанные.Closed &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+		И ИсходныеДанные.ATA &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		НАЧАЛОПЕРИОДА(ИсходныеДанные.Closed, МЕСЯЦ),
+		ИсходныеДанные.Trip,
+		"TRIP closed (previous period)",
+		ИсходныеДанные.Specialist,
+		2
+	ИЗ
+		ИсходныеДанные КАК ИсходныеДанные
+	ГДЕ
+		НАЧАЛОПЕРИОДА(ИсходныеДанные.Closed, МЕСЯЦ) &gt; НАЧАЛОПЕРИОДА(ИсходныеДанные.ATA, МЕСЯЦ)
+		И ИсходныеДанные.Closed &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+		И ИсходныеДанные.ATA &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		НАЧАЛОПЕРИОДА(ИсходныеДанные.TripDate, МЕСЯЦ),
+		ИсходныеДанные.Trip,
+		"TRIP Pending (current)",
+		ИсходныеДанные.Specialist,
+		4
+	ИЗ
+		ИсходныеДанные КАК ИсходныеДанные
+	ГДЕ
+		ИсходныеДанные.Stage В (ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Saved_AwaitingServiceProvidersCosts), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Saved_ApprovalIsNotRequired), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Saved_ApprovalIsRequired), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Approved), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.AwaitingApproval), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Rejected))
+		И НАЧАЛОПЕРИОДА(ИсходныеДанные.TripDate, МЕСЯЦ) = НАЧАЛОПЕРИОДА(ИсходныеДанные.PDA, МЕСЯЦ)
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		НАЧАЛОПЕРИОДА(ИсходныеДанные.TripDate, МЕСЯЦ),
+		ИсходныеДанные.Trip,
+		"TRIP Pending (previous period)",
+		ИсходныеДанные.Specialist,
+		5
+	ИЗ
+		ИсходныеДанные КАК ИсходныеДанные
+	ГДЕ
+		ИсходныеДанные.Stage В (ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Saved_AwaitingServiceProvidersCosts), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Saved_ApprovalIsNotRequired), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Saved_ApprovalIsRequired), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Approved), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.AwaitingApproval), ЗНАЧЕНИЕ(Перечисление.TripNonLawsonCompaniesStages.Rejected))
+		И НАЧАЛОПЕРИОДА(ИсходныеДанные.TripDate, МЕСЯЦ) &gt; НАЧАЛОПЕРИОДА(ИсходныеДанные.PDA, МЕСЯЦ)) КАК Финальная
+ГДЕ
+	Финальная.Month МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ТекущаяДата, ГОД) И КОНЕЦПЕРИОДА(&amp;ТекущаяДата, ГОД)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ФинальныеДанные.Month,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ФинальныеДанные.Trip) КАК trip,
+	ФинальныеДанные.Title,
+	ФинальныеДанные.Specialist,
+	ФинальныеДанные.sortIndex
+ИЗ
+	ФинальныеДанные КАК ФинальныеДанные
+
+СГРУППИРОВАТЬ ПО
+	ФинальныеДанные.Month,
+	ФинальныеДанные.Title,
+	ФинальныеДанные.Specialist,
+	ФинальныеДанные.sortIndex
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ФинальныеДанные.Month,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ФинальныеДанные.Trip),
+	"Total TRIP closed",
+	ФинальныеДанные.Specialist,
+	3
+ИЗ
+	ФинальныеДанные КАК ФинальныеДанные
+ГДЕ
+	ФинальныеДанные.Title В ("TRIP closed (current)", "TRIP closed (previous period)")
+
+СГРУППИРОВАТЬ ПО
+	ФинальныеДанные.Month,
+	ФинальныеДанные.Specialist
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ФинальныеДанные.Month,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ФинальныеДанные.Trip),
+	"Total TRIP pending",
+	ФинальныеДанные.Specialist,
+	6
+ИЗ
+	ФинальныеДанные КАК ФинальныеДанные
+ГДЕ
+	ФинальныеДанные.Title В ("TRIP Pending (current)", "TRIP Pending (previous period)")
+
+СГРУППИРОВАТЬ ПО
+	ФинальныеДанные.Month,
+	ФинальныеДанные.Specialist
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	Т.Month,
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА Т.Trip_pending + Т.Trip_closed = 0
+				ТОГДА 0
+			ИНАЧЕ Т.Trip_pending / (Т.Trip_pending + Т.Trip_closed) * 100
+		КОНЕЦ КАК ЧИСЛО(15, 2)),
+	"Backlog (pending vs proccessed), %",
+	NULL,
+	7
+ИЗ
+	(ВЫБРАТЬ
+		ФинальныеДанные.Month КАК Month,
+		КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВЫБОР
+				КОГДА ФинальныеДанные.Title В ("TRIP Pending (current)", "TRIP Pending (previous period)")
+					ТОГДА ФинальныеДанные.Trip
+			КОНЕЦ) КАК Trip_pending,
+		КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВЫБОР
+				КОГДА ФинальныеДанные.Title В ("TRIP closed (current)", "TRIP closed (previous period)")
+					ТОГДА ФинальныеДанные.Trip
+			КОНЕЦ) КАК Trip_closed
+	ИЗ
+		ФинальныеДанные КАК ФинальныеДанные
+	ГДЕ
+		ФинальныеДанные.Title В ("TRIP Pending (current)", "TRIP Pending (previous period)", "TRIP closed (current)", "TRIP closed (previous period)")
+	
+	СГРУППИРОВАТЬ ПО
+		ФинальныеДанные.Month) КАК Т
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	Т.Month,
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА Т.Specialist_Amount = 0
+				ТОГДА 0
+			ИНАЧЕ Т.Trip_closed / Т.Specialist_Amount
+		КОНЕЦ КАК ЧИСЛО(15, 2)),
+	"Benchmark for FS",
+	NULL,
+	7
+ИЗ
+	(ВЫБРАТЬ
+		ПредВыборка.Month КАК Month,
+		СУММА(ПредВыборка.Trip_closed) КАК Trip_closed,
+		СУММА(ПредВыборка.Specialist_Amount) КАК Specialist_Amount
+	ИЗ
+		(ВЫБРАТЬ
+			ФинальныеДанные.Month КАК Month,
+			КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВЫБОР
+					КОГДА ФинальныеДанные.Title В ("TRIP closed (current)", "TRIP closed (previous period)")
+						ТОГДА ФинальныеДанные.Trip
+				КОНЕЦ) КАК Trip_closed,
+			0 КАК Specialist_Amount
+		ИЗ
+			ФинальныеДанные КАК ФинальныеДанные
+		ГДЕ
+			ФинальныеДанные.Title В ("TRIP closed (current)", "TRIP closed (previous period)")
+		
+		СГРУППИРОВАТЬ ПО
+			ФинальныеДанные.Month
+		
+		ОБЪЕДИНИТЬ ВСЕ
+		
+		ВЫБРАТЬ
+			ФинальныеДанные.Month,
+			0,
+			КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ФинальныеДанные.Specialist)
+		ИЗ
+			ФинальныеДанные КАК ФинальныеДанные
+		
+		СГРУППИРОВАТЬ ПО
+			ФинальныеДанные.Month) КАК ПредВыборка
+	
+	СГРУППИРОВАТЬ ПО
+		ПредВыборка.Month) КАК Т</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Trip</dataPath>
+		<expression>Сумма(trip)</expression>
+	</totalField>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+	</template>
+	<template>
+		<name>Макет2</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Month</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>ДФ='MMM yy'</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>ДФ='MMM yy'</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#333399</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="12" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Month</dcsat:name>
+			<dcsat:expression>Month</dcsat:expression>
+		</parameter>
+	</template>
+	<groupTemplate>
+		<groupField>Month</groupField>
+		<templateType>Header</templateType>
+		<template>Макет2</template>
+	</groupTemplate>
+	<groupHeaderTemplate>
+		<groupName>Строки</groupName>
+		<templateType>Header</templateType>
+		<template>Макет1</template>
+	</groupHeaderTemplate>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Trip</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТекущаяДата</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>sortIndex</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" kind="WindowsFont"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>FLEET SUPERVISORS BENCHMARK</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>FLEET SUPERVISORS BENCHMARK</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:name>Колонки</dcsset:name>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Month</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>Month</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:name>Строки</dcsset:name>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Title</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>sortIndex</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Title</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Title</dcsset:left>
+									<dcsset:comparisonType>InList</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:string">TRIP closed (current)</dcsset:right>
+									<dcsset:right xsi:type="xs:string">TRIP closed (previous period)</dcsset:right>
+									<dcsset:right xsi:type="xs:string">Total TRIP closed</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">web:LightGreen</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Формат</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧЦ=10</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+							<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+							<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Title</dcsset:left>
+									<dcsset:comparisonType>InList</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:string">TRIP Pending (current)</dcsset:right>
+									<dcsset:right xsi:type="xs:string">TRIP Pending (previous period)</dcsset:right>
+									<dcsset:right xsi:type="xs:string">Total TRIP pending</dcsset:right>
+									<dcsset:right xsi:type="xs:string">Benchmark for FS</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">web:Yellow</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Формат</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧЦ=10</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+							<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+							<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Title</dcsset:left>
+									<dcsset:comparisonType>InList</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:string">Total TRIP pending</dcsset:right>
+									<dcsset:right xsi:type="xs:string">Total TRIP closed</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">web:Yellow</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Шрифт</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Формат</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧЦ=10</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+							<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+							<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Title</dcsset:left>
+									<dcsset:comparisonType>InList</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:string">Total TRIP current month</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">web:Peru</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Формат</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧЦ=10</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+							<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+							<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Title</dcsset:left>
+									<dcsset:comparisonType>InList</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:string">Backlog (pending vs proccessed), %</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">web:LightCoral</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Формат</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+							<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+							<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Specialist</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>FLEET SUPERVISORS BENCHMARK</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>FLEET SUPERVISORS BENCHMARK</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

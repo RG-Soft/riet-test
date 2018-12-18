@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c33bff63-ff1d-4ca7-97a0-26cbc8697471">
+  <producedTypes>
+    <selectionType typeId="7d2c19b0-24a5-43eb-83f6-01e46731fbff" valueTypeId="2cfe7306-c93c-4ea9-8227-42fcc7e34ae4"/>
+    <listType typeId="cc5e6ee8-b9db-4fdf-b916-492494eb5b03" valueTypeId="773bf8b3-ef14-49a0-8316-0bc23ffb865f"/>
+    <managerType typeId="9b03b7c1-025a-4c96-a2fb-9ac9894a7df6" valueTypeId="b473825a-f8d0-4221-b20c-5ea4e2855053"/>
+    <recordSetType typeId="df2358c4-9a2e-4965-94dd-88cf13b8a779" valueTypeId="72909396-070d-44fc-b97b-2ed49ed47895"/>
+    <recordKeyType typeId="d6776550-053c-452f-b0b7-3934170de672" valueTypeId="72a20010-fc95-4ef4-8bda-193cc144797b"/>
+    <recordType typeId="083e6e5c-3cfc-4845-a17d-115142d21761" valueTypeId="045ccd9d-c3f2-402d-b81d-4097bd1d4061"/>
+    <recordManagerType typeId="d23123b6-3742-405a-af2f-6abf45201d15" valueTypeId="38582bc3-1f62-4909-bea9-96c18d1398af"/>
+  </producedTypes>
+  <name>rgsCostAllocationParcelsOfTrip</name>
+  <synonym>
+    <key>ru</key>
+    <value>RGS: Распределение затрат по парселям в трипе</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>RGS: Cost allocation parcels of trip</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="14a0a811-9d26-4952-81ff-eb150ded9f1e">
+    <name>Rate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Rate</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="1aa74191-2e84-4cc3-9579-0586dfc1ba33">
+    <name>Trip</name>
+    <synonym>
+      <key>ru</key>
+      <value>Trip</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.Trip</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="50ff1b2e-d8b0-4c1a-99e4-116c553b0e6d">
+    <name>Parcel</name>
+    <synonym>
+      <key>ru</key>
+      <value>Parcel</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Parcels</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

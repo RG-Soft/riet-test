@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16441"></meta></head><body>
+<h1>Документ "Services costs allocation"</h1>
+<p>Документ "Services costs allocation" входит в <a href="Subsystem.Services/Help">подсистему "Services"</a>.<br>Предназначен для распределения стоимости сервисов на товары.</p>
+<p>Нельзя изменить документ, если он относится к проведенному документу Agent invoice.</p>
+<h2>Реквизиты шапки документа</h2>
+<ul><li><strong>No.</strong> (строка) - автоматически присваиваемый номер документа. 
+</li><li><strong>Date</strong> (дата) 
+</li><li><strong>For deletion </strong>(булево) - признак того, что документ помечен на удаление. 
+</li><li><strong>Posted </strong>(булево) - признак того, что документ проведен.<br>Нельзя провести помеченный на удаление документ. 
+</li><li><strong>Agent</strong> (справочник Agents)<br>Обязательный для заполнения реквизит. 
+</li><li><strong>Comment </strong>(строка) 
+</li><li><strong>Creation date</strong> (дата)<strong> -</strong> дата создания документа. 
+</li><li><strong>Last modified</strong> (дата и время) - заполняется автоматически датой последнего интерактивного изменения документа. 
+</li><li><strong>Responsible</strong> (справочник Users) - заполняется автоматически пользователем, который внес последние изменения в документ</li></ul><h2>Табличная часть "Services"</h2>
+<ul><li><strong>Service</strong> (документ Service)<br>Система автоматически удаляет пустые или повторяющиеся строки.<br>Должен быть указан хотя бы один сервис.<br>Сервис должен быть проведен.<br>Сервис не должен входит в другие Services costs allocations.<br>Сервис должен быть оказан агентом, указанным в шапке документа.<br>Поставка, к которой относится данный сервис, должна быть закрыта документом Invoice lines matching.<br>Есть возможность автоматического заполнения табличной части всеми не распределенными сервисами.<br>При ручном выборе система автоматически накладывает необходимые фильтры.</li></ul><h2>Проведение</h2>
+<p>При проведении система распределяет стоимость услуг по товарам в регистр "Invoice lines costs" в соответствии с правилами заданными в услуге.</p>
+<p>Одновременно происходит увеличения сумм в регистре "Not received agent invoices". Далее агент должен предоставить счета на эти суммы.</p></body></html>

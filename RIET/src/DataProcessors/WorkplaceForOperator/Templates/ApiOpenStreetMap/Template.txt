@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <META content="IE=9" http-equiv=X-UA-Compatible></META>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <style type="text/css">
+            #map,
+            body,
+            html {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+        </style>
+        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+        <script type="text/javascript">
+            var map,
+                drawControls,
+                selectControl,
+                selectedFeature,
+                objectManager,
+                objectManagerQ,
+                whiteContent,
+        		blackContent,
+                polygonLayer,
+                flagLayer,
+                autoLayer,
+                lineLayer,
+                arrowLayer,
+                TekZoom = 10;
+            var epsg4326 = new OpenLayers.Projection('EPSG:4326');
+            var epsg900913 = new OpenLayers.Projection('EPSG:900913');
+            var geojson_format = new OpenLayers
+                .Format
+                .GeoJSON({externalProjection: epsg4326, internalProjection: epsg900913});
+            var features = [];
+            function onPopupClose(evt) {
+                try {
+                    selectControl.unselect(selectedFeature);
+                } catch (err) {
+                    this.destroy()
+                };
+            }
+            function onFeatureSelect(feature) {
+                selectedFeature = undefined;
+                if (feature.attributes.count == 1) {
+                    selectedFeature = feature;
+                    popup           = new OpenLayers
+                        .Popup
+                        .FramedCloud("chicken", feature.geometry.getBounds().getCenterLonLat(), null, "<div style='font-size:.8em'>" + feature.cluster[0].attributes.name + "</div>", null, true, onPopupClose);
+                    feature.popup   = popup;
+                    map.addPopup(popup);
+                }
+            }
+            function onFeatureUnselect(feature) {
+                if (selectedFeature !== undefined) {
+                    map.removePopup(feature.popup);
+                    feature
+                        .popup
+                        .destroy();
+                    feature.popup = null;
+                }
+            }
+            OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
+                defaultHandlerOptions: {
+                    'double'        : true,
+                    'pixelTolerance': 0,
+                    'single'        : false,
+                    //'stopDouble'    : true,
+                    'stopDouble'    : false,
+                    'stopSingle'    : false
+                },
+                initialize           : function (options) {
+                    this.handlerOptions = OpenLayers
+                        .Util
+                        .extend({}, this.defaultHandlerOptions);
+                    OpenLayers
+                        .Control
+                        .prototype
+                        .initialize
+                        .apply(this, arguments);
+                    this.handler = new OpenLayers
+                        .Handler
+                        .Click(this, {
+                            'click'   : this.onClick,
+                            'dblclick': this.onDblclick
+                        }, this.handlerOptions);
+                },
+                onClick              : function (evt) {
+                    alert("Один " + evt.xy);
+                },
+                onDblclick           : function (evt) {
+                    lonlat = map.getLonLatFromPixel(evt.xy);
+                    map.setCenter(lonlat);
+                }
+            });
+            function init() {
+                
+	            map = new OpenLayers.Map('map');
+	            
+	            map.addControl(new OpenLayers.Control.PanZoomBar());
+	            
+	           	map.events.register("moveend", map, function(e) { 
+                	document.getElementById("CentrLat").value = e.object.center.lat;
+                	document.getElementById("CentrLon").value = e.object.center.lon;
+                	document.getElementById("Zoom").value = e.object.zoom;
+                    TekZoom = e.object.zoom;
+                });
+	            
+                var wmsLayer = new OpenLayers
+                    .Layer
+                    .OSM({layers: 'basic'});
+                var style = new OpenLayers.Style({
+                    fillColor    : "${color}",
+                    fillOpacity  : 0.8,
+                    fontSize     : 10,
+                    label        : "${label}",
+                    pointRadius  : "${radius}",
+                    strokeColor  : "#cc6633",
+                    strokeOpacity: 0.8,
+                    strokeWidth  : "${width}"
+                }, {
+                    context: {
+                        color : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? "#ffcc66"
+                                : feature.cluster[0].attributes.color;
+                        },
+                        label : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? feature.attributes.count
+                                : "";
+                        },
+                        radius: function (feature) {
+                            var pix = (feature.attributes.count > 1)
+                                ? Math.max(Math.min(feature.attributes.count, 10) + 2, 7)
+                                : 7;
+                            return pix;
+                        },
+                        width : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? 2
+                                : 1;
+                        }
+                    }
+                });
+                
+                var styleF = new OpenLayers.Style({
+                    fillColor    : "${color}",
+                    //fillOpacity  : 0.8,
+                    fillOpacity  : 1,
+                    fontSize     : "${fontSize}",
+                    label        : "${label}",
+                    labelYOffset : "${labelYOffset}",
+                    pointRadius  : "${radius}",
+                    strokeColor  : "#cc6633",
+                    strokeOpacity: 0.8,
+                    strokeWidth  : "${width}",
+                    externalGraphic:"${graphic}",
+                    graphicWidth:40,
+                    graphicHeight:40
+                }, {
+                    context: {
+                        color : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? "#ffcc66"
+                                : feature.cluster[0].attributes.color;
+                        },
+                        graphic : function (feature) {
+                            return feature.cluster[0].attributes.type;
+                        },
+                        label : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? feature.attributes.count
+                                : feature.cluster[0].attributes.label;
+                        },
+                        fontSize : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? 10
+                                : 10;
+                        },
+                        labelYOffset : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? 0
+                                : 15;
+                        },
+                        radius: function (feature) {
+                            var pix = (feature.attributes.count > 1)
+                                ? Math.max(Math.min(feature.attributes.count, 10) + 2, 7)
+                                : 7;
+                            return pix;
+                        },
+                        width : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? 2
+                                : 1;
+                        }
+                    }
+                });
+                
+                var styleP = new OpenLayers.Style({
+                    fillOpacity  : 0.5,
+                    fontSize     : "${fontSize}",
+                    label        : "${label}",
+                    strokeColor  : "#cc6633",
+                    strokeOpacity: 0.8,
+                    strokeWidth  : "${width}"
+                }, {
+                    context: {
+                        color : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? "#ffcc66"
+                                : feature.cluster[0].attributes.color;
+                        },
+                        label : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? feature.attributes.count
+                                : feature.attributes.label;
+                        },
+                        fontSize : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? 10
+                                : 10;
+                        },
+                        width : function (feature) {
+                            return (feature.attributes.count > 1)
+                                ? 2
+                                : 1;
+                        }
+                    }
+                });
+                
+                strategy           = new OpenLayers
+                    .Strategy
+                    .Cluster();
+                strategy.distance  = 20;
+                strategy.threshold = "null";
+                autoLayer       = new OpenLayers
+                    .Layer
+                    .Vector("Polygon Layer", {
+                        strategies: [strategy],
+                        styleMap  : new OpenLayers.StyleMap({
+                            "default": style,
+                            "select" : {
+                                fillColor  : "#8aeeef",
+                                strokeColor: "#32a8a9"
+                            }
+                        })
+                    });
+                map.addLayers([wmsLayer, autoLayer]);
+              
+                strategyflag           = new OpenLayers
+                    .Strategy
+                    .Cluster();
+                strategyflag.distance  = 20;
+                strategyflag.threshold = "null";
+                flagLayer       = new OpenLayers
+                    .Layer
+                    .Vector("flag Layer", {
+                        strategies: [strategyflag],
+                        styleMap  : new OpenLayers.StyleMap({
+                            "default": styleF,
+                            "select" : {
+                                fillColor  : "#8aeeef",
+                                strokeColor: "#32a8a9"
+                            }
+                        })
+                    });
+               map.addLayer(flagLayer);
+              
+               polygonLayer       = new OpenLayers
+                    .Layer
+                    .Vector("Polygon Layer", {
+                        styleMap  : new OpenLayers.StyleMap({
+                            "default": styleP,
+                            "select" : {
+                                fillColor  : "#8aeeef",
+                                strokeColor: "#32a8a9"
+                            }
+                        })
+                    });
+                map.addLayer(polygonLayer);
+              
+                var styleMapLine = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults(
+					{strokeColor: "#32a8a9",
+                     strokeWidth:1.5,
+                     //label: "${label}",
+                    },
+					OpenLayers.Feature.Vector.style["default"]));
+                lineLayer = new OpenLayers.Layer.Vector("Line", {styleMap: styleMapLine});
+			    map.addLayer(lineLayer);
+              
+                OpenLayers.Renderer.symbol.arrow = [0.4,2, 1,0, 1.6,2, 1,0, 0.4,2];
+			    var styleMapArrow = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults(
+					{graphicName:"arrow",rotation : "${angle}", strokeColor: "#32a8a9", strokeWidth  :1.5},
+					OpenLayers.Feature.Vector.style["default"]));
+                arrowLayer = new OpenLayers.Layer.Vector("direction", {styleMap: styleMapArrow});
+                map.addLayer(arrowLayer);
+              
+                selectControl = new OpenLayers
+                    .Control
+                    .SelectFeature([autoLayer, flagLayer], {
+                        onSelect  : onFeatureSelect,
+                        onUnselect: onFeatureUnselect
+                    });
+                drawControls  = {
+                    polygon: new OpenLayers
+                        .Control
+                        .DrawFeature([autoLayer, flagLayer, polygonLayer], OpenLayers.Handler.Point),
+                    select : selectControl
+                };
+                map.addControl(drawControls.select);
+                drawControls
+                    .select
+                    .activate();
+                var click = new OpenLayers
+                    .Control
+                    .Click();
+                map.addControl(click);
+                click.activate();
+                map.setCenter(new OpenLayers.LonLat(76.092967, 61.021748).transform(epsg4326, epsg900913), TekZoom);
+            }
+          
+              
+            function updateDirection() {
+			arrowLayer.removeAllFeatures();
+			var points=[];
+			var features =lineLayer.features;
+			for (var i=0;i<features.length ;i++ )	{
+				var linePoints = createDirection(features[i].geometry,"end",true) ;
+				for (var j=0;j<linePoints.length ;j++ ) {
+					linePoints[j].attributes.lineFid = features[i].fid;
+				}
+				points =points.concat(linePoints);
+			}
+			arrowLayer.addFeatures(points);
+		}
+
+            function add(data, DelMarker, obj) {
+                if (DelMarker) {
+                    DeleteAllMarkers();
+                };
+                features = geojson_format.read(data, "FeatureCollection");
+                autoLayer.addFeatures(features);
+            };
+          
+          function WriteArrow(data, DelMarker) {
+                if (DelMarker) {
+                    DeleteAllMarkersArrow();
+                };
+                features = geojson_format.read(data, "FeatureCollection");
+                lineLayer.addFeatures(features);
+            };
+            
+            function addflag(data, DelMarker) {
+                if (DelMarker) {
+                    DeleteAllFlagMarkers();
+                };
+                features = geojson_format.read(data, "FeatureCollection");
+                flagLayer.addFeatures(features);
+            };
+          
+            function addPolygon(data, DelMarker) {
+                if (DelMarker) {
+                    DeleteAllPolygonMarkers();
+                };
+                features = geojson_format.read(data, "FeatureCollection");
+                polygonLayer.addFeatures(features);
+            };
+            
+            function DeleteAllMarkers() {
+                autoLayer.removeFeatures(autoLayer.features);
+            };
+            
+            function DeleteAllMarkersArrow() {
+                lineLayer.removeFeatures(lineLayer.features);
+                arrowLayer.removeAllFeatures();
+            };
+          
+            function DeleteAllFlagMarkers() {
+                flagLayer.removeFeatures(flagLayer.features);
+            };
+          
+            function DeleteAllPolygonMarkers() {
+                polygonLayer.removeFeatures(polygonLayer.features);
+            };
+          
+			function SetCenter(Latitude, Longitude){
+		        map.setCenter(new OpenLayers.LonLat(Latitude, Longitude).transform(epsg4326, epsg900913), TekZoom);
+			};
+          
+/////////////////////////////////////Отрисовка стрелок//////////////////////////////////////////////////////
+          
+          createDirection = function(line,position,forEachSegment) {
+	if (line instanceof OpenLayers.Geometry.MultiLineString) {
+		//TODO
+	} else if (line instanceof OpenLayers.Geometry.LineString) {
+		return createLineStringDirection(line,position,forEachSegment);
+	} else {
+		return [];
+	}
+};
+
+createLineStringDirection = function(line,position, forEachSegment){
+	if (position == undefined ){ position ="end"}
+	if (forEachSegment == undefined ) {forEachSegment = false;}
+	var points =[];
+	//var allSegs = line.getSortedSegments();
+	var allSegs = getSegments(line);
+	var segs = [];
+
+	if (forEachSegment)	{		
+		segs = allSegs;
+	} else {
+		if  (position == "start") {
+			segs.push(allSegs[0]);
+		} else if (position == "end") {
+			segs.push(allSegs[allSegs.length-1]);
+		} else if (position == "middle"){
+			return [getPointOnLine(line,.5)];
+		} else {
+			return [];
+		}
+	}
+	for (var i=0;i<segs.length ;i++ )	{
+		points = points.concat(createSegDirection(segs[i],position) );
+	}
+	return points;
+};
+
+createSegDirection = function(seg,position) {
+	var segBearing = bearing(seg);
+	var positions = [];
+	var points = [];
+	if  (position == "start") {
+		positions.push([seg.x1,seg.y1]);
+	} else if (position == "end") {
+		positions.push([seg.x2,seg.y2]);
+	} else if (position == "middle") {
+		positions.push([(seg.x1+seg.x2)/2,(seg.y1+seg.y2)/2]);
+	} else {
+		return null;
+	}
+	for (var i=0;i<positions.length;i++ ){
+		var pt = new OpenLayers.Geometry.Point(positions[i][0],positions[i][1]);
+		var ptFeature = new OpenLayers.Feature.Vector(pt,{angle:segBearing}); 
+		points.push(ptFeature);
+	}
+	return points;	
+};
+
+bearing = function(seg) {
+	b_x = 0;
+	b_y = 1;
+	a_x = seg.x2 - seg.x1;
+	a_y = seg.y2 - seg.y1;
+	angle_rad = Math.acos((a_x*b_x+a_y*b_y)/Math.sqrt(a_x*a_x+a_y*a_y)) ;
+	angle = 360/(2*Math.PI)*angle_rad;
+	if (a_x < 0) {
+	    return 360 - angle;
+	} else {
+	    return angle;
+	}
+};
+
+getPointOnLine = function (line,measure) {
+    var segs = getSegments(line);
+    var lineLength = line.getLength();
+    var measureLength = lineLength*measure;
+    var length = 0;
+	var partLength=0;
+    for (var i=0;i<segs.length ;i++ ) {
+        var segLength = getSegmentLength(segs[i]);        
+        if (measureLength < length + segLength) {
+			partLength = measureLength - length;
+			var x = segs[i].x1 + (segs[i].x2 - segs[i].x1) * partLength/segLength;
+			var y = segs[i].y1 + (segs[i].y2 - segs[i].y1) * partLength/segLength;
+			var segBearing = bearing(segs[i]);
+			console.log("x: " + x+", y: " + y + ", bearing: " + segBearing);
+			var pt = new OpenLayers.Geometry.Point(x,y);
+			var ptFeature = new OpenLayers.Feature.Vector(pt,{angle:segBearing}); 
+			return ptFeature;
+        } 
+		length = length + segLength;
+    }
+	return false;
+};
+
+getSegmentLength = function(seg) {
+    return Math.sqrt( Math.pow((seg.x2 -seg.x1),2) + Math.pow((seg.y2 -seg.y1),2) );
+};
+
+getSegments = function(line) {	
+	var numSeg = line.components.length - 1;
+	var segments = new Array(numSeg), point1, point2;
+	for(var i=0; i<numSeg; ++i) {
+	    point1 = line.components[i];
+	    point2 = line.components[i + 1];
+	    segments[i] = {
+	        x1: point1.x,
+	        y1: point1.y,
+	        x2: point2.x,
+	        y2: point2.y
+	    };
+	}
+	return segments;
+};
+          
+            
+        </script>
+    </head>
+    <body onload="init()">
+        <div id="map" class="map"></div>
+        <div id="CentrLat" />
+        <div id="CentrLon" />
+        <div id="Zoom" />
+        <div id="TEST" />
+        <input id="TekXText" type="text" style="visibility: hidden; display: none"/>
+        <input id="TekYText" type="text" style="visibility: hidden; display: none"/>
+    </body>
+</html>

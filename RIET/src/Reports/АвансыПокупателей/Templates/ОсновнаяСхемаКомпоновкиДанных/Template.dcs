@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаАвансаСНДСруб</dataPath>
+			<field>СуммаАвансаСНДСруб</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма в рублях</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сумма аванса с НДС руб</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерСчетаФактурыНаАванс</dataPath>
+			<field>НомерСчетаФактурыНаАванс</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер с/ф на аванс</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Номер счета фактуры на аванс</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаЗакрытияАванса</dataPath>
+			<field>ДатаЗакрытияАванса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата закрытия аванса</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Дата закрытия аванса</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаЗакрытогоАванса</dataPath>
+			<field>СуммаЗакрытогоАванса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма закрытого аванса</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сумма закрытого аванса</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаПлатежа</dataPath>
+			<field>ВалютаПлатежа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование валюты платежа</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Наименование валюты платежа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерПП</dataPath>
+			<field>НомерПП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер п/п</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Номер п/п</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПП</dataPath>
+			<field>ДатаПП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата п/п</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Дата п/п</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПокупательИНН</dataPath>
+			<field>ПокупательИНН</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИНН</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ИНН</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаименованиеПокупателя</dataPath>
+			<field>НаименованиеПокупателя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование покупателя</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Наименование покупателя</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаАвансаВВалютеПлатежа</dataPath>
+			<field>СуммаАвансаВВалютеПлатежа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма предоплаты в валюте счета (оригинальная валюта платежа)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сумма предоплаты в валюте счета (оригинальная валюта платежа)</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНДСЗакрытогоАванса</dataPath>
+			<field>СуммаНДСЗакрытогоАванса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма НДС с закрытого аванса</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сумма НДС с закрытого аванса</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПокупательКПП</dataPath>
+			<field>ПокупательКПП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КПП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>КПП</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сделка</dataPath>
+			<field>Сделка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер п/п</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Номер п/п</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>НомерПП</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНДСРуб</dataPath>
+			<field>СуммаНДСРуб</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма НДСРуб</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сумма НДСРуб</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ВзаиморасчетыСПокупателями.Сделка.Номер КАК НомерПП,
+	ВзаиморасчетыСПокупателями.Сделка.Дата КАК ДатаПП,
+	СчетФактураВыданный.Номер КАК НомерСчетаФактурыНаАванс,
+	ВзаиморасчетыСПокупателями.Сделка.Контрагент КАК НаименованиеПокупателя,
+	ВзаиморасчетыСПокупателями.Сделка.Контрагент.ИНН КАК ПокупательИНН,
+	ВзаиморасчетыСПокупателями.Сделка.Контрагент.КПП КАК ПокупательКПП,
+	ВзаиморасчетыСПокупателями.Сделка.ВалютаДокумента КАК ВалютаПлатежа,
+	ВЫБОР
+		КОГДА ВзаиморасчетыСПокупателями.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+			ТОГДА ВЫБОР
+					КОГДА ВзаиморасчетыСПокупателями.Сделка.ВалютаДокумента = &amp;Руб
+						ТОГДА ВзаиморасчетыСПокупателями.СуммаРегл
+					ИНАЧЕ ВзаиморасчетыСПокупателями.СуммаУпр
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК СуммаАвансаВВалютеПлатежа,
+	ВЫБОР
+		КОГДА ВзаиморасчетыСПокупателями.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+			ТОГДА ВзаиморасчетыСПокупателями.СуммаРегл
+		ИНАЧЕ 0
+	КОНЕЦ КАК СуммаАвансаСНДСруб,
+	ВЫБОР
+		КОГДА ВзаиморасчетыСПокупателями.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+			ТОГДА ЕСТЬNULL(СчетФактураВыданный.СуммаНДС, 0) * ВзаиморасчетыСПокупателями.СуммаРегл / ВЫБОР
+					КОГДА СчетФактураВыданный.Сумма = 0
+						ТОГДА 1
+					ИНАЧЕ ЕСТЬNULL(СчетФактураВыданный.Сумма, 1)
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК СуммаНДСРуб,
+	ВЫБОР
+		КОГДА ВзаиморасчетыСПокупателями.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+			ТОГДА ВзаиморасчетыСПокупателями.Период
+		ИНАЧЕ ДАТАВРЕМЯ(1, 1, 1)
+	КОНЕЦ КАК ДатаЗакрытияАванса,
+	ВЫБОР
+		КОГДА ВзаиморасчетыСПокупателями.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+			ТОГДА ВзаиморасчетыСПокупателями.СуммаРегл
+		ИНАЧЕ 0
+	КОНЕЦ КАК СуммаЗакрытогоАванса,
+	ВЫБОР
+		КОГДА ВзаиморасчетыСПокупателями.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+			ТОГДА ВзаиморасчетыСПокупателями.СуммаРегл * ВЫБОР
+					КОГДА СчетФактураВыданный1.СуммаНДСДокумента = 0
+							ИЛИ ЕСТЬNULL(СчетФактураВыданный1.СуммаНДСДокумента, 0) = 0
+						ТОГДА 0
+					ИНАЧЕ СчетФактураВыданный1.СуммаНДСДокумента / СчетФактураВыданный1.СуммаДокумента
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК СуммаНДСЗакрытогоАванса,
+	ВзаиморасчетыСПокупателями.Сделка,
+	ВзаиморасчетыСПокупателями.ВидДвижения
+ПОМЕСТИТЬ ВТ
+ИЗ
+	РегистрНакопления.ВзаиморасчетыСПокупателями КАК ВзаиморасчетыСПокупателями
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.СчетФактураВыданный КАК СчетФактураВыданный
+		ПО ВзаиморасчетыСПокупателями.Сделка = СчетФактураВыданный.ДокументОснование
+			И (СчетФактураВыданный.Проведен)
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.СчетФактураВыданный КАК СчетФактураВыданный1
+		ПО ВзаиморасчетыСПокупателями.Регистратор = СчетФактураВыданный1.ДокументОснование
+			И (НЕ ВзаиморасчетыСПокупателями.Регистратор ССЫЛКА Документ.ПлатежноеПоручениеВходящее)
+ГДЕ
+	ВзаиморасчетыСПокупателями.Сделка ССЫЛКА Документ.ПлатежноеПоручениеВходящее
+	И НЕ ВзаиморасчетыСПокупателями.Регистратор ССЫЛКА Документ.ПереоценкаВалютыВРегистре
+	И ВзаиморасчетыСПокупателями.Сделка.Дата МЕЖДУ &amp;НачПериода И &amp;КонПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ.НомерПП,
+	ВТ.ДатаПП,
+	ВТ.НомерСчетаФактурыНаАванс,
+	ВТ.НаименованиеПокупателя,
+	ВТ.ПокупательИНН,
+	ВТ.ПокупательКПП,
+	ВТ.ВалютаПлатежа,
+	ВТ.СуммаАвансаВВалютеПлатежа,
+	ВТ.СуммаАвансаСНДСруб,
+	ВТ.СуммаНДСРуб,
+	ВТ.ДатаЗакрытияАванса,
+	ВТ.СуммаЗакрытогоАванса,
+	ВТ.СуммаНДСЗакрытогоАванса,
+	ВТ.Сделка
+ПОМЕСТИТЬ Расход
+ИЗ
+	ВТ КАК ВТ
+ГДЕ
+	ВТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ.НомерПП,
+	ВТ.ДатаПП,
+	ВТ.НомерСчетаФактурыНаАванс,
+	ВТ.НаименованиеПокупателя,
+	ВТ.ПокупательИНН,
+	ВТ.ПокупательКПП,
+	ВТ.ВалютаПлатежа,
+	ВТ.СуммаАвансаВВалютеПлатежа,
+	ВТ.СуммаАвансаСНДСруб,
+	ВТ.СуммаНДСРуб,
+	ВТ.ДатаЗакрытияАванса,
+	ВТ.СуммаЗакрытогоАванса,
+	ВТ.СуммаНДСЗакрытогоАванса,
+	ВТ.Сделка
+ПОМЕСТИТЬ Приход
+ИЗ
+	ВТ КАК ВТ
+ГДЕ
+	ВТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Приход.НомерПП,
+	Приход.ДатаПП,
+	Приход.НомерСчетаФактурыНаАванс,
+	Приход.НаименованиеПокупателя,
+	Приход.ПокупательИНН,
+	Приход.ПокупательКПП,
+	Приход.ВалютаПлатежа,
+	Приход.СуммаАвансаВВалютеПлатежа,
+	Приход.СуммаАвансаСНДСруб,
+	Приход.СуммаНДСРуб,
+	МИНИМУМ(Приход.ДатаЗакрытияАванса) КАК ДатаЗакрытияАванса,
+	Приход.Сделка
+ПОМЕСТИТЬ ДатаПервогоЗакрытияАванса
+ИЗ
+	Приход КАК Приход
+
+СГРУППИРОВАТЬ ПО
+	Приход.НомерСчетаФактурыНаАванс,
+	Приход.ВалютаПлатежа,
+	Приход.НаименованиеПокупателя,
+	Приход.ПокупательИНН,
+	Приход.ДатаПП,
+	Приход.НомерПП,
+	Приход.ПокупательКПП,
+	Приход.СуммаАвансаВВалютеПлатежа,
+	Приход.СуммаАвансаСНДСруб,
+	Приход.СуммаНДСРуб,
+	Приход.Сделка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Расход.НомерПП КАК НомерПП,
+	Расход.ДатаПП КАК ДатаПП,
+	Расход.НомерСчетаФактурыНаАванс,
+	Расход.НаименованиеПокупателя,
+	Расход.ПокупательИНН,
+	Расход.ПокупательКПП,
+	Расход.ВалютаПлатежа,
+	ВЫБОР
+		КОГДА ДатаПервогоЗакрытияАванса.ДатаЗакрытияАванса ЕСТЬ NULL 
+				И НЕ Приход.Сделка ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ Расход.СуммаАвансаВВалютеПлатежа
+	КОНЕЦ КАК СуммаАвансаВВалютеПлатежа,
+	ВЫБОР
+		КОГДА ДатаПервогоЗакрытияАванса.ДатаЗакрытияАванса ЕСТЬ NULL 
+				И НЕ Приход.Сделка ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ Расход.СуммаАвансаСНДСруб
+	КОНЕЦ КАК СуммаАвансаСНДСруб,
+	ВЫБОР
+		КОГДА ДатаПервогоЗакрытияАванса.ДатаЗакрытияАванса ЕСТЬ NULL 
+				И НЕ Приход.Сделка ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ Расход.СуммаНДСРуб
+	КОНЕЦ КАК СуммаНДСРуб,
+	Приход.ДатаЗакрытияАванса КАК ДатаЗакрытияАванса,
+	Приход.СуммаЗакрытогоАванса,
+	ВЫБОР
+		КОГДА Расход.СуммаНДСРуб - Приход.СуммаНДСЗакрытогоАванса &lt; 0.02
+					И Расход.СуммаНДСРуб - Приход.СуммаНДСЗакрытогоАванса &gt; 0
+				ИЛИ Приход.СуммаНДСЗакрытогоАванса - Расход.СуммаНДСРуб &lt; 0.02
+					И Приход.СуммаНДСЗакрытогоАванса - Расход.СуммаНДСРуб &gt; 0
+			ТОГДА Расход.СуммаНДСРуб
+		ИНАЧЕ Приход.СуммаНДСЗакрытогоАванса
+	КОНЕЦ КАК СуммаНДСЗакрытогоАванса,
+	Расход.Сделка
+ИЗ
+	Расход КАК Расход
+		ПОЛНОЕ СОЕДИНЕНИЕ Приход КАК Приход
+			ЛЕВОЕ СОЕДИНЕНИЕ ДатаПервогоЗакрытияАванса КАК ДатаПервогоЗакрытияАванса
+			ПО Приход.Сделка = ДатаПервогоЗакрытияАванса.Сделка
+				И Приход.ДатаЗакрытияАванса = ДатаПервогоЗакрытияАванса.ДатаЗакрытияАванса
+		ПО Расход.Сделка = Приход.Сделка
+
+УПОРЯДОЧИТЬ ПО
+	ДатаПП,
+	НомерПП,
+	ДатаЗакрытияАванса</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Нач периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Нач периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Кон периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Кон периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КонецПериода(&amp;Период.ДатаОкончания,"День")</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Руб</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Руб</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Руб</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Валюты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>Справочники.Валюты.НайтиПоКоду("643")</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер и дата платежного поручения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Номер и дата платежного поручения</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Сделка</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДатаПП</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерСчетаФактурыНаАванс</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НаименованиеПокупателя</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ИНН/КПП покупателя</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ИНН/КПП покупателя</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПокупательИНН</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПокупательКПП</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВалютаПлатежа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаАвансаВВалютеПлатежа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаАвансаСНДСруб</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаНДСруб</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаЗакрытияАванса</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаЗакрытогоАванса</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаНДСЗакрытогоАванса</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>43d96af2-3c9f-4b5b-95d8-a389849f7455</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

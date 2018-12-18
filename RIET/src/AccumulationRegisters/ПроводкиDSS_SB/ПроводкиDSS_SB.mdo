@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="88b1af7a-6f51-46e1-ae30-d34e02cc28ad">
+  <producedTypes>
+    <selectionType typeId="70a96ef6-cc67-416f-a83a-73957d0e86ff" valueTypeId="c338c254-6cc1-42d7-b7c1-74c29d26aba5"/>
+    <listType typeId="877ad987-4f2f-45ee-b1fb-9d868be91f79" valueTypeId="02a2d472-d130-4a91-8002-b303c199d3c2"/>
+    <managerType typeId="84415bac-ae07-4b7c-838c-c56f1a43b2bf" valueTypeId="2379b0bc-ce59-48cf-8396-ba7fa84ce94d"/>
+    <recordSetType typeId="4796cccb-88f9-40f0-981b-b57f1b063ba4" valueTypeId="7e813bcd-b706-4ce9-a27a-2b4c92271571"/>
+    <recordKeyType typeId="cd186a64-6fcc-4fb5-842f-68108cff81c3" valueTypeId="6506b007-44f6-4cc3-abd5-5ac4c13e59ea"/>
+    <recordType typeId="8f9d03f2-d5f1-4f0d-9e69-b32c85cea9d2" valueTypeId="e3d8200d-38b6-49b4-aef5-3051cb2c45ad"/>
+  </producedTypes>
+  <name>ПроводкиDSS_SB</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проводки DSS SB</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Проводки DSS SB</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="4484f72d-c999-4219-891d-c5a1fd7c7cfb">
+    <name>TranAmount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Tran amount</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tran amount</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="49f5d4f1-3a98-4825-990c-5b6f5f79c588">
+    <name>BaseAmount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Base amount</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Base amount</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="bd981e90-26b0-4682-ba88-6b4a04558af6">
+    <name>Mgmtctry</name>
+    <synonym>
+      <key>ru</key>
+      <value>Mgmtctry</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Mgmtctry</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>4</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="77c960af-53d9-43b5-9ba4-d665572b8f53">
+    <name>Company</name>
+    <synonym>
+      <key>ru</key>
+      <value>Company</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d6d47f70-b052-4525-8293-19a91c7a52fd">
+    <name>Location</name>
+    <synonym>
+      <key>ru</key>
+      <value>Location</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Location</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d3be5527-62b1-4016-9537-44a58e13d02b">
+    <name>MgmtNIS</name>
+    <synonym>
+      <key>ru</key>
+      <value>Mgmt NIS</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Mgmt NIS</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="6df49cc3-7fda-4371-9ac5-57d116b1998d">
+    <name>SummaryAcct</name>
+    <synonym>
+      <key>ru</key>
+      <value>Summary acct</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Summary acct</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>6</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="0b93baca-459e-48d6-b948-da024b292ee7">
+    <name>SummaryAcctDesc</name>
+    <synonym>
+      <key>ru</key>
+      <value>Summary acct desc</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Summary acct desc</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="cae05e90-4a6b-45ec-87be-90cc70bb7946">
+    <name>SubAccount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sub account</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub account</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>3</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="2928d619-80a3-4b8f-b50a-afe7e9d63c8b">
+    <name>AccountingPeriod</name>
+    <synonym>
+      <key>ru</key>
+      <value>Accounting period</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accounting period</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="c0b9ff21-dc0a-444f-91a8-bec3e50058c2">
+    <name>Activity</name>
+    <synonym>
+      <key>ru</key>
+      <value>Activity</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Activity</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>8</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="fc6113f2-2f37-4c80-8871-a3c7638381a1">
+    <name>SourceCode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Source code</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Source code</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>2</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="c1e02032-d7d2-4792-ac7d-1da51bb4d3f4">
+    <name>System</name>
+    <synonym>
+      <key>ru</key>
+      <value>System</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>System</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>2</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="0f5a5b70-7037-46f7-931e-3156861b1b0f">
+    <name>Reference</name>
+    <synonym>
+      <key>ru</key>
+      <value>Reference</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reference</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="1db46f10-a75a-457b-bdba-9f123cf1328d">
+    <name>Description</name>
+    <synonym>
+      <key>ru</key>
+      <value>Description</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Description</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d6ec24b7-b843-4621-971e-c4458fae415d">
+    <name>CustomerName</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customer name</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customer name</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="69f54650-e0e6-4095-adad-2d92285a82a5">
+    <name>GltObjId</name>
+    <synonym>
+      <key>ru</key>
+      <value>Glt obj id</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Glt obj id</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="3a60e89f-8381-49d8-a7ef-f7bf49919ace">
+    <name>Type</name>
+    <synonym>
+      <key>ru</key>
+      <value>Type</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Type</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтатьиДоходовИРасходов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8c495215-09fe-4249-9513-87d8e25bd65e">
+    <name>ArInvoice</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ar invoice</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ar invoice</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <types>DocumentRef.LawsonInvoice</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bfb775aa-41f3-4cc6-b45a-6c7d4a379a65">
+    <name>CustomerNumber</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customer number</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customer number</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КонтрагентыLawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e5bc2aea-7ee0-4d91-99a5-e5f328b0a000">
+    <name>AccountUnit</name>
+    <synonym>
+      <key>ru</key>
+      <value>Account unit</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Account unit</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="9e59ff36-4eea-4990-b745-72961417745c">
+    <name>Account</name>
+    <synonym>
+      <key>ru</key>
+      <value>Account</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Account</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfAccountsRef.Lawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d5cbb6b1-2307-4cf2-be07-e909b975962b">
+    <name>CurrencyCode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Currency code</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Currency code</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a38a9779-cf8e-41f2-bb42-5fc58f9cb6a3">
+    <name>FiscalYear</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal year</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal year</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="50c132e4-802e-4cf1-8fdd-2a7d03bfc35c">
+  <producedTypes>
+    <objectType typeId="1420bee9-7878-4833-af33-0a65129eb5f0" valueTypeId="7cd8bbc9-85e7-43af-8ae5-10c430c8c2c2"/>
+    <refType typeId="d3383084-dbbb-4f78-ab21-20fb8fd6ab8c" valueTypeId="745eb70e-45a7-48ab-b773-8df478bf5899"/>
+    <selectionType typeId="cd4905fb-3521-4099-ab6c-6a4fddba6e43" valueTypeId="2f8bb3e3-4308-4abd-8b97-1ec821fa1a8a"/>
+    <listType typeId="549e057b-026c-4e86-bac7-8eb0298dae02" valueTypeId="b46e287d-7c38-463c-b7d1-a3c5948cbf8b"/>
+    <managerType typeId="5ce21b64-412f-45dc-a6d0-51ba66b4c6d7" valueTypeId="8bd86da5-ad08-429e-b117-40de2a05770a"/>
+  </producedTypes>
+  <name>CustomsPayment</name>
+  <synonym>
+    <key>ru</key>
+    <value>Customs payment</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Customs payment</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.CustomsPayment.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <synonym>
+      <key>ru</key>
+      <value>Posted</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Posted</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <synonym>
+      <key>ru</key>
+      <value>For deletion</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>For deletion</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <synonym>
+      <key>ru</key>
+      <value>Date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <synonym>
+      <key>ru</key>
+      <value>No.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>No.</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:StringValue">
+      <value>         </value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <listPresentation>
+    <key>ru</key>
+    <value>Customs payments</value>
+  </listPresentation>
+  <listPresentation>
+    <key>en</key>
+    <value>Customs payments</value>
+  </listPresentation>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <defaultObjectForm>Document.CustomsPayment.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.CustomsPayment.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.CustomsPayment.Form.ФормаВыбора</defaultChoiceForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>AccumulationRegister.UnallocatedCustomsPayments</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="d58b3e2f-c209-4631-8dfb-96679bb705d6">
+    <name>TypeOfPayment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Type of payment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Type of payment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.CustomsPaymentsTypes</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ab5b8c11-4b5a-4e3d-8114-9ecc1821a063">
+    <name>BankAccount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Bank account</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Bank account</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.BankAccountsForCustomsPayments</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.ВидПлатежей</name>
+      <field>Document.CustomsPayment.Attribute.TypeOfPayment</field>
+    </choiceParameterLinks>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="691a6080-e054-494c-ad17-acdaeaa5a399">
+    <name>Customs</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customs</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customs</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Customs</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3d5033fa-9018-48c3-8061-c61510bedb0d">
+    <name>УДАЛИТЬCustomsPost</name>
+    <synonym>
+      <key>ru</key>
+      <value>УДАЛИТЬCustoms post</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>УДАЛИТЬCustoms post</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.CustomsPosts</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f3a0afce-e8f6-4268-b80d-7febc5b6efd7">
+    <name>CCDReference</name>
+    <synonym>
+      <key>ru</key>
+      <value>CCD ref.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>CCD ref.</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>7</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9ebea39a-4a2d-4988-9c85-3f056bd746ca">
+    <name>CustomsCard</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customs card</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customs card</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.CustomsCards</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2a2ebb72-b8cd-4a64-8753-29aa3e95cdda">
+    <name>CheckNo</name>
+    <synonym>
+      <key>ru</key>
+      <value>Check no.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Check no.</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>6</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6b410bd7-c7ec-40e8-b17e-2c9b1089c672">
+    <name>PaymentKind</name>
+    <synonym>
+      <key>ru</key>
+      <value>Payment kind</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment kind</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>4</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="64ec16d8-cab0-43ba-be8a-295f314aa618">
+    <name>Sum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sum</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>17</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6fc76df7-6467-4f08-b9db-17a0f401f160">
+    <name>Description</name>
+    <synonym>
+      <key>ru</key>
+      <value>Description</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Description</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b66bc0cb-2371-41d1-98de-a88898b99a2a">
+    <name>CreationDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Creation date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Creation date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a471c652-2279-44ea-b96e-ab5752e9f886">
+    <name>LastModified</name>
+    <synonym>
+      <key>ru</key>
+      <value>Last modified</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Last modified</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2bb18d79-32c5-4846-95bc-9bc45cdd933f">
+    <name>Responsible</name>
+    <synonym>
+      <key>ru</key>
+      <value>Responsible</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Responsible</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="2847be28-9fbd-4a35-9eab-c0ce9e2eb4c4">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a94e68ec-dc6f-4cf2-928f-ac1ff3a3def7">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6965613e-ba83-4330-8645-c6d907a97ff0">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Document>

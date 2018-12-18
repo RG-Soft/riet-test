@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b98d245e-3424-41d6-a5ef-7aa13efe9301">
+  <producedTypes>
+    <objectType typeId="4a3c6f36-ebbc-4453-a81c-38c781393851" valueTypeId="37884618-f2aa-4500-ab93-128d7785d918"/>
+    <managerType typeId="589f157f-6b1c-4b8b-974a-46fb275af226" valueTypeId="93a8961a-b27d-46b0-bbef-5505d486354c"/>
+  </producedTypes>
+  <name>РасчетРазницПоПроводкамDSS</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет разниц по проводкам DSS</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Расчет разниц по проводкам DSS</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.РасчетРазницПоПроводкамDSS.Form.Форма</defaultForm>
+  <attributes uuid="1dd6ba11-cc7c-481d-8208-87a7c0ad0b9e">
+    <name>СписокПересчитываемыхДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список пересчитываемых документов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Список пересчитываемых документов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a9497b5b-bb1e-450f-921c-8ad39ece9288">
+    <name>КоличествоЗаписейВПрогоне</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество записей в прогоне</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Количество записей в прогоне</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="70c37632-0a33-4e77-a079-b78778b8e1e8">
+    <name>КоличествоПрогонов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество прогонов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Количество прогонов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ffaf9f59-58c7-4a1f-b7ce-7ff78b8c98ed">
+    <name>ИспользоватьПорциальныйРасчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать порциальный расчет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Использовать порциальный расчет</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="0fae7c30-65a6-4c78-9435-37d9ce181ce3">
+    <producedTypes>
+      <objectType typeId="22978a3e-8e4e-4452-9908-575509c151bc" valueTypeId="0baf490a-958c-47b4-b203-c4adae819d7e"/>
+      <rowType typeId="77ef1810-4edb-4cb8-bcd9-8a208dd01e66" valueTypeId="d97c6fd3-6939-4cfa-8f66-0639d806835c"/>
+    </producedTypes>
+    <name>ПереченьТиповДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Перечень типов документов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Перечень типов документов</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="8e42c4f5-f439-4071-88c3-0647174c1828">
+      <name>ТипДокумента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип документа</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Тип документа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="9719127c-2836-45ea-8e29-5bdf90806775">
+      <name>КоличествоДокументовКПересчету</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество документов к пересчету</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Количество документов к пересчету</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3baf2d1a-9143-4de6-95d0-08e1ff6719fc">
+      <name>КоличествоДокументовСОшибками</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество документов с ошибками</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Количество документов с ошибками</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1c7c9270-1060-44c3-9613-a99556005410">
+      <name>Пересчитать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пересчитать</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Пересчитать</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="12b65b0d-ee90-43a6-be61-1e33c1c95244">
+    <producedTypes>
+      <objectType typeId="2c69dc30-41fe-4049-9bc4-f8e6b8a81db9" valueTypeId="2a1dec42-f212-4d3e-96a1-c30af9f8b91f"/>
+      <rowType typeId="57b12573-55f4-4b99-b6b9-a79e12306e73" valueTypeId="6705e623-bd5b-48b7-a4f4-2a4b9831fa32"/>
+    </producedTypes>
+    <name>ДокументыСОшибками</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы с ошибками</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Документы с ошибками</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="ace1e8a4-0965-43bc-9ff7-1590c5408d62">
+      <name>Документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Документ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="024fbbc7-ef4f-4c03-b51f-ece3370b090a">
+      <name>КоличествоОшибок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество ошибок</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Количество ошибок</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cc8256eb-915d-4ec9-9dec-40cc95aef6a6">
+      <name>ТекстОшибки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Текст ошибки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Текст ошибки</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <forms uuid="afcf064e-19a0-4d9c-bc6d-989bab0a18a2">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

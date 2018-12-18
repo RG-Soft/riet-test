@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="da19baa1-9ee2-4948-a668-dd01c80bed0a">
+  <producedTypes>
+    <selectionType typeId="843fadfa-9c28-4067-964a-88834c03be69" valueTypeId="d2d8d098-6f94-414f-8382-aa30c281c134"/>
+    <listType typeId="c8ed41d1-4bf1-4fcd-a1bf-5bb4295923ef" valueTypeId="00ab6d8e-b261-45af-bfc2-1c4fe7f2ced4"/>
+    <managerType typeId="245506e9-9f70-4c50-b50c-1d6b13e471a1" valueTypeId="aecd673d-911c-499c-bf1c-a60f02b58091"/>
+    <recordSetType typeId="a1baf4c2-85d1-4b23-9881-b739278c95b1" valueTypeId="ed8ffad6-2829-4b5a-aa79-fe34894d94fb"/>
+    <recordKeyType typeId="f3540803-52d0-40a5-9641-7a4e8652723a" valueTypeId="2f70d756-44dd-4678-a47f-4c0d5931369f"/>
+    <recordType typeId="8ebd1424-17c6-4f90-9e6f-b56c80b92904" valueTypeId="fc66e497-8f75-4f89-93c8-8bc0c1571f4d"/>
+    <recordManagerType typeId="aabe7ed3-2cfd-44a7-8ae7-9e988f3ffef7" valueTypeId="bfa464c3-496b-49b2-b31b-96df4cc009a2"/>
+  </producedTypes>
+  <name>СуммыНалоговИсчисленные</name>
+  <synonym>
+    <key>ru</key>
+    <value>Суммы налогов исчисленные</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Суммы налогов исчисленные</value>
+  </synonym>
+  <comment></comment>
+  <defaultListForm>InformationRegister.СуммыНалоговИсчисленные.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <resources uuid="7f061a8f-cd50-4721-925b-5aa1ce632511">
+    <name>СуммаИсчисленная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма исчисленная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма исчисленная</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8ae8c423-f71b-4448-8247-fe6f2af89753">
+    <name>СуммаУплаченная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма уплаченная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма уплаченная</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="56da9097-70d3-405f-966b-43b854905744">
+    <name>ВидНачисления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид начисления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Вид начисления</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыНалоговыхНачислений</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="137253b5-5d79-4d74-83c6-3811b7fb935b">
+    <name>НалоговаяРегистрация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговая регистрация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Налоговая регистрация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="f2cdf3f4-eee0-45ae-a4e7-f610031baa99">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

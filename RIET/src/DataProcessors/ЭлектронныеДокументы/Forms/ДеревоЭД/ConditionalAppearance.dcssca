@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConditionalAppearance xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:chm="http://v8.1c.ru/8.2/data/chart">
+	<item>
+		<selection>
+			<item>
+				<field>ДеревоПодчиненныеЭД</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemGroup">
+				<groupType>AndGroup</groupType>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.Ссылка</left>
+					<comparisonType>NotFilled</comparisonType>
+				</item>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.СтрокаДоступна</left>
+					<comparisonType>Equal</comparisonType>
+					<right xsi:type="xs:boolean">false</right>
+				</item>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:НедоступныеДанныеЦвет</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#808080</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>Текст</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">&lt;Не сформирован&gt;</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ДеревоПодчиненныеЭДСтатусЭД</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemGroup">
+				<groupType>OrGroup</groupType>
+				<item xsi:type="FilterItemGroup">
+					<groupType>AndGroup</groupType>
+					<item xsi:type="FilterItemComparison">
+						<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.ТипЭД</left>
+						<comparisonType>NotInList</comparisonType>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.ТипыЭлементовВерсииЭД.ЭСФ</right>
+					</item>
+					<item xsi:type="FilterItemComparison">
+						<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.СтатусЭД</left>
+						<comparisonType>InList</comparisonType>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.Получен</right>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.ПереданОператору</right>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.Отправлен</right>
+					</item>
+				</item>
+				<item xsi:type="FilterItemGroup">
+					<groupType>AndGroup</groupType>
+					<item xsi:type="FilterItemComparison">
+						<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.ТипЭД</left>
+						<comparisonType>InList</comparisonType>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.ТипыЭлементовВерсииЭД.ЭСФ</right>
+					</item>
+					<item xsi:type="FilterItemComparison">
+						<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.СтатусЭД</left>
+						<comparisonType>InList</comparisonType>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.ДоставленПолучателю</right>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.Утвержден</right>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.Доставлен</right>
+					</item>
+				</item>
+				<item xsi:type="FilterItemGroup">
+					<groupType>AndGroup</groupType>
+					<item xsi:type="FilterItemComparison">
+						<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.ВидЭД</left>
+						<comparisonType>InList</comparisonType>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЭД.ТОРГ12Покупатель</right>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЭД.АктЗаказчик</right>
+					</item>
+					<item xsi:type="FilterItemComparison">
+						<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.СтатусЭД</left>
+						<comparisonType>InList</comparisonType>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.Получен</right>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.ДоставленПолучателю</right>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.Доставлен</right>
+					</item>
+				</item>
+				<item xsi:type="FilterItemGroup">
+					<groupType>AndGroup</groupType>
+					<item xsi:type="FilterItemComparison">
+						<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.ВидЭД</left>
+						<comparisonType>InList</comparisonType>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЭД.ТОРГ12Продавец</right>
+						<right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЭД.АктИсполнитель</right>
+					</item>
+					<item xsi:type="FilterItemGroup">
+						<groupType>OrGroup</groupType>
+						<item xsi:type="FilterItemGroup">
+							<groupType>AndGroup</groupType>
+							<item xsi:type="FilterItemComparison">
+								<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.НаправлениеЭД</left>
+								<comparisonType>Equal</comparisonType>
+								<right xsi:type="dcscor:DesignTimeValue">Перечисление.НаправленияЭД.Входящий</right>
+							</item>
+							<item xsi:type="FilterItemComparison">
+								<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.СтатусЭД</left>
+								<comparisonType>Equal</comparisonType>
+								<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.Утвержден</right>
+							</item>
+						</item>
+						<item xsi:type="FilterItemComparison">
+							<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.СтатусЭД</left>
+							<comparisonType>InList</comparisonType>
+							<right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЭД.ПолученоПодтверждение</right>
+						</item>
+					</item>
+				</item>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">web:Green</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ДеревоПодчиненныеЭДПредставление</field>
+			</item>
+			<item>
+				<field>ДеревоПодчиненныеЭДВерсия</field>
+			</item>
+			<item>
+				<field>ДеревоПодчиненныеЭДСтатусЭД</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.АктуальныйЭД</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value bold="true" italic="false" kind="WindowsFont" ref="sys:DefaultGUIFont" strikeout="false" underline="false" xsi:type="v8ui:Font"/>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ДеревоПодчиненныеЭДВерсия</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДеревоПодчиненныеЭД.ДатаЭДБольшеАктуального</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+</ConditionalAppearance>

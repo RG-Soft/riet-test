@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ceb826f0-166f-4007-b2f6-6efe2182180f">
+  <producedTypes>
+    <objectType typeId="e525662d-1c12-4a4c-ba89-5148292fe103" valueTypeId="00f93b3a-1f97-45a2-a46d-28373371fda0"/>
+    <refType typeId="c8c2c86e-7ce0-4f74-8e46-b1052b34a4eb" valueTypeId="f1bccd54-1152-4f57-bf8b-465f31990458"/>
+    <selectionType typeId="31fafc4b-04c2-49bc-9d9d-5149028f0196" valueTypeId="f27e096d-da92-4e5c-b6f2-6bda11c42556"/>
+    <listType typeId="a7f3958a-c6ee-435b-80ac-4559cb276544" valueTypeId="4d7e6d40-2956-4541-8488-40c5dfebb099"/>
+    <managerType typeId="36d28818-042d-43c7-9d49-2816babffbda" valueTypeId="0036e78d-8ca6-436e-a19a-1332b6becdd3"/>
+  </producedTypes>
+  <name>rgsBudgetItem</name>
+  <synonym>
+    <key>ru</key>
+    <value>Budget item</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Budget item</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.rgsBudgetItem.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.rgsBudgetItem.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <listPresentation>
+    <key>ru</key>
+    <value>Budget items</value>
+  </listPresentation>
+  <listPresentation>
+    <key>en</key>
+    <value>Budget items</value>
+  </listPresentation>
+  <extendedListPresentation>
+    <key>ru</key>
+    <value>Budget items</value>
+  </extendedListPresentation>
+  <extendedListPresentation>
+    <key>en</key>
+    <value>Budget items</value>
+  </extendedListPresentation>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>80</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.rgsBudgetItem.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="dd0cf380-ab8c-4068-88f0-1ec309fe592a">
+    <name>BudgetPercentType</name>
+    <synonym>
+      <key>ru</key>
+      <value>Budget percent type</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Budget percent type</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.rgsBudgetPercentTypes</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="be25ee79-ea5d-4af9-b8f5-a752a9392eb9">
+    <name>GroupLevel</name>
+    <synonym>
+      <key>ru</key>
+      <value>Group level</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Group level</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.GeoMarkets</types>
+      <types>CatalogRef.rgsBudgetItem</types>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <use>ForFolderAndItem</use>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d7315723-db00-45b7-8b08-c57bb3e32067">
+    <name>SubLevel</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sub level</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub level</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.GeoMarkets</types>
+      <types>EnumRef.DomesticInternational</types>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <use>ForFolderAndItem</use>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="30309a47-1965-4192-b0e8-3f1e921b3f74">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

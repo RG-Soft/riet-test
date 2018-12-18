@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="325aa0f8-40cf-415a-b0c6-435c488d7680">
+  <producedTypes>
+    <objectType typeId="b01d7647-3ac6-4ed8-8ee5-0f0e3c8d7f02" valueTypeId="08a7234c-6a4a-4374-9c52-ea2d5220bee6"/>
+    <refType typeId="9cac9d2d-ebb4-4ed0-95f5-b5a5e4cfbff7" valueTypeId="c2626ff8-b2af-4bd5-a5ef-a6303e56dc0b"/>
+    <selectionType typeId="925f0c79-a5c6-414c-a7a3-c1a49f56310f" valueTypeId="54fdc725-ad09-48e0-b41c-9baf0d2f707c"/>
+    <listType typeId="53766226-8b67-4aa5-bd0d-331b8b3ee5d1" valueTypeId="bde555db-21d6-4167-9249-63b37122f4de"/>
+    <managerType typeId="5062a246-3469-49db-b9ce-6530a2aa004a" valueTypeId="c0f3c456-c039-466f-8efb-13e36a675591"/>
+  </producedTypes>
+  <name>УстановкаСоответствияСчетовБУиНУ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установка соответствия счетов БУ и НУ</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Установка соответствия счетов БУ и НУ</value>
+  </synonym>
+  <comment>(Упр)</comment>
+  <inputByString>Document.УстановкаСоответствияСчетовБУиНУ.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberPeriodicity>Year</numberPeriodicity>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.УстановкаСоответствияСчетовБУиНУ.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.УстановкаСоответствияСчетовБУиНУ.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.УстановкаСоответствияСчетовБУиНУ.Form.ФормаВыбора</defaultChoiceForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDelete</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>InformationRegister.СоответствиеСчетовБУиНУ</registerRecords>
+  <attributes uuid="c0bcd1e4-831e-476d-ba0f-e17089f80144">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment>Любая дополнительная информация</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0759a0cf-997b-4b31-85c5-64885458f5f9">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="551e7e56-90f8-46ef-9b1b-bdd51a85f44e">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="177846a7-62ea-4eb7-a1bc-632417fdf134">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e5e2c7c0-9a46-44ac-bef7-07a14c591781">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="755ab951-9d8f-4173-b1aa-de4a75d9d17d">
+    <producedTypes>
+      <objectType typeId="b4438245-486e-4b12-9dc4-532bb672a19e" valueTypeId="2f92aa43-090e-467e-8dfb-c24cc690ee4b"/>
+      <rowType typeId="f6d88b6e-03b9-4019-bdb6-68b8c264239c" valueTypeId="1a60fc40-7ac3-4e07-9dcd-fcc9b7d0a387"/>
+    </producedTypes>
+    <name>СоответствиеСчетовБУиНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Соответствие счетов б уи НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Соответствие счетов б уи НУ</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="a61e0721-c42e-48fa-aaae-ce666fe45a00">
+      <name>СчетБУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет БУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Счет БУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>ChartOfAccountsRef.Хозрасчетный</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2db2fd5d-1cae-4962-b883-8e8ca1f8550d">
+      <name>СчетКоррБУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет корр БУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Счет корр БУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>ChartOfAccountsRef.Хозрасчетный</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="78f14daa-3e18-4573-b169-19c75c4b2b65">
+      <name>СубконтоБУ1</name>
+      <synonym>
+        <key>ru</key>
+        <value>Субконто 1 (БУ)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Субконто 1 (БУ)</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Characteristic.ВидыСубконтоХозрасчетные</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="36a44e88-5684-467c-a9e2-1f7e6109636d">
+      <name>СубконтоБУ2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Субконто 2 (БУ)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Субконто 2 (БУ)</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Characteristic.ВидыСубконтоХозрасчетные</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="30a892bb-bfef-4970-971d-9026db075570">
+      <name>СубконтоБУ3</name>
+      <synonym>
+        <key>ru</key>
+        <value>Субконто 3 (БУ)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Субконто 3 (БУ)</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Characteristic.ВидыСубконтоХозрасчетные</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e7789858-ee67-4a3c-9999-2cd65bf02c07">
+      <name>ВидЗатратНУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид затрат НУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Вид затрат НУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.ВидыРасходовНУ</types>
+        <types>EnumRef.ВидыПрочихДоходовИРасходов</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="5e894d69-94b4-4d40-846b-0aa49ffc116d">
+      <name>СчетНУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет НУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Счет НУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>ChartOfAccountsRef.Налоговый</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="9584c019-e938-425a-9d21-cfd57066b6d3">
+      <name>СубконтоНУ1</name>
+      <synonym>
+        <key>ru</key>
+        <value>Субконто 1 (НУ)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Субконто 1 (НУ)</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Characteristic.ВидыСубконтоХозрасчетные</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="31eb44cc-2e4c-44f2-bf76-c62dc67a7ad9">
+      <name>СубконтоНУ2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Субконто 2 (НУ)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Субконто 2 (НУ)</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Characteristic.ВидыСубконтоХозрасчетные</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c1ee0058-4348-47f3-a0cf-90fdf0dbc58e">
+      <name>СубконтоНУ3</name>
+      <synonym>
+        <key>ru</key>
+        <value>Субконто 3 (НУ)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Субконто 3 (НУ)</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Characteristic.ВидыСубконтоХозрасчетные</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ddac413a-1f80-4a86-b200-4f40cced5f86">
+      <name>Учитывается</name>
+      <synonym>
+        <key>ru</key>
+        <value>Учитывается</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Учитывается</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="092e75bc-0601-48f3-a471-e0d8882f23f8">
+      <name>Комментарий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комментарий</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Комментарий</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>255</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <templates uuid="48648166-16e9-4e3d-baa7-0c0b367f768b">
+    <name>СоответствияСчетовБУиНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Соответствия счетов БУ и НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Соответствия счетов БУ и НУ</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+</mdclass:Document>

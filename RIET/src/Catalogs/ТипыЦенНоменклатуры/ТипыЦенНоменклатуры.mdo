@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="216ef596-9d59-4529-93a1-1b10e9be6fbb">
+  <producedTypes>
+    <objectType typeId="3cfe64f6-eb40-44cf-98b1-811e063e5757" valueTypeId="7d45b511-49c2-4927-be46-754b853d41bf"/>
+    <refType typeId="4cf6fdcf-45f8-4477-8c01-afc198981b65" valueTypeId="265d8f25-bfc8-4288-90ee-1e43b65d4dc7"/>
+    <selectionType typeId="44df2843-1651-4bf1-9694-31c2f5eabe93" valueTypeId="7290202a-8526-4472-be03-a090dce4b53e"/>
+    <listType typeId="2e9046c5-e853-4106-8795-44ab0b666cbe" valueTypeId="31abfc86-4633-462f-80fe-16973efe1fff"/>
+    <managerType typeId="4813f5f8-2b23-4eab-9509-24d6dd8866bd" valueTypeId="55bb07f1-c9b0-4653-85f3-c649ed56cfdb"/>
+  </producedTypes>
+  <name>ТипыЦенНоменклатуры</name>
+  <synonym>
+    <key>ru</key>
+    <value>Типы цен номенклатуры</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Типы цен номенклатуры</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Catalog.ТипыЦенНоменклатуры.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ТипыЦенНоменклатуры.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <levelCount>1</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>BothWays</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ТипыЦенНоменклатуры.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.ТипыЦенНоменклатуры.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.ТипыЦенНоменклатуры.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="112eb33a-b8f7-471d-abfc-66e21159aee0">
+    <name>ВалютаЦены</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта цены по умолчанию</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Валюта цены по умолчанию</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e4fd191f-a843-4530-93d1-ff347baead28">
+    <name>ЦенаВключаетНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цена включает НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Цена включает НДС</value>
+    </synonym>
+    <comment>(Общ) Истина - цена включает НДС, ложь - не включает</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b855de7f-bc65-49d7-8fd1-d83e59e0301b">
+    <name>ПорядокОкругления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок округления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Порядок округления</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>EnumRef.ПорядкиОкругления</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a23a8b8d-4dc7-49dc-be47-7b31eefa947f">
+    <name>ОкруглятьВБольшуюСторону</name>
+    <synonym>
+      <key>ru</key>
+      <value>Округлять в большую сторону</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Округлять в большую сторону</value>
+    </synonym>
+    <comment>(Общ) Истина, то при порядке округления &quot;5&quot; 0.01 будет округлена до 5, ложь - округление по арифметическим правилам</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="12e21300-0a6d-4159-af0d-f6c9052e1a8b">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment>(Общ) Любая дополнительная информация</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="d0458063-1c30-443a-8bfb-bb9add78b0c7">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="719d4a39-6294-4b1e-bdfa-f8761c0d126f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="30c37c7c-cebc-47d5-8319-aef4f9da1c9c">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

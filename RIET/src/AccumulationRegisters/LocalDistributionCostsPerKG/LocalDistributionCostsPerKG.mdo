@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a44fbba6-4a5b-4125-8b9d-60d738d0e851">
+  <producedTypes>
+    <selectionType typeId="f2b7ee5c-ce4f-463f-a7e0-e138c9a949c6" valueTypeId="e8a61916-46f5-4e87-a388-13ba46e80b5a"/>
+    <listType typeId="51be41c5-46f0-40f3-9fc5-152100efdc12" valueTypeId="c04fdac6-0660-41fd-89d6-abd04bb3bd20"/>
+    <managerType typeId="f4da6ca1-4aed-434a-9905-894a9f500064" valueTypeId="acfbb3b7-1810-433f-b024-bdc0e330e52b"/>
+    <recordSetType typeId="9b33e067-9354-49c8-b7c4-72ab479d900c" valueTypeId="c68d7d3c-2116-4696-ba47-a985f81dc685"/>
+    <recordKeyType typeId="84c0b156-78e5-46c6-be55-8d702bb58955" valueTypeId="1b2f2f08-426d-4a8d-b505-7a47e774f72b"/>
+    <recordType typeId="5dab6f4a-8b45-40dd-afb6-e6223fbb5d29" valueTypeId="c271f50f-e891-49ce-b4dd-0c419d3f5e4d"/>
+  </producedTypes>
+  <name>LocalDistributionCostsPerKG</name>
+  <synonym>
+    <key>ru</key>
+    <value>Local distribution costs per KG</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Local distribution costs per KG</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="88bd2a3e-6573-460a-92b8-429c424f9464">
+    <name>CostsSumPerKGUSD</name>
+    <synonym>
+      <key>ru</key>
+      <value>Costs sum per KG USD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Costs sum per KGUSD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="c9d57607-f66f-4954-98b4-d940f6f4b63b">
+    <name>Trip</name>
+    <synonym>
+      <key>ru</key>
+      <value>Trip</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trip</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.Trip</types>
+      <types>DocumentRef.TripNonLawsonCompanies</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="171e2343-baee-4dda-948f-53a3e7bbe929">
+    <name>MOT</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ перевозки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>MOT</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.MOTs</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f0af359c-803f-4065-b9a5-7f89e20a9025">
+    <name>Equipment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип транспортного средства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Equipment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Equipments</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8053aa6e-4039-4f33-8956-1900e0eee611">
+    <name>SourceLocation</name>
+    <synonym>
+      <key>ru</key>
+      <value>Локация (склад) отправления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Source location</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Warehouses</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="988e73a3-9315-45a7-a705-25a50529d986">
+    <name>Geomarket</name>
+    <synonym>
+      <key>ru</key>
+      <value>Geomarket</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Geomarket</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.GeoMarkets</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3ad7ed0e-b0f1-4f05-b659-ad6e5b80e71f">
+    <name>SubGeomarket</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sub geomarket</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub geomarket</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.GeoMarkets</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <choiceParameterLinks>
+      <name>Отбор.Родитель</name>
+      <field>0:5392de9b-bb58-4dc0-aee3-aebb8a54432e</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="7e04067c-ca47-4a30-8d10-67d78f2c8764">
+    <name>Segment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Segment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="69e03c92-40f7-4aa0-9027-4a80b540b678">
+    <name>SubSegment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sub segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub segment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <choiceParameterLinks>
+      <name>Отбор.Родитель</name>
+      <changeMode>DontChange</changeMode>
+      <field>0:40001aed-178c-4358-8e49-de3aba80bcf3</field>
+    </choiceParameterLinks>
+    <quickChoice>Use</quickChoice>
+    <createOnInput>DontUse</createOnInput>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a32bbfd4-dd93-4521-8fd0-b401979b1309">
+    <name>DestinationLocation</name>
+    <synonym>
+      <key>ru</key>
+      <value>Destination location</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Destination location</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Warehouses</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

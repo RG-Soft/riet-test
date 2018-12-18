@@ -1,0 +1,33 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="ДопФайл">
+	<property xmlns:d2p1="ДопФайл" name="ДопФайл" type="d2p1:ДопФайл"/>
+	<objectType name="ДопФайл">
+		<property name="ИдФайла" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="ИдДопФайла" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="ВерсияФормата" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="ДатаФормирования" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="ДопФайл" name="Шапка" type="d3p1:СписокРеквизитов" lowerBound="0"/>
+		<property name="Строка" lowerBound="0" upperBound="-1">
+			<typeDef xmlns:d4p1="ДопФайл" xsi:type="ObjectType" base="d4p1:СписокРеквизитов">
+				<property name="Ном" type="xs:integer" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="СписокРеквизитов">
+		<property name="Рекв" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property name="Имя" type="xs:string" lowerBound="1" form="Attribute"/>
+				<property name="ТипРекв" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+						<enumeration>ДокументОснование</enumeration>
+					</typeDef>
+				</property>
+				<property name="Знч" upperBound="-1">
+					<typeDef xsi:type="ObjectType">
+						<property name="Зн" type="xs:string" lowerBound="1" form="Attribute"/>
+						<property name="Описание" type="xs:string" lowerBound="0" form="Attribute"/>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+	</objectType>
+</package>

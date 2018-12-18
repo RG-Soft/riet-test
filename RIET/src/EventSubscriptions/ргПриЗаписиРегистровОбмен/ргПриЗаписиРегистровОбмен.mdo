@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="02d7726c-ec8f-4359-bd13-94e0be7a54c8">
+  <name>ргПриЗаписиРегистровОбмен</name>
+  <synonym>
+    <key>ru</key>
+    <value>При записи регистров (обмен)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>При записи регистров (обмен)</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>InformationRegisterRecordSet.RouteOfTrip</types>
+    <types>InformationRegisterRecordSet.ConnectionOfTrip</types>
+    <types>InformationRegisterRecordSet.ServiceStatusOfTrip</types>
+    <types>InformationRegisterRecordSet.BarcodeOfTrip</types>
+    <types>InformationRegisterRecordSet.StatusOfTrip</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.ргМодульОбменаДанными.ПриЗаписиРегистровПриЗаписи</handler>
+</mdclass:EventSubscription>

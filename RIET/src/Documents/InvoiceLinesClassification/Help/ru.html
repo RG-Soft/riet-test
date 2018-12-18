@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16441"></meta></head><body>
+<h1>Документ "Invoice lines classification"</h1>
+<p class="Usual">Документ "Invoice lines classification" входит в подсистему <a href="Subsystem.CustomsAccounting.Subsystem.ShipmentClosing/Help">"Shipment closing"</a>.<br>Предназначен для фискальной классификации <a href="Catalog.СтрокиИнвойса/Help">товаров</a> (на M&amp;S, FA, REDA и др.).</p>
+<p class="Usual">При создании нового документа на основании Invoice lines matching система пытается выполнить классификацию и перевод автоматически и заполнить.<br>При этом используется информация из справочника Catalog, если элемент с соответствующим парт-номером найден.<br>Повторную автоматическую классификацию и перевод можно вызвать по кнопке "Fill".</p>
+<p class="Usual">Для каждой строки выводится дополнительная информация из каталога, CCD, а также история классификации и перевода товаров с таким же парт-номером.</p>
+<p class="Usual">Документ нельзя изменить, если он используется в проведенном документе "РИЗП".</p>
+<h2>Реквизиты шапки</h2>
+<ul><li><strong>No.</strong> (строка) - автоматически присваиваемый номер документа. 
+</li><li><strong>Date</strong> (дата) 
+</li><li><strong>For deletion </strong>(булево) - признак того, что документ помечен на удаление. 
+</li><li><strong>Posted </strong>(булево) - признак того, что документ проведен. 
+</li><li><strong>Invoice lines matching</strong> (<a href="Document.Поставка/Help">документ "Invoice lines matching"</a>)<br>Обязательный для заполнения реквизит.<br>Не должно существовать другого документа Invoice lines classification по указанному Invoice lines matching.<br>Invoice lines matching не должен быть помечен на удаление.<br>При проведении Invoice lines classification, проверяется что Invoice lines matching проведен (если не проведен - система пытается провести его). 
+</li><li><strong>Comment</strong> (строка) 
+</li><li><strong>Creation Date</strong> (дата)<strong> -</strong> автоматически определяемая дата создания документа. 
+</li><li><strong>Last modified</strong> (дата и время) - заполняется автоматически датой последнего интерактивного изменения документа. 
+</li><li><strong>Responsible</strong> (справочник Users) - заполняется автоматически пользователем, который внес последние изменения в документ.</li></ul><h2>Таблица "Classification"</h2>
+<p>В этой таблице хранится присвоенный фискальный тип товара и его перевод.</p>
+<ul><li><strong>Good</strong> (справочник Goods)<br>Обязательное для заполнения поле.<br>Товары не должны повторяться. <br>Должны быть указаны все товары, входящие в поставку. <br>Не должно быть товаров из другой поставки. 
+</li><li><strong>Type</strong> (справочник Fiscal types) - фискальный тип. <br>Обязательное для заполнения поле.<br>Если товар привязан к каталогу и нет признака "Do not verify with catalog ", то Type должен совпадать с соответствующим реквизтом каталога. 
+</li><li><strong>Description</strong> (строка) - русское наименование товара.<br>Обязательное для заполнения поле.<br>Если товар привязан к каталогу и нет признака "Do not verify with catalog ", то русское наименование товара должно совпадать с соответствующим реквизитом каталога. 
+</li><li><strong>Do not verify with catalog </strong>(булево) - признак того, что фискальный тип и перевод не надо сверять с каталогом.<br></li></ul><p>Справочно отображаются реквизиты строки инвойса: Sold-to, ERP Treatment, Segment, QTY, UOM, Currency, Invoice line price, Fiscal price w/o services, Fiscal sum w/o services, Invoice line description и CCD line description.</p>
+<h2>Таблица "History"</h2>
+<p>Эта таблица выводит историю классификации и переводов товаров с таким же парт-номером.<br>Эта информация не хранится в документе, а определяется динамически.</p></body></html>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7a3ba25b-0ef2-4977-98bc-f36af2504eb5">
+  <producedTypes>
+    <objectType typeId="3581441b-07b2-4f5f-915a-9f8e657881bb" valueTypeId="2d7c47ba-43eb-4810-ae48-80a48f11a0fb"/>
+    <refType typeId="711b9876-f4b9-403b-b7d9-7db08aa0eb06" valueTypeId="104e715d-2626-457b-a501-e2fba74cbe38"/>
+    <selectionType typeId="2521d368-f2a8-4e38-b70a-f7026c0ba6e3" valueTypeId="314e1ea0-b575-4d8e-bea4-c0c61c9764bb"/>
+    <listType typeId="6704be7a-9b75-4381-b48c-ca63643ecdf9" valueTypeId="4efe8013-010a-4192-a1c1-e82da634bd09"/>
+    <managerType typeId="1f35154e-b502-46e4-836c-c61c0682b223" valueTypeId="18b1713b-dfb0-464a-b2fa-f38471d14d14"/>
+  </producedTypes>
+  <name>ПеремещениеЛокальногоОборудования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перемещение локального оборудования</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Перемещение локального оборудования</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.ПеремещениеЛокальногоОборудования.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <numberLength>5</numberLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ПеремещениеЛокальногоОборудования.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>AccumulationRegister.ОборудованиеЛокальное</registerRecords>
+  <attributes uuid="630610e9-b46e-48c1-bd9f-c6f91870248a">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="c96003f7-60d7-4ba9-8b59-a54ca9e915f0">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="23c33b72-e365-4d64-85e0-f68dbcff1c98">
+    <producedTypes>
+      <objectType typeId="1b5c31ad-3ae4-4a6b-abd5-13dfeabc3081" valueTypeId="3ad75da1-4ae8-4de0-9697-4a9d179e65bc"/>
+      <rowType typeId="b3d180a2-a49e-4a18-a54f-581ba4d4aa9b" valueTypeId="fbd9e091-56f3-4472-9730-a73763740b8f"/>
+    </producedTypes>
+    <name>Состав</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состав</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Состав</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="7f87320e-e6a1-422f-9e27-18c757ad4d8a">
+      <name>НомерНакладной</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер накладной</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Номер накладной</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="76599f5f-04dc-420b-a146-6a71a555342c">
+      <name>Поставщик</name>
+      <synonym>
+        <key>ru</key>
+        <value>Поставщик</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Поставщик</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="39d785c1-c291-4300-bc67-29bd64cdaa19">
+      <name>AU</name>
+      <synonym>
+        <key>ru</key>
+        <value>AU</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AU</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.КостЦентры</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="8122bebf-e986-4b4e-835a-acad7c106402">
+      <name>AUКонечный</name>
+      <synonym>
+        <key>ru</key>
+        <value>AUКонечный</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AUКонечный</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.КостЦентры</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ec4efe5b-e316-4640-93d9-2fdb3e446957">
+      <name>РО</name>
+      <synonym>
+        <key>ru</key>
+        <value>РО</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>РО</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0821334a-8390-4ab7-a346-44c1979310fc">
+      <name>ДатаНакладной</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата накладной</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Дата накладной</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="12e6a904-37e3-4809-9027-e1fddb97ac2d">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение начальное</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Подразделение начальное</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="df17bae6-3117-48d2-bdcf-6785b8a8f9f0">
+      <name>ПодразделениеКон</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение конечное</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Подразделение конечное</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2266f824-fc6b-4079-8851-04cad2a31653">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сумма</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

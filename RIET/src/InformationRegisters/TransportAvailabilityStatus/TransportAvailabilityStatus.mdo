@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b2a6d5f8-e4b2-43c9-bf40-be2a7acc9a85">
+  <producedTypes>
+    <selectionType typeId="59243a12-bdc4-4bfc-8332-bf7c619cb4f2" valueTypeId="969622aa-6c58-409a-9873-e87fe6f08cb0"/>
+    <listType typeId="e2caee9f-bed9-45fb-9012-bee05b4f82db" valueTypeId="95952bfa-f782-46d8-be3c-1da213289199"/>
+    <managerType typeId="6da28ed5-af5b-427d-8424-a2a2499d7369" valueTypeId="5754bca2-9b3a-4934-a9c8-10d0f6e42905"/>
+    <recordSetType typeId="d99b833c-4c10-4c48-ae3b-9a723f99a0ef" valueTypeId="5c1a0b6a-a512-4b8c-8cce-3749200e023e"/>
+    <recordKeyType typeId="15a38815-b9a2-4492-9d02-3c7ade14c3f7" valueTypeId="f207f83d-a11a-4996-afd6-c374cdcd585c"/>
+    <recordType typeId="739d8f65-723f-46d5-97d9-8f7c63928858" valueTypeId="f8fdc3ab-bcb2-4430-b877-99ce57bfbd05"/>
+    <recordManagerType typeId="996e4b39-3334-439b-9053-53182dd73838" valueTypeId="4add9db6-ddce-4b38-9a2e-9bca4cb561fb"/>
+  </producedTypes>
+  <name>TransportAvailabilityStatus</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы доступности транспорта</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Transport availability statuses</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.TransportAvailabilityStatus.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.TransportAvailabilityStatus.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="faf37560-dd6c-4f2a-bec3-e5632d43bded">
+    <name>Status</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.TransportAvailabilityStatuses</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="244ac24a-1ec4-456f-86b6-be32efef6e26">
+    <name>ModifiedBy</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменен</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Modified by</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0a98518d-3586-4258-96e3-949417bdc08f">
+    <name>Trip</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trip</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.TripNonLawsonCompanies</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f6c03993-8fd1-4ab3-bacb-b194217b5d08">
+    <name>Comment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>250</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="45233eb5-bb8d-4ba8-b54d-815575536677">
+    <name>Transport</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспортное средство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transport</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Transport</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="ac3b5f85-0a08-4b32-a2d0-ccb896198fe5">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8fae238b-fef2-4b86-9703-373f1124562b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

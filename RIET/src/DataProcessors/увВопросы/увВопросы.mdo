@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="85d8663b-58a4-4771-a901-905e851ff367">
+  <producedTypes>
+    <objectType typeId="94072bf6-cab5-471d-9fd4-06da75f69f2c" valueTypeId="e6c0e472-3f02-41c2-9e46-c98f02593ed8"/>
+    <managerType typeId="e819f44c-ee6f-432b-a0de-38bc2e5a9b6a" valueTypeId="c08acf96-af31-489c-ba4a-3fc63b9fd2db"/>
+  </producedTypes>
+  <name>увВопросы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Вопросы</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Вопросы</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.увВопросы.Form.НоваяФорма</defaultForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="dd898ada-d95a-4836-9300-204b1df4377e">
+    <name>Вопрос</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вопрос</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Вопрос</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="68f6e554-7d90-4183-8d8c-7a902edfc89f">
+    <name>Согласование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласование</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Согласование</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="614b6584-5145-4e07-b9a0-d74c5b3a6b13">
+    <producedTypes>
+      <objectType typeId="6bc20b83-a83e-45c1-afa5-949be8fd8aae" valueTypeId="88b40e61-604a-47f9-8280-a37062f24f14"/>
+      <rowType typeId="097f2d13-1089-4a92-8a88-8afe7d00b806" valueTypeId="80b6124a-e2ac-4d35-a59e-8ae3d0b3439c"/>
+    </producedTypes>
+    <name>Вопросы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вопросы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Вопросы</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="5b1daa45-f174-40c1-95fe-f916127760c3">
+      <name>Вопрос</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вопрос</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Вопрос</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.увВопрос</types>
+        <types>String</types>
+        <types>DocumentRef.увЗаявкаНаВыполнениеРабот</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b27d7c05-9df6-4c9a-9372-4a305f7d2629">
+      <name>Дата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Дата</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3ca2fabc-39cf-4900-b949-1c9fdc76fa54">
+      <name>КтоЗадал</name>
+      <synonym>
+        <key>ru</key>
+        <value>Кто задал</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Кто задал</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7e041fa4-7bfc-4c4c-8fce-217161a9c261">
+      <name>Важность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Важность</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Важность</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <types>EnumRef.увВажность</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2cc68a86-1e84-4197-a11e-4677815f6205">
+      <name>ТекстВопроса</name>
+      <synonym>
+        <key>ru</key>
+        <value>Текст вопроса</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Текст вопроса</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="48f83300-9961-4a27-aa80-961b39f6b250">
+      <name>ТекстОтвета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Текст ответа</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Текст ответа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="82ff7cf4-09c3-4035-b93d-6ebf31477864">
+      <name>КтоОтветил</name>
+      <synonym>
+        <key>ru</key>
+        <value>Кто ответил</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Кто ответил</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6c9163b1-41ae-4b1e-9837-fcb8811a9ff2">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Подразделение</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.увСтруктурныеПодразделения</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7c0c54ec-1e6d-427c-957d-5350ae390884">
+      <name>Утвердил</name>
+      <synonym>
+        <key>ru</key>
+        <value>Утвердил</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Утвердил</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fab7bbe8-ce7d-4ba2-9aef-e09041ae7f65">
+      <name>ПлановаяДатаЗавершенияРабот</name>
+      <synonym>
+        <key>ru</key>
+        <value>Плановая дата завершения работ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Плановая дата завершения работ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="29af3106-038f-450b-ad19-5dc7e2b96eea">
+      <name>ПлановаяДатаСдачиНаТестирование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Плановая дата сдачи на тестирование</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Плановая дата сдачи на тестирование</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a006e939-bbc4-455a-bfff-6f346eab1ff0">
+      <name>ОценочнаяТрудоемкость</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оценочная трудоемкость</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Оценочная трудоемкость</value>
+      </synonym>
+      <comment>измеряется в часах</comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>6</precision>
+          <scale>1</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a5f39fca-863f-4577-897c-277a802ac0f6">
+      <name>ПотраченоВремени</name>
+      <synonym>
+        <key>ru</key>
+        <value>Потрачено времени</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Потрачено времени</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>4</precision>
+          <scale>1</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7d24b48c-1ecf-45c1-b28b-381407bdc40f">
+      <name>СтоимостьРабот</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость работ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Стоимость работ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>6</precision>
+          <scale>1</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9ed0cc65-5ead-4623-9a40-4c16ff6f93e6">
+      <name>Исполнитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Исполнитель</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Исполнитель</value>
+      </synonym>
+      <comment>представитель компании-исполнителя</comment>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="292a57d0-ba92-40cd-8d02-4f3d19a99902">
+      <name>ОтветственныйЗаВнедрениеОтЗаказчика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ответственный за внедрение от заказчика</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Ответственный за внедрение от заказчика</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="85d551aa-677f-425f-8d6e-a5b4f65b5d00">
+      <name>ОтветственныйЗаТестирование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ответственный за тестирование</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Ответственный за тестирование</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4fe2a63d-8c1b-4089-9590-2ff59d5d7d37">
+      <name>Тема</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тема</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Тема</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.увТемыВопросовИЗаявок</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d8e9aa21-18c8-4fe8-8388-b9fce97a568e">
+      <name>ТребуемаяДатаОтвета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Требуемая дата ответа</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Требуемая дата ответа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b96f9852-8d8c-4813-a7db-d2041454e99a">
+      <name>ОценочнаяТрудоемкостьДо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оценочная трудоемкость до</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Оценочная трудоемкость до</value>
+      </synonym>
+      <comment>измеряется в часах</comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>6</precision>
+          <scale>1</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="7f9ac0b4-fa88-44bc-b3b3-e8ef814a44b1">
+    <producedTypes>
+      <objectType typeId="aef930a4-066d-401d-b0d9-22df496b03e8" valueTypeId="17f02781-edc9-41a5-9e36-0a2b35f0527c"/>
+      <rowType typeId="f85af276-cdce-4ed2-8767-4b5d6011bb6a" valueTypeId="2e011c6a-b556-4f53-b77d-882c6b9f102d"/>
+    </producedTypes>
+    <name>ПротоколыТестирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Протоколы тестирования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Протоколы тестирования</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="54ce5a00-1f30-4cda-8bb4-d84f7010d9fc">
+      <name>Номер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Номер</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4365fc5d-ccd7-40f0-8fc7-f00e6a23eba1">
+      <name>Статус</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Статус</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.увСтатусПротоколаТестирования</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6275c652-af4b-4bd4-bd51-6c583f0d3f47">
+      <name>СледующаяВстреча</name>
+      <synonym>
+        <key>ru</key>
+        <value>Следующая встреча</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Следующая встреча</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e12d79bf-4582-4e6e-928c-47dcd37f644c">
+      <name>ДатаТестирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата тестирования</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Дата тестирования</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e590bb59-d4d5-415f-860f-ba7003f49f42">
+      <name>Ссылка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ссылка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Ссылка</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.увПротоколТестирования</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="756225da-c633-429e-9851-0bf0b8411675">
+    <name>НоваяФорма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новая форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Новая форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f57b217f-5db1-4d60-990b-b229dacf2f19">
+    <name>ФормаВводаТекста</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма ввода текста</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма ввода текста</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7ce9ade2-318f-46a4-a0db-b1b42bc6f05d">
+    <name>ФормаПереадресации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма переадресации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма переадресации</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

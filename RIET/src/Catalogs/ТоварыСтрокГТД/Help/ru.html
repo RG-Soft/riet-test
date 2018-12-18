@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16441"></meta></head><body>
+<h1>Справочник "CCD lines goods"</h1>
+<p>Справочник входит в <a href="Subsystem.CustomsAccounting.Subsystem.CustomsDocuments/Help">подсистему "Customs documents"</a>.<br>Справочник предназначен для хранения товаров строк ГТД (графа 31 (Грузовые места и описание товаров)).<br>Товары с одним кодом ТН ВЭД объединяются в строки ГТД, которые хранятся в <a href="Catalog.СтрокиГТД/Help">справочнике "CCD lines"</a>.<br>Общая информация ГТД хранится в <a href="Document.ГТД/Help">документе "CCD"</a>.</p>
+<p>Вся <a href="Document.ГТД/Help">ГТД</a> вместе со <a href="Catalog.СтрокиГТД/Help">строками</a> и товарами строк может быть загружена автоматически из xml-файла с помощью <a href="DataProcessor.CustomsFileLoading/Help">обработки "CCD loading"</a>.</p>
+<p>Нельзя изменить данные товаров строк ГТД, если они относятся к проведенному в системе документу <a href="Document.ЗакрытиеПоставки/Help">"Invoice lines matching"</a></p>
+<h2>Структура справочника</h2>
+<ul><li><strong>CCD line</strong> (справочник CCD lines)<br>Обязательный для заполнения реквизит. 
+</li><li><strong>No. </strong>(число) - номер товара в строке ГТД<br>Обязательный для заполнения реквизит.<br>Контролируется уникальность в пределах строки ГТД. 
+</li><li><strong>Name</strong> (строка) - автоматически формируемое представление товара как [No.] - [Characteristics] 
+</li><li><strong>Сharacteristics</strong> (строка) - описание товара 
+</li><li><strong>Manufacturer</strong> (строка) 
+</li><li><strong>Trademark</strong> (строка) 
+</li><li><strong>Goodsmark</strong> (строка) 
+</li><li><strong>Goodsmarking</strong> (строка)<br>Система автоматически заменяет русские буквы на латинские, чтобы потом иметь возможность автоматического сопоставления со строками инвойса. 
+</li><li><strong>Qty</strong> (число) 
+</li><li><strong>UOM name</strong> (строка) 
+</li><li><strong>UOM code</strong> (число)</li></ul></body></html>

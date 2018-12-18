@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>Запрос</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Запрос</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PaymentKind</dataPath>
+			<field>PaymentKind</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Payment kind</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Payment kind</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Sum</dataPath>
+			<field>Sum</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Amount</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Amount</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsFile.CustomsValue</dataPath>
+			<field>CustomsValue</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Customs file.Total customs value</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Customs file.Total customs value</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CVC</dataPath>
+			<field>CVC</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>BatchOfCustomsFiles</dataPath>
+			<field>BatchOfCustomsFiles</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsFile</dataPath>
+			<field>CustomsFile</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Country</dataPath>
+			<field>Country</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ParentCompany</dataPath>
+			<field>ParentCompany</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Corporation</dataPath>
+			<field>Corporation</field>
+		</field>
+		<dataSource>Запрос</dataSource>
+		<query>ВЫБРАТЬ
+	BatchesOfCustomsFiles.Ссылка КАК BatchOfCustomsFiles,
+	BatchesOfCustomsFiles.Country,
+	BatchesOfCustomsFiles.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFiles.SoldTo КАК ParentCompany
+ПОМЕСТИТЬ BatchesOfCustomsFiles
+ИЗ
+	Документ.BatchesOfCustomsFiles КАК BatchesOfCustomsFiles
+ГДЕ
+	BatchesOfCustomsFiles.Проведен
+{ГДЕ
+	BatchesOfCustomsFiles.Ссылка.* КАК BatchOfCustomsFiles,
+	BatchesOfCustomsFiles.Country,
+	BatchesOfCustomsFiles.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFiles.SoldTo.* КАК ParentCompany}
+
+ИНДЕКСИРОВАТЬ ПО
+	BatchOfCustomsFiles
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	BatchesOfCustomsFiles.Country,
+	BatchesOfCustomsFiles.Corporation,
+	BatchesOfCustomsFiles.ParentCompany,
+	BatchesOfCustomsFiles.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsFiles.CCD КАК CustomsFile
+ПОМЕСТИТЬ CustomsFiles
+ИЗ
+	BatchesOfCustomsFiles КАК BatchesOfCustomsFiles
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.BatchesOfCustomsFiles.CCDs КАК BatchesOfCustomsFilesCustomsFiles
+		ПО BatchesOfCustomsFiles.BatchOfCustomsFiles = BatchesOfCustomsFilesCustomsFiles.Ссылка
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	BatchesOfCustomsFiles.Country,
+	BatchesOfCustomsFiles.Corporation,
+	BatchesOfCustomsFiles.ParentCompany,
+	BatchesOfCustomsFiles.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsFilesOfTempImpExp.CustomsFile
+ИЗ
+	BatchesOfCustomsFiles КАК BatchesOfCustomsFiles
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.BatchesOfCustomsFiles.CustomsFilesOfTemporaryImportExport КАК BatchesOfCustomsFilesCustomsFilesOfTempImpExp
+		ПО BatchesOfCustomsFiles.BatchOfCustomsFiles = BatchesOfCustomsFilesCustomsFilesOfTempImpExp.Ссылка
+
+ИНДЕКСИРОВАТЬ ПО
+	CustomsFile
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	BatchesOfCustomsFiles.Country,
+	BatchesOfCustomsFiles.Corporation,
+	BatchesOfCustomsFiles.ParentCompany,
+	BatchesOfCustomsFiles.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsReceiptOrders.ТПО КАК CustomsFile
+ПОМЕСТИТЬ CustomsFilesLight
+ИЗ
+	BatchesOfCustomsFiles КАК BatchesOfCustomsFiles
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.BatchesOfCustomsFiles.ТПО КАК BatchesOfCustomsFilesCustomsReceiptOrders
+		ПО BatchesOfCustomsFiles.BatchOfCustomsFiles = BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	BatchesOfCustomsFiles.Country,
+	BatchesOfCustomsFiles.Corporation,
+	BatchesOfCustomsFiles.ParentCompany,
+	BatchesOfCustomsFiles.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsBonds.CustomsBond
+ИЗ
+	BatchesOfCustomsFiles КАК BatchesOfCustomsFiles
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.BatchesOfCustomsFiles.CustomsBonds КАК BatchesOfCustomsFilesCustomsBonds
+		ПО BatchesOfCustomsFiles.BatchOfCustomsFiles = BatchesOfCustomsFilesCustomsBonds.Ссылка
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	BatchesOfCustomsFiles.Country,
+	BatchesOfCustomsFiles.Corporation,
+	BatchesOfCustomsFiles.ParentCompany,
+	BatchesOfCustomsFiles.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsBondClosings.CustomsBondClosing
+ИЗ
+	BatchesOfCustomsFiles КАК BatchesOfCustomsFiles
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.BatchesOfCustomsFiles.CustomsBondClosings КАК BatchesOfCustomsFilesCustomsBondClosings
+		ПО BatchesOfCustomsFiles.BatchOfCustomsFiles = BatchesOfCustomsFilesCustomsBondClosings.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	CustomsFiles.Country,
+	CustomsFiles.Corporation,
+	CustomsFiles.ParentCompany,
+	CustomsFiles.BatchOfCustomsFiles,
+	CustomsFiles.CustomsFile,
+	CustomsFiles.CustomsFile.ОбщаяТамСтоимость КАК CustomsValue,
+	CustomsFilesПодробностиПодсчета.КодВидаПлатежа КАК PaymentKind,
+	CustomsFilesПодробностиПодсчета.КТС КАК CVC,
+	CustomsFilesПодробностиПодсчета.СуммаПлатежа КАК Sum
+ИЗ
+	CustomsFiles КАК CustomsFiles
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ГТД.ПодробностиПодсчета КАК CustomsFilesПодробностиПодсчета
+		ПО CustomsFiles.CustomsFile = CustomsFilesПодробностиПодсчета.Ссылка
+{ГДЕ
+	CustomsFiles.CustomsFile.* КАК CustomsFile}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	CustomsFilesLight.Country,
+	CustomsFilesLight.Corporation,
+	CustomsFilesLight.ParentCompany,
+	CustomsFilesLight.BatchOfCustomsFiles,
+	CustomsFilesLight.CustomsFile,
+	CustomsFilesLight.CustomsFile.CustomsValue,
+	CustomsFilesLightPayments.PaymentKind,
+	ЛОЖЬ,
+	CustomsFilesLightPayments.Sum
+ИЗ
+	CustomsFilesLight КАК CustomsFilesLight
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.CustomsFilesLight.Payments КАК CustomsFilesLightPayments
+		ПО CustomsFilesLight.CustomsFile = CustomsFilesLightPayments.Ссылка
+{ГДЕ
+	CustomsFilesLight.CustomsFile.* КАК CustomsFile}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	CustomsFilesLight.Country,
+	CustomsFilesLight.Corporation,
+	CustomsFilesLight.ParentCompany,
+	CustomsFilesLight.BatchOfCustomsFiles,
+	CustomsFilesLight.CustomsFile,
+	CustomsFilesLight.CustomsFile.CustomsValue,
+	"Customs deposit refund",
+	ЛОЖЬ,
+	-CustomsFilesLight.CustomsFile.CustomsDepositAmountToRefund
+ИЗ
+	CustomsFilesLight КАК CustomsFilesLight
+ГДЕ
+	CustomsFilesLight.CustomsFile.TypeOfTransaction = ЗНАЧЕНИЕ(Перечисление.TypesOfCustomsFileLightTransaction.CustomsBondClosing)
+{ГДЕ
+	CustomsFilesLight.CustomsFile.* КАК CustomsFile}</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Sum</dataPath>
+		<expression>Сумма(Sum)</expression>
+	</totalField>
+	<settingsVariant>
+		<dcsset:name>Summary</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Summary</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Summary</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CustomsFile.Номер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CustomsFile.CustomsValue</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Sum</dcsset:field>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>b725b5a2-e9db-4a03-b36d-b64d792b6c37</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Corporation</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Corporations.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>bfcd5341-2e99-4546-ba80-39b16a2b04d2</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ParentCompany</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.SoldTo.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>137438a2-e679-4e5d-b9c4-4c4b1045031f</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">BatchOfCustomsFiles</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:userSettingID>c82e26c4-8187-4325-b7d0-740d447abe37</dcsset:userSettingID>
+				<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+				</dcsset:userSettingPresentation>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>259775b6-02b9-46a5-8442-b39976a7a8eb</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">BeginAndEnd</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>PaymentKind</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>BatchOfCustomsFiles</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>CustomsFile</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>CVC</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:columnsViewMode>Normal</dcsset:columnsViewMode>
+				<dcsset:columnsUserSettingID>8c4a015c-08be-47c3-8063-7d1533df6899</dcsset:columnsUserSettingID>
+				<dcsset:rowsViewMode>Normal</dcsset:rowsViewMode>
+				<dcsset:rowsUserSettingID>e5570bb6-d8fc-43dc-9ee5-1a99604b8219</dcsset:rowsUserSettingID>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

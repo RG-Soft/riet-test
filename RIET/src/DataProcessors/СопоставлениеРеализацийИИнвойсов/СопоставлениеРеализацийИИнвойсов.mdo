@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e2caca8b-f2af-42aa-8792-f8a4b63a830e">
+  <producedTypes>
+    <objectType typeId="16718ae3-1dbc-4f7a-9ea1-b065092b8a6b" valueTypeId="c4a1660f-3ce1-45ac-b95a-fb8bf86239b5"/>
+    <managerType typeId="fb305c5c-79f0-4624-b432-e3cb6d405fd2" valueTypeId="711a2621-2265-45de-b82b-751667bedb25"/>
+  </producedTypes>
+  <name>СопоставлениеРеализацийИИнвойсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сопоставление реализаций и инвойсов</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Сопоставление реализаций и инвойсов</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.СопоставлениеРеализацийИИнвойсов.Form.Форма</defaultForm>
+  <attributes uuid="5febbd62-f2b3-4405-9812-ba6a01878a28">
+    <name>CustomerNumber</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customer number</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customer number</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>9</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="4c445351-a974-42e4-a66a-b558b9aaa2ac">
+    <producedTypes>
+      <objectType typeId="e77de39a-2329-4ec1-88b8-7c50bc4139fd" valueTypeId="5eb5fb68-8667-4ae3-8924-4a56d0605870"/>
+      <rowType typeId="be4d3e71-3b64-4f39-bee0-65953fff5b24" valueTypeId="fcac6aef-e3bc-45f2-8013-da406584d38f"/>
+    </producedTypes>
+    <name>Реализации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Реализации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Реализации</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="837d704d-c943-4639-acfa-3864a1e4f2f6">
+      <name>НомерИнвойса</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер инвойса</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Номер инвойса</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1b17fbe4-69de-4827-9f37-e2a9dd6c1d63">
+      <name>Ссылка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ссылка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Ссылка</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ПередачаОС</types>
+        <types>DocumentRef.ОтчетАгентаПоРасходам</types>
+        <types>DocumentRef.КорректировкаДолга</types>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+        <types>DocumentRef.ОтчетПринципалуОПродажах</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="634fbd16-6234-44b5-b19b-260af595c9f9">
+      <name>CustomerNumber</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customer number</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customer number</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>9</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="608a1f00-b16e-41e3-98b3-e5138df8a98c">
+      <name>CustomerName</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customer name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customer name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8bb52ac8-9213-4055-ba8d-7dc34478536f">
+      <name>Gross</name>
+      <synonym>
+        <key>ru</key>
+        <value>Gross</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Gross</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="417eac48-a340-4335-bb53-43a6eea49dab">
+      <name>Revenue</name>
+      <synonym>
+        <key>ru</key>
+        <value>Revenue</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Revenue</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7af6b2df-9b43-47bb-9d37-d126a1011604">
+      <name>VAT</name>
+      <synonym>
+        <key>ru</key>
+        <value>VAT</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>VAT</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="17284292-06de-4149-85fd-e5fee16e8457">
+      <name>Валюта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Валюта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Валюта</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Валюты</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a12702fa-5809-47f9-aec6-cb98f0680825">
+      <name>НомерСФ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер СФ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Номер СФ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b8fc7c2c-be9d-44b8-bf53-09c1f6578315">
+      <name>ДатаСФ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата СФ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Дата СФ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="260e9a22-ff1a-4854-862f-0b875f8b9c0e">
+      <name>Привязано</name>
+      <synonym>
+        <key>ru</key>
+        <value>Привязано</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Привязано</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b1efee44-bb92-46b2-bfad-3359e88529b4">
+      <name>Разница</name>
+      <synonym>
+        <key>ru</key>
+        <value>Разница</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Разница</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d4246d03-1503-415c-8df1-ab4c3d15f331">
+    <producedTypes>
+      <objectType typeId="5eeb2596-f794-465a-90fd-b1fb13821b88" valueTypeId="393d2318-9f3d-42f1-a9fb-6823c2b824b3"/>
+      <rowType typeId="be7eeb9d-42f0-45dd-a9a6-0fef484b5e7d" valueTypeId="03b5eb92-d0ef-4893-a9dd-29ece65f965d"/>
+    </producedTypes>
+    <name>Инвойсы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инвойсы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Инвойсы</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="c8e5f68e-15a0-4147-b7ac-6e613587175a">
+      <name>НомерИнвойса</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер инвойса</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Номер инвойса</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b3d5f47e-2b68-467c-8a26-6fc38d6c90ce">
+      <name>Ссылка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ссылка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Ссылка</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.LawsonInvoice</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5ca86a0c-e28a-4456-aa81-aa2fe5e42bf0">
+      <name>CustomerNumber</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customer number</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customer number</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>9</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="20b53a89-5ad9-4822-9a4e-81cbafd53096">
+      <name>CustomerName</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customer name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customer name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8dff0783-8d5c-4954-bce2-35fd578ca572">
+      <name>Gross</name>
+      <synonym>
+        <key>ru</key>
+        <value>Gross</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Gross</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2e5913a4-f472-40d9-a937-bdd7303d0ae5">
+      <name>Revenue</name>
+      <synonym>
+        <key>ru</key>
+        <value>Revenue</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Revenue</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d4bbebaf-83ed-456d-83cd-edb74bcce17b">
+      <name>VAT</name>
+      <synonym>
+        <key>ru</key>
+        <value>VAT</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>VAT</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f26acc47-e085-44b0-b0dd-82e414689ec9">
+      <name>Валюта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Валюта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Валюта</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>3</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="59430d28-08ee-45a8-b7a2-b08bd5757c3c">
+      <name>Период</name>
+      <synonym>
+        <key>ru</key>
+        <value>Период</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Период</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="6838e53a-cf75-47ac-946c-925d912a607e">
+    <producedTypes>
+      <objectType typeId="87bba3e7-8fd5-4af4-96db-ffe27561d72d" valueTypeId="0e715e33-c86f-43b9-856f-5a1938dc4816"/>
+      <rowType typeId="29c034fb-099c-416f-8c8c-08ba29a29ede" valueTypeId="ada4646b-cee6-42c5-b44c-6334aa31804c"/>
+    </producedTypes>
+    <name>Привязано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Привязано</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Привязано</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="77897059-2040-4d4f-b0e2-28fdab163cbb">
+      <name>НомерИнвойса</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер инвойса</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Номер инвойса</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>12</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5eb28439-ff89-4568-a2f9-2721df68fb08">
+      <name>Ссылка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ссылка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Ссылка</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.LawsonInvoice</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ed0290a1-938a-46ad-949b-7eb004a218d0">
+      <name>CustomerNumber</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customer number</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customer number</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>9</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0122a65d-d28f-4a68-9ade-b17cd15967e1">
+      <name>CustomerName</name>
+      <synonym>
+        <key>ru</key>
+        <value>Customer name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Customer name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8ad4c4e3-0031-42c1-a251-736a99b80b48">
+      <name>Gross</name>
+      <synonym>
+        <key>ru</key>
+        <value>Gross</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Gross</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fa0f4f88-1a49-4fbd-b19e-cffd41c652c5">
+      <name>Revenue</name>
+      <synonym>
+        <key>ru</key>
+        <value>Revenue</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Revenue</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f6e09139-2a59-4693-a528-8b84ae4bf868">
+      <name>VAT</name>
+      <synonym>
+        <key>ru</key>
+        <value>VAT</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>VAT</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ce11d15a-9fba-492a-a5a0-069ae124b98b">
+      <name>Валюта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Валюта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Валюта</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>3</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d86ff2e8-5e9b-4cbb-9d40-118a347c195d">
+      <name>Период</name>
+      <synonym>
+        <key>ru</key>
+        <value>Период</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Период</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="89f9c2df-f9c6-4abc-911f-0739047228b4">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

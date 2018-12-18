@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="538a3286-90a6-4b62-a29d-07014520239a">
+  <producedTypes>
+    <objectType typeId="6dc79033-0ad1-4ab7-9c93-eba011867ee4" valueTypeId="ff83fcdf-b7ba-45f6-9c9a-7fed9a16917a"/>
+    <refType typeId="bef59bf9-468d-43c3-95dd-08e0b4135994" valueTypeId="5dc6fac0-16ed-4ada-8392-3e130bec66d0"/>
+    <selectionType typeId="6ec8c9a1-bb7d-4986-9c52-97e6d17300cc" valueTypeId="9838f66d-5abe-4659-aeb4-8c77cd4a09dc"/>
+    <listType typeId="e55304de-7984-4c0c-96d6-55e081cc74b1" valueTypeId="bfceceff-ff09-4e14-b2ff-02b33b91a51a"/>
+    <managerType typeId="ac13ecd5-a10c-487b-8e03-fc1e694237d9" valueTypeId="fc35dba7-3030-46e5-a755-72241a7ab829"/>
+  </producedTypes>
+  <name>СтатьиЗатрат</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статьи затрат</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Статьи затрат</value>
+  </synonym>
+  <comment>(Общ)</comment>
+  <inputByString>Catalog.СтатьиЗатрат.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.СтатьиЗатрат.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <hierarchical>true</hierarchical>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>100</descriptionLength>
+  <codeType>String</codeType>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="91291836-0b6a-4e23-a778-e2e523bda8f3">
+      <name>СписаниеНДСНаРасходыЕНВД</name>
+      <description>Списание НДС на расходы (ЕНВД)</description>
+      <code xsi:type="core:StringValue">
+        <value>000000002</value>
+      </code>
+    </items>
+    <items id="6a99979c-b822-417f-bc35-2df9f6d0af10">
+      <name>СписаниеНДСНаРасходы</name>
+      <description>Списание НДС на расходы (не ЕНВД)</description>
+      <code xsi:type="core:StringValue">
+        <value>000000001</value>
+      </code>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.СтатьиЗатрат.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultFolderForm>Catalog.СтатьиЗатрат.Form.ФормаГруппы</defaultFolderForm>
+  <defaultListForm>Catalog.СтатьиЗатрат.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.СтатьиЗатрат.Form.ФормаВыбора</defaultChoiceForm>
+  <defaultFolderChoiceForm>Catalog.СтатьиЗатрат.Form.ФормаВыбораГруппы</defaultFolderChoiceForm>
+  <attributes uuid="d25f8d34-688f-4c99-b5df-b0a8a70fa299">
+    <name>ВидРасходовНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид расходов НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Вид расходов НУ</value>
+    </synonym>
+    <comment>(Регл)</comment>
+    <type>
+      <types>EnumRef.ВидыРасходовНУ</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b891920c-fae7-45a8-9a6d-117bf34e2797">
+    <name>ОтнесениеРасходовКДеятельностиЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отнесение расходов к деятельности, облагаемой ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Отнесение расходов к деятельности, облагаемой ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ОтнесениеРасходовКДеятельностиЕНВД</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="390b07e4-f7f8-44cd-9544-a9b616799c4b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="65ad66c3-bee5-4db9-83a3-c5c8361fb1d1">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3e73f961-714a-482f-b91c-6e65b30efe71">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3f1819d6-2bd3-415c-811b-b679fd85af1f">
+    <name>ФормаВыбораГруппы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора группы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма выбора группы</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="592b17e6-2e20-4dc9-9043-ccca89be91dc">
+    <name>ФормаГруппы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма группы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма группы</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

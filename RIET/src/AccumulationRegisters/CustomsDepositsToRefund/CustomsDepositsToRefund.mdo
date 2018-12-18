@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6e51579d-001a-4310-985e-9d423a01f658">
+  <producedTypes>
+    <selectionType typeId="fbe1b8c8-1c80-44a8-b2fd-96024c7678a8" valueTypeId="8674c8a7-c0d0-42d5-8034-fc52a96eb5a3"/>
+    <listType typeId="46db3223-1b3d-4f4f-a74a-9ef2e9372275" valueTypeId="450d0f8a-ac9d-4b5d-9706-7bab11c50a92"/>
+    <managerType typeId="0ec332f7-7540-4e53-b2cb-e964cae10cb1" valueTypeId="1a627b14-2818-41a4-84b1-68b84c502832"/>
+    <recordSetType typeId="5b4bf2e1-3139-4262-b261-a757f4078e55" valueTypeId="8f3b35be-6ee1-4d5c-bca2-8d497f4f543f"/>
+    <recordKeyType typeId="8460f5aa-1136-4f33-a93f-90b810b43b75" valueTypeId="bd296caa-1d06-44db-89f5-d1a2b1d65891"/>
+    <recordType typeId="81dbe99b-61b2-4147-9e30-de23ac2e3875" valueTypeId="02375860-5708-4948-b6fc-e074b552279e"/>
+  </producedTypes>
+  <name>CustomsDepositsToRefund</name>
+  <synonym>
+    <key>ru</key>
+    <value>Customs deposits to refund</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Customs deposits to refund</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <synonym>
+      <key>ru</key>
+      <value>Line no.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line no.</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <synonym>
+      <key>ru</key>
+      <value>Document</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Document</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Period</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="4c7feb87-fe66-4d4f-986f-2f4d056ffe1b">
+    <name>Sum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sum</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </resources>
+  <dimensions uuid="349d2ce4-db6c-4fd0-94da-f9df652d010f">
+    <name>CustomsBond</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customs bond</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customs bond</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.CustomsFilesLight</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.Проведен</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.TypeOfTransaction</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.TypesOfCustomsFileLightTransaction.EnumValue.CustomsBond</value>
+      </value>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

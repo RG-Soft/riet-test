@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16440"></meta></head><body>
+<h1>Справочник "PO lines"</h1>
+<p>Справочник "PO lines" входит в <a href="Subsystem.ImportExport.Subsystem.PO/Help">подсистему "PO"</a> и предназначен для хранения детальной информации по заказанным в системе SWPS товарам или услугам (описание, количество, цена и т. д.).</p>
+<p>Общая для нескольких PO lines информация (BORG, Supplier, Purchaser name и т. д.) хранится в <a href="Catalog.ЗаявкиНаЗакупку/Help">справочнике "POs"</a>.</p>
+<p>На форме справочника отображается как общая информация, так и детальная.</p>
+<p>Данные загружаются в справочник из csv-файла, выгруженного из SWPS, с помощью <a href="DataProcessor.POLoading/Help">обработки "PO loading"</a>.</p>
+<h2>Структура</h2>
+<ul><li><strong>PO</strong> (<a href="Catalog.ЗаявкиНаЗакупку/Help">справочник POs</a>) - общие данные заявки на закупку.<br>Обязательный для заполнения, если PO line не помечена на удаление. 
+</li><li><strong>Line no.</strong> (число) - номер строки заявки на закупку.<br>Обязательный для заполнения поле, если PO line не помечена на удаление. 
+</li><li><strong>No. </strong>(строка) - уникальный код, используется как представление PO line в списках.<br>Формируется автоматически как PO no. + Line no. 
+</li><li><strong>For deletion</strong> (булево) - признак того, что данная PO line предназначена для удаления. 
+</li><li><strong>Part description</strong> (строка) - описание заказываемого товара или услуги. 
+</li><li><strong>Name</strong> (строка) - первые 150 символов поля Part description. Служебное поле, необходимое для быстрого поиска. 
+</li><li><strong>Supplier P/N</strong> (строка) - код заказываемого товара или услуги. 
+</li><li><strong>Catalog</strong> (<a href="Catalog.Catalog/Help">справочник Catalog</a>) - ссылка на каталог, если заказываемый товар содержится в каталоге компании Шлюмберже. 
+</li><li><strong>Quantity</strong> (число) - количество. 
+</li><li><strong>UOM</strong> (<a href="Catalog.UOMs/Help">справочник UOMs</a>) - единица измерения. 
+</li><li><strong>Unit cost</strong> (число) - цена. 
+</li><li><strong>Currency</strong> (<a href="Catalog.Валюты/Help">справочник Валюты</a>) - валюта. 
+</li><li><strong>Extended cost</strong> (число) - сумма в указанной валюте. 
+</li><li><strong>Extended cost (usd.)</strong> (число) - сумма в долларах. 
+</li><li><strong>ERP treatment</strong> (перечисление ERP treatments) - управленческая классификация затрат. 
+</li><li><strong>AU</strong> (<a href="Catalog.КостЦентры/Help">справочник AUs</a>) - кост-центр.<br>Обязательное для заполнение поле для Lawson компаний. 
+</li><li><strong>Activity сode</strong> (строка) 
+</li><li><strong>Type of requisition</strong> (строка) - тип запроса. 
+</li><li><strong>Commodity</strong> (строка) - назначение расходов. 
+</li><li><strong>Comodity type</strong> (строка) - тип назначения расходов. 
+</li><li><strong>Ship method</strong> (строка) - способ перевозки. 
+</li><li><strong>Shipping instructions</strong> (строка) - инструкции по транспортировке. 
+</li><li><strong>Special instructions</strong> (строка) - специальные инструкции.</li></ul></body></html>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e03e780a-a006-4d63-a6c8-05441b0b5157">
+  <producedTypes>
+    <selectionType typeId="c640c6f5-c94b-4219-9744-e7231b8ca391" valueTypeId="70a61c60-b2c0-4133-8ad6-cbd9590a5905"/>
+    <listType typeId="04790771-0953-48f3-a15b-9845c221b04f" valueTypeId="3e8f59ed-22c1-4724-a2ee-cb9188b0b6ee"/>
+    <managerType typeId="764f8b68-cd10-4364-8d78-6f6195549125" valueTypeId="1478cacd-6a36-4825-949f-b8df2d5882e3"/>
+    <recordSetType typeId="b6d56e89-45b9-4ef6-ae84-b688a5976911" valueTypeId="3de37abf-9f24-496a-8234-7ada5e7921a7"/>
+    <recordKeyType typeId="69b9fb26-f301-4b70-a1c6-63d1bedc00d5" valueTypeId="5c41b20d-e5b8-4cad-80b1-c4299a8c026a"/>
+    <recordType typeId="d256f519-412c-4510-a4a3-2fe3d6a0e326" valueTypeId="c0d7a0bb-c5b1-46c7-a08e-4a0f4841b026"/>
+  </producedTypes>
+  <name>InventoryBatches</name>
+  <synonym>
+    <key>ru</key>
+    <value>Inventory batches</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Inventory batches</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultListForm>AccumulationRegister.InventoryBatches.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="dd6307e1-23ea-4014-a145-4540043ce393">
+    <name>Quantity</name>
+    <synonym>
+      <key>ru</key>
+      <value>Quantity</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>4</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="6793adcf-cf21-4c2d-a56d-d5b1debfb5dc">
+    <name>Sum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sum</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>4</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="7f4f6cb9-40b3-4ce1-b08c-296c2178857f">
+    <name>Fiscal</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="2609a596-e2c3-471f-8d6f-5fa379cf7d46">
+    <name>FiscalPeriod</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal period</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal period</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="9127023d-24f6-41db-8e6c-14ffa6eaf1b5">
+    <name>Good</name>
+    <synonym>
+      <key>ru</key>
+      <value>Good</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Good</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.InventoryGoods</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="84202ffd-d546-49d0-9cc2-a4be70a4ac50">
+    <name>InventoryLocation</name>
+    <synonym>
+      <key>ru</key>
+      <value>Inventory location</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Inventory location</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.InventoryLocations</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f606bb6b-d4b4-4c86-b8cb-bf268c34796c">
+    <name>AU</name>
+    <synonym>
+      <key>ru</key>
+      <value>AU</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AU</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="83e4f26d-d741-430a-a28e-4ffad680b1e0">
+    <name>Batch</name>
+    <synonym>
+      <key>ru</key>
+      <value>Batch</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Batch</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.InventoryПоступление</types>
+      <types>DocumentRef.InventoryКорректировка</types>
+      <types>DocumentRef.InventoryПеремещение</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e93e3072-4a53-4087-b402-1ab9a840e706">
+    <name>FinishedGood</name>
+    <synonym>
+      <key>ru</key>
+      <value>Finished good</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Finished good</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="02da8741-685a-4200-a3c8-cdc2fa7fda0c">
+    <name>Company</name>
+    <synonym>
+      <key>ru</key>
+      <value>Company</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e34d734b-856e-46d8-b7c7-80c43d76d879">
+    <name>TaxRegistration</name>
+    <synonym>
+      <key>ru</key>
+      <value>Tax registration</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax registration</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="1f581d83-26e8-47d2-904c-bc0772c38abc">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

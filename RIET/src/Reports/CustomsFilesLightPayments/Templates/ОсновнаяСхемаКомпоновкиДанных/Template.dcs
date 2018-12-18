@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>CustomsFilesLightPayments</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsFilesLight</dataPath>
+			<field>CustomsFilesLight</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Customs files light</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Customs files light</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Shipment</dataPath>
+			<field>Shipment</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Sum</dataPath>
+			<field>Sum</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PaymentKind</dataPath>
+			<field>PaymentKind</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PaidByCCA</dataPath>
+			<field>PaidByCCA</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Paid by CCA</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Paid by CCA</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">БЛ='Paid by SLB'; БИ='Paid by CCA'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InvoiceCurrency</dataPath>
+			<field>InvoiceCurrency</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsValue</dataPath>
+			<field>CustomsValue</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProcessLevel</dataPath>
+			<field>ProcessLevel</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>No</dataPath>
+			<field>No</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>No</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>No</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ReleaseDate</dataPath>
+			<field>ReleaseDate</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InvoiceCurrencyCode</dataPath>
+			<field>InvoiceCurrencyCode</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	CustomsFilesLightPayments.Ссылка КАК CustomsFilesLight,
+	CustomsFilesLightPayments.Ссылка.Shipment КАК Shipment,
+	CustomsFilesLightPayments.PaymentKind КАК PaymentKind,
+	ВЫБОР
+		КОГДА CustomsFilesLightPayments.Ссылка.InvoiceCurrencyRate = 0
+			ТОГДА CustomsFilesLightPayments.Sum
+		ИНАЧЕ CustomsFilesLightPayments.Sum / CustomsFilesLightPayments.Ссылка.InvoiceCurrencyRate
+	КОНЕЦ КАК Sum,
+	CustomsFilesLightPayments.PaidByCCA,
+	CustomsFilesLightPayments.Ссылка.Номер КАК No,
+	CustomsFilesLightPayments.Ссылка.ReleaseDate,
+	CustomsFilesLightPayments.Ссылка.InvoiceCurrency,
+	CustomsFilesLightPayments.Ссылка.CustomsValue,
+	CustomsFilesLightPayments.Ссылка.ProcessLevel,
+	CustomsFilesLightPayments.Ссылка.InvoiceCurrency.Код КАК InvoiceCurrencyCode
+ИЗ
+	Документ.CustomsFilesLight.Payments КАК CustomsFilesLightPayments
+ГДЕ
+	CustomsFilesLightPayments.Ссылка.ReleaseDate МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Segments</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Shipment</dataPath>
+			<field>Shipment</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Segment</dataPath>
+			<field>Segment</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Segment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Segment</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	CustomsFilesLight.Ссылка.Shipment КАК Shipment,
+	ParcelsДетали.СтрокаИнвойса.КостЦентр.Segment КАК Segment
+ИЗ
+	Документ.CustomsFilesLight КАК CustomsFilesLight
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.Поставка.УпаковочныеЛисты КАК ПоставкаУпаковочныеЛисты
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Parcels КАК КонсолидированныйПакетЗаявокНаПеревозкуParcels
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Parcels.Детали КАК ParcelsДетали
+				ПО КонсолидированныйПакетЗаявокНаПеревозкуParcels.Parcel = ParcelsДетали.Ссылка
+					И (НЕ ParcelsДетали.Ссылка.ПометкаУдаления)
+					И (НЕ ParcelsДетали.СтрокаИнвойса.ПометкаУдаления)
+			ПО (КонсолидированныйПакетЗаявокНаПеревозкуParcels.Ссылка = ПоставкаУпаковочныеЛисты.УпаковочныйЛист)
+		ПО CustomsFilesLight.Shipment = ПоставкаУпаковочныеЛисты.Ссылка
+ГДЕ
+	CustomsFilesLight.ReleaseDate МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	CustomsFilesLight.Ссылка.Shipment,
+	ExportShipmentExportRequests.ExportRequest.Segment
+ИЗ
+	Документ.CustomsFilesLight КАК CustomsFilesLight
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ExportShipment.ExportRequests КАК ExportShipmentExportRequests
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Parcels.Детали КАК ParcelsДетали
+			ПО ExportShipmentExportRequests.ExportRequest = ParcelsДетали.СтрокаИнвойса.ExportRequest
+		ПО CustomsFilesLight.Shipment = ExportShipmentExportRequests.Ссылка
+ГДЕ
+	CustomsFilesLight.ReleaseDate МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	CustomsFilesLightGoods.Ссылка.Shipment,
+	CustomsFilesLightGoods.AU.Segment
+ИЗ
+	Документ.CustomsFilesLight.Goods КАК CustomsFilesLightGoods
+ГДЕ
+	CustomsFilesLightGoods.Ссылка.ReleaseDate МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И НЕ CustomsFilesLightGoods.Ссылка.Shipment ССЫЛКА Документ.Поставка
+	И НЕ CustomsFilesLightGoods.Ссылка.Shipment ССЫЛКА Документ.ExportShipment</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Insurance_Freight_Handling</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Shipment</dataPath>
+			<field>Shipment</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Handling</dataPath>
+			<field>Handling</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Handling</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Handling</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Insurance</dataPath>
+			<field>Insurance</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Insurance</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Insurance</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Freight</dataPath>
+			<field>Freight</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Freight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Freight</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	CustomsFilesLight.Ссылка.Shipment КАК Shipment,
+	КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы.Инвойс.Страховка КАК Insurance,
+	КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы.Инвойс.Фрахт КАК Freight,
+	КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы.Инвойс.Упаковка КАК Handling
+ИЗ
+	Документ.CustomsFilesLight КАК CustomsFilesLight
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.Поставка.УпаковочныеЛисты КАК ПоставкаУпаковочныеЛисты
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Инвойсы КАК КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы
+			ПО (КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы.Ссылка = ПоставкаУпаковочныеЛисты.УпаковочныйЛист)
+		ПО CustomsFilesLight.Shipment = ПоставкаУпаковочныеЛисты.Ссылка
+ГДЕ
+	CustomsFilesLight.ReleaseDate МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	CustomsFilesLight.Ссылка.Shipment,
+	0,
+	ExportShipmentExportRequests.Ссылка.TotalFreightSumSLBUSD,
+	0
+ИЗ
+	Документ.CustomsFilesLight КАК CustomsFilesLight
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ExportShipment.ExportRequests КАК ExportShipmentExportRequests
+		ПО CustomsFilesLight.Shipment = ExportShipmentExportRequests.Ссылка
+ГДЕ
+	CustomsFilesLight.ReleaseDate МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Parcels</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Shipment</dataPath>
+			<field>Shipment</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Parcel</dataPath>
+			<field>Parcel</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Parcel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parcel</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>GrossWeightKG</dataPath>
+			<field>GrossWeightKG</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ExportRequest</dataPath>
+			<field>ExportRequest</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOC</dataPath>
+			<field>DOC</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>DOC</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>DOC</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	CustomsFilesLight.Ссылка.Shipment КАК Shipment,
+	ParcelsДетали.Ссылка КАК Parcel,
+	ParcelsДетали.Ссылка.GrossWeightKG,
+	КонсолидированныйПакетЗаявокНаПеревозкуParcels.Ссылка КАК DOC,
+	NULL КАК ExportRequest
+ИЗ
+	Документ.CustomsFilesLight КАК CustomsFilesLight
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.Поставка.УпаковочныеЛисты КАК ПоставкаУпаковочныеЛисты
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Parcels КАК КонсолидированныйПакетЗаявокНаПеревозкуParcels
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Parcels.Детали КАК ParcelsДетали
+				ПО КонсолидированныйПакетЗаявокНаПеревозкуParcels.Parcel = ParcelsДетали.Ссылка
+					И (НЕ ParcelsДетали.Ссылка.ПометкаУдаления)
+					И (НЕ ParcelsДетали.СтрокаИнвойса.ПометкаУдаления)
+			ПО (КонсолидированныйПакетЗаявокНаПеревозкуParcels.Ссылка = ПоставкаУпаковочныеЛисты.УпаковочныйЛист)
+		ПО CustomsFilesLight.Shipment = ПоставкаУпаковочныеЛисты.Ссылка
+ГДЕ
+	CustomsFilesLight.ReleaseDate МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	CustomsFilesLight.Ссылка.Shipment,
+	ParcelsДетали.Ссылка,
+	ParcelsДетали.Ссылка.GrossWeightKG,
+	NULL,
+	ExportShipmentExportRequests.ExportRequest
+ИЗ
+	Документ.CustomsFilesLight КАК CustomsFilesLight
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ExportShipment.ExportRequests КАК ExportShipmentExportRequests
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Parcels.Детали КАК ParcelsДетали
+			ПО ExportShipmentExportRequests.ExportRequest = ParcelsДетали.СтрокаИнвойса.ExportRequest
+		ПО CustomsFilesLight.Shipment = ExportShipmentExportRequests.Ссылка
+ГДЕ
+	CustomsFilesLight.ReleaseDate МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Items</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Shipment</dataPath>
+			<field>Shipment</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Item</dataPath>
+			<field>Item</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Item</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Item</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	CustomsFilesLight.Ссылка.Shipment КАК Shipment,
+	ParcelsДетали.СтрокаИнвойса КАК Item
+ИЗ
+	Документ.CustomsFilesLight КАК CustomsFilesLight
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.Поставка.УпаковочныеЛисты КАК ПоставкаУпаковочныеЛисты
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Parcels КАК КонсолидированныйПакетЗаявокНаПеревозкуParcels
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Parcels.Детали КАК ParcelsДетали
+				ПО КонсолидированныйПакетЗаявокНаПеревозкуParcels.Parcel = ParcelsДетали.Ссылка
+					И (НЕ ParcelsДетали.Ссылка.ПометкаУдаления)
+					И (НЕ ParcelsДетали.СтрокаИнвойса.ПометкаУдаления)
+			ПО (КонсолидированныйПакетЗаявокНаПеревозкуParcels.Ссылка = ПоставкаУпаковочныеЛисты.УпаковочныйЛист)
+		ПО CustomsFilesLight.Shipment = ПоставкаУпаковочныеЛисты.Ссылка
+ГДЕ
+	CustomsFilesLight.ReleaseDate МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	CustomsFilesLight.Ссылка.Shipment,
+	ParcelsДетали.СтрокаИнвойса
+ИЗ
+	Документ.CustomsFilesLight КАК CustomsFilesLight
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ExportShipment.ExportRequests КАК ExportShipmentExportRequests
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Parcels.Детали КАК ParcelsДетали
+			ПО ExportShipmentExportRequests.ExportRequest = ParcelsДетали.СтрокаИнвойса.ExportRequest
+		ПО CustomsFilesLight.Shipment = ExportShipmentExportRequests.Ссылка
+ГДЕ
+	CustomsFilesLight.ReleaseDate МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода</query>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>CustomsFilesLightPayments</sourceDataSet>
+		<destinationDataSet>Segments</destinationDataSet>
+		<sourceExpression>Shipment</sourceExpression>
+		<destinationExpression>Shipment</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>CustomsFilesLightPayments</sourceDataSet>
+		<destinationDataSet>Insurance_Freight_Handling</destinationDataSet>
+		<sourceExpression>Shipment</sourceExpression>
+		<destinationExpression>Shipment</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>CustomsFilesLightPayments</sourceDataSet>
+		<destinationDataSet>Parcels</destinationDataSet>
+		<sourceExpression>Shipment</sourceExpression>
+		<destinationExpression>Shipment</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>CustomsFilesLightPayments</sourceDataSet>
+		<destinationDataSet>Items</destinationDataSet>
+		<sourceExpression>Shipment</sourceExpression>
+		<destinationExpression>Shipment</destinationExpression>
+	</dataSetLink>
+	<calculatedField>
+		<dataPath>NumOfItems</dataPath>
+		<expression>Item</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Num of items</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Num of items</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<group>true</group>
+		</useRestriction>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>NumOfParcels</dataPath>
+		<expression>Parcel</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Num of parcels</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Num of parcels</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<group>true</group>
+		</useRestriction>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>Sum</dataPath>
+		<expression>Сумма(Sum)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Segment</dataPath>
+		<expression>Массив(Segment)</expression>
+		<group>Shipment</group>
+	</totalField>
+	<totalField>
+		<dataPath>Freight</dataPath>
+		<expression>Сумма(Freight)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Handling</dataPath>
+		<expression>Сумма(Handling)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Insurance</dataPath>
+		<expression>Сумма(Insurance)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>NumOfItems</dataPath>
+		<expression>Количество(Различные NumOfItems)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>NumOfParcels</dataPath>
+		<expression>Количество(Различные NumOfParcels)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>GrossWeightKG</dataPath>
+		<expression>Сумма(GrossWeightKG)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ReleaseDate.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ReleaseDate.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ReleaseDate</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Release date</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Release date</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Sum</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">CustomsFilesLight.ProcessLevel</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>b31b8c67-d4a8-4ccd-8b00-739f468c4185</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">CustomsFilesLight.ProcessLevel.Corporation</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>a7141e0e-e723-4ef2-a929-2e7231caf436</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">PaymentKind</dcsset:left>
+					<dcsset:comparisonType>Contains</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>0294758b-d15b-4c36-bca6-cab6381d41f3</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ReleaseDate</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>dea3eadc-a84c-434f-b9bb-0abbff3355d4</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Segment</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Freight</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Handling</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Insurance</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>NumOfItems</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>NumOfParcels</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>GrossWeightKG</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>PaidByCCA</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>PaymentKind</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>CustomsFilesLight</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Shipment</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>No</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>CustomsValue</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>InvoiceCurrency</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

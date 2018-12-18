@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1d0f032a-4465-4da6-a3df-17ed412f220a">
+  <producedTypes>
+    <selectionType typeId="4762a1d8-6e69-4004-a760-3f401b8df1b2" valueTypeId="89c7989f-cd52-4657-8373-ca190c9eb26e"/>
+    <listType typeId="0d4af724-5a57-4be0-aed0-c0246cc40c97" valueTypeId="5b4bfdd7-d500-4f8c-aef7-beab8e87e56a"/>
+    <managerType typeId="211918bf-a5a5-49a2-88d7-60bef614c745" valueTypeId="ab758720-1277-4b06-961d-f8b517f6bb72"/>
+    <recordSetType typeId="6a06aadc-d153-4777-b791-7625af39ae8c" valueTypeId="e6e90cea-77e6-4929-a239-396b7e4f3f11"/>
+    <recordKeyType typeId="ce923889-eff1-4cba-bd36-fedab8995c3a" valueTypeId="7413d3e6-ee06-4c09-a92f-91cb3b9019b6"/>
+    <recordType typeId="9fc2b037-3d70-4826-8294-c7c0b96b9b35" valueTypeId="4cb30694-6586-41f1-9487-9e2b57a9fb81"/>
+  </producedTypes>
+  <name>UnpaidCCDs</name>
+  <synonym>
+    <key>ru</key>
+    <value>Unpaid CCDs</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Unpaid CCDs</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="1ec2b786-3f6c-44c3-8363-86d5d1f09617">
+    <name>Sum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sum</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sum</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <markNegatives>true</markNegatives>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="be9499b0-8d77-43c8-ab54-9f660f82ed39">
+    <name>CCD</name>
+    <synonym>
+      <key>ru</key>
+      <value>CCD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>CCD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.CustomsFilesLight</types>
+      <types>DocumentRef.ГТД</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b760e7e1-dde2-40d9-97da-8b5af97108d8">
+    <name>PaymentKind</name>
+    <synonym>
+      <key>ru</key>
+      <value>Payment kind</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment kind</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>4</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

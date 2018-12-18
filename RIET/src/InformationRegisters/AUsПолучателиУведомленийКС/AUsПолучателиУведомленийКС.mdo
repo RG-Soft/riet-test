@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4a84e6f8-46fc-4c64-90fc-ea726f2b7d60">
+  <producedTypes>
+    <selectionType typeId="41e7e724-b721-4ebf-bf62-576616e71053" valueTypeId="f145dbbc-2cfe-4064-b6e7-9aaa5116aa7b"/>
+    <listType typeId="d3f538d8-97e2-4bc8-980e-5a2b1267c4cb" valueTypeId="fe02fbc0-b515-447b-9537-d7ccb6951e0d"/>
+    <managerType typeId="a621f88c-c665-40b8-b402-96f58de73765" valueTypeId="396ad9f2-21a6-4212-8cdb-08454da89d91"/>
+    <recordSetType typeId="636f2689-ad1f-44bb-884d-23cc17f914f2" valueTypeId="4114f70b-a072-4550-98fd-470063e38dfc"/>
+    <recordKeyType typeId="d72aa25b-00e6-4c1d-8867-afb43ab94415" valueTypeId="6384e977-371f-4288-a99f-c6026ba1cc04"/>
+    <recordType typeId="7e7d96a8-5c68-4ab4-b5a3-e0da5833bea7" valueTypeId="09250941-20ca-48cb-afe4-71387567edf9"/>
+    <recordManagerType typeId="042a7036-d8a1-4de6-bf58-406abc50e8aa" valueTypeId="ad8d6288-0692-4fba-a3f5-1ce185f152f9"/>
+  </producedTypes>
+  <name>AUsПолучателиУведомленийКС</name>
+  <synonym>
+    <key>ru</key>
+    <value>AUs - получатели уведомлений КС</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>AUs - получатели уведомлений КС</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.AUsПолучателиУведомленийКС.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.AUsПолучателиУведомленийКС.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="5048d9f4-2ec9-4d8d-99df-f9b5b5bf0c79">
+    <name>AU</name>
+    <synonym>
+      <key>ru</key>
+      <value>AU</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AU</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="73cc08f6-9cae-42bd-9eae-16dbf33acd7c">
+    <name>УровеньУведомленийКС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уровень уведомлений КС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Уровень уведомлений КС</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.УровниУведомленийКС</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8f91b447-b42e-4bc2-9d5c-5a61017e721e">
+    <name>Получатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получатель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Получатель</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </dimensions>
+  <forms uuid="05721961-fee4-4bf0-a85d-7ef0a5a51ffd">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a02dce8a-6863-4263-b3c4-b6a3b0c61291">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

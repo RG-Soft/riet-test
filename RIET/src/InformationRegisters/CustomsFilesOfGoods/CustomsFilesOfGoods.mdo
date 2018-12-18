@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="45539474-cf28-4889-a522-32709855cffc">
+  <producedTypes>
+    <selectionType typeId="f1cbd2e4-7627-42d8-8b9d-5d31c9fa3e99" valueTypeId="f67df439-5b78-456a-b4b5-a781ee177ef2"/>
+    <listType typeId="1436da85-b77a-4c54-a71b-707a013e983e" valueTypeId="1221a572-7a14-489a-8957-e84370c987a1"/>
+    <managerType typeId="8ca09a24-f132-4a0c-acea-1e62704ec0c9" valueTypeId="0aff5011-8bdf-4068-a104-8817a13307cf"/>
+    <recordSetType typeId="c312ecfb-1534-4017-8a17-8fc4015139f7" valueTypeId="f2693f65-3eb4-4612-9bf8-3ed92157453f"/>
+    <recordKeyType typeId="5356bc4c-ca5f-4f7e-b7ae-dcd624b328f6" valueTypeId="892c84f4-26e6-492c-b594-d019b6ac690b"/>
+    <recordType typeId="3b613af6-ecea-4811-b73e-35ce30695d58" valueTypeId="995ece7a-3b34-4a51-8f96-5c1b135d9890"/>
+    <recordManagerType typeId="f4befaca-6a76-4c6f-b2dd-26166672a324" valueTypeId="d356e608-ac21-4a72-84d1-f589e6139979"/>
+  </producedTypes>
+  <name>CustomsFilesOfGoods</name>
+  <synonym>
+    <key>ru</key>
+    <value>Customs files of goods</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Customs files of goods</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <writeMode>RecorderSubordinate</writeMode>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="23a3fe44-86c3-47f7-b48b-e91ac9141cab">
+    <name>CustomsFile</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customs file</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customs file</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.CustomsFilesLight</types>
+      <types>DocumentRef.ГТД</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.Проведен</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="fd1cf084-1861-4d9d-9c4b-983485b44963">
+    <name>DTNo</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customs file no.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customs file no.</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>28</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="47590d2b-7d89-4e89-992e-31206de16512">
+    <name>DTLineNo</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customs file line no.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customs file line no.</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="2d279b39-4a80-4c69-90ed-1fe0661c078b">
+    <name>Item</name>
+    <synonym>
+      <key>ru</key>
+      <value>Item</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтрокиИнвойса</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

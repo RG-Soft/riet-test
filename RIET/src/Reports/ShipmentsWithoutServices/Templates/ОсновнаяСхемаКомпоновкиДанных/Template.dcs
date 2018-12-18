@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Shipments</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Shipment</dataPath>
+			<field>Shipment</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Shipment</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CCD</dataPath>
+			<field>CCD</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CCD</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>CCD</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ImportExport</dataPath>
+			<field>ImportExport</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ATA</dataPath>
+			<field>ATA</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Cleared</dataPath>
+			<field>Cleared</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Regime</dataPath>
+			<field>Regime</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CCA</dataPath>
+			<field>CCA</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ParentCompany</dataPath>
+			<field>ParentCompany</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Parent company</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parent company</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>MOT</dataPath>
+			<field>MOT</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOC</dataPath>
+			<field>DOC</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>DOC</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>DOC</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AU</dataPath>
+			<field>AU</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>POLine</dataPath>
+			<field>POLine</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Item</dataPath>
+			<field>Item</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Item</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Item</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ShipmentsDOCs.Ссылка КАК Shipment,
+	ShipmentsDOCs.Ссылка.Cleared КАК Cleared,
+	ShipmentsDOCs.Ссылка.CCA,
+	ShipmentsDOCs.Ссылка.ATA,
+	ЗНАЧЕНИЕ(Перечисление.ИмпортЭкспорт.Import) КАК ImportExport,
+	ГТД.Ссылка КАК CCD,
+	ГТД.Regime,
+	ГТД.SoldTo КАК ParentCompany,
+	ShipmentsDOCs.Ссылка.MOT,
+	СтрокиИнвойса.Ссылка КАК Item,
+	СтрокиИнвойса.СтрокаЗаявкиНаЗакупку КАК POLine,
+	СтрокиИнвойса.КостЦентр КАК AU,
+	КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы.Ссылка КАК DOC
+ИЗ
+	Документ.Поставка.УпаковочныеЛисты КАК ShipmentsDOCs
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ГТД КАК ГТД
+		ПО ShipmentsDOCs.Ссылка = ГТД.Shipment
+			И (НЕ ГТД.ПометкаУдаления)
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.Service КАК DocService
+		ПО ShipmentsDOCs.Ссылка = DocService.DocumentBase
+			И (НЕ DocService.ПометкаУдаления)
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Инвойсы КАК КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.СтрокиИнвойса КАК СтрокиИнвойса
+			ПО КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы.Инвойс = СтрокиИнвойса.Инвойс
+		ПО ShipmentsDOCs.УпаковочныйЛист = КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы.Ссылка
+ГДЕ
+	ShipmentsDOCs.Ссылка.ИмпортЭкспорт = ЗНАЧЕНИЕ(Перечисление.ИмпортЭкспорт.Import)
+	И ShipmentsDOCs.Ссылка.Cleared &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+	И НЕ ShipmentsDOCs.Ссылка.Отменен
+	И DocService.Ссылка ЕСТЬ NULL 
+	И НЕ СтрокиИнвойса.ПометкаУдаления
+	И НЕ КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы.Ссылка.Отменен
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ExportShipment.Ссылка,
+	ExportShipment.ReleasedFromCustoms,
+	ExportShipment.CCA,
+	ExportShipment.InternationalATA,
+	ЗНАЧЕНИЕ(Перечисление.ИмпортЭкспорт.Export),
+	ГТД.Ссылка,
+	ГТД.Regime,
+	ГТД.SoldTo,
+	ExportShipment.InternationalMOT,
+	СтрокиИнвойса.Ссылка,
+	СтрокиИнвойса.СтрокаЗаявкиНаЗакупку,
+	СтрокиИнвойса.КостЦентр,
+	NULL
+ИЗ
+	Документ.ExportShipment КАК ExportShipment
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.Service КАК DocService
+		ПО ExportShipment.Ссылка = DocService.DocumentBase
+			И (НЕ DocService.ПометкаУдаления)
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ГТД КАК ГТД
+		ПО ExportShipment.Ссылка = ГТД.Shipment
+			И (НЕ ГТД.ПометкаУдаления)
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ExportShipment.ExportRequests КАК ExportShipmentExportRequests
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.СтрокиИнвойса КАК СтрокиИнвойса
+			ПО ExportShipmentExportRequests.ExportRequest = СтрокиИнвойса.ExportRequest
+		ПО ExportShipment.Ссылка = ExportShipmentExportRequests.Ссылка
+ГДЕ
+	DocService.Ссылка ЕСТЬ NULL 
+	И ExportShipment.ReleasedFromCustoms &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+	И НЕ ExportShipment.ПометкаУдаления
+	И НЕ СтрокиИнвойса.ПометкаУдаления
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	CustomsFilesLight.Ссылка,
+	CustomsFilesLight.ReleaseDate,
+	CustomsFilesLight.CCA,
+	NULL,
+	CustomsFilesLight.ImportExport,
+	NULL,
+	CustomsFilesLight.Regime,
+	CustomsFilesLight.SoldTo,
+	ВЫБОР
+		КОГДА CustomsFilesLight.Shipment ССЫЛКА Документ.ExportShipment
+			ТОГДА CustomsFilesLight.Shipment.InternationalMOT
+		ИНАЧЕ CustomsFilesLight.Shipment.MOT
+	КОНЕЦ,
+	NULL,
+	CustomsFilesLightGoods.POLine,
+	CustomsFilesLightGoods.AU,
+	NULL
+ИЗ
+	Документ.CustomsFilesLight.Goods КАК CustomsFilesLightGoods
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.CustomsFilesLight КАК CustomsFilesLight
+			ЛЕВОЕ СОЕДИНЕНИЕ Документ.Service КАК DocService
+			ПО CustomsFilesLight.Ссылка = DocService.DocumentBase
+				И (НЕ DocService.ПометкаУдаления)
+		ПО CustomsFilesLightGoods.Ссылка = CustomsFilesLight.Ссылка
+ГДЕ
+	DocService.Ссылка ЕСТЬ NULL 
+	И CustomsFilesLight.ReleaseDate &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+	И НЕ CustomsFilesLight.ПометкаУдаления</query>
+	</dataSet>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Shipment</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>MOT</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CCA</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ATA</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Cleared</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ParentCompany</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CCD</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ImportExport</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Regime</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Shipment.ProcessLevel.Corporation</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>9e80cd96-6743-42da-85cc-c68d1324a205</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Shipment.ProcessLevel</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>b557fd4d-0898-4bcf-8459-1fad795790f4</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ImportExport</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ИмпортЭкспорт.Import</dcsset:right>
+					<dcsset:userSettingID>2c1d7211-d3c5-4334-a588-34e4d8106ed5</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">CCA</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>8c124a4d-5b19-4773-a602-5ece5afff8fb</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Shipment</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>9d438a10-0db3-4fb6-ab5b-910c52749e08</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">CCD</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>95554def-c1dc-4402-970e-d7708ecdc883</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:userSettingID>4b08f0ec-e750-48f4-87dc-f31f81fb9ea8</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Cleared</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemAuto"/>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Shipment</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>MOT</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CCA</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ATA</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Cleared</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ParentCompany</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CCD</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ImportExport</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Regime</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

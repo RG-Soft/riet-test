@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16441"></meta></head><body>
+<h1>Справочник "CCD lines"</h1>
+<p>Справочник "CCD lines" входит в <a href="Subsystem.CustomsAccounting.Subsystem.CustomsDocuments/Help">подсистему "Customs documents"</a>.<br>Справочник предназначен для хранения данных строк ГТД (графы 31-46).<br>Общая информация по ГТД хранится в <a href="Document.ГТД/Help">документе "CCD"</a>.<br>Строки ГТД в свою очередь делятся на товары строк ГТД, которые хранятся в <a href="Catalog.ТоварыСтрокГТД/Help">справочнике "CCD line goods"</a>.<br>Вся <a href="Document.ГТД/Help">ГТД</a> вместе со строками и <a href="Catalog.ТоварыСтрокГТД/Help">товарами строк</a> может быть загружена автоматически из xml-файла с помощью <a href="DataProcessor.CustomsFileLoading/Help">обработки "CCD loading"</a>.  </p>
+<h2>Структура справочника</h2>
+<h3>Реквизиты шапки</h3>
+<ul><li><strong>CCD</strong> (<a href="Document.ГТД/Help">документ "CCD"</a>)<br>Обязательное для заполнения поле.<br>Нельзя изменить строку ГТД, если документ ГТД проведен. 
+</li><li>
+<p class="Usual"><strong>CCD line no.</strong> (число)<br>Обязательное для заполнения поле.<br>Не должно существовать другой строки ГТД<strong> </strong>с таким же номером.</p>
+</li><li><strong>Good description</strong> (строка) 
+</li><li><strong>Gross weight</strong> (число) 
+</li><li><strong>Net weight</strong> (число) 
+</li><li><strong>Customs cost</strong> (число) <br>Обязательное для заполнения поле. 
+</li><li><strong>Statistical cost</strong> (число) 
+</li><li><strong>TN VED code</strong> (строка) 
+</li><li><strong>Origin country code</strong> (строка) 
+</li><li><strong>Supplementary qty.</strong> (число) 
+</li><li><strong>Supplementary UOM name</strong> (строка) 
+</li><li><strong>Supplementary UOM code</strong> (число)</li></ul><h3>Табличная часть "Presented documents"</h3>
+<p>Эта табличная часть - аналог графы 44 (Дополнительная информация. Предоставленные документы. Сертификаты и разрешения) ГТД.</p>
+<ul><li><strong>Name</strong> (строка) - наименование документа 
+</li><li><strong>Number</strong> (строка) - номер документа 
+</li><li><strong>Date</strong> (строка) - дата документа  
+</li><li><strong>Presented document mode code</strong> (строка) - код вида документа</li></ul><h3>Табличная часть "Payment calculation"</h3>
+<p>Эта табличная часть - аналог графы 47 (Исчисление платежей) ГТД.</p>
+<ul><li><strong>Payment mode code</strong> (строка) 
+</li><li><strong>Payment mode</strong> (справочник CCD payment modes)<br>Обязательное для заполнения поле. 
+</li><li><strong>CVC</strong> (булево) - признак того, что в строке указана сумма корректировки платежа 
+</li><li><strong>Payment amount</strong> (число) 
+</li><li><strong>Payment currency code</strong> (число) 
+</li><li><strong>Tax base</strong> (число) 
+</li><li><strong>Tax base currency code</strong> (число) 
+</li><li><strong>Rate</strong> (число) 
+</li><li><strong>Rate type code</strong> (строка) 
+</li><li><strong>Currency use date</strong> (строка) 
+</li><li><strong>Rate use date</strong> (строка) 
+</li><li><strong>СП</strong> (строка)</li></ul></body></html>

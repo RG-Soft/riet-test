@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9be98130-c02b-4439-bae8-6f269bede9ce">
+  <producedTypes>
+    <selectionType typeId="20f85d9e-be3b-4447-90c0-847f31423f46" valueTypeId="39794d2a-d377-4011-bb0e-617c171e6f8f"/>
+    <listType typeId="78667f7a-8c8d-41f8-9636-694de017d921" valueTypeId="d8cc769f-4e81-4722-96b2-1880d093d5d4"/>
+    <managerType typeId="8fb8709d-c44e-4600-a2ba-d5e835365b80" valueTypeId="1f2cf5e8-598a-4d36-9920-aef5e6a56bc9"/>
+    <recordSetType typeId="e55b36dc-8bba-4793-9c56-68387649d504" valueTypeId="abc00358-70b4-4513-9522-4f37bac009dd"/>
+    <recordKeyType typeId="133d7d44-b45a-4f17-99aa-ce962267390e" valueTypeId="245d19db-6fde-4d64-9f82-56e8da90be20"/>
+    <recordType typeId="14eae1a8-fd09-41aa-ae66-070e7992a860" valueTypeId="e9a7509d-101a-44bc-86ae-cb05044e27f1"/>
+    <recordManagerType typeId="389e4f49-5328-4a21-ae3e-6e3b9edefb0c" valueTypeId="a7d2c988-82d2-439f-b537-23e2fa9c7919"/>
+  </producedTypes>
+  <name>ОператорыДляУведомлений</name>
+  <synonym>
+    <key>ru</key>
+    <value>FS Users Settings</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>FS Users Settings</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ОператорыДляУведомлений.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ОператорыДляУведомлений.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6e8a782e-75b6-4092-a3c5-437f1b1a9e8c">
+    <name>ПервоеУведомление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Первое уведомление</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>First notification time</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Time</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="535cd3b1-03fd-4d17-ba50-833ae164aafd">
+    <name>ВтороеУведомление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Второе уведомление</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Second notification time</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Time</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="468594e8-2bb0-4256-98e5-8d3af5ada714">
+    <name>Оператор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оператор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fleet supervisor</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="505d1954-8327-40d5-9655-e4b098d30378">
+    <name>ЧасовойПояс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Часовой пояс</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Time-zone</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.TimeZones</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="42604636-c97c-4bb3-918a-c6c7ce7f00d2">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="02c5e0f2-02d2-4390-8228-c945ad140f06">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

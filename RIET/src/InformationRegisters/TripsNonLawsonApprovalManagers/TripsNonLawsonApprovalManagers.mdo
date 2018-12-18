@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fd95030b-cdc1-48ac-b5a0-533d7810e563">
+  <producedTypes>
+    <selectionType typeId="1348131c-8949-46f8-9aa4-dc11b607e7aa" valueTypeId="23139e72-7933-4a68-8ae3-47ac61fd1f54"/>
+    <listType typeId="55e66a90-99bb-4c0a-9d41-0c6421ed35a8" valueTypeId="d20c7b9b-0518-4ad0-b7c3-5acc6888f037"/>
+    <managerType typeId="22abdd98-0fbe-4234-9c6b-f688102e5c15" valueTypeId="4e95c256-8555-4f8d-b9a5-091ce382b98d"/>
+    <recordSetType typeId="89a168a7-8f5e-40d5-9a34-d5d944cbf6d1" valueTypeId="4f056f5e-eefc-44fa-9077-ec6760f05946"/>
+    <recordKeyType typeId="4b950e6a-e83c-498f-981a-4d8a6fdc0e75" valueTypeId="8da524ff-a630-4fda-915a-bee3d206e4c3"/>
+    <recordType typeId="1344b4ce-c752-4853-9ec9-23081ae21bbc" valueTypeId="a4cb02b0-10a1-4bc5-951b-f96483eb978d"/>
+    <recordManagerType typeId="481bb872-5043-4b74-8f4f-0c0932eeb695" valueTypeId="578461fe-c84e-4a94-90ce-62a020abef24"/>
+  </producedTypes>
+  <name>TripsNonLawsonApprovalManagers</name>
+  <synonym>
+    <key>ru</key>
+    <value>Approval managers</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Approval managers</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.TripsNonLawsonApprovalManagers.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.TripsNonLawsonApprovalManagers.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="9d6a6c90-35a6-486a-81af-5fa4afb3bca2">
+    <name>ApprovalManager</name>
+    <synonym>
+      <key>ru</key>
+      <value>Approval manager</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Approval manager</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c95e5b4e-75f9-4873-a0a7-e249b65cb4b4">
+    <name>ApprovalLevel</name>
+    <synonym>
+      <key>ru</key>
+      <value>Approval level</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Approval level</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ApprovalLevels</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="81d85032-fa73-46c7-9a83-33e80f963325">
+    <name>NotificationOnPending</name>
+    <synonym>
+      <key>ru</key>
+      <value>Notification on pending TRs, days</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Notification on pending TRs, days</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="3cb12353-44c3-4700-a024-d21c5dcf504b">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="43027caa-5927-4f82-a05f-6e88ea516760">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

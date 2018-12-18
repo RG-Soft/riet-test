@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b3fea80d-e2ae-4beb-8ad1-e9c701b28bf9">
+  <producedTypes>
+    <objectType typeId="31e48272-6e5d-43d6-9aa6-3b09f9a3bc2a" valueTypeId="039ff283-b956-4452-9453-fd511233c79a"/>
+    <refType typeId="c94836ab-f454-4d92-9dce-d876110b065b" valueTypeId="8cbb0193-cf02-4314-9174-ec74115a97de"/>
+    <selectionType typeId="e4b99aaf-e369-4f61-8e31-c9916b5e524e" valueTypeId="1e9411ad-c79b-44c4-8400-93e41818199b"/>
+    <listType typeId="0d85a806-7b19-4e54-b720-6c1303a4e568" valueTypeId="b7317fd5-0722-4bec-97fa-c656cae83145"/>
+    <managerType typeId="a18161f1-719f-4280-a6b2-fc3a92dcd74f" valueTypeId="07449bdd-704f-44ab-a0bb-e1af99680f59"/>
+  </producedTypes>
+  <name>LawsonInvoice</name>
+  <synonym>
+    <key>ru</key>
+    <value>Lawson invoice</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Lawson invoice</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.LawsonInvoice.Attribute.ArInvoice</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <numberType>String</numberType>
+  <numberLength>6</numberLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.LawsonInvoice.Form.ФормаДокумента</defaultObjectForm>
+  <posting>Deny</posting>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>AccumulationRegister.ПроводкиDSS_SB</registerRecords>
+  <attributes uuid="af48624d-ea1c-4388-9aad-f60b1d6ed1a7">
+    <name>ArInvoice</name>
+    <synonym>
+      <key>ru</key>
+      <value>AR invoice</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AR invoice</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>IndexWithAdditionalOrder</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="22844848-b475-4f30-86cc-08e503050174">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПередачаОС</types>
+      <types>DocumentRef.ОтчетАгентаПоРасходам</types>
+      <types>DocumentRef.КорректировкаДолга</types>
+      <types>DocumentRef.СчетКнигиПокупок</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.ОтчетПринципалуОПродажах</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e5aa026b-4de6-40be-a0e0-d1b6be9a731e">
+    <name>Архив</name>
+    <synonym>
+      <key>ru</key>
+      <value>Архив</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Архив</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="36789c38-da71-43b6-9c37-f2be3474a9fd">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Document>

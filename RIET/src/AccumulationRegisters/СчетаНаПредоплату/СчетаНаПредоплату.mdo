@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="deec002d-9a4a-4a2e-91dc-6ea3fe8fb0dc">
+  <producedTypes>
+    <selectionType typeId="c094b7d4-ab4d-4d41-84a9-ae7c6e2e9b08" valueTypeId="0064a73e-26bf-4445-a9b4-8c24a4be56cd"/>
+    <listType typeId="21c8643b-380c-4e80-a6de-15c780691a57" valueTypeId="7a990903-06b3-46aa-84b1-5458a24a13fb"/>
+    <managerType typeId="eb372937-d0cb-463e-b702-c9b50491f589" valueTypeId="b54ceeca-57be-401e-afbc-c9ca1f933787"/>
+    <recordSetType typeId="fd8d0891-e285-4acf-8d2b-f2946e35ce2b" valueTypeId="566b1569-34a7-453d-9759-b1e1df66b4eb"/>
+    <recordKeyType typeId="b2baaa3e-a8b8-4430-a049-659e57dae1e5" valueTypeId="16006730-d898-48ff-8eee-a9ef2e1265de"/>
+    <recordType typeId="b2883f6a-39ff-4f59-b15c-7ec4c3895341" valueTypeId="494369f2-e1bb-449e-8a3b-f6a9d6fcd2fa"/>
+  </producedTypes>
+  <name>СчетаНаПредоплату</name>
+  <synonym>
+    <key>ru</key>
+    <value>Счета на предоплату</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Счета на предоплату</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <resources uuid="c5ba7c7b-7aac-4043-b8c0-0aea85910b59">
+    <name>СуммаРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма в рублях</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма в рублях</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="fdc091cd-e9ba-4134-ba72-45eae98bebdd">
+    <name>СуммаВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма в валюте взаиморасчетов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма в валюте взаиморасчетов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="9049f4bd-7ad3-4f64-9de6-9140f06729d3">
+    <name>ПодразделениеОрганизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение организации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Подразделение организации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="c811d4d8-45bb-4a1c-94c8-d44194d513b4">
+    <name>ДоговорКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="492b2d00-458b-4fcb-aec6-b81aa70d51c3">
+    <name>СчетНаОплату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет на оплату</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Счет на оплату</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.СчетНаОплатуПокупателю</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DOC</dataPath>
+			<field>DOC</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PartNo</dataPath>
+			<field>PartNo</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ModifiedBy</dataPath>
+			<field>ModifiedBy</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>EMail</dataPath>
+			<field>EMail</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Status</dataPath>
+			<field>Status</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Query</dataPath>
+			<field>Query</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>BORG</dataPath>
+			<field>BORG</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>BORG</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ExportRequest</dataPath>
+			<field>ExportRequest</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	TDStatusesСрезПоследних.Период,
+	TDStatusesСрезПоследних.PartNo,
+	TDStatusesСрезПоследних.DOC,
+	TDStatusesСрезПоследних.Status,
+	TDStatusesСрезПоследних.Query,
+	TDStatusesСрезПоследних.EMail,
+	TDStatusesСрезПоследних.ModifiedBy,
+	МАКСИМУМ(ВЫБОР
+			КОГДА TDStatusesСрезПоследних.DOC ССЫЛКА Справочник.BORGs
+				ТОГДА TDStatusesСрезПоследних.DOC
+			КОГДА TDStatusesСрезПоследних.DOC ССЫЛКА Документ.ExportRequest
+				ТОГДА TDStatusesСрезПоследних.DOC.BORG
+			КОГДА TDStatusesСрезПоследних.DOC ССЫЛКА Документ.КонсолидированныйПакетЗаявокНаПеревозку
+				ТОГДА ВЫБОР
+						КОГДА НЕ ЗаявкиНаЗакупку.БОРГ ЕСТЬ NULL
+								И ЗаявкиНаЗакупку.БОРГ &lt;&gt; ЗНАЧЕНИЕ(Справочник.BORGs.ПустаяСсылка)
+							ТОГДА ЗаявкиНаЗакупку.БОРГ
+						КОГДА НЕ BORGs.Ссылка ЕСТЬ NULL
+							ТОГДА BORGs.Ссылка
+						ИНАЧЕ ЕСТЬNULL(BORGs1.Ссылка, ЗНАЧЕНИЕ(Справочник.BORGs.ПустаяСсылка))
+					КОНЕЦ
+		КОНЕЦ) КАК BORG,
+	СтрокиИнвойса.ExportRequest
+ИЗ
+	РегистрСведений.TDStatuses.СрезПоследних(, ) КАК TDStatusesСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Инвойсы КАК КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы
+			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.СтрокиИнвойса КАК СтрокиИнвойса
+				ЛЕВОЕ СОЕДИНЕНИЕ Справочник.BORGs КАК BORGs
+				ПО (НЕ BORGs.ПометкаУдаления)
+					И (ПОДСТРОКА(СтрокиИнвойса.НомерЗаявкиНаЗакупку, 1, 4) = BORGs.Код)
+				ЛЕВОЕ СОЕДИНЕНИЕ Справочник.BORGs КАК BORGs1
+				ПО (НЕ BORGs1.ПометкаУдаления)
+					И (ПОДСТРОКА(СтрокиИнвойса.НомерЗаявкиНаЗакупку, 1, 2) = BORGs1.Код)
+				ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ЗаявкиНаЗакупку КАК ЗаявкиНаЗакупку
+				ПО СтрокиИнвойса.НомерЗаявкиНаЗакупку = ЗаявкиНаЗакупку.Код
+					И (НЕ ЗаявкиНаЗакупку.ПометкаУдаления)
+			ПО КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы.Инвойс = СтрокиИнвойса.Инвойс
+				И (НЕ СтрокиИнвойса.ПометкаУдаления)
+		ПО TDStatusesСрезПоследних.DOC = КонсолидированныйПакетЗаявокНаПеревозкуИнвойсы.Ссылка
+
+СГРУППИРОВАТЬ ПО
+	TDStatusesСрезПоследних.Период,
+	TDStatusesСрезПоследних.PartNo,
+	TDStatusesСрезПоследних.DOC,
+	TDStatusesСрезПоследних.Status,
+	TDStatusesСрезПоследних.Query,
+	TDStatusesСрезПоследних.EMail,
+	TDStatusesСрезПоследних.ModifiedBy,
+	СтрокиИнвойса.ExportRequest</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Период</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PartNo</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Status</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DOC</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Query</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ModifiedBy</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>EMail</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">PartNo</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>41680334-2f04-4e37-ba9b-2b7340f2d2de</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">DOC</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>346b3c2f-6d9a-4c79-ab19-7d0b07f7c89a</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Status</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>ce3fd82b-aea9-41c4-93d4-ab41fa602c10</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ModifiedBy</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>93ca0cd1-a2ef-449b-82ce-e25dda013af0</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

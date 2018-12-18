@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7197f395-ceac-4302-9ac4-4448e7f31b54">
+  <producedTypes>
+    <selectionType typeId="a61e9bf1-8dbf-41a4-8b1d-e8699b8819b5" valueTypeId="c114f163-bce7-48cc-8b05-773120c0a2bc"/>
+    <listType typeId="4b4d2b3c-ff01-4e7f-bcc0-245e0769db81" valueTypeId="17734920-0d73-41c5-b748-c7c6c293154b"/>
+    <managerType typeId="1ed3ee34-23a1-47b4-a9bb-5e4dfad008f8" valueTypeId="24457d72-2874-457d-afd5-cbb52f9d7937"/>
+    <recordSetType typeId="0b045082-c602-4851-86b6-92673aeb43bc" valueTypeId="0774216a-9404-45ed-84b6-4a65376b261d"/>
+    <recordKeyType typeId="5d8a7681-fbb3-4934-92e3-d7d734922d33" valueTypeId="1c2cf717-d02f-4a1a-a5a4-a40220cd2475"/>
+    <recordType typeId="acb2632f-36b4-4cfc-8401-3f1184b1e685" valueTypeId="014c869f-9d21-4a82-9bfc-df609b91d162"/>
+  </producedTypes>
+  <name>InternationalAndDomesticFactCosts</name>
+  <synonym>
+    <key>ru</key>
+    <value>International &amp; domestic fact costs</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>International &amp; domestic fact costs</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <listPresentation>
+    <key>ru</key>
+    <value>International &amp; domestic fact costs</value>
+  </listPresentation>
+  <listPresentation>
+    <key>en</key>
+    <value>International &amp; domestic fact costs</value>
+  </listPresentation>
+  <extendedListPresentation>
+    <key>ru</key>
+    <value>International &amp; domestic fact costs</value>
+  </extendedListPresentation>
+  <extendedListPresentation>
+    <key>en</key>
+    <value>International &amp; domestic fact costs</value>
+  </extendedListPresentation>
+  <resources uuid="96ae937d-6ee5-47a7-9e33-d13088a56e9d">
+    <name>Sum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sum, USD</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sum, USD</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="505a04cc-cdbe-44da-a7e0-08afe3216763">
+    <name>ParentCompany</name>
+    <synonym>
+      <key>ru</key>
+      <value>Company</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.SoldTo</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <quickChoice>DontUse</quickChoice>
+    <createOnInput>Use</createOnInput>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b59bd5c3-c69b-4cd6-9f32-f09e0a981569">
+    <name>Geomarket</name>
+    <synonym>
+      <key>ru</key>
+      <value>Geomarket</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Geomarket</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.GeoMarkets</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="7739bdd3-7968-4bb2-9a4f-5a4dfd435773">
+    <name>SubGeomarket</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sub geomarket</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub geomarket</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.GeoMarkets</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <choiceParameterLinks>
+      <name>Отбор.Родитель</name>
+      <field>0:5392de9b-bb58-4dc0-aee3-aebb8a54432e</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a7f3c5e6-1e7d-4811-aae8-bdb0c49fad2f">
+    <name>Segment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Segment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="4937674e-6a97-42c4-ae15-b0c497725833">
+    <name>SubSegment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sub segment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub segment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <choiceParameterLinks>
+      <name>Отбор.Родитель</name>
+      <changeMode>DontChange</changeMode>
+      <field>0:40001aed-178c-4358-8e49-de3aba80bcf3</field>
+    </choiceParameterLinks>
+    <quickChoice>Use</quickChoice>
+    <createOnInput>DontUse</createOnInput>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="9c8b83a9-42ff-4553-afd9-21fb4a78df5e">
+    <name>CostsType</name>
+    <synonym>
+      <key>ru</key>
+      <value>Costs type</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Costs type</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.FactCostsTypes</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="25235817-f930-486e-b4c6-10a45f64191e">
+    <name>DomesticInternational</name>
+    <synonym>
+      <key>ru</key>
+      <value>Dom/Int</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dom/Int</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.DomesticInternational</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

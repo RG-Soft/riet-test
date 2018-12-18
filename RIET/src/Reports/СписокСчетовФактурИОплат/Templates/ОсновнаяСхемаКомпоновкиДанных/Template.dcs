@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>WO</dataPath>
+			<field>WO</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаВзаиморасчетов</dataPath>
+			<field>ВалютаВзаиморасчетов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаРеализации</dataPath>
+			<field>ВалютаРеализации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаСчетаФактуры</dataPath>
+			<field>ВалютаСчетаФактуры</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта счета-фактуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Валюта счета-фактуры</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПлатежа</dataPath>
+			<field>ДатаПлатежа</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСчетаФактуры</dataPath>
+			<field>ДатаСчетаФактуры</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата счета-фактуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Дата счета-фактуры</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоговорКонтрагента</dataPath>
+			<field>ДоговорКонтрагента</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗадолженностьВВалютеВзаиморасчетов</dataPath>
+			<field>ЗадолженностьВВалютеВзаиморасчетов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗадолженностьРуб</dataPath>
+			<field>ЗадолженностьРуб</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвойсинговыйЦентр</dataPath>
+			<field>ИнвойсинговыйЦентр</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КостЦентр</dataPath>
+			<field>КостЦентр</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кост-центр</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Кост-центр</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Месторождение</dataPath>
+			<field>Месторождение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерСчетаФактуры</dataPath>
+			<field>НомерСчетаФактуры</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер счета-фактуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Номер счета-фактуры</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеОрганизации</dataPath>
+			<field>ПодразделениеОрганизации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Реализация</dataPath>
+			<field>Реализация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер счета-фактуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Номер счета-фактуры</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>НомерСчетаФактуры</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сделка</dataPath>
+			<field>Сделка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сегмент</dataPath>
+			<field>Сегмент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПлатежа</dataPath>
+			<field>СуммаПлатежа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРеализации</dataPath>
+			<field>СуммаРеализации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаСчетаФактуры</dataPath>
+			<field>СуммаСчетаФактуры</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма счета-фактуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сумма счета-фактуры</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетНаПредоплату</dataPath>
+			<field>СчетНаПредоплату</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПлатежноеПоручение</dataPath>
+			<field>ПлатежноеПоручение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ДатаПлатежа</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ДатаПлатежа</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<presentationExpression>ДатаПлатежа</presentationExpression>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скважина</dataPath>
+			<field>Скважина</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скважина</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Скважина</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВзаиморасчетыСПокупателямиОбороты.Регистратор КАК Реализация,
+	ВзаиморасчетыСПокупателямиОбороты.ДоговорКонтрагента,
+	ВзаиморасчетыСПокупателямиОбороты.ДоговорКонтрагента.Владелец КАК Контрагент
+ПОМЕСТИТЬ Реализации
+ИЗ
+	РегистрНакопления.ВзаиморасчетыСПокупателями.Обороты(, , Регистратор, ) КАК ВзаиморасчетыСПокупателямиОбороты
+ГДЕ
+	(ВзаиморасчетыСПокупателямиОбороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+			ИЛИ ВзаиморасчетыСПокупателямиОбороты.Регистратор ССЫЛКА Документ.ПередачаОС)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Реализации.Реализация,
+	ЕСТЬNULL(РеализацияТоваровУслугТовары.КостЦентр.Segment, РеализацияТоваровУслугУслуги.КостЦентр.Segment) КАК Segment,
+	ЕСТЬNULL(РеализацияТоваровУслугТовары.Oilfield, РеализацияТоваровУслугУслуги.Oilfield) КАК Oilfield,
+	ЕСТЬNULL(РеализацияТоваровУслугТовары.Well, РеализацияТоваровУслугУслуги.Well) КАК Well
+ПОМЕСТИТЬ РелизацииССегментами
+ИЗ
+	Реализации КАК Реализации
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.РеализацияТоваровУслуг.Товары КАК РеализацияТоваровУслугТовары
+		ПО Реализации.Реализация = РеализацияТоваровУслугТовары.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.РеализацияТоваровУслуг.Услуги КАК РеализацияТоваровУслугУслуги
+		ПО Реализации.Реализация = РеализацияТоваровУслугУслуги.Ссылка
+ГДЕ
+	(РеализацияТоваровУслугТовары.НомерСтроки = 1
+			ИЛИ РеализацияТоваровУслугУслуги.НомерСтроки = 1)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВзаиморасчетыСПокупателямиОбороты.Регистратор КАК ПП,
+	ВзаиморасчетыСПокупателямиОбороты.Сделка КАК Реализация,
+	ВзаиморасчетыСПокупателямиОбороты.СуммаВзаиморасчетовОборот,
+	ВзаиморасчетыСПокупателямиОбороты.СуммаУпрОборот,
+	ВзаиморасчетыСПокупателямиОбороты.СуммаРеглОборот
+ПОМЕСТИТЬ РеализацииИОплаты
+ИЗ
+	РегистрНакопления.ВзаиморасчетыСПокупателями.Обороты(, , Регистратор, ) КАК ВзаиморасчетыСПокупателямиОбороты
+ГДЕ
+	(ВзаиморасчетыСПокупателямиОбороты.Сделка ССЫЛКА Документ.РеализацияТоваровУслуг
+			ИЛИ ВзаиморасчетыСПокупателямиОбороты.Сделка ССЫЛКА Документ.ПередачаОС)
+	И (ВзаиморасчетыСПокупателямиОбороты.Регистратор ССЫЛКА Документ.ПлатежноеПоручениеВходящее
+			ИЛИ ВзаиморасчетыСПокупателямиОбороты.Регистратор ССЫЛКА Документ.ПлатежноеПоручениеИсходящее)
+	И НЕ ВзаиморасчетыСПокупателямиОбороты.Сделка = ВзаиморасчетыСПокупателямиОбороты.Регистратор
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВзаиморасчетыСПокупателямиОбороты.Сделка,
+	ВзаиморасчетыСПокупателямиОбороты.Регистратор,
+	ВзаиморасчетыСПокупателямиОбороты.СуммаВзаиморасчетовОборот,
+	ВзаиморасчетыСПокупателямиОбороты.СуммаУпрОборот,
+	ВзаиморасчетыСПокупателямиОбороты.СуммаРеглОборот
+ИЗ
+	РегистрНакопления.ВзаиморасчетыСПокупателями.Обороты(, , Регистратор, ) КАК ВзаиморасчетыСПокупателямиОбороты
+ГДЕ
+	(ВзаиморасчетыСПокупателямиОбороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+			ИЛИ ВзаиморасчетыСПокупателямиОбороты.Регистратор ССЫЛКА Документ.ПередачаОС)
+	И (ВзаиморасчетыСПокупателямиОбороты.Сделка ССЫЛКА Документ.ПлатежноеПоручениеВходящее
+			ИЛИ ВзаиморасчетыСПокупателямиОбороты.Сделка ССЫЛКА Документ.ПлатежноеПоручениеИсходящее)
+	И НЕ ВзаиморасчетыСПокупателямиОбороты.Сделка = ВзаиморасчетыСПокупателямиОбороты.Регистратор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РеализацииИОплаты.Реализация,
+	МИНИМУМ(РеализацииИОплаты.ПП.Дата) КАК ППДата
+ПОМЕСТИТЬ ПерваяОплата
+ИЗ
+	РеализацииИОплаты КАК РеализацииИОплаты
+
+СГРУППИРОВАТЬ ПО
+	РеализацииИОплаты.Реализация
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Реализации.Реализация,
+	РеализацииИОплаты.ПП,
+	ЕСТЬNULL(РеализацииИОплаты.СуммаВзаиморасчетовОборот, 0) КАК СуммаВзаиморасчетов,
+	ЕСТЬNULL(РеализацииИОплаты.СуммаУпрОборот, 0) КАК СуммаУпр,
+	ЕСТЬNULL(РеализацииИОплаты.СуммаРеглОборот, 0) КАК СуммаРегл,
+	ЕСТЬNULL(ВзаиморасчетыСПокупателямиОстатки.СуммаВзаиморасчетовОстаток, 0) КАК СуммаВзаиморасчетовОстаток,
+	ЕСТЬNULL(ВзаиморасчетыСПокупателямиОстатки.СуммаУпрОстаток, 0) КАК СуммаУпрОстаток,
+	ЕСТЬNULL(ВзаиморасчетыСПокупателямиОстатки.СуммаРеглОстаток, 0) КАК СуммаРеглОстаток,
+	СчетФактураВыданный.Ссылка КАК СчетФактура,
+	Реализации.ДоговорКонтрагента,
+	Реализации.Контрагент
+ПОМЕСТИТЬ ТабСоединенная
+ИЗ
+	Реализации КАК Реализации
+		ЛЕВОЕ СОЕДИНЕНИЕ РеализацииИОплаты КАК РеализацииИОплаты
+		ПО Реализации.Реализация = РеализацииИОплаты.Реализация
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ВзаиморасчетыСПокупателями.Остатки КАК ВзаиморасчетыСПокупателямиОстатки
+		ПО Реализации.Реализация = ВзаиморасчетыСПокупателямиОстатки.Сделка
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.СчетФактураВыданный КАК СчетФактураВыданный
+		ПО Реализации.Реализация = СчетФактураВыданный.ДокументОснование
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РелизацииССегментами.Segment КАК Сегмент,
+	РелизацииССегментами.Oilfield КАК Месторождение,
+	ТабСоединенная.Реализация КАК Реализация,
+	ТабСоединенная.СчетФактура.Номер КАК НомерСчетаФактуры,
+	ТабСоединенная.СчетФактура.Дата КАК ДатаСчетаФактуры,
+	РелизацииССегментами.Реализация.СуммаДокумента КАК СуммаРеализации,
+	ТабСоединенная.Реализация.ВалютаДокумента КАК ВалютаРеализации,
+	ТабСоединенная.СчетФактура.СуммаДокумента КАК СуммаСчетаФактуры,
+	ТабСоединенная.СчетФактура.ВалютаДокумента КАК ВалютаСчетаФактуры,
+	ТабСоединенная.ДоговорКонтрагента КАК ДоговорКонтрагента,
+	ТабСоединенная.ПП КАК ПлатежноеПоручение,
+	ТабСоединенная.ПП.СуммаДокумента КАК СуммаПлатежа,
+	ТабСоединенная.ПП.Дата КАК ДатаПлатежа,
+	ТабСоединенная.СуммаВзаиморасчетовОстаток КАК ЗадолженностьВВалютеВзаиморасчетов,
+	ТабСоединенная.Реализация.ДоговорКонтрагента.ВалютаВзаиморасчетов КАК ВалютаВзаиморасчетов,
+	ТабСоединенная.СуммаРеглОстаток КАК ЗадолженностьРуб,
+	ТабСоединенная.Контрагент,
+	РелизацииССегментами.Well КАК Скважина
+ПОМЕСТИТЬ ИтоговаяТаблица
+ИЗ
+	ТабСоединенная КАК ТабСоединенная
+		ЛЕВОЕ СОЕДИНЕНИЕ РелизацииССегментами КАК РелизацииССегментами
+		ПО ТабСоединенная.Реализация = РелизацииССегментами.Реализация
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.Сегмент
+		ИНАЧЕ NULL
+	КОНЕЦ КАК Сегмент,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.Месторождение
+		ИНАЧЕ NULL
+	КОНЕЦ КАК Месторождение,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.Реализация
+		ИНАЧЕ NULL
+	КОНЕЦ КАК Реализация,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.НомерСчетаФактуры
+		ИНАЧЕ NULL
+	КОНЕЦ КАК НомерСчетаФактуры,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.ДатаСчетаФактуры
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ДатаСчетаФактуры,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.СуммаРеализации
+		ИНАЧЕ NULL
+	КОНЕЦ КАК СуммаРеализации,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.ВалютаРеализации
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ВалютаРеализации,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.СуммаСчетаФактуры
+		ИНАЧЕ NULL
+	КОНЕЦ КАК СуммаСчетаФактуры,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.ВалютаСчетаФактуры
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ВалютаСчетаФактуры,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.ДоговорКонтрагента
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ДоговорКонтрагента,
+	ИтоговаяТаблица.ПлатежноеПоручение,
+	ИтоговаяТаблица.СуммаПлатежа КАК СуммаПлатежа,
+	ИтоговаяТаблица.ДатаПлатежа КАК ДатаПлатежа,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.ЗадолженностьВВалютеВзаиморасчетов
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ЗадолженностьВВалютеВзаиморасчетов,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.ВалютаВзаиморасчетов
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ВалютаВзаиморасчетов,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.ЗадолженностьРуб
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ЗадолженностьРуб,
+	ИтоговаяТаблица.Контрагент,
+	ВЫБОР
+		КОГДА ИтоговаяТаблица.ДатаПлатежа = ПерваяОплата.ППДата
+				ИЛИ ИтоговаяТаблица.ДатаПлатежа ЕСТЬ NULL 
+			ТОГДА ИтоговаяТаблица.Скважина
+		ИНАЧЕ NULL
+	КОНЕЦ КАК Скважина
+ИЗ
+	ИтоговаяТаблица КАК ИтоговаяТаблица
+		ЛЕВОЕ СОЕДИНЕНИЕ ПерваяОплата КАК ПерваяОплата
+		ПО ИтоговаяТаблица.Реализация = ПерваяОплата.Реализация
+
+УПОРЯДОЧИТЬ ПО
+	ИтоговаяТаблица.Реализация.Дата,
+	ИтоговаяТаблица.ДатаПлатежа</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НачалоПериода(&amp;Интервал.ДатаНачала,"День")</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КонецПериода(&amp;Интервал.ДатаОкончания,"День")</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КонецПериода(&amp;Интервал.ДатаОкончания,"День")</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Интервал</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Интервал</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Интервал</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>2013-01-01T00:00:00</v8:startDate>
+			<v8:endDate>2013-12-31T23:59:59</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сегмент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Месторождение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Скважина</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Реализация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаСчетаФактуры</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаСчетаФактуры</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВалютаСчетаФактуры</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДоговорКонтрагента</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПлатежа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПлатежноеПоручение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗадолженностьВВалютеВзаиморасчетов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ВалютаВзаиморасчетов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ЗадолженностьРуб</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Контрагент</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>f9642b60-e36f-4557-b53b-25184be602e3</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Интервал</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>c4b14f69-382f-4466-9f9d-1e49d2c84949</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

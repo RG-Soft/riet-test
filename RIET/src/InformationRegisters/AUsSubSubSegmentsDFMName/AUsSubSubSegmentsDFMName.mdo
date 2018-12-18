@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="58091ea2-4c02-4453-8cf5-d0d850a5643a">
+  <producedTypes>
+    <selectionType typeId="7117a9f3-303f-4d43-9bbc-c84f252136ef" valueTypeId="a30ded07-f61c-4abf-94de-78625b457a7e"/>
+    <listType typeId="b27584ff-0a8c-4dbb-976a-7f520eb33305" valueTypeId="7feeb62a-9c57-4879-91a6-79b63be9cb96"/>
+    <managerType typeId="f6722fb7-fa46-4447-820d-adefb125eba4" valueTypeId="e8a07c8e-0ed9-4894-bea7-7c848167ee7d"/>
+    <recordSetType typeId="60e1ad0f-2414-4f6a-8629-645f1a9086f8" valueTypeId="5179c902-9b50-40f5-9991-9ba525e184bf"/>
+    <recordKeyType typeId="ba30d2ed-4ebf-4dcc-8d68-6d7e0bd2ba35" valueTypeId="c5847b61-f060-4c01-ac09-cc855a2ec672"/>
+    <recordType typeId="96ffea31-9dcf-425f-b996-440d74756022" valueTypeId="18e340a1-579e-4a77-b573-698554898cdd"/>
+    <recordManagerType typeId="e92e7d96-52da-478a-9fec-2a4e9890ee70" valueTypeId="660f6a3b-24fb-4d7c-9065-abee6db17164"/>
+  </producedTypes>
+  <name>AUsSubSubSegmentsDFMName</name>
+  <synonym>
+    <key>ru</key>
+    <value>AUs+SubSubSegments+DFM name</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>AUs+SubSubSegments+DFM name</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.AUsSubSubSegmentsDFMName.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.AUsSubSubSegmentsDFMName.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="59c5dec6-d863-4142-8f94-8115ec37cd3a">
+    <name>DFMName</name>
+    <synonym>
+      <key>ru</key>
+      <value>DFM name</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>DFM name</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="dc86bd52-1890-45ef-a737-f867ff0fe1b7">
+    <name>AUCode</name>
+    <synonym>
+      <key>ru</key>
+      <value>AU code</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AUCode</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>7</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b2ead33d-dce8-4d2c-b162-700f648fdcda">
+    <name>SubSubSegment</name>
+    <synonym>
+      <key>ru</key>
+      <value>SubSubSegment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub sub segment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Родитель</name>
+      <changeMode>DontChange</changeMode>
+      <field>0:72c449bf-60d4-4406-b576-4ad8bc692bf0</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <createOnInput>DontUse</createOnInput>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="4b47aae0-cc9f-4b04-8a38-e8d0d18c055c">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d94386ee-8c9c-402c-943d-6bc359062bb5">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

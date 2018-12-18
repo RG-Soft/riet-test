@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a70df82f-9862-497a-b672-7c53fdcc5325">
+  <producedTypes>
+    <objectType typeId="a2a73a70-fc5d-47db-b5af-c62f534fed30" valueTypeId="4ccd6f69-5c02-4e92-82e8-3fd36099e4cf"/>
+    <refType typeId="02040e0f-5144-4dc5-94e4-64405444ee1c" valueTypeId="ac094e24-48ca-43bb-b750-c3202bfc4372"/>
+    <selectionType typeId="c2608793-5915-4d06-9015-f3351cff80de" valueTypeId="f4d28c13-93d8-4f5a-8a39-84b3f8c87543"/>
+    <listType typeId="a2bcbcbe-ee97-4f14-bc43-24fa753454a9" valueTypeId="5d9bfdeb-3d5c-4bfe-9ac1-fe8d687bce1e"/>
+    <managerType typeId="2050e7e0-86c3-4e21-9065-98b583a9b3d7" valueTypeId="e2ef257a-097e-482c-9c1f-5ee0595697e0"/>
+  </producedTypes>
+  <name>РаспределениеДопРасходовИзКнигиПокупок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Распределение Доп. расходов из книги покупок</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Распределение Доп. расходов из книги покупок</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.РаспределениеДопРасходовИзКнигиПокупок.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.РаспределениеДопРасходовИзКнигиПокупок.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDelete</registerRecordsDeletion>
+  <registerRecords>AccumulationRegister.ОборудованиеDSS</registerRecords>
+  <registerRecords>AccumulationRegister.MaterialsAndSupplies</registerRecords>
+  <registerRecords>AccumulationRegister.InventoryTangibleAssetsCosts</registerRecords>
+  <registerRecords>AccumulationRegister.МатериальныеАктивы</registerRecords>
+  <forms uuid="0de41f66-f75a-4579-af1a-3f3b937069ba">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="17486cf6-ea97-445a-9841-ca5f8687e21e">
+    <producedTypes>
+      <objectType typeId="cd5f95d3-91dc-4efd-b2c5-cff060a7356b" valueTypeId="ebb721d1-ba34-43ec-b440-8bab7f011efe"/>
+      <rowType typeId="0d1ffa67-f20b-4bdf-a525-e85600c9e188" valueTypeId="ef53aee2-a689-45dc-828a-af6eadb6d095"/>
+    </producedTypes>
+    <name>МатАктивы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мат. активы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Мат. активы</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="2c2b9f9c-1e62-494c-8bf9-94ed35fe8bd5">
+      <name>ВидМатАктива</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид мат. актива</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Вид мат. актива</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.ВидыМатериальныхАктивов</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+    <attributes uuid="3af8a50f-b6a4-40e7-8d09-5753872dd2a7">
+      <name>ПроводкаДеталейСКП</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проводка деталей СКП</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Проводка деталей СКП</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ПроводкаDSS</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+    <attributes uuid="4c1eeffd-96d6-47ed-baed-3d48e5b3f549">
+      <name>ДокументРаспределениеМА</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ распределение МА</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Документ распределение МА</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.РаспределениеМатериаловИзКнигиПокупок</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="42af3e1e-378f-4ed1-a889-8ad3dbfb10e5">
+    <producedTypes>
+      <objectType typeId="c34cd009-9a27-4b58-9e7b-986670b86865" valueTypeId="c8f09713-42b0-42f5-a8c9-47c0646a85d1"/>
+      <rowType typeId="73b27ac7-e486-45e6-9e02-5662effe2877" valueTypeId="ed5725c6-628c-4f97-aa46-9e86c2119451"/>
+    </producedTypes>
+    <name>ДопРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доп. расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Доп. расходы</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="b9cecbb0-fdeb-4dfa-8803-0f8c2ab6fbc5">
+      <name>PoNumber</name>
+      <synonym>
+        <key>ru</key>
+        <value>PO number</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>PO number</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b38ec31b-b570-45db-b2da-e2266cc10f14">
+      <name>ПроводкаДеталейСКП</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проводка деталей СКП</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Проводка деталей СКП</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ПроводкаDSS</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="3f797082-5034-4458-abbe-9c8749bfbbbb">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сумма</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+    <attributes uuid="56d04f0e-4828-41d4-b679-5a3d3d26c5ae">
+      <name>СуммаРуб</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма руб</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сумма руб</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+    <attributes uuid="f8e3a7a5-f09a-4d6d-9d73-cd9dd089bd34">
+      <name>ItemDescription</name>
+      <synonym>
+        <key>ru</key>
+        <value>Item description</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Item description</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ExchangePlan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="88ace66b-a35a-4b99-afae-d012ed1fab18" thisNode="fbb20bdc-98cf-4895-8257-d2cdbd9c2df9">
+  <producedTypes>
+    <objectType typeId="3db9a421-2b31-49b5-84ed-52c694142a8b" valueTypeId="25c34dfd-2d3e-4d1b-b2ec-69c0edc61b4b"/>
+    <refType typeId="b10a1034-2a74-47bd-b449-fdb571b3159f" valueTypeId="c6b4941e-e49d-4cca-8923-3989e8bed7b0"/>
+    <selectionType typeId="05edf0f3-d9ba-4bbb-9f85-592ccd543ff2" valueTypeId="7d4a054c-93f1-486e-8533-b4308799f3e5"/>
+    <listType typeId="dcd548d6-f7c8-4326-becd-c77df2fcfe9e" valueTypeId="72650d09-95f8-4adf-94b2-6bb6e2890abf"/>
+    <managerType typeId="42b64e09-14ec-4ee0-bf0f-55e3dd01dfd5" valueTypeId="aa66e72a-043e-4be7-85f0-7b9471b5bfbf"/>
+  </producedTypes>
+  <name>rgsОбменДокументамиLogelcoERM</name>
+  <synonym>
+    <key>ru</key>
+    <value>SLB: Обмен документами Logelco -- ERM</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>SLB: Обмен документами Logelco -- ERM</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>ExchangePlan.rgsОбменДокументамиLogelcoERM.StandardAttribute.Description</inputByString>
+  <inputByString>ExchangePlan.rgsОбменДокументамиLogelcoERM.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <codeLength>9</codeLength>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <descriptionLength>50</descriptionLength>
+  <content>
+    <mdObject>Document.ПередачаОС</mdObject>
+  </content>
+  <content>
+    <mdObject>Document.СчетФактураВыданный</mdObject>
+  </content>
+  <content>
+    <mdObject>Catalog.ermTriggerTypes</mdObject>
+    <autoRecord>Allow</autoRecord>
+  </content>
+  <content>
+    <mdObject>Document.РеализацияТоваровУслуг</mdObject>
+  </content>
+  <content>
+    <mdObject>Catalog.ДоговорыКонтрагентов</mdObject>
+    <autoRecord>Allow</autoRecord>
+  </content>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>ExchangePlan.rgsОбменДокументамиLogelcoERM.Form.ФормаУзла</defaultObjectForm>
+  <attributes uuid="23ea9b3c-7b66-46f1-9e3d-81bc8992d830">
+    <name>РежимВыгрузкиПриНеобходимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Режим выгрузки при необходимости</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Режим выгрузки при необходимости</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.РежимыВыгрузкиОбъектовОбмена</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.РежимыВыгрузкиОбъектовОбмена.EnumValue.ВыгружатьПриНеобходимости</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="af11b8b0-2c2a-4243-978a-88140f2848d9">
+    <name>ВерсияФорматаОбмена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Версия формата обмена</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Версия формата обмена</value>
+    </synonym>
+    <comment>Версия формата обмена в формате ХХ.ХХ.ХХ.ХХ</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Версия формата, выбранная для данного узла плана обмена</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Версия формата, выбранная для данного узла плана обмена</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="789a3865-014d-44b4-8172-f6d872d4918c">
+    <name>ВариантНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант настройки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Вариант настройки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выбранный вариант настройки узла плана обмена</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Выбранный вариант настройки узла плана обмена</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <forms uuid="4679689b-3901-43bf-a48e-68537ce06472">
+    <name>ПодробнаяИнформация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подробная информация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Подробная информация</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a4c1f7b5-67ef-4298-b834-64fbaa9516fb">
+    <name>ФормаУзла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма узла</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма узла</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="f1faa1dc-d2d2-4f99-b750-7d452e4c3ffa">
+    <name>ОбменКлиентамиЧерезУниверсальныйФормат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обмен клиентами через универсальный формат</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Обмен клиентами через универсальный формат</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="53cb0128-606d-4f8c-adc6-2814370b3ed8">
+    <name>_ПравилаРегистрации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Правила регистрации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Правила регистрации</value>
+    </synonym>
+    <comment></comment>
+    <templateType>TextDocument</templateType>
+  </templates>
+</mdclass:ExchangePlan>

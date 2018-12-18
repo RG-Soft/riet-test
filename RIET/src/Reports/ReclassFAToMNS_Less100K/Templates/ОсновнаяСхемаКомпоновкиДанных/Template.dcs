@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ списания</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Документ списания</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроводкаДеталейСКП</dataPath>
+			<field>ПроводкаДеталейСКП</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРуб</dataPath>
+			<field>СуммаРуб</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновноеСредство</dataPath>
+			<field>ОсновноеСредство</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РО</dataPath>
+			<field>РО</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументПоступления</dataPath>
+			<field>ДокументПоступления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КостЦентр</dataPath>
+			<field>КостЦентр</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кост центр</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Кост центр</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НалоговаяРегистрация</dataPath>
+			<field>НалоговаяРегистрация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Налоговая регистрация</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Налоговая регистрация</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сегмент</dataPath>
+			<field>Сегмент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сегмент</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сегмент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	FAtoMandSОбороты.ПроводкаДеталейСКП,
+	FAtoMandSОбороты.Регистратор КАК Ссылка,
+	FAtoMandSОбороты.ОсновноеСредство КАК Номенклатура,
+	СУММА(FAtoMandSОбороты.FiscalSumОборот) КАК СуммаРуб,
+	МАКСИМУМ(MaterialsAndSuppliesОбороты.ManagementSumПриход) КАК Сумма,
+	ВЫБОР
+		КОГДА FAtoMandSОбороты.Регистратор ССЫЛКА Документ.ПринятиеКУчетуОС
+			ТОГДА FAtoMandSОбороты.Регистратор.КостЦентр
+		ИНАЧЕ MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП.AU
+	КОНЕЦ КАК КостЦентр,
+	ВЫБОР
+		КОГДА FAtoMandSОбороты.Регистратор ССЫЛКА Документ.ПринятиеКУчетуОС
+			ТОГДА FAtoMandSОбороты.Регистратор.КостЦентр.Segment
+		ИНАЧЕ MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП.AU.Segment
+	КОНЕЦ КАК Сегмент,
+	ВЫБОР
+		КОГДА FAtoMandSОбороты.Регистратор ССЫЛКА Документ.ПринятиеКУчетуОС
+			ТОГДА FAtoMandSОбороты.Регистратор.ПодразделениеОрганизации
+		ИНАЧЕ MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП.AU.TaxRegistration
+	КОНЕЦ КАК НалоговаяРегистрация
+ИЗ
+	РегистрНакопления.FAtoMandS.Обороты({(&amp;НачалоПериода)}, {(&amp;КонецПериода)}, Запись, ) КАК FAtoMandSОбороты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.MaterialsAndSupplies.Обороты({(&amp;НачалоПериода)}, {(&amp;КонецПериода)}, Запись, ) КАК MaterialsAndSuppliesОбороты
+		ПО FAtoMandSОбороты.Регистратор = MaterialsAndSuppliesОбороты.Регистратор
+			И FAtoMandSОбороты.НомерСтроки = MaterialsAndSuppliesОбороты.НомерСтроки
+ГДЕ
+	FAtoMandSОбороты.Регистратор ССЫЛКА Документ.ПринятиеКУчетуОС
+	И FAtoMandSОбороты.Регистратор.ПорядокПогашенияСтоимостиБУ = ЗНАЧЕНИЕ(Перечисление.ПорядокПогашенияСтоимостиОС.ВключениеВРасходыНУПриПринятии)
+
+СГРУППИРОВАТЬ ПО
+	FAtoMandSОбороты.ОсновноеСредство,
+	FAtoMandSОбороты.ПроводкаДеталейСКП,
+	FAtoMandSОбороты.Регистратор,
+	ВЫБОР
+		КОГДА FAtoMandSОбороты.Регистратор ССЫЛКА Документ.ПринятиеКУчетуОС
+			ТОГДА FAtoMandSОбороты.Регистратор.КостЦентр
+		ИНАЧЕ MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП.AU
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА FAtoMandSОбороты.Регистратор ССЫЛКА Документ.ПринятиеКУчетуОС
+			ТОГДА FAtoMandSОбороты.Регистратор.КостЦентр.Segment
+		ИНАЧЕ MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП.AU.Segment
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА FAtoMandSОбороты.Регистратор ССЫЛКА Документ.ПринятиеКУчетуОС
+			ТОГДА FAtoMandSОбороты.Регистратор.ПодразделениеОрганизации
+		ИНАЧЕ MaterialsAndSuppliesОбороты.ПроводкаДеталейСКП.AU.TaxRegistration
+	КОНЕЦ</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаРуб</dataPath>
+		<expression>Сумма(СуммаРуб)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроводкаДеталейСКП</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сегмент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КостЦентр</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НалоговаяРегистрация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаРуб</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>5943ede3-0443-4d9a-b2b8-156472d7382c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>0001-01-01T00:00:00</v8:date>
+					</dcscor:value>
+					<dcsset:userSettingID>b1a47aff-301f-45e2-bef3-c911adbc0bbd</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Ссылка</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

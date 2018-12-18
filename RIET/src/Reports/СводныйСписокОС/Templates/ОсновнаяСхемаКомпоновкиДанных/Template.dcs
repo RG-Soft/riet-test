@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Deferred</dataPath>
+			<field>Deferred</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PO</dataPath>
+			<field>PO</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Группа_Fiscal</dataPath>
+			<field>Группа_Fiscal</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Наименование</dataPath>
+			<field>Наименование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОС_Fiscal</dataPath>
+			<field>ОС_Fiscal</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОС fiscal</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ОС fiscal</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОС_Lawson</dataPath>
+			<field>ОС_Lawson</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОС lawson</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ОС lawson</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Состояние_Fiscal</dataPath>
+			<field>Состояние_Fiscal</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Состояние_Lawson</dataPath>
+			<field>Состояние_Lawson</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДляСверки</dataPath>
+			<field>ТипДляСверки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AU</dataPath>
+			<field>AU</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ОсновныеСредства.Ссылка КАК Наименование,
+	ВложенныйЗапрос.Состояние_Fiscal КАК Состояние_Fiscal,
+	ВложенныйЗапрос.Состояние_Lawson КАК Состояние_Lawson,
+	ОсновныеСредства.Код КАК ОС_Fiscal,
+	ВложенныйЗапрос.ОС_Lawson КАК ОС_Lawson,
+	ОсновныеСредства.ТипДляСверки КАК ТипДляСверки,
+	ОсновныеСредства.Родитель КАК Группа_Fiscal,
+	ВложенныйЗапрос.Deferred КАК Deferred,
+	ОсновныеСредства.НомерЗаказаНаПриобретение КАК PO,
+	МестонахождениеОСБухгалтерскийУчетСрезПоследних.КостЦентр КАК AU
+{ВЫБРАТЬ
+	Наименование.*,
+	Состояние_Fiscal,
+	Состояние_Lawson,
+	ОС_Fiscal,
+	ОС_Lawson.*,
+	ТипДляСверки,
+	Группа_Fiscal,
+	Deferred,
+	PO}
+ИЗ
+	Справочник.ОсновныеСредства КАК ОсновныеСредства
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ОсновныеСредства.Ссылка КАК Наименование,
+			ЕСТЬNULL(СостоянияОС.Ссылка, ЗНАЧЕНИЕ(перечисление.состоянияос.пустаяссылка)) КАК Состояние_Fiscal,
+			СостоянияОСLawsonСрезПоследних.Состояние КАК Состояние_Lawson,
+			ОсновныеСредстваLawson.Ссылка КАК ОС_Lawson,
+			ОсновныеСредстваLawson.Deferred КАК Deferred
+		ИЗ
+			Справочник.ОсновныеСредства КАК ОсновныеСредства
+				ПОЛНОЕ СОЕДИНЕНИЕ Справочник.ОсновныеСредстваLawson КАК ОсновныеСредстваLawson
+					ПОЛНОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияОСLawson.СрезПоследних(&amp;Период, ) КАК СостоянияОСLawsonСрезПоследних
+					ПО (СостоянияОСLawsonСрезПоследних.ОСLawson = ОсновныеСредстваLawson.Ссылка)
+				ПО ОсновныеСредства.ОсновноеСредствоLawson = ОсновныеСредстваLawson.Ссылка
+				ПОЛНОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+					СостоянияОСОрганизаций.ОсновноеСредство КАК ОсновноеСредство,
+					МАКСИМУМ(СостоянияОСОрганизаций.Состояние.Порядок) КАК СостояниеПорядок
+				ИЗ
+					РегистрСведений.СостоянияОСОрганизаций КАК СостоянияОСОрганизаций
+				ГДЕ
+					СостоянияОСОрганизаций.ДатаСостояния &lt; &amp;Период
+				
+				СГРУППИРОВАТЬ ПО
+					СостоянияОСОрганизаций.ОсновноеСредство) КАК ВложенныйЗапрос
+					ПОЛНОЕ СОЕДИНЕНИЕ Перечисление.СостоянияОС КАК СостоянияОС
+					ПО (СостоянияОС.Порядок = ВложенныйЗапрос.СостояниеПорядок)
+				ПО ОсновныеСредства.Ссылка = ВложенныйЗапрос.ОсновноеСредство
+		ГДЕ
+			(НЕ ОсновныеСредства.ЭтоГруппа)) КАК ВложенныйЗапрос
+		ПО (ВложенныйЗапрос.Наименование = ОсновныеСредства.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.МестонахождениеОСБухгалтерскийУчет.СрезПоследних КАК МестонахождениеОСБухгалтерскийУчетСрезПоследних
+		ПО ОсновныеСредства.Ссылка = МестонахождениеОСБухгалтерскийУчетСрезПоследних.ОсновноеСредство
+{ГДЕ
+	ОсновныеСредства.Ссылка.* КАК Наименование,
+	ВложенныйЗапрос.Состояние_Fiscal,
+	ВложенныйЗапрос.Состояние_Lawson,
+	ОсновныеСредства.Код КАК ОС_Fiscal,
+	ВложенныйЗапрос.ОС_Lawson.*,
+	ОсновныеСредства.ТипДляСверки,
+	ОсновныеСредства.Родитель КАК Группа_Fiscal,
+	ВложенныйЗапрос.Deferred,
+	ОсновныеСредства.НомерЗаказаНаПриобретение КАК PO}</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОС_Fiscal</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Наименование</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Состояние_Fiscal</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Группа_Fiscal</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТипДляСверки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PO</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОС_Lawson</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Состояние_Lawson</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Deferred</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AU</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Deferred</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					<dcsset:userSettingID>78159b13-e138-4f0c-b298-fff7d8142770</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">PO</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>176aa2c6-7048-470c-af6b-f33ea10f8241</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Группа_Fiscal</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.ОсновныеСредства.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>cbd97008-f702-4aa6-b16f-7550109e81ef</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Состояние_Fiscal</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостоянияОС.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>bfb41fb7-9bc1-45de-b5a6-f6ed8c84d9cd</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Состояние_Lawson</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СостояниеОСLawson.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>805f7def-146e-40d5-8b3e-83057dff01b6</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ТипДляСверки</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>9645f6d7-a069-4134-bc22-23bacfacefd0</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>5a4cb54b-d076-4505-829f-ee1b3434cfac</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

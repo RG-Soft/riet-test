@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 8.00.7600.16722"></meta></head><body>
+<h1>Документ "Inventory корректировка"</h1>
+<p>Документ "Inventory корректировка" предназначен для корректировки стоимости и количества товаров.</p>
+<h2>Реквизиты документа</h2>
+<p>Документ имеет реквизиты шапки и табличную часть "Goods".</p>
+<h3>Реквизиты шапки документа</h3>
+<ul><li><strong>Inventory location</strong> (справочник Inventory locations) 
+<ul><li>Реквизит должен быть заполнен</li></ul></li><li>
+<div><strong>Подразделение</strong> (справочник Подразделения организации) - подразделение, на которое относятся расходы</div>
+<ul><li>
+<div>Реквизит должен быть заполнен</div></li></ul></li><li>
+<div>
+<div><strong>Segment</strong> (справочник Segments) - реквизит, определяемый автоматически из проводок DSS</div></div>
+<div></div>
+</li><li>
+<div><strong>PO number</strong> (строка)</div>
+<ul><li>
+<div>Реквизит должен быть заполнен для корректировок в плюс</div></li></ul></li><li>
+<div><strong>PO</strong> (справочник POs)</div>
+</li><li>
+<div><strong>Ict doc type </strong>(строка) - вид операции - справочный реквизит, подгружаемый из lawson</div>
+<div></div>
+</li><li><strong>Has finished goods</strong> (булево) - автоматически устанавливаемый признак того, что в документе содержатся Finished goods 
+</li><li>
+<div><strong>Creation date</strong> (дата и время) - автоматически заполняемая дата создания документа</div>
+</li><li>
+<div><strong>Last modified</strong> (дата и время) - автоматически заполнеяемая дата последнего изменения документа из формы</div>
+</li><li>
+<div><strong>Responsible</strong> (справочник Users) - пользователь, внесший последние изменения в документ</div>
+</li><li>
+<div><strong>Comment</strong> (строка) - любой произвольный комментарий</div></li></ul><h3>Табличная часть "Goods"</h3>
+<p>В табличной части "Товары / Goods" перечисляются все списываемые товары, их количество и сумма.</p>
+<ul><li><strong>Good</strong> (справочник Inventory goods) - товар 
+<ul><li>Реквизит должен быть заполнен 
+</li><li>Good не может быть помечен на удаление 
+</li><li>У Good должен быть заполнен реквизит Standard UOM</li></ul></li><li><strong>UOM</strong> (справочник UOMs) - единица измерения 
+<ul><li>Реквизит должен быть заполнен 
+</li><li>UOM не может быть помечен на удаление 
+</li><li>UOM standard UOM должен соответствовать Good standard UOM</li></ul></li><li><strong>Qty</strong> (число) - количество 
+<ul><li>Реквизит должен быть заполнен</li></ul></li><li><strong>Fiscal price</strong> (число) - указывается справочно 
+</li><li><strong>Fiscal sum</strong> (число) - указывается только в том случае, если системе необходимо в явном виде указать фискальную сумму.<br>Алгоритм определения суммы описан в разделе "Проведение документа". 
+</li><li><strong>Finished good</strong> (булево) - признак того, что для данного товара устанавливается ручной порядок списания 
+</li><li><strong>Management price</strong> (число) - управленческая цена - указывается справочно 
+</li><li><strong>Management sum</strong> (число) - управленческая сумма - указывается справочно</li></ul><h2>Проведение документа</h2>
+<p>Документ делает приходные и расходные движения из регистра накопления "Inventory партии":</p>
+<ul><li><strong>Inventory location</strong> - из шапки 
+</li><li><strong>Good </strong>- из табличной части 
+</li><li><strong>PO number</strong> - для Finished goods - из шапки, в противном случае - пустая 
+</li><li><strong>Batch</strong>  
+<ul><li>в случае корректировки "в плюс" создается новая партия 
+</li><li>в случае корректировки "в минус" подбирается автоматически по методу FIFO</li></ul></li><li><strong>Quantity </strong>- из табличной части 
+</li><li><strong>Sum</strong> 
+<ul><li>Если фискальная сумма в табличной части заполнена, то она берется прямо из табличной части. 
+</li><li>Если фискальная сумма в табличной части не заполнена, то система пытается автоматически определить ее по следующему алгоритму: 
+<ul><li>если количество положительное, то сумма = количество * цену последного поступления с такой номенклатурой 
+</li><li>если количество отрицательное, то сумма определяется по методу FIFO как в документе "Inventory списание".</li></ul></li></ul></li></ul></body></html>

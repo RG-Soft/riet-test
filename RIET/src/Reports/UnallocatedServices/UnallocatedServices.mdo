@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="24da54d1-4885-497e-81c4-ab6dacb0ca4e">
+  <producedTypes>
+    <objectType typeId="e1962ad0-8ff1-4765-9c58-c0353a23c904" valueTypeId="b3ea62e7-c577-4074-bc04-1a2ef79752a9"/>
+    <managerType typeId="05aa9d50-1fa8-4cb3-9468-158be320d12a" valueTypeId="2211c575-15cc-4484-9daa-a07babdb5904"/>
+  </producedTypes>
+  <name>UnallocatedServices</name>
+  <synonym>
+    <key>ru</key>
+    <value>Unallocated services</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Unallocated services</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>Report.UnallocatedServices.Form.ФормаОтчета</defaultForm>
+  <mainDataCompositionSchema>Report.UnallocatedServices.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <variantsStorage>SettingsStorage.ХранилищеВариантовОтчетов</variantsStorage>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <forms uuid="34ea43a8-f50e-466b-bfb5-7c39cba08db2">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="126be68b-d64e-4e92-ac1f-cfa72b045571">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <comment></comment>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="d34b6715-6766-4560-85ea-683b3895a85d">
+    <name>СформироватьПоShipment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Unallocated services</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Unallocated services</value>
+    </synonym>
+    <comment></comment>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>DocumentRef.TemporaryImpExpTransactions</types>
+      <types>DocumentRef.CustomsFilesLight</types>
+      <types>DocumentRef.ExportShipment</types>
+      <types>DocumentRef.Поставка</types>
+    </commandParameterType>
+    <representation>PictureAndText</representation>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.Report</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="d99b1176-4994-4a57-8ecf-31f1e1e2edaf">
+    <name>СформироватьПоAgent</name>
+    <synonym>
+      <key>ru</key>
+      <value>Agent unallocated services</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Agent unallocated services</value>
+    </synonym>
+    <comment></comment>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>CatalogRef.Agents</types>
+    </commandParameterType>
+    <representation>PictureAndText</representation>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.Report</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:Report>

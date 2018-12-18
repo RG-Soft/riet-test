@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="63408699-9383-40d8-8489-9deaad444a04">
+  <producedTypes>
+    <objectType typeId="7059a9b6-84e8-4b78-afdc-75536cf75d6c" valueTypeId="36e06fb7-49b1-435c-94d8-f1ade0b9ac89"/>
+    <refType typeId="42699fc6-8eed-49d3-9b8d-3408d9aa2d44" valueTypeId="4349e1eb-d461-4e31-8ec0-25ded29b5de1"/>
+    <selectionType typeId="bdcf89ae-31c4-47e0-bc94-ff0ffe2df278" valueTypeId="0c064ae4-f2a8-4e24-b4de-e4ad3b1ba6ca"/>
+    <listType typeId="6682370e-5682-4bfa-979f-bb9c555a41b4" valueTypeId="d7d55ddd-2453-40df-a838-05018766ef00"/>
+    <managerType typeId="81c988c8-5f0c-48ca-a7d5-12af8c220b7b" valueTypeId="510d79ae-4051-47ca-b770-b52579a9be5c"/>
+  </producedTypes>
+  <name>ОперацияОСLawson</name>
+  <synonym>
+    <key>ru</key>
+    <value>Операция ОС Lawson</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Операция ОС Lawson</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ОперацияОСLawson.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <auxiliaryObjectForm>Document.ОперацияОСLawson.Form.ФормаДокумента</auxiliaryObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>InformationRegister.СостоянияОСLawson</registerRecords>
+  <registerRecords>AccumulationRegister.ПроводкиDSS_FA</registerRecords>
+  <attributes uuid="9bdd8b35-66a8-4a02-aa29-24152d199196">
+    <name>ОперацияLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Операция lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Операция lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ОперацияLawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="21602eab-0711-4e18-8aab-765cb7c5673b">
+    <name>MovementType</name>
+    <synonym>
+      <key>ru</key>
+      <value>Movement type</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Movement type</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0d6ffd3f-7af3-4f85-8c72-8dd4657850f8">
+    <name>ДопИнфо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доп инфо</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Доп инфо</value>
+    </synonym>
+    <comment>Fmt nbr или disposal property</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="b69b3c98-8203-428f-8245-d6a298f0f78f">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="7b56cb63-5d47-4948-8b2d-05ef1b3b8146">
+    <producedTypes>
+      <objectType typeId="708ebed1-d8a3-403b-8328-d26a87dc0e5b" valueTypeId="4bb66000-7b8f-4ab3-81ce-f0821e1da595"/>
+      <rowType typeId="faa3d20c-e356-425c-9014-7c09b51c2cad" valueTypeId="fd0bbc03-0cba-470a-b42a-d6b229986a3a"/>
+    </producedTypes>
+    <name>ОС</name>
+    <synonym>
+      <key>ru</key>
+      <value>ОС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>ОС</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="23433de1-b470-4f09-acf4-80ac0c221a22">
+      <name>Asset</name>
+      <synonym>
+        <key>ru</key>
+        <value>Asset</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Asset</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ОсновныеСредстваLawson</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="61339870-ae85-4a72-b2e7-8122fe344c50">
+      <name>ДокументОС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ ОС</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Документ ОС</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.СписаниеОС</types>
+        <types>DocumentRef.ПринятиеКУчетуОС</types>
+        <types>DocumentRef.ВводНачальныхОстатковОС</types>
+        <types>DocumentRef.МодернизацияОС</types>
+        <types>DocumentRef.ПодготовкаКПередачеОС</types>
+        <types>DocumentRef.РазукрупнениеОС</types>
+        <types>DocumentRef.ПеремещениеОС</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="1bb4254e-3884-4807-920d-96f418ec2521">
+      <name>PoNbr</name>
+      <synonym>
+        <key>ru</key>
+        <value>Po nbr</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Po nbr</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="3e12c994-b569-4948-b326-502448e2ecc0">
+      <name>MngmOnly</name>
+      <synonym>
+        <key>ru</key>
+        <value>Mngm only</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Mngm only</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2e9ed90d-dec7-404f-b0fe-4a6aedf25431">
+      <name>ItemDescription</name>
+      <synonym>
+        <key>ru</key>
+        <value>Item description</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Item description</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="73cae009-3494-485e-a7f2-a7d34197b5cc">
+      <name>Account</name>
+      <synonym>
+        <key>ru</key>
+        <value>Account</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Account</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>ChartOfAccountsRef.Lawson</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="51c30d34-3ffc-4ae5-bbf9-edbead967d8d">
+      <name>AU</name>
+      <synonym>
+        <key>ru</key>
+        <value>AU</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AU</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>7</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e8d80d8c-0b20-43c8-b62b-7c0c8160cd28">
+      <name>AssetCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Asset code</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Asset code</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4d90ff47-ef92-4d6e-b548-af8d63e0a0c5">
+      <name>Serial</name>
+      <synonym>
+        <key>ru</key>
+        <value>Serial</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Serial</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0a987533-0487-49c5-8b4a-dd6ed54f9c19">
+      <name>SerialNumber</name>
+      <synonym>
+        <key>ru</key>
+        <value>Serial number</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Serial number</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="508b81bf-7cce-4aa6-aaa6-2aa46737394c">
+      <name>AssetType</name>
+      <synonym>
+        <key>ru</key>
+        <value>Asset type</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Asset type</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="2c50e627-53ee-486c-9b78-36619ff331d6">
+      <name>InsrvDate</name>
+      <synonym>
+        <key>ru</key>
+        <value>Insrv date</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Insrv date</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="1a18e8ad-45ee-4296-9451-eedec38b2f28">
+      <name>Life</name>
+      <synonym>
+        <key>ru</key>
+        <value>Life</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Life</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>3</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0700b12e-09ad-4869-8d8d-35dd42476713">
+      <name>BaseAmount</name>
+      <synonym>
+        <key>ru</key>
+        <value>Base amount</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Base amount</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ba504844-2560-4648-87d1-e495bb356a18">
+      <name>GltObjID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Glt obj ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Glt obj ID</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="502c372b-18f5-4a9a-8087-713140a2259d">
+      <name>SourceDocument</name>
+      <synonym>
+        <key>ru</key>
+        <value>Source document</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Source document</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="90a249d4-2ee5-4040-99a8-26045bb2fde3">
+      <name>Company</name>
+      <synonym>
+        <key>ru</key>
+        <value>Company</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Company</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ce1d1ed0-5a70-4bad-aa34-50c2cf087c3d">
+      <name>XferCompany</name>
+      <synonym>
+        <key>ru</key>
+        <value>Xfer company</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Xfer company</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="768ba877-b9d5-4880-9067-9024c967fe01">
+      <name>MovementGbv</name>
+      <synonym>
+        <key>ru</key>
+        <value>Movement gbv</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Movement gbv</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a2732e9a-55d9-4b12-8c3d-cbfc778e613e">
+      <name>DepreciationLtd</name>
+      <synonym>
+        <key>ru</key>
+        <value>Depreciation ltd</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Depreciation ltd</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="42323ba0-5690-4f41-a361-41d1b3959899">
+      <name>CurrencyCd</name>
+      <synonym>
+        <key>ru</key>
+        <value>Currency cd</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Currency cd</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d81df4b7-31e9-466b-8612-617210317877">
+      <name>Номер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Номер</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="6fd3713b-fa29-4211-8924-3dea83185983">
+      <name>Deferred</name>
+      <synonym>
+        <key>ru</key>
+        <value>Deferred</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Deferred</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="bacb0eee-b950-414f-981a-2772203315a2">
+      <name>Комментарий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комментарий</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Комментарий</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="67c780ae-2170-417f-8178-60fac0e6a8b0">
+      <name>AsdDspProperty</name>
+      <synonym>
+        <key>ru</key>
+        <value>Asd dsp property</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Asd dsp property</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>2</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="1b32c418-db9e-43cd-8a61-0b1ffc2c5ad3">
+      <name>FmtNbr</name>
+      <synonym>
+        <key>ru</key>
+        <value>Fmt nbr</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Fmt nbr</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>8</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="be66f590-46f1-4aea-954b-006516c4b208">
+      <name>SubGeomarket</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sub geomarket</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Sub geomarket</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.GeoMarkets</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

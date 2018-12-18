@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fbab39a0-f7eb-4683-afaf-7ff24497faf0">
+  <producedTypes>
+    <objectType typeId="0d1680c7-8123-482c-9107-677a91639295" valueTypeId="6af22fe9-673c-4ebf-998e-0e015612c2dd"/>
+    <managerType typeId="b09ea3f3-5c28-40ad-b673-54daaf58d927" valueTypeId="2d9f93b0-9f8b-4762-b091-947da8afb0df"/>
+  </producedTypes>
+  <name>ПоискИСопоставлениеОС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Поиск и сопоставление ОС</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Поиск и сопоставление ОС</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.ПоискИСопоставлениеОС.Form.Форма</defaultForm>
+  <attributes uuid="4bce402c-5517-4139-b0fc-d86ebbdf0498">
+    <name>ОСLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>ОСLawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>ОСLawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредстваLawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="264cd008-1dd3-48ce-b7a7-bb130745ff73">
+    <name>RelMin</name>
+    <synonym>
+      <key>ru</key>
+      <value>Rel min</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rel min</value>
+    </synonym>
+    <comment>Коэффициент. Минимальное значение похожести ОС, выводимое пользователю</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="6a4b6720-b898-4fb0-9a77-b142311403bf">
+    <producedTypes>
+      <objectType typeId="1bdfa276-101d-4659-84b4-b1f61c4f083a" valueTypeId="2eeda9ca-0514-45d4-98d2-80b145423d06"/>
+      <rowType typeId="2158f801-67ee-4bd4-addb-2b20c4dfd2f8" valueTypeId="2c1892a5-d303-4ae4-8908-574258b57ebd"/>
+    </producedTypes>
+    <name>ОсновныеСредства</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основные средства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Основные средства</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="b84cb358-e0e8-49e8-9dbf-aaa7e3ef24ea">
+      <name>ОССсылка</name>
+      <synonym>
+        <key>ru</key>
+        <value>ОССсылка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ОССсылка</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ОсновныеСредства</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7cc2b07a-b1a4-49bf-b386-2cc9acc46200">
+      <name>Name</name>
+      <synonym>
+        <key>ru</key>
+        <value>Name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c8b555d4-2764-4f10-a092-607321c19399">
+      <name>Invoice</name>
+      <synonym>
+        <key>ru</key>
+        <value>Invoice No</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Invoice No</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="22111402-97ff-4072-9aec-f77610cab728">
+      <name>PoNbr</name>
+      <synonym>
+        <key>ru</key>
+        <value>Po nbr</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Po nbr</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8fce9e4b-88a3-42fe-95e4-15bc795a7a60">
+      <name>SerNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Serial No</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Serial No</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7aac0785-0612-467c-b4df-d7803f744335">
+      <name>Date</name>
+      <synonym>
+        <key>ru</key>
+        <value>Date</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Date</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e2ca92a7-f563-4199-aa6f-2551ab34eb14">
+      <name>Value</name>
+      <synonym>
+        <key>ru</key>
+        <value>Value</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Value</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a0dc865b-fd95-433e-b892-4622ae4d93c7">
+      <name>Rel</name>
+      <synonym>
+        <key>ru</key>
+        <value>Rel</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Rel</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>3</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="77b4d338-9e7d-4431-8c28-13162ac067bc">
+      <name>КартинкаRel</name>
+      <synonym>
+        <key>ru</key>
+        <value>Картинка rel</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Картинка rel</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a227b07f-73ae-4fae-8665-116f8d7b27e0">
+      <name>AU</name>
+      <synonym>
+        <key>ru</key>
+        <value>AU</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AU</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.КостЦентры</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8f547ed8-0fec-417a-a5f0-9a16d72d9195">
+      <name>Сегмент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сегмент</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сегмент</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Сегменты</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="facd4120-aa3c-43f0-854a-90ab6617d01b">
+      <name>Локация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Локация</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Локация</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="99c637fc-5f2c-40d0-a118-393090541f53">
+    <producedTypes>
+      <objectType typeId="d038a5ca-6725-45dd-9178-76097e4261d6" valueTypeId="a15f0678-1273-48a0-9b29-f428feaf81aa"/>
+      <rowType typeId="22a006a6-54e1-476e-b569-bc7255f7564f" valueTypeId="b012c382-78a8-4250-879a-26f5f7e26377"/>
+    </producedTypes>
+    <name>ПохожиеОСLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Похожие ОС Lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Похожие ОС Lawson</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="158bb9c6-61e0-4ff9-aaf9-852f96d6cc96">
+      <name>ОСLawson</name>
+      <synonym>
+        <key>ru</key>
+        <value>ОСLawson</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ОСLawson</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ОсновныеСредстваLawson</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d20afa11-67c0-4831-a7d7-0ce527c00fb2">
+      <name>Name</name>
+      <synonym>
+        <key>ru</key>
+        <value>Name</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Name</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="24fa3be8-f0dc-47a6-b2b2-169ff291e0ff">
+      <name>Invoice</name>
+      <synonym>
+        <key>ru</key>
+        <value>Invoice No</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Invoice No</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b754790f-5751-4111-ab78-2e057365f392">
+      <name>PoNbr</name>
+      <synonym>
+        <key>ru</key>
+        <value>Po nbr</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Po nbr</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f0ff2e0c-cb64-4aef-8b9c-dc6c3e78e875">
+      <name>SerNo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Serial No</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Serial No</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3b144bd7-9b0d-427c-97bc-c78a2bb7bb6f">
+      <name>Date</name>
+      <synonym>
+        <key>ru</key>
+        <value>Date</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Date</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="758a6ead-dfb1-4503-b7ca-e4c0a3b6615c">
+      <name>Value</name>
+      <synonym>
+        <key>ru</key>
+        <value>Value</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Value</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bc72e149-d151-40fc-8764-3e3c0c8b37a7">
+      <name>AU</name>
+      <synonym>
+        <key>ru</key>
+        <value>AU</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AU</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.КостЦентры</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8a95544e-c737-45be-9257-f8da18789248">
+      <name>Сегмент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сегмент</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сегмент</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Сегменты</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2eed4928-eb4b-4e65-99a2-f2f60b075d5f">
+      <name>Локация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Локация</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Локация</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="1e9b722a-d643-4ac7-bf92-b50bbd64ec3b">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c304bba4-37d3-408b-872f-1cc4f1979cb3">
+    <name>Автопоиск</name>
+    <synonym>
+      <key>ru</key>
+      <value>Автопоиск</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Автопоиск</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="41b97aa6-404b-46de-acf1-fade38574485">
+    <name>ОбходГрупп</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обход групп</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Обход групп</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

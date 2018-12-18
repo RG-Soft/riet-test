@@ -1,0 +1,2009 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfAccounts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f5792072-03f9-4c2b-b93d-de3b605822d5">
+  <producedTypes>
+    <objectType typeId="31cf1984-d2e6-4bf5-8dc3-b0ed738acf79" valueTypeId="a8eefc2c-978e-48b8-848a-5db485740e07"/>
+    <refType typeId="2c2b75c8-025e-4ad1-9bdf-917ed3cd3657" valueTypeId="946f9507-8965-4d31-ad36-b9539968c1bc"/>
+    <selectionType typeId="d0088b1b-2bcd-4314-a6f7-3526f34753ad" valueTypeId="258ccdb4-d03b-4765-bd39-8b3fe95ada22"/>
+    <listType typeId="76453ee7-7de0-4319-b02a-9387ac70263b" valueTypeId="1a5711fa-2c44-4021-931d-4a346b449c14"/>
+    <managerType typeId="0a5f3d86-307b-487e-853e-19e5e1a33793" valueTypeId="36698b9b-052b-4507-bd02-ba866aba3513"/>
+    <extDimensionTypes typeId="632c7957-5824-4c65-87d8-094831e14d8c" valueTypeId="7828430d-1e0f-406d-9ee4-a6849b0b0369"/>
+    <extDimensionTypesRow typeId="050c3933-e88b-4ae6-bdc0-3fe43d22f726" valueTypeId="e86922fe-1e31-4467-b654-bcae8b89e263"/>
+  </producedTypes>
+  <name>Налоговый</name>
+  <synonym>
+    <key>ru</key>
+    <value>План счетов налогового учета (по налогу на прибыль)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>План счетов налогового учета (по налогу на прибыль)</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <inputByString>ChartOfAccounts.Налоговый.StandardAttribute.Description</inputByString>
+  <inputByString>ChartOfAccounts.Налоговый.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <extDimensionTypes>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные</extDimensionTypes>
+  <maxExtDimensionCount>3</maxExtDimensionCount>
+  <codeMask>@@@.@@.@</codeMask>
+  <codeLength>8</codeLength>
+  <descriptionLength>120</descriptionLength>
+  <checkUnique>true</checkUnique>
+  <predefined>
+    <items id="3b6f7126-f6cd-4a8e-8cb4-bc76b0837417">
+      <name>ОсновныеСредства</name>
+      <description>Основные средства</description>
+      <code>01</code>
+      <offBalance>true</offBalance>
+      <order> 01</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="092925e9-71b6-47e7-a30c-96669e33fa7f">
+        <name>ОСвОрганизации</name>
+        <description>Основные средства в организации</description>
+        <code>01.01</code>
+        <offBalance>true</offBalance>
+        <order> 01.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="f6fbeba3-7e7f-4f33-9905-03df9191c08f">
+        <name>ВыбытиеОС</name>
+        <description>Выбытие основных средств</description>
+        <code>01.09</code>
+        <offBalance>true</offBalance>
+        <order> 01.09</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="a382ca24-e73f-4751-862d-bd7b4f473dd6">
+        <name>ОСвСоставеМПЗвБУ</name>
+        <description>ОС, учитываемые в составе МПЗ в БУ</description>
+        <code>01.МЦ</code>
+        <offBalance>true</offBalance>
+        <order> 01.МЦ</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="782a101f-a26f-4bc6-a2ae-f902b32b94df">
+      <name>АмортизацияОсновныхСредств</name>
+      <description>Амортизация основных средств</description>
+      <code>02</code>
+      <accountType>Passive</accountType>
+      <offBalance>true</offBalance>
+      <order> 02</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="1758fec5-81bd-45e0-ae27-65ebcc1935c8">
+        <name>АмортизацияОС_01</name>
+        <description>Амортизация основных средств, учитываемых на счете 01</description>
+        <code>02.01</code>
+        <accountType>Passive</accountType>
+        <offBalance>true</offBalance>
+        <order> 02.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="642f7a44-9ff6-40bb-8766-fd09bd44f9a7">
+        <name>АмортизацияОС_03</name>
+        <description>Амортизация основных средств, учитываемых на счете 03</description>
+        <code>02.02</code>
+        <accountType>Passive</accountType>
+        <offBalance>true</offBalance>
+        <order> 02.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="d3871452-8e91-47c4-a804-512c7f12e585">
+      <name>ДоходныеВложенияВ_МЦ</name>
+      <description>Доходные вложения в материальные ценности</description>
+      <code>03</code>
+      <offBalance>true</offBalance>
+      <order> 03</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="2ad2b75e-c8a1-4846-98dd-ac0980c8efe9">
+        <name>МЦвОрганизации</name>
+        <description>Материальные ценности в организации</description>
+        <code>03.01</code>
+        <offBalance>true</offBalance>
+        <order> 03.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="1af8e75e-b25a-452b-afb3-a6778bccf7e2">
+        <name>МЦ_ПредоставленныеВоВременноеВладение</name>
+        <description>Материальные ценности предоставленные во временное владение и пользование</description>
+        <code>03.02</code>
+        <offBalance>true</offBalance>
+        <order> 03.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="7af07cf6-174b-4a26-82e9-01c5562108d1">
+        <name>МЦ_ПредоставленныеВоВременноеПользование</name>
+        <description>Материальные ценности предоставленные во временное пользование</description>
+        <code>03.03</code>
+        <offBalance>true</offBalance>
+        <order> 03.03</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="05ec2b60-4d09-4a2b-80c1-da79e6f78026">
+        <name>ПрочиеДоходныеВложения</name>
+        <description>Прочие доходные вложения</description>
+        <code>03.04</code>
+        <offBalance>true</offBalance>
+        <order> 03.04</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="43c2212c-09fa-4865-9e0a-bbec3a15b7fe">
+      <name>ОборудованиеКУстановке</name>
+      <description>Оборудование к установке</description>
+      <code>07</code>
+      <offBalance>true</offBalance>
+      <order> 07</order>
+      <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+    </items>
+    <items id="dd51d80e-f2ec-4fe5-91c7-d1a7a5735279">
+      <name>ВложенияВоВнеоборотныеАктивы</name>
+      <description>Вложения во внеоборотные активы</description>
+      <code>08</code>
+      <offBalance>true</offBalance>
+      <order> 08</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОбъектыСтроительства</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="1fce5bda-18bb-4da7-8af1-e1a65bad914b">
+        <name>ПриобретениеЗемельныхУчастков</name>
+        <description>Приобретение земельных участков</description>
+        <code>08.01</code>
+        <offBalance>true</offBalance>
+        <order> 08.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОбъектыСтроительства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="b65b30e9-7b83-4218-9636-a41129f1e215">
+        <name>ПриобретениеОбъектовПриродопользования</name>
+        <description>Приобретение объектов природопользования</description>
+        <code>08.02</code>
+        <offBalance>true</offBalance>
+        <order> 08.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОбъектыСтроительства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="04763553-afc0-489f-814a-59deb9caaf92">
+        <name>СтроительствоОбъектовОсновныхСредств</name>
+        <description>Строительство объектов основных средств</description>
+        <code>08.03</code>
+        <offBalance>true</offBalance>
+        <order> 08.03</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОбъектыСтроительства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СпособыСтроительства</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="99b0c8dc-6b19-44ce-a137-638d84b5a428">
+        <name>ПриобретениеОбъектовОсновныхСредств</name>
+        <description>Приобретение объектов основных средств</description>
+        <code>08.04</code>
+        <offBalance>true</offBalance>
+        <order> 08.04</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+    </items>
+    <items id="edc30ea8-98b7-4c63-a79e-41930e43890e">
+      <name>Материалы</name>
+      <description>Материалы</description>
+      <code>10</code>
+      <offBalance>true</offBalance>
+      <order> 10</order>
+      <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      <childItems id="423d7da6-b44e-4956-9fca-292d208ab171">
+        <name>СырьеИМатериалы</name>
+        <description>Сырье и материалы</description>
+        <code>10.01</code>
+        <offBalance>true</offBalance>
+        <order> 10.01</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="5ea2252d-ff1a-4376-8434-7775da3fe1bb">
+        <name>ПокупныеПолуфабрикатыИКомплектующие</name>
+        <description>Покупные полуфабрикаты и комплектующие</description>
+        <code>10.02</code>
+        <offBalance>true</offBalance>
+        <order> 10.02</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="1ad29b8d-3c82-44ae-b5c1-917017199635">
+        <name>Топливо</name>
+        <description>Топливо</description>
+        <code>10.03</code>
+        <offBalance>true</offBalance>
+        <order> 10.03</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="20dc1c02-d070-480e-ac14-899c842c09a0">
+        <name>Тара</name>
+        <description>Тара</description>
+        <code>10.04</code>
+        <offBalance>true</offBalance>
+        <order> 10.04</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="6804547e-fde9-4c9f-a40b-91e4e504ceb0">
+        <name>ЗапасныеЧасти</name>
+        <description>Запасные части</description>
+        <code>10.05</code>
+        <offBalance>true</offBalance>
+        <order> 10.05</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="9fb2f6d4-cb2d-44d8-8c53-5ab92e6ae6b7">
+        <name>ПрочиеМатериалы</name>
+        <description>Прочие материалы</description>
+        <code>10.06</code>
+        <offBalance>true</offBalance>
+        <order> 10.06</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="6fc5c217-3e0e-4c19-9ee5-19a0c3432396">
+        <name>МатериалыПереданныеВПереработку</name>
+        <description>Материалы переданные в переработку</description>
+        <code>10.07</code>
+        <offBalance>true</offBalance>
+        <order> 10.07</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+        <childItems id="ffd9a6ef-9a53-4d5a-8d52-49577b73a214">
+          <name>СырьеИМатериалыПереданныеВПереработку</name>
+          <description>Сырье и материалы переданные в переработку</description>
+          <code>10.07.1</code>
+          <offBalance>true</offBalance>
+          <order> 10.07.1</order>
+          <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+        </childItems>
+        <childItems id="25af8c97-97b0-41ce-b316-0c2de48391be">
+          <name>ПокупныеПолуфабрикатыИКомплектующиеПереданныеВПереработку</name>
+          <description>Покупные полуфабрикаты и комплектующие переданные в переработку</description>
+          <code>10.07.2</code>
+          <offBalance>true</offBalance>
+          <order> 10.07.2</order>
+          <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+        </childItems>
+        <childItems id="8ec81c38-f88c-49b5-965e-90a45a69c277">
+          <name>ПрочиеМатериалыПереданныеВПереработку</name>
+          <description>Прочие материалы переданные в переработку</description>
+          <code>10.07.3</code>
+          <offBalance>true</offBalance>
+          <order> 10.07.3</order>
+          <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+        </childItems>
+      </childItems>
+      <childItems id="ab619f4f-40cd-479a-b631-94b56417efe0">
+        <name>СтроительныеМатериалы</name>
+        <description>Строительные материалы</description>
+        <code>10.08</code>
+        <offBalance>true</offBalance>
+        <order> 10.08</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="a0ecb9e1-5167-4524-883f-85e4438c5813">
+        <name>ИнвентарьИХозяйственныеПринадлежности</name>
+        <description>Инвентарь и хозяйственные принадлежности</description>
+        <code>10.09</code>
+        <offBalance>true</offBalance>
+        <order> 10.09</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="caa590fe-e80d-48ba-ac1a-d0af5e071f90">
+        <name>СпецоснасткаИСпецодеждаНаСкладе</name>
+        <description>Специальная оснастка и специальная одежда на складе</description>
+        <code>10.10</code>
+        <offBalance>true</offBalance>
+        <order> 10.10</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="70c72a13-f941-4289-97c9-70e9e76fe337">
+        <name>СпецоснасткаИСпецодеждаВЭксплуатации</name>
+        <description>Специальная оснастка и специальная одежда в эксплуатации</description>
+        <code>10.11</code>
+        <offBalance>true</offBalance>
+        <order> 10.11</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Номенклатура</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="84052d30-e5e7-4918-ba55-353bf92026ec">
+        <name>МатериалыВСоставеОСвНУ</name>
+        <description>Материалы, учитываемые в составе ОС в НУ</description>
+        <code>10.МЦ</code>
+        <offBalance>true</offBalance>
+        <order> 10.МЦ</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+    </items>
+    <items id="d44b385b-c516-4217-943d-08e8004ec77c">
+      <name>ОсновноеПроизводство_</name>
+      <description>Основное производство</description>
+      <code>20</code>
+      <offBalance>true</offBalance>
+      <order> 20</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="e170c96f-0951-49bb-907a-e89c2ec7c094">
+        <name>ОсновноеПроизводство</name>
+        <description>Основное производство</description>
+        <code>20.01</code>
+        <offBalance>true</offBalance>
+        <order> 20.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <childItems id="3797af97-ba14-4f1a-b4be-1129bd212cfe">
+          <name>ПрямыеРасходыОсновногоПроизводства</name>
+          <description>Прямые расходы основного производства</description>
+          <code>20.01.1</code>
+          <offBalance>true</offBalance>
+          <order> 20.01.1</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="27120c43-004d-413f-913c-121c4ae188b6">
+          <name>КосвенныеРасходыОсновногоПроизводства</name>
+          <description>Косвенные расходы основного производства</description>
+          <code>20.01.2</code>
+          <offBalance>true</offBalance>
+          <order> 20.01.2</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+      </childItems>
+      <childItems id="f24ea475-df2e-4dc9-b9e6-92c743f55387">
+        <name>ПроизводствоИзДавальческогоСырья</name>
+        <description>Производство продукции из давальческого сырья</description>
+        <code>20.02</code>
+        <offBalance>true</offBalance>
+        <order> 20.02</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Номенклатура</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="2119a917-5b09-4a3f-a5ff-e4457dca9cfd">
+      <name>Полуфабрикаты</name>
+      <description>Полуфабрикаты собственного производства</description>
+      <code>21</code>
+      <offBalance>true</offBalance>
+      <order> 21</order>
+      <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+    </items>
+    <items id="d1096d00-225b-4330-b50f-218213a20699">
+      <name>ВспомогательныеПроизводства</name>
+      <description>Вспомогательные производства</description>
+      <code>23</code>
+      <offBalance>true</offBalance>
+      <order> 23</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="42775732-ccdf-470f-aa01-3ac9a57127bd">
+        <name>ПрямыеРасходыВспомогательныхПроизводств</name>
+        <description>Прямые расходы вспомогательных производств</description>
+        <code>23.01</code>
+        <offBalance>true</offBalance>
+        <order> 23.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="ec7bc964-7cbc-4455-a479-831bb82d2f7a">
+        <name>КосвенныеРасходыВспомогательныхПроизводств</name>
+        <description>Косвенные расходы вспомогательных производств</description>
+        <code>23.02</code>
+        <offBalance>true</offBalance>
+        <order> 23.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="dce350fa-b6f6-4d98-a2c2-723dc6f394de">
+      <name>ОбщепроизводственныеРасходы</name>
+      <description>Общепроизводственные расходы</description>
+      <code>25</code>
+      <offBalance>true</offBalance>
+      <order> 25</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="102e35c8-1e98-46c8-af40-81b1ef735bc0">
+        <name>ПрямыеОбщепроизводственныеРасходы</name>
+        <description>Прямые общепроизводственные расходы</description>
+        <code>25.01</code>
+        <offBalance>true</offBalance>
+        <order> 25.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="79499595-0649-4f58-92cd-bd1f28a1b8ed">
+        <name>КосвенныеОбщепроизводственныеРасходы</name>
+        <description>Косвенные общепроизводственные расходы</description>
+        <code>25.02</code>
+        <offBalance>true</offBalance>
+        <order> 25.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="e9c1c4e2-6e1d-4e93-b89c-aaaf6e9a2b4f">
+      <name>ОбщехозяйственныеРасходы</name>
+      <description>Общехозяйственные расходы</description>
+      <code>26</code>
+      <offBalance>true</offBalance>
+      <order> 26</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="d34d9a68-fe50-4822-9efe-abf435d31d12">
+        <name>ПрямыеОбщехозяйственныеРасходы</name>
+        <description>Прямые общехозяйственные расходы</description>
+        <code>26.01</code>
+        <offBalance>true</offBalance>
+        <order> 26.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="7b6c6582-506d-470d-a9f3-dfd830c7828b">
+        <name>КосвенныеОбщехозяйственныеРасходы</name>
+        <description>Косвенные общехозяйственные расходы</description>
+        <code>26.02</code>
+        <offBalance>true</offBalance>
+        <order> 26.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="1a70fcdd-4b64-4cc1-86d4-8a0dfe1f7175">
+      <name>БракВПроизводстве</name>
+      <description>Брак в производстве</description>
+      <code>28</code>
+      <offBalance>true</offBalance>
+      <order> 28</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="c5c70ea8-4c82-4116-83d3-cf7478da0372">
+        <name>ПрямыеРасходыПоВыявленномуБраку</name>
+        <description>Прямые расходы по выявленному браку</description>
+        <code>28.01</code>
+        <offBalance>true</offBalance>
+        <order> 28.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="dd1096ce-21c9-4b48-a6ea-40b7d26f8fd1">
+        <name>КосвенныеРасходыПоВыявленномуБраку</name>
+        <description>Косвенные расходы по выявленному браку</description>
+        <code>28.02</code>
+        <offBalance>true</offBalance>
+        <order> 28.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="f92787a2-bc5e-489e-9c73-9568263fb193">
+      <name>ОбслуживающиеПроизводства</name>
+      <description>Обслуживающие производства и хозяйства</description>
+      <code>29</code>
+      <offBalance>true</offBalance>
+      <order> 29</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="daeca5b7-cc07-4a36-afb2-798f3ca59fe8">
+        <name>ПрямыеРасходыОбслуживающихПроизводств</name>
+        <description>Прямые расходы обслуживающих производств и хозяйств</description>
+        <code>29.01</code>
+        <offBalance>true</offBalance>
+        <order> 29.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="b6491789-7f8d-4256-b618-334435b2af1f">
+        <name>КосвенныеРасходыОбслуживающихПроизводств</name>
+        <description>Косвенные расходы обслуживающих производств и хозяйств</description>
+        <code>29.02</code>
+        <offBalance>true</offBalance>
+        <order> 29.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Подразделения</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="fdab8e1d-c060-4ad5-91e9-28724a0e273f">
+      <name>ВыпускПродукции</name>
+      <description>Выпуск продукции (работ, услуг)</description>
+      <code>40</code>
+      <accountType>ActivePassive</accountType>
+      <offBalance>true</offBalance>
+      <order> 40</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ВидыСтоимости</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+    </items>
+    <items id="42c71a51-96e7-461b-b57c-053330da955d">
+      <name>Товары</name>
+      <description>Товары</description>
+      <code>41</code>
+      <offBalance>true</offBalance>
+      <order> 41</order>
+      <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      <childItems id="840b8ac8-810d-4b90-9b42-d8c4be082cee">
+        <name>ТоварыНаСкладах</name>
+        <description>Товары на складах</description>
+        <code>41.01</code>
+        <offBalance>true</offBalance>
+        <order> 41.01</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="fb5de8f0-e894-4467-a3e3-39fb19d7762a">
+        <name>ТоварыВРозничнойТорговле</name>
+        <description>Товары в розничной торговле</description>
+        <code>41.02</code>
+        <offBalance>true</offBalance>
+        <order> 41.02</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="cb948fc3-704d-409f-9547-af4ca26705ba">
+        <name>ТараПодТоваромИПорожняя</name>
+        <description>Тара под товаром и порожняя</description>
+        <code>41.03</code>
+        <offBalance>true</offBalance>
+        <order> 41.03</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="add046e4-9f5d-40e3-8021-50af8bf22e56">
+        <name>ПокупныеИзделия</name>
+        <description>Покупные изделия</description>
+        <code>41.04</code>
+        <offBalance>true</offBalance>
+        <order> 41.04</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+    </items>
+    <items id="f2d59ee1-b9ff-445a-a643-0742c14b9fe6">
+      <name>ГотоваяПродукция</name>
+      <description>Готовая продукция</description>
+      <code>43</code>
+      <offBalance>true</offBalance>
+      <order> 43</order>
+      <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+    </items>
+    <items id="f1e262f1-fd8a-4d73-9300-d31f5ca09e95">
+      <name>РасходыНаПродажу</name>
+      <description>Расходы на продажу</description>
+      <code>44</code>
+      <offBalance>true</offBalance>
+      <order> 44</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="ce6f6ed3-ad37-4fa9-89a3-3ca7343b9a03">
+        <name>ИздержкиОбращения</name>
+        <description>Издержки обращения в организациях, осуществляющих торговую деятельность</description>
+        <code>44.01</code>
+        <offBalance>true</offBalance>
+        <order> 44.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="fddd4b28-0278-4ee7-b6a5-8e325fa83efa">
+        <name>КоммерческиеРасходы</name>
+        <description>Коммерческие расходы в организациях, осуществляющих промышленную и иную производственную деятельность</description>
+        <code>44.02</code>
+        <offBalance>true</offBalance>
+        <order> 44.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.СтатьиЗатрат</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="ce0cd65f-23a4-4fd5-83d6-9b4393b1f605">
+      <name>ТоварыОтгруженные</name>
+      <description>Товары отгруженные</description>
+      <code>45</code>
+      <offBalance>true</offBalance>
+      <order> 45</order>
+      <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      <childItems id="06252906-52ed-4bfa-abcf-06ea1eabaab3">
+        <name>ПокупныеТоварыОтгруженные</name>
+        <description>Покупные товары отгруженные</description>
+        <code>45.01</code>
+        <offBalance>true</offBalance>
+        <order> 45.01</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="6c704450-4a89-4ff3-8a24-b6883bd2d67b">
+        <name>ГотоваяПродукцияОтгруженная</name>
+        <description>Готовая продукция отгруженная</description>
+        <code>45.02</code>
+        <offBalance>true</offBalance>
+        <order> 45.02</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+      <childItems id="c8525709-7174-4001-b220-74359d33cc8d">
+        <name>ПрочиеТоварыОтгруженные</name>
+        <description>Прочие товары отгруженные</description>
+        <code>45.03</code>
+        <offBalance>true</offBalance>
+        <order> 45.03</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      </childItems>
+    </items>
+    <items id="01567ab3-40e2-45a8-b666-5c22efcdf8b9">
+      <name>ФинансовыеВложения</name>
+      <description>Финансовые вложения</description>
+      <code>58</code>
+      <offBalance>true</offBalance>
+      <order> 58</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="cb022a74-02a0-4de5-8f44-c32c22187867">
+        <name>ПаиИАкции</name>
+        <description>Паи и акции</description>
+        <code>58.01</code>
+        <offBalance>true</offBalance>
+        <order> 58.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <childItems id="98ed716f-11a7-4dc4-b7e9-01497f5cc140">
+          <name>Паи</name>
+          <description>Паи</description>
+          <code>58.01.1</code>
+          <offBalance>true</offBalance>
+          <order> 58.01.1</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="cfca8a8a-6dea-4cfb-8cd2-e809ffdde8cf">
+          <name>Акции</name>
+          <description>Акции</description>
+          <code>58.01.2</code>
+          <offBalance>true</offBalance>
+          <order> 58.01.2</order>
+          <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>e7188432-2d33-48e8-8079-da6653cc83c9</characteristicType>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+      </childItems>
+      <childItems id="83a2351b-576c-4676-adcc-bb3c795c8225">
+        <name>ДолговыеЦенныеБумаги</name>
+        <description>Долговые ценные бумаги</description>
+        <code>58.02</code>
+        <offBalance>true</offBalance>
+        <order> 58.02</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>e7188432-2d33-48e8-8079-da6653cc83c9</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="236af1ee-5b80-4b2b-a5e8-6443433b00c6">
+        <name>ПредоставленныеЗаймы</name>
+        <description>Предоставленные займы</description>
+        <code>58.03</code>
+        <offBalance>true</offBalance>
+        <order> 58.03</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Договоры</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="c949b000-ae12-4c38-9239-3213503266a7">
+        <name>ВкладыПоДоговоруПростогоТоварищества</name>
+        <description>Вклады по договору простого товарищества</description>
+        <code>58.04</code>
+        <offBalance>true</offBalance>
+        <order> 58.04</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Договоры</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="b5340c60-1801-4b2e-8db6-f82fdb7b08f7">
+        <name>ПриобретенныеПрава</name>
+        <description>Приобретенные права в рамках оказания финансовых услуг</description>
+        <code>58.05</code>
+        <offBalance>true</offBalance>
+        <order> 58.05</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Договоры</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="80f39478-4a09-4d48-bf23-dc5e26d7aa41">
+      <name>РасчетыПоСоциальномуСтрахованию</name>
+      <description>Расходы по социальному страхованию и обеспечению</description>
+      <code>69</code>
+      <accountType>ActivePassive</accountType>
+      <offBalance>true</offBalance>
+      <order> 69</order>
+      <childItems id="dab39c99-b2b0-4c34-97c8-8f3f21bfef8c">
+        <name>ФСС</name>
+        <description>Расходы по социальному страхованию (ЕСН в части, перечисляемой в ФСС)</description>
+        <code>69.01</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order> 69.01</order>
+      </childItems>
+      <childItems id="49520f9a-e619-411f-9b9b-a84f02b650df">
+        <name>ПФР</name>
+        <description>Расходы по пенсионному обеспечению (страховые взносы на обязательное пенсионное страхование)</description>
+        <code>69.02</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order> 69.02</order>
+        <childItems id="95cef535-ae02-459a-a37f-b864ba3c12c9">
+          <name>ПФР_страх</name>
+          <description>Страховая часть трудовой пенсии</description>
+          <code>69.02.1</code>
+          <accountType>ActivePassive</accountType>
+          <offBalance>true</offBalance>
+          <order> 69.02.1</order>
+        </childItems>
+        <childItems id="43b1ffba-14de-40d2-b606-36ae2c8baee6">
+          <name>ПФР_нак</name>
+          <description>Накопительная часть трудовой пенсии</description>
+          <code>69.02.2</code>
+          <accountType>ActivePassive</accountType>
+          <offBalance>true</offBalance>
+          <order> 69.02.2</order>
+        </childItems>
+      </childItems>
+      <childItems id="b1f889b4-a633-457c-b460-bae902509c4e">
+        <name>ФОМС</name>
+        <description>Расходы по обязательному медицинскому страхованию (ЕСН в части, перечисляемой в фонды ОМС)</description>
+        <code>69.03</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order> 69.03</order>
+        <childItems id="6f41a830-d732-40a8-9a7f-0020366b5249">
+          <name>ФФОМС</name>
+          <description>Федеральный фонд ОМС</description>
+          <code>69.03.1</code>
+          <accountType>ActivePassive</accountType>
+          <offBalance>true</offBalance>
+          <order> 69.03.1</order>
+        </childItems>
+        <childItems id="7184a39b-6ab2-4d5d-a3f2-7c02ff71c215">
+          <name>ТФОМС</name>
+          <description>Территориальный фонд ОМС</description>
+          <code>69.03.2</code>
+          <accountType>ActivePassive</accountType>
+          <offBalance>true</offBalance>
+          <order> 69.03.2</order>
+        </childItems>
+      </childItems>
+      <childItems id="6cf40f94-c95a-449b-a475-ea81abf0e0cb">
+        <name>ЕСН_ФБ</name>
+        <description>ЕСН в части, перечисляемой в Федеральный бюджет</description>
+        <code>69.04</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order> 69.04</order>
+      </childItems>
+      <childItems id="53578dfc-eff9-49e2-95b3-68a710b61b38">
+        <name>ФСС_НСиПЗ</name>
+        <description>Расходы по обязательному социальному страхованию от несчастных случаев на производстве и профессиональных заболеваний</description>
+        <code>69.11</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order> 69.11</order>
+      </childItems>
+    </items>
+    <items id="65381280-f96e-4669-9bfc-b98d1cf8e397">
+      <name>РасчетыСПерсоналомПоОплатеТруда</name>
+      <description>Расходы на оплату труда</description>
+      <code>70</code>
+      <accountType>Passive</accountType>
+      <offBalance>true</offBalance>
+      <order> 70</order>
+    </items>
+    <items id="38a58691-66ee-43b0-a628-b122610eb4e4">
+      <name>ВнутрихозяйственныеРасчеты</name>
+      <description>Внутрихозяйственные расчеты</description>
+      <code>79</code>
+      <accountType>ActivePassive</accountType>
+      <offBalance>true</offBalance>
+      <order> 79</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОбособленныеПодразделения</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="08aba2b7-dffd-45c3-be4a-557ddbdedf71">
+        <name>РасчетыПоТекущимОперациям</name>
+        <description>Расчеты по текущим операциям</description>
+        <code>79.02</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order> 79.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОбособленныеПодразделения</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="4d1784f4-b377-4cc6-a815-412a37a74b57">
+      <name>ЦелевоеФинансирование</name>
+      <description>Целевое финансирование</description>
+      <code>86</code>
+      <accountType>ActivePassive</accountType>
+      <offBalance>true</offBalance>
+      <order> 86</order>
+    </items>
+    <items id="b94ccd5a-3aa9-4f87-9d0c-c24bb74db822">
+      <name>Продажи</name>
+      <description>Продажи</description>
+      <code>90</code>
+      <accountType>ActivePassive</accountType>
+      <offBalance>true</offBalance>
+      <order> 90</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="ba45d9cb-fcfb-4669-90e5-7c028f8d6e82">
+        <name>Выручка</name>
+        <description>Выручка</description>
+        <code>90.01</code>
+        <accountType>Passive</accountType>
+        <offBalance>true</offBalance>
+        <order> 90.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Номенклатура</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <childItems id="2fee72c4-fabd-45a1-9dd8-290668da9e71">
+          <name>ВыручкаОтРеализацииТоваровРаботСобственногоПроизводства</name>
+          <description>Выручка от реализации товаров (работ, услуг) собственного производства</description>
+          <code>90.01.1</code>
+          <accountType>Passive</accountType>
+          <offBalance>true</offBalance>
+          <order> 90.01.1</order>
+          <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Номенклатура</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="8a4d0c84-456e-4113-8d9e-d985030c1664">
+          <name>ВыручкаОтРеализацииПокупныхТоваров</name>
+          <description>Выручка от реализации покупных товаров</description>
+          <code>90.01.2</code>
+          <accountType>Passive</accountType>
+          <offBalance>true</offBalance>
+          <order> 90.01.2</order>
+          <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Номенклатура</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+      </childItems>
+      <childItems id="b6ed5ba3-9b98-470a-992e-dec872e108be">
+        <name>СебестоимостьПродаж</name>
+        <description>Себестоимость продаж</description>
+        <code>90.02</code>
+        <offBalance>true</offBalance>
+        <order> 90.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="b22409f4-2bea-43b1-af88-c64a46b025a6">
+        <name>Продажи_ЭкспортныеПошлины</name>
+        <description>Экспортные пошлины</description>
+        <code>90.05</code>
+        <offBalance>true</offBalance>
+        <order> 90.05</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="4a9fbcd8-7abe-4dbb-a0c1-5de765b608f8">
+        <name>Продажи_РасходыНаПродажу</name>
+        <description>Расходы на продажу</description>
+        <code>90.07</code>
+        <offBalance>true</offBalance>
+        <order> 90.07</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="6d83fce3-3109-4629-9c5c-d5240f7d3506">
+        <name>Продажи_УправленческиеРасходы</name>
+        <description>Управленческие расходы</description>
+        <code>90.08</code>
+        <offBalance>true</offBalance>
+        <order> 90.08</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="160fd390-0a35-41cb-b3f2-1c7b0f731967">
+        <name>ПрибыльУбытокОтПродаж</name>
+        <description>Прибыль убыток от продаж</description>
+        <code>90.09</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order> 90.09</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.НоменклатурныеГруппы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="4b5f117e-b588-4472-a5be-ddf8eb60ffbb">
+      <name>ПрочиеДоходыИРасходы</name>
+      <description>Прочие доходы и расходы</description>
+      <code>91</code>
+      <accountType>ActivePassive</accountType>
+      <offBalance>true</offBalance>
+      <order> 91</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="6334a6dc-8708-40d7-8f6b-f48b5a80a44a">
+        <name>ПрочиеДоходы</name>
+        <description>Прочие доходы</description>
+        <code>91.01</code>
+        <accountType>Passive</accountType>
+        <offBalance>true</offBalance>
+        <order> 91.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <childItems id="8edc7c3b-8a59-4d8c-957d-5c5b294e4d5b">
+          <name>ВыручкаОтРеализацииОсновныхСредств</name>
+          <description>Выручка от реализации основных средств</description>
+          <code>91.01.1</code>
+          <accountType>Passive</accountType>
+          <offBalance>true</offBalance>
+          <order> 91.01.1</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="d65f588c-1e71-4cb5-911f-85ad83cf06ba">
+          <name>ВыручкаОтРеализацииОбъектовСтроительства</name>
+          <description>Выручка от реализации объектов строительства</description>
+          <code>91.01.3</code>
+          <accountType>Passive</accountType>
+          <offBalance>true</offBalance>
+          <order> 91.01.3</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОбъектыСтроительства</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="96758055-44d9-42ab-a1b4-2ff4a45995ea">
+          <name>ВыручкаОтРеализацииПрочегоИмуществаРаботУслуг</name>
+          <description>Выручка от реализации прочего имущества (работ, услуг)</description>
+          <code>91.01.4</code>
+          <accountType>Passive</accountType>
+          <offBalance>true</offBalance>
+          <order> 91.01.4</order>
+          <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Номенклатура</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="dca6653c-0327-467a-ae93-dfe911395117">
+          <name>ВыручкаОтРеализацииИмущественныхПрав</name>
+          <description>Выручка от реализации имущественных прав</description>
+          <code>91.01.5</code>
+          <accountType>Passive</accountType>
+          <offBalance>true</offBalance>
+          <order> 91.01.5</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Договоры</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="0477e5f9-dfd8-40c6-ae99-9a416888f774">
+          <name>ВыручкаОтРеализацииЦенныхБумаг</name>
+          <description>Выручка от реализации (выбытия, в т.ч. доход от  погашения)  ценных бумаг</description>
+          <code>91.01.6</code>
+          <accountType>Passive</accountType>
+          <offBalance>true</offBalance>
+          <order> 91.01.6</order>
+          <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>e7188432-2d33-48e8-8079-da6653cc83c9</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="9b842b36-d804-404c-a94d-502faa34da3c">
+          <name>ВнереализационныеДоходы</name>
+          <description>Внереализационные доходы</description>
+          <code>91.01.7</code>
+          <accountType>Passive</accountType>
+          <offBalance>true</offBalance>
+          <order> 91.01.7</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+      </childItems>
+      <childItems id="8b24a34a-09dd-4ed9-bd10-143a87c033fe">
+        <name>ПрочиеРасходы</name>
+        <description>Прочие расходы</description>
+        <code>91.02</code>
+        <offBalance>true</offBalance>
+        <order> 91.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <childItems id="76574371-ec0c-4e98-b1a7-05fe8e4fd8a2">
+          <name>РасходыСвязанныеСРеализациейОсновныхСредств</name>
+          <description>Расходы, связанные с реализацией основных средств</description>
+          <code>91.02.1</code>
+          <offBalance>true</offBalance>
+          <order> 91.02.1</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="6e8d8301-1b6b-41ec-a3d2-2ada0d6d4168">
+          <name>РасходыСвязанныеСРеализациейОбъектовСтроительства</name>
+          <description>Расходы, связанные с реализацией объектов строительства</description>
+          <code>91.02.3</code>
+          <offBalance>true</offBalance>
+          <order> 91.02.3</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОбъектыСтроительства</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="3a0866d9-d48c-46f9-b5fa-51dec9a0a9c7">
+          <name>РасходыСвязанныеСРеализациейПрочегоИмущества</name>
+          <description>Расходы, связанные с реализацией прочего имущества</description>
+          <code>91.02.4</code>
+          <offBalance>true</offBalance>
+          <order> 91.02.4</order>
+          <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Номенклатура</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="bd9f49af-d304-4893-8e01-589e5aa2b2ac">
+          <name>РасходыСвязанныеСРеализациейИмущественныхПрав</name>
+          <description>Расходы, связанные с реализацией имущественных прав</description>
+          <code>91.02.5</code>
+          <offBalance>true</offBalance>
+          <order> 91.02.5</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Договоры</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="e7660e99-7028-4697-b95d-e756b8634f86">
+          <name>РасходыСвязанныеСРеализациейЦенныхБумаг</name>
+          <description>Расходы, связанные с реализацией ценных бумаг</description>
+          <code>91.02.6</code>
+          <offBalance>true</offBalance>
+          <order> 91.02.6</order>
+          <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+          <extDimensionTypes>
+            <characteristicType>e7188432-2d33-48e8-8079-da6653cc83c9</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="4e2033e7-e311-4bc2-bbfa-8398e475fbd9">
+          <name>ВнереализационныеРасходы</name>
+          <description>Внереализационные расходы</description>
+          <code>91.02.7</code>
+          <offBalance>true</offBalance>
+          <order> 91.02.7</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+        <childItems id="af6f69e0-101f-4770-a2c5-815d21347f45">
+          <name>ПрочиеКосвенныеРасходы</name>
+          <description>Прочие косвенные расходы</description>
+          <code>91.02.9</code>
+          <offBalance>true</offBalance>
+          <order> 91.02.9</order>
+          <extDimensionTypes>
+            <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+            <turnover>true</turnover>
+            <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+          </extDimensionTypes>
+        </childItems>
+      </childItems>
+      <childItems id="409258f6-e311-4958-8521-06e20b92ec39">
+        <name>СальдоПрочихДоходовИРасходов</name>
+        <description>Сальдо прочих доходов и расходов</description>
+        <code>91.09</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order> 91.09</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрочиеДоходыИРасходы</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="680c07d5-87ec-468a-98e9-2fb6634c2e10">
+      <name>НедостачиИПотериОтПорчиЦенностей</name>
+      <description>Недостачи и потери от порчи ценностей</description>
+      <code>94</code>
+      <offBalance>true</offBalance>
+      <order> 94</order>
+    </items>
+    <items id="15a0ee60-ecaa-452d-9c4c-51ebf68f853a">
+      <name>РезервыПредстоящихРасходов</name>
+      <description>Резервы предстоящих расходов</description>
+      <code>96</code>
+      <accountType>Passive</accountType>
+      <offBalance>true</offBalance>
+      <order> 96</order>
+      <extDimensionTypes>
+        <characteristicType>5d15fb8a-11e5-4895-8ccf-8833d6640b70</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+    </items>
+    <items id="03dbf728-5be6-433f-a13e-5d68f7e897c1">
+      <name>РасходыБудущихПериодов</name>
+      <description>Расходы будущих периодов</description>
+      <code>97</code>
+      <offBalance>true</offBalance>
+      <order> 97</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РасходыБудущихПериодов</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="56e92cdd-6118-40dc-9948-bb674af89203">
+        <name>РасходыНаОплатуТрудаБудущихПериодов</name>
+        <description>Расходы на оплату труда будущих периодов</description>
+        <code>97.01</code>
+        <offBalance>true</offBalance>
+        <order> 97.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РасходыБудущихПериодов</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="7722d4c0-87a6-4849-a719-c4ac70c1d3bb">
+        <name>РасходыБудущихПериодовНаДобровольноеСтрахованиеРаботников</name>
+        <description>Расходы будущих периодов на добровольное страхование работников</description>
+        <code>97.02</code>
+        <offBalance>true</offBalance>
+        <order> 97.02</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РасходыБудущихПериодов</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РаботникиОрганизаций</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="b8486de3-5bcd-4d9d-a31a-0a8d0c79179e">
+        <name>ОтрицательныйРезультатОтРеализацииАмортизируемогоИмущества</name>
+        <description>Отрицательный результат от реализации амортизируемого имущества</description>
+        <code>97.03</code>
+        <offBalance>true</offBalance>
+        <order> 97.03</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РасходыБудущихПериодов</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="5c04a815-73b7-4580-bb79-928a441c72b2">
+        <name>УбыткиПрошлыхЛет</name>
+        <description>Убытки прошлых лет</description>
+        <code>97.11</code>
+        <offBalance>true</offBalance>
+        <order> 97.11</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РасходыБудущихПериодов</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="0fc0e141-e4fc-4295-b3e8-644564547f73">
+        <name>УбыткиПрошлыхЛетОбслуживающихПроизводств</name>
+        <description>Убытки прошлых лет обслуживающих производств и хозяйств</description>
+        <code>97.12</code>
+        <offBalance>true</offBalance>
+        <order> 97.12</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РасходыБудущихПериодов</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="b5a41887-59bb-4b47-9b84-c92b15d1ec9c">
+        <name>ПрочиеРасходыБудущихПериодов</name>
+        <description>Прочие расходы будущих периодов</description>
+        <code>97.21</code>
+        <offBalance>true</offBalance>
+        <order> 97.21</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РасходыБудущихПериодов</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="7ae5eea3-5b5f-4e34-9176-f4f4aa5f8569">
+      <name>ДоходыБудущихПериодов</name>
+      <description>Доходы будущих периодов</description>
+      <code>98</code>
+      <accountType>Passive</accountType>
+      <offBalance>true</offBalance>
+      <order> 98</order>
+      <extDimensionTypes>
+        <characteristicType>25d0df7a-d1f2-42ef-8f51-ca43ce72e41c</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="edf7a682-09ef-41e5-a436-f2cc074e5611">
+        <name>ДоходыПолученныеВСчетБудущихПериодов</name>
+        <description>Доходы, полученные в счет будущих периодов</description>
+        <code>98.01</code>
+        <accountType>Passive</accountType>
+        <offBalance>true</offBalance>
+        <order> 98.01</order>
+        <extDimensionTypes>
+          <characteristicType>25d0df7a-d1f2-42ef-8f51-ca43ce72e41c</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Договоры</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="4c73f39d-e671-4208-b40d-0cba73848023">
+      <name>ТоварыПринятыеНаКомиссию</name>
+      <description>Товары, принятые на комиссию</description>
+      <code>004</code>
+      <offBalance>true</offBalance>
+      <order> 99 </order>
+      <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Партии</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <childItems id="982961e7-d668-439f-9d82-3068dd34b049">
+        <name>ТоварыНаСкладе</name>
+        <description>Товары на складе</description>
+        <code>004.01</code>
+        <offBalance>true</offBalance>
+        <order>004.01</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Партии</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+      <childItems id="ffd160d0-07d2-4464-a4cf-92282b0bbda6">
+        <name>ТоварыПереданныеНаКомиссию</name>
+        <description>Товары, переданные на комиссию</description>
+        <code>004.02</code>
+        <offBalance>true</offBalance>
+        <order>004.02</order>
+        <accountingFlags>ChartOfAccounts.Налоговый.AccountingFlag.Количественный</accountingFlags>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Партии</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="97b9b542-0a3b-4558-832a-bf8b4de4bdfc">
+      <name>ПрибылиИУбытки</name>
+      <description>Прибыли и убытки</description>
+      <code>99</code>
+      <accountType>ActivePassive</accountType>
+      <offBalance>true</offBalance>
+      <order> 99</order>
+      <childItems id="051de21c-b863-4e80-bf79-9e50a0ccfbb1">
+        <name>ПрибылиИУбыткиБезНалогаНаПрибыль</name>
+        <description>Прибыли и убытки без налога на прибыль</description>
+        <code>99.01</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order> 99.01</order>
+        <extDimensionTypes>
+          <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ПрибылиИУбытки</characteristicType>
+          <turnover>true</turnover>
+          <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+        </extDimensionTypes>
+      </childItems>
+    </items>
+    <items id="571a71ab-d64b-46b6-a1bc-4a55d4f16eaf">
+      <name>РасходыПоДеятельностиЕНВД</name>
+      <description>Расходы, относящиеся  к деятельности, облагаемой ЕНВД</description>
+      <code>ЕН</code>
+      <offBalance>true</offBalance>
+      <order> ЕН </order>
+    </items>
+    <items id="f8cc1292-30da-4af1-8ff0-98b29414da85">
+      <name>ПоступлениеИВыбытиеИмуществаРаботУслугПрав</name>
+      <description>Поступление и выбытие имущества, работ, услуг, прав</description>
+      <code>ПВ</code>
+      <accountType>ActivePassive</accountType>
+      <offBalance>true</offBalance>
+      <order> ПВ</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.УсловияПоступленияИВыбытия</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Контрагенты</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.Договоры</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+    </items>
+    <items id="e2858e8a-a716-4b9e-8f2f-11f840e339c8">
+      <name>РасходыНаКапитальныеВложения</name>
+      <description>Расходы на капитальные вложения по п. 1.1 ст. 259 НК РФ</description>
+      <code>КВ</code>
+      <accountType>ActivePassive</accountType>
+      <offBalance>true</offBalance>
+      <order>КВ </order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ОсновныеСредства</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+    </items>
+    <items id="ea6acc78-b667-46b8-80d2-c76693f59b6e">
+      <name>МатериальныеЦенностиВЭксплуатации</name>
+      <description>Материальные ценности в эксплуатации</description>
+      <code>МЦ</code>
+      <offBalance>true</offBalance>
+      <order>МЦ </order>
+    </items>
+    <items id="33c70407-652c-40cc-8bc7-8e61fa2e6ef2">
+      <name>РасходыНеУчитываемые</name>
+      <description>Расходы, не учитываемые в целях налогообложения</description>
+      <code>НЕ</code>
+      <accountType>ActivePassive</accountType>
+      <offBalance>true</offBalance>
+      <order>НЕ </order>
+      <childItems id="7eac3d6f-df5e-4f6d-90db-bd363819826e">
+        <name>РасходыНеУчитываемыеПоП_1_48</name>
+        <description>Расходы, которые не учтены на основании пунктов 1 - 48 статьи 270 НК</description>
+        <code>НЕ.01</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order>НЕ .01</order>
+        <childItems id="144dd856-702f-43cd-9d88-9444d2d8e466">
+          <name>ВыплатыВпользуФизЛицПоП_1_48</name>
+          <description>Выплаты в пользу физических лиц</description>
+          <code>НЕ.01.1</code>
+          <accountType>ActivePassive</accountType>
+          <offBalance>true</offBalance>
+          <order>НЕ .01.1</order>
+        </childItems>
+        <childItems id="12decea2-ead0-4747-ac12-8010282c33db">
+          <name>ДругиеВыплатыПоП_1_48</name>
+          <description>Другие выплаты</description>
+          <code>НЕ.01.9</code>
+          <accountType>ActivePassive</accountType>
+          <offBalance>true</offBalance>
+          <order>НЕ .01.9</order>
+        </childItems>
+      </childItems>
+      <childItems id="3640bc26-94f4-4cd9-834a-00fe85980f27">
+        <name>РасходыНеУчитываемыеПоП_49</name>
+        <description>Расходы, которые не учтены на основании пункта 49 статьи 270 НК</description>
+        <code>НЕ.02</code>
+        <accountType>ActivePassive</accountType>
+        <offBalance>true</offBalance>
+        <order>НЕ .02</order>
+        <childItems id="acaa1775-fd96-4b2e-bf7d-fe236adb09ed">
+          <name>ВыплатыВпользуФизЛицПоП_49</name>
+          <description>Выплаты в пользу физических лиц</description>
+          <code>НЕ.02.1</code>
+          <accountType>ActivePassive</accountType>
+          <offBalance>true</offBalance>
+          <order>НЕ .02.1</order>
+        </childItems>
+        <childItems id="5e420d8f-4830-4af3-8f9a-710e2ab121c1">
+          <name>ДругиеВыплатыПоП_49</name>
+          <description>Другие выплаты</description>
+          <code>НЕ.02.9</code>
+          <accountType>ActivePassive</accountType>
+          <offBalance>true</offBalance>
+          <order>НЕ .02.9</order>
+        </childItems>
+      </childItems>
+    </items>
+    <items id="37abd71a-eb25-4b14-bfa6-294db5838262">
+      <name>УдалитьРасчетыСПерсоналомПоОплатеТруда</name>
+      <description>Не используется</description>
+      <code>У70</code>
+      <accountType>Passive</accountType>
+      <offBalance>true</offBalance>
+      <order>У70</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РаботникиОрганизаций</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ВидНачисленийОплатыТрудаПоСтатье255НК</characteristicType>
+        <turnover>true</turnover>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+    </items>
+    <items id="1fb38b1e-ff0e-4555-9ab7-9b780c55069e">
+      <name>УдалитьРасходыНаОплатуТрудаБудущихПериодов</name>
+      <description>Не используется</description>
+      <code>У97.01</code>
+      <offBalance>true</offBalance>
+      <order>У97.01</order>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РасходыБудущихПериодов</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.РаботникиОрганизаций</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+      <extDimensionTypes>
+        <characteristicType>ChartOfCharacteristicTypes.ВидыСубконтоХозрасчетные.ВидНачисленийОплатыТрудаПоСтатье255НК</characteristicType>
+        <extDimensionAccountingFlags>ChartOfAccounts.Налоговый.ExtDimensionAccountingFlag.Суммовой</extDimensionAccountingFlags>
+      </extDimensionTypes>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>ChartOfAccounts.Налоговый.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>ChartOfAccounts.Налоговый.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>ChartOfAccounts.Налоговый.Form.ФормаВыбора</defaultChoiceForm>
+  <autoOrderByCode>true</autoOrderByCode>
+  <orderLength>8</orderLength>
+  <attributes uuid="0a159840-cbde-4b31-bcc3-e335264491e0">
+    <name>ЗапретитьИспользоватьВПроводках</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запретить использовать в проводках</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Запретить использовать в проводках</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <accountingFlags uuid="6c6222c3-af08-40ff-8786-6e73c8252785">
+    <name>Количественный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количественный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Количественный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </accountingFlags>
+  <extDimensionAccountingFlags uuid="63f27b77-06b6-4c12-a6b8-10e9ab2e8285">
+    <name>Суммовой</name>
+    <synonym>
+      <key>ru</key>
+      <value>Суммовой</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Суммовой</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </extDimensionAccountingFlags>
+  <forms uuid="866f180a-02fe-4d95-aa36-43af06d1968d">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9921fa5b-86df-48be-b0f4-36f0e329fb38">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d88b4617-4ca9-4891-8ded-1542418b3964">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:ChartOfAccounts>

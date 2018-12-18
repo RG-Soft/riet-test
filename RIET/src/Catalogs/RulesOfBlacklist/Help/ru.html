@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16440"></meta></head><body>
+<h1>Справочник "Rules of blacklist"</h1>
+<p>Справочник "Rules of blacklist" входит в <a href="Subsystem.ImportExport.Subsystem.PO.Subsystem.Blacklist/Help">подсистему "Blacklist"</a> и предназначен для описания правил поиска запрещенных или нежелательных к ввозу товаров.</p>
+<p>Существуют 2 типа правил:</p>
+<ol><li>Part number = some part number, то есть поиск товаров по точному совпадению парт номера 
+</li><li>Description = *some part of description*, то есть поиск таких товаров, у которых в описании содержится указанная последовательность символов</li></ol><p>Каждое правило может быть отнесено как Not recommended, Prohibited или Allowed с указанием причины.<br>Причем последний тип Allowed предназначен для принудительного исключения товаров из других правил.</p>
+<p>Для удобства правила могут быть объединены в группы.</p>
+<h2>Структура</h2>
+<ul><li>
+<div><strong>Code</strong> (строка) - автоматически формируемый код правила.</div>
+</li><li>
+<div><strong>For deletion</strong> (булево) - признак того, что это правило будет удалено.</div>
+</li><li>
+<div><strong>Field</strong> (перечисление Fields for rules of blacklist) - поле, по которому будет происходить поиск (Part number или Description). Обязательное для заполнения поле, если правило не помечено на удаление.</div>
+</li><li>
+<div><strong>Value</strong> (строка) - искомая последовательность символов.<br>Обязательное для заполнения поле, если правило не помечено на удаление.</div>
+</li><li>
+<div><strong>Type</strong> (перечисление Types of rules of blacklist) - строгость запрета (Not recommended, Prohibited, Allowed).<br>Обязательное для заполнения поле, если правило не помечено на удаление.</div>
+</li><li>
+<div><strong>Reason</strong> (строка) - причина отнесения товара к запрещенным или нежелательным для ввоза.<br>Обязательное для заполнения поле, если правило не помечено на удаление.</div>
+</li><li>
+<div><strong>Created by</strong> (справочник Users) - пользователь, создавший правило.<br>Заполняется автоматически.</div>
+</li><li>
+<div><strong>Creation date</strong> (дата) - дата создания правила.<br>Заполняется автоматически.</div>
+</li><li>
+<div><strong>Modified by</strong> (справочник Users) - пользователь, выполнивший последние интерактивные изменения в правиле.<br>Заполняется автоматически.</div>
+</li><li>
+<div><strong>Modification date</strong> (дата) - дата последнего интерактивного изменения правила.<br>Заполняется автоматически.</div></li></ul><p> </p></body></html>

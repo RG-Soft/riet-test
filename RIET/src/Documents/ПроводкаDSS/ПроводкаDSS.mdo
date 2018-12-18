@@ -1,0 +1,1597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c02d0a1f-d60b-4e75-8cc4-1cd9ada54ffa">
+  <producedTypes>
+    <objectType typeId="34cc7d06-2a86-44da-86b0-7a1fde0ab99a" valueTypeId="f7612042-0ef8-456c-87fa-575487abc285"/>
+    <refType typeId="5223d5ec-8f9e-420e-ba65-22e615a8afd1" valueTypeId="7e78e092-1ed0-4549-ac31-265d58253736"/>
+    <selectionType typeId="304ed4d3-b717-4959-b492-16707b99bd7d" valueTypeId="27268b52-26d7-484f-9a40-f0321ae08cea"/>
+    <listType typeId="0c2d8614-2c40-4988-806e-4d9355b76f1b" valueTypeId="02c4c20d-9b77-42d7-a09b-84cbc618cb40"/>
+    <managerType typeId="8a5c7203-ce21-4fe8-98f9-424297a4f820" valueTypeId="3f6394b9-97f8-44e7-b9f9-fcca4bdcb79a"/>
+  </producedTypes>
+  <name>ПроводкаDSS</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проводка DSS</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Проводка DSS</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ПроводкаDSS.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <numberLength>10</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <defaultObjectForm>Document.ПроводкаDSS.Form.ФормаДокументаУправляемая</defaultObjectForm>
+  <defaultListForm>Document.ПроводкаDSS.Form.ФормаСпискаУправляемая</defaultListForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>AccumulationRegister.ПроводкиDSSОбщие</registerRecords>
+  <registerRecords>AccumulationRegister.ПроводкиDSS_SB</registerRecords>
+  <registerRecords>AccumulationRegister.ПроводкиDSS_FA</registerRecords>
+  <registerRecords>AccumulationRegister.НДСНачисленныйLawson</registerRecords>
+  <registerRecords>AccumulationRegister.МатериальныеАктивы</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="039c20aa-c4e1-46b0-b642-d620e3ee5fc8">
+    <name>System</name>
+    <synonym>
+      <key>ru</key>
+      <value>System</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>System</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>2</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6d9d9461-0d75-40e9-867a-7fd556829553">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.СписаниеОС</types>
+      <types>DocumentRef.ПередачаОС</types>
+      <types>DocumentRef.ПринятиеКУчетуОС</types>
+      <types>DocumentRef.InventoryСписание</types>
+      <types>DocumentRef.ПроводкаDSS</types>
+      <types>DocumentRef.МодернизацияОС</types>
+      <types>DocumentRef.InventoryПоступление</types>
+      <types>DocumentRef.СчетКнигиПокупок</types>
+      <types>DocumentRef.ПодготовкаКПередачеОС</types>
+      <types>DocumentRef.InventoryКорректировка</types>
+      <types>DocumentRef.InventoryПеремещение</types>
+      <types>DocumentRef.ОперацияLawson</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.ОплатаКнигиПокупок</types>
+      <types>DocumentRef.ОтчетПринципалуОПродажах</types>
+      <types>DocumentRef.ПеремещениеОС</types>
+      <types>DocumentRef.НачислениеАмортизации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f2883405-7100-40a4-ac9e-1c2b9fa818db">
+    <name>GeoMarket</name>
+    <synonym>
+      <key>ru</key>
+      <value>GeoMarket</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>GeoMarket</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.GeoMarkets</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="04668e7e-94ed-4735-93e1-82963c7ae37d">
+    <name>Модуль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Модуль</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Модуль</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.МодулиРазработки</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6f985523-1569-4caf-941d-a4726c4ccf13">
+    <name>SourceCode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Source code</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Source code</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>2</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="02897021-1f09-41e2-8510-f4576db60474">
+    <name>FiscalType</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal type</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal type</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтатьиДоходовИРасходов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b8723187-b004-409e-951c-b2ecb92cb6b0">
+    <name>AccountLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Account</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Account</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfAccountsRef.Lawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f86917c5-8bc0-408d-b2cb-0c67bfb2e4f0">
+    <name>AU</name>
+    <synonym>
+      <key>ru</key>
+      <value>AU</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AU</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="18294c7d-8673-496a-a27f-ba11e20e00a5">
+    <name>LegalEntity</name>
+    <synonym>
+      <key>ru</key>
+      <value>Legal entity</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Legal entity</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3675056b-f919-4539-a205-5152e02399d3">
+    <name>BaseAmount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Base amount</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Base amount</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ead5e026-879d-444c-895f-d54f5b6cb239">
+    <name>DateLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c5a1ef79-b170-4cbb-95ef-7d70bcf97922">
+    <name>Reference</name>
+    <synonym>
+      <key>ru</key>
+      <value>Reference</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reference</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fc9d697b-da80-4236-9f9e-1f487025f975">
+    <name>Description</name>
+    <synonym>
+      <key>ru</key>
+      <value>Description</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Description</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="55c7478d-bd34-49a8-9160-2adf9cff6004">
+    <name>TranAmount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Transaction amount</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transaction amount</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ec1f2ccc-4e55-411a-9d0c-0e0d02a99af3">
+    <name>Currency</name>
+    <synonym>
+      <key>ru</key>
+      <value>Currency</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Currency</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="99f65290-946b-4649-a1ed-0adc36463d91">
+    <name>GUID</name>
+    <synonym>
+      <key>ru</key>
+      <value>GUID</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>GUID</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>35</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="56c1a8b1-449c-4ccf-b679-5b6312fdcb8b">
+    <name>PeriodLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Period</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="17d59c1c-e24e-408e-af06-8ba17bc1220f">
+    <name>Company</name>
+    <synonym>
+      <key>ru</key>
+      <value>Company</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9b52b932-1b41-4061-885d-323dfa036cd7">
+    <name>UpdateDateLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Update date Lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Update date Lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="14fc924e-3ea5-4b81-b7d2-40312251a749">
+    <name>SeqTrnsNbrLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Seq trns nbr lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Seq trns nbr lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>8</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fd3ff951-0a45-4ded-9f4c-24dd440f7156">
+    <name>OrigCompanyLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Orig company lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Orig company lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f75e8086-c4bb-40f3-b808-1b944862c99a">
+    <name>Activity</name>
+    <synonym>
+      <key>ru</key>
+      <value>Activity</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Activity</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="93a8cd49-87f6-4635-92c3-51b14babb4b8">
+    <name>JeTypeLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Je type lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Je type lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6ae29d33-acba-4504-bdc7-e94979398125">
+    <name>JournalLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Journal lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Journal lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>8</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4ba676d2-4dc3-494d-b409-d46859817b6f">
+    <name>LineNbrLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Line nbr lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line nbr lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>6</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2797b07a-9074-4e57-b45c-597e0671b676">
+    <name>AutoRevLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Auto rev lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Auto rev lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="12f35d65-3533-4ef6-a3d3-48d6e40f261a">
+    <name>Operator</name>
+    <synonym>
+      <key>ru</key>
+      <value>Operator</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operator</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>8</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="36927f38-1804-450a-a403-c2fe91f87118">
+    <name>LegalFiscalFlagLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Legal fiscal flag lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Legal fiscal flag lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="59beb88c-1927-49b9-af45-20348bedb887">
+    <name>Vendor</name>
+    <synonym>
+      <key>ru</key>
+      <value>Vendor</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Vendor</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="91a829c8-c8d4-4747-888e-621f14981a8b">
+    <name>VendorVname</name>
+    <synonym>
+      <key>ru</key>
+      <value>Vendor vname</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Vendor vname</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="971bbe85-22b7-4cc9-9614-fca66f428678">
+    <name>ApInvoice</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ap invoice</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ap invoice</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="18f44c0a-10dd-4226-83ab-d6a6ffcfb96d">
+    <name>TransNbr</name>
+    <synonym>
+      <key>ru</key>
+      <value>Trans nbr</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trans nbr</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5801c5c2-625a-44d6-81e5-e09509884141">
+    <name>OrigOperatorId</name>
+    <synonym>
+      <key>ru</key>
+      <value>Orig operator id</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Orig operator id</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>8</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9622b215-cfb3-4fd1-8a63-bb3d3bd37c49">
+    <name>ProcessLevel</name>
+    <synonym>
+      <key>ru</key>
+      <value>Process level</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Process level</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>4</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0eb0ecc8-f91c-4ecd-8ca3-31c078296e34">
+    <name>CashCode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Cash code</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cash code</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>4</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d609231b-9fde-4573-a577-9b7692ea67b1">
+    <name>PoNumber</name>
+    <synonym>
+      <key>ru</key>
+      <value>Po number</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Po number</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1b7c7020-bf97-41d2-90a8-8e8cc15feca1">
+    <name>LineNbrIc</name>
+    <synonym>
+      <key>ru</key>
+      <value>Line nbr ic</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line nbr ic</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6088f69a-d9ea-4553-92dd-b7fb3d00bd09">
+    <name>PoCode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Po code</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Po code</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>5</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1a1ece82-b0cf-4f62-95ee-9a8b45a069d2">
+    <name>AssetLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Asset lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредстваLawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c5729b04-aa77-4121-a731-fc05c0cefa05">
+    <name>ItemDescription</name>
+    <synonym>
+      <key>ru</key>
+      <value>Item description</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item description</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="854e12eb-04e8-4722-8231-2ebd84570579">
+    <name>CustomerNumber</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customer number</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customer number</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="327bc68b-3f45-4e7f-93c5-3ebe284cb1d1">
+    <name>CustomerName</name>
+    <synonym>
+      <key>ru</key>
+      <value>Customer name</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customer name</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9273eddc-bb64-455e-90fe-a4ae4bb8baf3">
+    <name>ArInvoice</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ar invoice</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ar invoice</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d0c02f00-a10b-4f48-8c01-4469ac76e822">
+    <name>TaxCode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Tax code</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax code</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ce7bafe4-060a-4f76-a64d-7f3281dfd4bc">
+    <name>Item</name>
+    <synonym>
+      <key>ru</key>
+      <value>Item</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>60</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fa8c4a03-9df9-404c-98a4-7e8a79eb0b9a">
+    <name>DocumentNbr</name>
+    <synonym>
+      <key>ru</key>
+      <value>Document nbr</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Document nbr</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="626c506d-d991-4678-97f4-393728752503">
+    <name>ContractNumber</name>
+    <synonym>
+      <key>ru</key>
+      <value>Contract number</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contract number</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="59eee7cc-03f5-4d56-bed5-33295f257ca5">
+    <name>AktOfAcceptance</name>
+    <synonym>
+      <key>ru</key>
+      <value>Akt of acceptance</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Akt of acceptance</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="60209f67-162d-4465-888a-d5ab8771b6b5">
+    <name>AktDateLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Akt date Lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Akt date Lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2c8a89aa-36e8-4ca7-af24-4eeb7acc36e0">
+    <name>ApTransFormId</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ap trans form id</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ap trans form id</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>7</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d2cde21b-c27e-42f9-bc48-4bee6def91da">
+    <name>КонтрагентLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Контрагент lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КонтрагентыLawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="187ba202-15ff-4ed4-96f9-da5e7c363154">
+    <name>Deferred</name>
+    <synonym>
+      <key>ru</key>
+      <value>Deferred</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Deferred</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f86509fb-d315-44b1-8f4a-9f28f33be14e">
+    <name>POLine</name>
+    <synonym>
+      <key>ru</key>
+      <value>POLine</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>POLine</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтрокиЗаявкиНаЗакупку</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8c7823a8-b432-4493-ba7a-78109e67291f">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a41a0c23-c213-4d8d-87a0-63e8674c8ed8">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5888a7c4-0e3d-48be-bc59-d727c665acd9">
+    <name>RubAmount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Rub amount</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rub amount</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="05c2ebf4-93a3-4556-b9b0-0e1e7f35a025">
+    <name>FiscAmount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal amount</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal amount</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="875b4cf9-e895-4827-a444-65ec7445777e">
+    <name>TempDiff</name>
+    <synonym>
+      <key>ru</key>
+      <value>Temporary difference</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Temporary difference</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f75feca7-309c-4669-afca-fcf4baad1e97">
+    <name>PermDiff</name>
+    <synonym>
+      <key>ru</key>
+      <value>Permanent difference</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Permanent difference</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="67d2bd71-5d92-4ae6-8698-6a5cce590e37">
+    <name>ExchDiff</name>
+    <synonym>
+      <key>ru</key>
+      <value>Exchange difference</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Exchange difference</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d4ed6463-045a-4dbd-b8c8-cb06e8d3b7d2">
+    <name>ТипПроводки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип проводки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Тип проводки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ТипыПроводокAPAP</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="512a6473-6f16-4e8d-a5c7-009ae5c3f588">
+    <name>Ваучер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ваучер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ваучер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9402e562-9578-4011-8207-a8cf5371023a">
+    <name>FiscalDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fiscal date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fiscal date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3c326649-67cd-450d-9eac-f6b8f59d2983">
+    <name>InvoiceLine</name>
+    <synonym>
+      <key>ru</key>
+      <value>Invoice line</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Invoice line</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтрокиИнвойса</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0662c8ae-f615-4828-9ccf-9fff4d32b6ed">
+    <name>Urn</name>
+    <synonym>
+      <key>ru</key>
+      <value>Urn</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Urn</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="8f5d687d-4b2d-477b-b106-74065e5d2d96">
+    <name>ФормаДокументаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа управляемая</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="22129b10-cc4d-488a-a316-3be25c30885b">
+    <name>ФормаСпискаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка управляемая</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Document>

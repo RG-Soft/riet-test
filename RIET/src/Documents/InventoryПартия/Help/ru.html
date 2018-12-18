@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16421"></meta></head><body>
+<h1>Документ "Inventory партия"</h1>
+<h2>Назначение</h2>
+<p>Документ предназначен для учета разницы в фискальной стоимости поступивших материальных активов (МА) и стоимости МА по Purchase order по счетам 201900 (RNI), 130508 (INR) и 130004 (ICO).</p>
+<p>Inventory партия фактически представляет собой связку IC и AP проводок (модуль Inventory cost), сопоставленных по значению "PO number" и "Item code".</p>
+<h2>Способы формирования документа</h2>
+<ul><li>
+<div>С помощью обработки <a href="DataProcessor.ПодборInventoryПартий/Help">"Подбор Inventory партий"</a></div>
+</li><li>
+<div>В документе "Inventory поступление" по кнопке "Заполнить суммы из распределения МА"</div>
+</li><li>
+<div>При привязке документов Inventory c проводоками DSS (в обработке "Синхронизация проводок DSS книги покупок" на вкладке "Inventory ")</div></li></ul><p class="Usual">Если разница между фискальной суммой Проводок IC и Проводок AP не превышает 10%, документ проводится, в остальных случаях только записывается. </p>
+<h2>Структура документа</h2>
+<h4>Реквизиты шапки документа (заполняются из IC проводки):</h4>
+<p><strong>- PO number </strong>(строка) <br><strong>- Item code </strong>(строка) <br><strong>- AU </strong>(справочник "Accounting units") <br><strong>-</strong> <strong>Segment</strong> (POLine.КостЦентр.Сегмент.Родитель.Родитель)<br><strong>- Vendor vname </strong>(строка) <br><strong>- Дельта </strong>(разница Проводки IC и Проводки AP)</p>
+<h3>Табличная часть "Проводки DSS"</h3>
+<p>всегда имеет хотя бы одну проводку IC. При формировании документа (одним из перечисленных выше способов) подбираются проводки AP по "PO number" и "Item code" по проведенным документам "Счет книги покупок".</p>
+<h3>Проверки, выполняемые при записи/проведении </h3>
+<p class="Usual">- заполнение реквизитов шапки: Date, PO number, Item code, AU;</p>
+<p class="Usual">- дата партии больше периода проводки IC</p>
+<p class="Usual">- наличие проводок в других партиях</p>
+<h2>Проведение</h2>
+<p class="Usual">Документ делает расходные движения по регистру "Inventory tangible assets costs", выполняется проверка регистра на наличие остатков по проводкам DSS в табличной части.</p>
+<p class="Usual">Если значение Дельты не равно нулю, формируются записи (проводки) по регистру "Проводки DSS Общие":</p>
+<p class="Usual">- по счету 201900 или 130508 Fisc Amount = -(сумма дельты / курс SLB)</p>
+<p class="Usual">- по счету 529703 Fisc Amount = сумма дельты / курс SLB</p>
+<p> </p></body></html>

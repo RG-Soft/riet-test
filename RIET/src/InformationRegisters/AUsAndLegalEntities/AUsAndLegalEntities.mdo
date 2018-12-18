@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8be6714e-dea8-4f14-a9e5-9bcc4ab7e07f">
+  <producedTypes>
+    <selectionType typeId="1c8e3da4-cf7b-45fd-af5a-1b1b48f17a43" valueTypeId="c87e18fa-7e8c-4ed2-9039-b7a64b7f5673"/>
+    <listType typeId="9f046444-65bf-4fc1-8f21-4b94aa6b9380" valueTypeId="8a8d105b-1971-4f48-abd1-dfc73b1a3e45"/>
+    <managerType typeId="84d83acf-c143-4f43-a8e7-5f9f67c44468" valueTypeId="d476938d-3187-410b-b4d2-874ac9b76d76"/>
+    <recordSetType typeId="36390c01-b032-42a3-9f58-244805e4c21b" valueTypeId="558b4806-692a-4583-91ad-d4ae3618094e"/>
+    <recordKeyType typeId="4b509aa6-196e-4a4e-9f58-2a6403bdb1b8" valueTypeId="cac3b7af-04b0-4749-9125-f84b53ab15c0"/>
+    <recordType typeId="446222ab-ab79-4a72-888d-cf97acb00496" valueTypeId="52b6e941-9e3d-4e0a-a2f6-b0e47673ca82"/>
+    <recordManagerType typeId="add6a313-3c1b-461c-80ce-bd54d2d5d4cb" valueTypeId="9c1840ef-2c32-4a9a-a893-7f029bad9c18"/>
+  </producedTypes>
+  <name>AUsAndLegalEntities</name>
+  <synonym>
+    <key>ru</key>
+    <value>AUs and Legal entities</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>AUs and Legal entities</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.AUsAndLegalEntities.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="bbb2122e-ae6a-448b-bcd7-5da4708e9b59">
+    <name>LegalEntity</name>
+    <synonym>
+      <key>ru</key>
+      <value>Legal entity</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Legal entity</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.LegalEntities</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.ParentCompany</name>
+      <changeMode>DontChange</changeMode>
+      <field>0:991abfde-3025-445e-8e32-83ac199139c7</field>
+    </choiceParameterLinks>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="981cfbe3-feab-42bc-9098-9d539be452d4">
+    <name>AU</name>
+    <synonym>
+      <key>ru</key>
+      <value>AU</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AU</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b7461fb4-536a-4e33-9aa1-b202c4a2b2c2">
+    <name>ParentCompany</name>
+    <synonym>
+      <key>ru</key>
+      <value>Parent company</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Parent company</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.SoldTo</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="8f736a27-0866-491a-a37c-5ea33131ab15">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

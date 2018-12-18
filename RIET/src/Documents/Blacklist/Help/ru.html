@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16440"></meta></head><body>
+<h1>Документ "Blacklist"</h1>
+<p>Документ "Blacklist" входит в <a href="Subsystem.ImportExport.Subsystem.PO.Subsystem.Blacklist/Help">подсистему "Blacklist"</a> и предназначен для поиска и отражения действий по товарам запрещенным или нежелательным к ввозу.</p>
+<p>Новый документ может быть заполнен автоматически кнопкой "Fill" над табличной частью.<br>При этом система найдет все <a href="Catalog.СтрокиЗаявкиНаЗакупку/Help">PO lines</a>, которые удовлетворяют правилам из <a href="Catalog.RulesOfBlacklist/Help">справочника "Rules of blacklist"</a>, но которые еще не указаны в <a href="Document.Инвойс/Help">инвойсах</a> или других блеклистах.</p>
+<p>Всем новым строкам автоматически присваивается статус "New", который по мере обработки может быть изменен на "In progress" или "Closed".<br>Кроме того, пользователь может указывать в каждой строке произвольный комментарий.</p>
+<p>После этого документ следует провести, тогда он попадет в сводный <a href="Report.Blacklist/Help">отчет "Blacklist"</a>, в котором отображаются строки из всех блеклистов.</p>
+<h2>Структура</h2>
+<h3>Реквизиты шапки</h3>
+<ul><li>
+<div><strong>No.</strong> (строка) - автоматически присваеваемый уникальный номер документа.</div>
+</li><li><strong>Status</strong> (перечисление "Statuses of line of blacklist") - автоматически определяемый статус документа.<br>Статус "New" присваивается, если все строки имеют статус "New".<br>Статус "In progress" присваивается, если хотя бы одна строка имеет статус "In progress".<br>Статус "Closed" присваивается, если все стркои имеют статус "Closed". 
+</li><li><strong>Posted</strong> (булево) - признак того, что документ проведен. 
+</li><li>
+<div><strong>Creation date</strong> (дата) - автоматически присваиваемая дата создания документа.</div>
+</li><li>
+<div><strong>Last modified</strong> (дата) - автоматически присваиваемая дата последнего изменения документа.</div>
+</li><li>
+<div><strong>Responsible</strong> (справочник "Users") - автоматически присваиваемый пользователь, который внес последние изменения в документ.</div></li></ul><h3>Реквизиты табличной части "PO lines"</h3>
+<p>В табличной части должна быть введена хотя бы одна строка.</p>
+<ul><li>
+<div><strong>PO line</strong> (<a href="Catalog.СтрокиЗаявкиНаЗакупку/Help">справочник "PO lines"</a>) - строка заявки на закупку.<br>Обязательный для заполнения реквизит, если документ проведен.<br>PO line не может быть помечена на удаление.<br>Страна происхождения товара должна быть "Russian Federation".<br>PO line не может встречаться в других не помеченных на удаление блеклистах.<br>PO line не может повторяться несколько раз.</div>
+</li><li>
+<div><strong>Rule</strong> (<a href="Catalog.RulesOfBlacklist/Help">справочник "Rules of blacklist"</a>) - правило, по которому указанная PO line относится к запрещенным или нежелательным к ввозу.<br>Обязательный для заполнения реквизит, если документ проведен.<br>Rule не может быть помечено на удаление.</div>
+</li><li>
+<div><strong>Status</strong> (перечисление "Statuses of line of blacklist") - текущий статус строки: New, In progress или Closed.<br>Обязательный для заполнения реквизит, если документ проведен.</div>
+</li><li>
+<div><strong>Comment</strong> (строка) - произвольный комментарий пользователя.</div></li></ul></body></html>

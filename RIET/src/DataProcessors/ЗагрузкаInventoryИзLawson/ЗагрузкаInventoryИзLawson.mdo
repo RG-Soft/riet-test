@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6c0211d3-d082-423b-89c2-3f4223e39c6d">
+  <producedTypes>
+    <objectType typeId="5b6f2ea1-d7ee-4daa-ad8f-edcd4884894a" valueTypeId="4c7c5b64-8aa9-48e3-a18f-8731de185ef5"/>
+    <managerType typeId="d52683f2-afc6-454d-8637-3fd0379c7116" valueTypeId="177e7702-5ab4-4ff0-9c46-10d8dd4888bd"/>
+  </producedTypes>
+  <name>ЗагрузкаInventoryИзLawson</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка Inventory из Lawson</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Загрузка Inventory из Lawson</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ЗагрузкаInventoryИзLawson.Form.ФормаУправляемая</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="39fcb5da-d45e-4575-a4f8-55a159b38c67">
+    <name>ПерезаполнитьТЧ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Перезаполнить ТЧ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Перезаполнить ТЧ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ada34ccc-afea-492c-b42f-90a4f8272980">
+    <name>ДозаполнитьТЧ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дозаполнить ТЧ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Дозаполнить ТЧ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3ca06a91-c721-436f-b177-463451d473d4">
+    <name>Буфер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Буфер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Буфер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="9d9a3fac-af5c-429a-848e-3f34dc0d5160">
+    <producedTypes>
+      <objectType typeId="b799351d-d294-45f4-beaf-4bf181efb8f9" valueTypeId="ce7ddb74-03b9-4382-8950-4aca69fea715"/>
+      <rowType typeId="42e068a6-5a1e-4566-916d-c3ede1cb581c" valueTypeId="c8e3329b-06b0-4af3-abbb-b55bd57de1da"/>
+    </producedTypes>
+    <name>СписокНомеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список номеров</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Список номеров</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="abaa40ff-d547-4989-adc6-c7b4bf7e0904">
+      <name>НомерДокумента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер документа</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Номер документа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="c17eddff-8f5d-4b38-b929-d7acfe3e123d">
+    <producedTypes>
+      <objectType typeId="26c0bde6-6e85-42d9-bc17-04b535ddc215" valueTypeId="f4114196-c6bc-4380-a00f-faa89c49a5d0"/>
+      <rowType typeId="97311916-4158-42cb-9f86-5392f107ed29" valueTypeId="8f2e9987-e674-4ee9-b5d1-ccafecdc3ebf"/>
+    </producedTypes>
+    <name>ТаблицаПоступлений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица поступлений</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="b06934d7-28e9-4b29-a464-3faa98282c9a">
+      <name>Поступление</name>
+      <synonym>
+        <key>ru</key>
+        <value>Поступление</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.InventoryПоступление</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="6281429d-f563-41f7-a14e-25e913cd7e6f">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c580a156-30cf-4ea5-812a-fedb8a1b4de6">
+    <name>ФормаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма управляемая</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e88904ac-96bb-45f7-8c81-2268dedc73c6">
+    <name>ФормаНомеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма номеров</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма номеров</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

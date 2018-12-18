@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="26be6200-9b36-4360-b5e3-11342df41945">
+  <name>СинхронизацияДанныхЧерезФорматБиллингаЗарегистрироватьИзменениеДокумента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Синхронизация данных через формат биллинга зарегистрировать изменение документа</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Синхронизация данных через формат биллинга зарегистрировать изменение документа</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ПлатежноеПоручениеИсходящее</types>
+    <types>DocumentObject.СчетНаОплатуПокупателю</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+    <types>DocumentObject.КорректировкаДолга</types>
+    <types>DocumentObject.АктСверкиВзаиморасчетов</types>
+    <types>DocumentObject.SiebelOrders</types>
+    <types>DocumentObject.Tickets</types>
+    <types>DocumentObject.СчетФактураВыданный</types>
+    <types>DocumentObject.ПлатежноеПоручениеВходящее</types>
+    <types>DocumentObject.ЗакрытиеСчетовНаПредоплату</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ргМодульОбменаДанными.СинхронизацияДанныхЧерезФорматБиллингаЗарегистрироватьИзменениеДокументаПередЗаписью</handler>
+</mdclass:EventSubscription>

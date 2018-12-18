@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 10.00.9200.16576"></meta></head><body>
+<h1>Документ 'Temporary imp. / exp. transaction'</h1>
+<p>Документ предназначен для изменения состояния товаров, находящихся во временном импорте или экспорте.</p>
+<p>Документ входит в подсистему <a href="Subsystem.ImportExport.Subsystem.TemporaryImportExport/Help">Temporary import export</a>.</p>
+<p>Документ позволяет отразить следующие операции:</p>
+<ul><li><strong>temporary import</strong> - ручная постановка товаров на временный импорт 
+</li><li><strong>temporary export</strong> - ручная постановка товаров на временный экспорт 
+</li><li><strong>prolongation</strong> - продление срока нахождения товаров во временном импорте или экспорте 
+</li><li><strong>responsible change</strong> - изменение ответственного за товары во временном импорте или экспорте 
+</li><li><strong>reexport</strong> - экспорт товаров, находящихся во временном импорте 
+</li><li><strong>reimport</strong> - импорт товаров, находящихся во временном экспорте 
+</li><li><strong>permanent import</strong> - перевод товаров из временного импорта в постоянный 
+</li><li><strong>permanent export</strong> - перевод товаров из временного экспорт в постоянный </li></ul><h2>Реквизиты шапки</h2>
+<ul><li><strong>No.</strong> (текст) - генерируемый системой уникальный номер документа. 
+</li><li><strong>Transaction date</strong> (дата) - дата транзакции. Например для temporary import - это дата импортной декларации, для reexport - дата экспортной декларации и т. д.<br>Обязательный для заполнения реквизит.<br>Система контролирует хронологическую последовательность операций. Например, дата prolongation не может быть раньше даты принятия во временный импорт. 
+</li><li><strong>Posted</strong> (булево) - признак того, что документ проведен (непроведенный документ - это просто черновик). 
+</li><li><strong>For deletion</strong> (булево) - признак того, что документ помечен на удаление. 
+</li><li><strong>Process level</strong> (справочник Process levels)<br>Обязательный для заполнения реквизит.<br>Автоматически заполняется тем process level, который указан для текущего пользователя. 
+</li><li><strong>Type of transaction</strong> (перечисление Types of temporary imp. / exp. transaction) - вид операции, перечислены выше.<br>Обязательный для заполнения реквизит. 
+</li><li><strong>Customs file</strong> (документ Customs file или Customs file (light)) - ссылка на декларацию, по которой товары были приняты во временный импорт или экспорт.<br>Обязательный для заполнения на всех операциях кроме temporary import, temporary export и responsible change (для этих операций очищается и становится невидимым).<br>Customs file должен быть проведен.<br>Дата выпуска Customs file должны быть раньше даты транзакции.<br>Для импортных операций должны использоваться импортные Customs files, а для экспортных - экспортные.<br>Customs file должен иметь один из временных режимов. 
+</li><li><strong>Customs file no.</strong> (текст) - номер декларации, по которой товары были приняты во временный импорт или экспорт.<br>Этот реквизит необходим потому, что для ручного принятия во временный импорт или экспорт в системе может не быть заведены декларации,<br>в этом случае заполняется только поле Customs file no., а поле Customs file остается пустым.<br>Во всех остальных случаях это поле заполняется автоматически номером из Customs file. 
+</li><li><strong>Expiry date</strong> (дата) - дата истечения срока временного импорта / экспорта.<br>Обязательная для заполнения на операциях temporary import, temporary export и prolongation (в остальных случаях очищается и становится невидимым). 
+</li><li><strong>New responsible</strong> (справочник Users) - ответственный за товары во временном импорте или экспорте.<br>Обязательный для заполнения на операциях temporary import, temporary export и responsible change (в остальных случаях очищается и становится невидимым). 
+</li><li><strong>CCA job ref.</strong> (текст)<br>Обязательный для заполнения на операциях temporary import и temporary export (в остальных случаях очищается и становится невидимым). 
+</li><li><strong>Shipper name</strong> (текст)<br>Обязательный для заполнения на операциях temporary import и temporary export (в остальных случаях очищается и становится невидимым). 
+</li><li><strong>Customs regime</strong> (справочник Customs regimes)<br>Обязательный для заполнения на операциях temporary import и temporary export (в остальных случаях очищается и становится невидимым).<br>Доступны только режимы временного импорта / экспорта.<br>Для операции temporary import доступны только импортные режимы, а для temporary export - только экспортные. 
+</li><li><strong>New customs file no.</strong> (текст) - номер новой декларации.<br>Обязательный для заполнения на операциях reexport, reimport, permanent import, permanent export. 
+</li><li><strong>Comments</strong> (текст) - любой произвольный комментарий пользователя. 
+</li><li><strong>Created by</strong> (справочник Users) - автоматически заполняется пользователем, который создал документ. 
+</li><li><strong>Creation date</strong> (дата и время) - автоматически заполняется датой создания документа. 
+</li><li><strong>Modified by</strong> (справочник Users) - автоматически заполняется пользователем, который внес последние изменения в документ. 
+</li><li><strong>Modification date</strong> (дата и время) - автоматически заполняется датой последнего изменения документа.</li></ul><p>Для permanent import и permanent export справочно отображаются ссылки Permanent customs file и Closing document (или кнопка Create items matching, если Invoice lines matching еще не создан).</p>
+<h2>Табличная часть 'Items'</h2>
+<p>В табличной части 'Items' перечисляются товары, к которым относится данная транзакция.<br>Для операций temporary import и temporary export над табличной частью отображаются кнопки, которые позволяют быстро создать новый товары или копировать выделенный.<br>В табличной части должна быть хотя бы одна строка.</p>
+<ul><li><strong>Item</strong> (справочник Items) - товар.<br>Обязательный для заполнения реквизит (строки с пустым реквизитом автоматически удаляются).<br>Допускаются только товары с галочкой Final (для товаров в импортных инвойсах она ставится автоматически).<br>Допускаются только товары, помеченные как Temporary.<br>Для операций temporary import и temporary export (ручное принятие во временный импорт / export) разрешаются только вручную созданные товары (они не должны быть в инвойсах или заявках на экспорт).<br>Для операций prolongation, reexport, reimport, temporary export, temporary import проверяется, что товары привязаны именно к той декларации, которая указана в шапке.<br>Для операций temporary import и temporary export проверяется заполнение количество в самом товаре.<br>Для операций temporary import и temporary export проверяется, что эти товары еще не приняты на временный контроль. 
+</li><li><strong>Qty</strong> <strong>to transfer</strong> (число) - количество товара, выводимое из под временного контроля.<br>Обязательный для заполнения на операциях reexport, reimport, permanent import, permanent export.<br>Количество товара, выводимое из под временного контроля, не должно привышать изначальное количество товара, указанное в самом товаре.</li></ul><h2>Вкладка "Services"</h2>
+<p>На вкладке "Services" отображается список всех сервисов, привязанных к данной транзакции (для permanent import и permanent export).</p>
+<h2>Контроль изменения</h2>
+<p>Запрещается изменять документ, если для указанных в нем товаров, уже есть следующие транзакции.</p>
+<h2>Движения по регистрам (для разработчиков)</h2>
+<ul><li><strong>Qty of items in temporary imp. / exp.</strong><br>Операции temporary import и temporary export делают приход товаров на количество, указанное в самих товарах.<br>Операции reexport, reimport, permanent import, permanent export делают расход товаров на количество, указанное в табличной части. 
+</li><li><strong>Customs fils of items<br></strong>Операции temporary import и temporary export привязывают перечисленные в табличной части товары к номеру декларации, указанному в Customs file no. 
+</li><li><strong>Expiry dates of items in temporary imp. / exp.</strong><br>Операции temporary import, temporary export и prolongation отражают актуальную expiry dates для товаров, указанных в табличной части. 
+</li><li><strong>Responsibles for items in temporary imp. / exp.</strong><br>Операции temporary import, temporary export и responsible change отражают актуального ответственного за товары, указанные в табличной части. 
+</li><li><strong>Additional data of items in temporary imp. / exp.<br></strong>Операции temporary import и temporary export отражают дополнительную информацию, связанную с товарами, указанными в табличной части.</li></ul></body></html>

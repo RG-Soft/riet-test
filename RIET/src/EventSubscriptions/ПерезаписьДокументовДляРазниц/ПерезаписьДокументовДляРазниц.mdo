@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="70cf9c2b-2ac4-4832-8cf2-82fe76dc0717">
+  <name>ПерезаписьДокументовДляРазниц</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перезапись документов для разниц</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Перезапись документов для разниц</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.НачислениеАмортизации</types>
+    <types>DocumentObject.СчетКнигиПокупок</types>
+    <types>DocumentObject.InventoryКорректировка</types>
+    <types>DocumentObject.InventoryПеремещение</types>
+    <types>DocumentObject.InventoryСписание</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+    <types>DocumentObject.ПередачаОС</types>
+    <types>DocumentObject.ПринятиеКУчетуОС</types>
+    <types>DocumentObject.InventoryПоступление</types>
+    <types>DocumentObject.ОперацияLawson</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.ОбщегоНазначения.ПерезаписьДокументовДляРазницПриЗаписи</handler>
+</mdclass:EventSubscription>

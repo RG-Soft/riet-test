@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a591ad0b-80d4-42cd-9a97-2702d873a634">
+  <producedTypes>
+    <selectionType typeId="e7e9f353-aa78-4132-af13-835c70418ef5" valueTypeId="6c80839f-b58e-4ab5-ae32-bc9d913c353a"/>
+    <listType typeId="834f032c-3e37-4597-99ee-5551ab7ed525" valueTypeId="c1638677-dc3c-449c-9160-2778920709da"/>
+    <managerType typeId="7c261521-1aee-4b37-b581-f26513d5caa5" valueTypeId="be5da24c-87c1-4f31-95b3-ed948027008b"/>
+    <recordSetType typeId="bcbb7318-d879-4256-8619-6d853ffd021c" valueTypeId="ca911a82-e2bc-43a0-b975-d2dc74ba4415"/>
+    <recordKeyType typeId="3e2775e2-c3a5-432f-8bd9-b59904d01d8a" valueTypeId="58ad97aa-a481-4174-a1d5-70a056f8ab5c"/>
+    <recordType typeId="430f747d-e1f8-4a38-a9e9-b671f4ade38d" valueTypeId="d48b5763-cb01-4984-a938-82622a8083e8"/>
+    <recordManagerType typeId="997952c1-d859-4acf-8dbc-89c4a6664001" valueTypeId="d2ce3a29-0eaf-40f5-9c0e-6f32c94dcec2"/>
+  </producedTypes>
+  <name>СтатусыУтвержденияКорректировок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы утверждения корректировок</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Статусы утверждения корректировок</value>
+  </synonym>
+  <comment></comment>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="10f14257-0d82-4110-84d8-3213116d928a">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Статус</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.СтатусыУтвержденияОбъектов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="6f8553ff-3bf6-4299-b994-309c5e814048">
+    <name>КоличествоУтвердивших</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество утвердивших</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Количество утвердивших</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="5db6fdad-5762-4124-ad9b-39ed5e1bba34">
+    <name>КоличествоУтверждающих</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество утверждающих</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Количество утверждающих</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="3a0d46fe-3b27-45f1-9f63-022eed260e7f">
+    <name>КредитНота</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кредит нота</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Кредит нота</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="8b34055d-1d01-435d-8e8a-3588ed4de24c">
+    <name>ОтчетПоКредитНотам</name>
+    <comment>ОтчетПоКредитНотам</comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="44565c49-ad32-4ec7-a7c3-f49f48e762d8">
+    <name>ОтчетПоКредитНотам</name>
+    <comment></comment>
+  </templates>
+</mdclass:InformationRegister>

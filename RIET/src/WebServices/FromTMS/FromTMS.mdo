@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0bf4e8b0-98bd-4e3c-80a9-0b7fee2768b9">
+  <name>FromTMS</name>
+  <synonym>
+    <key>ru</key>
+    <value>From TMS</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>From TMS</value>
+  </synonym>
+  <comment></comment>
+  <namespace>http://xmlns.oracle.com/apps/otm</namespace>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.TMSLite</value>
+  </xdtoPackages>
+  <descriptorFileName>FromTMS.1cws</descriptorFileName>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="d768ab3f-9755-4d4c-9954-94c0de21495c">
+    <name>PushPlannedShipment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Push planned shipment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Push planned shipment</value>
+    </synonym>
+    <comment>Loads DOC, Invoices and Parcels from TMS Planned shipment</comment>
+    <xdtoReturningValueType>
+      <name>TransmissionAck</name>
+      <nsUri>http://xmlns.oracle.com/apps/otm</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>PushPlannedShipment</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="c9768fc3-41a0-4dd7-94f6-71d912fef9b7">
+      <name>Transmission</name>
+      <synonym>
+        <key>ru</key>
+        <value>Transmission</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Transmission</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>Transmission</name>
+        <nsUri>http://xmlns.oracle.com/apps/otm</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="6042b802-d2a9-4f64-aa91-e9f627b43a07">
+    <name>PushTransOrder</name>
+    <synonym>
+      <key>ru</key>
+      <value>Push trans order</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Push trans order</value>
+    </synonym>
+    <comment>Loads Export request from TMS Transport request</comment>
+    <xdtoReturningValueType>
+      <name>TransmissionAck</name>
+      <nsUri>http://xmlns.oracle.com/apps/otm</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>PushTransOrder</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="16537100-501a-42fa-9906-75382ffcac8b">
+      <name>Transmission</name>
+      <synonym>
+        <key>ru</key>
+        <value>Transmission</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Transmission</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>Transmission</name>
+        <nsUri>http://xmlns.oracle.com/apps/otm</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+</mdclass:WebService>

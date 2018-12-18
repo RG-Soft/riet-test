@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="018b7f14-32e3-45e9-9f8d-2eb01ae7b997">
+  <producedTypes>
+    <selectionType typeId="d51c252e-b612-4199-9950-4dcfd4f7a9a4" valueTypeId="daf6ce7d-f86e-4895-bed2-dfaadb998511"/>
+    <listType typeId="82f19204-62e0-45c8-95c3-514684b959c8" valueTypeId="12cd96a6-f3c1-449b-abc2-46833e4bf61d"/>
+    <managerType typeId="26d38e2e-6994-478e-a744-8a461843ac72" valueTypeId="6745bdbe-782f-4896-82ba-ab0575337bfd"/>
+    <recordSetType typeId="1c2fdb8a-6390-459f-897b-26dd6fec3840" valueTypeId="82178cd6-f6e7-4ab8-a963-9b3e769f90a0"/>
+    <recordKeyType typeId="5cd1dd2a-67d5-4da6-8a09-831200ee2fbb" valueTypeId="d1c99273-d505-43a1-b953-8e2b05911653"/>
+    <recordType typeId="6c39a18b-ce56-4bdb-8e05-f386118bc63c" valueTypeId="fba68d7b-23c1-438c-8ec5-bea249015cd8"/>
+  </producedTypes>
+  <name>InventoryTransportation</name>
+  <synonym>
+    <key>ru</key>
+    <value>Inventory transportation</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Inventory transportation</value>
+  </synonym>
+  <comment></comment>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="6c581d0a-2ad8-4bf5-9e7f-ca67d243e70b">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="d8f2f4e9-9616-4ece-8076-b1735b64c3c5">
+    <name>СуммаРуб</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма руб</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма руб</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="4915775a-0cda-4ce1-b4d2-5da25d924139">
+    <name>TaxRegistration</name>
+    <synonym>
+      <key>ru</key>
+      <value>Tax registration</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax registration</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="77ba8c47-b552-4a8c-acdc-7f6b4f091d92">
+    <name>Сегмент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сегмент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сегмент</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сегменты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

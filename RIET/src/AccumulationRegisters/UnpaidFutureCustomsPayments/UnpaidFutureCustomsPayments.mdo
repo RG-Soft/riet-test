@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8d16e140-7288-4cd7-b1c6-ad3c7ab5f089">
+  <producedTypes>
+    <selectionType typeId="1b6c9faa-9721-4f7d-8a6f-ce94056c2872" valueTypeId="bfae5706-0dea-4e96-a5a5-db70225ee06e"/>
+    <listType typeId="7a7c2762-8b26-4e43-9341-99e19d1d1bd0" valueTypeId="b736a509-8e1e-4cfe-897e-d117217815c5"/>
+    <managerType typeId="5f2f9ea6-47ef-4646-8466-e9e467df1433" valueTypeId="369b63ab-1be7-489f-828b-914804f1033f"/>
+    <recordSetType typeId="11736040-c783-4891-81e9-19f09949acd6" valueTypeId="c1aa867d-f492-4952-9aa0-225054f943d7"/>
+    <recordKeyType typeId="0b395cfe-853e-4692-8891-d53640182bb3" valueTypeId="bd8fc2a3-e212-4c49-b30c-30492dde41ca"/>
+    <recordType typeId="df75bc33-230e-4fbf-acd3-8b897f90ac67" valueTypeId="71fb0f73-eb41-4af5-a83d-c280ee176c86"/>
+  </producedTypes>
+  <name>UnpaidFutureCustomsPayments</name>
+  <synonym>
+    <key>ru</key>
+    <value>Unpaid future customs payments</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Unpaid future customs payments</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date</value>
+    </synonym>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="3bcbbc67-b221-4aa7-bb12-5365f956d96a">
+    <name>Amount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Amount</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <markNegatives>true</markNegatives>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </resources>
+  <dimensions uuid="9db805cf-d340-41e2-8b2b-df912d1f3caa">
+    <name>FutureCustomsPayment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Future customs payment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Future customs payment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.FutureCustomsPayments</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.Проведен</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

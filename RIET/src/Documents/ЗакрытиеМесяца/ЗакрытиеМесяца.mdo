@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5c3c09ed-23dc-488c-8f1d-06418448de7e">
+  <producedTypes>
+    <objectType typeId="c3cb5e5b-a528-4c84-9be8-97bf4b360144" valueTypeId="49ea84bb-e815-4e95-9a66-47ee608c1c15"/>
+    <refType typeId="78f1252b-5bf4-472b-8d65-e231904bc0a5" valueTypeId="88384a8a-7f39-499e-aaa0-dbf4303433bb"/>
+    <selectionType typeId="ed5c1bb6-0c2b-4a0b-aac7-4f4c5b85e002" valueTypeId="5c309063-aff0-47fb-b145-b410b579788c"/>
+    <listType typeId="17f82b32-0158-4154-907f-691500caf1a2" valueTypeId="9bf17b70-7a75-43c3-bd42-a275091c2f16"/>
+    <managerType typeId="13f7c225-41b2-4dc6-9544-c1dae3164797" valueTypeId="9fa0c05a-3c37-4a81-ae2b-aa750a2b1ee2"/>
+  </producedTypes>
+  <name>ЗакрытиеМесяца</name>
+  <synonym>
+    <key>ru</key>
+    <value>Закрытие месяца</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Закрытие месяца</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.ЗакрытиеМесяца.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <numberType>String</numberType>
+  <numberLength>8</numberLength>
+  <numberPeriodicity>Year</numberPeriodicity>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ЗакрытиеМесяца.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ЗакрытиеМесяца.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.ЗакрытиеМесяца.Form.ФормаСписка</defaultChoiceForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>AccountingRegister.Налоговый</registerRecords>
+  <registerRecords>AccountingRegister.Хозрасчетный</registerRecords>
+  <attributes uuid="74e095e3-95c3-4981-9a93-f4caf5894209">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Организация</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="98f7537e-be6d-4ac5-9eb7-2c81ffbacbb8">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="bb4c41bd-6a80-4605-8e53-95c50f12cb7d">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment>(Общ) Любая дополнительная информация</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f53ac229-196a-4347-af1a-143593977980">
+    <name>АмортизацияОСБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Амортизация ОС (БУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Амортизация ОС (БУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="40481090-a6ed-4cfb-a4fa-3f5e03551ddf">
+    <name>АмортизацияОСНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Амортизация ОС (НУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Амортизация ОС (НУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c281b8ad-a6f1-4a90-b669-73cb5120bf3d">
+    <name>ИзносОСБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Износ ОС (БУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Износ ОС (БУ)</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a2960bb8-03f3-4f0d-be15-206972db13ad">
+    <name>АмортизацияНМАБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Амортизация НМА и списание расходов по НИОКР (БУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Амортизация НМА и списание расходов по НИОКР (БУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b05d2048-618f-478c-8b54-2b4f40ab9b2d">
+    <name>АмортизацияНМАНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Амортизация НМА и списание расходов по НИОКР (НУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Амортизация НМА и списание расходов по НИОКР (НУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c038c458-2da1-4576-a1d7-eba0a0f1bb2b">
+    <name>ПогашениеСтоимостиСпецодеждыИСпецоснасткиБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Погашение стоимости спецодежды и спецоснастки в эксплуатации (БУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Погашение стоимости спецодежды и спецоснастки в эксплуатации (БУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b995c896-f11c-464d-a742-af02fa3d4b42">
+    <name>ПогашениеСтоимостиСпецодеждыИСпецоснасткиНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Погашение стоимости спецодежды и спецоснастки в эксплуатации (НУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Погашение стоимости спецодежды и спецоснастки в эксплуатации (НУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="dba0a72c-d74a-4d71-8c90-804b653f33a6">
+    <name>ПереоценкаВалютныхСредствБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Переоценка валютных средств (БУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Переоценка валютных средств (БУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8029f820-2d78-41a4-9adf-39975c6ccca3">
+    <name>ПереоценкаВалютныхСредствНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Переоценка валютных средств (НУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Переоценка валютных средств (НУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="84c4273c-d977-4a7c-983a-25108eff0896">
+    <name>КорректировкаСтоимостиНоменклатурыБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка стоимости номенклатуры (БУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Корректировка стоимости номенклатуры (БУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="38c80724-73c5-430f-926d-67bc070afb0c">
+    <name>КорректировкаСтоимостиНоменклатурыНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка стоимости номенклатуры (НУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Корректировка стоимости номенклатуры (НУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d5f0282a-9b34-426d-ac17-56d28cceef3c">
+    <name>СписаниеРБПБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списание РБП (БУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Списание РБП (БУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="43351c79-6f4f-4b2b-a2c4-c75524891316">
+    <name>СписаниеРБПНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списание РБП (НУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Списание РБП (НУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8427a90a-e9af-421e-a548-ebe577b46a0b">
+    <name>РасчетСтоимостиПродукцииБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет стоимости продукции (БУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Расчет стоимости продукции (БУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9c94f13b-c58f-4125-aa4c-a1763a894008">
+    <name>РасчетСтоимостиПродукцииНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет стоимости продукции (НУ)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Расчет стоимости продукции (НУ)</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0f7bae50-0398-417f-859b-a87b1f4fb4eb">
+    <name>ЗакрытиеСчета26</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие счета 26</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Закрытие счета 26</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="eb02a30b-d7c9-41fd-9668-bba203b4d001">
+    <name>ЗакрытиеСчета44_1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие счета 44.1</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Закрытие счета 44.1</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="31c24772-623a-4853-a924-73466bc4734d">
+    <name>ЗакрытиеСчета44_2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие счета 44.2</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Закрытие счета 44.2</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="644a538a-fbec-4be7-b163-c0351ba81dfb">
+    <name>ЗакрытиеСчета90</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие счета 90</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Закрытие счета 90</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3ad517de-8cd9-4e70-b449-a71843677846">
+    <name>ЗакрытиеСчета91</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие счета 91</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Закрытие счета 91</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7c4df26a-1da7-4090-b964-78aebf1a02d2">
+    <name>РаспределениеРасходовПоВидамДеятельности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Распределение расходов по видам деятельности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Распределение расходов по видам деятельности</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="be01a7aa-ceae-4113-bcdc-c9db3760a4ea">
+    <name>НормированиеРасходовНаРекламу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нормирование расходов на рекламу</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Нормирование расходов на рекламу</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="634f1760-0481-459c-90d7-c6ff24cfbdb7">
+    <name>НормированиеРасходовНаДобровольноеСтрахование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нормирование расходов на добровольное страхование</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Нормирование расходов на добровольное страхование</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b000f9a7-ae1f-4bae-ba7a-268a3d15b6a0">
+    <name>НормированиеПредставительскихРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нормирование представительских расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Нормирование представительских расходов</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d0e32102-91ca-4035-8d7a-8edccc048bfa">
+    <name>СписаниеТранспортныхРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списание транспортных расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Списание транспортных расходов</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d67fe78b-61b0-4d01-8248-cc6190166f66">
+    <name>ЗакрытиеCчетовКосвенныхРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие cчетов косвенных расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Закрытие cчетов косвенных расходов</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fd509535-4a20-45d9-a9dd-ea988d708d1a">
+    <name>ЗакрытиеСчетаН90</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие счета 90</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Закрытие счета 90</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="affd656d-e175-4d1b-8d5b-f064a3b285e6">
+    <name>ЗакрытиеСчетаН91</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие счета 91</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Закрытие счета 91</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8fe97d73-17b6-490f-872f-e769137b8a4d">
+    <name>РасчетПостоянныхРазницПоПБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет постоянных разниц по ПБУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Расчет постоянных разниц по ПБУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a92b713a-8d8b-4cf2-9637-359602fea314">
+    <name>РасчетВременныхРазницПоПБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет ременных Разниц По ПБУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Расчет ременных Разниц По ПБУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6344fb85-e284-409a-8378-30b7b6a26918">
+    <name>РасчетНалогаНаПрибыль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет Налога На Прибыль</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Расчет Налога На Прибыль</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6cd2c126-8520-416e-8b22-2840d5701759">
+    <name>РасчетТорговойНаценкиПоПроданнымТоварам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет торговой наценки по проданным товарам</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Расчет торговой наценки по проданным товарам</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1b6ff765-d579-4eff-9581-190f8bae5079">
+    <name>РеформацияБалансаБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Реформация баланса БУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Реформация баланса БУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b33ac041-5f9e-4654-a00e-39ddf319c655">
+    <name>ЗакрытиеСчетовНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие счетов НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Закрытие счетов НУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="963d7b3d-32a9-4bff-9c68-356fd486851b">
+    <name>СписаниеУбытковПрошлыхЛет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списание убытков прошлых лет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Списание убытков прошлых лет</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="724c6be7-7d3b-4f38-a303-013aebb7db6e">
+    <name>СтрахованиеБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Страхование БУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Страхование БУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="76911eeb-6f6c-48fd-b5f5-abf53df6244e">
+    <name>СтрахованиеНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Страхование НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Страхование НУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="beeaa9d2-6d6d-476c-9c74-bf510cbc35fd">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="aa34cf98-6e36-4e6c-b55c-928b3e259701">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Document>

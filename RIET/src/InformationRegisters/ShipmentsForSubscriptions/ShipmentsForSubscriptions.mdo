@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ebdbf9c6-928f-483c-9e1a-e14a3db3efc5">
+  <producedTypes>
+    <selectionType typeId="4d5892a0-5b49-4fd7-b867-f99a177d2314" valueTypeId="b4905050-d287-43f5-ba4d-3370699e0a37"/>
+    <listType typeId="cb0e0276-0993-45ce-87fe-5d6116741d28" valueTypeId="b14cb2a5-14d4-4435-8aad-bfa2816f5856"/>
+    <managerType typeId="9533aabf-b18d-4adc-ab8d-fb89c4aa069c" valueTypeId="385394b9-c057-4f0a-b83d-9c713cdada8f"/>
+    <recordSetType typeId="a12b49b4-29d3-4000-9be6-c55c0ce1adb7" valueTypeId="1e3d270c-e3b1-4da1-a281-a5f6666ee5be"/>
+    <recordKeyType typeId="d6c811e5-157a-4300-8365-dc33e875f961" valueTypeId="d538cf49-6d78-4139-ad59-73bc0d14b85e"/>
+    <recordType typeId="4233ee79-2d2a-4ba0-b713-57ab79b74856" valueTypeId="1b1f29f1-bffd-42bc-aee6-0b6fcb36dcbd"/>
+    <recordManagerType typeId="9c94c8c5-d6e1-4a6a-8f4a-9b4c9da67c2c" valueTypeId="24eaae67-ec82-4420-937e-4a177e8e7050"/>
+  </producedTypes>
+  <name>ShipmentsForSubscriptions</name>
+  <synonym>
+    <key>ru</key>
+    <value>Shipments for subscriptions</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Shipments for subscriptions</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="764df8eb-bc3c-4447-940d-4b1d36313033">
+    <name>Stage</name>
+    <synonym>
+      <key>ru</key>
+      <value>Stage</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ShipmentCargoStages</types>
+      <types>EnumRef.ShipmentDocumentStages</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="37b9c87b-5d16-41e7-bb53-17b197697128">
+    <name>StageDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Stage date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="dfae9015-0253-4576-b83e-6b0892ac3e6a">
+    <name>LastModified</name>
+    <synonym>
+      <key>ru</key>
+      <value>Last modified</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Last modified</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="a5c72f72-f9d4-4567-b7bd-704e129105b3">
+    <name>Shipment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Shipment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Shipment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.Поставка</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

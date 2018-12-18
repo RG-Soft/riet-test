@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e33b53d4-72b5-48b6-be27-69e20c1d51cd">
+  <producedTypes>
+    <selectionType typeId="7cecf629-6d53-4e62-a006-18975764f6ee" valueTypeId="febfa68e-2148-4efe-82c2-ac3cd6e6c34c"/>
+    <listType typeId="fbfbc135-14c8-4f5b-b773-8bfed9a53970" valueTypeId="e74349ee-b919-46e4-a440-74a313c39f72"/>
+    <managerType typeId="7b748e1b-af62-4029-8ccb-3e77239e2c23" valueTypeId="3c656dba-cdff-4a07-8c5d-672dfa45f216"/>
+    <recordSetType typeId="94e50dce-e25c-4b07-9d28-8bc46ad876e8" valueTypeId="c58725aa-74fc-4d02-9ccb-bb7882b8eb25"/>
+    <recordKeyType typeId="44ef2d79-46a6-41d3-99ca-1f9b71373cec" valueTypeId="aa94b0bb-0836-4e25-9a2d-2b3a4b1d168d"/>
+    <recordType typeId="00f99a65-2361-41d4-bd63-2f83c1c0296a" valueTypeId="ecb5890b-8ef3-4cb2-bc6b-a6268e7b32fa"/>
+    <recordManagerType typeId="f260bb43-2fa4-47c9-ba18-e8a1b0a93b42" valueTypeId="708d5976-1f31-4040-b5c7-286b1f4a910d"/>
+  </producedTypes>
+  <name>ДвиженияОСLawson</name>
+  <synonym>
+    <key>ru</key>
+    <value>Движения ОС Lawson</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Движения ОС Lawson</value>
+  </synonym>
+  <comment></comment>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dimensions uuid="8a8897e4-56c0-4a09-9ce9-60ba290a42b6">
+    <name>Company</name>
+    <synonym>
+      <key>ru</key>
+      <value>Company</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="864ee802-8f66-439a-8cb4-c0f252262b9c">
+    <name>XferCompany</name>
+    <synonym>
+      <key>ru</key>
+      <value>Xfer company</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Xfer company</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="46fae14b-4625-4576-a173-999ff8088b08">
+    <name>AcctUnit</name>
+    <synonym>
+      <key>ru</key>
+      <value>Acct unit</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Acct unit</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b3c7ab41-553c-4f02-bd24-623d1887ebdc">
+    <name>FromAcctUnit</name>
+    <synonym>
+      <key>ru</key>
+      <value>From acct unit</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>From acct unit</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КостЦентры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6ea2106b-f967-49c9-80bf-d1d7d3f4d8c7">
+    <name>MovementType</name>
+    <synonym>
+      <key>ru</key>
+      <value>Movement type</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Movement type</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6a48d002-8d65-4944-a8f4-9c4c05fcd7aa">
+    <name>PoNbr</name>
+    <synonym>
+      <key>ru</key>
+      <value>Po nbr</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Po nbr</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="145321f7-daa1-49e9-9b90-ec49b519584d">
+    <name>SourceDocument</name>
+    <synonym>
+      <key>ru</key>
+      <value>Source document</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Source document</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bf680d77-7044-4f0f-afd4-b39ddf8920be">
+    <name>CurrencyCd</name>
+    <synonym>
+      <key>ru</key>
+      <value>Currency cd</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Currency cd</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="feab3e95-ae15-437d-8803-e6c8f3ed1945">
+    <name>Asset</name>
+    <synonym>
+      <key>ru</key>
+      <value>Asset</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредстваLawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="46fbddb6-3be7-4058-b403-aad40a6a4f7b">
+    <name>AssetКод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Asset код</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset код</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="feb3512f-a187-4d99-abab-96a505bbf1dd">
+    <name>AstAccount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ast account</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ast account</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfAccountsRef.Lawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="81f69613-539d-48a7-99d6-37eb6fb43ba4">
+    <name>AcmAccount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Acm account</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Acm account</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfAccountsRef.Lawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a5d9e9d6-0c8f-4726-97a7-75f9f98e4dda">
+    <name>Serial</name>
+    <synonym>
+      <key>ru</key>
+      <value>Serial</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Serial</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="62e279c1-efd0-4df0-866a-48d6e88f67be">
+    <name>SerialNumber</name>
+    <synonym>
+      <key>ru</key>
+      <value>Serial number</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Serial number</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="285690ee-e3db-4c1c-8c16-d682206e99ac">
+    <name>AssetType</name>
+    <synonym>
+      <key>ru</key>
+      <value>Asset type</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset type</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7d1e7626-98d9-4f4b-ae63-8078d4bc231c">
+    <name>InsrvDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Insrv date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Insrv date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="92b91c59-2ed2-4d9a-b942-09306da1491b">
+    <name>Life</name>
+    <synonym>
+      <key>ru</key>
+      <value>Life</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Life</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4c78f705-2815-4f95-9a7e-cf4d416e2684">
+    <name>BasisGbv</name>
+    <synonym>
+      <key>ru</key>
+      <value>Basis gbv</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Basis gbv</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e8cd4ae4-66bb-48d7-a86d-b4fd1ca110d6">
+    <name>MovementDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Movement date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Movement date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5cb298d3-bab1-4b3e-b384-384e8ed8bbb0">
+    <name>Номер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Номер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0cc9363e-d9c8-4c24-b20a-56853b36b4b6">
+    <name>ОперацияОСLawson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Операция ОС Lawson</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Операция ОС Lawson</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ОперацияОСLawson</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="225e7c00-ccc4-4257-a369-f0d489b7f2e1">
+    <name>AssetCode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Asset code</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset code</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="22b9b234-e8e2-4c31-b6d6-6fe46aa9495f">
+    <name>ItemDescription</name>
+    <synonym>
+      <key>ru</key>
+      <value>Item description</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item description</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5394a963-7c3f-4959-8527-a06c5ebd6724">
+    <name>MovementGbv</name>
+    <synonym>
+      <key>ru</key>
+      <value>Movement gbv</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Movement gbv</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="223c812c-578a-419b-a250-4057846d2908">
+    <name>MovementDepreciation</name>
+    <synonym>
+      <key>ru</key>
+      <value>Movement depreciation</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Movement depreciation</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4947b2c8-d832-45b6-a444-00715c248f0c">
+    <name>DepreciationLtd</name>
+    <synonym>
+      <key>ru</key>
+      <value>Depreciation ltd</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Depreciation ltd</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b1d8c207-6842-4ce7-9855-5a13ce6d1076">
+    <name>GltObjID_Gbv</name>
+    <synonym>
+      <key>ru</key>
+      <value>Glt Obj ID Gbv</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Glt Obj ID Gbv</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="969e471c-5d36-4194-8397-3f2c2fc5197a">
+    <name>GltObjID_Depr</name>
+    <synonym>
+      <key>ru</key>
+      <value>Glt Obj ID Depr</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Glt Obj ID Depr</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="999968c3-9c50-45e7-96ae-85c631e26565">
+    <name>AsdDspProperty</name>
+    <synonym>
+      <key>ru</key>
+      <value>Asd dsp property</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asd dsp property</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>2</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="52b2a0f7-2d3e-4d73-b9cf-75befbfe09e9">
+    <name>FmtNbr</name>
+    <synonym>
+      <key>ru</key>
+      <value>Fmt nbr</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fmt nbr</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>8</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1c2233e3-b701-4e46-a45c-fa8795b0f819">
+    <name>SubGeomarket</name>
+    <synonym>
+      <key>ru</key>
+      <value>Sub geomarket</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sub geomarket</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.GeoMarkets</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+</mdclass:InformationRegister>

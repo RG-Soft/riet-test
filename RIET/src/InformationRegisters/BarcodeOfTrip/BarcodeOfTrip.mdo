@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6b0fecdb-497a-402b-95e9-a263a8cdaa5a">
+  <producedTypes>
+    <selectionType typeId="52cef793-9f68-473e-851e-017cdde17f48" valueTypeId="70807a97-9a86-4ee7-a4af-1884a751233c"/>
+    <listType typeId="140aeae5-37d0-41df-af5b-1d1ac70c75b4" valueTypeId="9c6cc582-8e0b-427d-9c13-262f9eb5538f"/>
+    <managerType typeId="4fadc375-ae0d-49f2-8dbf-d47f1ad501ce" valueTypeId="53cbed7d-8e41-4816-9cc3-c87c7ead2c13"/>
+    <recordSetType typeId="e7caca45-3bbc-4a04-8ea4-180ac0fd8fd0" valueTypeId="480f1109-93af-4e81-8197-b754acc27c12"/>
+    <recordKeyType typeId="3ffea025-7eb7-4958-b0bd-ad589f6e3c98" valueTypeId="db04e8aa-c550-42a7-8fe9-f2e6ff80e261"/>
+    <recordType typeId="84c43ba3-cf19-48a7-8d3d-2df7dca51713" valueTypeId="9b95360c-1ad4-4a7a-b516-1b0479835ec7"/>
+    <recordManagerType typeId="0747de8c-675d-4ebd-a5db-76b8c28d9885" valueTypeId="493d258e-5ced-434f-8b78-3659ee1663a8"/>
+  </producedTypes>
+  <name>BarcodeOfTrip</name>
+  <synonym>
+    <key>ru</key>
+    <value>Штрих-коды поставок</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Barcode of trip</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.BarcodeOfTrip.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.BarcodeOfTrip.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Штрих-код поставки</value>
+  </recordPresentation>
+  <recordPresentation>
+    <key>en</key>
+    <value>Barcode of trip</value>
+  </recordPresentation>
+  <resources uuid="74fdd12d-d679-4251-a1a7-1e84c82ac5ef">
+    <name>Barcode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Штрих-код</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Barcode</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>13</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="5fec3cdd-4bd3-4cd7-9bfb-dbc9b452170b">
+    <name>Trip</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trip</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.TripNonLawsonCompanies</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="25962038-04e3-4154-beae-cafe9fd6821f">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="214dfe51-d721-4159-bdfe-8a0216505ef9">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

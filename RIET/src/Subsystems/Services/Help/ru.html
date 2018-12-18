@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16441"></meta></head><body>
+<h1>Подсистема "Services"</h1>
+<h2>Назначение</h2>
+<p>Подсистема "Services" предназначена для</p>
+<ul><li>отражения услуг, связанных с импортом или экспортом товаров; 
+</li><li>распределения стоимости услуг по AUs; 
+</li><li>учета счетов поставщиков услуг; 
+</li><li>выгрузки данных об оказанных услугах в Lawson.</li></ul><h2>Структура подсистемы</h2>
+<p>Перечень всех услуг, которые могут быть оказаны поставщиками хранится в <a href="Catalog.Services/Help">справочнике "Services"</a>.</p>
+<p>Оказанная услуга отражается <a href="Document.Service/Help">документом "Service"</a>, который создается из <a href="Document.Поставка/Help">документа "Shipment"</a>.</p>
+<p>При заведении <a href="Document.Service/Help">документа "Service"</a> цена услуги может быть подставлена автоматически, если в системе предварительно завести необходимые <a href="Document.PriceListOfServices/Help">документы "Price list of services"</a>.</p>
+<p>В <a href="Document.Service/Help">документе "Service"</a> отражается только факт оказания услуги, стоимость услуги не распределяется по товарам.<br>Для распределения стоимости услуг по товарам предназначен <a href="Document.ServicesCostsAllocation/Help">документ "Services costs allocation"</a>.<br>Следует помнить, что аллокацию стоимости можно произвести только после закрытия поставки, то есть только после того как введен <a href="Document.ЗакрытиеПоставки/Help">документ "Invoice lines matching"</a> из подсистемы "Shipment closing".<br>Перечень несаллокированных услуг выводится в <a href="Report.UnallocatedServices/Help">отчете "Unallocated services"</a>.</p>
+<p>Для отражения счета поставщика предназначен <a href="Document.AgentInvoice/Help">документ "Agent invoice"</a>.<br>Перечень саллокированных услуг, по которым еще не получен счет, отображается в <a href="Report.NotReceivedAgentInvoices/Help">отчете "Not receive agent invoices"</a>.</p>
+<p><a href="Document.AgentInvoice/Help">Документ "Agent invoice"</a> также позволяет сформировать форму для выгрузки данных в Lawson.<br>Детальная информация по стоимости услуг отображается в <a href="Report.AgentInvoicesDetails/Help">отчете "Agent batches details"</a>.</p>
+<h2>Связь с другими подсистемами</h2>
+<p>Подсистема "Services" использует данные <a href="Subsystem.ImportExport/Help">подсистемы "Shipment"</a> и <a href="Subsystem.CustomsAccounting/Help">подсистемы "Customs"</a> для определения параметров аллокации стоимости оказанных услуг на товары.</p>
+<p>Данные об увеличении стоимости товаров могут быть использованы в подсистемах фискального учета, таких как: Fixed assets, Inventory и др.</p></body></html>

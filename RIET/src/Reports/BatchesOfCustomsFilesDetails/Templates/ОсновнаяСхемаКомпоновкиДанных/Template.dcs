@@ -1,0 +1,1037 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>Запрос</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Запрос</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Activity</dataPath>
+			<field>Activity</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭлементФормированияСтоимости</dataPath>
+			<field>ЭлементФормированияСтоимости</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Duties</dataPath>
+			<field>Duties</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Fees</dataPath>
+			<field>Fees</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VAT</dataPath>
+			<field>VAT</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументОснование</dataPath>
+			<field>ДокументОснование</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтрокаИнвойса</dataPath>
+			<field>СтрокаИнвойса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Item</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Item</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AU</dataPath>
+			<field>AU</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DocumentBase</dataPath>
+			<field>DocumentBase</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УДАЛИТЬAccount</dataPath>
+			<field>УДАЛИТЬAccount</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ERPTreatment</dataPath>
+			<field>ERPTreatment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Segment</dataPath>
+			<field>Segment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SoldTo</dataPath>
+			<field>SoldTo</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>BatchOfCustomsFiles</dataPath>
+			<field>BatchOfCustomsFiles</field>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsFile</dataPath>
+			<field>CustomsFile</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Item</dataPath>
+			<field>Item</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Country</dataPath>
+			<field>Country</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Country</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Country</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ParentCompany</dataPath>
+			<field>ParentCompany</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Corporation</dataPath>
+			<field>Corporation</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SubAccount</dataPath>
+			<field>SubAccount</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Account</dataPath>
+			<field>Account</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsBond</dataPath>
+			<field>CustomsBond</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsBondClosing</dataPath>
+			<field>CustomsBondClosing</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AmountToRefund</dataPath>
+			<field>AmountToRefund</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomsDeposit</dataPath>
+			<field>CustomsDeposit</field>
+		</field>
+		<dataSource>Запрос</dataSource>
+		<query>ВЫБРАТЬ
+	BatchesOfCustomsFilesCustomsFiles.Ссылка.Country КАК Country,
+	BatchesOfCustomsFilesCustomsFiles.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsFiles.Ссылка.SoldTo КАК ParentCompany,
+	BatchesOfCustomsFilesCustomsFiles.Ссылка КАК BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsFiles.CCD КАК CustomsFile
+ПОМЕСТИТЬ BatchesOfCustomsFilesCustomsFiles
+ИЗ
+	Документ.BatchesOfCustomsFiles.CCDs КАК BatchesOfCustomsFilesCustomsFiles
+ГДЕ
+	BatchesOfCustomsFilesCustomsFiles.Ссылка.Проведен
+	И ВЫБОР
+			КОГДА &amp;НачалоПериода = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ИСТИНА
+			ИНАЧЕ BatchesOfCustomsFilesCustomsFiles.Ссылка.Дата &gt;= &amp;НачалоПериода
+		КОНЕЦ
+{ГДЕ
+	BatchesOfCustomsFilesCustomsFiles.Ссылка.Country,
+	BatchesOfCustomsFilesCustomsFiles.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsFiles.Ссылка.SoldTo.* КАК ParentCompany,
+	BatchesOfCustomsFilesCustomsFiles.Ссылка.* КАК BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsFiles.CCD.* КАК CustomsFile}
+
+ИНДЕКСИРОВАТЬ ПО
+	CustomsFile
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка.Country КАК Country,
+	BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка.SoldTo КАК ParentCompany,
+	BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка КАК BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsReceiptOrders.ТПО КАК CustomsFileLight
+ПОМЕСТИТЬ BatchesOfCustomsFilesCustomsReceiptOrders
+ИЗ
+	Документ.BatchesOfCustomsFiles.ТПО КАК BatchesOfCustomsFilesCustomsReceiptOrders
+ГДЕ
+	BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка.Проведен
+	И ВЫБОР
+			КОГДА &amp;НачалоПериода = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ИСТИНА
+			ИНАЧЕ BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка.Дата &gt;= &amp;НачалоПериода
+		КОНЕЦ
+{ГДЕ
+	BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка.Country,
+	BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка.SoldTo.* КАК ParentCompany,
+	BatchesOfCustomsFilesCustomsReceiptOrders.Ссылка.* КАК BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsReceiptOrders.ТПО.* КАК CustomsFile}
+
+ИНДЕКСИРОВАТЬ ПО
+	CustomsFileLight
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.Ссылка.Country КАК Country,
+	BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.Ссылка.SoldTo КАК ParentCompany,
+	BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.Ссылка КАК BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.CustomsFile КАК CustomsFile
+ПОМЕСТИТЬ BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing
+ИЗ
+	Документ.BatchesOfCustomsFiles.CustomsFilesOfTemporaryImportExport КАК BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport
+ГДЕ
+	BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.Ссылка.Проведен
+	И ВЫБОР
+			КОГДА &amp;НачалоПериода = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ИСТИНА
+			ИНАЧЕ BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.Ссылка.Дата &gt;= &amp;НачалоПериода
+		КОНЕЦ
+{ГДЕ
+	BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.Ссылка.Country,
+	BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.Ссылка.SoldTo.* КАК ParentCompany,
+	BatchesOfCustomsFilesCustomsFilesOfTemporaryImportExport.Ссылка.* КАК BatchOfCustomsFiles}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.Country,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.ProcessLevel.Corporation,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.SoldTo,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка,
+	BatchesOfCustomsFilesCustomsBondClosings.CustomsBondClosing
+ИЗ
+	Документ.BatchesOfCustomsFiles.CustomsBondClosings КАК BatchesOfCustomsFilesCustomsBondClosings
+ГДЕ
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.Проведен
+	И ВЫБОР
+			КОГДА &amp;НачалоПериода = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ИСТИНА
+			ИНАЧЕ BatchesOfCustomsFilesCustomsBondClosings.Ссылка.Дата &gt;= &amp;НачалоПериода
+		КОНЕЦ
+{ГДЕ
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.Country,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.SoldTo.* КАК ParentCompany,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.* КАК BatchOfCustomsFiles}
+
+ИНДЕКСИРОВАТЬ ПО
+	CustomsFile
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	BatchesOfCustomsFilesCustomsBonds.Ссылка.Country КАК Country,
+	BatchesOfCustomsFilesCustomsBonds.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsBonds.Ссылка КАК BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsBonds.CustomsBond КАК CustomsBond,
+	BatchesOfCustomsFilesCustomsBonds.Ссылка.SoldTo КАК ParentCompany
+ПОМЕСТИТЬ BatchesOfCustomsFilesOfCustomsBonds
+ИЗ
+	Документ.BatchesOfCustomsFiles.CustomsBonds КАК BatchesOfCustomsFilesCustomsBonds
+ГДЕ
+	BatchesOfCustomsFilesCustomsBonds.Ссылка.Проведен
+	И ВЫБОР
+			КОГДА &amp;НачалоПериода = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ИСТИНА
+			ИНАЧЕ BatchesOfCustomsFilesCustomsBonds.Ссылка.Дата &gt;= &amp;НачалоПериода
+		КОНЕЦ
+{ГДЕ
+	BatchesOfCustomsFilesCustomsBonds.Ссылка.Country,
+	BatchesOfCustomsFilesCustomsBonds.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsBonds.Ссылка.SoldTo.* КАК ParentCompany,
+	BatchesOfCustomsFilesCustomsBonds.Ссылка.* КАК BatchOfCustomsFiles}
+
+ИНДЕКСИРОВАТЬ ПО
+	CustomsBond
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.Country КАК Country,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка КАК BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsBondClosings.CustomsBondClosing КАК CustomsBondClosing,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.SoldTo КАК ParentCompany
+ПОМЕСТИТЬ BatchesOfCustomsFilesOfCustomsBondsClosing
+ИЗ
+	Документ.BatchesOfCustomsFiles.CustomsBondClosings КАК BatchesOfCustomsFilesCustomsBondClosings
+ГДЕ
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.Проведен
+	И ВЫБОР
+			КОГДА &amp;НачалоПериода = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ИСТИНА
+			ИНАЧЕ BatchesOfCustomsFilesCustomsBondClosings.Ссылка.Дата &gt;= &amp;НачалоПериода
+		КОНЕЦ
+	И BatchesOfCustomsFilesCustomsBondClosings.CustomsBondClosing.CustomsDepositAmountToRefund &lt;&gt; 0
+{ГДЕ
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.Country,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.ProcessLevel.Corporation КАК Corporation,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.SoldTo.* КАК ParentCompany,
+	BatchesOfCustomsFilesCustomsBondClosings.Ссылка.* КАК BatchOfCustomsFiles}
+
+ИНДЕКСИРОВАТЬ ПО
+	CustomsBondClosing
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	BatchesOfCustomsFilesCustomsFiles.Country,
+	BatchesOfCustomsFilesCustomsFiles.Corporation,
+	BatchesOfCustomsFilesCustomsFiles.ParentCompany,
+	BatchesOfCustomsFilesCustomsFiles.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsFiles.CustomsFile,
+	NULL КАК CustomsBond,
+	NULL КАК CustomsBondClosing,
+	InvoiceLinesCostsОбороты.AU.Код КАК AU,
+	InvoiceLinesCostsОбороты.Activity,
+	InvoiceLinesCostsОбороты.СтрокаИнвойса КАК Item,
+	InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости,
+	ERPTreatmentAccountsСрезПоследних.CCDAccount КАК Account,
+	ERPTreatmentAccountsСрезПоследних.CCDSubAccount КАК SubAccount,
+	СУММА(ВЫБОР
+			КОГДА InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняПошлины)
+				ТОГДА InvoiceLinesCostsОбороты.СуммаФискальнаяОборот
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Duties,
+	СУММА(ВЫБОР
+			КОГДА InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняСборы)
+				ТОГДА InvoiceLinesCostsОбороты.СуммаФискальнаяОборот
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Fees,
+	СУММА(ВЫБОР
+			КОГДА InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняНДС)
+				ТОГДА InvoiceLinesCostsОбороты.СуммаФискальнаяОборот
+			ИНАЧЕ 0
+		КОНЕЦ) КАК VAT,
+	NULL КАК CustomsDeposit,
+	NULL КАК AmountToRefund
+ИЗ
+	BatchesOfCustomsFilesCustomsFiles КАК BatchesOfCustomsFilesCustomsFiles
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.InvoiceLinesCosts.Обороты(
+				,
+				,
+				,
+				ДокументОснование В
+					(ВЫБРАТЬ
+						BatchesOfCustomsFilesCustomsFiles.CustomsFile
+					ИЗ
+						BatchesOfCustomsFilesCustomsFiles КАК BatchesOfCustomsFilesCustomsFiles)) КАК InvoiceLinesCostsОбороты
+			{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ERPTreatmentAccounts.СрезПоследних({(&amp;КонецПериода)}, ) КАК ERPTreatmentAccountsСрезПоследних
+			ПО InvoiceLinesCostsОбороты.ERPTreatment = ERPTreatmentAccountsСрезПоследних.ERPTreatment}
+		ПО BatchesOfCustomsFilesCustomsFiles.CustomsFile = InvoiceLinesCostsОбороты.ДокументОснование
+
+СГРУППИРОВАТЬ ПО
+	BatchesOfCustomsFilesCustomsFiles.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsFiles.CustomsFile,
+	InvoiceLinesCostsОбороты.СтрокаИнвойса,
+	InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости,
+	InvoiceLinesCostsОбороты.Activity,
+	ERPTreatmentAccountsСрезПоследних.CCDSubAccount,
+	BatchesOfCustomsFilesCustomsFiles.Country,
+	BatchesOfCustomsFilesCustomsFiles.Corporation,
+	BatchesOfCustomsFilesCustomsFiles.ParentCompany,
+	InvoiceLinesCostsОбороты.AU.Код,
+	ERPTreatmentAccountsСрезПоследних.CCDAccount
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	BatchesOfCustomsFilesCustomsReceiptOrders.Country,
+	BatchesOfCustomsFilesCustomsReceiptOrders.Corporation,
+	BatchesOfCustomsFilesCustomsReceiptOrders.ParentCompany,
+	BatchesOfCustomsFilesCustomsReceiptOrders.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsReceiptOrders.CustomsFileLight,
+	NULL,
+	NULL,
+	СтоимостьТоваровПоТПООбороты.AU.Код,
+	СтоимостьТоваровПоТПООбороты.Activity,
+	NULL,
+	СтоимостьТоваровПоТПООбороты.ЭлементФормированияСтоимости,
+	ВЫБОР
+		КОГДА СтоимостьТоваровПоТПООбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняНДС)
+			ТОГДА ""
+		ИНАЧЕ "531006"
+	КОНЕЦ,
+	NULL,
+	СУММА(ВЫБОР
+			КОГДА СтоимостьТоваровПоТПООбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняПошлины)
+				ТОГДА СтоимостьТоваровПоТПООбороты.FiscalSumОборот
+			ИНАЧЕ 0
+		КОНЕЦ),
+	СУММА(ВЫБОР
+			КОГДА СтоимостьТоваровПоТПООбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняСборы)
+				ТОГДА СтоимостьТоваровПоТПООбороты.FiscalSumОборот
+			ИНАЧЕ 0
+		КОНЕЦ),
+	СУММА(ВЫБОР
+			КОГДА СтоимостьТоваровПоТПООбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняНДС)
+				ТОГДА СтоимостьТоваровПоТПООбороты.FiscalSumОборот
+			ИНАЧЕ 0
+		КОНЕЦ),
+	NULL,
+	NULL
+ИЗ
+	BatchesOfCustomsFilesCustomsReceiptOrders КАК BatchesOfCustomsFilesCustomsReceiptOrders
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.СтоимостьТоваровПоТПО.Обороты(
+				,
+				,
+				,
+				DocumentBase В
+					(ВЫБРАТЬ
+						BatchesOfCustomsFilesCustomsReceiptOrders.CustomsFileLight
+					ИЗ
+						BatchesOfCustomsFilesCustomsReceiptOrders КАК BatchesOfCustomsFilesCustomsReceiptOrders)) КАК СтоимостьТоваровПоТПООбороты
+		ПО BatchesOfCustomsFilesCustomsReceiptOrders.CustomsFileLight = СтоимостьТоваровПоТПООбороты.DocumentBase
+
+СГРУППИРОВАТЬ ПО
+	BatchesOfCustomsFilesCustomsReceiptOrders.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesCustomsReceiptOrders.CustomsFileLight,
+	СтоимостьТоваровПоТПООбороты.ЭлементФормированияСтоимости,
+	СтоимостьТоваровПоТПООбороты.Activity,
+	BatchesOfCustomsFilesCustomsReceiptOrders.Country,
+	BatchesOfCustomsFilesCustomsReceiptOrders.Corporation,
+	BatchesOfCustomsFilesCustomsReceiptOrders.ParentCompany,
+	ВЫБОР
+		КОГДА СтоимостьТоваровПоТПООбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняНДС)
+			ТОГДА ""
+		ИНАЧЕ "531006"
+	КОНЕЦ,
+	СтоимостьТоваровПоТПООбороты.AU.Код
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.Country,
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.Corporation,
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.ParentCompany,
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.CustomsFile,
+	NULL,
+	NULL,
+	InvoiceLinesCostsОбороты.AU.Код,
+	InvoiceLinesCostsОбороты.Activity,
+	InvoiceLinesCostsОбороты.СтрокаИнвойса,
+	InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости,
+	ERPTreatmentAccountsСрезПоследних.CCDAccount,
+	ERPTreatmentAccountsСрезПоследних.CCDSubAccount,
+	СУММА(ВЫБОР
+			КОГДА InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняПошлины)
+				ТОГДА InvoiceLinesCostsОбороты.СуммаФискальнаяОборот
+			ИНАЧЕ 0
+		КОНЕЦ),
+	СУММА(ВЫБОР
+			КОГДА InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняСборы)
+				ТОГДА InvoiceLinesCostsОбороты.СуммаФискальнаяОборот
+			ИНАЧЕ 0
+		КОНЕЦ),
+	СУММА(ВЫБОР
+			КОГДА InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости = ЗНАЧЕНИЕ(Справочник.ЭлементыФормированияСтоимости.ТаможняНДС)
+				ТОГДА InvoiceLinesCostsОбороты.СуммаФискальнаяОборот
+			ИНАЧЕ 0
+		КОНЕЦ),
+	NULL,
+	NULL
+ИЗ
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing КАК BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.InvoiceLinesCosts.Обороты(
+				,
+				,
+				,
+				ДокументОснование В
+					(ВЫБРАТЬ
+						BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.CustomsFile
+					ИЗ
+						BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing КАК BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing)) КАК InvoiceLinesCostsОбороты
+		ПО BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.CustomsFile = InvoiceLinesCostsОбороты.ДокументОснование,
+	РегистрСведений.ERPTreatmentAccounts.СрезПоследних({(&amp;КонецПериода)}, ERPTreatment = ЗНАЧЕНИЕ(Перечисление.ТипыЗаказа.E)) КАК ERPTreatmentAccountsСрезПоследних
+
+СГРУППИРОВАТЬ ПО
+	InvoiceLinesCostsОбороты.СтрокаИнвойса,
+	InvoiceLinesCostsОбороты.ЭлементФормированияСтоимости,
+	InvoiceLinesCostsОбороты.Activity,
+	ERPTreatmentAccountsСрезПоследних.CCDAccount,
+	ERPTreatmentAccountsСрезПоследних.CCDSubAccount,
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.Country,
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.Corporation,
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.ParentCompany,
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesOfTemporaryImportExportИCustomsBondsClosing.CustomsFile,
+	InvoiceLinesCostsОбороты.AU.Код
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	BatchesOfCustomsFilesOfCustomsBonds.Country,
+	BatchesOfCustomsFilesOfCustomsBonds.Corporation,
+	BatchesOfCustomsFilesOfCustomsBonds.ParentCompany,
+	BatchesOfCustomsFilesOfCustomsBonds.BatchOfCustomsFiles,
+	NULL,
+	BatchesOfCustomsFilesOfCustomsBonds.CustomsBond,
+	NULL,
+	&amp;AUForDeposits,
+	NULL,
+	NULL,
+	NULL,
+	&amp;AccountForDeposits,
+	&amp;SubAccountForDeposits,
+	NULL,
+	NULL,
+	NULL,
+	СУММА(BatchesOfCustomsFilesOfCustomsBonds.CustomsBond.ИтогоПоГрафеВ),
+	NULL
+ИЗ
+	BatchesOfCustomsFilesOfCustomsBonds КАК BatchesOfCustomsFilesOfCustomsBonds
+
+СГРУППИРОВАТЬ ПО
+	BatchesOfCustomsFilesOfCustomsBonds.Country,
+	BatchesOfCustomsFilesOfCustomsBonds.Corporation,
+	BatchesOfCustomsFilesOfCustomsBonds.ParentCompany,
+	BatchesOfCustomsFilesOfCustomsBonds.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesOfCustomsBonds.CustomsBond
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	BatchesOfCustomsFilesOfCustomsBondsClosing.Country,
+	BatchesOfCustomsFilesOfCustomsBondsClosing.Corporation,
+	BatchesOfCustomsFilesOfCustomsBondsClosing.ParentCompany,
+	BatchesOfCustomsFilesOfCustomsBondsClosing.BatchOfCustomsFiles,
+	NULL,
+	NULL,
+	BatchesOfCustomsFilesOfCustomsBondsClosing.CustomsBondClosing,
+	&amp;AUForDeposits,
+	NULL,
+	NULL,
+	NULL,
+	&amp;AccountForDeposits,
+	&amp;SubAccountForDeposits,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	СУММА(-BatchesOfCustomsFilesOfCustomsBondsClosing.CustomsBondClosing.CustomsDepositAmountToRefund)
+ИЗ
+	BatchesOfCustomsFilesOfCustomsBondsClosing КАК BatchesOfCustomsFilesOfCustomsBondsClosing
+
+СГРУППИРОВАТЬ ПО
+	BatchesOfCustomsFilesOfCustomsBondsClosing.Country,
+	BatchesOfCustomsFilesOfCustomsBondsClosing.Corporation,
+	BatchesOfCustomsFilesOfCustomsBondsClosing.ParentCompany,
+	BatchesOfCustomsFilesOfCustomsBondsClosing.BatchOfCustomsFiles,
+	BatchesOfCustomsFilesOfCustomsBondsClosing.CustomsBondClosing</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>DutiesFees</dataPath>
+		<expression>Duties + Fees</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Duties + fees</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Duties + fees</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<group>true</group>
+		</useRestriction>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>Duties</dataPath>
+		<expression>Сумма(Duties)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DutiesFees</dataPath>
+		<expression>Сумма(DutiesFees)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Fees</dataPath>
+		<expression>Сумма(Fees)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>VAT</dataPath>
+		<expression>Сумма(VAT)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>AmountToRefund</dataPath>
+		<expression>Сумма(AmountToRefund)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>CustomsDeposit</dataPath>
+		<expression>Сумма(CustomsDeposit)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;InvoiceLinesMatchingDate.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;InvoiceLinesMatchingDate.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>InvoiceLinesMatchingDate</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Invoice lines matching date</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Invoice lines matching date</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>AccountForDeposits</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Account for deposits</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Account for deposits</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>15</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string">141102</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>AUForDeposits</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>AUFor deposits</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>AUFor deposits</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>15</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string">2812019</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>SubAccountForDeposits</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Sub account for deposits</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Sub account for deposits</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>15</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string">141102-1</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Details</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Details</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Details</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>BatchOfCustomsFiles</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CustomsFile</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CustomsFile.Номер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CustomsBond</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CustomsBondClosing</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AU</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Account</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>SubAccount</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Activity</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.НомерЗаявкиНаЗакупку</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.Инвойс</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.Инвойс.Номер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.СтрокаЗаявкиНаЗакупку.Владелец.Код</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.СтрокаЗаявкиНаЗакупку.НомерСтрокиЗаявкиНаЗакупку</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.КодПоИнвойсу</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.Наименование</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.СерийныйНомер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.ЕдиницаИзмерения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.Цена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.Сумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Item.Классификатор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Fees</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Duties</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DutiesFees</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>VAT</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CustomsDeposit</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AmountToRefund</dcsset:field>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Corporation</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Corporations.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>2eb6ff57-d21f-4454-b0cb-4ea755d0b04c</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ParentCompany</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.SoldTo.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>54fd7b9a-e129-49ba-a856-b2bb66aec89e</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">BatchOfCustomsFiles</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Документ.BatchesOfCustomsFiles.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>1b89d759-6a88-4aac-8c62-20952d1c56bb</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:userSettingID>c82e26c4-8187-4325-b7d0-740d447abe37</dcsset:userSettingID>
+				<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Other filters</v8:content>
+					</v8:item>
+				</dcsset:userSettingPresentation>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКомпоновкиSLB</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">BeginAndEnd</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>BatchOfCustomsFiles</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsFile</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsFile.Номер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsBond</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsBondClosing</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AU</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Account</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>SubAccount</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Activity</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.НомерЗаявкиНаЗакупку</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.Инвойс</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.Инвойс.Номер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.СтрокаЗаявкиНаЗакупку.Владелец.Код</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.СтрокаЗаявкиНаЗакупку.НомерСтрокиЗаявкиНаЗакупку</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.КодПоИнвойсу</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.Наименование</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.СерийныйНомер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.Количество</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.ЕдиницаИзмерения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.Цена</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.Сумма</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Item.Классификатор</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Fees</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Duties</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>DutiesFees</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>VAT</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomsDeposit</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AmountToRefund</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4e55782c-5721-4226-bbac-dc5cb7f7d21c">
+  <producedTypes>
+    <selectionType typeId="9991a04d-2ffc-4368-883a-2261a706e94c" valueTypeId="58ded42c-15bc-45e3-8861-75db78e1e0a4"/>
+    <listType typeId="97c1edad-e1fd-48b1-89ec-15414a5f5970" valueTypeId="b9b5b829-eecc-4bbb-9349-428a155c7382"/>
+    <managerType typeId="48eb1d85-8ecc-4846-9333-b8329e5d3137" valueTypeId="2c8625d9-3dc7-40cd-b146-97e47430dcce"/>
+    <recordSetType typeId="8d4b977a-c707-4d32-b8a6-1b97c62d36fa" valueTypeId="07e4c74e-98c1-4db5-a32d-81f67f68769e"/>
+    <recordKeyType typeId="708d5b40-ac3d-44e8-8bf3-58a9961c11a0" valueTypeId="5b72671d-35f9-467d-a8c7-2b0ea4cde1a6"/>
+    <recordType typeId="2ea69722-d0f2-4cd8-b989-27f3c3044e3c" valueTypeId="56d61bf5-f07c-40ab-a4aa-91a0e2d0dae8"/>
+    <recordManagerType typeId="956d3ef5-29cd-44e3-83f9-c66b45ccedb1" valueTypeId="917bbdee-9d19-47ea-b239-f8b3f6ac6070"/>
+  </producedTypes>
+  <name>СчетаНалоговогоУчетаОС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Счета налогового учета ОС</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Счета налогового учета ОС</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <defaultListForm>InformationRegister.СчетаНалоговогоУчетаОС.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="70610241-ccbc-47a7-bf17-1769af047e16">
+    <name>СчетУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет учета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Счет учета</value>
+    </synonym>
+    <comment>Счет учета амортизируемого имущества НУ</comment>
+    <type>
+      <types>ChartOfAccountsRef.Налоговый</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b48a2cd0-0ee4-418a-b86c-df34cc9049eb">
+    <name>СчетНачисленияАмортизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет начисления амортизации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Счет начисления амортизации</value>
+    </synonym>
+    <comment>Счет учета амортизации НУ</comment>
+    <type>
+      <types>ChartOfAccountsRef.Налоговый</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="dad4b5f0-715a-4299-8e83-6ea5f1420a72">
+    <name>ОсновноеСредство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное средство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Основное средство</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредства</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="34a67515-4122-4838-af96-a97dd33733e4">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="c5f49d05-7154-49de-9fe4-229725794d06">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

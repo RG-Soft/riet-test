@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2fe86f72-f0e3-43a2-9d8b-5d1a3a4ac375">
+  <producedTypes>
+    <objectType typeId="0fc338dd-b187-4dc3-83fa-5b2dab6e2434" valueTypeId="e2fd0fbf-f0b9-4c68-a9a4-fd5b631ab3b2"/>
+    <managerType typeId="f0abc9fe-7b4f-4ef7-8932-9c2f948d075f" valueTypeId="e0b94270-143f-47c6-acba-43cdae68246e"/>
+  </producedTypes>
+  <name>КурсыВалютРБК</name>
+  <synonym>
+    <key>ru</key>
+    <value>Курсы валют РБК</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Курсы валют РБК</value>
+  </synonym>
+  <comment>Загрузка курсов валют с сайта РБК</comment>
+  <defaultForm>DataProcessor.КурсыВалютРБК.Form.Форма</defaultForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="6a58b2c5-1fdd-4a55-b594-9b6b4b9cb43d">
+    <name>НачДата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нач дата</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Нач дата</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7bf8b9a0-5e37-4afd-b4b0-9b9a39481ca6">
+    <name>КонДата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кон дата</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Кон дата</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="a4d27d4a-7e1c-41f1-8777-eb63e0caef0f">
+    <producedTypes>
+      <objectType typeId="55554926-6f21-491a-9258-a9176a7a0914" valueTypeId="623f30fc-d74f-4058-8138-0a24624a0294"/>
+      <rowType typeId="df266e7a-42aa-4ea4-94a8-1f3fd2031a2d" valueTypeId="1f228452-8551-4c89-ae7b-2f46cb61ce73"/>
+    </producedTypes>
+    <name>СписокВалют</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список валют</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Список валют</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="851d6017-f8c2-4978-b195-091e90c92c3f">
+      <name>Валюта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Валюта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Валюта</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Валюты</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="0d1c046f-fba2-41b6-9346-c3dc211e774f">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d2e24ea0-6940-437e-bcdd-af83cd6277f4">
+    <name>ФормаПараметрыПрокси</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма параметры прокси</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма параметры прокси</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="471efd41-5527-4ad8-81f3-5ebbdf9a74fc">
+  <producedTypes>
+    <selectionType typeId="e4e9675f-84c1-47be-b599-6327180e5098" valueTypeId="71df8201-9761-44bc-92d0-b1be1999a87f"/>
+    <listType typeId="d59e3acc-11df-422b-ba36-729e99b57c4f" valueTypeId="cfee73c3-3c6c-4bb9-98fd-441a70c3de56"/>
+    <managerType typeId="a0ad86a8-078a-4b26-9f68-56583dc5b248" valueTypeId="4f2ba9b5-324b-4dab-84ab-c4768b62ba89"/>
+    <recordSetType typeId="a2623fba-e3dd-4197-83b0-6521c1defa36" valueTypeId="b734b0bf-5890-4b7c-9a0a-41a59af74710"/>
+    <recordKeyType typeId="930f5312-2724-4791-8a0e-5899c51bba36" valueTypeId="03b0acaa-ca8d-4fa2-8a14-85c3f0774ece"/>
+    <recordType typeId="1650e418-b56d-4a1f-93c5-2e80249bef24" valueTypeId="9a8cb556-720e-4cba-9eca-ca2fdfaf0db0"/>
+    <recordManagerType typeId="9aec3bed-a1d7-4767-b831-f3825c402a2a" valueTypeId="4803f1c8-b6c8-409d-9243-d6f2febe590b"/>
+  </producedTypes>
+  <name>TCSInvoiceLinesClassification</name>
+  <synonym>
+    <key>ru</key>
+    <value>TCS Invoice lines classification</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>TCS Invoice lines classification</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.TCSInvoiceLinesClassification.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="ad0247e9-5192-424e-b51b-b866a54d10bd">
+    <name>LastModified</name>
+    <synonym>
+      <key>ru</key>
+      <value>Last modified</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Last modified</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="b8720e25-cf33-49df-8473-5c359a79889a">
+    <name>InvoiceLinesClassification</name>
+    <synonym>
+      <key>ru</key>
+      <value>Invoice lines classification</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Invoice lines classification</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.InvoiceLinesClassification</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f7471f28-5fe7-44a4-8d6f-693e5d90e7ef">
+    <name>ParentCompany</name>
+    <synonym>
+      <key>ru</key>
+      <value>Parent company</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Parent company</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.SoldTo</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="35761999-ff90-4870-9435-570a1fdb8a5a">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

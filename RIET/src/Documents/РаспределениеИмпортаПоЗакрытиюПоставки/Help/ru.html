@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 9.00.8112.16421"></meta></head><body>
+<h1>Документ "Распределение импорта по закрытию поставки"</h1>
+<h2>Назначение</h2>
+<p>Документ предназначен для сопоставления данных DSS с данными модуля Customs.</p>
+<p>"Распределение импорта по закрытию поставки" фактически представляет собой список Invoice lines, отобранных по конкретному документу "Shipment closing", который нужно сопоставить со списком проводок DSS.</p>
+<h2>Способы формирования документа</h2>
+<p>Документ может быть сформирован на основании документа "Shipment closing" или из списка документов. </p>
+<h2>Структура документа</h2>
+<h4>Реквизиты шапки документа:</h4>
+<p><strong>- Shipment closing</strong> (документ) <br><strong>- Invoice total sum</strong> (общая сумма invoice lines из регистра Invoice lines costs) <br><strong>-</strong> <strong>DSS total tran amount</strong> (общая сумма transaction amount из проводок DSS) <br><strong>-</strong> <strong>Delta </strong>(разница между Invoice total sum и DSS total tran amount)<br><strong>- Список CCD</strong> (список CCD из документа Shipment closing)</p>
+<h3>Табличные части</h3>
+<ul><li>
+<h4>Invoices</h4></li></ul><blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<p dir="ltr" class="Usual">содержит список номеров Инвойсов из документа "Shipment closing" (указанного в шапке) и количество строк инвойса, которые осталось сопоставить с проводками DSS в табличной части Tangible assets (Unmatched).</p></blockquote>
+<ul><li>
+<h4>Tangible assets</h4></li></ul><blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<p style="MARGIN-RIGHT: 0px" dir="ltr" class="Usual">содержит список строк выделенного инвойса, и две колонки для заполнения:</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr" class="Usual">- проводка DSS, которую можно перетащить из таб. части Expenses </p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr" class="Usual">- номенклатура для строк инвойса с типом "FA"</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr" class="Usual">По кнопке <strong>Match DSS with Invoice lines </strong>автоматически производится попытка сопоставить по PO line и по Item code проводки в таб. части Expenses и строки инвойса в таб. части Tangible assets</p></blockquote>
+<ul><li>
+<h4>Expenses</h4></li></ul><blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<p style="MARGIN-RIGHT: 0px" dir="ltr" class="Usual">содержит список всех проводок DSS, загруженных автоматически (по кнопке <strong>Fill</strong>) или подобранных пользователем, но еще не сопоставленных со строками инвойса. По кнопке <strong>Match by current CCD</strong> в форме подбора будет установлен фильтр по Vendor (Контрагент Lawson в Customs post) и DateLawson (Дата ГТД)</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr" class="Usual">В табличную часть подбираются, но не отображаются для сопоставления проводки, у которых в Description указано INSURANCE, HANDLING, FREIGHT.</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr" class="Usual">Проводки можно отфильтровать по выделенному инвойсу, если значение AP invoice соответствует номеру.</p></blockquote>
+<h3>Проверки, выполняемые при записи/проведении </h3>
+<p class="Usual">- заполнен реквизит Shipment closing </p>
+<p class="Usual">- при проведении не должно быть несопоставленных строк в табличной части Tangible assets</p>
+<p class="Usual">- <strong>Delta </strong>должна быть равна 0 (т.е. подобраны все проводки DSS)</p>
+<h2>Проведение</h2>
+<p class="Usual">Документ делает расходные движения по регистру "Материальные активы" по всем проводкам DSS, подобранным в документе, выполняется проверка регистра на наличие остатков по проводкам DSS в табличной части.</p>
+<p class="Usual">Документ делает приходные движения по регистру "Оборудование DSS" по проводкам, сопоставленным с Invoice lines с типом "FA".</p>
+<p class="Usual">Документ делает приходные движения по регистру "Inventory tangible assets costs" по проводкам, сопоставленным с Invoice lines с типом "Inventory".</p></body></html>

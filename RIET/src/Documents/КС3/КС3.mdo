@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="defc2b58-23da-4e73-b8dd-00f1c96626bc">
+  <producedTypes>
+    <objectType typeId="3004d8d9-1162-4377-9d32-bb31a04ecddb" valueTypeId="ec0dc7cd-c490-4925-bce1-18fdbcfbaa7d"/>
+    <refType typeId="8bc6bf66-a32d-49ac-9fb9-35b511e50133" valueTypeId="154cb0e8-5eb6-4537-9ee4-3bcb7b082554"/>
+    <selectionType typeId="67d94911-591e-494c-af6d-e8554a18e390" valueTypeId="dad66d36-0724-43e7-92a3-f27be5a26209"/>
+    <listType typeId="3885f502-5794-4799-902f-b19fbfbcd2ee" valueTypeId="56a05293-f795-4cbd-b389-2d7dc6bfcdf4"/>
+    <managerType typeId="6b7116c7-21a0-42d8-a0d2-1b57d2f1db33" valueTypeId="0005789f-c714-4558-a36d-b8ce2ad03319"/>
+  </producedTypes>
+  <name>КС3</name>
+  <synonym>
+    <key>ru</key>
+    <value>КС-3</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>КС-3</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.КС3.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <basedOn>Document.РеализацияТоваровУслуг</basedOn>
+  <createOnInput>Use</createOnInput>
+  <numberType>String</numberType>
+  <numberLength>10</numberLength>
+  <numberPeriodicity>Year</numberPeriodicity>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.КС3.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.КС3.Form.ФормаСписка</defaultListForm>
+  <posting>Deny</posting>
+  <registerRecordsDeletion>AutoDelete</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <attributes uuid="cce5cab6-eac4-49ee-bde7-ac6f85f61dee">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5c811914-2f3d-49e9-94f3-94da964011d3">
+    <name>НачПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Начало периода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="35c92353-2bb0-4308-a0a2-4f21e57ffeef">
+    <name>КонПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конец периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Конец периода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6522570b-646c-4d77-920f-a98fb45428a2">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Контрагент</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d0143d67-ab4b-4178-b002-069e459f2d85">
+    <name>ДоговорКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f13bead4-52f9-44c7-b8f1-799f2d1ef6e8">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b154bb29-f4fa-4316-8a1c-cd03b2e6d3dc">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e7daed43-db13-41ae-a735-bcfcc6dbfd31">
+    <name>ПринялДолжность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Принял должность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Принял должность</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="29af41b4-dbf5-4f12-84d1-3c11001cded1">
+    <name>ПринялДолжностьEng</name>
+    <synonym>
+      <key>ru</key>
+      <value>Принял должность eng</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Принял должность eng</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ff94d61a-28e7-4c9b-8bc9-906afa84a8b7">
+    <name>ПринялФИО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Принял ФИО</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Принял ФИО</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7eb4058a-8ddd-4d88-bc21-83a4b677aafa">
+    <name>ПринялФИОEng</name>
+    <synonym>
+      <key>ru</key>
+      <value>Принял ФИОEng</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Принял ФИОEng</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7abbefd1-d3c1-4598-b63f-5f721fa5c29b">
+    <name>СдалДолжность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сдал должность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сдал должность</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3c01e13d-9147-4eff-affa-493bfded423a">
+    <name>СдалДолжностьEng</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сдал должность eng</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сдал должность eng</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d9fe66a3-1a8d-44f6-9200-57dba622a766">
+    <name>СдалФИО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сдал ФИО</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сдал ФИО</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="bd8c544c-37e7-4be3-b42a-3c98ccf82b09">
+    <name>СдалФИОEng</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сдал ФИОEng</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сдал ФИОEng</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="450d67f8-ea8e-483a-9b8a-b948fa682e0f">
+    <name>СогласованоДолжность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласовано должность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Согласовано должность</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="07b45742-bef8-4ed9-bd42-941dd059f05a">
+    <name>СогласованоДолжность1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласовано должность1</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Согласовано должность1</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1299836f-1bee-4d5b-a0f0-e7a2f7dc05d4">
+    <name>СогласованоДолжностьEng</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласовано должность eng</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Согласовано должность eng</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="02c3fd3a-d072-4cbc-bd2f-bd47bb5fb5d0">
+    <name>СогласованоДолжностьEng1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласовано должность eng1</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Согласовано должность eng1</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="71e6f222-c931-408b-8dd0-cb4ee11875fc">
+    <name>СогласованоФИО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласовано ФИО</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Согласовано ФИО</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c827875c-8cf1-40a0-92fc-ebd52e03e8fb">
+    <name>СогласованоФИО1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласовано ФИО1</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Согласовано ФИО1</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fb045fdb-c8d1-4aaa-bfb4-080e95aafcf0">
+    <name>СогласованоФИОEng</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласовано ФИОEng</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Согласовано ФИОEng</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="cedd02ba-0d76-42d8-a06a-39c88b3c508e">
+    <name>СогласованоФИОEng1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласовано ФИОEng1</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Согласовано ФИОEng1</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2f7c5089-cc51-4be6-925f-91d06388e16e">
+    <name>Месторождение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месторождение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Месторождение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Oilfields</types>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="cb9c338f-defc-4237-9cd7-37fa1987555a">
+    <name>Скважина</name>
+    <synonym>
+      <key>ru</key>
+      <value>Скважина</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Скважина</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <types>CatalogRef.Wells</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d5a84e49-8369-4ece-b6ee-4e6f435f832d">
+    <name>ДокументОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ основание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Документ основание</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="d0c8a4ec-93a4-4960-95b6-04047d7bdf2f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0a6fdf37-9e4b-4869-997d-96aafb92c20b">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="0315af27-4419-4522-9e40-829c85aa6b62">
+    <producedTypes>
+      <objectType typeId="7683f7d3-9468-4d76-8b6d-efbbee702844" valueTypeId="73116476-dd39-41c6-8103-35c6ef7cac10"/>
+      <rowType typeId="dd6a8572-01f8-4762-a42b-ab7a4241b746" valueTypeId="1e9fa9a6-5b1d-4d63-8959-038698b696bd"/>
+    </producedTypes>
+    <name>Реализации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Реализации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Реализации</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="216e90ac-914f-4c61-ac74-0dbf5d15cafd">
+      <name>Документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Документ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d569f308-e0ae-4eec-9e50-0b552021ccf2">
+      <name>СуммаДокумента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма документа</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Сумма документа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <templates uuid="6d54babf-bfc5-4b05-968d-6ce123718785">
+    <name>КС_3</name>
+    <synonym>
+      <key>ru</key>
+      <value>К с-3</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>К с-3</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="6de5726b-b414-4a45-a62c-2b4f2b6638c7">
+    <name>КС_3_2</name>
+    <synonym>
+      <key>ru</key>
+      <value>К с-3</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>К с-3</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="bcbdc018-652d-4398-a526-9d7366006356">
+    <name>АктПолныхРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Акт полных работ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Акт полных работ</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="c11be472-7185-4f80-8db2-c46628265237">
+    <name>КС3ГРП</name>
+    <synonym>
+      <key>ru</key>
+      <value>КС3ГРП</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>КС3ГРП</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+</mdclass:Document>

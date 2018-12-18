@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="130c4153-7174-4d98-ac3c-a37044b15043">
+  <producedTypes>
+    <selectionType typeId="dae4ecb8-6446-4a6b-85d6-bc97557b28e4" valueTypeId="0a82db51-b208-4c7e-97a2-79d401a5733c"/>
+    <listType typeId="45e3665f-7e1c-48df-a5ed-0003dec98232" valueTypeId="c6f3d9e7-089d-4c92-8a35-321a1fe9c37c"/>
+    <managerType typeId="c3ffaaef-55e7-43ad-b82e-2f5679c9ac39" valueTypeId="765417dc-ce16-4783-8369-31f1930b5fbb"/>
+    <recordSetType typeId="bbd2f252-baa5-47c9-b808-049ae4e54119" valueTypeId="a3ea4245-5730-43ac-80ed-487a6a3b2008"/>
+    <recordKeyType typeId="ea226374-2843-4caa-a3a0-f86a3285e374" valueTypeId="82d88855-e1be-4754-b069-fe6956b9641a"/>
+    <recordType typeId="b056506f-7a6d-4be6-a1d1-bbd9f90bbd2e" valueTypeId="319edc7c-b610-47f3-a2bd-fd948c7124ce"/>
+    <recordManagerType typeId="364697b9-6cef-4031-8241-44c49b3a52b4" valueTypeId="7bbbcadf-d220-478e-a76f-55401d69298d"/>
+  </producedTypes>
+  <name>ExportClearanceEventsQueue</name>
+  <synonym>
+    <key>ru</key>
+    <value>Export clearance events queue</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Export clearance events queue</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.ExportClearanceEventsQueue.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Export clearance event</value>
+  </recordPresentation>
+  <recordPresentation>
+    <key>en</key>
+    <value>Export clearance event</value>
+  </recordPresentation>
+  <resources uuid="b7c433eb-2e3f-47c2-9f89-6e26f8ba914a">
+    <name>EventDate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Event date</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Event date</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="bd6573a6-a3eb-4dd6-9aae-ca3adedc786c">
+    <name>LastModified</name>
+    <synonym>
+      <key>ru</key>
+      <value>Last modified</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Last modified</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="13cb92af-e2ed-4953-89b9-8cef096eea58">
+    <name>User</name>
+    <synonym>
+      <key>ru</key>
+      <value>User</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="ed956b1d-08d5-49f1-a3e6-d19381df8862">
+    <name>Shipment</name>
+    <synonym>
+      <key>ru</key>
+      <value>Shipment</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Shipment</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ExportShipment</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ffe1cee8-1547-4fb8-958b-3946de722334">
+    <name>EventType</name>
+    <synonym>
+      <key>ru</key>
+      <value>Event type</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Event type</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ClearanceEventsTypes</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="bd744b3c-645b-4d29-bcfa-cfb5a19b4a66">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

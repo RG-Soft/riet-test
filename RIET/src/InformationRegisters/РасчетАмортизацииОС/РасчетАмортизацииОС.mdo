@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="37c1f7cf-21b9-4848-ae99-d5f00e637843">
+  <producedTypes>
+    <selectionType typeId="f5139188-13a3-4880-a553-782a374a4bd1" valueTypeId="ec708447-c564-42d8-a283-c6f9e6a6f04d"/>
+    <listType typeId="57acce06-c7a1-44f0-b0c8-f33319c1de63" valueTypeId="85da7027-18ca-4ae5-96f1-e47e06707501"/>
+    <managerType typeId="ba9acc4c-c0c4-4ee2-8eb5-c234f4715ebd" valueTypeId="7a4d7cbf-0ae3-4838-9b5c-d353e92acc10"/>
+    <recordSetType typeId="ba8fb58a-63f7-4c45-8468-6854385b8523" valueTypeId="f681bb19-9599-4a47-8310-53ce3e34c5e0"/>
+    <recordKeyType typeId="84ce5d63-b07a-469e-86a8-1b1777bb99d5" valueTypeId="a764205f-0833-4f22-a473-34a34af50866"/>
+    <recordType typeId="9c00f28f-829d-498b-a1cc-fe732bec3d98" valueTypeId="43466fd6-653f-47ff-a0e9-3fe9d5d4440e"/>
+    <recordManagerType typeId="887b4e04-cf72-46d2-85a4-4fc73594442e" valueTypeId="49b61b1b-a071-495e-a7c3-855786545d75"/>
+  </producedTypes>
+  <name>РасчетАмортизацииОС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет амортизации ОС</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Расчет амортизации ОС</value>
+  </synonym>
+  <comment></comment>
+  <defaultListForm>InformationRegister.РасчетАмортизацииОС.Form.ФормаСписка</defaultListForm>
+  <resources uuid="3e459481-094e-4952-8087-ac74b783626f">
+    <name>СуммаБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма (бух.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма (бух.)</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b99415ee-14b4-451f-bafe-db0834964a1c">
+    <name>СуммаНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Сумма НУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="a3f228bc-1bce-4d0c-b20b-513d83515150">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bcc17dac-3c39-4d12-b1a8-141d9723dcad">
+    <name>ОсновноеСредство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное средство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Основное средство</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредства</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="819ec1b2-659b-4e11-ad0c-07b17a396a38">
+    <name>ПериодАмортизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период амортизации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Период амортизации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="93eb718a-cc37-4f0c-b34e-00dc8754706e">
+    <name>РучнаяКорректировка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ручная корректировка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ручная корректировка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="a291d567-64af-4823-8d02-3897a84c28ef">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>
