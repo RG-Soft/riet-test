@@ -288,6 +288,10 @@
 	|			ТОГДА ""Availability date confirmed by supplier""
 	|		КОГДА Items.СтрокаЗаявкиНаЗакупку.SupplierPromisedDate = ДАТАВРЕМЯ(1, 1, 1)
 	|			ТОГДА ""Pending supplier confirmation""
+	// { RGS DKazanskiy 17.12.2018 14:37:59 - S-I-0006321
+	|		КОГДА DOCsInvoices.Ссылка.Отменен
+	|			ТОГДА Items.СтрокаЗаявкиНаЗакупку.Status
+	// } RGS DKazanskiy 17.12.2018 14:38:08 - S-I-0006321
 	|	КОНЕЦ КАК StatusName,
 	|	Items.Инвойс КАК Invoice,
 	|	Items.Инвойс.Номер КАК InvoiceNo,
@@ -365,7 +369,11 @@
 	|			ПО DOCsInvoices.Ссылка = DOCsParcels.Ссылка
 	|		ПО Items.Инвойс = DOCsInvoices.Инвойс
 	// { RGS AArsentev 18.07.2018 S-I-0005650 - просили убрать в тикете, но затем AGryzunov попросил вернуть
-	|			И (НЕ DOCsInvoices.Ссылка.Отменен)
+
+	// { RGS DKazanskiy 17.12.2018 14:37:59 - S-I-0006321
+	//|			И (НЕ DOCsInvoices.Ссылка.Отменен)
+	// } RGS DKazanskiy 17.12.2018 14:38:08 - S-I-0006321
+	
 	// } RGS AArsentev 18.07.2018 S-I-0005650
 	|		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CustomsFilesOfGoods КАК CustomsFilesOfItems
 	|		ПО Items.Ссылка = CustomsFilesOfItems.Item
@@ -427,6 +435,10 @@
 	|			ТОГДА ""Availability date confirmed by supplier""
 	|		КОГДА Items.СтрокаЗаявкиНаЗакупку.SupplierPromisedDate = ДАТАВРЕМЯ(1, 1, 1)
 	|			ТОГДА ""Pending supplier confirmation""
+	// { RGS DKazanskiy 17.12.2018 14:37:59 - S-I-0006321
+	|		КОГДА DOCsInvoices.Ссылка.Отменен
+	|			ТОГДА Items.СтрокаЗаявкиНаЗакупку.Status
+	// } RGS DKazanskiy 17.12.2018 14:38:08 - S-I-0006321
 	|	КОНЕЦ,
 	|	Items.Инвойс,
 	|	Items.Инвойс.Номер,
