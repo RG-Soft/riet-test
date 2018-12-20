@@ -87,7 +87,7 @@
 Функция ПолучитьСтруктуруДанныхPOLineДляInvoiceLine(POLine) Экспорт
 	
 	СтрокаСвойств = "Activity, AU, ERPTreatment, Description, PartNo, Catalog, UOM, SupplierCountry, 
-		|Qty, Price, EUCNotRequired, EUCRequested, EUCReceived, ProjectMobilization";
+		|Qty, Price, EUCNotRequired, EUCRequested, EUCReceived, ProjectMobilization, CountryOfOrigin";
 	СтруктураДанных = Новый Структура(СтрокаСвойств);
 	
 	Если НЕ ЗначениеЗаполнено(POLine) Тогда
@@ -112,7 +112,10 @@
 		|	POLine.Владелец.EUCNotRequired КАК EUCNotRequired,
 		|	POLine.Владелец.EUCRequested КАК EUCRequested,
 		|	POLine.Владелец.EUCReceived КАК EUCReceived,
-		|	POLine.ProjectMobilization КАК ProjectMobilization
+		|	POLine.ProjectMobilization КАК ProjectMobilization,
+		// { RGS DKazanskiy 20.12.2018 13:22:11 - S-I-0006324
+		|	POLine.CountryOfOrigin как CountryOfOrigin
+		// } RGS DKazanskiy 20.12.2018 13:22:26 - S-I-0006324		
 		|ИЗ
 		|	Справочник.СтрокиЗаявкиНаЗакупку КАК POLine
 		|ГДЕ

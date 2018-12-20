@@ -104,6 +104,13 @@
 		InvoiceLine.ProjectMobilization = СтруктураДанныхPOLine.ProjectMobilization;
 	КонецЕсли;
 	
+	// { RGS DKazanskiy 20.12.2018 13:24:07 - S-I-0006324
+	Если ЗначениеЗаполнено(СтруктураДанныхPOLine.CountryOfOrigin) 
+		И СокрЛП(ВРег(СтруктураДанныхPOLine.CountryOfOrigin)) = "US" Тогда
+		InvoiceLine.EUCNotRequired = Ложь;
+	КонецЕсли;
+	// } RGS DKazanskiy 20.12.2018 13:24:10 - S-I-0006324
+	
 КонецПроцедуры
 
 
