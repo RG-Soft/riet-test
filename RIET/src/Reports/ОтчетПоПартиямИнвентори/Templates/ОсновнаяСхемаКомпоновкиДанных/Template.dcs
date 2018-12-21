@@ -344,6 +344,16 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>BatchPONumber</dataPath>
+			<field>BatchPONumber</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>PO number</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	InventoryBatchesОбороты.TaxRegistration КАК TaxRegistration,
@@ -459,7 +469,8 @@
 	InventoryBatchesОстаткиИОбороты.QuantityКонечныйОстаток,
 	InventoryBatchesОстаткиИОбороты.SumКонечныйОстаток,
 	ВЫРАЗИТЬ(InventoryBatchesОстаткиИОбороты.Good.DescriptionRus КАК СТРОКА(250)) КАК GoodDescriptionRus,
-	ВЫРАЗИТЬ(ДанныеПоПоследнемуПоступлению.SumПоследнееПоступление / ДанныеПоПоследнемуПоступлению.QuantityПоследнееПоступление КАК ЧИСЛО(15, 5)) КАК FiscalPriceПоследнееПоступление
+	ВЫРАЗИТЬ(ДанныеПоПоследнемуПоступлению.SumПоследнееПоступление / ДанныеПоПоследнемуПоступлению.QuantityПоследнееПоступление КАК ЧИСЛО(15, 5)) КАК FiscalPriceПоследнееПоступление,
+	InventoryBatchesОстаткиИОбороты.Batch.PONumber
 ИЗ
 	РегистрНакопления.InventoryBatches.ОстаткиИОбороты(, , Авто, , ) КАК InventoryBatchesОстаткиИОбороты
 		ЛЕВОЕ СОЕДИНЕНИЕ ДанныеПоПоследнемуПоступлению КАК ДанныеПоПоследнемуПоступлению
@@ -879,6 +890,9 @@
 					<dcsset:field>AU</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>BatchPONumber</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ItemCode</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
@@ -1072,6 +1086,13 @@
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
 						<dcsset:field>Good</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>BatchPONumber</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
