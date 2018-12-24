@@ -24,8 +24,12 @@
 		ПоследняяСтрокаManualStatuses = Новый Структура("Status");
 	КонецЕсли;
 	
+	// { RGS DKazanskiy 12.12.2018 14:18:04 - S-I-0006451
+	Если ЕстьPoLineRestock(DOCОбъект.Ссылка) Тогда
+		НовыйCurrentStatus = DOCStatuses.Restock;
+		// } RGS DKazanskiy 12.12.2018 14:18:07 - S-I-0006451			
 	// { RGS AArsentev 21.08.2017 S-I-0003524
-	Если DOCОбъект.ReRoute Тогда
+	ИначеЕсли DOCОбъект.ReRoute Тогда
 		
 		НовыйCurrentStatus = DOCStatuses.ReRoute;
 		
@@ -57,12 +61,8 @@
 		НоваяCurrentStatusDate = DOCОбъект.Granted;
 		
 	ИначеЕсли ЗначениеЗаполнено(DOCОбъект.Received) Тогда
-		
-		// { RGS DKazanskiy 12.12.2018 14:18:04 - S-I-0006451
-		Если ЕстьPoLineRestock(DOCОбъект.Ссылка) Тогда
-			НовыйCurrentStatus = DOCStatuses.Restock;
-		// } RGS DKazanskiy 12.12.2018 14:18:07 - S-I-0006451			
-		ИначеЕсли DOCОбъект.PendingEUC Тогда
+				
+		Если DOCОбъект.PendingEUC Тогда
 			НовыйCurrentStatus = DOCStatuses.PendingEUC;
 		// { RGS DKazanskiy 14.11.2018 13:34:08 - S-I-0006242
 		// Поднял безусловное изменение статуса выше. Иначе приводило к тому, что ставился статус PendingSLB в следующем ниже условии и до PendingMOC не доходило. 
