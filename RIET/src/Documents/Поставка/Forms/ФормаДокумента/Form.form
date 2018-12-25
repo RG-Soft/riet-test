@@ -15076,6 +15076,118 @@
             <autoMaxHeight>true</autoMaxHeight>
           </extInfo>
         </items>
+        <items xsi:type="form:FormField">
+          <name>Trips_LegTotalCostsSum</name>
+          <id>1425</id>
+          <title>
+            <key>ru</key>
+            <value>Total costs sum</value>
+          </title>
+          <title>
+            <key>en</key>
+            <value>Total costs sum</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:MultiLanguageDataPath">
+            <paths xsi:type="form:DataPath">
+              <segments>Trips_Leg.TripTotalCostsSum</segments>
+            </paths>
+          </dataPath>
+          <extendedTooltip>
+            <name>Trips_LegTotalCostsSumРасширеннаяПодсказка</name>
+            <id>1427</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>Trips_LegTotalCostsSumКонтекстноеМеню</name>
+            <id>1426</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>Trips_LegTotalCostsSumUSD</name>
+          <id>1428</id>
+          <title>
+            <key>ru</key>
+            <value>Total costs sum, USD</value>
+          </title>
+          <title>
+            <key>en</key>
+            <value>Total costs sum, USD</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:MultiLanguageDataPath">
+            <paths xsi:type="form:DataPath">
+              <segments>Trips_Leg.TripTotalCostsSumUSD</segments>
+            </paths>
+          </dataPath>
+          <extendedTooltip>
+            <name>Trips_LegTotalCostsSumUSDРасширеннаяПодсказка</name>
+            <id>1430</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>Trips_LegTotalCostsSumUSDКонтекстноеМеню</name>
+            <id>1429</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
         <autoCommandBar>
           <name>Trips_LegКоманднаяПанель</name>
           <id>1130</id>
@@ -15086,6 +15198,10 @@
           </userVisible>
           <horizontalAlign>Left</horizontalAlign>
         </autoCommandBar>
+        <handlers>
+          <event>Selection</event>
+          <name>Trips_LegВыбор</name>
+        </handlers>
         <searchStringAddition>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -18731,22 +18847,9 @@
       <common>true</common>
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
-      <queryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
-	TripParcels.Ссылка КАК Trip,
-	TripParcels.Ссылка.Номер КАК Номер,
-	TripParcels.Ссылка.WarehouseFrom КАК WarehouseFrom,
-	TripParcels.Ссылка.ServiceProvider КАК ServiceProvider,
-	ВЫРАЗИТЬ(TripParcels.Ссылка.WarehouseToList КАК СТРОКА(1024)) КАК WarehouseToList,
-	TripParcels.Ссылка.Draft КАК Draft,
-	TripParcels.Ссылка.ETD КАК ETD,
-	TripParcels.Ссылка.Final КАК Final,
-	TripParcels.Ссылка.ATD КАК ATD,
-	TripParcels.Ссылка.Equipment КАК Equipment,
-	TripParcels.Ссылка.GrossWeightKG КАК GrossWeightKG,
-	TripParcels.Ссылка.CreatedBy КАК CreatedBy,
-	ВЫРАЗИТЬ(TripParcels.Ссылка.Comment КАК СТРОКА(1024)) КАК Comment,
-	TripParcels.Ссылка.DomesticOBSentToTMSDate КАК DomesticOBSentToTMSDate,
-	TripParcels.Ссылка.DaysETAWithoutATA КАК DaysETAWithoutATA
+      <queryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	TripParcels.Ссылка КАК Trip
+ПОМЕСТИТЬ врТрип
 ИЗ
 	Документ.Trip.Parcels КАК TripParcels
 ГДЕ
@@ -18755,29 +18858,35 @@
 				КонсолидированныйПакетЗаявокНаПеревозкуParcels.Parcel
 			ИЗ
 				Документ.Поставка.УпаковочныеЛисты КАК ПоставкаУпаковочныеЛисты
-					ЛЕВОЕ СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Parcels КАК КонсолидированныйПакетЗаявокНаПеревозкуParcels
+					Внутреннее СОЕДИНЕНИЕ Документ.КонсолидированныйПакетЗаявокНаПеревозку.Parcels КАК КонсолидированныйПакетЗаявокНаПеревозкуParcels
 					ПО
 						ПоставкаУпаковочныеЛисты.УпаковочныйЛист = КонсолидированныйПакетЗаявокНаПеревозкуParcels.Ссылка
 			ГДЕ
 				ПоставкаУпаковочныеЛисты.Ссылка = &amp;SH)
 	И НЕ TripParcels.Parcel.ПометкаУдаления
+;
 
-СГРУППИРОВАТЬ ПО
-	TripParcels.Ссылка,
-	TripParcels.Ссылка.Номер,
-	TripParcels.Ссылка.WarehouseFrom,
-	TripParcels.Ссылка.ServiceProvider,
-	ВЫРАЗИТЬ(TripParcels.Ссылка.WarehouseToList КАК СТРОКА(1024)),
-	TripParcels.Ссылка.Draft,
-	TripParcels.Ссылка.ETD,
-	TripParcels.Ссылка.Final,
-	TripParcels.Ссылка.ATD,
-	TripParcels.Ссылка.Equipment,
-	TripParcels.Ссылка.GrossWeightKG,
-	TripParcels.Ссылка.CreatedBy,
-	ВЫРАЗИТЬ(TripParcels.Ссылка.Comment КАК СТРОКА(1024)),
-	TripParcels.Ссылка.DomesticOBSentToTMSDate,
-	TripParcels.Ссылка.DaysETAWithoutATA</queryText>
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	врТрип.Trip КАК Trip,
+	врТрип.Trip.Номер КАК Номер,
+	врТрип.Trip.WarehouseFrom КАК WarehouseFrom,
+	врТрип.Trip.ServiceProvider КАК ServiceProvider,
+	ВЫРАЗИТЬ(врТрип.Trip.WarehouseToList КАК СТРОКА(1024)) КАК WarehouseToList,
+	врТрип.Trip.Draft КАК Draft,
+	врТрип.Trip.ETD КАК ETD,
+	врТрип.Trip.Final КАК Final,
+	врТрип.Trip.ATD КАК ATD,
+	врТрип.Trip.Equipment КАК Equipment,
+	врТрип.Trip.GrossWeightKG КАК GrossWeightKG,
+	врТрип.Trip.CreatedBy КАК CreatedBy,
+	ВЫРАЗИТЬ(врТрип.Trip.Comment КАК СТРОКА(1024)) КАК Comment,
+	врТрип.Trip.DomesticOBSentToTMSDate КАК DomesticOBSentToTMSDate,
+	врТрип.Trip.DaysETAWithoutATA КАК DaysETAWithoutATA,
+	врТрип.Trip.TotalCostsSum,
+	врТрип.Trip.TotalCostsSumUSD
+ИЗ
+	врТрип КАК врТрип</queryText>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
