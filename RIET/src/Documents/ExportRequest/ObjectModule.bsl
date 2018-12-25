@@ -728,7 +728,7 @@
 	Иначе
 		
 		// Pick up warhouse.RCA country vs From country
-		Если PickUpWarehouse <> Справочники.Warehouses.Other И ЗначениеЗаполнено(FromCountry) Тогда
+		Если Не CustomUnionTransaction И PickUpWarehouse <> Справочники.Warehouses.Other И ЗначениеЗаполнено(FromCountry) Тогда
 			
 			PickUpWarehouseRCACountry = РГСофтСерверПовтИспСеанс.ПолучитьЗначениеРеквизита(PickUpWarehouse, "RCACountry");
 			Если PickUpWarehouseRCACountry <> FromCountry Тогда
