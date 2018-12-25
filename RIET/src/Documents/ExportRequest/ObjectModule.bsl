@@ -728,7 +728,11 @@
 	Иначе
 		
 		// Pick up warhouse.RCA country vs From country
-		Если Не CustomUnionTransaction И PickUpWarehouse <> Справочники.Warehouses.Other И ЗначениеЗаполнено(FromCountry) Тогда
+		Если
+			// { RGS EParshina EParshina 25.12.2018 16:29:38 - S-I-0005711
+			Не CustomUnionTransaction 
+			// } RGS EParshina EParshina 25.12.2018 16:29:38 - S-I-0005711
+			И PickUpWarehouse <> Справочники.Warehouses.Other И ЗначениеЗаполнено(FromCountry) Тогда
 			
 			PickUpWarehouseRCACountry = РГСофтСерверПовтИспСеанс.ПолучитьЗначениеРеквизита(PickUpWarehouse, "RCACountry");
 			Если PickUpWarehouseRCACountry <> FromCountry Тогда
