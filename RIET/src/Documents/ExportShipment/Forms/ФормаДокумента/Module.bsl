@@ -34,7 +34,11 @@
 	// Поэтом эти страницы может быть надо будет слить
 	Если Объект.ProcessLevel = Справочники.ProcessLevels.AZ
 		ИЛИ Объект.ProcessLevel = Справочники.ProcessLevels.UZ
-		ИЛИ Объект.ProcessLevel = Справочники.ProcessLevels.TM Тогда
+		ИЛИ Объект.ProcessLevel = Справочники.ProcessLevels.TM
+		// { RGS EParshina EParshina 25.12.2018 14:01:58 - S-I-0006542
+		ИЛИ Объект.ProcessLevel = Справочники.ProcessLevels.GE
+		// } RGS EParshina EParshina 25.12.2018 14:01:58 - S-I-0006542
+		Тогда
 		Элементы.СтраницаCustomsFilesFull.Видимость = Ложь;
 		НужноПерезаполнитьCustomsFiles = Истина;
 	Иначе
