@@ -1233,7 +1233,7 @@
 		
 	Для Каждого ТекExportShipment из ExportShipments Цикл 
 		СтруктураExportShipment = Неопределено;
-		 ЗаполнитьСтруктуруТекстовыхЗначенийExportShipment(ТекстОшибок, СтруктураExportShipment, ТекExportShipment, СтруктураТекстовыхЗначенийКодов);
+		ЗаполнитьСтруктуруТекстовыхЗначенийExportShipment(ТекстОшибок, СтруктураExportShipment, ТекExportShipment, СтруктураТекстовыхЗначенийКодов);
 		СтруктураДанных.МассивСтруктурExportShipments.Добавить(СтруктураExportShipment);
 	КонецЦикла;
 	
@@ -2114,16 +2114,17 @@
 
 Процедура ЗаполнитьСтруктуруТекстовыхЗначенийExportShipment(ТекстОшибок, СтруктураExportShipment, ExportShipment, СтруктураТекстовыхЗначенийКодов);
 	
-	СтруктураExportShipment = Новый Структура("No, ExportShipmentСсылка, SubmittedToCustoms, ReleasedFromCustoms, InternationalWB1, InternationalETD, InternationalATD, PreAlertSent, InternationalETA, InternationalATA");
+	СтруктураExportShipment = Новый Структура("No, ExportShipmentСсылка, SubmittedToCustoms, ReleasedFromCustoms, CCDNumber");
 	
 	СтруктураExportShipment.SubmittedToCustoms = ?(ExportShipment.SubmittedToCustoms = Неопределено, '00010101', ExportShipment.SubmittedToCustoms);
 	СтруктураExportShipment.ReleasedFromCustoms = ?(ExportShipment.ReleasedFromCustoms = Неопределено, '00010101', ExportShipment.ReleasedFromCustoms);
-	СтруктураExportShipment.InternationalWB1 = ?(ExportShipment.InternationalWB1 = Неопределено, "", СокрЛП(ExportShipment.InternationalWB1));
-	СтруктураExportShipment.InternationalETD = ?(ExportShipment.InternationalETD = Неопределено, '00010101', ExportShipment.InternationalETD);
-	СтруктураExportShipment.InternationalATD = ?(ExportShipment.InternationalATD = Неопределено, '00010101', ExportShipment.InternationalATD);
-	СтруктураExportShipment.PreAlertSent = ?(ExportShipment.PreAlertSent = Неопределено, '00010101', ExportShipment.PreAlertSent);
-	СтруктураExportShipment.InternationalETA = ?(ExportShipment.InternationalETA = Неопределено, '00010101', ExportShipment.InternationalETA);
-	СтруктураExportShipment.InternationalATA = ?(ExportShipment.InternationalATA = Неопределено, '00010101', ExportShipment.InternationalATA);
+	СтруктураExportShipment.CCDNumber = ?(ExportShipment.CCDNumber = Неопределено, "", ExportShipment.CCDNumber);
+	//СтруктураExportShipment.InternationalWB1 = ?(ExportShipment.InternationalWB1 = Неопределено, "", СокрЛП(ExportShipment.InternationalWB1));
+	//СтруктураExportShipment.InternationalETD = ?(ExportShipment.InternationalETD = Неопределено, '00010101', ExportShipment.InternationalETD);
+	//СтруктураExportShipment.InternationalATD = ?(ExportShipment.InternationalATD = Неопределено, '00010101', ExportShipment.InternationalATD);
+	//СтруктураExportShipment.PreAlertSent = ?(ExportShipment.PreAlertSent = Неопределено, '00010101', ExportShipment.PreAlertSent);
+	//СтруктураExportShipment.InternationalETA = ?(ExportShipment.InternationalETA = Неопределено, '00010101', ExportShipment.InternationalETA);
+	//СтруктураExportShipment.InternationalATA = ?(ExportShipment.InternationalATA = Неопределено, '00010101', ExportShipment.InternationalATA);
 	
 	ExportShipmentNo = СокрЛП(ExportShipment.No);
 	Если Не ЗначениеЗаполнено(ExportShipmentNo) Тогда
@@ -4839,12 +4840,13 @@
 	
 	РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.SubmittedToCustoms, СтруктураExportShipment.SubmittedToCustoms);
 	РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.ReleasedFromCustoms, СтруктураExportShipment.ReleasedFromCustoms);
-	РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.InternationalWB1, СтруктураExportShipment.InternationalWB1);
-	РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.InternationalETD, СтруктураExportShipment.InternationalETD);
-	РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.InternationalATD, СтруктураExportShipment.InternationalATD);
-	РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.PreAlertSent, СтруктураExportShipment.PreAlertSent);
-	РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.InternationalETA, СтруктураExportShipment.InternationalETA);
-	РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.InternationalATA, СтруктураExportShipment.InternationalATA);		
+	РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.CCDNumber, СтруктураExportShipment.CCDNumber);
+	//РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.InternationalWB1, СтруктураExportShipment.InternationalWB1);
+	//РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.InternationalETD, СтруктураExportShipment.InternationalETD);
+	//РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.InternationalATD, СтруктураExportShipment.InternationalATD);
+	//РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.PreAlertSent, СтруктураExportShipment.PreAlertSent);
+	//РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.InternationalETA, СтруктураExportShipment.InternationalETA);
+	//РГСофтКлиентСервер.УстановитьЗначение(ExportShipmentОбъект.InternationalATA, СтруктураExportShipment.InternationalATA);
 	
 КонецПроцедуры // } RGS LHristyc 21.06.2018 16:39:36 - S-I-0004942
 
