@@ -605,6 +605,11 @@
 			ServiceProvider = Неопределено;
 		КонецЕсли;
 		
+		// { RGS DKazanskiy 07.12.2018 13:12:52 - S-I-0006428
+		LowestFareKnown = Неопределено;
+		ReasonForRateSelection = Неопределено;
+		// } RGS DKazanskiy 07.12.2018 13:12:52 - S-I-0006428
+		
 	КонецЕсли;
 	
 	Если TypeOfTransport = Перечисления.TypesOfTransport.CallOut Тогда
