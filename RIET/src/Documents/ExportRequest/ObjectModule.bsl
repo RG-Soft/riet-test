@@ -2304,14 +2304,6 @@
 		КонецЕсли;
 		// } RGS DKazanskiy 15.10.2018 10:15:21 - S-I-0005759
 		
-	// { RGS ASeryakov, 26.11.2018 16:14:52 S-I-0006322
-	ИначеЕсли НЕ ЗначениеЗаполнено(InternationalFreightApproved) И НЕ ЭтоНовый() Тогда
-		ТекстОшибок = """Int. freight approved"" is empty!";
-		ОбщегоНазначенияКлиентСервер.СообщитьПользователю(
-		ТекстОшибок,
-		ЭтотОбъект, "InternationalFreightApproved", , Отказ);
-		
-	// } RGS ASeryakov 26.11.2018 16:15:06 S-I-0006322
 	КонецЕсли; // Если ЗначениеЗаполнено(InternationalFreightApproved)
 	
 	Если ЗначениеЗаполнено(InternationalFreightSum) И НЕ ЗначениеЗаполнено(InternationalFreightCurrency) Тогда
