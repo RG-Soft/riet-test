@@ -18,7 +18,10 @@
 		|	POLine.Владелец.EUCNotRequired КАК EUCNotRequired,
 		|	POLine.Владелец.EUCRequested КАК EUCRequested,
 		|	POLine.Владелец.EUCReceived КАК EUCReceived,
-		|	POLine.ProjectMobilization
+		|	POLine.ProjectMobilization,
+		// { RGS Aseryakov 20.12.2018 13:24:07 - S-I-0006324
+		|	POLine.CountryOfOrigin
+		// { RGS Aseryakov 20.12.2018 13:24:07 - S-I-0006324
 		|ИЗ
 		|	Справочник.СтрокиЗаявкиНаЗакупку КАК POLine
 		|ГДЕ
