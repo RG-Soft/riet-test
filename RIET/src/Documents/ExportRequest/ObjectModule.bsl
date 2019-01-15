@@ -1994,10 +1994,11 @@
 		
 		Если Документы.ExportRequest.ПолучитьExportInternationalOBToTMS(FromCountry, Company, Submitted, InternationalMOT, InternationalFreightProvider, Incoterms, BORG, CreationDate)
 			И Не InternationalOBSentToTMS И Не CustomUnionTransaction тогда
-			
-			Сообщить("Send Int. OB to TMS before Consignee GL received!");
-			Отказ = Истина;	
-		
+			// { RGS ASeryakov, 15.01.2019 15:19:58 [Ext] RE: Export S-I-0006588
+			//// временно закоментировано для исправления тестового обмена с НЕК
+			//Сообщить("Send Int. OB to TMS before Consignee GL received!");
+			//Отказ = Истина;	
+			// } RGS ASeryakov 15.01.2019 15:20:06 [Ext] RE: Export S-I-0006588
 		Иначе
 
 			Если Не ЗначениеЗаполнено(ConsigneeGLRequested) Тогда 
