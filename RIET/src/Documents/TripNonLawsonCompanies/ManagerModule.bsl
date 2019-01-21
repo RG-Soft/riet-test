@@ -2604,3 +2604,72 @@
 	Возврат НЕ РезультатЗапроса.Пустой();
 	
 КонецФункции // } RGS ASeryakov 02.03.18 S-I-0005597
+
+// { RG Soft LGoncharova Установка UTM дат
+Процедура УстановитьUTMДаты(ЭтотОбъект, Перезаписывать = Истина) Экспорт
+	ПересчетДлительности = Ложь;
+	
+	Для Каждого ТекСтрока Из ЭтотОбъект.Stops Цикл
+		Warehouse = ТекСтрока.Location;
+		
+		ПарыРеквизитов = Новый Соответствие;
+		ПарыРеквизитов.Вставить("ActualArrivalUniversalTime"	, "ActualArrivalLocalTime");
+		ПарыРеквизитов.Вставить("ActualDepartureUniversalTime"	, "ActualDepartureLocalTime");
+		ПарыРеквизитов.Вставить("PlannedArrivalUniversalTime"	, "PlannedArrivalLocalTime");
+		ПарыРеквизитов.Вставить("PlannedDepartureUniversalTime"	, "PlannedDepartureLocalTime");
+		
+		ПарыРеквизитовДоп = Новый Соответствие;
+		ПарыРеквизитовДоп.Вставить("MaximumReadyToShipUniversalTime"		, "MaximumReadyToShipLocalTime");
+		ПарыРеквизитовДоп.Вставить("MinimumRequiredDeliveryUniversalTime"	, "MinimumRequiredDeliveryLocalTime");
+		
+		Для Каждого Пара Из ПарыРеквизитов Цикл
+			Если (НЕ ЗначениеЗаполнено(ТекСтрока[Пара.Ключ]) И ЗначениеЗаполнено(ТекСтрока[Пара.Значение]))
+				Или Перезаписывать Тогда
+				
+				ТекСтрока[Пара.Ключ] = LocalDistributionForNonLawsonСервер.ПолучитьUniversalTime(ТекСтрока[Пара.Значение], Warehouse);
+				ПересчетДлительности = Истина;				
+				
+			КонецЕсли;
+		КонецЦикла;
+		Для Каждого Пара Из ПарыРеквизитовДоп Цикл
+			Если (НЕ ЗначениеЗаполнено(ТекСтрока[Пара.Ключ]) И ЗначениеЗаполнено(ТекСтрока[Пара.Значение]))
+				Или Перезаписывать Тогда
+				
+				ТекСтрока[Пара.Ключ] = LocalDistributionForNonLawsonСервер.ПолучитьUniversalTime(ТекСтрока[Пара.Значение], Warehouse);
+				
+			КонецЕсли;
+		КонецЦикла;		
+	КонецЦикла;		
+		
+	Если Перезаписывать Или ПересчетДлительности Тогда
+		// проверим наличие Source
+		СтруктураОтбораSource = Новый Структура("Type", Перечисления.StopsTypes.Source);
+		МассивСтрокSource = ЭтотОбъект.Stops.НайтиСтроки(СтруктураОтбораSource);
+
+		// проверим наличие Destination
+		СтруктураОтбораDestination = Новый Структура("Type", Перечисления.StopsTypes.Destination);
+		МассивСтрокDestination = ЭтотОбъект.Stops.НайтиСтроки(СтруктураОтбораDestination);
+		
+		Если МассивСтрокDestination.Количество() = 1 
+			И МассивСтрокSource.Количество() = 1 Тогда
+			
+			СтрSource 		= МассивСтрокSource[0];
+			СтрDestination 	= МассивСтрокDestination[0];
+			
+			Если ЗначениеЗаполнено(СтрDestination.PlannedArrivalUniversalTime) 
+				И ЗначениеЗаполнено(СтрSource.PlannedDepartureUniversalTime) Тогда 
+				
+				ЭтотОбъект.TotalPlannedDuration = СтрDestination.PlannedArrivalUniversalTime - СтрSource.PlannedDepartureUniversalTime;
+			КонецЕсли;
+			
+			Если ЗначениеЗаполнено(СтрDestination.ActualArrivalUniversalTime) 
+				И ЗначениеЗаполнено(СтрSource.ActualDepartureUniversalTime) Тогда 
+				
+				ЭтотОбъект.TotalActualDuration = СтрDestination.ActualArrivalUniversalTime - СтрSource.ActualDepartureUniversalTime;
+			КонецЕсли;
+			    		
+		КонецЕсли;
+	КонецЕсли;
+
+КонецПРоцедуры
+// } RG Soft LGoncharova Установка UTM дат

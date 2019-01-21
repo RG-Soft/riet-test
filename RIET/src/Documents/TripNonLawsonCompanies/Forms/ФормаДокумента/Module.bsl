@@ -124,6 +124,10 @@
 	
 	МассивParcels = РГСофтКлиентСервер.ВыгрузитьКолонкуКоллекцииБезПустыхЗначенийИДублей(Объект.Parcels, "Parcel");
 	
+	// { RG Soft LGoncharova Общая процедура проверки UTM дат	
+	Документы.TripNonLawsonCompanies.УстановитьUTMДаты(Объект, Ложь);
+	// { RG Soft LGoncharova Общая процедура проверки UTM дат	
+	
 	Если ЗначениеЗаполнено(Объект.Closed) Тогда 
 		ОбновитьПредставлениеDuration();
 		Recharge.Параметры.УстановитьЗначениеПараметра("Parcels", МассивParcels);
@@ -931,45 +935,54 @@
 	
 КонецФункции
 
-&НаКлиенте
+// { RG Soft LGoncharova Общая процедура установки UTM дат
+//&НаКлиенте
+&НаСервере
+// } RG Soft LGoncharova Общая процедура установки UTM дат
 Процедура ОбновитьTotalDuration()
 	
-	// проверим наличие Source
-	СтруктураОтбораSource = Новый Структура("Type", ПредопределенноеЗначение("Перечисление.StopsTypes.Source"));
-	МассивСтрокSource = Объект.Stops.НайтиСтроки(СтруктураОтбораSource);
+	// { RG Soft LGoncharova Общая процедура установки UTM дат
+	//// проверим наличие Source
+	//СтруктураОтбораSource = Новый Структура("Type", ПредопределенноеЗначение("Перечисление.StopsTypes.Source"));
+	//МассивСтрокSource = Объект.Stops.НайтиСтроки(СтруктураОтбораSource);
 
-	// проверим наличие Destination
-	СтруктураОтбораDestination = Новый Структура("Type", ПредопределенноеЗначение("Перечисление.StopsTypes.Destination"));
-	МассивСтрокDestination = Объект.Stops.НайтиСтроки(СтруктураОтбораDestination);
+	//// проверим наличие Destination
+	//СтруктураОтбораDestination = Новый Структура("Type", ПредопределенноеЗначение("Перечисление.StopsTypes.Destination"));
+	//МассивСтрокDestination = Объект.Stops.НайтиСтроки(СтруктураОтбораDestination);
+	//
+	//TotalPlannedDurationПредставление = "";
+	//TotalActualDurationПредставление = "";
+	//
+	//Если МассивСтрокDestination.Количество() = 1 
+	//	И МассивСтрокSource.Количество() = 1 Тогда
+	//	
+	//	СтрSource = МассивСтрокSource[0];
+	//	СтрDestination = МассивСтрокDestination[0];
+	//	
+	//	Если ЗначениеЗаполнено(СтрDestination.PlannedArrivalUniversalTime) 
+	//		И ЗначениеЗаполнено(СтрSource.PlannedDepartureUniversalTime) Тогда 
+	//		
+	//		Объект.TotalPlannedDuration = СтрDestination.PlannedArrivalUniversalTime - СтрSource.PlannedDepartureUniversalTime;
+	//		
+	//		TotalPlannedDurationПредставление = ПолучитьПредставлениеDuration(Объект.TotalPlannedDuration);
+	//		
+	//	КонецЕсли;
+	//	
+	//	Если ЗначениеЗаполнено(СтрDestination.ActualArrivalUniversalTime) 
+	//		И ЗначениеЗаполнено(СтрSource.ActualDepartureUniversalTime) Тогда 
+	//		
+	//		Объект.TotalActualDuration = СтрDestination.ActualArrivalUniversalTime - СтрSource.ActualDepartureUniversalTime;
+	//		
+	//		TotalActualDurationПредставление = ПолучитьПредставлениеDuration(Объект.TotalActualDuration);
+	//		
+	//	КонецЕсли;
+	//	    		
+	//КонецЕсли;
 	
-	TotalPlannedDurationПредставление = "";
-	TotalActualDurationПредставление = "";
+	Документы.TripNonLawsonCompanies.УстановитьUTMДаты(Объект, Истина);
+	ОбновитьПредставлениеDuration();
 	
-	Если МассивСтрокDestination.Количество() = 1 
-		И МассивСтрокSource.Количество() = 1 Тогда
-		
-		СтрSource = МассивСтрокSource[0];
-		СтрDestination = МассивСтрокDestination[0];
-		
-		Если ЗначениеЗаполнено(СтрDestination.PlannedArrivalUniversalTime) 
-			И ЗначениеЗаполнено(СтрSource.PlannedDepartureUniversalTime) Тогда 
-			
-			Объект.TotalPlannedDuration = СтрDestination.PlannedArrivalUniversalTime - СтрSource.PlannedDepartureUniversalTime;
-			
-			TotalPlannedDurationПредставление = ПолучитьПредставлениеDuration(Объект.TotalPlannedDuration);
-			
-		КонецЕсли;
-		
-		Если ЗначениеЗаполнено(СтрDestination.ActualArrivalUniversalTime) 
-			И ЗначениеЗаполнено(СтрSource.ActualDepartureUniversalTime) Тогда 
-			
-			Объект.TotalActualDuration = СтрDestination.ActualArrivalUniversalTime - СтрSource.ActualDepartureUniversalTime;
-			
-			TotalActualDurationПредставление = ПолучитьПредставлениеDuration(Объект.TotalActualDuration);
-			
-		КонецЕсли;
-		    		
-	КонецЕсли;
+	// { RG Soft LGoncharova Общая процедура установки UTM дат	
 		
 КонецПроцедуры
 
@@ -1172,7 +1185,10 @@
 &НаКлиенте
 Процедура НастроитьВидимостьCostsPlanning()
 	
-	Элементы.CostsPlanning.ТолькоПросмотр = Не Объект.Проведен;
+	
+	// { RGS AFokin 11.01.2019 11:38:50 - SLI-0006355
+	//Элементы.CostsPlanning.ТолькоПросмотр = Не Объект.Проведен;
+	// } RGS AFokin 11.01.2019 11:38:50 - SLI-0006355
 	
 	РучноеПланирование = (Объект.CostsPlanning = ПредопределенноеЗначение("Перечисление.TypesOfCostsPlanning.Manual"));	
 	
