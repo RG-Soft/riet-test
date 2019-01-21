@@ -231,27 +231,65 @@
 	КонецЕсли;
 	
 	// { RGS ASeryakov, 21.11.2018 14:47:21 S-I-0004945
-	Если НЕ ЗначениеЗаполнено(Contract) Тогда
+	
+	// { RGS ASeryakov, 21.11.2019 14:00:00 S-I-0006636
+	ProcessLevels = Новый Массив;
+	ProcessLevels.Добавить(Справочники.ProcessLevels.RUEA);
+	ProcessLevels.Добавить(Справочники.ProcessLevels.RUSM);
+	ProcessLevels.Добавить(Справочники.ProcessLevels.AZ);
+	ProcessLevels.Добавить(Справочники.ProcessLevels.GE);
+	ProcessLevels.Добавить(Справочники.ProcessLevels.TM);
+	ProcessLevels.Добавить(Справочники.ProcessLevels.UZ);
+	
+	//Если НЕ ЗначениеЗаполнено(Contract) Тогда
+	//		ОбщегоНазначенияКлиентСервер.СообщитьПользователю(
+	//		"'Contract' is empty!",
+	//		ЭтотОбъект, "Contract", , Отказ);
+	//КонецЕсли;
+	Если НЕ ЗначениеЗаполнено(Contract) И Голд Тогда
+	
 		ОбщегоНазначенияКлиентСервер.СообщитьПользователю(
 			"'Contract' is empty!",
 			ЭтотОбъект, "Contract", , Отказ);
+	ИначеЕсли НЕ ЗначениеЗаполнено(Contract) И НЕ Голд И ProcessLevels.Найти(ProcessLevel) = Неопределено Тогда
+		ОбщегоНазначенияКлиентСервер.СообщитьПользователю(
+			"'Contract' is empty!",
+		ЭтотОбъект, "Contract", , Отказ);
 	КонецЕсли;
+	// } RGS ASeryakov, 21.11.2019 14:00:00 S-I-0006636
+	
 	// } RGS ASeryakov, 21.11.2018 14:47:21 S-I-0004945
 	
+	
 	Если НЕ ЗначениеЗаполнено(Contract)
-		И АрхивИмпортЭкспорт = Перечисления.ИмпортЭкспорт.Import
+	И АрхивИмпортЭкспорт = Перечисления.ИмпортЭкспорт.Import
 		И ЗначениеЗаполнено(Декларант) Тогда
 		
 		ConsignToDoNotRequireContract = РГСофтСерверПовтИспСеанс.ПолучитьЗначениеРеквизита(Декларант, "DoNotRequireContractInInvoices");
 		Если НЕ ConsignToDoNotRequireContract Тогда
 			
+			// { RGS ASeryakov, 21.11.2019 14:00:00 S-I-0006636
+			Если НЕ Голд И ProcessLevels.Найти(ProcessLevel) = Неопределено Тогда
+			// } RGS ASeryakov, 21.11.2019 14:00:00 S-I-0006636
+			
 			ОбщегоНазначенияКлиентСервер.СообщитьПользователю(
 				"'Contract' is empty!",
 				ЭтотОбъект, "Contract", , Отказ);
 				
+			// { RGS ASeryakov, 21.11.2019 14:00:00 S-I-0006636
+			ИначеЕсли Голд Тогда
+				
+				ОбщегоНазначенияКлиентСервер.СообщитьПользователю(
+				"'Contract' is empty!",
+				ЭтотОбъект, "Contract", , Отказ);
+				
+			КонецЕсли;
+			// } RGS ASeryakov, 21.11.2019 14:00:00 S-I-0006636
+
 		КонецЕсли;
 			
 	КонецЕсли;
+	
 	
 	// Operating location
 	Если НЕ ЗначениеЗаполнено(OperatingLocation) Тогда
